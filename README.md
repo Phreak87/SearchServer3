@@ -8,7 +8,7 @@ Backend:
 - neuer Webserver mit 25 Workerthreads und Caching,
 - verbesstertes durchsuchen der Laufwerke in Threadpools
 - optimierung auf Performance und Stabilität
-- 
+
 Frontend:
 - Updates für JS-Module,
 - Zip-Viewer,
