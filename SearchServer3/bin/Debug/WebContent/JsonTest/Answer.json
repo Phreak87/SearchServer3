@@ -1,0 +1,361 @@
+﻿{
+"Status":[{
+"Results":"5",
+"Answers":"10",
+"Searcher":"10",
+"Folder":"DIR"
+}],
+
+"Classes":[
+{"Folder":"Downloads"}
+,{
+"Folder":"NAS|Bilder"}
+,{
+"Folder":"NAS|Videos"}
+,{
+"Folder":"NAS|Musik2"}
+,{
+"Folder":"NAS|Programme"}
+],
+
+"Groups":[
+{"Folder":"Allgemein"}
+,{
+"Folder":"Videos"}
+,{
+"Folder":"Audio"}
+,{
+"Folder":"Programme"}
+],
+
+"FTypes":[
+{"FType":".mp3"}
+],
+
+"entrys":[
+{
+"ContentType":"Audio",
+"ContentID":"A0",
+"SourceClassType":"DIR",
+"SourceClassName":"Downloads",
+"SourceClassGroup":"Allgemein",
+"SourceFileType":".mp3",
+"ContentTime":"635566113771750576",
+"ContentThumb":"http://localhost:9090/C:\\Users\\Phreak\\Desktop\\SearchServer2\\SearchServer\\bin\\Debug\\Temp\\Images\\BA9445420D6F13211F88FAF0AD93F766.jpg",
+"objLink":"http://localhost:9090/C:\\Users\\Phreak\\Downloads\\Bobina - Invisible Touch (Ferry Corstens Touch) mp3clan.com.mp3",
+"objName":"Bobina - Invisible Touch (Ferry Corstens Touch) mp3clan.com.mp3",
+"objContent":""
+}
+,{
+"ContentType":"Audio",
+"ContentID":"A1",
+"SourceClassType":"DIR",
+"SourceClassName":"Downloads",
+"SourceClassGroup":"Allgemein",
+"SourceFileType":".mp3",
+"ContentTime":"635566124618080951",
+"ContentThumb":"http://localhost:9090/C:\\Users\\Phreak\\Desktop\\SearchServer2\\SearchServer\\bin\\Debug\\Temp\\Images\\9D3119DBF4AC2B6F3A09BEC413A5559E.jpg",
+"objLink":"http://localhost:9090/C:\\Users\\Phreak\\Downloads\\Ferry Corsten - Diss! (Original Mix) mp3clan.com.mp3",
+"objName":"Ferry Corsten - Diss! (Original Mix) mp3clan.com.mp3",
+"objContent":""
+}
+,{
+"ContentType":"Audio",
+"ContentID":"A2",
+"SourceClassType":"DIR",
+"SourceClassName":"Downloads",
+"SourceClassGroup":"Allgemein",
+"SourceFileType":".mp3",
+"ContentTime":"635566109465714285",
+"ContentThumb":"http://localhost:9090/C:\\Users\\Phreak\\Desktop\\SearchServer2\\SearchServer\\bin\\Debug\\Temp\\Images\\ECBEAD1BC280B359B1BBC36209C90673.jpg",
+"objLink":"http://localhost:9090/C:\\Users\\Phreak\\Downloads\\Ferry Corsten - Festival Crash (Talla 2XLC 140 Rework) mp3clan.com.mp3",
+"objName":"Ferry Corsten - Festival Crash (Talla 2XLC 140 Rework) mp3clan.com.mp3",
+"objContent":""
+}
+,{
+"ContentType":"Audio",
+"ContentID":"A3",
+"SourceClassType":"DIR",
+"SourceClassName":"Downloads",
+"SourceClassGroup":"Allgemein",
+"SourceFileType":".mp3",
+"ContentTime":"635566113870256210",
+"ContentThumb":"http://localhost:9090/C:\\Users\\Phreak\\Desktop\\SearchServer2\\SearchServer\\bin\\Debug\\Temp\\Images\\3F81DFDA7D39118BA8057680EAF0D08E.jpg",
+"objLink":"http://localhost:9090/C:\\Users\\Phreak\\Downloads\\Ferry Corsten Feat Betsie Larkin - Made Of Love (Original Extended Mix) mp3clan.com.mp3",
+"objName":"Ferry Corsten Feat Betsie Larkin - Made Of Love (Original Extended Mix) mp3clan.com.mp3",
+"objContent":""
+}
+,{
+"ContentType":"Audio",
+"ContentID":"A4",
+"SourceClassType":"DIR",
+"SourceClassName":"Downloads",
+"SourceClassGroup":"Allgemein",
+"SourceFileType":".mp3",
+"ContentTime":"635566125662810706",
+"ContentThumb":"http://localhost:9090/C:\\Users\\Phreak\\Desktop\\SearchServer2\\SearchServer\\bin\\Debug\\Temp\\Images\\DA907D9E1DC0B53F2BD367BEF8C41DB9.jpg",
+"objLink":"http://localhost:9090/C:\\Users\\Phreak\\Downloads\\Ferry Corsten vs. KhoMha - Diss The Dark Knight (Armin van Buuren Mashup) ЗАХОДИ К НАМ vk.com-public26401214 mp3clan.com.mp3",
+"objName":"Ferry Corsten vs. KhoMha - Diss The Dark Knight (Armin van Buuren Mashup) ЗАХОДИ К НАМ vk.com-public26401214 mp3clan.com.mp3",
+"objContent":""
+}
+,{
+"ContentType":"Audio",
+"ContentID":"A5",
+"SourceClassType":"DIR",
+"SourceClassName":"Downloads",
+"SourceClassGroup":"Allgemein",
+"SourceFileType":".mp3",
+"ContentTime":"635566113692106021",
+"ContentThumb":"http://localhost:9090/C:\\Users\\Phreak\\Desktop\\SearchServer2\\SearchServer\\bin\\Debug\\Temp\\Images\\9F0D82ACAC1D0F9319A1C1716A625B53.jpg",
+"objLink":"http://localhost:9090/C:\\Users\\Phreak\\Downloads\\Laidback Luke  - Till Tonight (Ferry Corsten rmx)  mp3clan.com.mp3",
+"objName":"Laidback Luke  - Till Tonight (Ferry Corsten rmx)  mp3clan.com.mp3",
+"objContent":""
+}
+,{
+"ContentType":"Audio",
+"ContentID":"A6",
+"SourceClassType":"DIR",
+"SourceClassName":"NAS|Bilder",
+"SourceClassGroup":"Videos",
+"SourceFileType":".mp3",
+"ContentTime":"635469364167232490",
+"ContentThumb":"http://localhost:9090/C:\\Users\\Phreak\\Desktop\\SearchServer2\\SearchServer\\bin\\Debug\\Temp\\Images\\E1D3AB691B1F6E0CEBC7EF9CE90A879A.jpg",
+"objLink":"http://localhost:9090/Y:\\Videos\\Kinofilme\\Marlen\\video\\Dream Dance Vol.70\\105_ferry_corsten_feat._jenny_wahlstrom_-_many_ways.mp3",
+"objName":"105_ferry_corsten_feat._jenny_wahlstrom_-_many_ways.mp3",
+"objContent":""
+}
+,{
+"ContentType":"Audio",
+"ContentID":"A7",
+"SourceClassType":"DIR",
+"SourceClassName":"Downloads",
+"SourceClassGroup":"Allgemein",
+"SourceFileType":".mp3",
+"ContentTime":"635566113898987854",
+"ContentThumb":"http://localhost:9090/C:\\Users\\Phreak\\Desktop\\SearchServer2\\SearchServer\\bin\\Debug\\Temp\\Images\\48358ED52480F4D336791BA6AD6AB4A0.jpg",
+"objLink":"http://localhost:9090/C:\\Users\\Phreak\\Downloads\\Radio Record - Ferry Corsten - Check It Out (Original Extended Mix) mp3clan.com.mp3",
+"objName":"Radio Record - Ferry Corsten - Check It Out (Original Extended Mix) mp3clan.com.mp3",
+"objContent":""
+}
+,{
+"ContentType":"Audio",
+"ContentID":"A8",
+"SourceClassType":"DIR",
+"SourceClassName":"NAS|Videos",
+"SourceClassGroup":"Videos",
+"SourceFileType":".mp3",
+"ContentTime":"635469364167232490",
+"ContentThumb":"http://localhost:9090/C:\\Users\\Phreak\\Desktop\\SearchServer2\\SearchServer\\bin\\Debug\\Temp\\Images\\E1D3AB691B1F6E0CEBC7EF9CE90A879A.jpg",
+"objLink":"http://localhost:9090/Y:\\Videos\\Kinofilme\\Marlen\\video\\Dream Dance Vol.70\\105_ferry_corsten_feat._jenny_wahlstrom_-_many_ways.mp3",
+"objName":"105_ferry_corsten_feat._jenny_wahlstrom_-_many_ways.mp3",
+"objContent":""
+}
+,{
+"ContentType":"Audio",
+"ContentID":"A9",
+"SourceClassType":"DIR",
+"SourceClassName":"NAS|Musik2",
+"SourceClassGroup":"Audio",
+"SourceFileType":".mp3",
+"ContentTime":"635441246012600000",
+"ContentThumb":"http://localhost:9090/C:\\Users\\Phreak\\Desktop\\SearchServer2\\SearchServer\\bin\\Debug\\Temp\\Images\\858A1DD53E80CA473923BFC89E1583C1.jpg",
+"objLink":"http://localhost:9090/Y:\\Musik_Alt\\CDs\\d-Trance\\Vol.33\\CD2\\Gary D. D.Trance Vol.33 (cd2) - 17 - Ferry Corsten - Star traveller (Hydroid  Zehavi & Rand Remix) (OK).mp3",
+"objName":"Gary D. D.Trance Vol.33 (cd2) - 17 - Ferry Corsten - Star traveller (Hydroid  Zehavi & Rand Remix) (OK).mp3",
+"objContent":""
+}
+,{
+"ContentType":"Audio",
+"ContentID":"A10",
+"SourceClassType":"DIR",
+"SourceClassName":"NAS|Musik2",
+"SourceClassGroup":"Audio",
+"SourceFileType":".mp3",
+"ContentTime":"635441244372200000",
+"ContentThumb":"http://localhost:9090/C:\\Users\\Phreak\\Desktop\\SearchServer2\\SearchServer\\bin\\Debug\\Temp\\Images\\2F05C9CC01F7418C03E85B6A62B171FE.jpg",
+"objLink":"http://localhost:9090/Y:\\Musik_Alt\\CDs\\Hardbass\\Hardbass vol. 10\\cd 1\\Track 27 Ferry Corsten feat. Guru Junk.mp3",
+"objName":"Track 27 Ferry Corsten feat. Guru Junk.mp3",
+"objContent":""
+}
+,{
+"ContentType":"Audio",
+"ContentID":"A11",
+"SourceClassType":"DIR",
+"SourceClassName":"NAS|Musik2",
+"SourceClassGroup":"Audio",
+"SourceFileType":".mp3",
+"ContentTime":"635465156402359940",
+"ContentThumb":"http://localhost:9090/C:\\Users\\Phreak\\Desktop\\SearchServer2\\SearchServer\\bin\\Debug\\Temp\\Images\\A69F87881645AF34C326971D4B879222.jpg",
+"objLink":"http://localhost:9090/Y:\\Musik_Alt\\CDs\\Technics DJ Set\\Technics DJ Set Vol. 20\\cd 2\\Track 01 Ferry Corsten Brain Box (Original).mp3",
+"objName":"Track 01 Ferry Corsten Brain Box (Original).mp3",
+"objContent":""
+}
+,{
+"ContentType":"Audio",
+"ContentID":"A12",
+"SourceClassType":"DIR",
+"SourceClassName":"NAS|Musik2",
+"SourceClassGroup":"Audio",
+"SourceFileType":".mp3",
+"ContentTime":"635441240448900000",
+"ContentThumb":"http://localhost:9090/C:\\Users\\Phreak\\Desktop\\SearchServer2\\SearchServer\\bin\\Debug\\Temp\\Images\\FF53D747213584C1DBEE265E5A8EEC52.jpg",
+"objLink":"http://localhost:9090/Y:\\Musik_Alt\\CDs\\Technics DJ Set\\Technics DJ Set Vol. 17\\cd 2\\Track 10 Beautiful Ferry Corsten.mp3",
+"objName":"Track 10 Beautiful Ferry Corsten.mp3",
+"objContent":""
+}
+,{
+"ContentType":"Audio",
+"ContentID":"A13",
+"SourceClassType":"DIR",
+"SourceClassName":"NAS|Musik2",
+"SourceClassGroup":"Audio",
+"SourceFileType":".mp3",
+"ContentTime":"635441239469800000",
+"ContentThumb":"http://localhost:9090/C:\\Users\\Phreak\\Desktop\\SearchServer2\\SearchServer\\bin\\Debug\\Temp\\Images\\BF0B9B713EA01E66AE36DD6633C827C7.jpg",
+"objLink":"http://localhost:9090/Y:\\Musik_Alt\\CDs\\Sunshine Live\\Sunshine Live Vol. 17\\cd 1\\110_ferry_corsten_-_star_traveller.mp3",
+"objName":"110_ferry_corsten_-_star_traveller.mp3",
+"objContent":""
+}
+,{
+"ContentType":"Audio",
+"ContentID":"A14",
+"SourceClassType":"DIR",
+"SourceClassName":"NAS|Musik2",
+"SourceClassGroup":"Audio",
+"SourceFileType":".mp3",
+"ContentTime":"635441238810800000",
+"ContentThumb":"http://localhost:9090/C:\\Users\\Phreak\\Desktop\\SearchServer2\\SearchServer\\bin\\Debug\\Temp\\Images\\774AB400E9BB9478A18346A911B5375C.jpg",
+"objLink":"http://localhost:9090/Y:\\Musik_Alt\\CDs\\dreamdance\\Dream Dance Vol.38\\CD2\\217_elles_de_graaf_-_show_you_my_world_(ferry_corsten_remix)_-_www.torrentazos.com.mp3",
+"objName":"217_elles_de_graaf_-_show_you_my_world_(ferry_corsten_remix)_-_www.torrentazos.com.mp3",
+"objContent":""
+}
+,{
+"ContentType":"Audio",
+"ContentID":"A15",
+"SourceClassType":"DIR",
+"SourceClassName":"NAS|Musik2",
+"SourceClassGroup":"Audio",
+"SourceFileType":".mp3",
+"ContentTime":"635441238802300000",
+"ContentThumb":"http://localhost:9090/C:\\Users\\Phreak\\Desktop\\SearchServer2\\SearchServer\\bin\\Debug\\Temp\\Images\\A8D5A65E54569FD631F1B72229A8F605.jpg",
+"objLink":"http://localhost:9090/Y:\\Musik_Alt\\CDs\\dreamdance\\Dream Dance Vol.38\\CD2\\203_ferry_corsten_-_star_traveller_(hydroid_and_zahavi_-_rand_r_____-_www.torrentazos.com.mp3",
+"objName":"203_ferry_corsten_-_star_traveller_(hydroid_and_zahavi_-_rand_r_____-_www.torrentazos.com.mp3",
+"objContent":""
+}
+,{
+"ContentType":"Audio",
+"ContentID":"A16",
+"SourceClassType":"DIR",
+"SourceClassName":"NAS|Musik2",
+"SourceClassGroup":"Audio",
+"SourceFileType":".mp3",
+"ContentTime":"635441238783900000",
+"ContentThumb":"http://localhost:9090/C:\\Users\\Phreak\\Desktop\\SearchServer2\\SearchServer\\bin\\Debug\\Temp\\Images\\331A9F79E30A9868930165296D3F73EC.jpg",
+"objLink":"http://localhost:9090/Y:\\Musik_Alt\\CDs\\dreamdance\\Dream Dance Vol.39\\Dream Dance Vol.39\\117_ferry_corsten_-_fire.mp3",
+"objName":"117_ferry_corsten_-_fire.mp3",
+"objContent":""
+}
+,{
+"ContentType":"Audio",
+"ContentID":"A17",
+"SourceClassType":"DIR",
+"SourceClassName":"NAS|Musik2",
+"SourceClassGroup":"Audio",
+"SourceFileType":".mp3",
+"ContentTime":"635441238475600000",
+"ContentThumb":"http://localhost:9090/C:\\Users\\Phreak\\Desktop\\SearchServer2\\SearchServer\\bin\\Debug\\Temp\\Images\\2B1770B60100AE0AD73C737F42B5857E.jpg",
+"objLink":"http://localhost:9090/Y:\\Musik_Alt\\1000\\0976 - Ferry Aid - Let It Be.mp3",
+"objName":"0976 - Ferry Aid - Let It Be.mp3",
+"objContent":""
+}
+,{
+"ContentType":"Audio",
+"ContentID":"A18",
+"SourceClassType":"DIR",
+"SourceClassName":"NAS|Musik2",
+"SourceClassGroup":"Audio",
+"SourceFileType":".mp3",
+"ContentTime":"635509120542467940",
+"ContentThumb":"http://localhost:9090/C:\\Users\\Phreak\\Desktop\\SearchServer2\\SearchServer\\bin\\Debug\\Temp\\Images\\35951E9780D4C3E11982C84C7793561E.jpg",
+"objLink":"http://localhost:9090/Y:\\Musik_Alt\\Downloads\\Techno\\ferry corsten\\Ferry Corsten - Punk (Kid Vicious Rmx).mp3",
+"objName":"Ferry Corsten - Punk (Kid Vicious Rmx).mp3",
+"objContent":""
+}
+,{
+"ContentType":"Audio",
+"ContentID":"A19",
+"SourceClassType":"DIR",
+"SourceClassName":"NAS|Musik2",
+"SourceClassGroup":"Audio",
+"SourceFileType":".mp3",
+"ContentTime":"635441229887400000",
+"ContentThumb":"http://localhost:9090/C:\\Users\\Phreak\\Desktop\\SearchServer2\\SearchServer\\bin\\Debug\\Temp\\Images\\A47DC763DE23DAF9B6BA2E83EEDB5B74.jpg",
+"objLink":"http://localhost:9090/Y:\\Musik_Alt\\Downloads\\Techno\\ferry corsten\\ferry corsten - punk (cosmic gate remix).mp3",
+"objName":"ferry corsten - punk (cosmic gate remix).mp3",
+"objContent":""
+}
+,{
+"ContentType":"Audio",
+"ContentID":"A20",
+"SourceClassType":"DIR",
+"SourceClassName":"NAS|Musik2",
+"SourceClassGroup":"Audio",
+"SourceFileType":".mp3",
+"ContentTime":"635441229887800000",
+"ContentThumb":"http://localhost:9090/C:\\Users\\Phreak\\Desktop\\SearchServer2\\SearchServer\\bin\\Debug\\Temp\\Images\\D14D74F9412D1DDC8E1BA3BA3D779653.jpg",
+"objLink":"http://localhost:9090/Y:\\Musik_Alt\\Downloads\\Techno\\ferry corsten\\Ferry Corsten - Punk.mp3",
+"objName":"Ferry Corsten - Punk.mp3",
+"objContent":""
+}
+,{
+"ContentType":"Audio",
+"ContentID":"A21",
+"SourceClassType":"DIR",
+"SourceClassName":"NAS|Programme",
+"SourceClassGroup":"Programme",
+"SourceFileType":".mp3",
+"ContentTime":"635493533939700000",
+"ContentThumb":"http://localhost:9090/C:\\Users\\Phreak\\Desktop\\SearchServer2\\SearchServer\\bin\\Debug\\Temp\\Images\\C1F7CFD1F425F8C29F4A83510F697CCA.jpg",
+"objLink":"http://localhost:9090/Z:\\Programme\\01_Softwareentwicklung\\01_Eigene_Projekte\\01_Visual_Studio_Projekte\\EVAGUI2\\ALT\\EVAGui2_XX_2013\\EVAGui2\\bin\\Debug\\Modules\\MOD_Sprachausgabe2\\mp3\\NeuesLiedaufClubstreamClubFerryCorstenDiss!OriginalMix.mp3",
+"objName":"NeuesLiedaufClubstreamClubFerryCorstenDiss!OriginalMix.mp3",
+"objContent":""
+}
+,{
+"ContentType":"Audio",
+"ContentID":"A22",
+"SourceClassType":"DIR",
+"SourceClassName":"NAS|Programme",
+"SourceClassGroup":"Programme",
+"SourceFileType":".mp3",
+"ContentTime":"635493530751100000",
+"ContentThumb":"http://localhost:9090/C:\\Users\\Phreak\\Desktop\\SearchServer2\\SearchServer\\bin\\Debug\\Temp\\Images\\91B0AB3BB9D866FC813EFA099BC7270A.jpg",
+"objLink":"http://localhost:9090/Z:\\Programme\\01_Softwareentwicklung\\01_Eigene_Projekte\\01_Visual_Studio_Projekte\\EVAGUI2\\ALT\\EVAGui2_Letzes_Release\\EVAGui2\\bin\\Debug\\Modules\\MOD_Sprachausgabe2\\mp3\\NeuesLiedaufClubstreamClubMobyWhyDoesMyHeartFeelSoBadFerryCorstenRemix.mp3",
+"objName":"NeuesLiedaufClubstreamClubMobyWhyDoesMyHeartFeelSoBadFerryCorstenRemix.mp3",
+"objContent":""
+}
+,{
+"ContentType":"Audio",
+"ContentID":"A23",
+"SourceClassType":"DIR",
+"SourceClassName":"NAS|Programme",
+"SourceClassGroup":"Programme",
+"SourceFileType":".mp3",
+"ContentTime":"635493530687700000",
+"ContentThumb":"http://localhost:9090/C:\\Users\\Phreak\\Desktop\\SearchServer2\\SearchServer\\bin\\Debug\\Temp\\Images\\3B5CED4AC646A0B85195769F9885DB12.jpg",
+"objLink":"http://localhost:9090/Z:\\Programme\\01_Softwareentwicklung\\01_Eigene_Projekte\\01_Visual_Studio_Projekte\\EVAGUI2\\ALT\\EVAGui2_Letzes_Release\\EVAGui2\\bin\\Debug\\Modules\\MOD_Sprachausgabe2\\mp3\\NeuesLiedaufClubstreamClubFerryCorstenDiss!OriginalMix.mp3",
+"objName":"NeuesLiedaufClubstreamClubFerryCorstenDiss!OriginalMix.mp3",
+"objContent":""
+}
+,{
+"ContentType":"Audio",
+"ContentID":"A24",
+"SourceClassType":"DIR",
+"SourceClassName":"NAS|Programme",
+"SourceClassGroup":"Programme",
+"SourceFileType":".mp3",
+"ContentTime":"635493530687800000",
+"ContentThumb":"http://localhost:9090/C:\\Users\\Phreak\\Desktop\\SearchServer2\\SearchServer\\bin\\Debug\\Temp\\Images\\3620FBA34415B0952C5A77262025EC13.jpg",
+"objLink":"http://localhost:9090/Z:\\Programme\\01_Softwareentwicklung\\01_Eigene_Projekte\\01_Visual_Studio_Projekte\\EVAGUI2\\ALT\\EVAGui2_Letzes_Release\\EVAGui2\\bin\\Debug\\Modules\\MOD_Sprachausgabe2\\mp3\\NeuesLiedaufClubstreamClubFerryCorstenPunkSidneySamsonRemix.mp3",
+"objName":"NeuesLiedaufClubstreamClubFerryCorstenPunkSidneySamsonRemix.mp3",
+"objContent":""
+}
+]}

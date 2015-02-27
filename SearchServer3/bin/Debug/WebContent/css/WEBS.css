@@ -1,0 +1,55 @@
+body
+{
+	font-size: 18px;
+	font-family: Arial;
+}
+	
+div.fsb 
+{
+	border:2px solid #6688AA;
+	background-color:lightgrey;
+	height:15px;
+	padding:1px;
+	text-align:left;
+}
+ 
+div.fortschritt 
+{
+	background-color:#00F;
+	height:15px;
+	text-align:left;
+}
+  
+table
+{
+	background: #CCCCCC; 
+	cellspacing='0';
+	cellpadding='1';
+	border-collapse: collapsed;
+	border: 0px solid #6688AA;
+}
+
+th
+{
+	font: bold 0.7em  Arial, Verdana, sans-serif;
+	padding:3px 10px;
+	background-color:#6688AA;
+	border:0px none #6688AA;
+	text-align:center;
+	color:#FFFFFF;
+	Width=99%;
+}
+
+td
+{
+	font:normal 0.7em  Arial, Verdana, sans-serif;
+	padding:3px 3px;
+	border:0px solid #6688AA;
+	line-height:90%;
+	Width=250px;
+}
+
+tr
+{
+	Width=250px;
+}

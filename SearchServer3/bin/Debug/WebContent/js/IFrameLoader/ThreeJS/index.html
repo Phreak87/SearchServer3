@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+		<script 	type="text/javascript" 	src="Head.js"></script> 
+        <script>	
+			head.load(	"Three.js",
+						"plane.js",
+						"thingiview.js",
+						function(){
+							thingiurlbase = ".";
+							
+							var str = window.location.hash.substr(1);
+							var res = str.split("#");
+		
+							var el = document.createElement("div");
+							el.setAttribute("id", 'viewer');
+							document.body.appendChild(el);
+							
+							var thingiview = new Thingiview('viewer');
+							thingiview.initScene();
+							thingiview.loadSTL(res[0]);
+							// thingiview.setBackgroundColor('#ffffff');
+						});
+        </script>
+    </head>
+	
+    <body>
+
+	</body>
+</html>

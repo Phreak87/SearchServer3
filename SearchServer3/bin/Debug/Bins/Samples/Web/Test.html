@@ -1,0 +1,845 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>heise - YaCy 'Phreak': Search Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+  <meta name="Content-Language" content="English, Englisch" />
+  <meta name="keywords" content="YaCy HTTP search engine spider indexer java network open free download Mac Windows Linux Software development" />
+  <meta name="description" content="Software HTTP Freeware Home Page" />
+  <meta name="copyright" content="Michael Christen et al." />
+  
+  <!-- Bootstrap core CSS -->
+  <link href="/env/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/env/bootstrap/css/bootstrap-switch.min.css" rel="stylesheet">
+
+  <script src="/env/bootstrap/js/jquery.min.js"></script>
+  <script src="/env/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/env/bootstrap/js/docs.min.js"></script>
+  <script src="/env/bootstrap/js/bootstrap-switch.min.js"></script>
+  
+  <!-- Custom styles for this template, i.e. navigation (move this to base.css) -->
+  <link href="/env/bootstrap-base.css" rel="stylesheet">
+    
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="/env/bootstrap/js/html5shiv.js"></script>
+    <script src="/env/bootstrap/js/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- old css styles -->
+  <link rel="stylesheet" type="text/css" media="all" href="/env/base.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="/env/style.css" />
+  <!--[if lt IE 6]>
+   <link rel="stylesheet" type="text/css" media="screen" href="/env/oldie.css" />
+  <![endif]-->
+  <!--[if lte IE 6.0]>
+   <link rel="stylesheet" type="text/css" media="screen" href="/env/ie6.css" />
+  <![endif]-->
+  <!--[if lte IE 7.0]>
+   <link rel="stylesheet" type="text/css" media="screen" href="/env/ie7.css" />
+  <![endif]-->
+<!-- (C), Architecture: Michael Peter Christen; Contact: mc <at> yacy.net -->
+
+  <link rel="alternate" type="application/rss+xml" title="Search for heise" href="yacysearch.rss?query=heise" />
+  <link rel="search" type="application/opensearchdescription+xml" title="YaCy Search on 'Phreak'" href="http://localhost:8090/opensearchdescription.xml" />
+  <link rel="stylesheet" type="text/css" media="screen" href="env/highslide.css" />
+  <script type="text/javascript" src="js/ajax.js"></script>
+  <script type="text/javascript" src="js/xml.js"></script>
+  <script type="text/javascript" src="js/yacysearch.js"></script>
+  <script type="text/javascript" src="js/highslide/highslide.js"></script>
+  <script type="text/javascript">hs.outlineType = 'rounded-white';</script>
+
+  <script type="text/javascript">
+  function handleArrowKeys(evt) {
+    evt = (evt) ? evt : ((window.event) ? event : null);
+    if (evt) {
+        switch (evt.keyCode) {
+            case 9:
+            case 33:
+                window.location.href = document.getElementById("nextpage").href;
+                break;
+            case 34:
+                window.location.href = document.getElementById("prevpage").href;
+                break;
+            case 40:
+         }
+    }
+  }
+  document.onkeydown = handleArrowKeys;
+  </script>
+  <script type="text/javascript" src="/env/bootstrap/js/typeahead.jquery.min.js"></script>
+  <script type="text/javascript">
+     var suggestMatcher = function() {
+       return function opensearch(q, cb) {
+       	 $.getJSON("suggest.json?q=" + q, function(data) {
+           	var parsed = [];
+            for (var i = 0; i < data[1].length; i++) {
+                var row = data[1][i];
+                if (row) {
+                    parsed[parsed.length] = {
+                        data: [row],
+                        value: row,
+                        result: row
+                    };  
+                };
+            };
+            cb(parsed); 
+          });
+        };
+      };     
+    $(document).ready(function() {
+      $('#search').typeahead({hint:false,highlight:true,minLength:1}, {
+    	name: 'states',
+    	displayKey: 'value',
+    	source: suggestMatcher()
+      });
+    });
+  </script>
+  <style type="text/css">.twitter-typeahead {margin: 0px;padding: 0px;top:2px;}</style> <!-- fix for input window -->
+</head>
+<body id="yacysearch" onLoad="document.searchform.query.focus();">
+
+    
+    <!-- top navigation -->
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" id="navbar-brand" href="http://yacy.net" style="position:absolute;top:-6px;display:inline;white-space:nowrap;">
+        <img id="greeting-icon" class="yacylogo" src="/env/grafics/YaCyLogo_60ppi.png" style="height:auto; width:auto; max-width:200px; max-height:32px;vertical-align:middle">&nbsp;<span id="greeting"></span>
+      </a>
+    </div>
+    <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li id="header_search" class="dropdown">
+        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Search Interfaces<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li id="header_websearch"><a href="index.html" onclick="this.href='/index.html?handover='+document.searchform.search.value">Web Search</a></li>
+          <li id="header_filesearch"><a href="yacyinteractive.html" onclick="this.href='/yacyinteractive.html?handover='+document.searchform.search.value">File Search</a></li>
+          <li id="header_comparesearch"><a href="/compare_yacy.html?display=0">Compare Search</a></li>
+          <li id="header_hostbrowser"><a href="HostBrowser.html?hosts=">Index Browser</a></li>
+          <li id="header_urlviewer"><a href="ViewFile.html">URL Viewer</a></li>
+          <!--<li><a href="yacysearch_location.html">Location Search</a></li>-->
+          <li class="divider"></li>
+          <li>&nbsp;&nbsp;<i>Example Calls to the Search API:</i></li>
+          <li><a href="/yacysearch.json?query=www" target="_blank"><i>API</i>&nbsp;&nbsp;&nbsp;YaCy JSON</a></li>
+          <li><a href="/yacysearch.rss?query=www" target="_blank"><i>API</i>&nbsp;&nbsp;&nbsp;YaCy RSS/Opensearch</a></li>
+          <li><a href="/solr/select?hl=false&wt=opensearch&facet=true&facet.mincount=1&facet.field=url_file_ext_s&start=0&rows=10&sort=load_date_dt+desc&q=description_txt:[* TO *]" target="_blank"><i>API</i>&nbsp;&nbsp;&nbsp;Solr RSS/Opensearch</a></li>
+          <li><a href="/solr/select?hl=false&wt=yjson&facet=true&facet.mincount=1&facet.field=url_file_ext_s&start=0&rows=10&query=www" target="_blank"><i>API</i>&nbsp;&nbsp;&nbsp;Solr Default Core / JSON</a></li>
+          <li><a href="/solr/collection1/select?q=*:*&defType=edismax&start=0&rows=3" target="_blank"><i>API</i>&nbsp;&nbsp;&nbsp;Solr Default Core / XML</a></li>
+          <li><a href="/solr/webgraph/select?q=*:*&defType=edismax&start=0&rows=3" target="_blank"><i>API</i>&nbsp;&nbsp;&nbsp;Solr Webgraph Core / XML</a></li>
+          <li><a href="/gsa/search?q=www&num=3" target="_blank"><i>API</i>&nbsp;&nbsp;&nbsp;Google Appliance API / XML</a></li>
+        </ul>
+      </li>
+      <li id="header_help" class="dropdown">
+        <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="glyphicon glyphicon-question-sign"></span></a>
+        <ul class="dropdown-menu">
+          <li id="header_profile"><a href="ViewProfile.html?hash=localhash">About This Page</a></li>
+          <li id="header_tutorial"><a href="http://yacy.net/tutorials/">YaCy Tutorials</a></li>
+          <li class="divider"></li>
+          <li id="header_tutorial"><a href="http://yacy.net" target="_blank"><i>external</i>&nbsp;&nbsp;&nbsp;Download YaCy</a></li>
+          <li id="header_tutorial"><a href="http://forum.yacy.de" target="_blank"><i>external</i>&nbsp;&nbsp;&nbsp;Community (Web Forums)</a></li>
+          <li id="header_tutorial"><a href="http://wiki.yacy.de" target="_blank"><i>external</i>&nbsp;&nbsp;&nbsp;Project Wiki</a></li>
+          <li id="header_tutorial"><a href="https://gitorious.org/yacy/rc1/commits/master" target="_blank"><i>external</i>&nbsp;&nbsp;&nbsp;Git Repository</a></li>
+          <li id="header_tutorial"><a href="http://bugs.yacy.net" target="_blank"><i>external</i>&nbsp;&nbsp;&nbsp;Bugtracker</a></li>
+        </ul>
+      </li>
+      <li id="header_administration">
+        <form action="/Status.html" method="get" role="form">
+          <button accesskey="s" type="submit" class="btn btn-default navbar-btn"><span class="glyphicon glyphicon-cog"></span> Administration &raquo;</button>
+        </form>
+      </li>
+    </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="starter-template">
+  
+
+    <script type="text/javascript">
+      document.getElementById("header_websearch").className += " active";
+    </script>
+    
+        
+<div id="api" style="top:58px;">
+<script type="text/javascript">
+//<![CDATA[
+document.write("\<a href=\"yacysearch.rss?" + window.location.search.substring(1) + "\" id=\"apilink\" target=\"_blank\"\><img src=\"env/grafics/rss.png\" width=\"32\" height=\"32\" alt=\"RSS\" /></a>")
+//]]>
+</script>
+<span>This search result can also be retrieved as RSS/<a href="http://www.opensearch.org" target="_blank">opensearch</a> output.
+Click the RSS icon to see this search result as RSS message stream.
+Use the RSS search result format to add static searches to your RSS reader, if you use one.</span>
+</div>
+
+
+<!-- body -->
+</div> <!-- close the starter-template, to open a row -->
+
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-4 col-md-9 col-md-offset-3 main">
+
+<form class="search small" name="searchform" action="" method="get" accept-charset="UTF-8" style="position:fixed;top:8px;z-index:1052;max-width:500px;">
+  
+  <div class="input-group">
+    <input type="text" class="form-control searchinput typeahead" size="40" maxlength="200" placeholder="Web Search by the People, for the People" name="query" value="heise" autofocus="autofocus" onFocus="this.select()" id="search" onclick="document.getElementById('Enter').innerHTML = 'search'"/>
+    <div class="input-group-btn">
+       <button id="Enter" class="btn btn-default" type="submit">search</button>
+    </div>
+  </div>
+    <input type="hidden" name="contentdom" id="contentdom" value="text" />
+    <input type="hidden" name="former" value="heise" />
+    <input type="hidden" name="maximumRecords" value="10" />
+    <input type="hidden" name="startRecord" id="startRecord" value="0" />
+    <input type="hidden" name="verify" value="ifexist" />
+    <input type="hidden" name="resource" id="resource" value="global" />
+    <input type="hidden" name="nav" value="location,hosts,authors,namespace,topics,filetype,protocol,language" />
+    <input type="hidden" name="prefermaskfilter" value="" />
+    <input type="hidden" name="depth" value="0" />
+    <input type="hidden" name="constraint" value="" />
+    <input type="hidden" name="meanCount" value="5" />
+</form>
+
+<!-- type the number of results and navigation bar -->
+
+	<div id="results"></div>
+    <div class="progress">
+      <div class="progress-bar progress-bar-info" id="progressbar" role="progressbar" style="width:0%;">
+        <span style="position:absolute;display:block;text-align:left;width:100%;color:black;">&nbsp;&nbsp;&nbsp;<strong id="offset">0</strong>-<strong id="itemscount">0</strong> of <strong id="totalcount">0</strong> ; (<strong id="localResourceSize">0</strong> local, <strong id="remoteResourceSize">0</strong> remote), <strong id="remoteIndexCount">0</strong> from <strong id="remotePeerCount">0</strong> remote YaCy peers.</span>
+      </div>
+    </div>
+	
+
+
+
+
+
+
+<p><b>Did you mean:</b>  <a href="/yacysearch.html?query=heise http www domengo de&maximumRecords=10&resource=global&verify=ifexist&prefermaskfilter=&cat=href&constraint=&contentdom=text&former=heise&startRecord=0">heise http www domengo de</a> | <a href="/yacysearch.html?query=heise Whitepapers&maximumRecords=10&resource=global&verify=ifexist&prefermaskfilter=&cat=href&constraint=&contentdom=text&former=heise&startRecord=0">heise Whitepapers</a> | <a href="/yacysearch.html?query=heise Security&maximumRecords=10&resource=global&verify=ifexist&prefermaskfilter=&cat=href&constraint=&contentdom=text&former=heise&startRecord=0">heise Security</a> | <a href="/yacysearch.html?query=heise resale&maximumRecords=10&resource=global&verify=ifexist&prefermaskfilter=&cat=href&constraint=&contentdom=text&former=heise&startRecord=0">heise resale</a> | <a href="/yacysearch.html?query=heise online&maximumRecords=10&resource=global&verify=ifexist&prefermaskfilter=&cat=href&constraint=&contentdom=text&former=heise&startRecord=0">heise online</a> </p>
+
+
+
+<script type="text/javascript">
+document.getElementById("Enter").innerHTML = "search again";
+</script>
+
+
+<!-- show information about search key handling -->
+
+	
+
+
+<!-- show openstreetmap tiles if geoinfo was found -->
+
+    
+
+<!-- linklist begin -->
+
+
+  <div class="searchresults">
+  <h4 class="linktitle">
+  <img width="16" height="16" src="ViewImage.png?width=16&amp;height=16&amp;code=GZ0IQQP290EA&amp;isStatic=true" id="fWMVBSAP290EA" class="favicon" style="width:16px; height:16px;" alt="" />
+  <a href="http://www.heise.de/download/heise-register-1188587.html" target="_self">Heise-Register - Download - heise online</a></h4>
+  <div class="urlactions">
+    
+    
+    
+      <a href="yacysearch.html?query=heise&amp;Enter=Search&amp;count=10&amp;offset=0&amp;resource=global&amp;time=3&amp;bookmarkref=WMVBSAP290EA&amp;bookmarkurl=b&#124;aHR0cDovL3d3dy5oZWlzZS5kZS9kb3dubG9hZC9oZWlzZS1yZWdpc3Rlci0xMTg4NTg3Lmh0bWw&amp;urlmaskfilter=.*" class="bookmarklink" title="recommend"><img width="11" height="11" src="env/grafics/empty.gif" title="bookmark" alt="bookmark" class="recommendIcon" /></a>
+    
+    
+      <a href="yacysearch.html?query=heise&amp;Enter=Search&amp;count=10&amp;offset=0&amp;order=b&#124;e2FwcGVtcGg9NSwgYXBwdXJsPTEyLCBhcHBhdXRob3I9MSwgYXBwcmVmPTEwLCBhcHB0YWdzPTIsIGFwcGRlc2NyPTE0LCBhdXRob3JpdHk9NSwgY2F0aGFzYXBwPTAsIGNhdGhhc2F1ZGlvPTAsIGNhdGhhc2ltYWdlPTAsIGNhdGhhc3ZpZGVvPTAsIGNhdGluZGV4b2Y9MCwgZGF0ZT05LCBkb21sZW5ndGg9MTAsIGhpdGNvdW50PTEsIGxhbmd1YWdlPTIsIGxsb2NhbD0wLCBsb3RoZXI9NywgcGhyYXNlc2ludGV4dD0wLCBwb3NpbnBocmFzZT0wLCBwb3NpbnRleHQ9NCwgcG9zb2ZwaHJhc2U9MCwgdGY9OCwgdXJsY29tcHM9NywgdXJsbGVuZ3RoPTYsIHdvcmRkaXN0YW5jZT0xMCwgd29yZHNpbnRleHQ9Mywgd29yZHNpbnRpdGxlPTIsIHVybGNvbXBpbnRvcGxpc3Q9MiwgZGVzY3Jjb21waW50b3BsaXN0PTIsIHByZWZlcj0wLCBjaXRhdGlvbj0xMH0&amp;resource=global&amp;time=3&amp;recommendref=WMVBSAP290EA&amp;urlmaskfilter=.*" class="recommendlink" title="recommend"><img width="11" height="11" src="env/grafics/empty.gif" title="recommend" alt="recommend" class="recommendIcon" /></a>
+      <a href="yacysearch.html?query=heise&amp;Enter=Search&amp;count=10&amp;offset=0&amp;order=b&#124;e2FwcGVtcGg9NSwgYXBwdXJsPTEyLCBhcHBhdXRob3I9MSwgYXBwcmVmPTEwLCBhcHB0YWdzPTIsIGFwcGRlc2NyPTE0LCBhdXRob3JpdHk9NSwgY2F0aGFzYXBwPTAsIGNhdGhhc2F1ZGlvPTAsIGNhdGhhc2ltYWdlPTAsIGNhdGhhc3ZpZGVvPTAsIGNhdGluZGV4b2Y9MCwgZGF0ZT05LCBkb21sZW5ndGg9MTAsIGhpdGNvdW50PTEsIGxhbmd1YWdlPTIsIGxsb2NhbD0wLCBsb3RoZXI9NywgcGhyYXNlc2ludGV4dD0wLCBwb3NpbnBocmFzZT0wLCBwb3NpbnRleHQ9NCwgcG9zb2ZwaHJhc2U9MCwgdGY9OCwgdXJsY29tcHM9NywgdXJsbGVuZ3RoPTYsIHdvcmRkaXN0YW5jZT0xMCwgd29yZHNpbnRleHQ9Mywgd29yZHNpbnRpdGxlPTIsIHVybGNvbXBpbnRvcGxpc3Q9MiwgZGVzY3Jjb21waW50b3BsaXN0PTIsIHByZWZlcj0wLCBjaXRhdGlvbj0xMH0&amp;resource=global&amp;time=3&amp;deleteref=WMVBSAP290EA&amp;urlmaskfilter=.*" title="delete" class="deletelink" ><img width="11" height="11" src="env/grafics/empty.gif" title="delete" alt="delete" class="deleteIcon" /></a>
+    
+    
+  </div>
+  <p class="snippet"><span class="snippetLoaded" id="hWMVBSAP290EA">Download: <b>Heise</b>-Register 3.00, kostenlos (Deutsch). Das <b>Heise</b>-Register ist das "offizielle" Gesamtregister der <b>Heise</b>-Fachzeitschriften c't (ab 12/83) und iX...</span></p>
+  <p class="url"><a href="http://www.heise.de/download/heise-register-1188587.html" id="urlWMVBSAP290EA" target="_self">http://www.heise.de/download/heise-register-1188587.html</a></p>
+  <p class="urlinfo">
+  Tue, 02 Dec 2014
+  
+  
+  
+  &nbsp;|&nbsp;<a href="api/citation.html?hash=WMVBSAP290EA&filter=true" target="_blank">Citations</a>
+  
+  
+  
+  &nbsp;|&nbsp;<a href="HostBrowser.html?path=http://www.heise.de/download/heise-register-1188587.html"><img src="env/grafics/minitree.png" width="15" height="8"/></a>
+  
+  </p>
+  </div>
+  
+
+<script type="text/javascript">
+statistics("1", "0", "10", "0", "0", "0", "0", "0", "/yacysearch.html?query=heise&maximumRecords=10&resource=global&verify=ifexist&prefermaskfilter=&cat=href&constraint=&contentdom=text&former=heise");
+</script>
+
+
+
+  <div class="searchresults">
+  <h4 class="linktitle">
+  <img width="16" height="16" src="ViewImage.png?width=16&amp;height=16&amp;code=GZ0IQQP290EA&amp;isStatic=true" id="fyTA93wP290EA" class="favicon" style="width:16px; height:16px;" alt="" />
+  <a href="http://www.heise.de/mediadaten/online/preise/" target="_self">Heise Zeitschriften Verlag - Mediadaten - heise online (Preisliste heise online)</a></h4>
+  <div class="urlactions">
+    
+    
+    
+      <a href="yacysearch.html?query=heise&amp;Enter=Search&amp;count=10&amp;offset=0&amp;resource=global&amp;time=3&amp;bookmarkref=yTA93wP290EA&amp;bookmarkurl=b&#124;aHR0cDovL3d3dy5oZWlzZS5kZS9tZWRpYWRhdGVuL29ubGluZS9wcmVpc2Uv&amp;urlmaskfilter=.*" class="bookmarklink" title="recommend"><img width="11" height="11" src="env/grafics/empty.gif" title="bookmark" alt="bookmark" class="recommendIcon" /></a>
+    
+    
+      <a href="yacysearch.html?query=heise&amp;Enter=Search&amp;count=10&amp;offset=0&amp;order=b&#124;e2FwcGVtcGg9NSwgYXBwdXJsPTEyLCBhcHBhdXRob3I9MSwgYXBwcmVmPTEwLCBhcHB0YWdzPTIsIGFwcGRlc2NyPTE0LCBhdXRob3JpdHk9NSwgY2F0aGFzYXBwPTAsIGNhdGhhc2F1ZGlvPTAsIGNhdGhhc2ltYWdlPTAsIGNhdGhhc3ZpZGVvPTAsIGNhdGluZGV4b2Y9MCwgZGF0ZT05LCBkb21sZW5ndGg9MTAsIGhpdGNvdW50PTEsIGxhbmd1YWdlPTIsIGxsb2NhbD0wLCBsb3RoZXI9NywgcGhyYXNlc2ludGV4dD0wLCBwb3NpbnBocmFzZT0wLCBwb3NpbnRleHQ9NCwgcG9zb2ZwaHJhc2U9MCwgdGY9OCwgdXJsY29tcHM9NywgdXJsbGVuZ3RoPTYsIHdvcmRkaXN0YW5jZT0xMCwgd29yZHNpbnRleHQ9Mywgd29yZHNpbnRpdGxlPTIsIHVybGNvbXBpbnRvcGxpc3Q9MiwgZGVzY3Jjb21waW50b3BsaXN0PTIsIHByZWZlcj0wLCBjaXRhdGlvbj0xMH0&amp;resource=global&amp;time=3&amp;recommendref=yTA93wP290EA&amp;urlmaskfilter=.*" class="recommendlink" title="recommend"><img width="11" height="11" src="env/grafics/empty.gif" title="recommend" alt="recommend" class="recommendIcon" /></a>
+      <a href="yacysearch.html?query=heise&amp;Enter=Search&amp;count=10&amp;offset=0&amp;order=b&#124;e2FwcGVtcGg9NSwgYXBwdXJsPTEyLCBhcHBhdXRob3I9MSwgYXBwcmVmPTEwLCBhcHB0YWdzPTIsIGFwcGRlc2NyPTE0LCBhdXRob3JpdHk9NSwgY2F0aGFzYXBwPTAsIGNhdGhhc2F1ZGlvPTAsIGNhdGhhc2ltYWdlPTAsIGNhdGhhc3ZpZGVvPTAsIGNhdGluZGV4b2Y9MCwgZGF0ZT05LCBkb21sZW5ndGg9MTAsIGhpdGNvdW50PTEsIGxhbmd1YWdlPTIsIGxsb2NhbD0wLCBsb3RoZXI9NywgcGhyYXNlc2ludGV4dD0wLCBwb3NpbnBocmFzZT0wLCBwb3NpbnRleHQ9NCwgcG9zb2ZwaHJhc2U9MCwgdGY9OCwgdXJsY29tcHM9NywgdXJsbGVuZ3RoPTYsIHdvcmRkaXN0YW5jZT0xMCwgd29yZHNpbnRleHQ9Mywgd29yZHNpbnRpdGxlPTIsIHVybGNvbXBpbnRvcGxpc3Q9MiwgZGVzY3Jjb21waW50b3BsaXN0PTIsIHByZWZlcj0wLCBjaXRhdGlvbj0xMH0&amp;resource=global&amp;time=3&amp;deleteref=yTA93wP290EA&amp;urlmaskfilter=.*" title="delete" class="deletelink" ><img width="11" height="11" src="env/grafics/empty.gif" title="delete" alt="delete" class="deleteIcon" /></a>
+    
+    
+  </div>
+  <p class="snippet"><span class="snippetLoaded" id="hyTA93wP290EA"><b>Heise</b> Zeitschriften Verlag   Mediadaten   <b>heise</b> online (Preisliste <b>heise</b> online). http www <b>heise</b> de mediadaten online preise.</span></p>
+  <p class="url"><a href="http://www.heise.de/mediadaten/online/preise/" id="urlyTA93wP290EA" target="_self">http://www.heise.de/mediadaten/online/preise/</a></p>
+  <p class="urlinfo">
+  Thu, 07 Aug 2014
+  
+  
+  
+  &nbsp;|&nbsp;<a href="api/citation.html?hash=yTA93wP290EA&filter=true" target="_blank">Citations</a>
+  
+  
+  
+  &nbsp;|&nbsp;<a href="HostBrowser.html?path=http://www.heise.de/mediadaten/online/preise/"><img src="env/grafics/minitree.png" width="15" height="8"/></a>
+  
+  </p>
+  </div>
+  
+
+<script type="text/javascript">
+statistics("1", "2", "10", "1,457", "1,909", "0", "0", "0", "/yacysearch.html?query=heise&maximumRecords=10&resource=global&verify=ifexist&prefermaskfilter=&cat=href&constraint=&contentdom=text&former=heise");
+</script>
+
+
+
+  <div class="searchresults">
+  <h4 class="linktitle">
+  <img width="16" height="16" src="ViewImage.png?width=16&amp;height=16&amp;code=GZ0IQQP290EA&amp;isStatic=true" id="f6odoCxP290EA" class="favicon" style="width:16px; height:16px;" alt="" />
+  <a href="http://www.heise.de/newsticker/meldung/Neuer-Service-heise-Video-1581168.html" target="_self">Neuer Service: heise Video &#124; heise online</a></h4>
+  <div class="urlactions">
+    
+    
+    
+      <a href="yacysearch.html?query=heise&amp;Enter=Search&amp;count=10&amp;offset=0&amp;resource=global&amp;time=3&amp;bookmarkref=6odoCxP290EA&amp;bookmarkurl=b&#124;aHR0cDovL3d3dy5oZWlzZS5kZS9uZXdzdGlja2VyL21lbGR1bmcvTmV1ZXItU2VydmljZS1oZWlzZS1WaWRlby0xNTgxMTY4Lmh0bWw&amp;urlmaskfilter=.*" class="bookmarklink" title="recommend"><img width="11" height="11" src="env/grafics/empty.gif" title="bookmark" alt="bookmark" class="recommendIcon" /></a>
+    
+    
+      <a href="yacysearch.html?query=heise&amp;Enter=Search&amp;count=10&amp;offset=0&amp;order=b&#124;e2FwcGVtcGg9NSwgYXBwdXJsPTEyLCBhcHBhdXRob3I9MSwgYXBwcmVmPTEwLCBhcHB0YWdzPTIsIGFwcGRlc2NyPTE0LCBhdXRob3JpdHk9NSwgY2F0aGFzYXBwPTAsIGNhdGhhc2F1ZGlvPTAsIGNhdGhhc2ltYWdlPTAsIGNhdGhhc3ZpZGVvPTAsIGNhdGluZGV4b2Y9MCwgZGF0ZT05LCBkb21sZW5ndGg9MTAsIGhpdGNvdW50PTEsIGxhbmd1YWdlPTIsIGxsb2NhbD0wLCBsb3RoZXI9NywgcGhyYXNlc2ludGV4dD0wLCBwb3NpbnBocmFzZT0wLCBwb3NpbnRleHQ9NCwgcG9zb2ZwaHJhc2U9MCwgdGY9OCwgdXJsY29tcHM9NywgdXJsbGVuZ3RoPTYsIHdvcmRkaXN0YW5jZT0xMCwgd29yZHNpbnRleHQ9Mywgd29yZHNpbnRpdGxlPTIsIHVybGNvbXBpbnRvcGxpc3Q9MiwgZGVzY3Jjb21waW50b3BsaXN0PTIsIHByZWZlcj0wLCBjaXRhdGlvbj0xMH0&amp;resource=global&amp;time=3&amp;recommendref=6odoCxP290EA&amp;urlmaskfilter=.*" class="recommendlink" title="recommend"><img width="11" height="11" src="env/grafics/empty.gif" title="recommend" alt="recommend" class="recommendIcon" /></a>
+      <a href="yacysearch.html?query=heise&amp;Enter=Search&amp;count=10&amp;offset=0&amp;order=b&#124;e2FwcGVtcGg9NSwgYXBwdXJsPTEyLCBhcHBhdXRob3I9MSwgYXBwcmVmPTEwLCBhcHB0YWdzPTIsIGFwcGRlc2NyPTE0LCBhdXRob3JpdHk9NSwgY2F0aGFzYXBwPTAsIGNhdGhhc2F1ZGlvPTAsIGNhdGhhc2ltYWdlPTAsIGNhdGhhc3ZpZGVvPTAsIGNhdGluZGV4b2Y9MCwgZGF0ZT05LCBkb21sZW5ndGg9MTAsIGhpdGNvdW50PTEsIGxhbmd1YWdlPTIsIGxsb2NhbD0wLCBsb3RoZXI9NywgcGhyYXNlc2ludGV4dD0wLCBwb3NpbnBocmFzZT0wLCBwb3NpbnRleHQ9NCwgcG9zb2ZwaHJhc2U9MCwgdGY9OCwgdXJsY29tcHM9NywgdXJsbGVuZ3RoPTYsIHdvcmRkaXN0YW5jZT0xMCwgd29yZHNpbnRleHQ9Mywgd29yZHNpbnRpdGxlPTIsIHVybGNvbXBpbnRvcGxpc3Q9MiwgZGVzY3Jjb21waW50b3BsaXN0PTIsIHByZWZlcj0wLCBjaXRhdGlvbj0xMH0&amp;resource=global&amp;time=3&amp;deleteref=6odoCxP290EA&amp;urlmaskfilter=.*" title="delete" class="deletelink" ><img width="11" height="11" src="env/grafics/empty.gif" title="delete" alt="delete" class="deleteIcon" /></a>
+    
+    
+  </div>
+  <p class="snippet"><span class="snippetLoaded" id="h6odoCxP290EA">Einloggen auf <b>heise</b> online Menü auf /zuklappen News t iX Technology Review Mac & i Telepolis t Hacks Digitale Fotografie <b>heise</b> Autos <b>heise</b> Developer <b>heise</b> Foto <b>heise</b> Netze <b>heise</b> Open Source <b>heise</b> Security <b>heise</b> Video TechStage Download Preisvergleich Stellenmarkt Veranstaltungen IT Markt Whitepapers Webcasts Tarifrechner <b>heise</b> shop Artikel Archiv Zeitschriften Abo Arbeiten bei <b>heise</b> News Newsticker 7 Tage News Archiv Foren RSS Newsletter Google+ Facebook Twitter Kontakt Topthemen: Rosetta Windows 10 NSA iPhone 6 Android Oculus Rift VDSL Vectoring <b>heise</b> online News 2012 KW 21 Neuer Service: <b>heise</b> Video « Vorige | Nächste » 2012 06 Neuer Service: <b>heise</b> Video</span></p>
+  <p class="url"><a href="http://www.heise.de/newsticker/meldung/Neuer-Service-heise-Video-1581168.html" id="url6odoCxP290EA" target="_self">http://www.heise.de/newsticker/meldung/Neuer-Service-heise-Video-1581168.html</a></p>
+  <p class="urlinfo">
+  Tue, 22 May 2012
+  
+  
+  
+  &nbsp;|&nbsp;<a href="api/citation.html?hash=6odoCxP290EA&filter=true" target="_blank">Citations</a>
+  
+  
+  
+  &nbsp;|&nbsp;<a href="HostBrowser.html?path=http://www.heise.de/newsticker/meldung/Neuer-Service-heise-Video-1581168.html"><img src="env/grafics/minitree.png" width="15" height="8"/></a>
+  
+  </p>
+  </div>
+  
+
+<script type="text/javascript">
+statistics("1", "3", "10", "1,909", "1,909", "0", "0", "0", "/yacysearch.html?query=heise&maximumRecords=10&resource=global&verify=ifexist&prefermaskfilter=&cat=href&constraint=&contentdom=text&former=heise");
+</script>
+
+
+
+  <div class="searchresults">
+  <h4 class="linktitle">
+  <img width="16" height="16" src="ViewImage.png?width=16&amp;height=16&amp;code=dJVOXhSLiQSg&amp;isStatic=true" id="fi3MEghSLiQSg" class="favicon" style="width:16px; height:16px;" alt="" />
+  <a href="https://abo.heise.de/" target="_self">IT und Technologie Zeitschriften Abos direkt vom Verlag &#124; shop @ Heise Zeitschriften Verlag</a></h4>
+  <div class="urlactions">
+    
+    
+    
+      <a href="yacysearch.html?query=heise&amp;Enter=Search&amp;count=10&amp;offset=0&amp;resource=global&amp;time=3&amp;bookmarkref=i3MEghSLiQSg&amp;bookmarkurl=b&#124;aHR0cHM6Ly9hYm8uaGVpc2UuZGUv&amp;urlmaskfilter=.*" class="bookmarklink" title="recommend"><img width="11" height="11" src="env/grafics/empty.gif" title="bookmark" alt="bookmark" class="recommendIcon" /></a>
+    
+    
+      <a href="yacysearch.html?query=heise&amp;Enter=Search&amp;count=10&amp;offset=0&amp;order=b&#124;e2FwcGVtcGg9NSwgYXBwdXJsPTEyLCBhcHBhdXRob3I9MSwgYXBwcmVmPTEwLCBhcHB0YWdzPTIsIGFwcGRlc2NyPTE0LCBhdXRob3JpdHk9NSwgY2F0aGFzYXBwPTAsIGNhdGhhc2F1ZGlvPTAsIGNhdGhhc2ltYWdlPTAsIGNhdGhhc3ZpZGVvPTAsIGNhdGluZGV4b2Y9MCwgZGF0ZT05LCBkb21sZW5ndGg9MTAsIGhpdGNvdW50PTEsIGxhbmd1YWdlPTIsIGxsb2NhbD0wLCBsb3RoZXI9NywgcGhyYXNlc2ludGV4dD0wLCBwb3NpbnBocmFzZT0wLCBwb3NpbnRleHQ9NCwgcG9zb2ZwaHJhc2U9MCwgdGY9OCwgdXJsY29tcHM9NywgdXJsbGVuZ3RoPTYsIHdvcmRkaXN0YW5jZT0xMCwgd29yZHNpbnRleHQ9Mywgd29yZHNpbnRpdGxlPTIsIHVybGNvbXBpbnRvcGxpc3Q9MiwgZGVzY3Jjb21waW50b3BsaXN0PTIsIHByZWZlcj0wLCBjaXRhdGlvbj0xMH0&amp;resource=global&amp;time=3&amp;recommendref=i3MEghSLiQSg&amp;urlmaskfilter=.*" class="recommendlink" title="recommend"><img width="11" height="11" src="env/grafics/empty.gif" title="recommend" alt="recommend" class="recommendIcon" /></a>
+      <a href="yacysearch.html?query=heise&amp;Enter=Search&amp;count=10&amp;offset=0&amp;order=b&#124;e2FwcGVtcGg9NSwgYXBwdXJsPTEyLCBhcHBhdXRob3I9MSwgYXBwcmVmPTEwLCBhcHB0YWdzPTIsIGFwcGRlc2NyPTE0LCBhdXRob3JpdHk9NSwgY2F0aGFzYXBwPTAsIGNhdGhhc2F1ZGlvPTAsIGNhdGhhc2ltYWdlPTAsIGNhdGhhc3ZpZGVvPTAsIGNhdGluZGV4b2Y9MCwgZGF0ZT05LCBkb21sZW5ndGg9MTAsIGhpdGNvdW50PTEsIGxhbmd1YWdlPTIsIGxsb2NhbD0wLCBsb3RoZXI9NywgcGhyYXNlc2ludGV4dD0wLCBwb3NpbnBocmFzZT0wLCBwb3NpbnRleHQ9NCwgcG9zb2ZwaHJhc2U9MCwgdGY9OCwgdXJsY29tcHM9NywgdXJsbGVuZ3RoPTYsIHdvcmRkaXN0YW5jZT0xMCwgd29yZHNpbnRleHQ9Mywgd29yZHNpbnRpdGxlPTIsIHVybGNvbXBpbnRvcGxpc3Q9MiwgZGVzY3Jjb21waW50b3BsaXN0PTIsIHByZWZlcj0wLCBjaXRhdGlvbj0xMH0&amp;resource=global&amp;time=3&amp;deleteref=i3MEghSLiQSg&amp;urlmaskfilter=.*" title="delete" class="deletelink" ><img width="11" height="11" src="env/grafics/empty.gif" title="delete" alt="delete" class="deleteIcon" /></a>
+    
+    
+  </div>
+  <p class="snippet"><span class="snippetLoaded" id="hi3MEghSLiQSg">IT und Technologie Zeitschriften Abos direkt vom Verlag | shop @ <b>Heise</b> Zeitschriften Verlag. JavaScript. scheint in Ihrem Browser deaktiviert zu sein.</span></p>
+  <p class="url"><a href="https://abo.heise.de/" id="urli3MEghSLiQSg" target="_self">https://abo.heise.de/</a></p>
+  <p class="urlinfo">
+  Tue, 17 Feb 2015
+  
+  
+  
+  &nbsp;|&nbsp;<a href="api/citation.html?hash=i3MEghSLiQSg&filter=true" target="_blank">Citations</a>
+  
+  &nbsp;|&nbsp;<a href="CacheResource_p.html?url=https://abo.heise.de/" target="_blank">Cache</a>
+  
+  &nbsp;|&nbsp;<a href="HostBrowser.html?path=https://abo.heise.de/"><img src="env/grafics/minitree.png" width="15" height="8"/></a>
+  
+  </p>
+  </div>
+  
+
+<script type="text/javascript">
+statistics("1", "4", "10", "1,909", "1,909", "0", "0", "0", "/yacysearch.html?query=heise&maximumRecords=10&resource=global&verify=ifexist&prefermaskfilter=&cat=href&constraint=&contentdom=text&former=heise");
+</script>
+
+
+
+  <div class="searchresults">
+  <h4 class="linktitle">
+  <img width="16" height="16" src="ViewImage.png?width=16&amp;height=16&amp;code=GZ0IQQP290EA&amp;isStatic=true" id="fRmEt8AP290EA" class="favicon" style="width:16px; height:16px;" alt="" />
+  <a href="http://www.heise.de/download/heise-news-ticker-1111413.html" target="_self">Heise News Ticker - Download - heise online</a></h4>
+  <div class="urlactions">
+    
+    
+    
+      <a href="yacysearch.html?query=heise&amp;Enter=Search&amp;count=10&amp;offset=0&amp;resource=global&amp;time=3&amp;bookmarkref=RmEt8AP290EA&amp;bookmarkurl=b&#124;aHR0cDovL3d3dy5oZWlzZS5kZS9kb3dubG9hZC9oZWlzZS1uZXdzLXRpY2tlci0xMTExNDEzLmh0bWw&amp;urlmaskfilter=.*" class="bookmarklink" title="recommend"><img width="11" height="11" src="env/grafics/empty.gif" title="bookmark" alt="bookmark" class="recommendIcon" /></a>
+    
+    
+      <a href="yacysearch.html?query=heise&amp;Enter=Search&amp;count=10&amp;offset=0&amp;order=b&#124;e2FwcGVtcGg9NSwgYXBwdXJsPTEyLCBhcHBhdXRob3I9MSwgYXBwcmVmPTEwLCBhcHB0YWdzPTIsIGFwcGRlc2NyPTE0LCBhdXRob3JpdHk9NSwgY2F0aGFzYXBwPTAsIGNhdGhhc2F1ZGlvPTAsIGNhdGhhc2ltYWdlPTAsIGNhdGhhc3ZpZGVvPTAsIGNhdGluZGV4b2Y9MCwgZGF0ZT05LCBkb21sZW5ndGg9MTAsIGhpdGNvdW50PTEsIGxhbmd1YWdlPTIsIGxsb2NhbD0wLCBsb3RoZXI9NywgcGhyYXNlc2ludGV4dD0wLCBwb3NpbnBocmFzZT0wLCBwb3NpbnRleHQ9NCwgcG9zb2ZwaHJhc2U9MCwgdGY9OCwgdXJsY29tcHM9NywgdXJsbGVuZ3RoPTYsIHdvcmRkaXN0YW5jZT0xMCwgd29yZHNpbnRleHQ9Mywgd29yZHNpbnRpdGxlPTIsIHVybGNvbXBpbnRvcGxpc3Q9MiwgZGVzY3Jjb21waW50b3BsaXN0PTIsIHByZWZlcj0wLCBjaXRhdGlvbj0xMH0&amp;resource=global&amp;time=3&amp;recommendref=RmEt8AP290EA&amp;urlmaskfilter=.*" class="recommendlink" title="recommend"><img width="11" height="11" src="env/grafics/empty.gif" title="recommend" alt="recommend" class="recommendIcon" /></a>
+      <a href="yacysearch.html?query=heise&amp;Enter=Search&amp;count=10&amp;offset=0&amp;order=b&#124;e2FwcGVtcGg9NSwgYXBwdXJsPTEyLCBhcHBhdXRob3I9MSwgYXBwcmVmPTEwLCBhcHB0YWdzPTIsIGFwcGRlc2NyPTE0LCBhdXRob3JpdHk9NSwgY2F0aGFzYXBwPTAsIGNhdGhhc2F1ZGlvPTAsIGNhdGhhc2ltYWdlPTAsIGNhdGhhc3ZpZGVvPTAsIGNhdGluZGV4b2Y9MCwgZGF0ZT05LCBkb21sZW5ndGg9MTAsIGhpdGNvdW50PTEsIGxhbmd1YWdlPTIsIGxsb2NhbD0wLCBsb3RoZXI9NywgcGhyYXNlc2ludGV4dD0wLCBwb3NpbnBocmFzZT0wLCBwb3NpbnRleHQ9NCwgcG9zb2ZwaHJhc2U9MCwgdGY9OCwgdXJsY29tcHM9NywgdXJsbGVuZ3RoPTYsIHdvcmRkaXN0YW5jZT0xMCwgd29yZHNpbnRleHQ9Mywgd29yZHNpbnRpdGxlPTIsIHVybGNvbXBpbnRvcGxpc3Q9MiwgZGVzY3Jjb21waW50b3BsaXN0PTIsIHByZWZlcj0wLCBjaXRhdGlvbj0xMH0&amp;resource=global&amp;time=3&amp;deleteref=RmEt8AP290EA&amp;urlmaskfilter=.*" title="delete" class="deletelink" ><img width="11" height="11" src="env/grafics/empty.gif" title="delete" alt="delete" class="deleteIcon" /></a>
+    
+    
+  </div>
+  <p class="snippet"><span class="snippetLoaded" id="hRmEt8AP290EA">Download: <b>Heise</b> News Ticker 1.0, kostenlos (Deutsch). Über <b>Heise</b> News Ticker: Das Script bindet die Kopfzeilen der aktuellen News von <b>heise</b> online in einen ...</span></p>
+  <p class="url"><a href="http://www.heise.de/download/heise-news-ticker-1111413.html" id="urlRmEt8AP290EA" target="_self">http://www.heise.de/download/heise-news-ticker-1111413.html</a></p>
+  <p class="urlinfo">
+  Mon, 01 Dec 2014
+  
+  
+  
+  &nbsp;|&nbsp;<a href="api/citation.html?hash=RmEt8AP290EA&filter=true" target="_blank">Citations</a>
+  
+  
+  
+  &nbsp;|&nbsp;<a href="HostBrowser.html?path=http://www.heise.de/download/heise-news-ticker-1111413.html"><img src="env/grafics/minitree.png" width="15" height="8"/></a>
+  
+  </p>
+  </div>
+  
+
+<script type="text/javascript">
+statistics("1", "5", "10", "1,909", "1,909", "0", "0", "0", "/yacysearch.html?query=heise&maximumRecords=10&resource=global&verify=ifexist&prefermaskfilter=&cat=href&constraint=&contentdom=text&former=heise");
+</script>
+
+
+
+  <div class="searchresults">
+  <h4 class="linktitle">
+  <img width="16" height="16" src="ViewImage.png?width=16&amp;height=16&amp;code=1uI47sBGIES4&amp;isStatic=true" id="fosc8_sBGIES4" class="favicon" style="width:16px; height:16px;" alt="" />
+  <a href="https://twitter.com/heise_topnews" target="_self">heise Top-News (@heise_topnews) &#124; Twitter</a></h4>
+  <div class="urlactions">
+    
+    
+    
+      <a href="yacysearch.html?query=heise&amp;Enter=Search&amp;count=10&amp;offset=0&amp;resource=global&amp;time=3&amp;bookmarkref=osc8_sBGIES4&amp;bookmarkurl=b&#124;aHR0cHM6Ly90d2l0dGVyLmNvbS9oZWlzZV90b3BuZXdz&amp;urlmaskfilter=.*" class="bookmarklink" title="recommend"><img width="11" height="11" src="env/grafics/empty.gif" title="bookmark" alt="bookmark" class="recommendIcon" /></a>
+    
+    
+      <a href="yacysearch.html?query=heise&amp;Enter=Search&amp;count=10&amp;offset=0&amp;order=b&#124;e2FwcGVtcGg9NSwgYXBwdXJsPTEyLCBhcHBhdXRob3I9MSwgYXBwcmVmPTEwLCBhcHB0YWdzPTIsIGFwcGRlc2NyPTE0LCBhdXRob3JpdHk9NSwgY2F0aGFzYXBwPTAsIGNhdGhhc2F1ZGlvPTAsIGNhdGhhc2ltYWdlPTAsIGNhdGhhc3ZpZGVvPTAsIGNhdGluZGV4b2Y9MCwgZGF0ZT05LCBkb21sZW5ndGg9MTAsIGhpdGNvdW50PTEsIGxhbmd1YWdlPTIsIGxsb2NhbD0wLCBsb3RoZXI9NywgcGhyYXNlc2ludGV4dD0wLCBwb3NpbnBocmFzZT0wLCBwb3NpbnRleHQ9NCwgcG9zb2ZwaHJhc2U9MCwgdGY9OCwgdXJsY29tcHM9NywgdXJsbGVuZ3RoPTYsIHdvcmRkaXN0YW5jZT0xMCwgd29yZHNpbnRleHQ9Mywgd29yZHNpbnRpdGxlPTIsIHVybGNvbXBpbnRvcGxpc3Q9MiwgZGVzY3Jjb21waW50b3BsaXN0PTIsIHByZWZlcj0wLCBjaXRhdGlvbj0xMH0&amp;resource=global&amp;time=3&amp;recommendref=osc8_sBGIES4&amp;urlmaskfilter=.*" class="recommendlink" title="recommend"><img width="11" height="11" src="env/grafics/empty.gif" title="recommend" alt="recommend" class="recommendIcon" /></a>
+      <a href="yacysearch.html?query=heise&amp;Enter=Search&amp;count=10&amp;offset=0&amp;order=b&#124;e2FwcGVtcGg9NSwgYXBwdXJsPTEyLCBhcHBhdXRob3I9MSwgYXBwcmVmPTEwLCBhcHB0YWdzPTIsIGFwcGRlc2NyPTE0LCBhdXRob3JpdHk9NSwgY2F0aGFzYXBwPTAsIGNhdGhhc2F1ZGlvPTAsIGNhdGhhc2ltYWdlPTAsIGNhdGhhc3ZpZGVvPTAsIGNhdGluZGV4b2Y9MCwgZGF0ZT05LCBkb21sZW5ndGg9MTAsIGhpdGNvdW50PTEsIGxhbmd1YWdlPTIsIGxsb2NhbD0wLCBsb3RoZXI9NywgcGhyYXNlc2ludGV4dD0wLCBwb3NpbnBocmFzZT0wLCBwb3NpbnRleHQ9NCwgcG9zb2ZwaHJhc2U9MCwgdGY9OCwgdXJsY29tcHM9NywgdXJsbGVuZ3RoPTYsIHdvcmRkaXN0YW5jZT0xMCwgd29yZHNpbnRleHQ9Mywgd29yZHNpbnRpdGxlPTIsIHVybGNvbXBpbnRvcGxpc3Q9MiwgZGVzY3Jjb21waW50b3BsaXN0PTIsIHByZWZlcj0wLCBjaXRhdGlvbj0xMH0&amp;resource=global&amp;time=3&amp;deleteref=osc8_sBGIES4&amp;urlmaskfilter=.*" title="delete" class="deletelink" ><img width="11" height="11" src="env/grafics/empty.gif" title="delete" alt="delete" class="deleteIcon" /></a>
+    
+    
+  </div>
+  <p class="snippet"><span class="snippetLoaded" id="hosc8_sBGIES4">Twitter Search query</span></p>
+  <p class="url"><a href="https://twitter.com/heise_topnews" id="urlosc8_sBGIES4" target="_self">https://twitter.com/heise_topnews</a></p>
+  <p class="urlinfo">
+  Tue, 17 Feb 2015
+  
+  
+  
+  &nbsp;|&nbsp;<a href="api/citation.html?hash=osc8_sBGIES4&filter=true" target="_blank">Citations</a>
+  
+  
+  
+  &nbsp;|&nbsp;<a href="HostBrowser.html?path=https://twitter.com/heise_topnews"><img src="env/grafics/minitree.png" width="15" height="8"/></a>
+  
+  </p>
+  </div>
+  
+
+<script type="text/javascript">
+statistics("1", "6", "10", "1,909", "1,909", "0", "0", "0", "/yacysearch.html?query=heise&maximumRecords=10&resource=global&verify=ifexist&prefermaskfilter=&cat=href&constraint=&contentdom=text&former=heise");
+</script>
+
+
+
+  <div class="searchresults">
+  <h4 class="linktitle">
+  <img width="16" height="16" src="ViewImage.png?width=16&amp;height=16&amp;code=GZ0IQQP290EA&amp;isStatic=true" id="fb_YXafP290EA" class="favicon" style="width:16px; height:16px;" alt="" />
+  <a href="http://www.heise.de/foto/thema/heise-Foto" target="_self">heise Foto &#124; heise Foto</a></h4>
+  <div class="urlactions">
+    
+    
+    
+      <a href="yacysearch.html?query=heise&amp;Enter=Search&amp;count=10&amp;offset=0&amp;resource=global&amp;time=3&amp;bookmarkref=b_YXafP290EA&amp;bookmarkurl=b&#124;aHR0cDovL3d3dy5oZWlzZS5kZS9mb3RvL3RoZW1hL2hlaXNlLUZvdG8&amp;urlmaskfilter=.*" class="bookmarklink" title="recommend"><img width="11" height="11" src="env/grafics/empty.gif" title="bookmark" alt="bookmark" class="recommendIcon" /></a>
+    
+    
+      <a href="yacysearch.html?query=heise&amp;Enter=Search&amp;count=10&amp;offset=0&amp;order=b&#124;e2FwcGVtcGg9NSwgYXBwdXJsPTEyLCBhcHBhdXRob3I9MSwgYXBwcmVmPTEwLCBhcHB0YWdzPTIsIGFwcGRlc2NyPTE0LCBhdXRob3JpdHk9NSwgY2F0aGFzYXBwPTAsIGNhdGhhc2F1ZGlvPTAsIGNhdGhhc2ltYWdlPTAsIGNhdGhhc3ZpZGVvPTAsIGNhdGluZGV4b2Y9MCwgZGF0ZT05LCBkb21sZW5ndGg9MTAsIGhpdGNvdW50PTEsIGxhbmd1YWdlPTIsIGxsb2NhbD0wLCBsb3RoZXI9NywgcGhyYXNlc2ludGV4dD0wLCBwb3NpbnBocmFzZT0wLCBwb3NpbnRleHQ9NCwgcG9zb2ZwaHJhc2U9MCwgdGY9OCwgdXJsY29tcHM9NywgdXJsbGVuZ3RoPTYsIHdvcmRkaXN0YW5jZT0xMCwgd29yZHNpbnRleHQ9Mywgd29yZHNpbnRpdGxlPTIsIHVybGNvbXBpbnRvcGxpc3Q9MiwgZGVzY3Jjb21waW50b3BsaXN0PTIsIHByZWZlcj0wLCBjaXRhdGlvbj0xMH0&amp;resource=global&amp;time=3&amp;recommendref=b_YXafP290EA&amp;urlmaskfilter=.*" class="recommendlink" title="recommend"><img width="11" height="11" src="env/grafics/empty.gif" title="recommend" alt="recommend" class="recommendIcon" /></a>
+      <a href="yacysearch.html?query=heise&amp;Enter=Search&amp;count=10&amp;offset=0&amp;order=b&#124;e2FwcGVtcGg9NSwgYXBwdXJsPTEyLCBhcHBhdXRob3I9MSwgYXBwcmVmPTEwLCBhcHB0YWdzPTIsIGFwcGRlc2NyPTE0LCBhdXRob3JpdHk9NSwgY2F0aGFzYXBwPTAsIGNhdGhhc2F1ZGlvPTAsIGNhdGhhc2ltYWdlPTAsIGNhdGhhc3ZpZGVvPTAsIGNhdGluZGV4b2Y9MCwgZGF0ZT05LCBkb21sZW5ndGg9MTAsIGhpdGNvdW50PTEsIGxhbmd1YWdlPTIsIGxsb2NhbD0wLCBsb3RoZXI9NywgcGhyYXNlc2ludGV4dD0wLCBwb3NpbnBocmFzZT0wLCBwb3NpbnRleHQ9NCwgcG9zb2ZwaHJhc2U9MCwgdGY9OCwgdXJsY29tcHM9NywgdXJsbGVuZ3RoPTYsIHdvcmRkaXN0YW5jZT0xMCwgd29yZHNpbnRleHQ9Mywgd29yZHNpbnRpdGxlPTIsIHVybGNvbXBpbnRvcGxpc3Q9MiwgZGVzY3Jjb21waW50b3BsaXN0PTIsIHByZWZlcj0wLCBjaXRhdGlvbj0xMH0&amp;resource=global&amp;time=3&amp;deleteref=b_YXafP290EA&amp;urlmaskfilter=.*" title="delete" class="deletelink" ><img width="11" height="11" src="env/grafics/empty.gif" title="delete" alt="delete" class="deleteIcon" /></a>
+    
+    
+  </div>
+  <p class="snippet"><span class="snippetLoaded" id="hb_YXafP290EA">Einloggen auf <b>heise</b> online Menü auf /zuklappen News t iX Technology Review Mac & i Telepolis t Hacks Digitale Fotografie <b>heise</b> Autos <b>heise</b> Developer <b>heise</b> Foto <b>heise</b> Netze <b>heise</b> Open Source <b>heise</b> Security <b>heise</b> Video TechStage Download Preisvergleich Stellenmarkt Veranstaltungen IT Markt Whitepapers Webcasts Tarifrechner <b>heise</b> shop Artikel Archiv Zeitschriften Abo Arbeiten bei <b>heise</b> News 7 Tage News Archiv News mobil Produkte & Tests Produkte Tests Beratung Praxis Galerie Heft Foren Kaufberatung Spiegelreflex Kompakt Objektive News Produkte Software Technik Gestaltung Feedback Foto Club Foto Akademie Tests Aktionen Videotutorials Foto Shop Fotozubehör Shop Printshop <b>heise</b> Foto Themenseite <b>heise</b> Foto Newsletter Kontakt <b>heise</b> Foto</span></p>
+  <p class="url"><a href="http://www.heise.de/foto/thema/heise-Foto" id="urlb_YXafP290EA" target="_self">http://www.heise.de/foto/thema/heise-Foto</a></p>
+  <p class="urlinfo">
+  Wed, 03 Dec 2014
+  
+  
+  
+  &nbsp;|&nbsp;<a href="api/citation.html?hash=b_YXafP290EA&filter=true" target="_blank">Citations</a>
+  
+  
+  
+  &nbsp;|&nbsp;<a href="HostBrowser.html?path=http://www.heise.de/foto/thema/heise-Foto"><img src="env/grafics/minitree.png" width="15" height="8"/></a>
+  
+  </p>
+  </div>
+  
+
+<script type="text/javascript">
+statistics("1", "7", "10", "1,909", "1,909", "0", "0", "0", "/yacysearch.html?query=heise&maximumRecords=10&resource=global&verify=ifexist&prefermaskfilter=&cat=href&constraint=&contentdom=text&former=heise");
+</script>
+
+
+
+  <div class="searchresults">
+  <h4 class="linktitle">
+  <img width="16" height="16" src="ViewImage.png?width=16&amp;height=16&amp;code=1uI47sBGIES4&amp;isStatic=true" id="fVN11LsBGIES4" class="favicon" style="width:16px; height:16px;" alt="" />
+  <a href="https://twitter.com/heiseFoto" target="_self">heise Foto (@heiseFoto) &#124; Twitter</a></h4>
+  <div class="urlactions">
+    
+    
+    
+      <a href="yacysearch.html?query=heise&amp;Enter=Search&amp;count=10&amp;offset=0&amp;resource=global&amp;time=3&amp;bookmarkref=VN11LsBGIES4&amp;bookmarkurl=b&#124;aHR0cHM6Ly90d2l0dGVyLmNvbS9oZWlzZUZvdG8&amp;urlmaskfilter=.*" class="bookmarklink" title="recommend"><img width="11" height="11" src="env/grafics/empty.gif" title="bookmark" alt="bookmark" class="recommendIcon" /></a>
+    
+    
+      <a href="yacysearch.html?query=heise&amp;Enter=Search&amp;count=10&amp;offset=0&amp;order=b&#124;e2FwcGVtcGg9NSwgYXBwdXJsPTEyLCBhcHBhdXRob3I9MSwgYXBwcmVmPTEwLCBhcHB0YWdzPTIsIGFwcGRlc2NyPTE0LCBhdXRob3JpdHk9NSwgY2F0aGFzYXBwPTAsIGNhdGhhc2F1ZGlvPTAsIGNhdGhhc2ltYWdlPTAsIGNhdGhhc3ZpZGVvPTAsIGNhdGluZGV4b2Y9MCwgZGF0ZT05LCBkb21sZW5ndGg9MTAsIGhpdGNvdW50PTEsIGxhbmd1YWdlPTIsIGxsb2NhbD0wLCBsb3RoZXI9NywgcGhyYXNlc2ludGV4dD0wLCBwb3NpbnBocmFzZT0wLCBwb3NpbnRleHQ9NCwgcG9zb2ZwaHJhc2U9MCwgdGY9OCwgdXJsY29tcHM9NywgdXJsbGVuZ3RoPTYsIHdvcmRkaXN0YW5jZT0xMCwgd29yZHNpbnRleHQ9Mywgd29yZHNpbnRpdGxlPTIsIHVybGNvbXBpbnRvcGxpc3Q9MiwgZGVzY3Jjb21waW50b3BsaXN0PTIsIHByZWZlcj0wLCBjaXRhdGlvbj0xMH0&amp;resource=global&amp;time=3&amp;recommendref=VN11LsBGIES4&amp;urlmaskfilter=.*" class="recommendlink" title="recommend"><img width="11" height="11" src="env/grafics/empty.gif" title="recommend" alt="recommend" class="recommendIcon" /></a>
+      <a href="yacysearch.html?query=heise&amp;Enter=Search&amp;count=10&amp;offset=0&amp;order=b&#124;e2FwcGVtcGg9NSwgYXBwdXJsPTEyLCBhcHBhdXRob3I9MSwgYXBwcmVmPTEwLCBhcHB0YWdzPTIsIGFwcGRlc2NyPTE0LCBhdXRob3JpdHk9NSwgY2F0aGFzYXBwPTAsIGNhdGhhc2F1ZGlvPTAsIGNhdGhhc2ltYWdlPTAsIGNhdGhhc3ZpZGVvPTAsIGNhdGluZGV4b2Y9MCwgZGF0ZT05LCBkb21sZW5ndGg9MTAsIGhpdGNvdW50PTEsIGxhbmd1YWdlPTIsIGxsb2NhbD0wLCBsb3RoZXI9NywgcGhyYXNlc2ludGV4dD0wLCBwb3NpbnBocmFzZT0wLCBwb3NpbnRleHQ9NCwgcG9zb2ZwaHJhc2U9MCwgdGY9OCwgdXJsY29tcHM9NywgdXJsbGVuZ3RoPTYsIHdvcmRkaXN0YW5jZT0xMCwgd29yZHNpbnRleHQ9Mywgd29yZHNpbnRpdGxlPTIsIHVybGNvbXBpbnRvcGxpc3Q9MiwgZGVzY3Jjb21waW50b3BsaXN0PTIsIHByZWZlcj0wLCBjaXRhdGlvbj0xMH0&amp;resource=global&amp;time=3&amp;deleteref=VN11LsBGIES4&amp;urlmaskfilter=.*" title="delete" class="deletelink" ><img width="11" height="11" src="env/grafics/empty.gif" title="delete" alt="delete" class="deleteIcon" /></a>
+    
+    
+  </div>
+  <p class="snippet"><span class="snippetLoaded" id="hVN11LsBGIES4">Mute @heiseFoto</span></p>
+  <p class="url"><a href="https://twitter.com/heiseFoto" id="urlVN11LsBGIES4" target="_self">https://twitter.com/heiseFoto</a></p>
+  <p class="urlinfo">
+  Tue, 17 Feb 2015
+  
+  
+  
+  &nbsp;|&nbsp;<a href="api/citation.html?hash=VN11LsBGIES4&filter=true" target="_blank">Citations</a>
+  
+  &nbsp;|&nbsp;<a href="CacheResource_p.html?url=https://twitter.com/heiseFoto" target="_blank">Cache</a>
+  
+  &nbsp;|&nbsp;<a href="HostBrowser.html?path=https://twitter.com/heiseFoto"><img src="env/grafics/minitree.png" width="15" height="8"/></a>
+  
+  </p>
+  </div>
+  
+
+<script type="text/javascript">
+statistics("1", "8", "10", "1,909", "1,909", "0", "0", "0", "/yacysearch.html?query=heise&maximumRecords=10&resource=global&verify=ifexist&prefermaskfilter=&cat=href&constraint=&contentdom=text&former=heise");
+</script>
+
+
+
+  <div class="searchresults">
+  <h4 class="linktitle">
+  <img width="16" height="16" src="ViewImage.png?width=16&amp;height=16&amp;code=GZ0IQQP290EA&amp;isStatic=true" id="fPUnRFAP290EA" class="favicon" style="width:16px; height:16px;" alt="" />
+  <a href="http://www.heise.de/download/heise-security-update-check-1170230.html" target="_self">heise Security Update-Check - Download - heise online</a></h4>
+  <div class="urlactions">
+    
+    
+    
+      <a href="yacysearch.html?query=heise&amp;Enter=Search&amp;count=10&amp;offset=0&amp;resource=global&amp;time=3&amp;bookmarkref=PUnRFAP290EA&amp;bookmarkurl=b&#124;aHR0cDovL3d3dy5oZWlzZS5kZS9kb3dubG9hZC9oZWlzZS1zZWN1cml0eS11cGRhdGUtY2hlY2stMTE3MDIzMC5odG1s&amp;urlmaskfilter=.*" class="bookmarklink" title="recommend"><img width="11" height="11" src="env/grafics/empty.gif" title="bookmark" alt="bookmark" class="recommendIcon" /></a>
+    
+    
+      <a href="yacysearch.html?query=heise&amp;Enter=Search&amp;count=10&amp;offset=0&amp;order=b&#124;e2FwcGVtcGg9NSwgYXBwdXJsPTEyLCBhcHBhdXRob3I9MSwgYXBwcmVmPTEwLCBhcHB0YWdzPTIsIGFwcGRlc2NyPTE0LCBhdXRob3JpdHk9NSwgY2F0aGFzYXBwPTAsIGNhdGhhc2F1ZGlvPTAsIGNhdGhhc2ltYWdlPTAsIGNhdGhhc3ZpZGVvPTAsIGNhdGluZGV4b2Y9MCwgZGF0ZT05LCBkb21sZW5ndGg9MTAsIGhpdGNvdW50PTEsIGxhbmd1YWdlPTIsIGxsb2NhbD0wLCBsb3RoZXI9NywgcGhyYXNlc2ludGV4dD0wLCBwb3NpbnBocmFzZT0wLCBwb3NpbnRleHQ9NCwgcG9zb2ZwaHJhc2U9MCwgdGY9OCwgdXJsY29tcHM9NywgdXJsbGVuZ3RoPTYsIHdvcmRkaXN0YW5jZT0xMCwgd29yZHNpbnRleHQ9Mywgd29yZHNpbnRpdGxlPTIsIHVybGNvbXBpbnRvcGxpc3Q9MiwgZGVzY3Jjb21waW50b3BsaXN0PTIsIHByZWZlcj0wLCBjaXRhdGlvbj0xMH0&amp;resource=global&amp;time=3&amp;recommendref=PUnRFAP290EA&amp;urlmaskfilter=.*" class="recommendlink" title="recommend"><img width="11" height="11" src="env/grafics/empty.gif" title="recommend" alt="recommend" class="recommendIcon" /></a>
+      <a href="yacysearch.html?query=heise&amp;Enter=Search&amp;count=10&amp;offset=0&amp;order=b&#124;e2FwcGVtcGg9NSwgYXBwdXJsPTEyLCBhcHBhdXRob3I9MSwgYXBwcmVmPTEwLCBhcHB0YWdzPTIsIGFwcGRlc2NyPTE0LCBhdXRob3JpdHk9NSwgY2F0aGFzYXBwPTAsIGNhdGhhc2F1ZGlvPTAsIGNhdGhhc2ltYWdlPTAsIGNhdGhhc3ZpZGVvPTAsIGNhdGluZGV4b2Y9MCwgZGF0ZT05LCBkb21sZW5ndGg9MTAsIGhpdGNvdW50PTEsIGxhbmd1YWdlPTIsIGxsb2NhbD0wLCBsb3RoZXI9NywgcGhyYXNlc2ludGV4dD0wLCBwb3NpbnBocmFzZT0wLCBwb3NpbnRleHQ9NCwgcG9zb2ZwaHJhc2U9MCwgdGY9OCwgdXJsY29tcHM9NywgdXJsbGVuZ3RoPTYsIHdvcmRkaXN0YW5jZT0xMCwgd29yZHNpbnRleHQ9Mywgd29yZHNpbnRpdGxlPTIsIHVybGNvbXBpbnRvcGxpc3Q9MiwgZGVzY3Jjb21waW50b3BsaXN0PTIsIHByZWZlcj0wLCBjaXRhdGlvbj0xMH0&amp;resource=global&amp;time=3&amp;deleteref=PUnRFAP290EA&amp;urlmaskfilter=.*" title="delete" class="deletelink" ><img width="11" height="11" src="env/grafics/empty.gif" title="delete" alt="delete" class="deleteIcon" /></a>
+    
+    
+  </div>
+  <p class="snippet"><span class="snippetLoaded" id="hPUnRFAP290EA">Download: <b>heise</b> Security Update-Check, kostenlos (Deutsch). Über <b>heise</b> Security Update-Check: Auf dem Personal Software Inspector basierendes Online-Tool, d...</span></p>
+  <p class="url"><a href="http://www.heise.de/download/heise-security-update-check-1170230.html" id="urlPUnRFAP290EA" target="_self">http://www.heise.de/download/heise-security-update-check-1170230.html</a></p>
+  <p class="urlinfo">
+  Thu, 10 Jul 2014
+  
+  
+  
+  &nbsp;|&nbsp;<a href="api/citation.html?hash=PUnRFAP290EA&filter=true" target="_blank">Citations</a>
+  
+  
+  
+  &nbsp;|&nbsp;<a href="HostBrowser.html?path=http://www.heise.de/download/heise-security-update-check-1170230.html"><img src="env/grafics/minitree.png" width="15" height="8"/></a>
+  
+  </p>
+  </div>
+  
+
+<script type="text/javascript">
+statistics("1", "9", "10", "1,909", "1,909", "0", "0", "0", "/yacysearch.html?query=heise&maximumRecords=10&resource=global&verify=ifexist&prefermaskfilter=&cat=href&constraint=&contentdom=text&former=heise");
+</script>
+
+
+
+  <div class="searchresults">
+  <h4 class="linktitle">
+  <img width="16" height="16" src="ViewImage.png?width=16&amp;height=16&amp;code=ykgeoLFJdGGA&amp;isStatic=true" id="fAI1L09FJdGGA" class="favicon" style="width:16px; height:16px;" alt="" />
+  <a href="http://jobs.heise.de/Job/Rechtsreferendar-m-w.8125491.html" target="_self">heise.de - Rechtsreferendar (m/w) &#124; Heise Zeitschriften Verlag GmbH &amp; Co. KG &#124; Job</a></h4>
+  <div class="urlactions">
+    
+    
+    
+      <a href="yacysearch.html?query=heise&amp;Enter=Search&amp;count=10&amp;offset=0&amp;resource=global&amp;time=3&amp;bookmarkref=AI1L09FJdGGA&amp;bookmarkurl=b&#124;aHR0cDovL2pvYnMuaGVpc2UuZGUvSm9iL1JlY2h0c3JlZmVyZW5kYXItbS13LjgxMjU0OTEuaHRtbA&amp;urlmaskfilter=.*" class="bookmarklink" title="recommend"><img width="11" height="11" src="env/grafics/empty.gif" title="bookmark" alt="bookmark" class="recommendIcon" /></a>
+    
+    
+      <a href="yacysearch.html?query=heise&amp;Enter=Search&amp;count=10&amp;offset=0&amp;order=b&#124;e2FwcGVtcGg9NSwgYXBwdXJsPTEyLCBhcHBhdXRob3I9MSwgYXBwcmVmPTEwLCBhcHB0YWdzPTIsIGFwcGRlc2NyPTE0LCBhdXRob3JpdHk9NSwgY2F0aGFzYXBwPTAsIGNhdGhhc2F1ZGlvPTAsIGNhdGhhc2ltYWdlPTAsIGNhdGhhc3ZpZGVvPTAsIGNhdGluZGV4b2Y9MCwgZGF0ZT05LCBkb21sZW5ndGg9MTAsIGhpdGNvdW50PTEsIGxhbmd1YWdlPTIsIGxsb2NhbD0wLCBsb3RoZXI9NywgcGhyYXNlc2ludGV4dD0wLCBwb3NpbnBocmFzZT0wLCBwb3NpbnRleHQ9NCwgcG9zb2ZwaHJhc2U9MCwgdGY9OCwgdXJsY29tcHM9NywgdXJsbGVuZ3RoPTYsIHdvcmRkaXN0YW5jZT0xMCwgd29yZHNpbnRleHQ9Mywgd29yZHNpbnRpdGxlPTIsIHVybGNvbXBpbnRvcGxpc3Q9MiwgZGVzY3Jjb21waW50b3BsaXN0PTIsIHByZWZlcj0wLCBjaXRhdGlvbj0xMH0&amp;resource=global&amp;time=3&amp;recommendref=AI1L09FJdGGA&amp;urlmaskfilter=.*" class="recommendlink" title="recommend"><img width="11" height="11" src="env/grafics/empty.gif" title="recommend" alt="recommend" class="recommendIcon" /></a>
+      <a href="yacysearch.html?query=heise&amp;Enter=Search&amp;count=10&amp;offset=0&amp;order=b&#124;e2FwcGVtcGg9NSwgYXBwdXJsPTEyLCBhcHBhdXRob3I9MSwgYXBwcmVmPTEwLCBhcHB0YWdzPTIsIGFwcGRlc2NyPTE0LCBhdXRob3JpdHk9NSwgY2F0aGFzYXBwPTAsIGNhdGhhc2F1ZGlvPTAsIGNhdGhhc2ltYWdlPTAsIGNhdGhhc3ZpZGVvPTAsIGNhdGluZGV4b2Y9MCwgZGF0ZT05LCBkb21sZW5ndGg9MTAsIGhpdGNvdW50PTEsIGxhbmd1YWdlPTIsIGxsb2NhbD0wLCBsb3RoZXI9NywgcGhyYXNlc2ludGV4dD0wLCBwb3NpbnBocmFzZT0wLCBwb3NpbnRleHQ9NCwgcG9zb2ZwaHJhc2U9MCwgdGY9OCwgdXJsY29tcHM9NywgdXJsbGVuZ3RoPTYsIHdvcmRkaXN0YW5jZT0xMCwgd29yZHNpbnRleHQ9Mywgd29yZHNpbnRpdGxlPTIsIHVybGNvbXBpbnRvcGxpc3Q9MiwgZGVzY3Jjb21waW50b3BsaXN0PTIsIHByZWZlcj0wLCBjaXRhdGlvbj0xMH0&amp;resource=global&amp;time=3&amp;deleteref=AI1L09FJdGGA&amp;urlmaskfilter=.*" title="delete" class="deletelink" ><img width="11" height="11" src="env/grafics/empty.gif" title="delete" alt="delete" class="deleteIcon" /></a>
+    
+    
+  </div>
+  <p class="snippet"><span class="snippetLoaded" id="hAI1L09FJdGGA">de   Rechtsreferendar (w) | <b>Heise</b> Zeitschriften Verlag GmbH & Co. KG | Job. de   Rechtsreferendar (w) | <b>Heise</b> Zeitschriften Verlag GmbH & Co.</span></p>
+  <p class="url"><a href="http://jobs.heise.de/Job/Rechtsreferendar-m-w.8125491.html" id="urlAI1L09FJdGGA" target="_self">http://jobs.heise.de/Job/Rechtsreferendar-m-w.8125491.html</a></p>
+  <p class="urlinfo">
+  Tue, 09 Dec 2014
+  
+  
+  
+  &nbsp;|&nbsp;<a href="api/citation.html?hash=AI1L09FJdGGA&filter=true" target="_blank">Citations</a>
+  
+  
+  
+  &nbsp;|&nbsp;<a href="HostBrowser.html?path=http://jobs.heise.de/Job/Rechtsreferendar-m-w.8125491.html"><img src="env/grafics/minitree.png" width="15" height="8"/></a>
+  
+  </p>
+  </div>
+  
+
+<script type="text/javascript">
+statistics("1", "10", "10", "1,909", "1,909", "0", "0", "0", "/yacysearch.html?query=heise&maximumRecords=10&resource=global&verify=ifexist&prefermaskfilter=&cat=href&constraint=&contentdom=text&former=heise");
+</script>
+
+
+
+<!-- linklist end -->
+
+        
+	<span id="resNav" class="col-sm-12  col-md-12" style="display: inline;"></span>        
+	
+
+</div> <!-- close main -->
+
+<div class="col-sm-4 col-md-3 sidebar" id="sidebar">
+<!-- navigation begin -->
+<script>
+  if (document.getElementById("progressbar").getAttribute('class') != "progress-bar progress-bar-success") {
+	  document.getElementById("progressbar").setAttribute('style',"width:100%");
+      document.getElementById("progressbar").setAttribute('style',"transition:transform 0s;-webkit-transition:-webkit-transform 0s;");
+	  document.getElementById("progressbar").setAttribute('class',"progress-bar progress-bar-success");
+	  window.setTimeout(fadeOutBar, 500);
+  }
+</script>  
+
+
+<form
+  action="yacysearch.html" method="get" accept-charset="UTF-8" id="resource-switch-form"
+  data-trigger="hover" data-placement="right" data-container="body"
+  data-original-title="Your search is done using peers in the YaCy P2P network."
+  data-content="You can switch to 'Stealth Mode' which will switch off P2P, giving you full privacy. Expect less results then, because then only your own search index is used."
+  >
+<input checked="checked"
+  data-label-text="Privacy"
+  data-on-text="<span>&nbsp;&nbsp;&nbsp;Peer-to-Peer&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+  data-off-text="<span>&nbsp;&nbsp;&nbsp;&nbsp;Stealth&nbsp;Mode&nbsp;&nbsp;&nbsp;</span>"
+  data-on-color="warning" data-off-color="success"
+  type="checkbox" name="resource-switch" value="local" data-size="large"
+  onchange="document.getElementById('resource').value='local';document.searchform.submit();">
+</form>
+<script>$("#resource-switch-form").popover(); $("[name='resource-switch']").bootstrapSwitch();</script>
+
+
+<p class="navbutton">
+<div class="btn-group btn-group-justified">
+  <div class="btn-group btn-group-xs"><button type="button" id="sort_button_context" class="btn btn-default" onclick="document.getElementById('search').value=document.getElementById('search').value.replace(' /date','');document.searchform.submit();">Context Ranking</button></div>
+  <div class="btn-group btn-group-xs"><button type="button" id="sort_button_date" class="btn btn-default" onclick="document.getElementById('search').value=document.getElementById('search').value + ' /date';document.searchform.submit();">Sort by Date</button></div>
+</div>
+</p>
+<script>
+  if (document.getElementById('search').value.indexOf(" /date") == -1) {
+	document.getElementById("sort_button_context").setAttribute("class","btn btn-default active");
+	document.getElementById("sort_button_context").setAttribute("onclick","");
+  } else {
+	document.getElementById("sort_button_date").setAttribute("class","btn btn-default active");
+	document.getElementById("sort_button_date").setAttribute("onclick","");
+  }
+</script>
+
+<p class="navbutton">
+<div class="btn-group btn-group-justified">
+  <div class="btn-group btn-group-xs"><button type="button" class="btn btn-default active">Documents</button></div>
+  <div class="btn-group btn-group-xs"><button type="button" class="btn btn-default" onclick="document.getElementById('contentdom').value='image';document.searchform.submit();">Images</button></div>
+  
+  
+  
+</div>
+</p>
+
+
+<div class="btn-group btn-group-justified">
+  <div class="btn-group btn-group-xs"><button type="button" class="btn btn-default" onclick="window.location.href='/yacysearch.html?query=heise /http&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0';">http (1010)</button></div>
+  <div class="btn-group btn-group-xs"><button type="button" class="btn btn-default" onclick="window.location.href='/yacysearch.html?query=heise /https&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0';">https (86)</button></div>
+  <div class="btn-group btn-group-xs"><button type="button" class="btn btn-default" onclick="window.location.href='/yacysearch.html?query=heise /ftp&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0';">ftp (4)</button></div>
+</div>
+
+
+
+<div id="tagcloud" style="text-align:justify"><a rel="1" href="/yacysearch.html?query=heise rechtsreferendar&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" style="text-decoration:none;font-size:8px;">rechtsreferendar</a>
+<a rel="2" href="/yacysearch.html?query=heise direkt&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" style="text-decoration:none;font-size:8px;">direkt</a>
+<a rel="3" href="/yacysearch.html?query=heise topnews&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" style="text-decoration:none;font-size:8px;">topnews</a>
+<a rel="4" href="/yacysearch.html?query=heise mediadaten&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" style="text-decoration:none;font-size:8px;">mediadaten</a>
+<a rel="6" href="/yacysearch.html?query=heise twitter&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" style="text-decoration:none;font-size:13px;">twitter</a>
+<a rel="7" href="/yacysearch.html?query=heise download&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" style="text-decoration:none;font-size:13px;">download</a>
+<a rel="9" href="/yacysearch.html?query=heise verlag&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" style="text-decoration:none;font-size:18px;">verlag</a>
+<a rel="11" href="/yacysearch.html?query=heise online&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" style="text-decoration:none;font-size:21px;">online</a>
+<a rel="9" href="/yacysearch.html?query=heise zeitschriften&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" style="text-decoration:none;font-size:11px;">zeitschriften</a>
+<a rel="8" href="/yacysearch.html?query=heise foto&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" style="text-decoration:none;font-size:18px;">foto</a>
+<a rel="6" href="/yacysearch.html?query=heise news&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" style="text-decoration:none;font-size:16px;">news</a>
+<a rel="5" href="/yacysearch.html?query=heise top&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" style="text-decoration:none;font-size:15px;">top</a>
+<a rel="4" href="/yacysearch.html?query=heise video&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" style="text-decoration:none;font-size:12px;">video</a>
+<a rel="3" href="/yacysearch.html?query=heise service&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" style="text-decoration:none;font-size:8px;">service</a>
+<a rel="2" href="/yacysearch.html?query=heise vom&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" style="text-decoration:none;font-size:11px;">vom</a>
+<a rel="1" href="/yacysearch.html?query=heise ticker&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" style="text-decoration:none;font-size:8px;">ticker</a>
+</div>
+
+
+
+
+
+<ul class="nav nav-sidebar menugroup">
+<li><h3>Provider</h3></li>
+<li><a href="/yacysearch.html?query=heise site:heise.de&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" class="MenuItemLink"><input type="checkbox" onchange="window.location.href='/yacysearch.html?query=heise site:heise.de&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0'"/> heise.de (786)</a></li>
+<li><a href="/yacysearch.html?query=heise site:jobs.heise.de&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" class="MenuItemLink"><input type="checkbox" onchange="window.location.href='/yacysearch.html?query=heise site:jobs.heise.de&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0'"/> jobs.heise.de (48)</a></li>
+<li><a href="/yacysearch.html?query=heise site:youtube.com&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" class="MenuItemLink"><input type="checkbox" onchange="window.location.href='/yacysearch.html?query=heise site:youtube.com&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0'"/> youtube.com (33)</a></li>
+<li><a href="/yacysearch.html?query=heise site:shop.heise.de&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" class="MenuItemLink"><input type="checkbox" onchange="window.location.href='/yacysearch.html?query=heise site:shop.heise.de&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0'"/> shop.heise.de (31)</a></li>
+<li><a href="/yacysearch.html?query=heise site:mittelstandswiki.de&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" class="MenuItemLink"><input type="checkbox" onchange="window.location.href='/yacysearch.html?query=heise site:mittelstandswiki.de&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0'"/> mittelstandswiki.de (26)</a></li>
+<li><a href="/yacysearch.html?query=heise site:heise-medien.de&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" class="MenuItemLink"><input type="checkbox" onchange="window.location.href='/yacysearch.html?query=heise site:heise-medien.de&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0'"/> heise-medien.de (16)</a></li>
+<li><a href="/yacysearch.html?query=heise site:m.heise.de&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" class="MenuItemLink"><input type="checkbox" onchange="window.location.href='/yacysearch.html?query=heise site:m.heise.de&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0'"/> m.heise.de (15)</a></li>
+<li><a href="/yacysearch.html?query=heise site:twitter.com&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" class="MenuItemLink"><input type="checkbox" onchange="window.location.href='/yacysearch.html?query=heise site:twitter.com&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0'"/> twitter.com (14)</a></li>
+<li><a href="/yacysearch.html?query=heise site:business-services.heise.de&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" class="MenuItemLink"><input type="checkbox" onchange="window.location.href='/yacysearch.html?query=heise site:business-services.heise.de&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0'"/> business-services.heise.de (13)</a></li>
+<li><a href="/yacysearch.html?query=heise site:fotoespresso.de&amamp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" class="MenuItemLink"><input type="checkbox" onchange="window.location.href='/yacysearch.html?query=heise site:fotoespresso.de&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0'"/> fotoespresso.de (13)</a></li>
+</ul>
+
+
+
+<ul class="nav nav-sidebar menugroup">
+<li><h3>Filetype</h3></li>
+<li><a href="/yacysearch.html?query=heise filetype:html&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" class="MenuItemLink"><input type="checkbox" onchange="window.location.href='/yacysearch.html?query=heise filetype:html&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0'"/> html (538)</a></li>
+<li><a href="/yacysearch.html?query=heise filetype:pdf&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" class="MenuItemLink"><input type="checkbox" onchange="window.location.href='/yacysearch.html?query=heise filetype:pdf&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0'"/> pdf (19)</a></li>
+<li><a href="/yacysearch.html?query=heise filetype:php&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" class="MenuItemLink"><input type="checkbox" onchange="window.location.href='/yacysearch.html?query=heise filetype:php&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0'"/> php (7)</a></li>
+<li><a href="/yacysearch.html?query=heise filetype:zip&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" class="MenuItemLink"><input type="checkbox" onchange="window.location.href='/yacysearch.html?query=heise filetype:zip&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0'"/> zip (4)</a></li>
+<li><a href="/yacysearch.html?query=heise filetype:htm&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" class="MenuItemLink"><input type="checkbox" onchange="window.location.href='/yacysearch.html?query=heise filetype:htm&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0'"/> htm (1)</a></li>
+<li><a href="/yacysearch.html?query=heise filetype:shtml&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" class="MenuItemLink"><input type="checkbox" onchange="window.location.href='/yacysearch.html?query=heise filetype:shtml&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0'"/> shtml (1)</a></li>
+<li><a href="/yacysearch.html?query=heise filetype:pl&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" class="MenuItemLink"><input type="checkbox" onchange="window.location.href='/yacysearch.html?query=heise filetype:pl&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0'"/> pl (1)</a></li>
+</ul>
+
+
+
+<ul class="nav nav-sidebar menugroup">
+<li><h3>Language</h3></li>
+<li><a href="/yacysearch.html?query=heise /language/de&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" class="MenuItemLink"><input type="checkbox" onchange="window.location.href='/yacysearch.html?query=heise /language/de&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0'"/> German (872)</a></li>
+<li><a href="/yacysearch.html?query=heise /language/en&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" class="MenuItemLink"><input type="checkbox" onchange="window.location.href='/yacysearch.html?query=heise /language/en&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0'"/> English (142)</a></li>
+<li><a href="/yacysearch.html?query=heise /language/fr&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" class="MenuItemLink"><input type="checkbox" onchange="window.location.href='/yacysearch.html?query=heise /language/fr&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0'"/> French (3)</a></li>
+<li><a href="/yacysearch.html?query=heise /language/nl&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" class="MenuItemLink"><input type="checkbox" onchange="window.location.href='/yacysearch.html?query=heise /language/nl&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0'"/> Dutch (1)</a></li>
+<li><a href="/yacysearch.html?query=heise /language/pl&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" class="MenuItemLink"><input type="checkbox" onchange="window.location.href='/yacysearch.html?query=heise /language/pl&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0'"/> Polish (1)</a></li>
+<li><a href="/yacysearch.html?query=heise /language/zh&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" class="MenuItemLink"><input type="checkbox" onchange="window.location.href='/yacysearch.html?query=heise /language/zh&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0'"/> Chinese (1)</a></li>
+</ul>
+
+
+
+
+
+<ul class="nav nav-sidebar menugroup">
+<li><h3>Author</h3></li>
+<li><a href="/yacysearch.html?query=heise author:(heise online)&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" class="MenuItemLink"><input type="checkbox" onchange="window.location.href='/yacysearch.html?query=heise author:(heise online)&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0'"/> heise online (279)</a></li>
+<li><a href="/yacysearch.html?query=heise author:(Heise Zeitschriften Verlag)&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" class="MenuItemLink"><input type="checkbox" onchange="window.location.href='/yacysearch.html?query=heise author:(Heise Zeitschriften Verlag)&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0'"/> Heise Zeitschriften Verlag (92)</a></li>
+<li><a href="/yacysearch.html?query=heise author:(heise Developer)&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" class="MenuItemLink"><input type="checkbox" onchange="window.location.href='/yacysearch.html?query=heise author:(heise Developer)&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0'"/> heise Developer (35)</a></li>
+<li><a href="/yacysearch.html?query=heise author:(heise Autos)&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" class="MenuItemLink"><input type="checkbox" onchange="window.location.href='/yacysearch.html?query=heise author:(heise Autos)&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0'"/> heise Autos (22)</a></li>
+<li><a href="/yacysearch.html?query=heise author:(heise Security)&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" class="MenuItemLink"><input type="checkbox" onchange="window.location.href='/yacysearch.html?query=heise author:(heise Security)&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0'"/> heise Security (22)</a></li>
+<li><a href="/yacysearch.html?query=heise author:(Mac &amp; i)&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" class="MenuItemLink"><input type="checkbox" onchange="window.location.href='/yacysearch.html?query=heise author:(Mac &amp; i)&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0'"/> Mac &amp; i (21)</a></li>
+<li><a href="/yacysearch.html?query=heise author:(heise Foto)&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" class="MenuItemLink"><input type="checkbox" onchange="window.location.href='/yacysearch.html?query=heise author:(heise Foto)&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0'"/> heise Foto (21)</a></li>
+<li><a href="/yacysearch.html?query=heise author:(heise Netze)&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" class="MenuItemLink"><input type="checkbox" onchange="window.location.href='/yacysearch.html?query=heise author:(heise Netze)&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0'"/> heise Netze (20)</a></li>
+<li><a href="/yacysearch.html?query=heise author:(heise open)&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" class="MenuItemLink"><input type="checkbox" onchange="window.location.href='/yacysearch.html?query=heise author:(heise open)&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0'"/> heise open (19)</a></li>
+<li><a href="/yacysearch.html?query=heise author:iX&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0" class="MenuItemLink"><input type="checkbox" onchange="window.location.href='/yacysearch.html?query=heise author:iX&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=text&amp;former=heise&amp;startRecord=0'"/> iX (16)</a></li>
+</ul>
+
+
+
+
+
+
+<ul class="nav nav-sidebar menugroup">
+<li><h3>Please support YaCy!</h3></li>
+<li><iframe src="/env/donate.html" width="100%" height="90" border="0" frameborder="0" scrolling="no" hspace="0" vspace="0" name="donate"></iframe><br/><div style="padding:8px;">If you run a YaCy server, feel free to replace our donation plea with your own support message, use the <a href="/ConfigPortal.html">Portal Configuration</a> servlet.</div></li>
+</ul>
+
+<!-- navigation end -->
+
+</div> <!-- close sidebar -->
+</div> <!-- close row -->
+
+<!-- update the search results statistics after the search is finished -->
+<script type="text/javascript">
+function latestinfo() {
+  if (window.XMLHttpRequest) { // Mozilla/Safari
+    self.xmlHttpReq = new XMLHttpRequest(); 
+  } else if (window.ActiveXObject) { // IE
+    self.xmlHttpReq = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  self.xmlHttpReq.open('GET', "yacysearchlatestinfo.json?eventID=-3-LOujYh7vX-*text*255*-ZpLwZ1ftPFp**Lio*null*null*null*null*null**null*de*global*null*2147483647*null*null*0.0*0.0*0.01*IFEXIST", true);
+  self.xmlHttpReq.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  self.xmlHttpReq.onreadystatechange = function() {
+    if (self.xmlHttpReq.readyState == 4) {
+      var rsp = eval("(" + self.xmlHttpReq.responseText + ")");
+      statistics(rsp.offset, rsp.itemscount, rsp.itemsperpage, rsp.totalcount, rsp.localResourceSize, rsp.remoteResourceSize, rsp.remoteIndexCount, rsp.remotePeerCount, rsp.navurlBase);
+    }
+  };
+  self.xmlHttpReq.send(null);
+}
+window.setTimeout('latestinfo();',500); // we need that to get a correct pagination bar at the end of the page
+window.setTimeout('latestinfo();',1000);
+// TODO: resets statistic on navigating to next page in Jetty implementation
+/*
+window.setTimeout('latestinfo();',500);
+window.setTimeout('latestinfo();',1000);
+window.setTimeout('latestinfo();',1500);
+window.setTimeout('latestinfo();',2000);
+window.setTimeout('latestinfo();',3000);
+window.setTimeout('latestinfo();',4000);
+window.setTimeout('latestinfo();',5000);
+window.setTimeout('latestinfo();',6000);
+window.setTimeout('latestinfo();',8000);
+window.setTimeout('latestinfo();',10000);
+*/
+</script>
+
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>

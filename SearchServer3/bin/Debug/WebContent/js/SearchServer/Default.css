@@ -1,0 +1,165 @@
+
+	/* 
+	 * Bereich für SVG (D3.js) Daten
+	 */
+	
+	.link {
+	  fill: none;
+	  stroke: #666;
+	  stroke-width: 2.0px;
+	}
+	
+	#licensing {
+	  fill: green;
+	}
+	
+	.link.licensing {
+	  stroke: green;
+	}
+	
+	.link.resolved {
+	  stroke-dasharray: 0,2 1;
+	}
+	
+	circle {
+	  fill: #ccc;
+	  stroke: #333;
+	  stroke-width: 1.0px;
+	}
+	
+	text {
+	  font: 14px sans-serif;
+	  pointer-events: none;
+	  text-shadow: 0 0px 0 #fff, 0px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;
+	}
+	
+	/*
+	 * Bereich für generelle Webseiten-Styles
+	 */
+	
+	*{
+		padding : 0;
+		margin : 0;
+		border : 1;
+	}
+
+	body{
+		background-color : rgba(194,220,253,50);
+	}
+	
+	.blended_grid{
+		display : 	block;
+		width : 	97%;
+		margin : 	25px 25px 25px 25px;
+	}
+	
+	.pageHeader{
+		background-color : rgba(255,255,255,100);
+		float : left;
+		clear : none;
+		height : 120px;
+		width : 100%;
+	}
+	
+	.pageLeftMenu{
+		background-color : rgba(190,190,200,0.50);
+		float : left;
+		clear : none;
+		height : 750px;
+		overflow : hidden;
+		width : 20%;
+	}
+	
+	.pageContent{
+		background-color : rgba(255,255,255,100);
+		float : left;
+		clear : none;
+		overflow : 	auto;
+		height : 750px;
+		width : 80%;
+	}
+	
+	#Merker{
+		background-color : rgba(255,200,200,100);
+		float : left;
+		clear : none;
+		overflow : 	auto;
+		width : 90%;
+	}
+	
+	#Suche{
+		background-color : rgba(255,200,200,100);
+		float : left;
+		clear : none;
+		overflow : 	auto;
+		width : 90%;
+	}
+	
+	#Meldungen{
+		background-color : rgba(255,200,200,100);
+		float : left;
+		clear : none;
+		overflow : 	auto;
+		width : 100%;
+	}
+	
+	.pageFooter{
+		background-color : rgba(150, 150, 0, 0.5);
+		float : left;
+		clear : none;
+		height : 5%;
+		height : 15%;
+		width : 100%;
+	}
+
+	/* 
+	 * Debug-Meldungen in anderem Style darstellen
+	 */
+	
+	div.fsb 
+	{
+		border:2px solid #6688AA;
+		background-color:lightgrey;
+		height:15px;
+		padding:1px;
+		text-align:left;
+	}
+	 
+	div.fortschritt 
+	{
+		background-color:#00F;
+		height:15px;
+		text-align:left;
+	}
+	  
+	table
+	{
+		cellspacing='0';
+		cellpadding='1';
+		border-collapse: collapsed;
+		border: 0px solid #6688AA;
+	}
+	
+	th
+	{
+		font: bold 0.7em  Arial, Verdana, sans-serif;
+		padding:3px 10px;
+		border:0px none #6688AA;
+		text-align:center;
+		color:#FFFFFF;
+		width=99%;
+	}
+	
+	td
+	{
+		font:normal 0.7em  Arial, Verdana, sans-serif;
+		padding:3px 3px;
+		border:0px solid #6688AA;
+		line-height:90%;
+		width=250px;
+	}
+	
+	tr
+	{
+		Width=250px;
+	}

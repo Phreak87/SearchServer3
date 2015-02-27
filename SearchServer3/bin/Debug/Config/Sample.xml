@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WebSearch>
+
+	<Fetcher Group="DIR">
+		<Searcher Name="SampleCont" 		URL="C:\Users\Phreak\Desktop\SearchServer3\3rd_Party\Samples" 	Order="1" 	Refresh="15"	Category="Sample" Watch="True"/>
+	</Fetcher>
+
+	<Fetcher Group="FIL">
+		<Searcher Name="SampleText" 		URL="C:\Users\Phreak\Desktop\SearchServer3\3rd_Party\Samples\Txt\Test.txt" 	Order="1" 	Refresh="10"	Category="Sample"/>
+	</Fetcher>
+	
+  <Fetcher Group="RSS">
+	<Searcher Name="SampleRSS" 	Category="Sample" Order="1" Refresh="0"><![CDATA[http://localhost:9090/Bins/Samples/Rss/rdf.rss]]></Searcher>
+    <Searcher Name="SampleATOM" Category="Sample" Order="1" Refresh="0"><![CDATA[http://localhost:9090/Bins/Samples/Rss/atom.xml]]></Searcher>
+  </Fetcher>
+  
+  <Fetcher Group="WEB">
+    <Searcher Name="Google" 		Category="Allgemein" 	Order="1" Type="NewFrame" Path="xmlns/query/search" 	RelTitle="title" RelLink="title" RelCont="title"><![CDATA[http://www.google.com/search?sourceid=navclient&hl=de&q={query}]]><Options><Option Name="Url: Boerse" Add="InUrl:boerse.bz" /><Option Name="Url: Gully" Add="InUrl:mygully.com" /><Option Name="Typ: MP3" Add="ext:mp3" /><Option Name="Typ: PDF" Add="ext:pdf" /><Option Name="Typ: MPG" Add="ext:mpg" /></Options></Searcher>
+    <Searcher Name="IxQuick" 		Category="Allgemein" 	Order="1" Type="DFrame" Path="/html[1]/body[1]/div[2]/" RelTitle="title" RelLink="link" RelCont="title"><![CDATA[http://localhost:8090/yacysearch.html?query={query}&maximumRecords=100]]><Options><Option Name="Url: Boerse" Add="InUrl:boerse.bz" /><Option Name="Url: Gully" Add="InUrl:mygully.com" /><Option Name="Typ: MP3" Add="filetype:mp3" /><Option Name="Typ: PDF" Add="filetype:pdf" /><Option Name="Typ: MPG" Add="filetype:mpg" /></Options></Searcher>
+    <Searcher Name="DuckDuckGo" 	Category="Allgemein" 	Order="1" Type="PFrame" Path="xmlns/RelatedTopics" 		RelTitle="Text" RelLink="FirstURL" RelCont="title"><![CDATA[https://duckduckgo.com/?q={query}]]><Options><Option Name="Url: Boerse" Add="site:boerse.bz" /><Option Name="Url: Gully" Add="site:mygully.com" /><Option Name="Typ: MP3" Add="filetype:mp3" /><Option Name="Typ: PDF" Add="filetype:pdf" /><Option Name="Typ: MPG" Add="filetype:mpg" /></Options></Searcher>
+    <Searcher Name="YouTube" 		Category="Videos" 		Order="1" Type="JSON" 	Path="xmlns/feed/entry" 		RelTitle="title/t" RelLink="link/href" RelCont="title"><![CDATA[https://gdata.youtube.com/feeds/api/videos?alt=json&q={query}&start-index={index}&max-results=25]]></Searcher>
+    <Searcher Name="dlb.to" 		Category="Allgemein" 	Order="1" Type="XML" 	Path="rss/channel/item" 		RelTitle="title" RelLink="link" RelCont="title"><![CDATA[http://search.dlb.to/rest/rss/results/{query}.rss]]></Searcher>
+  </Fetcher>
+</WebSearch>

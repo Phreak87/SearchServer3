@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type='text/xsl' href='/yacysearch.xsl' version='1.0'?>
+<rss version="2.0"
+    xmlns:yacy="http://www.yacy.net/"
+    xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/"
+    xmlns:media="http://search.yahoo.com/mrss/"
+    xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+>
+	<!-- YaCy Search Engine; http://yacy.net -->
+	<channel>
+		<title>Web Search by the People, for the People: www</title>
+		<description>Search for www</description>
+		<link>http://localhost:8090/yacysearch.html?query=www&amp;resource=global&amp;contentdom=text&amp;verify=ifexist</link>
+		<image>
+			<url>http://localhost:8090/env/grafics/yacy.png</url>
+			<title>Search for www</title>
+			<link>http://localhost:8090/yacysearch.html?query=www&amp;resource=global&amp;contentdom=text&amp;verify=ifexist</link>
+		</image>
+		<opensearch:startIndex>0</opensearch:startIndex>
+		<opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+		<atom:link rel="search" href="http://localhost:8090/opensearchdescription.xml" type="application/opensearchdescription+xml"/>
+		<opensearch:Query role="request" searchTerms="www" />
+<item>
+<title>WWW - Service - Fehmarnsches Tageblatt</title>
+<link>http://www.fehmarn24.de/service/www-tips/</link>
+<description>Wetter Sitemap RSS meine Startseite Registrierung Login Fotostrecken Videos '); }</description>
+<pubDate>Wed, 24 Dec 2014 10:16:29 +0000</pubDate>
+<dc:publisher><![CDATA[]]></dc:publisher>
+<dc:creator><![CDATA[]]></dc:creator>
+<dc:subject><![CDATA[]]></dc:subject>
+<yacy:size>54839</yacy:size>
+<yacy:sizename>53 kbyte</yacy:sizename>
+<yacy:host>www.fehmarn24.de</yacy:host>
+<yacy:path>/service/www-tips/</yacy:path>
+<yacy:file></yacy:file>
+<guid isPermaLink="false">-v9VUBIQATgB</guid>
+
+</item>
+<item>
+<title>WWW World Wide Web (WWW)</title>
+<link>http://www.ard.de/home/intern/fakten/abc-der-ard/WWW____World_Wide_Web__WWW_/487806/index.html</link>
+<description>Zum Inhalt ARD Navigation ARD Home Nachrichten Sport Börse Ratgeber Wissen Kultur Kinder ARD Intern Fernsehen Radio ARD Mediathek Suchvorschläge Menü Die ARD Das ist die ARD Übersicht Das ist die ARD Fragen und Antworten zur ARD Auftrag der ARD Vielfalt und Qualität Journalistische Kompetenz Kulturfaktor ARD Ausgezeichnet Kinder und Jugendliche Integration und Inklusion Die ARD in Zahlen Übersicht Die ARD in Zahlen 98 Euro Rundfunkbeitrag Entwicklung des Rundfunkbeitrags Rundfunkbeiträge in Europa Gesamterträge der ARD Finanzielle Lage der ARD Sender Der Tatort im Ersten Nachrichten von ARD aktuell Auslandsstudios der ARD Sport in der ARD Mitarbeiter/ innen in der ARD Ausbildung in der ARD Film  und Medienförderung Film  und Fernsehwirtschaft ARD Vorsitz ARD Generalsekretariat Mitglieder der ARD Übersicht Mitglieder der ARD Bayerischer Rundfunk (BR) Hessischer Rundfunk (HR) Mitteldeutscher Rundfunk (MDR) Norddeutscher Rundfunk (NDR) Radio Bremen (RB) Rundfunk Berlin Brandenburg (RBB) Saarländischer Rundfunk (SR) Südwestrundfunk (SWR) Westdeutscher Rundfunk (WDR) Deutsche Welle (DW) Gemeinschaftseinrichtungen der ARD Übersicht Gemeinschaftseinrichtungen der ARD ARD aktuell de ARD Hauptstadtstudio ARD Play Out Center ARD Text ZDF medienakademie ARGE Rundfunk Betriebstechnik Beitragsservice Degeto Film GmbH Deutsches Rundfunkarchiv Informations Verarbeitungs Zentrum Institut für Rundfunktechnik SportA Kommissionen der ARD Übersicht Kommissionen der ARD Historische Kommission der ARD ARD Werbung Sales &amp; Services Standorte Personalien Jobs in der ARD Ausbildung in der ARD Auslandsstudios der ARD Union der Europäischen Rundfunkorganisationen Kontaktadressen Programm Fernsehen Übersicht Fernsehen Das Erste Die Dritten Gemeinsame Fernsehprogramme Hörfunk Onlineangebote Übersicht Onlineangebote de de de de de Onlineangebote der Landesrundfunkanstalten Dreistufentest und Telemedienkonzepte Technik und Empfang Übersicht Technik und Empfang Fernsehen Hörfunk Onlineangebote Fakten ABC der ARD Chronik der ARD ARD Mediendaten Übersicht ARD Mediendaten Empfangssituation Programmangebot Medienwirtschaft Mediennutzung Fernsehnutzung Hörfunknutzung Onlinenutzung Allgemeine Daten ARD Statistiken Finanzen Übersicht Finanzen Rundfunkbeitrag Rundfunkwerbung Rechtsgrundlagen Übersicht Rechtsgrundlagen ARD Satzung Rundfunkstaatsvertrag Rundfunkgesetze Programmgrundsätze Grundversorgung Datenschutz Jugendschutz Standpunkte Gremien Aus der GVK Arbeit Übersicht Aus der GVK Arbeit Aufgaben Sitzungen und Ausschüsse Dreistufentest Veranstaltungen Fachartikel und Interviews Programmkritik und  beschwerde Rechtsgrundlagen GVK Mitglieder Übersicht GVK Mitglieder Der GVK Vorsitzende Die Gremienvorsitzenden Die GVK Geschäftsführerin GVK Pressemitteilungen GVK Kontaktadresse Presse Presseservice Pressearchiv Pressearchiv 2014 Pressearchiv 2013 Pressearchiv 2012 Pressearchiv 2011 Detail Navigation: Das ist die ARD Übersicht Das ist die ARD Fragen und Antworten zur ARD Auftrag der ARD Vielfalt und Qualität Journalistische Kompetenz Kulturfaktor ARD Ausgezeichnet Kinder und Jugendliche Integration und Inklusion Die ARD in Zahlen Übersicht Die ARD in Zahlen 98 Euro Rundfunkbeitrag Entwicklung des Rundfunkbeitrags Rundfunkbeiträge in Europa Gesamterträge der ARD Finanzielle Lage der ARD Sender Der Tatort im Ersten Nachrichten von ARD aktuell Auslandsstudios der ARD Sport in der ARD Mitarbeiter/ innen in der ARD Ausbildung in der ARD Film  und Medienförderung Film  und Fernsehwirtschaft ARD Vorsitz ARD Generalsekretariat Mitglieder der ARD Übersicht Mitglieder der ARD Bayerischer Rundfunk (BR) Hessischer Rundfunk (HR) Mitteldeutscher Rundfunk (MDR) Norddeutscher Rundfunk (NDR) Radio Bremen (RB) Rundfunk Berlin Brandenburg (RBB) Saarländischer Rundfunk (SR) Südwestrundfunk (SWR) Westdeutscher Rundfunk (WDR) Deutsche Welle (DW) Gemeinschaftseinrichtungen der ARD Übersicht Gemeinschaftseinrichtungen der ARD ARD aktuell de ARD Hauptstadtstudio ARD Play Out Center ARD Text ZDF medienakademie ARGE Rundfunk Betriebstechnik Beitragsservice Degeto Film GmbH Deutsches Rundfunkarchiv Informations Verarbeitungs Zentrum Institut für Rundfunktechnik SportA Kommissionen der ARD Übersicht Kommissionen der ARD Historische Kommission der ARD ARD Werbung Sales &amp; Services Standorte Personalien Jobs in der ARD Ausbildung in der ARD Auslandsstudios der ARD Union der Europäischen Rundfunkorganisationen Kontaktadressen Fernsehen Übersicht Fernsehen Das Erste Die Dritten Gemeinsame Fernsehprogramme Hörfunk Onlineangebote Übersicht Onlineangebote de de de de de Onlineangebote der Landesrundfunkanstalten Dreistufentest und Telemedienkonzepte Technik und Empfang Übersicht Technik und Empfang Fernsehen Hörfunk Onlineangebote ABC der ARD Chronik der ARD ARD Mediendaten Übersicht ARD Mediendaten Empfangssituation Programmangebot Medienwirtschaft Mediennutzung Fernsehnutzung Hörfunknutzung Onlinenutzung Allgemeine Daten ARD Statistiken Finanzen Übersicht Finanzen Rundfunkbeitrag Rundfunkwerbung Rechtsgrundlagen Übersicht Rechtsgrundlagen ARD Satzung Rundfunkstaatsvertrag Rundfunkgesetze Programmgrundsätze Grundversorgung Datenschutz Jugendschutz Standpunkte Aus der GVK Arbeit Übersicht Aus der GVK Arbeit Aufgaben Sitzungen und Ausschüsse Dreistufentest Veranstaltungen Fachartikel und Interviews Programmkritik und  beschwerde Rechtsgrundlagen GVK Mitglieder Übersicht GVK Mitglieder Der GVK Vorsitzende Die Gremienvorsitzenden Die GVK Geschäftsführerin GVK Pressemitteilungen GVK Kontaktadresse Presseservice Pressearchiv Pressearchiv 2014 Pressearchiv 2013 Pressearchiv 2012 Pressearchiv 2011 &lt;b&gt;WWW&lt;/b&gt; World Wide Web (&lt;b&gt;WWW&lt;/b&gt;)</description>
+<pubDate>Tue, 30 Dec 2014 00:00:00 +0000</pubDate>
+<dc:publisher><![CDATA[]]></dc:publisher>
+<dc:creator><![CDATA[Redaktion ARD-Publikationen]]></dc:creator>
+<dc:subject><![CDATA[Multimedia]]></dc:subject>
+<yacy:size>79884</yacy:size>
+<yacy:sizename>78 kbyte</yacy:sizename>
+<yacy:host>www.ard.de</yacy:host>
+<yacy:path>/home/intern/fakten/abc-der-ard/WWW____World_Wide_Web__WWW_/487806/index.html</yacy:path>
+<yacy:file>index.html</yacy:file>
+<guid isPermaLink="false">Bhsh8z-pl3FA</guid>
+
+</item>
+<item>
+<title>Www. Www sm allen building contractor and http www litmanlaw com gtse goog gtkw patent search with www dinseychanal thatssoraven com</title>
+<link>http://txyus.w.interia.pl/www.html</link>
+<description>&lt;b&gt;Www&lt;/b&gt;. &lt;b&gt;Www&lt;/b&gt; sm allen building contractor and http &lt;b&gt;www&lt;/b&gt; litmanlaw com gtse goog gtkw patent search with &lt;b&gt;www&lt;/b&gt; dinseychanal thatssoraven com. &lt;b&gt;Www&lt;/b&gt;.</description>
+<pubDate>Tue, 30 Sep 2014 00:00:00 +0000</pubDate>
+<dc:publisher><![CDATA[]]></dc:publisher>
+<dc:creator><![CDATA[]]></dc:creator>
+<dc:subject><![CDATA[]]></dc:subject>
+<yacy:size>-1</yacy:size>
+<yacy:sizename>-1 bytes</yacy:sizename>
+<yacy:host>txyus.w.interia.pl</yacy:host>
+<yacy:path>/www.html</yacy:path>
+<yacy:file>www.html</yacy:file>
+<guid isPermaLink="false">IC-6ja0zHzhA</guid>
+
+</item>
+<item>
+<title>WWW Overview</title>
+<link>http://www.tutorialspoint.com/internet_technologies/www_overview.htm</link>
+<description>h2 span&amp;#123; text align: right; float: right; font size: 14px; color: #888; text shadow: 0px 0px 0px #ccc !important; margin right: 15px; } .front icons&amp;#123; height: 100px; border: 1px solid #d6d6d6; background: #eee !important; vertical align: middle; padding: 15px; } .wrapLoader { 100%; 0px; 100%; absolute; background eee; 95; z 1000; none; } .imgLoader { 0px auto; fixed; 50%; 50%; } button hover { background: #eee; } feature box feature box icon, .col md 3 .course box, heading, footer footer ribon, footer copyright { background color: #316441 !important; } .selected reading boxes .col md 3 .course box&amp;#123; background color: transparent !important; } mobile apps { border: 1px solid #316441 !important; } footer list li&amp;#123; background: none !important; padding: 0px; } p a, footer icon, footer icons li i { color: #316441 !important; } p { word wrap: break word;&amp;#125; 1 800 200 9249 (Toll Free) Live Chat Home Tutorials Library Academic Big Data Databases Java Technologies Mainframe Management Microsoft Technologies Miscellaneous Mobile Development Programming Scripts Software Quality Telecom Web Development XML Technologies Coding Ground Absolute Classes Login Sign Up Upcoming Classes All Courses Internet Basics</description>
+<pubDate>Mon, 16 Feb 2015 23:42:54 +0000</pubDate>
+<dc:publisher><![CDATA[]]></dc:publisher>
+<dc:creator><![CDATA[tutorialspoint.com]]></dc:creator>
+<dc:subject><![CDATA[Beginners Browsers Development Domain E-Mail Engines Internet Learn Models Name Operations Overview Protocols Providers Publishing Search Servers Services System Technologies Tutorial Types WWW Web Website Websites easy etc. reference simple starting steps]]></dc:subject>
+<yacy:size>31494</yacy:size>
+<yacy:sizename>30 kbyte</yacy:sizename>
+<yacy:host>www.tutorialspoint.com</yacy:host>
+<yacy:path>/internet_technologies/www_overview.htm</yacy:path>
+<yacy:file>www_overview.htm</yacy:file>
+<guid isPermaLink="false">h-jYb8zVoSUa</guid>
+
+</item>
+<item>
+<title>Www . Www. fm 91.2. com and www. women of fascism. com with www. google com</title>
+<link>http://cbeqx.w.interia.pl/www-.html</link>
+<description>&lt;b&gt;Www&lt;/b&gt; . &lt;b&gt;Www&lt;/b&gt;. fm 2. com and &lt;b&gt;www&lt;/b&gt;. women of fascism. com with &lt;b&gt;www&lt;/b&gt;. google com. &lt;b&gt;Www&lt;/b&gt; . &lt;b&gt;Www&lt;/b&gt;. fm 2. com and &lt;b&gt;www&lt;/b&gt;. women of fascism. com with &lt;b&gt;www&lt;/b&gt;.</description>
+<pubDate>Fri, 31 Oct 2014 00:00:00 +0000</pubDate>
+<dc:publisher><![CDATA[]]></dc:publisher>
+<dc:creator><![CDATA[]]></dc:creator>
+<dc:subject><![CDATA[]]></dc:subject>
+<yacy:size>64497</yacy:size>
+<yacy:sizename>62 kbyte</yacy:sizename>
+<yacy:host>cbeqx.w.interia.pl</yacy:host>
+<yacy:path>/www-.html</yacy:path>
+<yacy:file>www-.html</yacy:file>
+<guid isPermaLink="false">vR1jBrKkcnxA</guid>
+
+</item>
+<item>
+<title>WWW | Technology Review</title>
+<link>http://www.heise.de/tr/thema/WWW</link>
+<description>News und Hintergründe zum Thema &lt;b&gt;WWW&lt;/b&gt; bei heise online.</description>
+<pubDate>Mon, 29 Dec 2014 23:53:47 +0000</pubDate>
+<dc:publisher><![CDATA[]]></dc:publisher>
+<dc:creator><![CDATA[Technology Review]]></dc:creator>
+<dc:subject><![CDATA[WWW]]></dc:subject>
+<yacy:size>54314</yacy:size>
+<yacy:sizename>53 kbyte</yacy:sizename>
+<yacy:host>www.heise.de</yacy:host>
+<yacy:path>/tr/thema/WWW</yacy:path>
+<yacy:file>WWW</yacy:file>
+<guid isPermaLink="false">bWm2eZP290EA</guid>
+
+</item>
+<item>
+<title>Www . Www. jerry . com and www. blue book .com with www. guangzhou jinjian medical equipment co</title>
+<link>http://tmqrh.w.interia.pl/www-.html</link>
+<description>&lt;b&gt;Www&lt;/b&gt; . &lt;b&gt;Www&lt;/b&gt;. jerry . com and &lt;b&gt;www&lt;/b&gt;. blue book .com with &lt;b&gt;www&lt;/b&gt;. guangzhou jinjian medical equipment co. &lt;b&gt;Www&lt;/b&gt; . &lt;b&gt;Www&lt;/b&gt;. jerry . com and &lt;b&gt;www&lt;/b&gt;. blue book .com with &lt;b&gt;www&lt;/b&gt;.</description>
+<pubDate>Mon, 03 Nov 2014 00:00:00 +0000</pubDate>
+<dc:publisher><![CDATA[]]></dc:publisher>
+<dc:creator><![CDATA[]]></dc:creator>
+<dc:subject><![CDATA[]]></dc:subject>
+<yacy:size>66556</yacy:size>
+<yacy:sizename>64 kbyte</yacy:sizename>
+<yacy:host>tmqrh.w.interia.pl</yacy:host>
+<yacy:path>/www-.html</yacy:path>
+<yacy:file>www-.html</yacy:file>
+<guid isPermaLink="false">f3SotslX4HgA</guid>
+
+</item>
+<item>
+<title>World Wide Web (WWW)</title>
+<link>http://www.ard.de/home/intern/fakten/abc-der-ard/World_Wide_Web__WWW_/467516/index.html</link>
+<description>Zum Inhalt ARD Navigation ARD Home Nachrichten Sport Börse Ratgeber Wissen Kultur Kinder ARD Intern Fernsehen Radio ARD Mediathek Suchvorschläge Menü Die ARD Das ist die ARD Übersicht Das ist die ARD Fragen und Antworten zur ARD Auftrag der ARD Vielfalt und Qualität Journalistische Kompetenz Kulturfaktor ARD Ausgezeichnet Kinder und Jugendliche Integration und Inklusion Die ARD in Zahlen Übersicht Die ARD in Zahlen 98 Euro Rundfunkbeitrag Entwicklung des Rundfunkbeitrags Rundfunkbeiträge in Europa Gesamterträge der ARD Finanzielle Lage der ARD Sender Der Tatort im Ersten Nachrichten von ARD aktuell Auslandsstudios der ARD Sport in der ARD Mitarbeiter/ innen in der ARD Ausbildung in der ARD Film  und Medienförderung Film  und Fernsehwirtschaft ARD Vorsitz ARD Generalsekretariat Mitglieder der ARD Übersicht Mitglieder der ARD Bayerischer Rundfunk (BR) Hessischer Rundfunk (HR) Mitteldeutscher Rundfunk (MDR) Norddeutscher Rundfunk (NDR) Radio Bremen (RB) Rundfunk Berlin Brandenburg (RBB) Saarländischer Rundfunk (SR) Südwestrundfunk (SWR) Westdeutscher Rundfunk (WDR) Deutsche Welle (DW) Gemeinschaftseinrichtungen der ARD Übersicht Gemeinschaftseinrichtungen der ARD ARD aktuell de ARD Hauptstadtstudio ARD Play Out Center ARD Text ZDF medienakademie ARGE Rundfunk Betriebstechnik Beitragsservice Degeto Film GmbH Deutsches Rundfunkarchiv Informations Verarbeitungs Zentrum Institut für Rundfunktechnik SportA Kommissionen der ARD Übersicht Kommissionen der ARD Historische Kommission der ARD ARD Werbung Sales &amp; Services Standorte Personalien Jobs in der ARD Ausbildung in der ARD Auslandsstudios der ARD Union der Europäischen Rundfunkorganisationen Kontaktadressen Programm Fernsehen Übersicht Fernsehen Das Erste Die Dritten Gemeinsame Fernsehprogramme Hörfunk Onlineangebote Übersicht Onlineangebote de de de de de Onlineangebote der Landesrundfunkanstalten Dreistufentest und Telemedienkonzepte Technik und Empfang Übersicht Technik und Empfang Fernsehen Hörfunk Onlineangebote Fakten ABC der ARD Chronik der ARD ARD Mediendaten Übersicht ARD Mediendaten Empfangssituation Programmangebot Medienwirtschaft Mediennutzung Fernsehnutzung Hörfunknutzung Onlinenutzung Allgemeine Daten ARD Statistiken Finanzen Übersicht Finanzen Rundfunkbeitrag Rundfunkwerbung Rechtsgrundlagen Übersicht Rechtsgrundlagen ARD Satzung Rundfunkstaatsvertrag Rundfunkgesetze Programmgrundsätze Grundversorgung Datenschutz Jugendschutz Standpunkte Gremien Aus der GVK Arbeit Übersicht Aus der GVK Arbeit Aufgaben Sitzungen und Ausschüsse Dreistufentest Veranstaltungen Fachartikel und Interviews Programmkritik und  beschwerde Rechtsgrundlagen GVK Mitglieder Übersicht GVK Mitglieder Der GVK Vorsitzende Die Gremienvorsitzenden Die GVK Geschäftsführerin GVK Pressemitteilungen GVK Kontaktadresse Presse Presseservice Pressearchiv Pressearchiv 2014 Pressearchiv 2013 Pressearchiv 2012 Pressearchiv 2011 Detail Navigation: Das ist die ARD Übersicht Das ist die ARD Fragen und Antworten zur ARD Auftrag der ARD Vielfalt und Qualität Journalistische Kompetenz Kulturfaktor ARD Ausgezeichnet Kinder und Jugendliche Integration und Inklusion Die ARD in Zahlen Übersicht Die ARD in Zahlen 98 Euro Rundfunkbeitrag Entwicklung des Rundfunkbeitrags Rundfunkbeiträge in Europa Gesamterträge der ARD Finanzielle Lage der ARD Sender Der Tatort im Ersten Nachrichten von ARD aktuell Auslandsstudios der ARD Sport in der ARD Mitarbeiter/ innen in der ARD Ausbildung in der ARD Film  und Medienförderung Film  und Fernsehwirtschaft ARD Vorsitz ARD Generalsekretariat Mitglieder der ARD Übersicht Mitglieder der ARD Bayerischer Rundfunk (BR) Hessischer Rundfunk (HR) Mitteldeutscher Rundfunk (MDR) Norddeutscher Rundfunk (NDR) Radio Bremen (RB) Rundfunk Berlin Brandenburg (RBB) Saarländischer Rundfunk (SR) Südwestrundfunk (SWR) Westdeutscher Rundfunk (WDR) Deutsche Welle (DW) Gemeinschaftseinrichtungen der ARD Übersicht Gemeinschaftseinrichtungen der ARD ARD aktuell de ARD Hauptstadtstudio ARD Play Out Center ARD Text ZDF medienakademie ARGE Rundfunk Betriebstechnik Beitragsservice Degeto Film GmbH Deutsches Rundfunkarchiv Informations Verarbeitungs Zentrum Institut für Rundfunktechnik SportA Kommissionen der ARD Übersicht Kommissionen der ARD Historische Kommission der ARD ARD Werbung Sales &amp; Services Standorte Personalien Jobs in der ARD Ausbildung in der ARD Auslandsstudios der ARD Union der Europäischen Rundfunkorganisationen Kontaktadressen Fernsehen Übersicht Fernsehen Das Erste Die Dritten Gemeinsame Fernsehprogramme Hörfunk Onlineangebote Übersicht Onlineangebote de de de de de Onlineangebote der Landesrundfunkanstalten Dreistufentest und Telemedienkonzepte Technik und Empfang Übersicht Technik und Empfang Fernsehen Hörfunk Onlineangebote ABC der ARD Chronik der ARD ARD Mediendaten Übersicht ARD Mediendaten Empfangssituation Programmangebot Medienwirtschaft Mediennutzung Fernsehnutzung Hörfunknutzung Onlinenutzung Allgemeine Daten ARD Statistiken Finanzen Übersicht Finanzen Rundfunkbeitrag Rundfunkwerbung Rechtsgrundlagen Übersicht Rechtsgrundlagen ARD Satzung Rundfunkstaatsvertrag Rundfunkgesetze Programmgrundsätze Grundversorgung Datenschutz Jugendschutz Standpunkte Aus der GVK Arbeit Übersicht Aus der GVK Arbeit Aufgaben Sitzungen und Ausschüsse Dreistufentest Veranstaltungen Fachartikel und Interviews Programmkritik und  beschwerde Rechtsgrundlagen GVK Mitglieder Übersicht GVK Mitglieder Der GVK Vorsitzende Die Gremienvorsitzenden Die GVK Geschäftsführerin GVK Pressemitteilungen GVK Kontaktadresse Presseservice Pressearchiv Pressearchiv 2014 Pressearchiv 2013 Pressearchiv 2012 Pressearchiv 2011 World Wide Web (&lt;b&gt;WWW&lt;/b&gt;)</description>
+<pubDate>Tue, 30 Dec 2014 00:00:00 +0000</pubDate>
+<dc:publisher><![CDATA[]]></dc:publisher>
+<dc:creator><![CDATA[Redaktion ARD-Publikationen]]></dc:creator>
+<dc:subject><![CDATA[Multimedia]]></dc:subject>
+<yacy:size>79803</yacy:size>
+<yacy:sizename>77 kbyte</yacy:sizename>
+<yacy:host>www.ard.de</yacy:host>
+<yacy:path>/home/intern/fakten/abc-der-ard/World_Wide_Web__WWW_/467516/index.html</yacy:path>
+<yacy:file>index.html</yacy:file>
+<guid isPermaLink="false">N2orDz-pl3FA</guid>
+
+</item>
+<item>
+<title>Www . Www. socrates .com and www. distroller . com with www. restaurants on international drive</title>
+<link>http://ylghm.w.interia.pl/www-.html</link>
+<description>&lt;b&gt;Www&lt;/b&gt; . &lt;b&gt;Www&lt;/b&gt;. socrates .com and &lt;b&gt;www&lt;/b&gt;. distroller . com with &lt;b&gt;www&lt;/b&gt;. restaurants on international drive. &lt;b&gt;Www&lt;/b&gt; . &lt;b&gt;Www&lt;/b&gt;. socrates .com and &lt;b&gt;www&lt;/b&gt;. distroller .</description>
+<pubDate>Sat, 18 Oct 2014 00:00:00 +0000</pubDate>
+<dc:publisher><![CDATA[]]></dc:publisher>
+<dc:creator><![CDATA[]]></dc:creator>
+<dc:subject><![CDATA[]]></dc:subject>
+<yacy:size>66892</yacy:size>
+<yacy:sizename>65 kbyte</yacy:sizename>
+<yacy:host>ylghm.w.interia.pl</yacy:host>
+<yacy:path>/www-.html</yacy:path>
+<yacy:file>www-.html</yacy:file>
+<guid isPermaLink="false">vdvjbxZ-y2rA</guid>
+
+</item>
+<item>
+<title>WWW Grabber - Download - heise online</title>
+<link>http://www.heise.de/download/www-grabber-1146123.html</link>
+<description>Download: &lt;b&gt;WWW&lt;/b&gt; Grabber 1.0.5, Demo, kostenlos (Deutsch). Über &lt;b&gt;WWW&lt;/b&gt; Grabber: Lädt Bilder, Videos und andere Mediendateien herunter, die auf Webseiten enthalten...</description>
+<pubDate>Fri, 14 Nov 2014 04:26:14 +0000</pubDate>
+<dc:publisher><![CDATA[Heise Zeitschriften Verlag]]></dc:publisher>
+<dc:creator><![CDATA[Heise Zeitschriften Verlag]]></dc:creator>
+<dc:subject><![CDATA[&amp; 1.0.5 Browser Co. Demoversion Download Grabber Internet Software Surf-Utilities WWW]]></dc:subject>
+<yacy:size>47410</yacy:size>
+<yacy:sizename>46 kbyte</yacy:sizename>
+<yacy:host>www.heise.de</yacy:host>
+<yacy:path>/download/www-grabber-1146123.html</yacy:path>
+<yacy:file>www-grabber-1146123.html</yacy:file>
+<guid isPermaLink="false">XXEFhAP290EA</guid>
+
+</item>
+<yacy:navigation>
+
+<yacy:facet name="domains" displayname="Domains" type="String" min="0" max="0" mean="0">
+<yacy:element name="heise.de" count="784" modifier="site%3Aheise.de" url="/yacysearch.xml?query=www+site%3Aheise.de&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+<yacy:element name="youtube.com" count="172" modifier="site%3Ayoutube.com" url="/yacysearch.xml?query=www+site%3Ayoutube.com&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+<yacy:element name="prosieben.de" count="52" modifier="site%3Aprosieben.de" url="/yacysearch.xml?query=www+site%3Aprosieben.de&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+<yacy:element name="verivox.de" count="48" modifier="site%3Averivox.de" url="/yacysearch.xml?query=www+site%3Averivox.de&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+<yacy:element name="apple.com" count="36" modifier="site%3Aapple.com" url="/yacysearch.xml?query=www+site%3Aapple.com&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+<yacy:element name="techstage.de" count="35" modifier="site%3Atechstage.de" url="/yacysearch.xml?query=www+site%3Atechstage.de&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+<yacy:element name="nasa.gov" count="26" modifier="site%3Anasa.gov" url="/yacysearch.xml?query=www+site%3Anasa.gov&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+<yacy:element name="mittelstandswiki.de" count="26" modifier="site%3Amittelstandswiki.de" url="/yacysearch.xml?query=www+site%3Amittelstandswiki.de&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+<yacy:element name="golem.de" count="25" modifier="site%3Agolem.de" url="/yacysearch.xml?query=www+site%3Agolem.de&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+<yacy:element name="europarl.europa.eu" count="24" modifier="site%3Aeuroparl.europa.eu" url="/yacysearch.xml?query=www+site%3Aeuroparl.europa.eu&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+</yacy:facet>
+
+
+
+<yacy:facet name="authors" displayname="Authors" type="String" min="0" max="0" mean="0">
+<yacy:element name="heise online" count="275" modifier="author%3A%28heise+online%29" url="/yacysearch.xml?query=www+author%3A%28heise+online%29&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+<yacy:element name="Heise Zeitschriften Verlag" count="92" modifier="author%3A%28Heise+Zeitschriften+Verlag%29" url="/yacysearch.xml?query=www+author%3A%28Heise+Zeitschriften+Verlag%29&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+<yacy:element name="heise Developer" count="35" modifier="author%3A%28heise+Developer%29" url="/yacysearch.xml?query=www+author%3A%28heise+Developer%29&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+<yacy:element name="Apple Inc." count="27" modifier="author%3A%28Apple+Inc.%29" url="/yacysearch.xml?query=www+author%3A%28Apple+Inc.%29&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+<yacy:element name="Adobe PDF Library 9.9" count="24" modifier="author%3A%28Adobe+PDF+Library+9.9%29" url="/yacysearch.xml?query=www+author%3A%28Adobe+PDF+Library+9.9%29&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+<yacy:element name="YouTube" count="22" modifier="author%3AYouTube" url="/yacysearch.xml?query=www+author%3AYouTube&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+<yacy:element name="heise Autos" count="22" modifier="author%3A%28heise+Autos%29" url="/yacysearch.xml?query=www+author%3A%28heise+Autos%29&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+<yacy:element name="heise Security" count="22" modifier="author%3A%28heise+Security%29" url="/yacysearch.xml?query=www+author%3A%28heise+Security%29&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+<yacy:element name="Mac &amp; i" count="21" modifier="author%3A%28Mac+&amp;+i%29" url="/yacysearch.xml?query=www+author%3A%28Mac+&amp;+i%29&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+<yacy:element name="heise Foto" count="21" modifier="author%3A%28heise+Foto%29" url="/yacysearch.xml?query=www+author%3A%28heise+Foto%29&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+</yacy:facet>
+
+
+
+<yacy:facet name="filetypes" displayname="Filetypes" type="String" min="0" max="0" mean="0">
+<yacy:element name="html" count="841" modifier="filetype%3Ahtml" url="/yacysearch.xml?query=www+filetype%3Ahtml&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+<yacy:element name="pdf" count="218" modifier="filetype%3Apdf" url="/yacysearch.xml?query=www+filetype%3Apdf&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+<yacy:element name="php" count="61" modifier="filetype%3Aphp" url="/yacysearch.xml?query=www+filetype%3Aphp&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+<yacy:element name="aspx" count="58" modifier="filetype%3Aaspx" url="/yacysearch.xml?query=www+filetype%3Aaspx&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+<yacy:element name="htm" count="48" modifier="filetype%3Ahtm" url="/yacysearch.xml?query=www+filetype%3Ahtm&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+<yacy:element name="shtml" count="18" modifier="filetype%3Ashtml" url="/yacysearch.xml?query=www+filetype%3Ashtml&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+<yacy:element name="txt" count="3" modifier="filetype%3Atxt" url="/yacysearch.xml?query=www+filetype%3Atxt&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+<yacy:element name="asp" count="3" modifier="filetype%3Aasp" url="/yacysearch.xml?query=www+filetype%3Aasp&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+<yacy:element name="cfm" count="3" modifier="filetype%3Acfm" url="/yacysearch.xml?query=www+filetype%3Acfm&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+<yacy:element name="pl" count="2" modifier="filetype%3Apl" url="/yacysearch.xml?query=www+filetype%3Apl&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+</yacy:facet>
+
+
+<yacy:facet name="protocols" displayname="Protocols" type="String" min="0" max="0" mean="0">
+<yacy:element name="http" count="2568" modifier="%2Fhttp" url="-UNRESOLVED_PATTERN-"/>
+<yacy:element name="https" count="242" modifier="%2Fhttps" url="-UNRESOLVED_PATTERN-"/>
+</yacy:facet>
+
+
+<yacy:facet name="topics" displayname="Topics" type="String" min="0" max="0" mean="0">
+<yacy:element name="international" count="1" modifier="international" url="/yacysearch.xml?query=www+international&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+<yacy:element name="women" count="2" modifier="women" url="/yacysearch.xml?query=www+women&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+<yacy:element name="conoltlon" count="3" modifier="conoltlon" url="/yacysearch.xml?query=www+conoltlon&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+<yacy:element name="overview" count="4" modifier="overview" url="/yacysearch.xml?query=www+overview&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+<yacy:element name="service" count="5" modifier="service" url="/yacysearch.xml?query=www+service&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+<yacy:element name="heise" count="6" modifier="heise" url="/yacysearch.xml?query=www+heise&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+<yacy:element name="web" count="8" modifier="web" url="/yacysearch.xml?query=www+web&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+<yacy:element name="world" count="9" modifier="world" url="/yacysearch.xml?query=www+world&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+<yacy:element name="wide" count="8" modifier="wide" url="/yacysearch.xml?query=www+wide&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+<yacy:element name="review" count="7" modifier="review" url="/yacysearch.xml?query=www+review&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+<yacy:element name="book" count="6" modifier="book" url="/yacysearch.xml?query=www+book&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+<yacy:element name="blue" count="5" modifier="blue" url="/yacysearch.xml?query=www+blue&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+<yacy:element name="gtkw" count="4" modifier="gtkw" url="/yacysearch.xml?query=www+gtkw&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+<yacy:element name="goog" count="3" modifier="goog" url="/yacysearch.xml?query=www+goog&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+<yacy:element name="guangzhou" count="2" modifier="guangzhou" url="/yacysearch.xml?query=www+guangzhou&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+<yacy:element name="jerry" count="1" modifier="jerry" url="/yacysearch.xml?query=www+jerry&amp;maximumRecords=10&amp;resource=global&amp;verify=ifexist&amp;prefermaskfilter=&amp;cat=href&amp;constraint=&amp;contentdom=all&amp;former=www&amp;startRecord=0"/>
+</yacy:facet>
+
+</yacy:navigation>
+<opensearch:totalResults>3536</opensearch:totalResults>
+		
+
+	</channel>
+</rss>

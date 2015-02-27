@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebSearch>
+  <MimeTypes>
+    <!-- 
+	#########################################################
+	Sonstige Formate erarbeiten
+	#########################################################
+	xslx
+	docx
+	xlsm
+	docm
+	pptx
+	-->
+  
+    <!-- 
+	#########################################################
+	Sonstige Formate (Kein Player) , jedoch Thumbnails
+	#########################################################
+	-->
+    <MimeType Postfix=".xls" 	Mimetype="application/xls"    			Player="Thumbed" 	CacheSec="3600" CreateThumb="True" />
+    <MimeType Postfix=".doc" 	Mimetype="application/msword" 			Player="Thumbed" 	CacheSec="3600" CreateThumb="True" />
+    <MimeType Postfix=".ppt" 	Mimetype="application/powerpoint" 		Player="Thumbed" 	CacheSec="3600" CreateThumb="True" />
+    <!-- 
+	#########################################################
+	Sonstige Formate (Kein Player) , keine Thumbnails
+	#########################################################
+	-->
+    <MimeType Postfix=".exe" 	Mimetype="application/octet-stream" 	Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
+    <MimeType Postfix=".dll" 	Mimetype="application/octet-stream" 	Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
+    <MimeType Postfix=".bin" 	Mimetype="application/octet-stream" 	Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
+    <MimeType Postfix=".uu" 	Mimetype="application/octet-stream" 	Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
+    <MimeType Postfix=".flv" 	Mimetype="application/x-shockwave-flash" Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
+    <!-- 
+	#########################################################
+	Dokumenttypen (Viewer.js)
+	#########################################################
+	-->
+    <MimeType Postfix=".pdf" 	Mimetype="Application/pdf" 				Player="PDF" 		CacheSec="3600" CreateThumb="True" />
+    <MimeType Postfix=".odf" 	Mimetype="Application/odf" 				Player="PDF" 		CacheSec="3600" CreateThumb="True" />
+    <!-- 
+	#########################################################
+	Audio Dateitypen (Soundmanager2)
+	#########################################################
+	-->
+    <MimeType Postfix=".mp3" 	Mimetype="audio/x-mpeg-3" 				Player="Audio" 		CacheSec="3600" CreateThumb="False" />
+    <MimeType Postfix=".wav" 	Mimetype="audio/x-wav" 					Player="Audio" 		CacheSec="3600" CreateThumb="False" />
+    <MimeType Postfix=".ogg" 	Mimetype="audio/ogg-vorbis" 			Player="Audio" 		CacheSec="3600" CreateThumb="False" />
+    <MimeType Postfix=".pls" 	Mimetype="audio/x-scpls" 				Player="Audio" 		CacheSec="3600" CreateThumb="False" />
+    <MimeType Postfix=".au" 	Mimetype="audio/basic" 					Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
+    <MimeType Postfix=".mpa" 	Mimetype="audio/x-mpeg"					Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
+    <MimeType Postfix=".abs" 	Mimetype="audio/x-mpeg"		 			Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
+    <MimeType Postfix=".mpega" 	Mimetype="audio/x-mpeg" 				Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
+    <MimeType Postfix=".mp2a" 	Mimetype="audio/x-mpeg2" 				Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
+    <MimeType Postfix=".mpa2" 	Mimetype="audio/x-mpeg2" 				Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
+    <MimeType Postfix=".wma" 	Mimetype="audio/x-ms-wma" 				Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
+    <!-- 
+	#########################################################
+	Komprimierte Dateitypen (ZipJS/RarJS)
+	#########################################################
+	-->
+    <MimeType Postfix=".zip" 	Mimetype="application/zip" 				Player="ZIP" 		CacheSec="3600" CreateThumb="False" />
+    <MimeType Postfix=".rar" 	Mimetype="application/rar" 				Player="RAR" 		CacheSec="3600" CreateThumb="False" />
+    <MimeType Postfix=".tar" 	Mimetype="application/x-tar" 			Player="NoPlayer"	CacheSec="3600" CreateThumb="False" />
+    <!-- 
+	#########################################################
+	Bild Dateitypen (Browserintern + Jquery)
+	#########################################################
+	-->
+    <MimeType Postfix=".jpg" 	Mimetype="image/jpeg" 					Player="Picture" 	CacheSec="5" CreateThumb="False" />
+    <MimeType Postfix=".jpe" 	Mimetype="image/jpeg" 					Player="Picture" 	CacheSec="5" CreateThumb="False" />
+    <MimeType Postfix=".jpeg" 	Mimetype="image/jpeg" 					Player="Picture" 	CacheSec="5" CreateThumb="False" />
+    <MimeType Postfix=".png" 	Mimetype="image/x-png" 					Player="Picture" 	CacheSec="60" CreateThumb="False" />
+    <MimeType Postfix=".ico" 	Mimetype="image/ico" 					Player="Picture" 	CacheSec="60" CreateThumb="False" />
+    <MimeType Postfix=".gif" 	Mimetype="image/gif" 					Player="Picture" 	CacheSec="60" CreateThumb="False" />
+    <MimeType Postfix=".bmp" 	Mimetype="image/x-ms-bmp" 				Player="Picture" 	CacheSec="60" CreateThumb="False" />
+    <MimeType Postfix=".svg" 	Mimetype="image/svg+xml" 				Player="Picture" 	CacheSec="60" CreateThumb="False" />
+    <MimeType Postfix=".tif" 	Mimetype="image/tiff" 					Player="Picture" 	CacheSec="60" CreateThumb="False" />
+    <MimeType Postfix=".tiff" 	Mimetype="image/tiff" 					Player="Picture" 	CacheSec="60" CreateThumb="False" />
+    <MimeType Postfix=".pnm" 	Mimetype="image/x-portable-anymap" 		Player="Picture" 	CacheSec="60" CreateThumb="False" />
+    <MimeType Postfix=".pbm" 	Mimetype="image/x-portable-bitmap" 		Player="Picture" 	CacheSec="60" CreateThumb="False" />
+    <MimeType Postfix=".pgm" 	Mimetype="image/x-portable-graymap" 	Player="Picture" 	CacheSec="60" CreateThumb="False" />
+    <MimeType Postfix=".ppm" 	Mimetype="image/x-portable-pixmap"		Player="Picture" 	CacheSec="60" CreateThumb="False" />
+    <MimeType Postfix=".xbm" 	Mimetype="image/x-xbitmap" 				Player="Picture" 	CacheSec="60" CreateThumb="False" />
+    <MimeType Postfix=".xpm" 	Mimetype="image/x-xpixmap"				Player="Picture" 	CacheSec="60" CreateThumb="False" />
+    <MimeType Postfix=".xwd" 	Mimetype="image/x-xwindowdump" 			Player="Picture" 	CacheSec="60" CreateThumb="False" />
+    <!-- 	
+	#########################################################
+	Text und Quelltext (Webrelevant)
+	#########################################################
+	-->
+    <MimeType Postfix=".json" 	Mimetype="application/json" 			Player="Text" 		CacheSec="0" CreateThumb="False" />
+    <MimeType Postfix=".html" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="10" CreateThumb="False" />
+    <MimeType Postfix=".htm" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="10" CreateThumb="False" />
+    <MimeType Postfix=".css" 	Mimetype="text/css" 					Player="Text" 		CacheSec="10" CreateThumb="False" />
+    <MimeType Postfix=".js" 	Mimetype="text/javascript" 				Player="Text" 		CacheSec="30" CreateThumb="False" />
+    <!-- 	
+	#########################################################
+	Text und Quelltext (Programmiersprachen andere)
+	#########################################################
+	-->
+    <MimeType Postfix=".ls" 	Mimetype="text/javascript" 				Player="Text" 		CacheSec="30" CreateThumb="False" />
+    <MimeType Postfix=".mocha" 	Mimetype="text/javascript" 				Player="Text" 		CacheSec="30" CreateThumb="False" />
+    <MimeType Postfix=".txt" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="0" CreateThumb="False" />
+    <MimeType Postfix=".log" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="0" CreateThumb="False" />
+    <MimeType Postfix=".ai" 	Mimetype="application/postscript" 		Player="Text" 		CacheSec="30" CreateThumb="False" />
+    <MimeType Postfix=".eps" 	Mimetype="application/postscript" 		Player="Text" 		CacheSec="30" CreateThumb="False" />
+    <MimeType Postfix=".ps" 	Mimetype="application/postscript" 		Player="Text" 		CacheSec="30" CreateThumb="False" />
+    <MimeType Postfix=".latex" 	Mimetype="application/x-latex" 			Player="Text" 		CacheSec="30" CreateThumb="False" />
+    <MimeType Postfix=".tex" 	Mimetype="application/x-tex" 			Player="Text" 		CacheSec="30" CreateThumb="False" />
+    <MimeType Postfix=".tcl" 	Mimetype="application/x-tcl" 			Player="Text" 		CacheSec="30" CreateThumb="False" />
+    <MimeType Postfix=".py" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" />
+    <MimeType Postfix=".xml" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" />
+    <MimeType Postfix=".aiml" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" />
+    <MimeType Postfix=".bat" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" />
+    <MimeType Postfix=".lua" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" />
+    <MimeType Postfix=".au3" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" />
+    <MimeType Postfix=".dtd" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" />
+    <MimeType Postfix=".php" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" />
+    <MimeType Postfix=".pl" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" />
+    <MimeType Postfix=".sh" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" />
+    <MimeType Postfix=".sql" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" />
+    <MimeType Postfix=".vbs" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" />
+    <MimeType Postfix=".vba" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" />
+    <MimeType Postfix=".yaml" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" />
+    <MimeType Postfix=".inf" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" />
+    <MimeType Postfix=".h" 		Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" />
+    <MimeType Postfix=".c" 		Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" />
+    <MimeType Postfix=".c++" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" />
+    <MimeType Postfix=".cpp" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" />
+    <MimeType Postfix=".cc" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" />
+    <MimeType Postfix=".cs" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" />
+    <MimeType Postfix=".vb" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" />
+    <!-- 
+	#########################################################
+	Video (Sehr Browserabhaengig) 
+	(Alle Player zur Auswahl (Popcorn,VideoJS,Projekktor))
+	+ Mit Plugins u.U. VLC/Shockwave/Silverlight
+	#########################################################
+	-->
+    <MimeType Postfix=".mpeg" 	Mimetype="video/mpeg" 					Player="Video" 		CacheSec="3600" CreateThumb="True" />
+    <MimeType Postfix=".mpg" 	Mimetype="video/mpeg" 					Player="Video" 		CacheSec="3600" CreateThumb="True" />
+    <MimeType Postfix=".mpe" 	Mimetype="video/mpeg" 					Player="Video" 		CacheSec="3600" CreateThumb="True" />
+    <MimeType Postfix=".mov" 	Mimetype="video/quicktime" 				Player="Video" 		CacheSec="3600" CreateThumb="True" />
+    <MimeType Postfix=".qt" 	Mimetype="video/quicktime" 				Player="Video" 		CacheSec="3600" CreateThumb="True" />
+    <MimeType Postfix=".avi" 	Mimetype="video/x-msvideo" 				Player="Video" 		CacheSec="3600" CreateThumb="True" />
+    <MimeType Postfix=".wmv" 	Mimetype="video/x-ms-wmv" 				Player="Video" 		CacheSec="3600" CreateThumb="True" />
+    <MimeType Postfix=".asx" 	Mimetype="video/x-ms-asx" 				Player="Video" 		CacheSec="3600" CreateThumb="True" />
+    <MimeType Postfix=".asf" 	Mimetype="video/x-ms-asf" 				Player="Video" 		CacheSec="3600" CreateThumb="True" />
+    <MimeType Postfix=".mp4" 	Mimetype="video/mp4" 					Player="Video" 		CacheSec="3600" CreateThumb="True" />
+    <MimeType Postfix=".mkv" 	Mimetype="video/x-matroska" 			Player="Video" 		CacheSec="3600" CreateThumb="True" />
+    <MimeType Postfix=".webm" 	Mimetype="video/webm" 					Player="Video" 		CacheSec="3600" CreateThumb="True" />
+    <MimeType Postfix=".ogg" 	Mimetype="video/ogg" 					Player="Video" 		CacheSec="3600" CreateThumb="True" />
+    <MimeType Postfix=".ogv" 	Mimetype="video/ogg" 					Player="Video" 		CacheSec="3600" CreateThumb="True" />
+    <MimeType Postfix=".mpv2" 	Mimetype="video/mpeg-2" 				Player="Video" 		CacheSec="3600" CreateThumb="True" />
+    <MimeType Postfix=".mp2v" 	Mimetype="video/mpeg-2" 				Player="Video" 		CacheSec="3600" CreateThumb="True" />
+    <!-- 
+	#########################################################
+	3D Formate (ThreeJS)
+	loader / assimp2json
+	loader / babylon
+	loader / collada
+	loader / collada / keyframe
+	loader / collada / skinning
+	loader / collada / kinematics
+	loader / msgpack
+	loader / scene
+	loader / stl
+	loader / utf8
+	#########################################################
+	-->
+    <MimeType Postfix=".stl" 	Mimetype="" 							Player="3D" 		CacheSec="3600" CreateThumb="False" />
+    <MimeType Postfix=".obj" 	Mimetype="" 							Player="3D" 		CacheSec="3600" CreateThumb="False" />
+    <MimeType Postfix=".awd" 	Mimetype="" 							Player="3D" 		CacheSec="3600" CreateThumb="False" />
+    <MimeType Postfix=".ctm" 	Mimetype="" 							Player="3D" 		CacheSec="3600" CreateThumb="False" />
+    <MimeType Postfix=".gltf" 	Mimetype="" 							Player="3D" 		CacheSec="3600" CreateThumb="False" />
+    <MimeType Postfix=".mtl" 	Mimetype="" 							Player="3D" 		CacheSec="3600" CreateThumb="False" />
+    <MimeType Postfix=".pdb" 	Mimetype="" 							Player="3D" 		CacheSec="3600" CreateThumb="False" />
+    <MimeType Postfix=".ply" 	Mimetype="" 							Player="3D" 		CacheSec="3600" CreateThumb="False" />
+    <MimeType Postfix=".vrml" 	Mimetype="" 							Player="3D" 		CacheSec="3600" CreateThumb="False" />
+    <MimeType Postfix=".vtk" 	Mimetype="" 							Player="3D" 		CacheSec="3600" CreateThumb="False" />
+
+  </MimeTypes>
+</WebSearch>

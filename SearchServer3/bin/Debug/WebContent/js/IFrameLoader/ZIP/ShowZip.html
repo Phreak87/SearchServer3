@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <script src="jsziptools.js"></script>
+		<script src="jszip-utils.js"></script>
+
+        <script>
+            window.onload = function(){
+			
+                function cancel(e) {
+                    e.preventDefault();
+                }
+                function on(obj, name, callback) {
+                    obj.addEventListener(name, callback, false);
+                }
+                function wrap(tag, text) {
+                    return '<' + tag + '>' + text + '</' + tag + '>';
+                }
+                function escape(text) {
+                    return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                }
+                function blobURL(blob) {
+                    return (window.URL || window.webkitURL).createObjectURL(blob);
+                }
+                function img(url) {
+                    return '<img' + ' src="' + url + '">';
+                }
+                function audio(url) {
+                    return '<audio' + ' src="' + url + '" controls>';
+                }
+                function video(url) {
+                    return '<video' + ' src="' + url + '">';
+                }
+				
+                var filenamesView = document.getElementById('filenames-view');
+                var preview = document.getElementById('preview');
+				var elt = document.getElementById('jszip_utils');
+
+  //=========================
+  // JSZipUtils
+  //=========================
+JSZipUtils.getBinaryContent(window.location.hash.substr(1) , function(err, data) {
+if(err) {showError(elt, err);return;}
+
+	jz.zip.unpack(data)
+	.then(function(reader) {
+		filenamesView.innerHTML = reader.getFileNames().map(wrap.bind(null, 'li')).join('');
+
+		function view(li) {
+			var filename = li.innerHTML;
+			if (/.*(png|gif|jpg|bmp)$/.test(filename.toLowerCase())) {
+				preview.innerHTML = "Load Content as Image " + filename;
+				reader.readFileAsBlob(filename)
+				.then(function(blob) {
+					preview.innerHTML = img(blobURL(blob));
+				});
+			} else if (/.*(mp3|ogg|wav|m4a)$/.test(filename.toLowerCase())) {
+				preview.innerHTML = "Show Content as Blob " + filename;
+				reader.readFileAsBlob(filename)
+				.then(function(blob) {
+					preview.innerHTML = audio(blobURL(blob));
+				});
+			} else if (/.*(mp4|webm)$/.test(filename.toLowerCase())) {
+				preview.innerHTML = "Show Content as Blob " + filename;
+				reader.readFileAsBlob(filename)
+				.then(function(blob) {
+					preview.innerHTML = video(blobURL(blob));
+				});
+			} else {
+				preview.innerHTML = "Show Content as Text " + filename;
+				reader.readFileAsText(filename)
+				.then(function(text) {
+					preview.innerHTML = wrap('pre', escape(text));
+				});
+			}
+		}
+		function _on(obj) {
+			on(obj, 'click', view.bind(null, obj));
+		}
+
+		[].forEach.call(document.querySelectorAll('li'), _on);
+	});
+	});
+	}
+
+        </script>
+    </head>
+    <body>
+        <div id="main">
+			<Table cellspacing="2" cellpadding="2" Border="1">
+			<TR><TH>Dateiname</TH><TH>Inhalt</TH></TR>
+			<TR>
+            <TD valign="top"><ul class="view" id="filenames-view"></ul></TD>
+            <TD valign="top" overflow:auto><div class="view" id="preview"></div></TD>
+			</TR>
+			</Table>
+        </div>
+    </body>
+</html>

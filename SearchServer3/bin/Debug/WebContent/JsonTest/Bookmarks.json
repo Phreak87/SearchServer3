@@ -1,0 +1,31 @@
+{
+	"Bookmarks":[
+		{"Group":"Ebooks",
+		 "Entrys":[
+			{"Type":"INT","Name":"Google.de","URL":"http://www.google.de"},
+			{"Type":"EXT","Name":"Google2.de","URL":"http://www.google.de"},
+			{"Type":"CON","Name":"Google3.de","URL":"http://www.google.de"}
+		 ]
+		 },
+		{"Group":"Videos",
+		 "Entrys":[
+			{"Type":"Test","Name":"Google.de"}
+		 ]
+		 },
+		{"Group":"Musik",
+		 "Entrys":[
+			{"Type":"Test","Name":"Google.de"}
+		 ]
+		 },
+		{"Group":"Bilder",
+		 "Entrys":[
+			{"Type":"Test","Name":"Google.de"}
+		 ]
+		 },
+		{"Group":"Sourcen",
+		 "Entrys":[
+			{"Type":"Test","Name":"Google.de"}
+		 ]
+		 }
+	]
+}

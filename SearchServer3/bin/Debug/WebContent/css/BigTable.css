@@ -1,0 +1,49 @@
+body,html{margin:0;padding:0;font:14px helvetica, arial, sans-serif;}
+#header{height:125px;margin:0 auto;width:1100px;}
+#logo{width:210px;height:105px;float:left;margin:15px 0px 0px 15px;}
+#flags{float:right;height:17px;margin-right:5px;}
+#colorcodes{width:1101px;margin:0 auto;}
+#topad{float:right;width:728px;height:90px;margin:10px 5px 0px 0px;}
+#main{float:left;width:730px;margin-left:30px;color:#4d4d4d;}
+#sidebar{float:right;width:340px;margin-right:0px;padding:0;}
+#sidebar iframe{margin-left:5px;margin-top:5px;}
+#sidebar ul {float:left;}
+#ad125{width:125px;height:125px;float:left;margin:16px 0 0 16px}
+#ad250{width:250px;height:250px;float:left;margin:16px 0 0 16px}
+h1{color:#489cdf;font-size:40px;margin:20px 0px;}
+h2{color:#489cdf;font-size:28px;margin:40px 0px 20px 0px;}
+#main a{color:#489CDF;font-weight:bold;text-decoration:none;}
+#main a:hover, #main a:active{text-decoration:underline;}
+.sbtitle{background:url('http://c632769.r69.cf2.rackcdn.com/sidesprite_001.png');margin:15px 50px 0px 5px;float:left;}
+#sidebar a {color: #489CDF;font-weight: bold;text-decoration: none;}
+#sidebar ul { padding: 0 0 0 25px; } #sidebar li { padding: 0 0 10px 0; }
+img{border:0px;}
+.twitter{margin:10px 0px 5px 5px;}
+#flag{width:270px;height:17px;background:url('http://c632769.r69.cf2.rackcdn.com/flags_004.png');margin:0 0 0 0px;padding:0;position:relative;}
+#flag li{margin:0;padding:0;list-style:none;position:absolute;top:0;}
+#flag li, #flag a{height:17px;display:block;}
+#uk{left:0px;width:27px;}#cn{left:30px;width:27px;}#es{left:60px;width:27px;}#po{left:90px;width:27px;}#ru{left:120px;width:27px;}#jp{left:150px;width:27px;}#ge{left:180px;width:27px;} #ko{left:210px;width:27px;} #fr{left:240px;width:27px;} #si{left:270px;width:27px;}
+#footer{clear:both;background-color:#dcdbdb;margin-left:10px;margin-right:10px;height:170px;padding-left:50px;}
+.socialsprite{background:url('http://c632769.r69.cf2.rackcdn.com/socialsprite_001.png');}
+* html #footer{height:1px;}
+h4{color:#4d4d4d;font-size:15px;margin-bottom:10px;}
+.footsection{float:left;margin:0 70px;}
+.footsection ul{margin:1px;padding:0;list-style-type:none;}
+.copy{text-align:center;color:#4d4d4d;margin:20px;font:bold 12px Helvetica,serif;}
+.footsection a:link, .footsection a:visited{text-decoration:none;color:#4d4d4d;}
+.footsection a:hover, .footsection a:active{text-decoration:underline;color:#4d4d4d;}
+.menu{border:none;border:0px;margin:0px 10px;padding:0px;}
+.menu ul{background-image:url('http://c632769.r69.cf2.rackcdn.com/menu_002.png');height:35px;list-style:none;margin:0;padding:0;}
+.menusprite {background: url('http://c632769.r69.cf2.rackcdn.com/menusprite_004.png');background-repeat: no-repeat;margin-top:7px;padding-bottom:8px;}
+.menu li{float:left;padding:0px;}
+.menu li a{display:block;line-height:31px;margin:0px;padding:0px 30px 0px 30px;padding-top:4px;text-align:center;}
+.menu li a:hover, .menu ul li:hover a{background:#2580C6;color:#FFFFFF;text-decoration:none;}
+.menu li ul{background:#489cdf;display:none;height:auto;padding:0px;margin:0px;border:0px;position:absolute;width:150px;z-index:200;}
+.menu li:hover ul{display:block;}
+.menu li li{border-bottom:1px #B8D5F3 dashed;display:block;float:none;margin:0px;padding:0px;width:150px;}
+.menu li:hover li a{background:none;}
+.menu li ul a{display:block;height:35px;margin:0px;padding:0px 10px 0px 15px;text-align:left;}
+.menu li ul a:hover, .menu li ul li:hover a{background:#2580C6;border:0px;color:#ffffff;text-decoration:none;}
+.search{float:right;margin-right:5px;margin-top:5px;}
+.fblike{float:left;}.googleplus,.fbrecomend,.twrecomend{float:right;}
+#colorchart{border:0;padding:0;border-collapse:collapse;}#colorchart td{width:23px;height:23px;}.wrapper{height:90px;display:none}.holder{width:68px;height:68px;float:left;margin-right:1px;}.wrapper div div{height:68px;float:left;}.wrapper div div div{width:38px;height:38px;margin:15px;}.off{background-image:url('http://c632769.r69.cf2.rackcdn.com/onoff_001.png');background-position:0 -68px;}.on{background-image:url('http://c632769.r69.cf2.rackcdn.com/onoff_001.png');background-position:-68px -136px;}.htmlcode{border:1px solid gray;background-color:gray;color:white;padding:5px;}.yui-picker-hue-thumb{cursor:default;width:18px;height:18px;top:-8px;left:-2px;z-index:9;position:absolute;}.yui-picker-hue-bg{-moz-outline:none;outline:0 none;position:absolute;left:375px;height:366px;width:28px;background:url(http://c632769.r69.cf2.rackcdn.com/hue_bg.png) no-repeat;top:4px;}.yui-picker-bg{-moz-outline:none;outline:0 none;position:absolute;top:4px;left:4px;height:364px;width:364px;background-color:#F00;background-image:url(http://c632769.r69.cf2.rackcdn.com/picker_mask_001.png);}*html .yui-picker-bg{background-image:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://c632769.r69.cf2.rackcdn.com/picker_mask_001.png',sizingMethod='scale');}.yui-picker-thumb{cursor:default;width:11px;height:11px;z-index:9;position:absolute;top:-4px;left:-4px;}.yui-picker-swatch{position:absolute;left:415px;top:10px;height:155px;width:195px;border:2px solid #7c7c7c;}.yui-picker-controls{position:absolute;top:180px;left:415px;font:1.6em monospace;}.yui-picker-controls .hd{background:transparent;border-width:0!important;}.yui-picker-controls .bd{height:100px;border-width:0!important;}.yui-picker-controls ul{float:left;padding:0 2px 0 0;margin:0;}.yui-picker-controls li{padding:2px;list-style:none;margin:0;}.yui-picker-controls input{font-size:20px;width:2.4em;}.yui-picker-hex-controls{clear:both;padding:20px 0 0 0;font:2em monospace;}.yui-picker-hex-controls input{width:160px;font:40px monospace;margin-left:-20px;}.yui-picker-controls a{font:20px arial,helvetica,clean,sans-serif;display:block;*display:inline-block;padding:0;color:#000;}#container{background-color:#eee;height:380px;width:625px;position:relative;}#insertcolor{background-color:#EEE;width:615px;font-size:20px;position:relative;text-align:right;padding:5px;margin:5px 0;}input#startcolor{font-size:16px;width:90px;}button#newcolor{font-size:16px;}-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;

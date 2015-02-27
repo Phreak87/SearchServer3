@@ -1,0 +1,1 @@
+SearchServer3.exe --config=sample.xml --clean

@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="popcorn-complete.min.js"></script>
+ 
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+	  	 var str = window.location.hash.substr(1);
+		 var res = str.split("#");
+         var example = Popcorn.youtube(
+           '#video',
+           res[0]);
+
+         // example.play();
+
+      }, false);
+    </script>
+  </head>
+  <body>
+    <div id="video" style="width: 360px; height: 260px;" ></div>
+  </body>
+</html>

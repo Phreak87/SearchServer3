@@ -1,0 +1,26 @@
+{
+	"Bookmarks":[
+		{"Group":"Dateisystem",
+		 "Entrys":[
+			{"Type":"INT","Name":"Google.de","URL":"http://www.google.de"},
+			{"Type":"EXT","Name":"Google2.de","URL":"http://www.google.de"},
+			{"Type":"CON","Name":"Google3.de","URL":"http://www.google.de"}
+		 ]
+		 },
+		{"Group":"RSS",
+		 "Entrys":[
+			{"Type":"Test","Name":"Google.de"}
+		 ]
+		 },
+		{"Group":"Textatei",
+		 "Entrys":[
+			{"Type":"Test","Name":"Google.de"}
+		 ]
+		 },
+		{"Group":"Internetseite",
+		 "Entrys":[
+			{"Type":"Test","Name":"Google.de"}
+		 ]
+		 }
+	]
+}

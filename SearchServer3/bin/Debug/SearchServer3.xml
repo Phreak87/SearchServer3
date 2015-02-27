@@ -1,0 +1,48 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+SearchServer3
+</name>
+</assembly>
+<members>
+<member name="M:SearchServer3.CLS.DIR.UserAccessRights.ResetRights">
+	<summary>
+ Setzt alle Berechtigungen zurück.
+ </summary>
+	<remarks></remarks>
+</member><member name="P:SearchServer3.CLS.DIR.UserAccessRights.AccessRight.Deny">
+	<summary>
+ Ruft einen Wert ab, der angibt, ob die Berechtigung verweigert wird.
+ </summary>
+	<value></value>
+	<returns>true, wenn die Berechtigung verweigert wird, ansonsten false.</returns>
+	<remarks></remarks>
+</member><member name="P:SearchServer3.CLS.DIR.UserAccessRights.AccessRight.Allow">
+	<summary>
+ Ruft einen Wert ab, der angibt, ob die Berechtigung erlaubt wird.
+ </summary>
+	<value></value>
+	<returns>true, wenn die Berechtigung erlaubt wird, ansonsten false.</returns>
+	<remarks></remarks>
+</member><member name="T:SearchServer3.CLS.DIR.UserAccessRights.AccessRight">
+	<summary>
+ Stellt die Eigenschaften für die Zugriffsrechte einer Berechtigung bereit.
+ </summary>
+	<remarks></remarks>
+</member><member name="P:SearchServer3.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:SearchServer3.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:SearchServer3.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+</members>
+</doc>

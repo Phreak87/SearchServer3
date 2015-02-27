@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <link href="video-js.css" rel="stylesheet" type="text/css">
+  <script src="video.js"></script>
+
+</head>
+<body>
+  <script>
+  
+	function Filetypes(Name){
+		/* Ebenfalls in der WEBS.xml als Dateityp hinterlegen */
+		var PFix = Name.substr(Name.lastIndexOf(".")).toLowerCase();
+		switch (PFix){
+			case ".webm"	: return "video/webm";
+			case ".mp4" 	: return "video/mp4";
+			case ".ogv" 	: return "video/ogg";
+			case ".mpg" 	: return "video/mpeg";
+			case ".mpeg" 	: return "video/mpeg";
+		};
+	}
+	
+    videojs.options.flash.swf = "video-js.swf";
+	var str = window.location.hash.substr(1);
+	var res = str.split("#");
+					
+	var vid = document.createElement("video");
+	vid.setAttribute("class", "video-js vjs-default-skin");
+	vid.setAttribute("controls", "");
+	vid.setAttribute("preload", "auto");
+	vid.setAttribute("height", "300");
+	vid.setAttribute("poster", res[1]);
+	vid.setAttribute("data-setup", '{}');
+	
+	var src = document.createElement("source");	vid.appendChild (src);
+	src.setAttribute("src", res[0]);
+	src.setAttribute("type", Filetypes(res[0]));
+	document.body.appendChild(vid);
+	
+  </script>
+</body>
+</html>

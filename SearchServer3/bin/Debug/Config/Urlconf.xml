@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WebSearch>
+  <URLParts>	
+  
+    <!-- Online Inhalte -->
+    <URLPart Text="https://www.youtube.com/watch?v=" 	Player="ExtVideo"/>
+    <URLPart Text="http://www.youtube.com/watch%3Fv%3D" Player="ExtVideo"/>
+    <URLPart Text="https://soundcloud.com/" 			Player="ExtVideo"/>
+    <URLPart Text="http://www.myvideo.de/" 				Player="ExtVideo"/>
+	
+    <!-- Online Inhalte zu pflegen: 
+	
+	- Soundcloud
+	- Vimeo
+	- MyVideo
+	
+	-->
+	
+  </URLParts>
+</WebSearch>

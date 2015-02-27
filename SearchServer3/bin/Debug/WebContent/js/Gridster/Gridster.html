@@ -1,0 +1,60 @@
+
+<!doctype html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="jquery.gridster.css">
+  <link rel="stylesheet" type="text/css" href="demo.css">
+</head>
+
+<body>
+
+  <div class="gridster">
+    <ul>
+      <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+		<div align="left" style='height:100%;width:100%;display:table'>
+			<div align="left" style='vertical-align:top;height:10%;display: table-row'>IQ das ist im Quopf</div>
+			<div align="left" style='vertical-align:top;height:80%;display: table-row'>
+				<img style='position:relative;height:100%;width:auto;' src='http://localhost:9090/THImage/E7CC1E41028A83B8C17F0A139B33723B.jpg'/>
+			</div>
+			<div align="left" style='height:10%;display: table-row'>Boudn</div>
+		</div>
+	  </li>
+      <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
+		<div align="left" style='height:100%;width:100%;display:table'>
+			<div align="left" style='vertical-align:top;height:10%;display: table-row'>IQ das ist im Quopf</div>
+			<div align="left" style='vertical-align:top;height:80%;display: table-row'>
+				<img style='height:100%;width:auto;' src='http://localhost:9090/THImage/E7CC1E41028A83B8C17F0A139B33723B.jpg'/>
+			</div>
+			<div align="left" style='height:10%;display: table-row'>Boudn</div>
+		</div>
+	  </li>
+      <li data-row="3" data-col="1" data-sizex="1" data-sizey="1"><img align='left' style='height:100%;width:auto' src='http://localhost:9090/THImage/E7CC1E41028A83B8C17F0A139B33723B.jpg'/></li>
+</ul>
+  </div>
+
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="jquery.gridster.js" charset="utf-8"></script>
+
+    <script type="text/javascript">
+      var gridster;
+
+      $(function(){
+
+        gridster = $(".gridster ul").gridster({
+          widget_base_dimensions: [800, 100],
+          widget_margins: [5, 5],
+          helper: 'clone'
+        }).data('gridster');
+
+        gridster.$el
+          .on('mouseenter', '> li', function() {
+              gridster.resize_widget($(this), 1, 2);
+          })
+          .on('mouseleave', '> li', function() {
+              gridster.resize_widget($(this), 1, 1);
+          });
+
+      });
+    </script>
+</body>
+</html>

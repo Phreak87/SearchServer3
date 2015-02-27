@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <script src="popcorn-complete.min.js"></script>
+
+    </head>
+    <body>	
+        <div id="main">
+			<video id='video' data-video-player controls height='250' poster= '' source=''>
+			</video>
+        </div>
+		
+        <script>
+			var str = window.location.hash.substr(1);
+			var res = str.split("#");
+			var el = document.getElementById("video");
+			el.setAttribute("src", res[0]);
+			el.setAttribute("poster", res[1]);
+			var pop = Popcorn.smart( "#video", res[0] );
+			// pop.play();
+        </script>
+		
+    </body>
+</html>

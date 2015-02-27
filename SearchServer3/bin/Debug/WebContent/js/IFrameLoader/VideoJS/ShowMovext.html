@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <link href="video-js.css" rel="stylesheet" type="text/css">
+  <script src="video.js"></script>
+<script src="youtube.js"></script>
+<script src="videojs-vlc.js"></script>
+</head>
+<body>
+  <script>
+
+    videojs.options.flash.swf = "video-js.swf";
+	var str = window.location.hash.substr(1);
+	var res = str.split("#");
+					
+	var vid = document.createElement("video");
+	vid.setAttribute("class", "video-js vjs-default-skin");
+	vid.setAttribute("controls", "");
+	vid.setAttribute("preload", "auto");
+	vid.setAttribute("height", "260");
+	vid.setAttribute("width", "360");
+	vid.setAttribute("data-setup", '{"techOrder":["youtube"], "src":"' + res[0] + '"}');
+
+	document.body.appendChild(vid);
+	
+  </script>
+</body>
+</html>

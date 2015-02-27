@@ -1,0 +1,404 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<title>SearchServer2 SP</title>
+
+<head>
+<meta charset="utf-8" />
+<!-- script 	type="text/javascript" src="https://getfirebug.com/firebug-lite.js"></script-->
+<script 	type="text/javascript" 	src="js/head.js"></script>
+<link 		rel= "stylesheet" 		href="js/SearchServer/Default.css"></script>
+
+<script 	type="text/javascript"><!--  Init Scriptdateien -->
+	head.load(	"js/JQuery/jquery.js",
+				"js/JQuery/jquery-ui.min.js",
+				"js/d3.min.js",
+				"js/JQuery/superfish.js",
+				"js/JQuery/jquery.colorbox.js",
+				"js/JQuery/jquery.colorbox-min.js",
+				"js/JQuery/colorbox.css",
+				"js/JQuery/jquery-ui.css",
+				"js/JQuery/superfish.css",
+				"css/hover-min.css",
+				
+				"js/SearchServer/D3Overview.js",
+				"js/SearchServer/LoadDebug.js",
+				"js/SearchServer/LoadMerker.js",
+				"js/SearchServer/LoadResults.js",
+				"js/SearchServer/LoadBookmarks.js",
+				"js/SearchServer/LoadWebpages.js",
+				"js/SearchServer/LoadCreators.js",
+				"js/SearchServer/LoadIndex.js",
+				
+				"js/SearchServer/LoadSearch.js",
+				"js/SearchServer/PreLoader.js",
+				"js/SearchServer/PostLoader.js",
+				
+				function() {
+					$("#Search").button();
+					$("#Save").button();
+					$("#tabs").tabs();
+					$("#tabs2").tabs();
+					$("#tabs3").tabs();
+					$('.menu').superfish();
+					$(".group1").colorbox({rel:'group1'});
+					
+					LoadOverview(); 								// D3 Uebersicht
+					LoadDebug($('#debug'),$('#Meldungen'));			// Aktuelle Debugs
+					LoadMerker($('#debug'),$('#Merker'));			// Gespeicherte Suchanfragen
+					LoadCreators($('#debug'),$('#Ersteller'));		// Neue Eintraege hinzufügen
+					LoadBookmarks($('#debug'),$('#Bookmarks'));		// Gespeicherte Default-URLs
+					LoadWebPages($('#debug'),$('#Externe'));		// Suchmaschinen (Seite)
+				});
+</script>
+
+<Script type="text/javascript">
+	var sid='';
+	
+	function CheckData(daten){
+		// ##############################
+		// JSON Error
+		// ##############################
+		try {
+			$("#debug").html(daten + "<BR><BR>");
+			var data = jQuery.parseJSON(daten);
+		} catch (ex) {
+			$('#debug').html(
+			"<Table width='100%' data-sr style='background-color:rgba(255, 0, 0, 0.39);'>"
+			+ "<TD>"
+			+ "Fehler beim parsen des JSON Stings <Br>" 
+			+ ex.message 
+			+ new Error().stack 
+			+ "<Br>JSON:<Br>" + daten
+			+ "</TD>"
+			+ "</Table>");
+			$('#Ergebnisse').html (ex.message + "<BR>" + new Error().stack + "<BR>" + "See Debug for further Information")
+			return;
+		};
+		
+		// ##############################
+		// Programmfehler Searchserver
+		// ##############################
+		if(data.hasOwnProperty('Errors')){
+			$('#debug').html(
+			"<Table width='100%' data-sr style='background-color:rgba(255, 0, 0, 0.39);'>"
+			+ "<TD>"
+			+ "SearchServer Abbruch: <Br>" + data.Errors + "<Br><Br>JSON:<Br>" + daten
+			+ "</TD>"
+			+ "</Table>");
+			return;
+		};
+		
+		// ##############################
+		// Rueckgabe des JSON-Array
+		// ##############################
+		return data;
+	}
+	
+	function Suchen(daten) {
+		$('#Ergebnisse').html("<img src='images/ajax-loader.gif'>" + ' Suche nach: ' + daten );
+		$('#debug').html('Search: ' + daten);
+		$.ajax({
+			  type: "POST",
+			  url: "api/query/search",
+			  data: {Action: "Search", Data: daten}
+			})
+		  .done(function( msg ) {
+		    $('#debug').html(msg);
+			sid = jQuery.parseJSON(msg).sid;
+			Resultate('DIR',sid);
+		  });
+		LoadDebug($('#debug'),$('#Meldungen'));
+	}
+	
+    function Iframeel(el){
+		$('#D3Overview').html('');
+		$('#D3Overview').hide(true);
+		$('#tabs').show(true);
+        $('#Ergebnisse').html("<iframe height='600' width='800' src='" + el.getAttribute("src") + "'></iframe>");
+    }
+    function Mainframeel(el){
+		$('#D3Overview').html('');
+		$('#D3Overview').hide(true);
+		$('#tabs').show(true);
+        document.location.href='http://www.google.de'
+    }
+	
+	function Speichern(daten) {
+		$('#debug').html('Save: ' + daten);
+		$.ajax({
+			  type: "POST",
+			  url: "api/query/save",
+			  data: {Action: "Save", Data: daten}
+			})
+		  .done(function( msg ) {
+		    loadPageData(msg);
+		  });
+	}
+	
+	function Resultate(opt,sid) {
+		$('#Ergebnisse').html("<img src='images/ajax-loader.gif'>" + ' Lade : ' + opt + "/" + sid );
+		$('#debug').html('Query: ' + opt + ' ' + sid);
+		$.ajax({
+			url: '/api/Query/' + opt,
+			data: {
+				SID: sid
+			},
+			success: function (data) {
+				loadPageData(data);
+			}
+		})
+	}
+	
+	function notifyMe() {
+		if (!("Notification" in window)) {
+			alert("This browser does not support desktop notification");
+		}
+		else if (Notification.permission === "granted") {
+			var notification = new Notification("Contents loaded!");
+		}
+		else if (Notification.permission !== 'denied') {
+			Notification.requestPermission(function (permission) {
+				if (!('permission' in Notification)) {
+					Notification.permission = permission;
+				}
+				if (permission === "granted") {
+					var notification = new Notification("Contents loaded!");
+				}
+			});
+		}
+	}
+	
+	function FilePostfix (Name){
+		var PFix = Name.substr(Name.lastIndexOf(".")).toLowerCase();
+		if (PFix.length <= 5){
+			return PFix;
+		} else {
+			var PFix2 = PFix.substr(0,PFix.indexOf("/"))
+			return PFix2;
+		};
+	}
+	
+	function Filetypes(Name){
+		/* Ebenfalls in der WEBS.xml als Dateityp hinterlegen */
+		var PFix = Name.substr(Name.lastIndexOf(".")).toLowerCase();
+		switch (PFix){
+			case ".html"	: return "htmlmixed";
+			case ".htm" 	: return "htmlmixed";
+			case ".py" 		: return "Python";
+			case ".xml"		: return "xml";
+			case ".json" 	: return "json";
+			case ".css" 	: return "css";
+			case ".js" 		: return "javascript";
+			case ".lua" 	: return "lua";
+			case ".dtd" 	: return "dtd";
+			case ".php" 	: return "php";
+			case ".pl" 		: return "perl";
+			case ".h" 		: return "clike";
+			case ".sh" 		: return "shell";
+			case ".sql" 	: return "sql";
+			case ".vb" 		: return "vb";
+			case ".vbs" 	: return "vbscript";
+			case ".vba" 	: return "vbscript";
+			case ".yaml" 	: return "yaml";
+			case ".log" 	: return "scheme";
+			case ".ini" 	: return "scheme";
+			case ".inf" 	: return "scheme";
+			case ".au3" 	: return "scheme";
+			case ".bat" 	: return "scheme";
+			case ".txt" 	: return "scheme";
+			default			: return "scheme";
+		};
+	}
+    
+    function UrlToClipBoard(el){
+        var newUrlStr = el.getAttribute("src").replace("http://localhost:9090/","");
+		prompt('In die Zwischenablage kopieren', newUrlStr);
+    }
+    
+	function ScrollTop (){
+		$('html, body').animate({
+		scrollTop: $("#Ergebnisse").position().top +offset }, 800, 'swing');
+	}
+
+	function RunOnLocalMachine(daten) {
+	    var newUrlStr = daten.getAttribute("src").replace("http://localhost:9090/","");
+		$('#debug').html('Start: ' + newUrlStr);
+		$.ajax({
+			  type: "POST",
+			  url: "api/query/start",
+			  data: {Action: "start", Data: newUrlStr}
+			});
+	}
+	
+	function RunOnLocalMachineF(daten) {
+	    var newUrlStr = daten.getAttribute("src").replace("http://localhost:9090/","");
+		$('#debug').html('Start: ' + newUrlStr);
+		$.ajax({
+			  type: "POST",
+			  url: "api/query/openf",
+			  data: {Action: "start", Data: newUrlStr}
+			});
+	}
+	
+    function PathToClipBoard(el){
+        var newUrlStr = el.getAttribute("src").replace("http://localhost:9090/","");
+		var newCopyStr = newUrlStr.substr(0,newUrlStr.lastIndexOf("\\"));
+		prompt('In die Zwischenablage kopieren', newCopyStr);
+    }
+    
+    function ChangeSelection(el) {
+        var list = document.getElementsByTagName("table");
+		var stat = el.checked;
+		var val = el.getAttribute('value');  
+		var type = el.getAttribute('name');
+		for (var i = 0; i < list.length; i++) {
+			if (list[i].getAttribute(type)==val) {
+				if (stat==false) {
+					list[i].style.display='none';
+				} else {
+					list[i].style.display='';
+				};
+			};
+		};
+    }
+</Script>
+
+</head>
+
+<body>
+
+<div class="blended_grid">
+	
+	<!--  Der Header der Seite mit Bookmarks ,Erstellen und der Suche -->
+	<a href="#pageFooter" class='hvr-underline-from-left' onclick="$('#debug').toggle('true');">Debugmeldungen</a>
+	<a href="#pageTests"  class='hvr-underline-from-left' onclick="$('#tests').toggle('true');">Testseiten</a>
+	<div class="pageFooter"><div id="debug" hidden=true></div></div>
+	<div class="pageTests"><div id="tests" hidden=true>
+	<HR>
+		<Table Border="1"><TR><TH>Javascript</TH><TH>CSS</TH><TH>HTML</TH></TR>
+		<TR>
+			<TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/zip/ShowZip.html#http://localhost:9090/js/IFrameLoader/zip/Test.zip">(ZIP) ZipJS Testpage</a><BR></TD>
+			<TD><a class='hvr-back-pulse' href="http://localhost:9090/css/Hover/index.html">Hover Testpage</a><BR></TD>
+			<TD><a class='hvr-back-pulse' href="css/Farben.html">HTML Color Map</a><BR></TD>
+		</TR>
+		<TR>
+			<TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/rar/ShowRar.html#http://localhost:9090/js/IFrameLoader/rar/Test.rar">(RAR) RarJS Testpage</a><BR></TD>
+			<TD><a class='hvr-back-pulse' href="http://scrollrevealjs.org/">Scrollreveal</a><BR></TD>
+			<TD><a class='hvr-back-pulse' href="http://getskeleton.com/">Skeleton</a><BR></TD>
+		</TR>
+		<TR>
+			<TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/Soundmanager2/index.html#http://localhost:9090/js/Soundmanager2/Test.mp3">(MP3) SoundMan2 Testpage</a><BR></TD>
+			<TD><a class='hvr-back-pulse' href="http://localhost:9090/js/gridster/gridster.html">Gridster</a><BR></TD>
+		</TR>
+		<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/ViewerJS/index.html#http://localhost:9090/js/IFrameLoader/ViewerJS/Test.pdf"> (PDF) ViewerJS Testpage</a><BR></TD></TR>
+		<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/ThreeJS/index.html#http://localhost:9090/js/IFrameLoader/ThreeJS/Test.stl"> (STL) ThreeJS Testpage</a><BR></TD></TR>
+		
+		<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/Popcorn/showmov.html#http://localhost:9090/js/IFrameLoader/Popcorn/Test.ogv#http://localhost:9090/js/IFrameLoader/Popcorn/Test.jpg">(OGV) Popcorn Testpage</a><BR></TD></TR>
+		<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/Popcorn/showmovExt.html#https://www.youtube.com/watch?v=_bWLqJG8G3M">(Youtube) Popcorn Testpage</a><BR></TD></TR>
+		
+		<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/VideoJS/showmov.html#http://localhost:9090/js/IFrameLoader/VideoJS/Test.ogv">(OGV) VideoJS Testpage</a><BR></TD></TR>
+		<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/VideoJS/showmovExt.html#http://www.youtube.com/watch?v=xYemnKEKx0c">(Youtube) VideoJS Testpage</a><BR></TD></TR>
+		
+		<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/Projekktor/showmov.html#http://localhost:9090/js/IFrameLoader/Projekktor/Test.ogv#http://localhost:9090/js/IFrameLoader/Projekktor/Test.jpg">(OGV) Projekktor Testpage</a><BR></TD></TR>
+		<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/Projekktor/showmovExt.html#https://www.youtube.com/watch?v=_bWLqJG8G3M">(Youtube) Projekktor Testpage</a><BR></TD></TR>
+		<TR></TR>
+		</Table>
+	</div></div>
+	
+	<!--  Der Header der Seite mit Bookmarks ,Erstellen und der Suche -->
+	<div class="pageHeader">
+		<div id="tabs3">
+	        <ul>	 
+	            <li><a 	href="#Externe" 
+						class='hvr-glow'
+						onclick="$('#Externe').show(true);
+								 LoadWebPages($('#debug'),$('#Externe'));
+								 ">Externe Suchmaschinen</a></li>
+								 
+	            <li><a 	href="#Bookmarks" 
+						class='hvr-glow'
+						onclick="$('#Bookmarks').show(true);
+								 ">Bookmarks</a></li>
+						
+	            <li><a 	href="#Ersteller" 
+						class='hvr-glow'
+						onclick="$('#Ersteller').show(true);
+								 ">Erstellen</a></li>
+							
+								 
+	        </ul>
+			<div id="Bookmarks" 	style='Height:20px;' hidden=true>		<img src='images/ajax-loader.gif'> Bitte warten ...</div>
+			<div id="Ersteller" 	style='Height:20px;' hidden=true>		<img src='images/ajax-loader.gif'> Bitte warten ...</div>
+			<div id="Externe" 		style='Height:20px;'>					<img src='images/ajax-loader.gif'> Bitte warten ...</div>
+		</div>
+		
+		<input type="text" 		id='SText' 	style='height:30px;Width:85%' 	onkeydown=		"if (event.keyCode == 13) 
+																							 $('#Search').click();
+																							 "></input>
+																							 
+		<a href="#Bookmarks" 	id='Search' style='height:30px;Width:6%' 	class=			'hvr-underline-from-left'
+																			onclick=		"Suchen($('#SText').val());
+																							 $('#D3Overview').html('');
+																							 $('#D3Overview').hide(true);
+																							 $('#tabs').show(true);
+																							 $('#tabs').tabs('option','active',0);
+																							 ">Suchen</a>
+																							 
+		<a href="#Ersteller" 	id="Save"  	style='height:30px;Width:7%'   	class=			'hvr-underline-from-left'
+																			onclick=		"Speichern($('#SText').val());">Speichern</a>
+	</div>
+	
+	<!-- Linkes informationsmenue mit Abfragen, gespeichertem und sonstigen Infors -->
+	<div class="pageLeftMenu">
+		<div id="tabs2">
+	        <ul>
+	            <li><a href="#Merker" 		class=		'hvr-glow'
+											onclick="	LoadMerker($('#debug'),$('#Merker'));
+														LoadDebug($('#debug'),$('#Meldungen'));
+														$('#Merker').show(false);		
+														$('#Index').hide(false);	
+														$('#Suche').hide(false);">Merker</a></li>
+														
+	            <li><a href="#Suche" 		class=		'hvr-glow'
+											onclick="	LoadSearch($('#debug'),$('#Suche'));
+														LoadDebug($('#debug'),$('#Meldungen'));
+														$('#Merker').hide(false);		
+														$('#Index').hide(false);	
+														$('#Suche').show(false);">Suche</a></li>
+														
+	            <li><a href="#Index" 		class=		'hvr-glow'
+											onclick="	LoadIndex($('#debug'),$('#Index'));
+														LoadDebug($('#debug'),$('#Meldungen'));
+														$('#Merker').hide(false);		
+														$('#Index').show(false);	
+														$('#Suche').hide(false);">Index</a></li>
+	        </ul>
+			<div id="Merker">							<img src='images/ajax-loader.gif'></div>
+			<div id="Suche" 				hidden=true><img src='images/ajax-loader.gif'></div>
+			<div id="Index" 				hidden=true><img src='images/ajax-loader.gif'></div>
+		</div>
+		<div id="Meldungen">							<img src='images/ajax-loader.gif'></div>
+	</div>
+	
+	<!--  Der Header der Seite mit Bookmarks ,Erstellen und der Suche -->
+	<div class="pageContent">
+		<div id="D3Overview"></div>
+	    <div id="tabs" hidden=true>
+	        <ul>
+	            <li><a id="DIR" class='hvr-glow' href="#Ergebnisse" onclick="Resultate('DIR',sid)">Verzeichnisse</a></li>
+	            <li><a id="RSS" class='hvr-glow' href="#Ergebnisse" onclick="Resultate('RSS',sid)">Newsfeeds</a></li>
+	            <li><a id="FIL" class='hvr-glow' href="#Ergebnisse" onclick="Resultate('FIL',sid)">Textdateien</a></li>
+	            <li><a id="WEB" class='hvr-glow' href="#Ergebnisse" onclick="Resultate('WEB',sid)">Internetseiten</a></li>
+	            <li><a id="EXT" class='hvr-glow' href="#Ergebnisse" onclick="Test('WEB')">weitere Quellen</a></li>
+	        </ul>
+	        <div id="Ergebnisse"><img src='images/ajax-loader.gif'> Bitte warten ...</div>
+	    </div>
+	</div>
+
+
+ </div>
+
+ 
+</div>
+
+</body>
+</html>
