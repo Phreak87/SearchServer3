@@ -21,6 +21,21 @@ Namespace CLS
                 RaiseEvent Status(".DBS: MongoPath: " & MongoD)
                 RaiseEvent Status(".DBS: Arguments: " & PRC.StartInfo.Arguments)
             End Sub
+            Sub Rapairmongo()
+                Dim AppPath As String = Environment.CurrentDirectory & "\Bins\"
+                Dim MongoD As String = "Mongod_3.0_RC11.exe"
+
+                RaiseEvent Status(".DBS: Start MongoDB Server")
+                Dim PStart As New ProcessStartInfo
+                PStart.WindowStyle = ProcessWindowStyle.Hidden
+                PStart.FileName = AppPath & MongoD
+                PStart.Arguments = "--dbpath data\db --repair" '  --httpinterface --rest --jsonp
+                PStart.WorkingDirectory = AppPath
+                Dim PRC As Process = Process.Start(PStart)
+                RaiseEvent Status(".DBS: ProcessID: " & PRC.Id)
+                RaiseEvent Status(".DBS: MongoPath: " & MongoD)
+                RaiseEvent Status(".DBS: Arguments: " & PRC.StartInfo.Arguments)
+            End Sub
             Shared Function QueryFull(DB As MongoCollection) As String
                 If IsNothing(DB) Then Return ""
                 Dim R As MongoCursor(Of BsonDocument) = DB.FindAllAs(Of BsonDocument)().SetLimit(20).SetSortOrder(SortBy.Descending("Time"))

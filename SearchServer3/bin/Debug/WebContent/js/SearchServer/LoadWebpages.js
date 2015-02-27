@@ -9,6 +9,31 @@
 		});
 	}
 	
+    function Iframeel(el){
+		var source = el.getAttribute("src");
+		var option = '';
+		if (el.hasAttribute('opt')){
+			option = el.getAttribute("opt");
+		};
+		var search = $('#SText').val();
+		$('#D3Overview').html('');
+		$('#D3Overview').hide(true);
+		$('#tabs').show(true);
+        $('#Ergebnisse').html("<iframe FrameBorder='0' width='100%' height='800' src='" + source.replace('{query}',search + ' ' + option) + "'></iframe>");
+    }
+	
+    function Mainframeel(el){
+		var source = el.getAttribute("src");
+		var option = '';if (el.hasAttribute('opt')){
+			option = el.getAttribute("opt");
+		};
+		var search = $('#SText').val();
+		$('#D3Overview').html('');
+		$('#D3Overview').hide(true);
+		$('#tabs').show(true);
+        document.location.href=source.replace('{query}',search + ' ' + option)
+    }
+	
 	function DataWebPages (daten, divDebug, divData) {
 	
 		var data = CheckData(daten);
@@ -20,6 +45,7 @@
 		output+="<ul class='sf-menu'>"
 		for (var i in data.Fetcher.Group){
 			var Gruppe = data.Fetcher.Group[i]; 				// z.B. Allgemein, MP3
+			console.log(Gruppe);
 			output+="<li><a href='#'>" + Gruppe.Name + "</a>"	
 			
 				output+="<ul>"
@@ -58,34 +84,3 @@
 		$(divDebug).html(daten);		
 		$('.menu').superfish();
 	}
-	
-
-    function LoadWebPages_(el,el){
-		$('#D3Overview').html('');
-		$('#D3Overview').hide(true);
-		$('#tabs').show(true);
-		var output;
-		output="<ul class='sf-menu'>";
-			output+="<li><a href='#'>Im Ergebnisfenster</a>";
-				output+="<ul>";
-					output+="<li><a href='#' src='http://www.Duckduckgo.com' onclick='Iframeel(this)'>DuckDuckgo</a></li>";
-					output+="<li><a href='#' src='http://localhost:8090' onclick='Iframeel(this)'>YACY</a></li>";
-					output+="<li><a href='#' src='chrome://inspect' onclick='Iframeel(this)'>YACY</a></li>";
-				output+="</ul>";
-			output+="</li>";
-			output+="<li><a href='#'>auf kompletter Seite</a>";
-				output+="<ul>";
-					output+="<li><a href='#' src='http://www.Duckduckgo.com' onclick='Mainframeel(this)'>DuckDuckgo</a></li>";
-					output+="<li><a href='#' src='http://localhost:8090' onclick='Mainframeel(this)'>YACY</a></li>";
-				output+="</ul>";
-			output+="</li>";
-			output+="<li><a href='#'>in einem neuen Tab</a>";
-				output+="<ul>";
-					output+="<li><a href='http://www.duckduckgo.com' target='_blank'>DuckDuckgo</a></li>";
-					output+="<li><a href='http://localhost:8090' target='_blank'>YACY</a></li>";
-					output+="<li><a href='http://www.google.de' target='_blank'>Google</a></li>";
-				output+="</ul>";
-			output+="</li>";
-		output+="</ul>";
-        $('#Externe').html(output);
-    }

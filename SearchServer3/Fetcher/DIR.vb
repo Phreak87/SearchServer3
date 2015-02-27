@@ -155,7 +155,6 @@ Namespace CLS
 #Region "Indizierungen Ordner und Dateien"
         Sub IndexFolder(ByVal _obj As CLS_DIR)
             If IsNothing(_obj) Then RemoveOBJ(_obj)
-            If CheckErrs(_obj._Path) = True Then RemoveOBJ(_obj)
 
             If Directory.GetFiles(_obj._Path).Count > 0 Then
                 Dim DoPath As New CLS_DIR(_obj._Path)
@@ -165,8 +164,10 @@ Namespace CLS
 
             If Directory.GetDirectories(_obj._Path).Count > 0 Then
                 For Each Ordner In Directory.GetDirectories(_obj._Path)
-                    Dim DoPath2 As New CLS_DIR(Ordner) : AppendOBJ(DoPath2)
-                    Threading.ThreadPool.QueueUserWorkItem(AddressOf IndexFolder, DoPath2)
+                    If CheckErrs(Ordner) = False Then
+                        Dim DoPath2 As New CLS_DIR(Ordner) : AppendOBJ(DoPath2)
+                        Threading.ThreadPool.QueueUserWorkItem(AddressOf IndexFolder, DoPath2)
+                    End If
                 Next
             End If
 
@@ -280,7 +281,7 @@ Namespace CLS
             If IsNothing(_Timer) Then Exit Sub
             Dim Time As String = _Timer.Elapsed.Hours & ":" & _Timer.Elapsed.Minutes & ":" & _Timer.Elapsed.Seconds
             Console.WriteLine("#DIR: {2} - {1} Dateien mit {0} Threads in {3}", EnsureLen(_Todos, 6), EnsureLen(_Files, 6), EnsureLen(_ClassName, 15), EnsureLen(Time, 8))
-            '_Todos = 0
+            _Todos = 0
             If _Todos <= 0 Then
                 _Timer = Nothing
                 If Not IsNothing(_Status) Then _Status.Stop() : _Status = Nothing

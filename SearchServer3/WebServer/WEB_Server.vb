@@ -147,7 +147,9 @@ Namespace CLS
                 End Sub
                 Public Overloads Sub SendBinFile()
                     If _Socket.Connected = False Then Exit Sub
+                    If IsNothing(_Socket) Then Exit Sub
                     If IsNothing(_Transfer) Then sended(_Socket) : Exit Sub
+
                     If My.Computer.FileSystem.FileExists(_Transfer) = False Then
                         Console.Write("_WBS: Datei nicht gefunden: " & _Transfer)
                         sended(_Socket) : Exit Sub
@@ -168,6 +170,7 @@ Namespace CLS
 
                 Public Sub SendContent()
                     If _Socket.Connected = False Then Exit Sub
+                    If IsNothing(_Socket) Then Exit Sub
                     If IsNothing(_Transfer) Then sended(_Socket) : Exit Sub
 
                     SendHeader(False)
@@ -182,8 +185,11 @@ Namespace CLS
                     End Try
                 End Sub
 
-                <DebuggerStepThrough()> _
                 Private Sub SendHeader(ByVal Datei As Boolean)
+                    If _Socket.Connected = False Then Exit Sub
+                    If IsNothing(_Socket) Then Exit Sub
+                    If IsNothing(_Transfer) Then sended(_Socket) : Exit Sub
+
                     Dim Const_DefaultResponse As String = _
                             "HTTP/1.1 200 OK" & vbCrLf & _
                             "Server: Searchserver" & vbCrLf & _
@@ -201,8 +207,14 @@ Namespace CLS
 
                     SendPRE = SendPRE.Replace("{CONTENTTYPE}", _Raw.MimeCode)
 
-                    _Socket.SendTimeout = 50
-                    _Socket.Send(Encoding.UTF8.GetBytes(SendPRE), Encoding.UTF8.GetByteCount(SendPRE), SocketFlags.None)
+                    Dim NS As New NetworkStream(_Socket)
+                    Dim SW As New MemoryStream(System.Text.Encoding.UTF8.GetBytes(SendPRE))
+                    Try : SW.CopyTo(NS) : SW.Flush() : SW.Close()
+                    Catch IOE As IOException
+                        NS.Close()
+                        SW.Close()
+                        sended(_Socket)
+                    End Try
 
                 End Sub
 

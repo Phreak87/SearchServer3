@@ -41,6 +41,7 @@ Module Module1
 
     Sub Main()
 
+        Console.WriteLine("Starte SearchServer V3")
         MimeTypes = New Mimes
         ' --------------------------------------------
         ' Startargumente
@@ -84,12 +85,12 @@ Module Module1
                 Threading.Thread.Sleep(1000) : iConCount = iConCount + 1
             End Try
             If iConCount = 10 Then
-                Console.WriteLine("######################################")
-                Console.WriteLine("Datenbank ist beschädigt. löschen Sie")
-                Console.WriteLine("alle Dateien unter Data/DB")
-                Console.WriteLine("######################################")
-                Thread.Sleep(3000)
-                Exit Sub
+                Console.WriteLine("###########################################")
+                Console.WriteLine("Datenbank ist beschädigt und wird repariert")
+                Console.WriteLine("###########################################")
+                DBApp.Rapairmongo()
+                DBApp.Startmongo()
+                iConCount = 0
             End If
         Loop Until DBServer.State = MongoServerState.Connected
         Console.WriteLine("DBS: Datenbankverbindung zu MongoDB hergestellt.")
@@ -156,8 +157,6 @@ Module Module1
             Next
             DIRNextInit()
         End If
-
-        Dim NOTTrigger As New System.Timers.Timer : NOTTrigger.Interval = 10 * 60 * 1000 : AddHandler NOTTrigger.Elapsed, AddressOf Triggersuche : NOTTrigger.Start()
 
         ' ------------------------------------------------------------
         ' System Trigger für CleanUp (Minuten)
@@ -306,12 +305,6 @@ Module Module1
 
         Dim DIRRefreshes As List(Of CLS.DIR) = DIRLIST.FindAll(Function(s) s._IsRefreshing = False)
         For Each eintrag In DIRWatches : eintrag.Init_Refresh() : Next
-    End Sub
-
-
-
-    Private Sub Triggersuche(sender As Object, e As Timers.ElapsedEventArgs)
-        'Throw New NotImplementedException
     End Sub
 
 End Module
