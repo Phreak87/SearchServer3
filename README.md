@@ -4,10 +4,6 @@ SearchServer3
 - [Backend](#ui-frameworks)
 - [Frontend](#charts)
 
-
-### UI Frameworks
-- [JQuwery](http://jquery.com/) - JQuery
-
 ### Backend
 
 - komplett überarbeitete und aktualisierte Suchmodule,
