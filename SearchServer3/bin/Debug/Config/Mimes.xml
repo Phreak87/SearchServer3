@@ -44,7 +44,6 @@
 	-->
     <MimeType Postfix=".mp3" 	Mimetype="audio/x-mpeg-3" 				Player="Audio" 		CacheSec="3600" CreateThumb="False" />
     <MimeType Postfix=".wav" 	Mimetype="audio/x-wav" 					Player="Audio" 		CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".ogg" 	Mimetype="audio/ogg-vorbis" 			Player="Audio" 		CacheSec="3600" CreateThumb="False" />
     <MimeType Postfix=".pls" 	Mimetype="audio/x-scpls" 				Player="Audio" 		CacheSec="3600" CreateThumb="False" />
     <MimeType Postfix=".au" 	Mimetype="audio/basic" 					Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
     <MimeType Postfix=".mpa" 	Mimetype="audio/x-mpeg"					Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />

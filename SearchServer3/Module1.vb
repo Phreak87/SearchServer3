@@ -93,7 +93,7 @@ Module Module1
                 iConCount = 0
             End If
         Loop Until DBServer.State = MongoServerState.Connected
-        Console.WriteLine("DBS: Datenbankverbindung zu MongoDB hergestellt.")
+        Console.WriteLine(".DBS: Datenbankverbindung zu MongoDB hergestellt.")
 
         DBMongo = DBServer.GetDatabase("SEARCHSERVER")
         ' --------------------------------------------
@@ -157,6 +157,17 @@ Module Module1
             Next
             DIRNextInit()
         End If
+
+        ' -------------------------------------------------------
+        ' Bereinige alle unnötigen Postfixe
+        ' -------------------------------------------------------
+        Console.WriteLine("#DIR: Entferne Garbage (ungültige Postfixe)")
+        Dim DBPre As Integer = DIR.Count
+        Dim N As New List(Of IMongoQuery)
+        For Each eintrag In MimeTypes.RemoTypes : N.Add(Query.EQ(eintrag("Field"), eintrag("Value"))) : Next
+        DIR.Remove(Query.Or(N))
+        Dim DBAft As Integer = DIR.Count
+        Console.WriteLine("#DIR: {0} von {1} Einträgen gelöscht (Postfixe)", DBPre - DBAft, DBPre)
 
         ' ------------------------------------------------------------
         ' System Trigger für CleanUp (Minuten)
@@ -228,9 +239,9 @@ Module Module1
                             If My.Computer.FileSystem.FileExists(Environment.CurrentDirectory & "\WebContent\" & Eintrag("ContentThumb")) = False Then
                                 Dim TPath As String = Environment.CurrentDirectory & "\WebContent\" & Eintrag("ContentThumb")
                                 Dim t As New Filetypes2.ThumbCreator(Eintrag("objLink").Replace("http://localhost:9090/", ""), TPath)
-                                'Console.WriteLine(".THB: Erstelle Thumb für " & Eintrag("objName"))
+                                Console.WriteLine(".THB: Erstelle Thumb für " & Eintrag("objName"))
                                 'Dim TH As New Thread(AddressOf t.CreateThumb) : TH.Start()
-                                'Console.WriteLine(".THB: Thumb erstellt: " & Eintrag("ContentThumb"))
+                                Console.WriteLine(".THB: Thumb erstellt: " & Eintrag("ContentThumb"))
                                 t.CreateThumb()
                             End If
                         End If

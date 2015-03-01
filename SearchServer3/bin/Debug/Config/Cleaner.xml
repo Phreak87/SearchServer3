@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WebSearch>
 	<Clean Collection="DIR" Field="ContentPost" Value=".tmp"/>
+	<Clean Collection="DIR" Field="ContentPost" Value=".pyc"/>
+	<Clean Collection="DIR" Field="ContentPost" Value=".lib"/>
+	<Clean Collection="DIR" Field="ContentPost" Value=".cdl"/>
+	<Clean Collection="DIR" Field="ContentPost" Value=".cxx"/>
+	<Clean Collection="DIR" Field="ContentPost" Value=".hxx"/>
+	<Clean Collection="DIR" Field="ContentPost" Value=".ixx"/>
 	<Clean Collection="DIR" Field="ContentPost" Value=".m"/>
+	<Clean Collection="DIR" Field="ContentPost" Value=".cue"/>
 	<Clean Collection="DIR" Field="ContentPost" Value=".o"/>
 	<Clean Collection="DIR" Field="ContentPost" Value=".3"/>
 	<Clean Collection="DIR" Field="ContentPost" Value=".a"/>

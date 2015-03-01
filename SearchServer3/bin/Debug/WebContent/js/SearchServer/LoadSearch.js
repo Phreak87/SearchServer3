@@ -25,7 +25,7 @@
 		for (var i in data.Messages){
 			var Gruppe=data.Messages[i];
 			if (Gruppe.Query != ''){
-				output+="<li><a href='#' onClick='ActivateSuche(this)' SID=" + Gruppe.Query + ">" + Gruppe._id + " (SID:" + Gruppe.Query + ")</a></li>"
+				output+="<li><a href='#' onClick='ActivateSuche(this)' SID=" + Gruppe._id + ">" + Gruppe.Query + "</a></li>"
 			}
 		};
 		output+="</ul>"
