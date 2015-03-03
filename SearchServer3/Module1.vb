@@ -41,6 +41,10 @@ Module Module1
 
     Sub Main()
 
+        ' Initial-Config
+        Dim StartPostClean As Boolean = False
+        Dim CollectGarbage As Boolean = True
+
         Console.WriteLine("Starte SearchServer V3")
         MimeTypes = New Mimes
         ' --------------------------------------------
@@ -161,18 +165,22 @@ Module Module1
         ' -------------------------------------------------------
         ' Bereinige alle unnötigen Postfixe
         ' -------------------------------------------------------
-        Console.WriteLine("#DIR: Entferne Garbage (ungültige Postfixe)")
-        Dim DBPre As Integer = DIR.Count
-        Dim N As New List(Of IMongoQuery)
-        For Each eintrag In MimeTypes.RemoTypes : N.Add(Query.EQ(eintrag("Field"), eintrag("Value"))) : Next
-        DIR.Remove(Query.Or(N))
-        Dim DBAft As Integer = DIR.Count
-        Console.WriteLine("#DIR: {0} von {1} Einträgen gelöscht (Postfixe)", DBPre - DBAft, DBPre)
+        If StartPostClean = True Then
+            Console.WriteLine("#DIR: Entferne ungültige Postfixe")
+            Dim DBPre As Integer = DIR.Count
+            Dim N As New List(Of IMongoQuery)
+            For Each eintrag In MimeTypes.RemoTypes : N.Add(Query.EQ(eintrag("Field"), eintrag("Value"))) : Next
+            DIR.Remove(Query.Or(N))
+            Dim DBAft As Integer = DIR.Count
+            Console.WriteLine("#DIR: {0} von {1} Einträgen gelöscht (Postfixe)", DBPre - DBAft, DBPre)
+        End If
 
         ' ------------------------------------------------------------
         ' System Trigger für CleanUp (Minuten)
         ' ------------------------------------------------------------
-        Dim GCCTrigger As New System.Timers.Timer : GCCTrigger.Interval = 10 * 60 * 1000 : AddHandler GCCTrigger.Elapsed, AddressOf gccCollect : GCCTrigger.Start()
+        If CollectGarbage = True Then
+            Dim GCCTrigger As New System.Timers.Timer : GCCTrigger.Interval = 10 * 60 * 1000 : AddHandler GCCTrigger.Elapsed, AddressOf gccCollect : GCCTrigger.Start()
+        End If
 
         Do : Thread.Sleep(60 * 1000) : Loop
 
@@ -197,59 +205,98 @@ Module Module1
 
     Public Sub GetWebs(ByVal RawData As CLS.WBS.Server.MessageDecoder, ByVal Connection As Net.Sockets.Socket)
 
-        Dim Path As String = ""
-        Dim Cont As String = ""
-        Dim BCont As Boolean = False
+        Dim Cont As String = ""     ' Zu sendender Inhalt
+        Dim SuTE As String = "0"    ' Such ID (Parameter oder Neu)
+        Dim SuID As String = 0
+        Dim NewS As Boolean = False ' Neue Suche gestartet ?
+        Dim Resu As New List(Of Dictionary(Of String, String))
 
+        ' ###############################################################
+        ' Vorbereitung
+        ' ###############################################################
         If RawData.ReqURLPath.Contains("api\query") Then
-            Dim SIDCont As String = "0"
-            Cont = "{""sid""" & ":" & """" & 0 & """}" : BCont = True
+            Cont = "{""sid""" & ":" & """" & 0 & """}"
             If RawData.ReqURLGets.Count > 0 Then
                 If RawData.ReqURLGets.ContainsKey("sid") = True Then
                     If RawData.ReqURLGets("sid") <> "" Then
                         Dim QRYDoc As BsonDocument = QRY.FindOneByIdAs(Of BsonDocument)(New BsonObjectId(New ObjectId(RawData.ReqURLGets("sid"))))
                         If IsNothing(QRYDoc) Then
-                            Cont = "{""sid""" & ":" & """" & 0 & """}" : BCont = True
+                            ' ---------------------------------
+                            ' Neue Such-ID
+                            ' ---------------------------------
+                            Cont = "{""sid""" & ":" & """" & 0 & """}"
+                            NewS = True
                         Else
-                            SIDCont = QRYDoc("Query").ToString()
-                            If RawData.ReqURLPath = "api\query\dir" Then
-                                TWEB.RemoveAll() : For Each WebPre In WEBLIST : WebPre.Search(SIDCont, RawData.ReqURLGets("sid")) : Next
-                            End If
+                            ' ---------------------------------
+                            ' bekannte Such-ID
+                            ' ---------------------------------
+                            SuTE = QRYDoc("Query").ToString()
+                            NewS = False
                         End If
                     End If
                 End If
             End If
 
+            ' ###############################################################
+            ' Hauptaufgabe
+            ' ###############################################################
             Select Case RawData.ReqURLPath
-                ' --------------------------------------------------------------------
-                ' Hier die direkten Getter aus der Datenbank
-                ' --------------------------------------------------------------------
-                Case "api\query\msg" : Cont = CLS.DBS.MongoDB.QueryFull(MSG) : BCont = True : LogStatus(".WEB: " & RawData.ReqURLPath)
-                Case "api\query\mrk" : Cont = CLS.DBS.MongoDB.QueryFull(MRK) : BCont = True : LogStatus(".WEB: " & RawData.ReqURLPath)
-                Case "api\query\qry" : Cont = CLS.DBS.MongoDB.QueryFull(QRY) : BCont = True : LogStatus(".WEB: " & RawData.ReqURLPath)
-                Case "api\query\idx" : Cont = CLS.DBS.MongoDB.QueryFull(IDX) : BCont = True : LogStatus(".WEB: " & RawData.ReqURLPath)
-                    ' --------------------------------------------------------------------
-                    ' Hier die direkten Getter mit Kriterien aus der Datenbank
-                    ' --------------------------------------------------------------------
+                Case "api\query\msg" : Cont = CLS.DBS.MongoDB.QueryFull(MSG) : LogStatus(".WEB: " & RawData.ReqURLPath)
+                Case "api\query\mrk" : Cont = CLS.DBS.MongoDB.QueryFull(MRK) : LogStatus(".WEB: " & RawData.ReqURLPath)
+                Case "api\query\qry" : Cont = CLS.DBS.MongoDB.QueryFull(QRY) : LogStatus(".WEB: " & RawData.ReqURLPath)
+                Case "api\query\idx" : Cont = CLS.DBS.MongoDB.QueryFull(IDX) : LogStatus(".WEB: " & RawData.ReqURLPath)
+
                 Case "api\query\dir"
-                    Dim Results As List(Of Dictionary(Of String, String)) = CLS.DBS.MongoDB.QueryText(DIR, {SIDCont})
-                    Cont = JSONArray("Messages", Results) : BCont = True : LogStatus(".WEB: " & SIDCont)
-                    For Each Eintrag In Results
-                        If Eintrag("ContentThumb") <> "" Then
-                            If My.Computer.FileSystem.FileExists(Environment.CurrentDirectory & "\WebContent\" & Eintrag("ContentThumb")) = False Then
-                                Dim TPath As String = Environment.CurrentDirectory & "\WebContent\" & Eintrag("ContentThumb")
-                                Dim t As New Filetypes2.ThumbCreator(Eintrag("objLink").Replace("http://localhost:9090/", ""), TPath)
-                                Console.WriteLine(".THB: Erstelle Thumb für " & Eintrag("objName"))
-                                'Dim TH As New Thread(AddressOf t.CreateThumb) : TH.Start()
-                                Console.WriteLine(".THB: Thumb erstellt: " & Eintrag("ContentThumb"))
-                                t.CreateThumb()
-                            End If
-                        End If
-                    Next
-                Case "api\query\fil" : Cont = JSONArray("Messages", CLS.DBS.MongoDB.QueryText(FIL, {SIDCont})) : BCont = True : LogStatus(".WEB: " & SIDCont)
-                Case "api\query\rss" : Cont = JSONArray("Messages", CLS.DBS.MongoDB.QueryText(RSS, {SIDCont})) : BCont = True : LogStatus(".WEB: " & SIDCont)
-                Case "api\query\web" : Cont = JSONArray("Messages", CLS.DBS.MongoDB.QueryText(TWEB, {SIDCont}, 500)) : BCont = True : LogStatus(".WEB: " & SIDCont)
-                Case "api\query\webpages" : Cont = WEBINCL.ToString
+                    Dim DBTimer As New System.Diagnostics.Stopwatch : DBTimer.Start() : Dim IElem As Integer = 30
+                    Dim CResults As Integer = CLS.DBS.MongoDB.QueryTextCount(DIR, {SuTE})
+                    Resu = CLS.DBS.MongoDB.QueryText(DIR, {SuTE}, IElem, RawData.ReqURLGets("pid"))
+                    Dim Info As New Dictionary(Of String, String)
+                    Info.Add("Start", RawData.ReqURLGets("pid") * IElem)
+                    Info.Add("Page", RawData.ReqURLGets("pid"))
+                    Info.Add("Pages", Math.Round(CResults / IElem, 0))
+                    Info.Add("Count", CResults)
+                    Info.Add("DBTime", Math.Round(DBTimer.Elapsed.TotalSeconds, 0).ToString) : DBTimer.Stop()
+                    Cont = JSONArray2("Messages", Info, Resu) : LogStatus(".DIR: " & SuTE)
+                    LogStatus(".DIR: " & SuTE)
+
+                Case "api\query\fil"
+                    Dim DBTimer As New System.Diagnostics.Stopwatch : DBTimer.Start() : Dim IElem As Integer = 30
+                    Dim CResults As Integer = CLS.DBS.MongoDB.QueryTextCount(FIL, {SuTE})
+                    Resu = CLS.DBS.MongoDB.QueryText(FIL, {SuTE})
+                    Dim Info As New Dictionary(Of String, String)
+                    Info.Add("Start", RawData.ReqURLGets("pid") * IElem)
+                    Info.Add("Page", RawData.ReqURLGets("pid"))
+                    Info.Add("Pages", Math.Round(CResults / IElem, 0))
+                    Info.Add("Count", CResults)
+                    Info.Add("DBTime", Math.Round(DBTimer.Elapsed.TotalSeconds, 0).ToString) : DBTimer.Stop()
+                    Cont = JSONArray2("Messages", Info, Resu)
+                    LogStatus(".FIL: " & SuTE)
+
+                Case "api\query\rss"
+                    Dim DBTimer As New System.Diagnostics.Stopwatch : DBTimer.Start() : Dim IElem As Integer = 30
+                    Dim CResults As Integer = CLS.DBS.MongoDB.QueryTextCount(RSS, {SuTE})
+                    Resu = CLS.DBS.MongoDB.QueryText(RSS, {SuTE})
+                    Dim Info As New Dictionary(Of String, String)
+                    Info.Add("Start", RawData.ReqURLGets("pid") * IElem)
+                    Info.Add("Page", RawData.ReqURLGets("pid"))
+                    Info.Add("Pages", Math.Round(CResults / IElem, 0))
+                    Info.Add("Count", CResults)
+                    Info.Add("DBTime", Math.Round(DBTimer.Elapsed.TotalSeconds, 0).ToString) : DBTimer.Stop()
+                    Cont = JSONArray2("Messages", Info, Resu)
+                    LogStatus(".RSS: " & SuTE)
+
+                Case "api\query\web"
+                    Dim DBTimer As New System.Diagnostics.Stopwatch : DBTimer.Start() : Dim IElem As Integer = 50
+                    Dim CResults As Integer = CLS.DBS.MongoDB.QueryTextCount(TWEB, {SuTE})
+                    Resu = CLS.DBS.MongoDB.QueryText(TWEB, {SuTE})
+                    Dim Info As New Dictionary(Of String, String)
+                    Info.Add("Start", RawData.ReqURLGets("pid") * IElem)
+                    Info.Add("Page", RawData.ReqURLGets("pid"))
+                    Info.Add("Pages", Math.Round(CResults / IElem, 0))
+                    Info.Add("Count", CResults)
+                    Info.Add("DBTime", Math.Round(DBTimer.Elapsed.TotalSeconds, 0).ToString) : DBTimer.Stop()
+                    Cont = JSONArray2("Messages", Info, Resu)
+                    LogStatus(".WEB: " & SuTE)
 
                     ' --------------------------------------------------------------------
                     ' Hier die Setter aus der Datenbank
@@ -257,13 +304,14 @@ Module Module1
                 Case "api\query\save"
                     Dim Doc As New BsonDocument("Save", RawData.ReqContent("Data"))
                     Dim Res As WriteConcernResult = MRK.Insert(Of BsonDocument)(Doc)
-                    Cont = "{""sid""" & ":" & """" & Doc("_id").ToString & """}" : BCont = True
+                    Cont = "{""sid""" & ":" & """" & Doc("_id").ToString & """}"
                     LogStatus(".WEB: " & Cont)
 
                 Case "api\query\search"
                     Dim Doc As New BsonDocument("Query", RawData.ReqContent("Data"))
                     Dim Res As WriteConcernResult = QRY.Insert(Of BsonDocument)(Doc)
-                    Cont = "{""sid""" & ":" & """" & Doc("_id").ToString & """}" : BCont = True
+                    Cont = "{""sid""" & ":" & """" & Doc("_id").ToString & """}"
+                    NewS = True : SuTE = RawData.ReqContent("Data") : SuID = Doc("_id").ToString
                     LogStatus(".WEB: " & Cont)
 
                     ' ----------------------------------------------------
@@ -293,6 +341,7 @@ Module Module1
                         Process.Start(PRC)
                     End If
 
+                Case "api\query\webpages" : Cont = WEBINCL.ToString
                 Case "api\query\overview" : Cont = My.Computer.FileSystem.ReadAllText(Environment.CurrentDirectory & "\WebContent\" & "JsonTest\Overview.json")
                 Case "api\query\bookmarks" : Cont = My.Computer.FileSystem.ReadAllText(Environment.CurrentDirectory & "\WebContent\" & "JsonTest\Merker.json")
                 Case "api\query\creators" : Cont = My.Computer.FileSystem.ReadAllText(Environment.CurrentDirectory & "\WebContent\" & "JsonTest\Creators.json")
@@ -302,6 +351,33 @@ Module Module1
 
         Dim WebRes As New CLS.WBS.Server.AsyncSender(Connection, Cont, RawData)
         Dim THRes As New Threading.Thread(AddressOf WebRes.SendContent) : THRes.Start()
+
+        ' ###############################################################
+        ' Nacharbeit
+        ' ###############################################################
+        Select Case RawData.ReqURLPath
+            Case "api\query\dir"
+                For Each Eintrag In Resu
+                    If Eintrag("ContentThumb") <> "" Then
+                        If My.Computer.FileSystem.FileExists(Environment.CurrentDirectory & "\WebContent\" & Eintrag("ContentThumb")) = False Then
+                            Dim TPath As String = Environment.CurrentDirectory & "\WebContent\" & Eintrag("ContentThumb")
+                            Dim t As New Filetypes2.ThumbCreator(Eintrag("objLink").Replace("http://localhost:9090/", ""), TPath)
+                            Console.WriteLine(".THB: Erstelle Thumb für " & Eintrag("objName"))
+                            t.CreateThumb() ' Dim TH As New Thread(AddressOf t.CreateThumb) : TH.Start()
+                            Console.WriteLine(".THB: Thumb erstellt: " & Eintrag("ContentThumb"))
+                        End If
+                    End If
+                Next
+
+            Case "api\query\search"
+                If NewS = True Then
+                    TWEB.RemoveAll()
+                    For Each WebPre In WEBLIST
+                        WebPre.Search(SuTE, SuID)
+                    Next
+                End If
+        End Select
+
     End Sub
 
     Private Sub DIRNextInit()

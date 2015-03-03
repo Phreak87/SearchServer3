@@ -85,8 +85,6 @@ Namespace CLS
                 ' -------------------------------------------------------------------
                 If IsNothing(_CLS) Then Exit Sub
                 If IsNothing(_CLS._ClassType) Then Exit Sub
-                If _CLS._ClassType = "NewFrame" Then RaiseEvent ReceivedEvent(New List(Of Dictionary(Of String, String)), _CLS, _SID) : Exit Sub
-                If _CLS._ClassType = "DFrame" Then RaiseEvent ReceivedEvent(New List(Of Dictionary(Of String, String)), _CLS, _SID) : Exit Sub
 
                 Dim Res As New List(Of Dictionary(Of String, String))
                 Dim URL As String = _CLS._SourcePath
@@ -94,68 +92,64 @@ Namespace CLS
                 URL = URL.Replace("{index}", "1")
 
                 Dim n As New Net.WebClient
+                Dim sw As New Stopwatch : sw.Start()
+
+                ' -----------------------------------------
+                ' Result in String kapseln
+                ' -----------------------------------------
+                Dim resSTR As String = ""
                 Try
-                    Dim sw As New Stopwatch : sw.Start()
-                    Dim resSTR As String = ""
-                    Try
-                        resSTR = n.DownloadString(URL)
-                    Catch ex As Exception
-                        Exit Sub
-                    End Try
-
-
-                    Select Case _CLS._ClassType
-                        Case "JSON"
-                            ' My.Computer.FileSystem.WriteAllText("Temp\" & _CLS._Name & ".json", resSTR.Replace("$", ""), False)
-                            Try
-                                Dim XMLJson As Xml.XmlDocument = Newtonsoft.Json.JsonConvert.DeserializeXmlNode(resSTR.Replace("$", "").Replace("*", ""), "xmlns")
-                                For Each Eintrag As Xml.XmlNode In XMLJson.SelectNodes(_CLS._XPath)
-                                    Dim Title As String = Eintrag.SelectSingleNode(_CLS._RelTitle).InnerText
-                                    Dim SURL As String = Eintrag.SelectSingleNode(_CLS._RelURL).InnerXml
-                                    Dim SCont As String = Eintrag.SelectSingleNode(_CLS._RelCon).InnerText
-                                    Dim THRes As New Dictionary(Of String, String)
-                                    THRes.Add("URL", SURL)
-                                    THRes.Add("Titel", Title)
-                                    THRes.Add("Inhalt", SCont)
-                                    Res.Add(THRes)
-                                Next
-                            Catch ex As Exception
-                                Console.WriteLine(ex.Message)
-                            End Try
-
-                        Case "PFrame"
-                            ' My.Computer.FileSystem.WriteAllText("Temp\" & _CLS._ClassName & ".html", resSTR, True)
-                        Case "XML"
-                            Dim XMLNode As New Xml.XmlDocument
-                            Try
-                                XMLNode.LoadXml(resSTR)
-                                For Each Node As Xml.XmlNode In XMLNode.SelectNodes(_CLS._XPath)
-                                    Dim Title As String = Node.SelectSingleNode(_CLS._RelTitle).InnerText
-                                    Dim SURL As String = Node.SelectSingleNode(_CLS._RelURL).InnerText
-                                    Dim SCont As String = "" : If Not IsNothing(Node.SelectSingleNode(_CLS._RelCon)) Then SCont = Node.SelectSingleNode(_CLS._RelCon).InnerText
-                                    Dim THRes As New Dictionary(Of String, String)
-                                    THRes.Add("URL", SURL)
-                                    THRes.Add("Titel", Title)
-                                    THRes.Add("Inhalt", SCont)
-                                    Res.Add(THRes)
-                                Next
-                            Catch ex As Exception
-
-                            End Try
-
-                        Case Else
-                            ' Console.WriteLine("WEBSearcher Types allowed: JSON, XML, PFrame, QFrame, NewFrame")
-                            Dim HTMLDoc As New HtmlAgilityPack.HtmlDocument
-                            HTMLDoc.LoadHtml(resSTR)
-                            'HTMLDoc.Save("Temp\" & _CLS._ClassName & ".xml")
-
-                    End Select
-                Finally
+                    resSTR = n.DownloadString(URL)
+                Catch ex As Exception
+                    Console.WriteLine("#WEB: {0} mit Fehler: {1}", _CLS._ClassName, ex.Message)
+                    Exit Sub
                 End Try
+
+                ' -----------------------------------------
+                ' Zu XML konvertieren
+                ' -----------------------------------------
+                Dim XMLNode As New Xml.XmlDocument
+                Try
+                    Select Case _CLS._ClassType
+                        Case "JSON" : XMLNode = Newtonsoft.Json.JsonConvert.DeserializeXmlNode(resSTR.Replace("$", "").Replace("*", ""), "xmlns")
+                        Case "XML" : XMLNode.LoadXml(resSTR)
+                    End Select
+                Catch ex As Exception
+                    Console.WriteLine(ex.Message)
+                    Console.WriteLine(resSTR)
+                    Exit Sub
+                End Try
+
+                ' -----------------------------------------
+                ' Loader 
+                ' -----------------------------------------
+                If _CLS._ClassType <> "HTML" Then
+                    Try
+                        For Each Eintrag As Xml.XmlNode In XMLNode.SelectNodes(_CLS._XPath)
+                            Dim THRes As New Dictionary(Of String, String)
+                            THRes.Add("URL", GetATT(Eintrag, _CLS._RelURL))
+                            THRes.Add("Titel", GetATT(Eintrag, _CLS._RelTitle))
+                            THRes.Add("Inhalt", GetATT(Eintrag, _CLS._RelCon))
+                            Res.Add(THRes)
+                        Next
+                    Catch ex As Exception
+                        Console.WriteLine("#WEB: {0} : Fehler {1}", _CLS._ClassName, ex.Message)
+                    End Try
+                Else
+                    Dim HTMLDoc As New HtmlAgilityPack.HtmlDocument
+                    HTMLDoc.LoadHtml(resSTR)
+                End If
 
                 RaiseEvent ReceivedEvent(Res, _CLS, _SID)
             End Sub
 
+            Public Function GetATT(Eintrag As Xml.XmlNode, XPath As String) As String
+                    If Not IsNothing(Eintrag.SelectSingleNode(XPath)) Then
+                        Return Eintrag.SelectSingleNode(XPath).InnerText()
+                    Else
+                        Return ""
+                    End If
+            End Function
         End Class
 
 

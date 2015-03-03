@@ -53,9 +53,13 @@
 				var Searcher = Gruppe.Searcher[i2];				// z.B. Google, Youtube
 				
 				if (Searcher.Show=='IFrame'){
-				output+="<li>" + "<a href='#' src='" + Searcher.URL.cdata + "' onclick='Iframeel(this)'>" + Searcher.Name + '(' + Searcher.Show + ')' + "</a>" 
+					if(Searcher.hasOwnProperty('URL')) {
+						output+="<li>" + "<a href='#' src='" + Searcher.URL.cdata + "' onclick='Iframeel(this)'>" + Searcher.Name + '(' + Searcher.Show + ')' + "</a>" 
+					}
 				} else {
-				output+="<li>" + "<a href='#' src='" + Searcher.URL.cdata + "' onclick='Mainframeel(this)'>" + Searcher.Name + '(' + Searcher.Show + ')' + "</a>" 
+					if(Searcher.hasOwnProperty('URL')) {
+						output+="<li>" + "<a href='#' src='" + Searcher.URL.cdata + "' onclick='Mainframeel(this)'>" + Searcher.Name + '(' + Searcher.Show + ')' + "</a>" 
+					}
 				}
 
 					if(Searcher.hasOwnProperty('Options')) {
@@ -63,9 +67,13 @@
 					for (var i3 in Searcher.Options.Option){
 					var Option = Searcher.Options.Option[i3];	// z.B. Typ:MP3, Typ:PDF
 					if (Searcher.Show=='IFrame'){
-					output+="<li>" + "<a href='#' src='" + Searcher.URL.cdata + "' opt='" + Option.Add + "' onclick='Iframeel(this)'>" + Option.Name + "</a>" 
+					if(Searcher.URL.hasOwnProperty('cdata')) {
+						output+="<li>" + "<a href='#' src='" + Searcher.URL.cdata + "' opt='" + Option.Add + "' onclick='Iframeel(this)'>" + Option.Name + "</a>" 
+					}
 					} else {
-					output+="<li>" + "<a href='#' src='" + Searcher.URL.cdata + "' opt='" + Option.Add + "' onclick='Mainframeel(this)'>" + Option.Name + "</a>" 
+					if(Searcher.URL.hasOwnProperty('cdata')) {
+						output+="<li>" + "<a href='#' src='" + Searcher.URL.cdata + "' opt='" + Option.Add + "' onclick='Mainframeel(this)'>" + Option.Name + "</a>" 
+					}
 					}
 					+ "</li>"
 					}

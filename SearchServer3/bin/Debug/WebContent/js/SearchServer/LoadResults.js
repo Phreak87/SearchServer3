@@ -74,9 +74,20 @@ function loadPageData (daten) {
 	SourceClassGroup = SCG fr Filterung in Table
 	SourceClassPostfix = SCP fr Filterung in Table
 	###############################*/
-	output += "<B>" + data.Messages.length + " Resultate<BR><B>"
+	
+	if (parseInt(data.Pages) > 1){
+		output+="<a href='#' id='wb' class='hvr-pulse-grow' onClick='Resultate(sel,sid,parseInt(pag) - 1)'>Zurueck</a>";
+		for (i = 0;i<=parseInt(data.Pages);i++){
+			if (i <= 22){
+			output+="<a href='#' id='w" + i + "' class='hvr-pulse-grow' onClick='Resultate(sel,sid," + i + ")'>" + i + "</a>";
+			}
+		}
+		output+="<a href='#' id='wf' class='hvr-pulse-grow' onClick='Resultate(sel,sid,parseInt(pag) + 1)'>Weiter</a>";
+		output+="<BR><B>" + '(' + data.Page + ') ' + data.Start + ' - ' + (parseInt(data.Messages.length) + parseInt(data.Start)) + ' / ' + data.Count + ' Resultate in ' + data.DBTime + " Sekunden <BR><B>"
+	}
+										 
 	for (var i in data.Messages){
-		output+="<Table width='100%' " 
+		output+="<Table width='100%' class='hvr-sweep-to-right' " 
 			+ "SCN='" + data.Messages[i].SourceClassName + "' "
 			+ "SCG='" + data.Messages[i].SourceClassGroup + "'" 
 			+ "SCP='" + FilePostfix(data.Messages[i].ContentType) + "'"
@@ -178,13 +189,13 @@ function loadPageData (daten) {
 		
 		if (data.Messages[i].ContentType=='RSS'){
 			output+="<TD>" 
-				+ data.Messages[i].objContent + "<BR><BR>" + data.Messages[i].objContent 
+				+ data.Messages[i].objContent + "<BR>"
 			+ "</TD>";
 		};
 		
 		if (data.Messages[i].ContentType=='WEB'){
 			output+="<TD>" 
-				+ data.Messages[i].objContent + "<BR><BR>" + data.Messages[i].objContent 
+				+ data.Messages[i].objContent + "<BR>"
 			+ "</TD>";
 		};
 		
@@ -215,6 +226,12 @@ function loadPageData (daten) {
 		anchor.onmouseover = function(){this.style.background = '#dddddd';};
 		anchor.onmouseout = function(){this.style.background = '#f4f4f4';};
 	};
+	
+	$("#wb").button();
+	for (i = 0;i<=parseInt(data.Pages);i++){
+	$("#w" + i).button();
+	}
+	$("#wf").button();
 	
 	Preload_Scripts();
 	Preload_Content();

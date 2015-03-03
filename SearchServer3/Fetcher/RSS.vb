@@ -2,6 +2,7 @@
 Imports System.Text
 Imports MongoDB.Bson
 Imports MongoDB.Driver
+Imports MongoDB.Driver.Builders
 
 Namespace CLS
 
@@ -52,6 +53,15 @@ Namespace CLS
 
         Public Sub Start()
             Dim RSSResults As List(Of String()) = IndexRSS(_ClassRoot)
+
+            If RSSResults.Count = 0 Then Exit Sub
+            Dim DBPre As Integer = _Collection.Count
+            Dim N As New List(Of IMongoQuery)
+            For Each eintrag In RSSResults : N.Add(Query.EQ("objName", eintrag(0))) : Next
+            _Collection.Remove(Query.Or(N))
+            Dim DBAft As Integer = _Collection.Count
+            Console.WriteLine("#RSS: Neue Feeds von {0} : {1} => {2}", _ClassName, DBPre, DBAft)
+
             For Each News In RSSResults
                 Dim F As New BsonDocument
                 F.Add("SourceClassType", "RSS")

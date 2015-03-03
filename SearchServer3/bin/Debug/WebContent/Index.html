@@ -52,7 +52,9 @@
 </script>
 
 <Script type="text/javascript">
-	var sid='';
+	var sid=''; // Die Such-ID
+	var sel=''; // Der Suchtyp
+	var pag=''; // Die SeitenNr
 	
 	function CheckData(daten){
 		// ##############################
@@ -105,7 +107,9 @@
 		  .done(function( msg ) {
 		    $('#debug').html(msg);
 			sid = jQuery.parseJSON(msg).sid;
-			Resultate('DIR',sid);
+			Resultate('DIR',sid,0);
+			sel='DIR';
+			pag='0';
 		  });
 		LoadDebug($('#debug'),$('#Meldungen'));
 	}
@@ -116,20 +120,22 @@
 		$.ajax({
 			  type: "POST",
 			  url: "api/query/save",
-			  data: {Action: "Save", Data: daten}
+			  data: {Action: "Save", Data: daten }
 			})
 		  .done(function( msg ) {
 		    loadPageData(msg);
 		  });
 	}
 	
-	function Resultate(opt,sid) {
+	function Resultate(opt,sid,pid) {
+		sel=opt; pag=pid; 
 		$('#Ergebnisse').html("<img src='images/ajax-loader.gif'>" + ' Lade : ' + opt + "/" + sid );
 		$('#debug').html('Query: ' + opt + ' ' + sid);
 		$.ajax({
 			url: '/api/Query/' + opt,
 			data: {
-				SID: sid
+				SID: sid,
+				PID: pid
 			},
 			success: function (data) {
 				loadPageData(data);
@@ -326,33 +332,39 @@
 																							 $('#Search').click();
 																							 "></input>
 																							 
-		<a href="#Bookmarks" 	id='Search' style='height:30px;Width:6%' 	class=			'hvr-underline-from-left'
-																			onclick=		"Suchen($('#SText').val());
-																							 $('#D3Overview').html('');
-																							 $('#D3Overview').hide(true);
-																							 $('#tabs').show(true);
-																							 $('#tabs').tabs('option','active',0);
-																							 ">Suchen</a>
+		<a href="#" 	id=				'Search' 
+						style=			'height:30px;Width:6%' 	
+						class=			'hvr-underline-from-left'
+						onclick=		"Suchen($('#SText').val());
+										 $('#D3Overview').html('');
+										 $('#D3Overview').hide(true);
+										 $('#tabs').show(true);
+										 $('#tabs').tabs('option','active',0);"
+										 >Suchen</a>
 																							 
-		<a href="#Ersteller" 	id="Save"  	style='height:30px;Width:7%'   	class=			'hvr-underline-from-left'
-																			onclick=		"Speichern($('#SText').val());">Speichern</a>
+		<a href="#" 	id=				'Save'  	
+						style=			'height:30px;Width:7%'   	
+						class=			'hvr-underline-from-left'
+						onclick=		"Speichern($('#SText').val());"
+										>Speichern</a>
+										
 	</div>
 	
 	<!-- Linkes informationsmenue mit Abfragen, gespeichertem und sonstigen Infors -->
 	<div class="pageLeftMenu">
 		<div id="tabs2">
-			<a href="#" 					id=		'HideDebug' 
-											style=	'height:30px;Width:100%' 	
-											class=	'hvr-underline-from-left'
-											onclick="$('.pageLeftMenu').hide(true);
-													 $('.pageContent').width('100%');
-													">Verstecken</a>
-	        <ul>
+			<a href="#" 					id=			'HideDebug' 
+											style=		'height:30px;Width:100%' 	
+											class=		'hvr-underline-from-left'
+											onclick=	"$('.pageLeftMenu').hide(true);
+														 $('.pageContent').width('100%');
+														">Verstecken</a>
+			<ul>									
 	            <li><a href="#Merker" 		class=		'hvr-glow'
 											onclick="	LoadMerker($('#debug'),$('#Merker'));
 														LoadDebug($('#debug'),$('#Meldungen'));
 														$('#Merker').show(false);		
-														$('#Index').hide(false);	
+														$('#Index').hide(false);
 														$('#Suche').hide(false);">Merker</a></li>
 														
 	            <li><a href="#Suche" 		class=		'hvr-glow'
@@ -382,10 +394,10 @@
 		<div id="D3Overview"></div>
 	    <div id="tabs" hidden=true>
 	        <ul>
-	            <li><a id="DIR" class='hvr-glow' href="#Ergebnisse" onclick="Resultate('DIR',sid)">Verzeichnisse</a></li>
-	            <li><a id="RSS" class='hvr-glow' href="#Ergebnisse" onclick="Resultate('RSS',sid)">Newsfeeds</a></li>
-	            <li><a id="FIL" class='hvr-glow' href="#Ergebnisse" onclick="Resultate('FIL',sid)">Textdateien</a></li>
-	            <li><a id="WEB" class='hvr-glow' href="#Ergebnisse" onclick="Resultate('WEB',sid)">Internetseiten</a></li>
+	            <li><a id="DIR" class='hvr-glow' href="#Ergebnisse" onclick="Resultate('DIR',sid,0);">Verzeichnisse</a></li>
+	            <li><a id="RSS" class='hvr-glow' href="#Ergebnisse" onclick="Resultate('RSS',sid,0);">Newsfeeds</a></li>
+	            <li><a id="FIL" class='hvr-glow' href="#Ergebnisse" onclick="Resultate('FIL',sid,0);">Textdateien</a></li>
+	            <li><a id="WEB" class='hvr-glow' href="#Ergebnisse" onclick="Resultate('WEB',sid,0);">Internetseiten</a></li>
 	        </ul>
 	        <div id="Ergebnisse"><img src='images/ajax-loader.gif'> Bitte warten ...</div>
 	    </div>

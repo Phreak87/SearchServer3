@@ -305,7 +305,6 @@ Namespace CLS
                             Case "Range:"
                                 ReqRange = Split(Split(Line, ":")(1), "=")(1)
                                 ReqRangeMin = Split(ReqRange, "-")(0)
-                                Console.WriteLine("Byte-Range: " & ReqRange)
                             Case " "
                             Case ""
                             Case Else

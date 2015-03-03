@@ -108,6 +108,7 @@ Namespace CLS
 
         Function CheckErrs(Dir As String) As Boolean
             If Dir.Length > 248 Then Return True
+            If Dir.Contains("$Recycle.Bin") Then Return True
             If Directory.Exists(Dir) = False Then Return True
 
             Dim DirAtt = My.Computer.FileSystem.GetDirectoryInfo(Dir)
@@ -126,8 +127,7 @@ Namespace CLS
             If _Todos > 0 Then Console.WriteLine("#DIR: {0} - Wird bereits initialisiert, Interval {1} Min.", EnsureLen(_ClassName, 15), _ClassRefresh) : Exit Sub
             Console.WriteLine("#DIR: {0} - Starte Initialisierung", EnsureLen(_ClassName, 15))
 
-            Dim Remove As New QueryDocument : Remove.Add("SourceClassName", _ClassName)
-            _TCollection.Remove(Remove)
+            Dim Remove As New QueryDocument : Remove.Add("SourceClassName", _ClassName):_TCollection.Remove(Remove)
 
             _Timer = New Stopwatch : _Timer.Start()
             _Status = New System.Timers.Timer
@@ -136,8 +136,8 @@ Namespace CLS
             _Status.Start()
 
             _Files = 0
-            Dim DoPath As New CLS_DIR(_ClassRoot) : _TodoCol.Add(DoPath) : Thread.Sleep(0) : _Todos = _TodoCol.Count
-            Threading.ThreadPool.QueueUserWorkItem(AddressOf IndexFolder, DoPath)
+            Dim DoPath As New CLS_DIR(_ClassRoot)
+            AppendOBJ(DoPath) : Threading.ThreadPool.QueueUserWorkItem(AddressOf IndexFolder, DoPath)
 
         End Sub
 
@@ -154,11 +154,10 @@ Namespace CLS
 
 #Region "Indizierungen Ordner und Dateien"
         Sub IndexFolder(ByVal _obj As CLS_DIR)
-            If IsNothing(_obj) Then RemoveOBJ(_obj)
+            If IsNothing(_obj) Then RemoveOBJ(_obj) : Exit Sub
 
             If Directory.GetFiles(_obj._Path).Count > 0 Then
-                Dim DoPath As New CLS_DIR(_obj._Path)
-                _TodoCol.Add(DoPath) : Thread.Sleep(0) : _Todos = _TodoCol.Count
+                Dim DoPath As New CLS_DIR(_obj._Path) : AppendOBJ(DoPath)
                 Threading.ThreadPool.QueueUserWorkItem(AddressOf IndexFiles, DoPath)
             End If
 
@@ -174,7 +173,7 @@ Namespace CLS
             RemoveOBJ(_obj)
         End Sub
         Sub IndexFiles(ByVal _obj As CLS_DIR)
-            If IsNothing(_obj) Then RemoveOBJ(_obj)
+            If IsNothing(_obj) Then RemoveOBJ(_obj) : Exit Sub
 
             Dim Res As New List(Of BsonDocument)
 
@@ -246,7 +245,7 @@ Namespace CLS
             ' Bereinige alle unnötigen Postfixe vor Sync
             ' -------------------------------------------------------
             Dim DBPre As Integer = _TCollection.Count
-            Dim N As New List(Of IMongoQuery) : N.Add(Query.Matches("objLink", "/$Recycle.Bin/"))
+            Dim N As New List(Of IMongoQuery) : N.Add(Query.Matches("objLink", "/Recycle.Bin/"))
             For Each eintrag In MimeTypes.RemoTypes : N.Add(Query.EQ(eintrag("Field"), eintrag("Value"))) : Next
             _TCollection.Remove(Query.Or(N))
             Dim DBAft As Integer = _TCollection.Count
@@ -266,22 +265,22 @@ Namespace CLS
             Dim IColAft As Integer = 0
             Dim QDOc As New QueryDocument : QDOc.Add("SourceClassName", _ClassName)
             Dim Coll As MongoCursor(Of BsonDocument) = _TCollection.FindAs(Of BsonDocument)(QDOc)
+            Dim MOpt As New MongoInsertOptions : MOpt.Flags = InsertFlags.ContinueOnError
             If Coll.Count > 0 Then
-                IUpdAkt = Coll.Count : _Collection.InsertBatch(Coll)
+                IUpdAkt = Coll.Count : _Collection.InsertBatch(Coll, MOpt)
                 IColAft = _Collection.Count
                 _TCollection.Remove(QDOc)
             End If
             Console.WriteLine("#DIR: {0} - {1} Einträge synchronisiert (TMPDB -> ProduktivDB)", EnsureLen(_ClassName, 15), Coll.Count)
             Thread.Sleep(1000)
         End Sub
-
 #End Region
 
         Private Sub LogStatus(ByVal sender As Object, ByVal e As Timers.ElapsedEventArgs)
             If IsNothing(_Timer) Then Exit Sub
             Dim Time As String = _Timer.Elapsed.Hours & ":" & _Timer.Elapsed.Minutes & ":" & _Timer.Elapsed.Seconds
             Console.WriteLine("#DIR: {2} - {1} Dateien mit {0} Threads in {3}", EnsureLen(_Todos, 6), EnsureLen(_Files, 6), EnsureLen(_ClassName, 15), EnsureLen(Time, 8))
-            _Todos = 0
+            '_Todos = 0
             If _Todos <= 0 Then
                 _Timer = Nothing
                 If Not IsNothing(_Status) Then _Status.Stop() : _Status = Nothing

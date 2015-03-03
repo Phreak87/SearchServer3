@@ -29,7 +29,6 @@
     <MimeType Postfix=".dll" 	Mimetype="application/octet-stream" 	Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
     <MimeType Postfix=".bin" 	Mimetype="application/octet-stream" 	Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
     <MimeType Postfix=".uu" 	Mimetype="application/octet-stream" 	Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".flv" 	Mimetype="application/x-shockwave-flash" Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
     <!-- 
 	#########################################################
 	Dokumenttypen (Viewer.js)
@@ -152,6 +151,8 @@
     <MimeType Postfix=".ogv" 	Mimetype="video/ogg" 					Player="Video" 		CacheSec="3600" CreateThumb="True" />
     <MimeType Postfix=".mpv2" 	Mimetype="video/mpeg-2" 				Player="Video" 		CacheSec="3600" CreateThumb="True" />
     <MimeType Postfix=".mp2v" 	Mimetype="video/mpeg-2" 				Player="Video" 		CacheSec="3600" CreateThumb="True" />
+    <MimeType Postfix=".flv" 	Mimetype="video/x-flv" 					Player="Video" 		CacheSec="3600" CreateThumb="False" />
+	
     <!-- 
 	#########################################################
 	3D Formate (ThreeJS)

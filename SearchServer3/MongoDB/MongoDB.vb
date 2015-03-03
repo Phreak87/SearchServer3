@@ -8,18 +8,24 @@ Namespace CLS
             Event Status(Message As String)
             Sub Startmongo()
                 Dim AppPath As String = Environment.CurrentDirectory & "\Bins\"
-                Dim MongoD As String = "Mongod_3.0_RC11.exe"
+                Dim MongoD As String = "Mongod.exe"
 
-                RaiseEvent Status(".DBS: Start MongoDB Server")
-                Dim PStart As New ProcessStartInfo
-                PStart.WindowStyle = ProcessWindowStyle.Hidden
-                PStart.FileName = AppPath & MongoD
-                PStart.Arguments = "--dbpath data\db --nojournal --quiet" '  --httpinterface --rest --jsonp
-                PStart.WorkingDirectory = AppPath
-                Dim PRC As Process = Process.Start(PStart)
-                RaiseEvent Status(".DBS: ProcessID: " & PRC.Id)
-                RaiseEvent Status(".DBS: MongoPath: " & MongoD)
-                RaiseEvent Status(".DBS: Arguments: " & PRC.StartInfo.Arguments)
+                Dim PRCL As Process() = Process.GetProcessesByName(MongoD.Replace(".exe", ""))
+                If PRCL.Count = 0 Then
+                    RaiseEvent Status(".DBS: Start MongoDB Server")
+                    Dim PStart As New ProcessStartInfo
+                    PStart.WindowStyle = ProcessWindowStyle.Hidden
+                    PStart.FileName = AppPath & MongoD
+                    PStart.Arguments = "--dbpath data\db --nojournal --quiet --storageEngine wiredTiger" '  --httpinterface --rest --jsonp
+                    PStart.WorkingDirectory = AppPath
+                    Dim PRC As Process = Process.Start(PStart)
+                    RaiseEvent Status(".DBS: ProcessID: " & PRC.Id)
+                    RaiseEvent Status(".DBS: MongoPath: " & MongoD)
+                    RaiseEvent Status(".DBS: Arguments: " & PRC.StartInfo.Arguments)
+                Else
+                    Console.WriteLine(".DBS: Mongo instance running at PID: {0}", PRCL(0).Id)
+                    Console.WriteLine(".DBS: using running Mongo instance")
+                End If
             End Sub
             Sub Rapairmongo()
                 Dim AppPath As String = Environment.CurrentDirectory & "\Bins\"
@@ -54,10 +60,13 @@ Namespace CLS
 
                 Dim QL As New List(Of IMongoQuery)
                 For Each Eintrag In Split(Search(0), "+")
-                    Dim Q As IMongoQuery = Query.Matches("objName", "/" & Eintrag & "/i") : QL.Add(Q)
+                    Dim Q As IMongoQuery = Query.Matches("objLink", "/" & Eintrag & "/i") : QL.Add(Q)
                 Next
                 Dim Q2 As IMongoQuery = Query.And(QL)
-                Dim R As MongoCursor(Of BsonDocument) = DB.FindAs(Of BsonDocument)(Q2).SetLimit(MaxResults)
+                Dim Skip As Integer = StartAt * MaxResults
+
+                Dim C As Integer = DB.FindAs(Of BsonDocument)(Q2).Count
+                Dim R As MongoCursor(Of BsonDocument) = DB.FindAs(Of BsonDocument)(Q2).SetLimit(MaxResults).SetSkip(Skip)
 
                 Dim D As New List(Of Dictionary(Of String, String))
                 For Each Eintrag In R
@@ -75,7 +84,15 @@ Namespace CLS
                 Return D
 
             End Function
-
+            Shared Function QueryTextCount(ByVal DB As MongoCollection, ByVal Search As String()) As Integer
+                If IsNothing(DB) Then Return Nothing
+                Dim QL As New List(Of IMongoQuery)
+                For Each Eintrag In Split(Search(0), "+")
+                    Dim Q As IMongoQuery = Query.Matches("objLink", "/" & Eintrag & "/i") : QL.Add(Q)
+                Next
+                Dim Q2 As IMongoQuery = Query.And(QL)
+                Return DB.FindAs(Of BsonDocument)(Q2).Count
+            End Function
         End Class
     End Class
 End Namespace

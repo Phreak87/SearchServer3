@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WebSearch>
 	<Clean Collection="DIR" Field="ContentPost" Value=".tmp"/>
+	<Clean Collection="DIR" Field="ContentPost" Value=".0"/>
+	<Clean Collection="DIR" Field="ContentPost" Value=".lock"/>
+	<Clean Collection="DIR" Field="ContentPost" Value=".ns"/>
 	<Clean Collection="DIR" Field="ContentPost" Value=".pyc"/>
 	<Clean Collection="DIR" Field="ContentPost" Value=".lib"/>
 	<Clean Collection="DIR" Field="ContentPost" Value=".cdl"/>
