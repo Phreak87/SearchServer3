@@ -8,6 +8,7 @@ SearchServer3
 
 - komplett überarbeitete und aktualisierte Suchmodule,
 - separierte Konfigurationsdateien (Mimetypes, Webseiten, Cleaner),
+- Neuer Mimetypedetector für fehlende Mimetypes
 - unterschiedliche Configs und Startparameter,
 - neue Datenbankbasis (MongoDB 3.0 RC11),
 - neuer Webserver mit 25 Workerthreads und Caching,
@@ -25,4 +26,6 @@ SearchServer3
 - neues Soundmanager Interface
 - Debugmeldungen erweitert,
 - Seiten für Modultests,
-- verschönertes Interface mit Hover
+- verschönertes Interface mit Hovereffekten
+- Anzeige der Seitennzahl 
+- Anfrage weiterer Suchmaschinen (konfigurierbar TAB, PAGE und IFrame)
