@@ -1,9 +1,10 @@
 SearchServer3
 ========================
 
+- https://www.youtube.com/watch?v=UxszMNgMbU8
+- 
 - [Backend](#ui-frameworks)
 - [Frontend](#charts)
-- https://www.youtube.com/watch?v=UxszMNgMbU8
 
 ### Backend
 
@@ -31,3 +32,6 @@ SearchServer3
 - verschönertes Interface mit Hovereffekten,
 - Anzeige der Seitennzahl ,
 - Anfrage weiterer Suchmaschinen (konfigurierbar TAB, PAGE und IFrame) (DuckDuckGo, Faroo)
+
+### Empfehlung
+- Yacy für die Suche per Json oder im IFrame
