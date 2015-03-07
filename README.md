@@ -6,26 +6,27 @@ SearchServer3
 
 ### Backend
 
-- komplett überarbeitete und aktualisierte Suchmodule,
+- komplett überarbeitete und aktualisierte Suchmodule( WEB-Suche in JSON, XML und HTML),
 - separierte Konfigurationsdateien (Mimetypes, Webseiten, Cleaner),
 - Neuer Mimetypedetector für fehlende Mimetypes
 - unterschiedliche Configs und Startparameter,
-- neue Datenbankbasis (MongoDB 3.0 RC11),
+- neue Datenbankbasis (MongoDB 3.0 WiredTiger),
 - neuer Webserver mit 25 Workerthreads und Caching,
-- verbesstertes durchsuchen der Laufwerke in Threadpools,
-- optimierung auf Performance und Stabilität
+- Verbesstertes durchsuchen der Laufwerke in Threadpools,
+- Optimierung auf Performance und Stabilität (1.500.000 Inhalte in rund 2Sec),
+- Caching der Webanfragen für reduzierte Webserverbelastung.
 
 ### Frontend
 
 - Updates für JS-Module,
 - Zip-Viewer,
-- Neue Videoplayer (selektion im Frontend),
+- 2 Neue Videoplayer (selektion im Frontend),
 - Anzeige der Inhalte in IFrames,
 - Umstellung auf JSON-Kommunikation,
 - Direktes öffnen von Dateien und Ordnern,
-- neues Soundmanager Interface
+- neues Soundmanager Interface,
 - Debugmeldungen erweitert,
 - Seiten für Modultests,
-- verschönertes Interface mit Hovereffekten
-- Anzeige der Seitennzahl 
-- Anfrage weiterer Suchmaschinen (konfigurierbar TAB, PAGE und IFrame)
+- verschönertes Interface mit Hovereffekten,
+- Anzeige der Seitennzahl ,
+- Anfrage weiterer Suchmaschinen (konfigurierbar TAB, PAGE und IFrame) (DuckDuckGo, Faroo)
