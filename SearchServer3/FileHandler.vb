@@ -10,6 +10,7 @@ Public Class Filetypes2
     Public _File As String
     Public _Postfix As String = ""
     Public _Player As String = ""
+    Public _Cache As String = ""
     Public _Thumb As String = ""
     Public _Content As String = ""
     Public _Online As Boolean = False
@@ -22,9 +23,10 @@ Public Class Filetypes2
         _Postfix = Genpostfix()
         _File = GenFile()
         _Foldername = GenFolder()
-        _Player = GenPlayer()
+        _Player = GetPlayer()
         _Thumb = GetThumbNail()
         _MimeType = GetMimeType()
+        _Cache = GetCache()
 
         If _Player = "Text" Then
             Try
@@ -85,8 +87,10 @@ Public Class Filetypes2
         If _Filename.Contains("/") Then Return True
         Return False
     End Function
-
-    Function GenPlayer() As String
+    Function GetCache() As String
+        Return MimeTypes.GetCacheFor(_Postfix)
+    End Function
+    Function GetPlayer() As String
         Return MimeTypes.GetPlayerFor(_Postfix)
     End Function
     Function GetMimeType() As String
@@ -97,11 +101,11 @@ Public Class Filetypes2
     End Function
 
     Function GetThumbNail() As String
-        If _Online = True Then Return ""
+        'If _Online = True Then Return ""
         If HasThumbNail() = False Then Return ""
         Dim Hash As String = HashString(_Filename)
 
-        Dim NewFile As String = "THImage\" & Hash & ".jpg"
+        Dim NewFile As String = "http://localhost:9090\THImage\" & Hash & ".jpg"
         Return NewFile
     End Function
     Private Function HashString(ByVal source As String) As String

@@ -39,22 +39,11 @@ Namespace CLS
 
         Private Sub Received(Liste As List(Of Dictionary(Of String, String)), Klasse As WEB, SID As String)
             If Liste.Count = 0 Then Exit Sub
-            Dim MSGs As New List(Of BsonDocument)
+            Dim MSGs As New List(Of DOC)
 
             For Each eintrag In Liste
-                Dim F As New BsonDocument
-                F.Add("_SID", New ObjectId(SID))
-                F.Add("SourceClassType", "WEB")
-                F.Add("SourceClassName", Klasse._ClassName)
-                F.Add("SourceClassGroup", Klasse._ClassGroup)
-                F.Add("objName", eintrag("Titel"))
-                F.Add("objLink", eintrag("URL"))
-                F.Add("objContent", eintrag("Inhalt"))
-                F.Add("SourceFileType", "Link")
-                F.Add("ContentTime", New BsonDateTime(Now))
-                F.Add("ContentThumb", "No_Thumb (WEB)")
-                F.Add("ContentType", MimeTypes.GetOnlinePlayerFor(eintrag("URL")))
-                MSGs.Add(F)
+                Dim DOC As New DOC(_ClassName, "WEB", _ClassGroup, eintrag("Titel"), eintrag("URL"), eintrag("Inhalt"), "Link", Now)
+                MSGs.Add(DOC)
             Next
 
             _Datenbank.InsertBatch(MSGs)
@@ -116,7 +105,7 @@ Namespace CLS
                     End Select
                 Catch ex As Exception
                     Console.WriteLine(ex.Message)
-                    Console.WriteLine(resSTR)
+                    ' Console.WriteLine(resSTR)
                     Exit Sub
                 End Try
 

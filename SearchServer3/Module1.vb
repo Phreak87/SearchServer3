@@ -42,8 +42,10 @@ Module Module1
     Sub Main()
 
         ' Initial-Config
-        Dim StartPostClean As Boolean = False
-        Dim CollectGarbage As Boolean = True
+        Dim StartPostClean As Boolean = False    ' Beim start (neue) Postfixe bereinigen
+        Dim CollectGarbage As Boolean = True    ' Timer für GarbageCollection 
+        Dim DatabaseWiredT As Boolean = True   ' Zum testen bis UMongo WiredTiger unterstützt
+        Dim CleanDBStart As Boolean = False
 
         Console.WriteLine("Starte SearchServer V3")
         MimeTypes = New Mimes
@@ -79,8 +81,8 @@ Module Module1
 
         Dim DBApp As New CLS.DBS.MongoDB
         AddHandler DBApp.Status, AddressOf LogStatus
-        DBApp.Startmongo()
-
+        If CleanDBStart = True Then DBApp.Stopmongo() : DBApp.KillmongoDBS()
+        DBApp.Startmongo(DatabaseWiredT)
         DBServer = DBClient.GetServer
         Dim iConCount As Integer = 1
         Do
@@ -93,7 +95,7 @@ Module Module1
                 Console.WriteLine("Datenbank ist beschädigt und wird repariert")
                 Console.WriteLine("###########################################")
                 DBApp.Rapairmongo()
-                DBApp.Startmongo()
+                DBApp.Startmongo(DatabaseWiredT)
                 iConCount = 0
             End If
         Loop Until DBServer.State = MongoServerState.Connected
@@ -105,7 +107,7 @@ Module Module1
         ' --------------------------------------------
         DIR = DBMongo.GetCollection("DIR") : RSS = DBMongo.GetCollection("RSS") : FIL = DBMongo.GetCollection("FIL")
         If CleanDBS = True Then Console.WriteLine(".DBS: Drop Database RSS,DIR,FIL") : DIR.Drop() : RSS.Drop() : FIL.Drop()
-        DIR.CreateIndex({"objName", "ContentPost"}) : RSS.CreateIndex({"Data"}) : FIL.CreateIndex({"Data"})
+        DIR.CreateIndex({"Cont_Name", "Cont_Link", "Cont_Post"}) : RSS.CreateIndex({"Cont_Name"}) : FIL.CreateIndex({"Cont_Name"})
         ' --------------------------------------------
         ' Init Temp.Datenbanken
         ' --------------------------------------------
@@ -121,7 +123,7 @@ Module Module1
         MSG = DBMongo.GetCollection("MSG") : IDX = DBMongo.GetCollection("IDX")
         QRY.Drop() : MSG.Drop() : IDX.Drop()
         MSG.CreateIndex({"_id"}) : QRY.CreateIndex({"_id"})
-        MRK.CreateIndex({"_id"}) : IDX.CreateIndex({"_id"})
+        ' MRK.CreateIndex({"_id"}) : IDX.CreateIndex({"_id"})
 
         Console.WriteLine(".SYS: Initialisiere Threadpool mit 25/5000 Threads")
         System.Threading.ThreadPool.SetMaxThreads(25, 5000)
@@ -207,9 +209,11 @@ Module Module1
 
         Dim Cont As String = ""     ' Zu sendender Inhalt
         Dim SuTE As String = "0"    ' Such ID (Parameter oder Neu)
+        Dim PaID As Integer = 0
         Dim SuID As String = 0
         Dim NewS As Boolean = False ' Neue Suche gestartet ?
         Dim Resu As New List(Of Dictionary(Of String, String))
+        Dim resDB As New CLS.DBS.DBResult
 
         ' ###############################################################
         ' Vorbereitung
@@ -236,67 +240,27 @@ Module Module1
                     End If
                 End If
             End If
+            If RawData.ReqURLGets.ContainsKey("pid") Then PaID = RawData.ReqURLGets("pid")
 
             ' ###############################################################
             ' Hauptaufgabe
             ' ###############################################################
             Select Case RawData.ReqURLPath
+
+                Case "api\query\webpages" : Cont = WEBINCL.ToString
+                Case "api\query\overview" : Cont = My.Computer.FileSystem.ReadAllText(Environment.CurrentDirectory & "\WebContent\" & "JsonTest\Overview.json")
+                Case "api\query\bookmarks" : Cont = My.Computer.FileSystem.ReadAllText(Environment.CurrentDirectory & "\WebContent\" & "JsonTest\Merker.json")
+                Case "api\query\creators" : Cont = My.Computer.FileSystem.ReadAllText(Environment.CurrentDirectory & "\WebContent\" & "JsonTest\Creators.json")
+
                 Case "api\query\msg" : Cont = CLS.DBS.MongoDB.QueryFull(MSG) : LogStatus(".WEB: " & RawData.ReqURLPath)
                 Case "api\query\mrk" : Cont = CLS.DBS.MongoDB.QueryFull(MRK) : LogStatus(".WEB: " & RawData.ReqURLPath)
                 Case "api\query\qry" : Cont = CLS.DBS.MongoDB.QueryFull(QRY) : LogStatus(".WEB: " & RawData.ReqURLPath)
                 Case "api\query\idx" : Cont = CLS.DBS.MongoDB.QueryFull(IDX) : LogStatus(".WEB: " & RawData.ReqURLPath)
 
-                Case "api\query\dir"
-                    Dim DBTimer As New System.Diagnostics.Stopwatch : DBTimer.Start() : Dim IElem As Integer = 30
-                    Dim CResults As Integer = CLS.DBS.MongoDB.QueryTextCount(DIR, {SuTE})
-                    Resu = CLS.DBS.MongoDB.QueryText(DIR, {SuTE}, IElem, RawData.ReqURLGets("pid"))
-                    Dim Info As New Dictionary(Of String, String)
-                    Info.Add("Start", RawData.ReqURLGets("pid") * IElem)
-                    Info.Add("Page", RawData.ReqURLGets("pid"))
-                    Info.Add("Pages", Math.Round(CResults / IElem, 0))
-                    Info.Add("Count", CResults)
-                    Info.Add("DBTime", Math.Round(DBTimer.Elapsed.TotalSeconds, 0).ToString) : DBTimer.Stop()
-                    Cont = JSONArray2("Messages", Info, Resu) : LogStatus(".DIR: " & SuTE)
-                    LogStatus(".DIR: " & SuTE)
-
-                Case "api\query\fil"
-                    Dim DBTimer As New System.Diagnostics.Stopwatch : DBTimer.Start() : Dim IElem As Integer = 30
-                    Dim CResults As Integer = CLS.DBS.MongoDB.QueryTextCount(FIL, {SuTE})
-                    Resu = CLS.DBS.MongoDB.QueryText(FIL, {SuTE})
-                    Dim Info As New Dictionary(Of String, String)
-                    Info.Add("Start", RawData.ReqURLGets("pid") * IElem)
-                    Info.Add("Page", RawData.ReqURLGets("pid"))
-                    Info.Add("Pages", Math.Round(CResults / IElem, 0))
-                    Info.Add("Count", CResults)
-                    Info.Add("DBTime", Math.Round(DBTimer.Elapsed.TotalSeconds, 0).ToString) : DBTimer.Stop()
-                    Cont = JSONArray2("Messages", Info, Resu)
-                    LogStatus(".FIL: " & SuTE)
-
-                Case "api\query\rss"
-                    Dim DBTimer As New System.Diagnostics.Stopwatch : DBTimer.Start() : Dim IElem As Integer = 30
-                    Dim CResults As Integer = CLS.DBS.MongoDB.QueryTextCount(RSS, {SuTE})
-                    Resu = CLS.DBS.MongoDB.QueryText(RSS, {SuTE})
-                    Dim Info As New Dictionary(Of String, String)
-                    Info.Add("Start", RawData.ReqURLGets("pid") * IElem)
-                    Info.Add("Page", RawData.ReqURLGets("pid"))
-                    Info.Add("Pages", Math.Round(CResults / IElem, 0))
-                    Info.Add("Count", CResults)
-                    Info.Add("DBTime", Math.Round(DBTimer.Elapsed.TotalSeconds, 0).ToString) : DBTimer.Stop()
-                    Cont = JSONArray2("Messages", Info, Resu)
-                    LogStatus(".RSS: " & SuTE)
-
-                Case "api\query\web"
-                    Dim DBTimer As New System.Diagnostics.Stopwatch : DBTimer.Start() : Dim IElem As Integer = 50
-                    Dim CResults As Integer = CLS.DBS.MongoDB.QueryTextCount(TWEB, {SuTE})
-                    Resu = CLS.DBS.MongoDB.QueryText(TWEB, {SuTE})
-                    Dim Info As New Dictionary(Of String, String)
-                    Info.Add("Start", RawData.ReqURLGets("pid") * IElem)
-                    Info.Add("Page", RawData.ReqURLGets("pid"))
-                    Info.Add("Pages", Math.Round(CResults / IElem, 0))
-                    Info.Add("Count", CResults)
-                    Info.Add("DBTime", Math.Round(DBTimer.Elapsed.TotalSeconds, 0).ToString) : DBTimer.Stop()
-                    Cont = JSONArray2("Messages", Info, Resu)
-                    LogStatus(".WEB: " & SuTE)
+                Case "api\query\dir" : resDB = CLS.DBS.MongoDB.QueryText(DIR, {SuTE}, 30, PaID, "Cont_Link") : Cont = resDB.ToJson
+                Case "api\query\fil" : resDB = CLS.DBS.MongoDB.QueryText(FIL, {SuTE}, 30, PaID, "Cont_Name") : Cont = resDB.ToJson
+                Case "api\query\rss" : resDB = CLS.DBS.MongoDB.QueryText(RSS, {SuTE}, 30, PaID, "Cont_Text") : Cont = resDB.ToJson
+                Case "api\query\web" : resDB = CLS.DBS.MongoDB.QueryText(TWEB, {"WEB"}, 100, PaID, "Class_Type") : Cont = resDB.ToJson
 
                     ' --------------------------------------------------------------------
                     ' Hier die Setter aus der Datenbank
@@ -341,10 +305,6 @@ Module Module1
                         Process.Start(PRC)
                     End If
 
-                Case "api\query\webpages" : Cont = WEBINCL.ToString
-                Case "api\query\overview" : Cont = My.Computer.FileSystem.ReadAllText(Environment.CurrentDirectory & "\WebContent\" & "JsonTest\Overview.json")
-                Case "api\query\bookmarks" : Cont = My.Computer.FileSystem.ReadAllText(Environment.CurrentDirectory & "\WebContent\" & "JsonTest\Merker.json")
-                Case "api\query\creators" : Cont = My.Computer.FileSystem.ReadAllText(Environment.CurrentDirectory & "\WebContent\" & "JsonTest\Creators.json")
 
             End Select
         End If
@@ -357,14 +317,14 @@ Module Module1
         ' ###############################################################
         Select Case RawData.ReqURLPath
             Case "api\query\dir"
-                For Each Eintrag In Resu
-                    If Eintrag("ContentThumb") <> "" Then
-                        If My.Computer.FileSystem.FileExists(Environment.CurrentDirectory & "\WebContent\" & Eintrag("ContentThumb")) = False Then
-                            Dim TPath As String = Environment.CurrentDirectory & "\WebContent\" & Eintrag("ContentThumb")
-                            Dim t As New Filetypes2.ThumbCreator(Eintrag("objLink").Replace("http://localhost:9090/", ""), TPath)
-                            Console.WriteLine(".THB: Erstelle Thumb für " & Eintrag("objName"))
+                For Each Eintrag As DOC In resDB.GetCollection
+                    If Eintrag.Cont_Thumb <> "" Then
+                        Dim DBThumb As String = Environment.CurrentDirectory & "\WebContent\" & Eintrag.Cont_Thumb.Replace("http://localhost:9090\", "")
+                        If My.Computer.FileSystem.FileExists(DBThumb) = False Then
+                            Dim t As New Filetypes2.ThumbCreator(Eintrag.Cont_Link.Replace("http://localhost:9090/", ""), DBThumb)
+                            Console.WriteLine(".THB: Erstelle Thumb für " & Eintrag.Cont_Name)
                             t.CreateThumb() ' Dim TH As New Thread(AddressOf t.CreateThumb) : TH.Start()
-                            Console.WriteLine(".THB: Thumb erstellt: " & Eintrag("ContentThumb"))
+                            Console.WriteLine(".THB: Thumb erstellt: " & Eintrag.Cont_Thumb)
                         End If
                     End If
                 Next

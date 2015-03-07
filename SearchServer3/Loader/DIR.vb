@@ -65,7 +65,7 @@ Namespace CLS
 
         Sub Init_Empty()
             ' DB_PROD_CleanGarbage()
-            Dim Check As New QueryDocument : Check.Add("SourceClassName", _ClassName)
+            Dim Check As New QueryDocument : Check.Add("Class_Name", _ClassName)
             Dim ICheck As Integer = _Collection.Count(Check)
             If ICheck = 0 Then
                 If CheckErrs(_ClassRoot) = True Then _IsInitDone = True : RaiseEvent Initialized() : Exit Sub
@@ -108,7 +108,7 @@ Namespace CLS
 
         Function CheckErrs(Dir As String) As Boolean
             If Dir.Length > 248 Then Return True
-            If Dir.Contains("$Recycle.Bin") Then Return True
+            If Dir.ToLower.Contains("$recycle.bin") Then Return True
             If Directory.Exists(Dir) = False Then Return True
 
             Dim DirAtt = My.Computer.FileSystem.GetDirectoryInfo(Dir)
@@ -127,7 +127,7 @@ Namespace CLS
             If _Todos > 0 Then Console.WriteLine("#DIR: {0} - Wird bereits initialisiert, Interval {1} Min.", EnsureLen(_ClassName, 15), _ClassRefresh) : Exit Sub
             Console.WriteLine("#DIR: {0} - Starte Initialisierung", EnsureLen(_ClassName, 15))
 
-            Dim Remove As New QueryDocument : Remove.Add("SourceClassName", _ClassName):_TCollection.Remove(Remove)
+            Dim Remove As New QueryDocument : Remove.Add("Class_Name", _ClassName) : _TCollection.Remove(Remove)
 
             _Timer = New Stopwatch : _Timer.Start()
             _Status = New System.Timers.Timer
@@ -175,24 +175,12 @@ Namespace CLS
         Sub IndexFiles(ByVal _obj As CLS_DIR)
             If IsNothing(_obj) Then RemoveOBJ(_obj) : Exit Sub
 
-            Dim Res As New List(Of BsonDocument)
+            Dim Res As New List(Of DOC)
 
             For Each Datei In Directory.GetFiles(_obj._Path)
-                Dim Post As String = ".Nothing"
-                If Datei.Contains(".") Then Post = LCase(Mid(Datei, InStrRev(Datei, ".")))
-
-                Dim F As New BsonDocument
-                F.Add("SourceClassType", "DIR")
-                F.Add("SourceClassName", _ClassName)
-                F.Add("SourceClassGroup", _ClassGroup)
-
-                F.Add("ContentTime", New BsonDateTime(Now))
-                F.Add("ContentThumb", New Filetypes2(Datei)._Thumb)
-                F.Add("ContentPost", Post)
-
-                F.Add("objName", Mid(Datei, InStrRev(Datei, "\") + 1))
-                F.Add("objLink", "http://localhost:9090/" & Datei)
-                Res.Add(F)
+                Dim Post As String = ".None" : If Datei.Contains(".") Then Post = LCase(Mid(Datei, InStrRev(Datei, ".")))
+                Dim DOC As New DOC(_ClassName, "DIR", _ClassGroup, Mid(Datei, InStrRev(Datei, "\") + 1), Datei, "", Post, Now)
+                Res.Add(DOC)
             Next
 
             If Res.Count > 0 Then
@@ -208,22 +196,9 @@ Namespace CLS
         Private Sub FCreated(ByVal sender As Object, ByVal e As FileSystemEventArgs)
             Console.WriteLine("#DIR: {0} - Live-Update Event {1}", _ClassName, e.Name)
             Dim Datei As String = e.Name
-            Dim Post As String = ".Nothing"
-            If Datei.Contains(".") Then Post = LCase(Mid(Datei, InStrRev(Datei, ".")))
-
-            Dim F As New BsonDocument
-            F.Add("SourceClassType", "DIR")
-            F.Add("SourceClassName", _ClassName)
-            F.Add("SourceClassGroup", _ClassGroup)
-
-            F.Add("ContentTime", New BsonDateTime(Now))
-            F.Add("ContentThumb", New Filetypes2(Datei)._Thumb)
-            F.Add("ContentPost", Post)
-
-            F.Add("objName", Mid(Datei, InStrRev(Datei, "\") + 1))
-            F.Add("objLink", "http://localhost:9090/" & Datei)
-            _Collection.Insert(F)
-
+            Dim Post As String = ".None" : If Datei.Contains(".") Then Post = LCase(Mid(Datei, InStrRev(Datei, ".")))
+            Dim DOC As New DOC(_ClassName, "DIR", _ClassGroup, Datei, e.FullPath, "", Post, Now)
+            _Collection.Insert(DOC)
         End Sub
 #End Region
 
@@ -233,7 +208,7 @@ Namespace CLS
             ' Bereinige alle unnötigen Postfixe 
             ' -------------------------------------------------------
             Dim DBPre As Integer = _Collection.Count
-            Dim N As New List(Of IMongoQuery) : N.Add(Query.Matches("objLink", "/Recycle.Bin/"))
+            Dim N As New List(Of IMongoQuery) : N.Add(Query.Matches("Cont_Link", "/Recycle.Bin/"))
             For Each eintrag In MimeTypes.RemoTypes : N.Add(Query.EQ(eintrag("Field"), eintrag("Value"))) : Next
             _Collection.Remove(Query.Or(N))
             Dim DBAft As Integer = _Collection.Count
@@ -245,7 +220,7 @@ Namespace CLS
             ' Bereinige alle unnötigen Postfixe vor Sync
             ' -------------------------------------------------------
             Dim DBPre As Integer = _TCollection.Count
-            Dim N As New List(Of IMongoQuery) : N.Add(Query.Matches("objLink", "/Recycle.Bin/"))
+            Dim N As New List(Of IMongoQuery)
             For Each eintrag In MimeTypes.RemoTypes : N.Add(Query.EQ(eintrag("Field"), eintrag("Value"))) : Next
             _TCollection.Remove(Query.Or(N))
             Dim DBAft As Integer = _TCollection.Count
@@ -253,7 +228,7 @@ Namespace CLS
             Thread.Sleep(1000)
         End Sub
         Sub DB_AKT_CleanClass()
-            Dim QDOc As New QueryDocument : QDOc.Add("SourceClassName", _ClassName)
+            Dim QDOc As New QueryDocument : QDOc.Add("Class_Name", _ClassName)
             Dim IColOld As Integer = _Collection.Count : _Collection.Remove(QDOc)
             Dim IColNew As Integer = _Collection.Count
             Dim IColDif As Integer = IColOld - IColNew
@@ -263,8 +238,8 @@ Namespace CLS
         Sub DB_TMP_TO_AKT()
             Dim IUpdAkt As Integer = 0
             Dim IColAft As Integer = 0
-            Dim QDOc As New QueryDocument : QDOc.Add("SourceClassName", _ClassName)
-            Dim Coll As MongoCursor(Of BsonDocument) = _TCollection.FindAs(Of BsonDocument)(QDOc)
+            Dim QDOc As New QueryDocument : QDOc.Add("Class_Name", _ClassName)
+            Dim Coll As MongoCursor(Of DOC) = _TCollection.FindAs(Of DOC)(QDOc)
             Dim MOpt As New MongoInsertOptions : MOpt.Flags = InsertFlags.ContinueOnError
             If Coll.Count > 0 Then
                 IUpdAkt = Coll.Count : _Collection.InsertBatch(Coll, MOpt)

@@ -76,28 +76,11 @@
 			$('#Ergebnisse').html (ex.message + "<BR>" + new Error().stack + "<BR>" + "See Debug for further Information")
 			return;
 		};
-		
-		// ##############################
-		// Programmfehler Searchserver
-		// ##############################
-		if(data.hasOwnProperty('Errors')){
-			$('#debug').html(
-			"<Table width='100%' data-sr style='background-color:rgba(255, 0, 0, 0.39);'>"
-			+ "<TD>"
-			+ "SearchServer Abbruch: <Br>" + data.Errors + "<Br><Br>JSON:<Br>" + daten
-			+ "</TD>"
-			+ "</Table>");
-			return;
-		};
-		
-		// ##############################
-		// Rueckgabe des JSON-Array
-		// ##############################
 		return data;
 	}
 	
 	function Suchen(daten) {
-		$('#Ergebnisse').html("<img src='images/ajax-loader.gif'>" + ' Suche nach: ' + daten );
+		$('#Ergebnisse').html("Starte Suchanfrage ... <BR><img src='images/292.gif' width='40%'>");
 		$('#debug').html('Search: ' + daten);
 		$.ajax({
 			  type: "POST",
@@ -129,7 +112,9 @@
 	
 	function Resultate(opt,sid,pid) {
 		sel=opt; pag=pid; 
-		$('#Ergebnisse').html("<img src='images/ajax-loader.gif'>" + ' Lade : ' + opt + "/" + sid );
+		$('#Ergebnisse').html('Lade Ergebnisse fuer Suchanfrage ' + opt + " / " + sid + "/ " + pid + "<Br>"
+			+ "Die Thumbnails werden ggf. erst nach dem Aktualisieren der Seite angezeigt!"
+			+ "<BR><img src='images/292.gif' width='40%'>");
 		$('#debug').html('Query: ' + opt + ' ' + sid);
 		$.ajax({
 			url: '/api/Query/' + opt,
@@ -163,6 +148,7 @@
 	}
 	
 	function FilePostfix (Name){
+		if (typeof Name == 'undefined') {return ''};
 		var PFix = Name.substr(Name.lastIndexOf(".")).toLowerCase();
 		if (PFix.length <= 5){
 			return PFix;
@@ -173,6 +159,7 @@
 	}
 	
 	function Filetypes(Name){
+		if (typeof Name == 'undefined') {return ''};
 		/* Ebenfalls in der WEBS.xml als Dateityp hinterlegen */
 		var PFix = Name.substr(Name.lastIndexOf(".")).toLowerCase();
 		switch (PFix){

@@ -99,5 +99,21 @@ Public Class Mimes
         End If
         Return Nothing
     End Function
-    Public Shared Function ListofStringDictionary(ByVal XML As System.Xml.XmlDocument, ByVal XPath As String, ByVal Fields As String())        Dim Nodes As System.Xml.XmlNodeList = XML.SelectNodes(XPath)        Dim Result As New List(Of Dictionary(Of String, String))        If Nodes.Count = 0 Then Return New List(Of Dictionary(Of String, String))        For Each Node As System.Xml.XmlNode In Nodes            Dim Entry As New Dictionary(Of String, String)            For Each Eintrag In Fields                If IsNothing(Node.Attributes(Eintrag)) Then                    Entry.Add(Eintrag, "")                Else                    Entry.Add(Eintrag, Node.Attributes(Eintrag).Value)                End If            Next            Result.Add(Entry)        Next        Return Result    End Function
+    Public Shared Function ListofStringDictionary(ByVal XML As System.Xml.XmlDocument, ByVal XPath As String, ByVal Fields As String())
+        Dim Nodes As System.Xml.XmlNodeList = XML.SelectNodes(XPath)
+        Dim Result As New List(Of Dictionary(Of String, String))
+        If Nodes.Count = 0 Then Return New List(Of Dictionary(Of String, String))
+        For Each Node As System.Xml.XmlNode In Nodes
+            Dim Entry As New Dictionary(Of String, String)
+            For Each Eintrag In Fields
+                If IsNothing(Node.Attributes(Eintrag)) Then
+                    Entry.Add(Eintrag, "")
+                Else
+                    Entry.Add(Eintrag, Node.Attributes(Eintrag).Value)
+                End If
+            Next
+            Result.Add(Entry)
+        Next
+        Return Result
+    End Function
 End Class

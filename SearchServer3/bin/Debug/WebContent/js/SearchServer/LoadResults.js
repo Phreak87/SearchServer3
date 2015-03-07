@@ -10,7 +10,31 @@ function GenIFrame (el){
 	el.parentNode.appendChild(iFrame);
 	el.innerHTML = '';
 }
-
+	
+	//+ data.Status[0].Answers + " (" 
+	//+ data.Status[0].Results + ") von " 
+	//+ data.Status[0].Searcher + " Suchern in " 
+	//+ data.Status[0].Folder + " lieferten Resultate.</DIV>";
+		
+	/* #############################
+	Uebersichten der Eintraege:
+	################################
+	"ContentType":"ExtVideo",
+	"ContentID":"0",
+	"SourceClassType":"WEB",
+	"SourceClassName":"YouTube",
+	"SourceClassGroup":"Videos",
+	"ContentTime":"635467655441906869",
+	"ContentThumb":"",
+	"objLink":"https://www.youtube.com/watch?v=i3a7B65b6w8&amp;feature=youtube_gdata",
+	"objName":"watch?v=i3a7B65b6w8&amp;feature=youtube_gdata",
+	"objContent":""
+		
+	SourceClassName = SCN fr Filterung in Table
+	SourceClassGroup = SCG fr Filterung in Table
+	SourceClassPostfix = SCP fr Filterung in Table
+	###############################*/
+	
 function loadPageData (daten) {
 	
 	var data = CheckData(daten);
@@ -19,11 +43,12 @@ function loadPageData (daten) {
 	/* ##############################
 	Übersichten der Gruppen, Namen und Typen
 	############################### */
-	var UniqueClassNames= $.unique(data.Messages.map(function (d) {return d.SourceClassName;}));
-	var UniqueClassGroups= $.unique(data.Messages.map(function (d) {return d.SourceClassGroup;}));
-	var UniqueContentPosts= $.unique(data.Messages.map(function (d) {return d.ContentPost;}));
-	var UniqueContentTypes= $.unique(data.Messages.map(function (d) {return d.ContentType;}));
-	output+="<Table width='100%'>";
+	if (data.EntryCount > 0) {
+	var UniqueClassNames= $.unique(data.Messages.map(function (d) {return d.Class_Name;}));
+	var UniqueClassGroups= $.unique(data.Messages.map(function (d) {return d.Class_Group;}));
+	var UniqueContentPosts= $.unique(data.Messages.map(function (d) {return d.Cont_Post;}));
+	var UniqueContentTypes= $.unique(data.Messages.map(function (d) {return d.Cont_Type;}));
+	output+="<Table width='100%' class='hvr-glow'>";
 	output+="<TR>"
 	for (var i in UniqueClassNames){
 		if (typeof UniqueClassNames[i] != 'undefined') {
@@ -50,158 +75,150 @@ function loadPageData (daten) {
 	}}};
 	output+="</TR>"
 	output+="</Table>";
-	
-	//+ data.Status[0].Answers + " (" 
-	//+ data.Status[0].Results + ") von " 
-	//+ data.Status[0].Searcher + " Suchern in " 
-	//+ data.Status[0].Folder + " lieferten Resultate.</DIV>";
-		
+	}
+
 	/* ##############################
-	Uebersichten der Eintraege:
-	################################
-	"ContentType":"ExtVideo",
-	"ContentID":"0",
-	"SourceClassType":"WEB",
-	"SourceClassName":"YouTube",
-	"SourceClassGroup":"Videos",
-	"ContentTime":"635467655441906869",
-	"ContentThumb":"",
-	"objLink":"https://www.youtube.com/watch?v=i3a7B65b6w8&amp;feature=youtube_gdata",
-	"objName":"watch?v=i3a7B65b6w8&amp;feature=youtube_gdata",
-	"objContent":""
-		
-	SourceClassName = SCN fr Filterung in Table
-	SourceClassGroup = SCG fr Filterung in Table
-	SourceClassPostfix = SCP fr Filterung in Table
-	###############################*/
-	
-	if (parseInt(data.Pages) > 1){
-		output+="<a href='#' id='wb' class='hvr-pulse-grow' onClick='Resultate(sel,sid,parseInt(pag) - 1)'>Zurueck</a>";
+	Zurueck, Weiter, Seiten, Status
+	############################### */
+	output+="<Table width='100%' style='font-size: 140%;Margin-top:5px;Margin-Bottom:5px;' class='hvr-glow'><TR><TD>"
+	if (parseInt(data.Pages) > 0){
+		output+="<a href='#' id='wb' class='hvr-glow' onClick='Resultate(sel,sid,parseInt(pag) - 1)'>Zurueck</a>";
 		for (i = 0;i<=parseInt(data.Pages);i++){
-			if (i <= 22){
-			output+="<a href='#' id='w" + i + "' class='hvr-pulse-grow' onClick='Resultate(sel,sid," + i + ")'>" + i + "</a>";
+			if (i <= 21){ // Nur 22 Seiten in der Anzeige
+				if (i == data.Page){
+					output+="<a href='#' id='w" + i + "' class='hvr-glow' onClick='Resultate(sel,sid," + i + ")'><B>" + i + "</B></a>";
+				} else {
+					output+="<a href='#' id='w" + i + "' class='hvr-glow' onClick='Resultate(sel,sid," + i + ")'>" + i + "</a>";
+				}
 			}
 		}
-		output+="<a href='#' id='wf' class='hvr-pulse-grow' onClick='Resultate(sel,sid,parseInt(pag) + 1)'>Weiter</a>";
-		output+="<BR><B>" + '(' + data.Page + ') ' + data.Start + ' - ' + (parseInt(data.Messages.length) + parseInt(data.Start)) + ' / ' + data.Count + ' Resultate in ' + data.DBTime + " Sekunden <BR><B>"
+		output+="<a href='#' id='wf' class='hvr-glow' onClick='Resultate(sel,sid,parseInt(pag) + 1)'>Weiter</a>";
+		output+="<BR><BR><B>" + 'Seite ' + data.Page + ' von ' + data.Pages + "<Br>Eintraege von " + data.EntryFrom + ' bis ' + data.EntryTo + ' von ' + data.EntryCount + " Ergebnissen  aus " + data.EntryDB + ' Eintaegen in ' + data.DBTime + " Sekunden <BR><B>"
+	} else {
+		output+="<BR><B>" + data.EntryCount + " Ergebnisse aus " + data.EntryDB + ' Eintraegen in ' + data.DBTime + " Sekunden <BR><B>"
 	}
-										 
+	output+="</TD></TR></Table>"			
+	
+	/* ##############################
+	Inhalte
+	############################### */
 	for (var i in data.Messages){
-		output+="<Table width='100%' class='hvr-sweep-to-right' " 
-			+ "SCN='" + data.Messages[i].SourceClassName + "' "
-			+ "SCG='" + data.Messages[i].SourceClassGroup + "'" 
-			+ "SCP='" + FilePostfix(data.Messages[i].ContentType) + "'"
+		output+="<Table style='Margin-top:5px;Margin-Bottom:5px;' width='100%' class='hvr-glow' " 
+			+ "SCN='" + data.Messages[i].Class_Name + "' "
+			+ "SCG='" + data.Messages[i].Class_Group + "'" 
+			+ "SCP='" + FilePostfix(data.Messages[i].Cont_Type) + "'"
 		+ "'>";
-		output+="<TR><TD style='background-color:#eeeeee;'></TD><TD Colspan='2' style='background-color:#eeeeee;'><a target='_blank' href='" + data.Messages[i].objLink + "'>" + data.Messages[i].objName + "</a></TD></TR><TR>";
+		output+="<TR><TD style='background-color:#eeeeee;'></TD><TD Colspan='2' style='background-color:#eeeeee;'><a target='_blank' href='" + data.Messages[i].Cont_Link + "'>" + data.Messages[i].Cont_Name + "</a></TD></TR><TR>";
 		
 		output+=
 			"<TD style='background-color:#aaaaaa;' Width='15%'>"
 				+ data.Messages[i]._id + "<BR>"
-				+ data.Messages[i].SourceClassType + "<BR>"
-				+ data.Messages[i].SourceClassName + "<BR>"
-				+ data.Messages[i].SourceClassGroup + "<BR>"
-				+ data.Messages[i].ContentPost + "<BR>"
-				+ data.Messages[i].ContentMime + "<BR>"
-				+ data.Messages[i].ContentType + "<BR>"
-				+ data.Messages[i].ContentTime 
+				+ data.Messages[i].Class_Type + "<BR>"
+				+ data.Messages[i].Class_Name + "<BR>"
+				+ data.Messages[i].Class_Group + "<BR>"
+				+ data.Messages[i].Cont_Post + "<BR>"
+				+ data.Messages[i].Cont_Mime + "<BR>"
+				+ data.Messages[i].Cont_Player + "<BR>"
+				+ data.Messages[i].Cont_Time 
 			+ "</TD>";
 
 		// ####################################
 		// Darstellen der Inhalte nach Typ
 		// ####################################
 		
-		if (data.Messages[i].ContentType=='Picture'){
+		if (data.Messages[i].Cont_Player=='Picture'){
 			output+=
 			"<TD>" 
-				+ "<a class='group1' href='" + data.Messages[i].objLink + "' title='Dateiname'>"
-				+ "<img width='150px' id='i1' src='" + data.Messages[i].objLink + "'></img></a>"
+				+ "<a class='group1' href='" + data.Messages[i].Cont_Link + "' title='Dateiname'>"
+				+ "<img width='150px' Style='max-height:600px;' id='i1' src='" + data.Messages[i].Cont_Link + "'></img></a>"
 			+ "</TD>";
 		};	
 		
-		if (data.Messages[i].ContentType=='Thumbed'){
+		if (data.Messages[i].Cont_Player=='Thumbed'){
 			output+=
 			"<TD>" 
-				+ "<a href='" + data.Messages[i].objLink + "'>" + "<Img Src='" + data.Messages[i].ContentThumb + "'</img>" + "</a>" 
+				+ "<a href='" + data.Messages[i].Cont_Link + "'>" + "<Img Src='" + data.Messages[i].Cont_Thumb + "'</img>" + "</a>" 
 			+ "</TD>";
 		};
 		
-		if (data.Messages[i].ContentType=='Text'){
-			output+="<TD onmouseover='ShowTextLocal(this)' class='Text' id='" + data.Messages[i].ContentID + "' src='" + data.Messages[i].objLink + "'>Show" 
+		if (data.Messages[i].Cont_Player=='Text'){
+			output+="<TD onmouseover='ShowTextLocal(this)' class='Text' id='" + data.Messages[i]._id + "' src='" + data.Messages[i].Cont_Link + "'>Show" 
 			+ "</TD>";
 		};
 
-		if (data.Messages[i].ContentType=='ExtVideo'){
+		if (data.Messages[i].Cont_Player=='ExtVideo'){
 			output+="<TD>" 
-				+ "<Iframe Frameborder='0' style='width: 400px; height: 280px;' src='js/IFrameLoader/VideoJS/ShowMovExt.html#" + data.Messages[i].objLink + "#'/>"
+				+ "<Iframe Frameborder='0' style='width: 400px; height: 280px;' src='js/IFrameLoader/VideoJS/ShowMovExt.html#" + data.Messages[i].Cont_Link + "#'/>"
 				+ "</TD><TD>"
-				+ "<a href='#' Frame='js/IFrameLoader/Popcorn/ShowMovExt.html' Content='" + data.Messages[i].objLink + "' Thumb='" + data.Messages[i].ContentThumb + "' onClick='GenIFrame(this);'><H2>Inhalt anzeigen (Popcorn)</H2></a><BR>" 
-				+ "<a href='#' Frame='js/IFrameLoader/VideoJS/ShowMovExt.html' Content='" + data.Messages[i].objLink + "' Thumb='" + data.Messages[i].ContentThumb + "' onClick='GenIFrame(this);'><H2>Inhalt anzeigen (* VideoJS)</H2></a><BR>"  
-				+ "<a href='#' Frame='js/IFrameLoader/Projekktor/ShowMovExt.html' Content='" + data.Messages[i].objLink + "' Thumb='" + data.Messages[i].ContentThumb + "' onClick='GenIFrame(this);'><H2>Inhalt anzeigen (? Projekktor)</H2></a><BR>"   
+				+ "<a href='#' Frame='js/IFrameLoader/Popcorn/ShowMovExt.html' Content='" + data.Messages[i].Cont_Link + "' Thumb='" + data.Messages[i].Cont_Thumb + "' onClick='GenIFrame(this);'><H2>Inhalt anzeigen (Popcorn)</H2></a><BR>" 
+				+ "<a href='#' Frame='js/IFrameLoader/VideoJS/ShowMovExt.html' Content='" + data.Messages[i].Cont_Link + "' Thumb='" + data.Messages[i].Cont_Thumb + "' onClick='GenIFrame(this);'><H2>Inhalt anzeigen (* VideoJS)</H2></a><BR>"  
+				+ "<a href='#' Frame='js/IFrameLoader/Projekktor/ShowMovExt.html' Content='" + data.Messages[i].Cont_Link + "' Thumb='" + data.Messages[i].Cont_Thumb + "' onClick='GenIFrame(this);'><H2>Inhalt anzeigen (? Projekktor)</H2></a><BR>"   
 			+ "</TD>";
 		};
 		
-		if (data.Messages[i].ContentType=='Video'){
+		if (data.Messages[i].Cont_Player=='Video'){
 			output+="<TD>" 
-				+ "<img src='" + data.Messages[i].ContentThumb + "'</img>"
+				+ "<img src='" + data.Messages[i].Cont_Thumb + "'</img>"
 				+ "</TD><TD>"
-				+ "<a href='#' Frame='js/IFrameLoader/Popcorn/ShowMov.html' Content='" + data.Messages[i].objLink + "' Thumb='" + data.Messages[i].ContentThumb + "' onClick='GenIFrame(this);'><H2>Inhalt anzeigen (Popcorn)</H2></a><BR>" 
-				+ "<a href='#' Frame='js/IFrameLoader/Videojs/ShowMov.html' Content='" + data.Messages[i].objLink + "' Thumb='" + data.Messages[i].ContentThumb + "' onClick='GenIFrame(this);'><H2>Inhalt anzeigen (VideoJS)</H2></a><BR>" 
-				+ "<a href='#' Frame='js/IFrameLoader/Projekktor/ShowMov.html' Content='" + data.Messages[i].objLink + "' Thumb='" + data.Messages[i].ContentThumb + "' onClick='GenIFrame(this);'><H2>Inhalt anzeigen (Projekktor)</H2></a><BR>" 
+				+ "<a href='#' Frame='js/IFrameLoader/Popcorn/ShowMov.html' Content='" + data.Messages[i].Cont_Link + "' Thumb='" + data.Messages[i].Cont_Thumb + "' onClick='GenIFrame(this);'><H2>Inhalt anzeigen (Popcorn)</H2></a><BR>" 
+				+ "<a href='#' Frame='js/IFrameLoader/Videojs/ShowMov.html' Content='" + data.Messages[i].Cont_Link + "' Thumb='" + data.Messages[i].Cont_Thumb + "' onClick='GenIFrame(this);'><H2>Inhalt anzeigen (VideoJS)</H2></a><BR>" 
+				+ "<a href='#' Frame='js/IFrameLoader/Projekktor/ShowMov.html' Content='" + data.Messages[i].Cont_Link + "' Thumb='" + data.Messages[i].Cont_Thumb + "' onClick='GenIFrame(this);'><H2>Inhalt anzeigen (Projekktor)</H2></a><BR>" 
 				// + "<iframe id='viewer' frameBorder='0' scrolling='no' src = 'js/IFrameLoader/Projekktor/ShowMov.html#" + data.Messages[i].objLink + "#" + data.Messages[i].ContentThumb + "' width='800' height='300' allowfullscreen webkitallowfullscreen></iframe>"
 			+ "</TD>";
 		};
 		
-		if (data.Messages[i].ContentType=='PDF'){
+		if (data.Messages[i].Cont_Player=='PDF'){
 			output+="<TD>" 
-				+ "<img src='" + data.Messages[i].ContentThumb + "'</img>"
+				+ "<img src='" + data.Messages[i].Cont_Thumb + "'</img>"
 				+ "</TD><TD>"
-				+ "<a href='#' Frame='js/IFrameLoader/ViewerJS/Index.html' Content='" + data.Messages[i].objLink + "' Thumb='' onClick='GenIFrame(this);'><H2>Inhalt anzeigen (ViewerJS)</H2></a>" 
+				+ "<a href='#' Frame='js/IFrameLoader/ViewerJS/Index.html' Content='" + data.Messages[i].Cont_Link + "' Thumb='' onClick='GenIFrame(this);'><H2>Inhalt anzeigen (ViewerJS)</H2></a><BR>" 
+				+ "<a href='#' Frame='" + data.Messages[i].Cont_Link + "' Content='' Thumb='' onClick='GenIFrame(this);'><H2>Inhalt anzeigen (Chrome embedded PDF-Viewer (Default))</H2></a>" 
 				// + "<iframe id='viewer' frameBorder='0' scrolling='no' src = 'js/ViewerJS/Index.html#" + data.Messages[i].objLink + "' width='800' height='300' allowfullscreen webkitallowfullscreen></iframe>"
 			+ "</TD>";
-		};
+		};		
 		
-		if (data.Messages[i].ContentType=='Audio'){
+		if (data.Messages[i].Cont_Player=='Audio'){
 			output+="<TD>" 
-				+ "<Iframe Frameborder='0' style='width: 800px; height: 70px;' src='js/IFrameLoader/Soundmanager2/Index.html#" + data.Messages[i].objLink + "#'/>"
+				+ "<Iframe Frameborder='0' style='width: 800px; height: 70px;' src='js/IFrameLoader/Soundmanager2/Index.html#" + data.Messages[i].Cont_Link + "#'/>"
 				// + "<a href='#' Frame='js/IFrameLoader/Soundmanager2/Index.html' Content='" + data.Messages[i].objLink + "' Thumb='" + data.Messages[i].ContentThumb + "' onClick='GenIFrame(this);'><H2>Inhalt anzeigen</H2></a>" 
 				// +"<iframe id='viewer'  frameBorder='0' scrolling='no' src = 'js/IFrameLoader/Soundmanager2/Index.html#" + data.Messages[i].objLink + "' height='70'  allowfullscreen webkitallowfullscreen></iframe>"
 			+ "</TD>";
 		};
 		
-		if (data.Messages[i].ContentType=='ZIP'){
+		if (data.Messages[i].Cont_Player=='ZIP'){
 			output+="<TD>" 
-				+ "<a href='#' Frame='js/IFrameLoader/zip/ShowZip.html' Content='" + data.Messages[i].objLink + "' Thumb='" + data.Messages[i].ContentThumb + "' onClick='GenIFrame(this);'><H2>Inhalt anzeigen</H2></a>" 
+				+ "<a href='#' Frame='js/IFrameLoader/zip/ShowZip.html' Content='" + data.Messages[i].Cont_Link + "' Thumb='" + data.Messages[i].Cont_Thumb + "' onClick='GenIFrame(this);'><H2>Inhalt anzeigen</H2></a>" 
 			+ "</TD>";
 		};
 		
-		if (data.Messages[i].ContentType=='RAR'){
+		if (data.Messages[i].Cont_Player=='RAR'){
 			output+="<TD>" 
-				+ "<a href='#' Frame='js/IFrameLoader/rar/ShowRar.html' Content='" + data.Messages[i].objLink + "' Thumb='" + data.Messages[i].ContentThumb + "' onClick='GenIFrame(this);'><H2>Inhalt anzeigen</H2></a>" 
+				+ "<a href='#' Frame='js/IFrameLoader/rar/ShowRar.html' Content='" + data.Messages[i].Cont_Link + "' Thumb='" + data.Messages[i].Cont_Thumb + "' onClick='GenIFrame(this);'><H2>Inhalt anzeigen</H2></a>" 
 			+ "</TD>";
 		};
 		
-		if (data.Messages[i].ContentType=='3D'){
+		if (data.Messages[i].Cont_Player=='3D'){
 			output+="<TD>"
-			+ "<IFrame Frameborder='0' style='width: 400px; height: 280px;' src='js/IFrameLoader/ThreeJS/Index.html#" + data.Messages[i].objLink + "#'/></TD><TD>"
+			+ "<IFrame Frameborder='0' style='width: 400px; height: 280px;' src='js/IFrameLoader/ThreeJS/Index.html#" + data.Messages[i].Cont_Link + "#'/></TD><TD>"
 			// + "<a href='#' Frame='js/IFrameLoader/ThreeJS/Index.html' Content='" + data.Messages[i].objLink + "' Thumb='" + data.Messages[i].ContentThumb + "' onClick='GenIFrame(this);'><H2>Inhalt anzeigen</H2></a>" 
 			+ "</TD>";
 		};
 		
-		if (data.Messages[i].ContentType=='RSS'){
+		if (data.Messages[i].Cont_Player=='RSS'){
 			output+="<TD>" 
-				+ data.Messages[i].objContent + "<BR>"
+				+ data.Messages[i].Cont_Text + "<BR>"
 			+ "</TD>";
 		};
 		
-		if (data.Messages[i].ContentType=='WEB'){
+		if (data.Messages[i].Cont_Player=='WEB'){
 			output+="<TD>" 
-				+ data.Messages[i].objContent + "<BR>"
+				+ data.Messages[i].Cont_Text + "<BR>"
 			+ "</TD>";
 		};
 		
-		if (data.Messages[i].ContentType=='NoPlayer'){
+		if (data.Messages[i].Cont_Player=='NoPlayer'){
 			output+="<TD>" 
-				+ data.Messages[i].objContent + "<BR><BR>" + data.Messages[i].objContent 
+				+ data.Messages[i].Cont_Text
 			+ "</TD>";
 		};
 		
@@ -210,10 +227,10 @@ function loadPageData (daten) {
 			+ "<TD style='background-color:#eeeeee;'></TD>"
 			+ "<TD Colspan='2'>"
 				+ "<a href='#' onClick='ScrollTop'><Img Src='images/rarrow.png'</img> Nach oben </a>"
-				+ "<a href='#' onClick='UrlToClipBoard(this)' src='" + data.Messages[i].objLink + "'><Img Src='images/rarrow.png'</img> Link kopieren </a>"
-				+ "<a href='#' onClick='PathToClipBoard(this)' src='" + data.Messages[i].objLink + "' ><Img Src='images/rarrow.png'</img> Pfad kopieren </a>"
-				+ "<a href='#' onClick='RunOnLocalMachine(this)' src='" + data.Messages[i].objLink + "' ><Img Src='images/rarrow.png'</img> Lokal starten </a>"
-				+ "<a href='#' onClick='RunOnLocalMachineF(this)' src='" + data.Messages[i].objLink + "' ><Img Src='images/rarrow.png'</img> Ordner oeffnen </a>"
+				+ "<a href='#' onClick='UrlToClipBoard(this)' src='" + data.Messages[i].Cont_Link + "'><Img Src='images/rarrow.png'</img> Link kopieren </a>"
+				+ "<a href='#' onClick='PathToClipBoard(this)' src='" + data.Messages[i].Cont_Link + "' ><Img Src='images/rarrow.png'</img> Pfad kopieren </a>"
+				+ "<a href='#' onClick='RunOnLocalMachine(this)' src='" + data.Messages[i].Cont_Link + "' ><Img Src='images/rarrow.png'</img> Lokal starten </a>"
+				+ "<a href='#' onClick='RunOnLocalMachineF(this)' src='" + data.Messages[i].Cont_Link + "' ><Img Src='images/rarrow.png'</img> Ordner oeffnen </a>"
 			+ "</TD>"
 			+ "</TR></Table><BR>";	
 	};		
@@ -234,6 +251,6 @@ function loadPageData (daten) {
 	$("#wf").button();
 	
 	Preload_Scripts();
-	Preload_Content();
+	// Preload_Content();
 	$(".group1").colorbox({rel:'group1'});
 }

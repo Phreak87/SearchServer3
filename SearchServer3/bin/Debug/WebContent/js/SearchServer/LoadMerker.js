@@ -20,7 +20,8 @@
 		for (var i in data.Messages){
 			var Gruppe=data.Messages[i];
 			if (Gruppe.Save != ''){
-				output+="<li><a href='#Ergebnisse'>" + Gruppe.Save + "</a></li>"
+				output+="<a href='#'><img src='images/rarrow.png'></a>"
+				+ "<a href='#Ergebnisse'>" + Gruppe.Save + "</a><Br>"
 			}
 		};
 		output+="</ul>"

@@ -21,7 +21,10 @@
 		for (var i in data.Messages){
 			var Gruppe=data.Messages[i];
 			if (Gruppe.Type != ''){
-				output+="<li><a href='#Ergebnisse'>" + Gruppe.Name + "</a></li>"
+				output+="</a>"
+				+ "<a href='#'><img src='images/page_delete.png'></a>"
+				+ "<a href='#'><img src='images/page_refresh.png'></a>"
+				+ "<a href='#Ergebnisse'>" + Gruppe.Name + "<Br>"
 			}
 		};
 		output+="</ul>"

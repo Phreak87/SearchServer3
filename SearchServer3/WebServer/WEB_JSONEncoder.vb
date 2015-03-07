@@ -103,9 +103,7 @@
                 Result.Remove(Result.Length - 2, 2)
                 Return Result.ToString
             End Function
-
         End Class
-
     End Class
 End Namespace
 

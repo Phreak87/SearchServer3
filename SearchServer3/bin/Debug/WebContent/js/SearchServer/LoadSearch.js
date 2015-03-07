@@ -9,8 +9,9 @@
 	}
 	
 	function ActivateSuche (el){
+		$('#SText').val(el.getAttribute("SQ"));
 		sid=(el.getAttribute("sid"));
-		Resultate('DIR',sid);
+		Resultate('DIR',sid,0);
 		$('#D3Overview').html('');
 		$('#D3Overview').hide(true);
 		$('#tabs').show(true);
@@ -25,7 +26,8 @@
 		for (var i in data.Messages){
 			var Gruppe=data.Messages[i];
 			if (Gruppe.Query != ''){
-				output+="<li><a href='#' onClick='ActivateSuche(this)' SID=" + Gruppe._id + ">" + Gruppe.Query + "</a></li>"
+				output+="<a href='#'><img src='images/rarrow.png'></a>"
+				+ "<a href='#' onClick='ActivateSuche(this)' SID='" + Gruppe._id + "' SQ='" + Gruppe.Query + "'>" + Gruppe.Query + "</a><Br>"
 			}
 		};
 		output+="</ul>"

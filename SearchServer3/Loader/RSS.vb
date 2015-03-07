@@ -44,7 +44,7 @@ Namespace CLS
             ' Empty Init
             ' ----------------------------------------------
             Dim Check As New QueryDocument
-            Check.Add("SourceClassName", _ClassName)
+            Check.Add("Class_Name", _ClassName)
             If Collection.Count(Check) = 0 Then
                 Console.WriteLine("#RSS: Keine Einträge für {0} - Erstelle Index", _ClassName)
                 Start()
@@ -57,24 +57,14 @@ Namespace CLS
             If RSSResults.Count = 0 Then Exit Sub
             Dim DBPre As Integer = _Collection.Count
             Dim N As New List(Of IMongoQuery)
-            For Each eintrag In RSSResults : N.Add(Query.EQ("objName", eintrag(0))) : Next
+            For Each eintrag In RSSResults : N.Add(Query.EQ("Cont_Name", eintrag(0))) : Next
             _Collection.Remove(Query.Or(N))
             Dim DBAft As Integer = _Collection.Count
             Console.WriteLine("#RSS: Neue Feeds von {0} : {1} => {2}", _ClassName, DBPre, DBAft)
 
             For Each News In RSSResults
-                Dim F As New BsonDocument
-                F.Add("SourceClassType", "RSS")
-                F.Add("SourceClassName", _ClassName)
-                F.Add("SourceClassGroup", _ClassGroup)
-                F.Add("objName", News(1))
-                F.Add("objLink", News(0))
-                F.Add("objContent", News(2))
-                F.Add("SourceFileType", "Link")
-                F.Add("ContentTime", News(3))
-                F.Add("ContentThumb", "No_Thumb (RSS)")
-                F.Add("ContentType", "RSS")
-                _Collection.Insert(F)
+                Dim DOC As New DOC(_ClassName, "RSS", _ClassGroup, News(1), News(0), News(2), "Link", Now)
+                _Collection.Insert(DOC)
             Next
             RSSResults = Nothing
         End Sub
