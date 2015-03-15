@@ -10,31 +10,7 @@ function GenIFrame (el){
 	el.parentNode.appendChild(iFrame);
 	el.innerHTML = '';
 }
-	
-	//+ data.Status[0].Answers + " (" 
-	//+ data.Status[0].Results + ") von " 
-	//+ data.Status[0].Searcher + " Suchern in " 
-	//+ data.Status[0].Folder + " lieferten Resultate.</DIV>";
-		
-	/* #############################
-	Uebersichten der Eintraege:
-	################################
-	"ContentType":"ExtVideo",
-	"ContentID":"0",
-	"SourceClassType":"WEB",
-	"SourceClassName":"YouTube",
-	"SourceClassGroup":"Videos",
-	"ContentTime":"635467655441906869",
-	"ContentThumb":"",
-	"objLink":"https://www.youtube.com/watch?v=i3a7B65b6w8&amp;feature=youtube_gdata",
-	"objName":"watch?v=i3a7B65b6w8&amp;feature=youtube_gdata",
-	"objContent":""
-		
-	SourceClassName = SCN fr Filterung in Table
-	SourceClassGroup = SCG fr Filterung in Table
-	SourceClassPostfix = SCP fr Filterung in Table
-	###############################*/
-	
+
 function loadPageData (daten) {
 	
 	var data = CheckData(daten);
@@ -47,13 +23,13 @@ function loadPageData (daten) {
 	var UniqueClassNames= $.unique(data.Messages.map(function (d) {return d.Class_Name;}));
 	var UniqueClassGroups= $.unique(data.Messages.map(function (d) {return d.Class_Group;}));
 	var UniqueContentPosts= $.unique(data.Messages.map(function (d) {return d.Cont_Post;}));
-	var UniqueContentTypes= $.unique(data.Messages.map(function (d) {return d.Cont_Type;}));
+	var UniqueContentPlayers= $.unique(data.Messages.map(function (d) {return d.Cont_Player;}));
 	output+="<Table width='100%' class='hvr-glow'>";
 	output+="<TR>"
 	for (var i in UniqueClassNames){
 		if (typeof UniqueClassNames[i] != 'undefined') {
 		if (UniqueClassNames[i] != '') {
-		+ "<TD><Input Type='Checkbox' onClick='ChangeSelection(this);' checked='checked' name='SCN' value='" + UniqueClassNames[i] + "'>" + UniqueClassNames[i] + "</input></TD>"
+		output+="<TD><Input Type='Checkbox' onClick='ChangeSelection(this);' checked='checked' name='SCN' value='" + UniqueClassNames[i] + "'>" + UniqueClassNames[i] + "</input></TD>"
 		}}};
 	output+="</TR><TR>"
 	for (var i in UniqueClassGroups){
@@ -62,16 +38,16 @@ function loadPageData (daten) {
 		output+="<TD><Input Type='Checkbox' onClick='ChangeSelection(this);' checked='checked' name='SCG' value='" + UniqueClassGroups[i] + "'>" + UniqueClassGroups[i] + "</input></TD>"
 		}}};
 	output+="</TR><TR>"
-	for (var i in UniqueContentTypes){
-		if (typeof UniqueContentTypes[i] != 'undefined') {
-		if (UniqueContentTypes[i] != '') {
-		output+="<TD><Input Type='Checkbox' onClick='ChangeSelection(this);' checked='checked' name='SCP' value='" + UniqueContentTypes[i] + "'>" + UniqueContentTypes[i] + "</input></TD>"
+	for (var i in UniqueContentPlayers){
+		if (typeof UniqueContentPlayers[i] != 'undefined') {
+		if (UniqueContentPlayers[i] != '') {
+		output+="<TD><Input Type='Checkbox' onClick='ChangeSelection(this);' checked='checked' name='SCT' value='" + UniqueContentPlayers[i] + "'>" + UniqueContentPlayers[i] + "</input></TD>"
 	}}};
 	output+="</TR><TR>"
 	for (var i in UniqueContentPosts){
 		if (typeof UniqueContentPosts[i] != 'undefined') {
 		if (UniqueContentPosts[i] != '') {
-		output+="<TD><Input Type='Checkbox' onClick='ChangeSelection(this);' checked='checked' value='" + UniqueContentPosts[i] + "'>" + UniqueContentPosts[i] + "</input></TD>"
+		output+="<TD><Input Type='Checkbox' onClick='ChangeSelection(this);' checked='checked' name='SCP' value='" + UniqueContentPosts[i] + "'>" + UniqueContentPosts[i] + "</input></TD>"
 	}}};
 	output+="</TR>"
 	output+="</Table>";
@@ -93,9 +69,9 @@ function loadPageData (daten) {
 			}
 		}
 		output+="<a href='#' id='wf' class='hvr-glow' onClick='Resultate(sel,sid,parseInt(pag) + 1)'>Weiter</a>";
-		output+="<BR><BR><B>" + 'Seite ' + data.Page + ' von ' + data.Pages + "<Br>Eintraege von " + data.EntryFrom + ' bis ' + data.EntryTo + ' von ' + data.EntryCount + " Ergebnissen  aus " + data.EntryDB + ' Eintaegen in ' + data.DBTime + " Sekunden <BR><B>"
+		output+="<BR><BR><B>" + 'Seite ' + data.Page + ' von ' + data.Pages + "<Br>Eintraege von " + data.EntryFrom + " bis " + data.EntryTo + " von " + data.EntryCount + " Ergebnissen zu '" + data.SQuery + "' aus " + data.EntryDB + ' Eintraegen in ' + data.DBTime + " Sekunden <BR><B>"
 	} else {
-		output+="<BR><B>" + data.EntryCount + " Ergebnisse aus " + data.EntryDB + ' Eintraegen in ' + data.DBTime + " Sekunden <BR><B>"
+		output+="<BR><B>" + data.EntryCount + " Ergebnisse aus " + data.EntryDB + " Eintraegen zu '" + data.SQuery + "' in " + data.DBTime + " Sekunden <BR><B>"
 	}
 	output+="</TD></TR></Table>"			
 	
@@ -106,7 +82,8 @@ function loadPageData (daten) {
 		output+="<Table style='Margin-top:5px;Margin-Bottom:5px;' width='100%' class='hvr-glow' " 
 			+ "SCN='" + data.Messages[i].Class_Name + "' "
 			+ "SCG='" + data.Messages[i].Class_Group + "'" 
-			+ "SCP='" + FilePostfix(data.Messages[i].Cont_Type) + "'"
+			+ "SCT='" + data.Messages[i].Cont_Player + "'" 
+			+ "SCP='" + data.Messages[i].Cont_Post + "'" 
 		+ "'>";
 		output+="<TR><TD style='background-color:#eeeeee;'></TD><TD Colspan='2' style='background-color:#eeeeee;'><a target='_blank' href='" + data.Messages[i].Cont_Link + "'>" + data.Messages[i].Cont_Name + "</a></TD></TR><TR>";
 		
@@ -117,6 +94,7 @@ function loadPageData (daten) {
 				+ data.Messages[i].Class_Name + "<BR>"
 				+ data.Messages[i].Class_Group + "<BR>"
 				+ data.Messages[i].Cont_Post + "<BR>"
+				+ data.Messages[i].Cont_Description + "<BR>"
 				+ data.Messages[i].Cont_Mime + "<BR>"
 				+ data.Messages[i].Cont_Player + "<BR>"
 				+ data.Messages[i].Cont_Time 
@@ -125,6 +103,19 @@ function loadPageData (daten) {
 		// ####################################
 		// Darstellen der Inhalte nach Typ
 		// ####################################
+		if (data.Messages[i].Class_Type=='Math'){
+			output+=
+			"<TD>" 
+				+ "<H2>" + data.Messages[i].Cont_Text + "</H2>"
+			+ "</TD>";
+		};	
+		
+		if (data.Messages[i].Class_Type=='FIL'){
+			output+=
+			"<TD>" 
+				+ "<H2>" + data.Messages[i].Cont_Text + "</H2>"
+			+ "</TD>";
+		};	
 		
 		if (data.Messages[i].Cont_Player=='Picture'){
 			output+=
@@ -232,7 +223,7 @@ function loadPageData (daten) {
 				+ "<a href='#' onClick='RunOnLocalMachine(this)' src='" + data.Messages[i].Cont_Link + "' ><Img Src='images/rarrow.png'</img> Lokal starten </a>"
 				+ "<a href='#' onClick='RunOnLocalMachineF(this)' src='" + data.Messages[i].Cont_Link + "' ><Img Src='images/rarrow.png'</img> Ordner oeffnen </a>"
 			+ "</TD>"
-			+ "</TR></Table><BR>";	
+			+ "</TR></Table>";	
 	};		
 
 	$("#Ergebnisse").html(output);	

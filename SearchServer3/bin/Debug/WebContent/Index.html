@@ -43,8 +43,10 @@
 					$(".group1").colorbox({rel:'group1'});
 					
 					LoadOverview(); 								// D3 Uebersicht
+					LoadSearch($('#debug'),$('#Suche'));
 					LoadDebug($('#debug'),$('#Meldungen'));			// Aktuelle Debugs
 					LoadMerker($('#debug'),$('#Merker'));			// Gespeicherte Suchanfragen
+					Reload();
 					LoadCreators($('#debug'),$('#Ersteller'));		// Neue Eintraege hinzufügen
 					LoadBookmarks($('#debug'),$('#Bookmarks'));		// Gespeicherte Default-URLs
 					LoadWebPages($('#debug'),$('#Externe'));		// Suchmaschinen (Seite)
@@ -79,6 +81,11 @@
 		return data;
 	}
 	
+	function Reload() {
+		LoadDebug($('#debug'),$('#Meldungen'));			// Aktuelle Debugs
+		setTimeout("Reload()", 2000);
+	}
+		
 	function Suchen(daten) {
 		$('#Ergebnisse').html("Starte Suchanfrage ... <BR><img src='images/292.gif' width='40%'>");
 		$('#debug').html('Search: ' + daten);
@@ -347,12 +354,6 @@
 														 $('.pageContent').width('100%');
 														">Verstecken</a>
 			<ul>									
-	            <li><a href="#Merker" 		class=		'hvr-glow'
-											onclick="	LoadMerker($('#debug'),$('#Merker'));
-														LoadDebug($('#debug'),$('#Meldungen'));
-														$('#Merker').show(false);		
-														$('#Index').hide(false);
-														$('#Suche').hide(false);">Merker</a></li>
 														
 	            <li><a href="#Suche" 		class=		'hvr-glow'
 											onclick="	LoadSearch($('#debug'),$('#Suche'));
@@ -361,6 +362,13 @@
 														$('#Index').hide(false);	
 														$('#Suche').show(false);">Suche</a></li>
 														
+	            <li><a href="#Merker" 		class=		'hvr-glow'
+											onclick="	LoadMerker($('#debug'),$('#Merker'));
+														LoadDebug($('#debug'),$('#Meldungen'));
+														$('#Merker').show(false);		
+														$('#Index').hide(false);
+														$('#Suche').hide(false);">Merker</a></li>
+														
 	            <li><a href="#Index" 		class=		'hvr-glow'
 											onclick="	LoadIndex($('#debug'),$('#Index'));
 														LoadDebug($('#debug'),$('#Meldungen'));
@@ -368,8 +376,8 @@
 														$('#Index').show(false);	
 														$('#Suche').hide(false);">Index</a></li>
 	        </ul>
-			<div id="Merker">							<img src='images/ajax-loader.gif'></div>
-			<div id="Suche" 				hidden=true><img src='images/ajax-loader.gif'></div>
+			<div id="Suche" 						   ><img src='images/ajax-loader.gif'></div>
+			<div id="Merker"				hidden=true><img src='images/ajax-loader.gif'></div>
 			<div id="Index" 				hidden=true><img src='images/ajax-loader.gif'></div>
 		</div>
 		
@@ -395,6 +403,5 @@
 
  
 </div>
-
 </body>
 </html>

@@ -101,11 +101,9 @@ Public Class Filetypes2
     End Function
 
     Function GetThumbNail() As String
-        'If _Online = True Then Return ""
         If HasThumbNail() = False Then Return ""
         Dim Hash As String = HashString(_Filename)
-
-        Dim NewFile As String = "http://localhost:9090\THImage\" & Hash & ".jpg"
+        Dim NewFile As String = "THImage\" & Hash & ".jpg"
         Return NewFile
     End Function
     Private Function HashString(ByVal source As String) As String

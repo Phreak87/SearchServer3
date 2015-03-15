@@ -1,0 +1,1 @@
+Mongoexport.exe --db SEARCHSERVER --collection DIR --out DIR.json

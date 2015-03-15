@@ -42,9 +42,9 @@ Module Module1
     Sub Main()
 
         ' Initial-Config
-        Dim StartPostClean As Boolean = False    ' Beim start (neue) Postfixe bereinigen
-        Dim CollectGarbage As Boolean = True    ' Timer für GarbageCollection 
-        Dim DatabaseWiredT As Boolean = True   ' Zum testen bis UMongo WiredTiger unterstützt
+        Dim StartPostClean As Boolean = True        ' Beim start (neue) Postfixe bereinigen
+        Dim CollectGarbage As Boolean = True        ' Timer für GarbageCollection 
+        Dim DatabaseWiredT As Boolean = True        ' Zum testen bis UMongo WiredTiger unterstützt
         Dim CleanDBStart As Boolean = False
 
         Console.WriteLine("Starte SearchServer V3")
@@ -81,7 +81,11 @@ Module Module1
 
         Dim DBApp As New CLS.DBS.MongoDB
         AddHandler DBApp.Status, AddressOf LogStatus
-        If CleanDBStart = True Then DBApp.Stopmongo() : DBApp.KillmongoDBS()
+        If CleanDBStart = True Then
+            Console.WriteLine("#DBS: Press [Enter] to continue deleting db-files or close this Window")
+            Dim Answ As ConsoleKeyInfo = Console.ReadKey
+            If Answ.Key = ConsoleKey.Enter Then DBApp.Stopmongo() : DBApp.KillmongoDBS()
+        End If
         DBApp.Startmongo(DatabaseWiredT)
         DBServer = DBClient.GetServer
         Dim iConCount As Integer = 1
@@ -108,6 +112,8 @@ Module Module1
         DIR = DBMongo.GetCollection("DIR") : RSS = DBMongo.GetCollection("RSS") : FIL = DBMongo.GetCollection("FIL")
         If CleanDBS = True Then Console.WriteLine(".DBS: Drop Database RSS,DIR,FIL") : DIR.Drop() : RSS.Drop() : FIL.Drop()
         DIR.CreateIndex({"Cont_Name", "Cont_Link", "Cont_Post"}) : RSS.CreateIndex({"Cont_Name"}) : FIL.CreateIndex({"Cont_Name"})
+        'Dim QDOc As New QueryDocument : QDOc.Add("Class_Name", "FullC") : DIR.Remove(QDOc)
+
         ' --------------------------------------------
         ' Init Temp.Datenbanken
         ' --------------------------------------------
@@ -162,6 +168,13 @@ Module Module1
                 AddHandler DIR_New.Initialized, AddressOf DIRNextInit : DIRLIST.Add(DIR_New)
             Next
             DIRNextInit()
+
+            Dim Q As IMongoQuery = Query.Matches("Cont_Name", "/tracklist.txt/i")
+            Dim DIRFIL As MongoCursor(Of BsonDocument) = DIR.FindAs(Of BsonDocument)(Q)
+            For Each eintrag As BsonDocument In DIRFIL
+                Dim FIL_New As New CLS.FIL(eintrag("Cont_Name"), "Tracklists", eintrag("Cont_Link"), FIL)
+                FILLIST.Add(FIL_New)
+            Next
         End If
 
         ' -------------------------------------------------------
@@ -252,15 +265,15 @@ Module Module1
                 Case "api\query\bookmarks" : Cont = My.Computer.FileSystem.ReadAllText(Environment.CurrentDirectory & "\WebContent\" & "JsonTest\Merker.json")
                 Case "api\query\creators" : Cont = My.Computer.FileSystem.ReadAllText(Environment.CurrentDirectory & "\WebContent\" & "JsonTest\Creators.json")
 
-                Case "api\query\msg" : Cont = CLS.DBS.MongoDB.QueryFull(MSG) : LogStatus(".WEB: " & RawData.ReqURLPath)
-                Case "api\query\mrk" : Cont = CLS.DBS.MongoDB.QueryFull(MRK) : LogStatus(".WEB: " & RawData.ReqURLPath)
-                Case "api\query\qry" : Cont = CLS.DBS.MongoDB.QueryFull(QRY) : LogStatus(".WEB: " & RawData.ReqURLPath)
-                Case "api\query\idx" : Cont = CLS.DBS.MongoDB.QueryFull(IDX) : LogStatus(".WEB: " & RawData.ReqURLPath)
+                Case "api\query\msg" : Cont = CLS.DBS.MongoDB.QueryFull(MSG)
+                Case "api\query\mrk" : Cont = CLS.DBS.MongoDB.QueryFull(MRK)
+                Case "api\query\qry" : Cont = CLS.DBS.MongoDB.QueryFull(QRY)
+                Case "api\query\idx" : Cont = CLS.DBS.MongoDB.QueryFull(IDX)
 
-                Case "api\query\dir" : resDB = CLS.DBS.MongoDB.QueryText(DIR, {SuTE}, 30, PaID, "Cont_Link") : Cont = resDB.ToJson
-                Case "api\query\fil" : resDB = CLS.DBS.MongoDB.QueryText(FIL, {SuTE}, 30, PaID, "Cont_Name") : Cont = resDB.ToJson
-                Case "api\query\rss" : resDB = CLS.DBS.MongoDB.QueryText(RSS, {SuTE}, 30, PaID, "Cont_Text") : Cont = resDB.ToJson
-                Case "api\query\web" : resDB = CLS.DBS.MongoDB.QueryText(TWEB, {"WEB"}, 100, PaID, "Class_Type") : Cont = resDB.ToJson
+                Case "api\query\dir" : resDB = CLS.DBS.MongoDB.QueryText(DIR, {SuTE}, 30, PaID, "Cont_Link", RawData) : Cont = resDB.ToJson
+                Case "api\query\fil" : resDB = CLS.DBS.MongoDB.QueryText(FIL, {SuTE}, 30, PaID, "Cont_Name", RawData) : Cont = resDB.ToJson
+                Case "api\query\rss" : resDB = CLS.DBS.MongoDB.QueryText(RSS, {SuTE}, 30, PaID, "Cont_Text", RawData) : Cont = resDB.ToJson
+                Case "api\query\web" : resDB = CLS.DBS.MongoDB.QueryText(TWEB, {"WEB"}, 100, PaID, "Class_Type", RawData) : Cont = resDB.ToJson
 
                     ' --------------------------------------------------------------------
                     ' Hier die Setter aus der Datenbank
@@ -318,13 +331,14 @@ Module Module1
         Select Case RawData.ReqURLPath
             Case "api\query\dir"
                 For Each Eintrag As DOC In resDB.GetCollection
-                    If Eintrag.Cont_Thumb <> "" Then
-                        Dim DBThumb As String = Environment.CurrentDirectory & "\WebContent\" & Eintrag.Cont_Thumb.Replace("http://localhost:9090\", "")
+                    If Eintrag.Cont_Thumb <> RawData.ReqReferrer Then
+                        Dim DBThumb As String = Environment.CurrentDirectory & "\WebContent\" & Eintrag.Cont_Thumb.ToString.Replace(RawData.ReqReferrer, "")
                         If My.Computer.FileSystem.FileExists(DBThumb) = False Then
-                            Dim t As New Filetypes2.ThumbCreator(Eintrag.Cont_Link.Replace("http://localhost:9090/", ""), DBThumb)
+                            Dim t As New Filetypes2.ThumbCreator(Eintrag.Cont_Link.Replace(RawData.ReqReferrer, ""), DBThumb)
                             Console.WriteLine(".THB: Erstelle Thumb für " & Eintrag.Cont_Name)
+                            LogStatus("Thumb: " & Eintrag.Cont_Thumb)
                             t.CreateThumb() ' Dim TH As New Thread(AddressOf t.CreateThumb) : TH.Start()
-                            Console.WriteLine(".THB: Thumb erstellt: " & Eintrag.Cont_Thumb)
+                            Console.WriteLine(".THB: Thumb erstellt: " & Eintrag.Cont_Thumb.ToString.Replace(RawData.ReqReferrer, ""))
                         End If
                     End If
                 Next

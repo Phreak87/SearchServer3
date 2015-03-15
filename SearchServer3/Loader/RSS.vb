@@ -13,7 +13,8 @@ Namespace CLS
         Public _ClassGroup As String = "Allgemein"
         Public _ClassRoot As String = ""
 
-        Public _Count As Integer
+        Public _Count As Integer = 0
+        Public _Retries As Integer = 0
         Public _Collection As MongoCollection
 
         Public _Refresh As Integer = 0
@@ -47,11 +48,13 @@ Namespace CLS
             Check.Add("Class_Name", _ClassName)
             If Collection.Count(Check) = 0 Then
                 Console.WriteLine("#RSS: Keine Einträge für {0} - Erstelle Index", _ClassName)
-                Start()
+                Dim TH As New Threading.Thread(AddressOf Start)
+                TH.Start()
             End If
         End Sub
 
         Public Sub Start()
+            If _Retries > 4 Then Exit Sub
             Dim RSSResults As List(Of String()) = IndexRSS(_ClassRoot)
 
             If RSSResults.Count = 0 Then Exit Sub
@@ -84,7 +87,9 @@ Namespace CLS
                 STR = WEB.DownloadString(URL)
                 XML.LoadXml(STR.Replace("xmlns=""http://www.w3.org/2005/Atom""", ""))
             Catch ex As Exception
-                Console.WriteLine(".RSS: " & ex.Message)
+                Console.WriteLine(".RSS: " & ex.Message & "Try#" & _Retries)
+                _Retries = _Retries + 1
+                Return New List(Of String())
             End Try
 
             Dim RSSList As Xml.XmlNodeList = XML.SelectNodes("/rss/channel/item")
@@ -99,6 +104,7 @@ Namespace CLS
                 Res.Add({Link, Title, Descr, PubDate})
             Next
 
+            _Retries = 0
             Return Res
         End Function
 #End Region

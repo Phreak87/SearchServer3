@@ -111,14 +111,12 @@ Namespace CLS
                             Dim Raw As New MessageDecoder(RawData, MimeTypes)
                             Dim Sender As New AsyncSender(Connection, "", Raw)
 
-
-
                             Dim AppPath As String = Environment.CurrentDirectory & "\WebContent\"
                             If Raw.ReqURLPath = "" Then Raw.ReqURLPath = AppPath & "Index.html"
                             If My.Computer.FileSystem.FileExists(Raw.ReqURLPath) Then Sender.SendBinFile(Raw.ReqURLPath)
                             If My.Computer.FileSystem.FileExists(AppPath & Raw.ReqURLPath) Then Sender.SendBinFile(AppPath & Raw.ReqURLPath)
 
-                            RaiseEvent Received(RawData, Connection)
+                        RaiseEvent Received(RawData, Connection)
 
 #If WEBDEBUG = True Then
                             Console.WriteLine (Rawdata)

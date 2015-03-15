@@ -8,7 +8,7 @@ Public Class Mimes
     Sub New()
         If My.Computer.FileSystem.FileExists("Config\Mimes.xml") Then
             Dim XMLMime As New Xml.XmlDocument : XMLMime.Load("Config\Mimes.xml")
-            MimeTypes = ListofStringDictionary(XMLMime, "WebSearch/MimeTypes/MimeType", {"Postfix", "Mimetype", "Player", "CacheSec", "CreateThumb"})
+            MimeTypes = ListofStringDictionary(XMLMime, "WebSearch/MimeTypes/MimeType", {"Postfix", "Mimetype", "Player", "CacheSec", "CreateThumb", "Description"})
             XMLMime = Nothing
         End If
 
@@ -78,6 +78,7 @@ Public Class Mimes
                 OUT.Add("Player", "NoPlayer")
                 OUT.Add("CacheSec", "0")
                 OUT.Add("CreateThumb", "False")
+                OUT.Add("Description", "None")
                 Return OUT
             Case 1
                 Return LST(0)

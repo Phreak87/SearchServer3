@@ -1,10 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WebSearch>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".None"/>
+	
 	<Clean Collection="DIR" Field="Cont_Post" Value=".dll"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".qm"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".qtx"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".mxm"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".ejs"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".qts"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".pri"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".prl"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".flm"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".prf"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".tpm"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".cbp"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".fea"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".htf"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".sty"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".app"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".qmap"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".pmap"/>
 	<Clean Collection="DIR" Field="Cont_Post" Value=".bz2"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".pro"/>
 	<Clean Collection="DIR" Field="Cont_Post" Value=".dat"/>
 	<Clean Collection="DIR" Field="Cont_Post" Value=".cab"/>
 	<Clean Collection="DIR" Field="Cont_Post" Value=".hdr"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".hpp"/>
 	<Clean Collection="DIR" Field="Cont_Post" Value=".sql"/>
 	<Clean Collection="DIR" Field="Cont_Post" Value=".sfv"/>
 	<Clean Collection="DIR" Field="Cont_Post" Value=".new"/>
@@ -12,7 +33,6 @@
 	<Clean Collection="DIR" Field="Cont_Post" Value=".bpl"/>
 	<Clean Collection="DIR" Field="Cont_Post" Value=".suo"/>
 	<Clean Collection="DIR" Field="Cont_Post" Value=".sln"/>
-
 	<Clean Collection="DIR" Field="Cont_Post" Value=".tmp"/>
 	<Clean Collection="DIR" Field="Cont_Post" Value=".0"/>
 	<Clean Collection="DIR" Field="Cont_Post" Value=".lock"/>
@@ -172,4 +192,64 @@
 	<Clean Collection="DIR" Field="Cont_Post" Value=".rsa"/>
 	<Clean Collection="DIR" Field="Cont_Post" Value=".sf"/>
 	<Clean Collection="DIR" Field="Cont_Post" Value=".mf"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".1"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".2"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".3"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".4"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".5"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".6"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".7"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".8"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".9"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".10"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".11"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".12"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".13"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".14"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".15"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".16"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".17"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".18"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".19"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".20"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".21"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".22"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".23"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".24"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".25"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".26"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".27"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".28"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".29"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".30"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".31"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".32"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".33"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".34"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".35"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".36"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".37"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".38"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".39"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".40"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".41"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".42"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".43"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".44"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".45"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".46"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".47"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".48"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".49"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".50"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".51"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".52"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".53"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".54"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".55"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".56"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".57"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".58"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".59"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".60"/>
 </WebSearch>

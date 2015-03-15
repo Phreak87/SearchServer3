@@ -24,6 +24,7 @@ Namespace CLS
             Remove.Add("Class_Name", Name)
             Collection.Remove(Remove)
 
+            Console.WriteLine("#FIL: Init von " & Name)
             Dim DoFile As New CLS_Fil(Path) : Threading.ThreadPool.QueueUserWorkItem(AddressOf IndexFile, DoFile)
         End Sub
 
@@ -35,8 +36,10 @@ Namespace CLS
                 Console.WriteLine("#FIL: Datei nicht gefunden: " & _obj._Path)
                 Exit Sub
             End If
-            For Each Line In Split(My.Computer.FileSystem.ReadAllText(_obj._Path), vbCrLf)
-                Dim DOC As New DOC(_ClassName, "FIL", _ClassGroup, "Zeile " & i & " " & Line, Line, Line, "NoPost", Now)
+            For Each Line In Split(My.Computer.FileSystem.ReadAllText(_obj._Path), vbLf)
+                Dim SepAll As String = Line.Replace(vbTab, "<BR>").Replace("|", "<BR>").Replace(";", "<BR>").Replace(",", "<BR>")
+                Do Until SepAll.Contains("<BR><BR>") = False : SepAll = SepAll.Replace("<BR><BR>", "<BR>") : Loop
+                Dim DOC As New DOC(_ClassName, "FIL", _ClassGroup, "Zeile " & i & " " & Mid(Line, 1, 200), _obj._Path, SepAll, "NoPost", Now)
                 Res.Add(DOC)
                 i = i + 1
             Next

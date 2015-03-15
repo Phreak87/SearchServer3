@@ -1,0 +1,1 @@
+Mongoimport.exe --db SEARCHSERVER --drop --collection DIR DIR.json

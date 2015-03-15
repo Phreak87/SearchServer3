@@ -20,6 +20,7 @@ Namespace CLS
 #Region "Statusmeldungen"
         Dim _Files As Double = 0
         Dim _Todos As Integer = 0
+        Dim _LastC As Integer = 0
         Dim _Status As System.Timers.Timer      ' Status (Anzahl Dateien)
         Dim _Starts As System.Timers.Timer      ' Starts für Zeitbasiertes starten
         Dim _Timer As Stopwatch
@@ -178,7 +179,8 @@ Namespace CLS
             Dim Res As New List(Of DOC)
 
             For Each Datei In Directory.GetFiles(_obj._Path)
-                Dim Post As String = ".None" : If Datei.Contains(".") Then Post = LCase(Mid(Datei, InStrRev(Datei, ".")))
+                Dim Post As String = ".None" : If Datei.Contains(".") Then Post = LCase(Mid(Datei, InStrRev(Datei, "."))):If Post.Length > 5 Then Post = ".None"
+                ' Dim Time As String = My.Computer.FileSystem.GetFileInfo(Datei).LastAccessTime
                 Dim DOC As New DOC(_ClassName, "DIR", _ClassGroup, Mid(Datei, InStrRev(Datei, "\") + 1), Datei, "", Post, Now)
                 Res.Add(DOC)
             Next
@@ -254,7 +256,8 @@ Namespace CLS
         Private Sub LogStatus(ByVal sender As Object, ByVal e As Timers.ElapsedEventArgs)
             If IsNothing(_Timer) Then Exit Sub
             Dim Time As String = _Timer.Elapsed.Hours & ":" & _Timer.Elapsed.Minutes & ":" & _Timer.Elapsed.Seconds
-            Console.WriteLine("#DIR: {2} - {1} Dateien mit {0} Threads in {3}", EnsureLen(_Todos, 6), EnsureLen(_Files, 6), EnsureLen(_ClassName, 15), EnsureLen(Time, 8))
+            Console.WriteLine("#DIR: {2} - {1} Dateien mit {0} Threads in {3} ({4} /s)", EnsureLen(_Todos, 6), EnsureLen(_Files, 6), EnsureLen(_ClassName, 15), EnsureLen(Time, 8), Math.Round((_Files - _LastC) / 2, 0))
+            _LastC = _Files
             '_Todos = 0
             If _Todos <= 0 Then
                 _Timer = Nothing

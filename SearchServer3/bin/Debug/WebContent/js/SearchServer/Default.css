@@ -44,7 +44,7 @@
 	}
 
 	body{
-		background-color : rgba(194,220,253,50);
+		background-color : #2098D1
 	}
 	
 	.blended_grid{
@@ -163,3 +163,5 @@
 	{
 		Width=250px;
 	}
+
+	h2{line-height:normal;}
