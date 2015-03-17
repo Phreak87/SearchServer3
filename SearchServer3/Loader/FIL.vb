@@ -1,6 +1,7 @@
 ﻿Imports MongoDB.Bson
 Imports MongoDB.Driver
 Imports System.Threading
+Imports Microsoft.VisualBasic.FileIO
 
 Namespace CLS
     Public Class FIL
@@ -24,10 +25,8 @@ Namespace CLS
             Remove.Add("Class_Name", Name)
             Collection.Remove(Remove)
 
-            Console.WriteLine("#FIL: Init von " & Name)
             Dim DoFile As New CLS_Fil(Path) : Threading.ThreadPool.QueueUserWorkItem(AddressOf IndexFile, DoFile)
         End Sub
-
 
         Sub IndexFile(ByVal _obj As CLS_Fil)
             Dim Res As New List(Of DOC)
@@ -36,13 +35,16 @@ Namespace CLS
                 Console.WriteLine("#FIL: Datei nicht gefunden: " & _obj._Path)
                 Exit Sub
             End If
-            For Each Line In Split(My.Computer.FileSystem.ReadAllText(_obj._Path), vbLf)
-                Dim SepAll As String = Line.Replace(vbTab, "<BR>").Replace("|", "<BR>").Replace(";", "<BR>").Replace(",", "<BR>")
-                Do Until SepAll.Contains("<BR><BR>") = False : SepAll = SepAll.Replace("<BR><BR>", "<BR>") : Loop
-                Dim DOC As New DOC(_ClassName, "FIL", _ClassGroup, "Zeile " & i & " " & Mid(Line, 1, 200), _obj._Path, SepAll, "NoPost", Now)
+
+            Console.WriteLine(".FIL: Interpretieren von " & _ClassName)
+            Dim TFP1 As New TextFieldParser(_obj._Path)
+            TFP1.Delimiters = {vbTab, "|", ";"}
+            TFP1.HasFieldsEnclosedInQuotes = True
+            While Not TFP1.EndOfData
+                Dim Line As String = TFP1.ReadLine
+                Dim DOC As New DOC(_ClassName, "FIL", _ClassGroup, "Zeile " & i & " " & Mid(Line, 1, 150), _obj._Path, PrePareLine(Line), "NoPost", Now)
                 Res.Add(DOC)
-                i = i + 1
-            Next
+            End While
 
             If Res.Count > 0 Then
                 Dim Remove As New QueryDocument
@@ -52,7 +54,21 @@ Namespace CLS
             End If
             Res = Nothing
             _obj = Nothing
+            Console.WriteLine(".FIL: Interpretieren von " & _ClassName & " abgeschlossen")
         End Sub
+
+        Function PrePareLine(Line As String) As String
+            If IsNothing(Line) Then Return ""
+            Line = Line.Replace(",", "<BR>")
+            Line = Line.Replace("|", "<BR>")
+            Line = Line.Replace(vbTab, "<BR>")
+            Line = Line.Replace(";", "<BR>")
+            Dim Mails As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Line, "(\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3})")
+            If Mails.Count > 0 Then Line = Line.Replace(Mails(0).Value, "<a href='Mailto://" & Mails(0).Value & "'>" & Mails(0).Value & "</a>")
+            Do Until Line.Contains("<BR><BR>") = False : Line = Line.Replace("<BR><BR>", "<BR>") : Loop
+            Return Mid(Line, 1, 300)
+        End Function
+
     End Class
 End Namespace
 

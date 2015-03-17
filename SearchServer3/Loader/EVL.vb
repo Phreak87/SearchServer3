@@ -1,7 +1,8 @@
-﻿Imports UnitConversionLib
+﻿
 
 Public Class EVL
-    Function MathResult(Query As String) As String
+
+    Function MathResult(ByVal Query As String) As String
         Do Until Query.Contains("++") = False
             Query = Query.Replace("++", "+")
         Loop
@@ -123,16 +124,19 @@ Public Class EVL
     Public Class UCL
 
         Dim Grundtype As New List(Of Dictionary(Of String, String))
-
         Dim Konverter As New Dictionary(Of String, String)
 
         Dim Konstanten As New Dictionary(Of String, String)
         Dim KonstantenWert As New Dictionary(Of String, String)
 
         Dim Operatoren As New Dictionary(Of String, String)
+        Dim OperatorenWert As New Dictionary(Of String, String)
+
+        Dim Ausgaben As New Dictionary(Of String, String)
+        Dim AusgabenWert As New Dictionary(Of String, String)
 
         Sub New()
-            Dim XMLTypes As New Xml.XmlDocument : XMLTypes.Load(Environment.CurrentDirectory & "\config\Units.xml")
+            Dim XMLTypes As New Xml.XmlDocument : XMLTypes.Load(Environment.CurrentDirectory & "\Config\Units.xml")
             Dim GTN As New Dictionary(Of String, String)
             GTN.Add("Name", "[Number]")
             GTN.Add("Formel", "1")
@@ -147,6 +151,7 @@ Public Class EVL
                 Next
             Next
             For Each Type As Xml.XmlNode In XMLTypes.SelectNodes("WebSearch/Operators/Operator")
+                OperatorenWert.Add(Type.Attributes("Name").Value, Type.Attributes("Calc").Value)
                 For Each SubType As String In Split(Type.Attributes("Aliasses").Value, ",")
                     Dim GT As New Dictionary(Of String, String)
                     Operatoren.Add(SubType, Type.Attributes("Name").Value)
@@ -157,6 +162,13 @@ Public Class EVL
                 For Each SubType As String In Split(Type.Attributes("Aliasses").Value, ",")
                     Dim GT As New Dictionary(Of String, String)
                     Konstanten.Add(SubType, Type.Attributes("Name").Value)
+                Next
+            Next
+            For Each Type As Xml.XmlNode In XMLTypes.SelectNodes("WebSearch/Outputs/Output")
+                AusgabenWert.Add(Type.Attributes("Name").Value, Type.Attributes("Calc").Value)
+                For Each SubType As String In Split(Type.Attributes("Aliasses").Value, ",")
+                    Dim GT As New Dictionary(Of String, String)
+                    Ausgaben.Add(SubType, Type.Attributes("Name").Value)
                 Next
             Next
             Grundtype = Grundtype.Distinct.ToList
@@ -171,18 +183,22 @@ Public Class EVL
             Dim Quellwert As String = ""
             Dim Zieleinheit As String = ""
             Dim Zielwert As String = ""
+            Dim Operatorwert As String = ""
+            Dim Ausgabeeinheit As String = ""
 
             Dim Ausgabe As String = ""
 
-            Dim Res1 As List(Of String) = SplitQuery(Query)
-            Res1 = SplitQuery(Simplyfy(Res1))
+            Console.WriteLine(Query)
+            Dim Res1 As List(Of String) = Simplyfy(SplitQuery(Query))
 
             Try
                 Quelleinheit = "[" & Res1(1) & "]"
-                Zieleinheit = "[" & Res1(4) & "]"
+                Zieleinheit = "[" & Res1(3) & "]"
+                Ausgabeeinheit = "[" & Res1(5) & "]"
+                Operatorwert = Res1(4)
                 Quellwert = Res1(0)
-                Zielwert = Res1(3)
-                Ausgabe = Ausgabe & ("Normalisiert auf: " & Quellwert & " " & Quelleinheit & " zu " & Zielwert & " " & Zieleinheit) & "<br>"
+                Zielwert = Res1(2)
+                Console.WriteLine("Normalisiert auf: " & Quellwert & " " & Quelleinheit & " " & Operatorwert & " " & Zielwert & " " & Zieleinheit & " als " & Ausgabeeinheit)
 
 
                 Do
@@ -192,15 +208,15 @@ Public Class EVL
                         If eintrag = Zieleinheit Then
                             Quellwert = Quellwert & Quelleinheit.Replace(eintrag, "")
                             Zielwert = Zielwert & Zieleinheit.Replace(eintrag, "")
-                            Ausgabe = Ausgabe & ("Normalisiert auf: " & Quellwert & " zu " & Zielwert) & "<br>"
-                            Return Ausgabe & New NCalc.Expression(Quellwert.Replace(",", ".") & " / " & Zielwert).Evaluate
+                            Ausgabe = Ausgabe & ("Normalisiert auf: " & Quellwert & Operatorwert & Zielwert) & "<br>"
+                            Return Ausgabe & New NCalc.Expression(Quellwert.Replace(",", ".") & Operatorwert & Zielwert).Evaluate
                         Else
                             Dim Redu As Dictionary(Of String, String) = Grundtype.Find(Function(S) S("Name") = Mid(SelStep, 2, Len(SelStep) - 2))
                             Quelleinheit = Quelleinheit.Replace(eintrag, Redu("Formel"))
                             If ReadReplaces(Quelleinheit).Count = 0 Then
                                 Quellwert = New NCalc.Expression(Quellwert & " " & Quelleinheit).Evaluate
                                 Quelleinheit = "[" & Redu("Name") & "]"
-                                Ausgabe = Ausgabe & ("Reduziert auf: " & Quellwert & " " & Quelleinheit & " zu " & Zielwert) & "<br>"
+                                Console.WriteLine("Quelle reduziert auf: " & Quellwert & " " & Quelleinheit)
                                 Exit Do
                             End If
                         End If
@@ -213,78 +229,151 @@ Public Class EVL
                         Dim SelStep As String = eintrag
                         Dim Redu As Dictionary(Of String, String) = Grundtype.Find(Function(S) S("Name") = Mid(SelStep, 2, Len(SelStep) - 2))
                         Zieleinheit = Zieleinheit.Replace(eintrag, Redu("Formel"))
-                        Ausgabe = Ausgabe & ("Normalisiert auf: " & Quellwert & " zu " & Zielwert) & "<br>"
-                        If Zieleinheit = "" AndAlso Redu("Name") <> Quelleinheit Then Return "Keine konvertierung"
                         If ReadReplaces(Zieleinheit).Count = 0 Then
-                            Zielwert = New NCalc.Expression("1" & Zieleinheit).Evaluate
-                            Ausgabe = Ausgabe & ("Normalisiert auf: " & Quellwert & " zu " & Zielwert) & "<br>"
+                            Zielwert = New NCalc.Expression(Zielwert & Zieleinheit).Evaluate
+                            Ausgabe = Ausgabe & ("Ziel reduziert auf: " & Quellwert & " zu " & Zielwert) & "<br>"
                             Return Ausgabe & Quellwert / Zielwert : Exit For
                         End If
                     Next
                 Loop
+
             Catch ex As Exception
                 Return ""
             End Try
             Return Ausgabe
         End Function
 
-        Function Simplyfy(Querys As List(Of String)) As String
+        Function Simplyfy(ByVal Querys As List(Of String)) As List(Of String)
+            Dim Res1 As New List(Of String)
+
             Dim Num1 As String = Nothing
             Dim Unit1 As String = Nothing
-
             Dim Num2 As String = Nothing
             Dim Unit2 As String = Nothing
-
             Dim Output As String = Nothing
             Dim Operat As String = Nothing
 
             Dim IQuerys As Integer = Querys.Count - 1
+
             For i As Integer = 0 To IQuerys
+                If i = Querys.Count Then Exit For
 
-                If i = IQuerys Then
-                    If i = Querys.Count Then Exit For
-                    If IsConstant(Querys(i)) Then
-                        Num1 = KonstantenWert(Konstanten(Querys(i)))
-                        Unit1 = "Number"
-                        Num2 = 1
-                        Unit2 = "Number"
-                    End If
-                End If
-
-                If i = IQuerys - 1 Then
-                    If IsNumeric(Querys(i)) Then
-
-                    ElseIf IsUnit(Querys(i)) Then
-                        If IsNothing(Num1) Then
-                            Unit1 = Konverter(Querys(i))
-                            Num1 = 1
-                        Else
-                            Unit2 = Konverter(Querys(i))
-                            Num2 = 1
-                        End If
-                    End If
-                Else
-                    If i = Querys.Count - 1 Then Exit For
+                If i < Querys.Count - 1 Then
+                    ' ----------------
+                    ' mit Einheit
+                    ' ----------------
                     If IsNumeric(Querys(i)) AndAlso IsUnit(Querys(i + 1)) Then
                         If IsNothing(Num1) Then
                             Num1 = Querys(i)
                             Unit1 = Konverter(Querys(i + 1))
                             Querys.RemoveAt(i + 1)
+                        Else
+                            Num2 = Querys(i)
+                            Unit2 = Konverter(Querys(i + 1))
+                            If Unit1 = "Number" Then Unit1 = Unit2
+                            Querys.RemoveAt(i + 1)
+                        End If
+
+                    ElseIf IsNumeric(Querys(i)) Then
+                        If IsNothing(Num1) Then
+                            Num1 = Querys(i)
+                            Unit1 = "Number"
+                        Else
+                            Num2 = Querys(i)
+                            Unit2 = "Number"
+                        End If
+
+                    ElseIf IsUnit(Querys(i)) Then
+                        If IsNothing(Num1) Then
+                            Num1 = Querys(i)
+                            Unit1 = "Number"
+                            Querys.RemoveAt(i + 1)
+                        Else
+                            Num2 = Querys(i)
+                            Unit2 = Konverter(Querys(i + 1))
+                            Querys.RemoveAt(i + 1)
+                        End If
+
+                    ElseIf IsOperator(Querys(i)) Then
+                        Operat = OperatorenWert(Operatoren(Querys(i)))
+
+                    End If
+
+
+                Else
+
+                    'ohne Folgeeintrag
+                    If IsNumeric(Querys(i)) Then
+                        If IsNothing(Num1) Then
+                            Num1 = Querys(i)
+                            Unit1 = "Number"
+                        Else
+                            Num2 = Querys(i)
+                            Unit2 = Unit1
                         End If
                     End If
+
+                    If IsUnit(Querys(i)) Then
+                        If IsNothing(Num1) Then
+                            Num1 = Querys(i)
+                            Unit1 = "Number"
+                        Else
+                            Num2 = 1
+                            Unit2 = Konverter(Querys(i))
+                        End If
+                    End If
+
+                    If IsOutput(Querys(i)) Then
+                        Output = Ausgaben(Querys(i))
+                    End If
+
                 End If
+
+                If i = IQuerys Then
+                    If i = Querys.Count Then Exit For
+                    If IsConstant(Querys(i)) Then
+                        Num1 = (KonstantenWert(Konstanten(Querys(i))))
+                        Unit1 = ("Number")
+                    End If
+                End If
+
             Next
 
-            Return Num1 & Unit1 & "+zu+" & Num2 & Unit2
+            If IsNothing(Num2) Then Num2 = (1)
+            If IsNothing(Unit2) Then Unit2 = Unit1
+            If IsNothing(Output) Then Output = "Number"
+            If IsNothing(Operat) Then Operat = "/"
+            Res1.Add(Num1)
+            Res1.Add(Unit1)
+            Res1.Add(Num2)
+            Res1.Add(Unit2)
+            Res1.Add(Operat)
+            Res1.Add(Output)
+
+            Return Res1
         End Function
+
+        <DebuggerStepThrough()> _
         Function IsUnit(ByVal Key As String) As Boolean
             If Konverter.ContainsKey(Key) Then Return True
             Return False
         End Function
+        <DebuggerStepThrough()> _
         Function IsConstant(ByVal Key As String) As Boolean
             If Konstanten.ContainsKey(Key) Then Return True
             Return False
         End Function
+        <DebuggerStepThrough()> _
+        Function IsOperator(ByVal Key As String) As Boolean
+            If Operatoren.ContainsKey(Key) Then Return True
+            Return False
+        End Function
+        <DebuggerStepThrough()> _
+        Function IsOutput(ByVal Key As String) As Boolean
+            If Ausgaben.ContainsKey(Key) Then Return True
+            Return False
+        End Function
+
         Function SplitQuery(ByVal Query As String) As List(Of String)
             Dim Res1 As List(Of String) = System.Text.RegularExpressions.Regex.Split(Query, "(\d,+\d+|\+|\d+)").ToList
             Res1.RemoveAll(Function(s) s = "") : Res1.RemoveAll(Function(s) s = "+")

@@ -1,15 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <WebSearch>
 	<Operators>
-		<Operator Name="Dividiere"		Calc="/"				Aliasses="teile,Teile,div,Div,dividiere,Dividiere,durch,von,in,zu"/>
+		<Operator Name="Dividiere"		Calc="/"				Aliasses="teile,Teile,div,Div,dividiere,Dividiere,durch,von,in,zu,/"/>
+		<Operator Name="Multipliziere"	Calc="*"				Aliasses="mal,mit,multipliziere,Multipliziere,*"/>
+		<Operator Name="Addiere"		Calc="+"				Aliasses="und,plus,Plus,+"/>
+		<Operator Name="Substrahiere"	Calc="-"				Aliasses="minus,Minus,-"/>
 	</Operators>
+	<Outputs>
+		<Output 	Name="Nummer"		Calc=""					Aliasses="zahl,Zahl"/>
+		<Output 	Name="Prozent"		Calc="/"				Aliasses="Prozent,prozent,%"/>
+	</Outputs>
 	<Constants>
-		<Constant Name="PI" 			Calc="3,14159265359"	Aliasses="Pi,pi,PI"/>
+		<Constant Name="PI" 			Calc="3,14159265359"	Aliasses="Pi,pi,PI,Kreiszahl"/>
 	</Constants>
 	<Units>
 		<!-- Zeit -->
 		<Unit Name="Sekunden" 			Calc=""					Aliasses="s,sec,Sec,Sekunde,sekunde,Sekunden,sekunden"/>
-		<Unit Name="Minuten" 			Calc="[Sekunden]*60" 	Aliasses="min,minute,Minute,minuten,Minuten"/>
+		<Unit Name="Minuten" 			Calc="[Sekunden]*60" 	Aliasses="Min,min,minute,Minute,minuten,Minuten"/>
 		<Unit Name="Stunden" 			Calc="[Minuten]*60" 	Aliasses="h,hour,Hour,Stunde,stunde,Stunden,stunden"/>
 		<Unit Name="Tage" 				Calc="[Stunden]*24" 	Aliasses="d,day,Day,tag,Tag,Tage,tage,tagen,Tagen"/>
 		<Unit Name="Wochen" 			Calc="[Tage]*7" 		Aliasses="week,Week,Woche,woche,Wochen,wochen"/>
@@ -21,10 +28,9 @@
 		<!-- Längen -->
 		<Unit Name="Meter" 				Calc="" 				Aliasses="m,M,meter,Meter"/>
 		<Unit Name="Fuß" 				Calc="[Meter]*3,2808399"   Aliasses="foot,Fuß,fuß"/>
-		<Unit Name="Zoll" 				Calc="[Meter]*0,393700787" Aliasses="In,inch,Inch,zoll,Zoll"/>
+		<Unit Name="Zoll" 				Calc="[Meter]*0.393700787" Aliasses="In,inch,Inch,zoll,Zoll"/>
 		<Unit Name="Zentimeter" 		Calc="[Meter]/100" 		Aliasses="cm,Centimeter,centimeter,Zentimeter,zentimeter"/>
 		<Unit Name="Millimeter" 		Calc="[Zentimeter]/10" 	Aliasses="mm,millimeter,Milimeter,Millimeter"/>
-		<Unit Name="Nanometer" 			Calc="[Millimeter]/1000000" 	Aliasses="nm,NM,Nm,nanometer,Nanometer,NanoMeter"/>
 		<Unit Name="Kilometer" 			Calc="[Meter]*1000"		Aliasses="km,kilometer,Kilometer"/>
 		
 		<!-- Speichergroessen -->
@@ -37,10 +43,10 @@
 		<Unit Name="ExaByte" 			Calc="[TerraByte]*1024" Aliasses="eb,EB,Eb,Exabyte"/>
 		
 		<!-- Leistung -->
-		<Unit Name="Watt" 				Calc="" 				Aliasses="W,w,watt,Watt"/>
-		<Unit Name="KiloWatt" 			Calc="[Watt]*1000" 		Aliasses="KW,kw,Kw,Kilowatt,KiloWatt"/>
-		<Unit Name="MegaWatt" 			Calc="[KiloWatt]*1000"	Aliasses="MW,mw,Mw,Megawatt,MegaWatt"/>
-		<Unit Name="PS" 				Calc="[KiloWatt]*0,73549875" Aliasses="ps,Ps,PS"/>
+		<Unit Name="Watt" 				Calc="" 				Aliasses="W,w,watt"/>
+		<Unit Name="KiloWatt" 			Calc="[Watt]*1000" 		Aliasses="KW,kw,Kw,Kilowatt"/>
+		<Unit Name="MegaWatt" 			Calc="[KiloWatt]*1000"	Aliasses="MW,mw,Mw,Megawatt"/>
+		<Unit Name="PS" 				Calc="[KiloWatt]*0.73549875" Aliasses="ps,Ps"/>
 
 		<!-- Massen -->
 		<Unit Name="Gramm" 				Calc="" 				Aliasses="g,G,gm,gram,Gram,gramm,Gramm"/>
