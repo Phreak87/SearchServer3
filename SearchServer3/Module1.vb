@@ -45,7 +45,7 @@ Module Module1
         Dim StartPostClean As Boolean = True        ' Beim start (neue) Postfixe bereinigen
         Dim CollectGarbage As Boolean = True        ' Timer für GarbageCollection 
         Dim DatabaseWiredT As Boolean = True        ' Zum testen bis UMongo WiredTiger unterstützt
-        Dim CleanDBStart As Boolean = True
+        Dim CleanDBStart As Boolean = False
 
         Console.WriteLine("Starte SearchServer V3")
         MimeTypes = New Mimes
@@ -73,7 +73,7 @@ Module Module1
         Console.WriteLine(".SYS: Lade Config für RSS, DIR, FIL, WEB")
         Config.Load("Config\" & ConfFile)
         Dim DIRDICT As List(Of Dictionary(Of String, String)) = Helper.XMLToListofStringDictionary(Config, "WebSearch/Fetcher[@Group='DIR']/Searcher", {"Name", "Category", "URL", "Watch", "Refresh"})
-        Dim FILDICT As List(Of Dictionary(Of String, String)) = Helper.XMLToListofStringDictionary(Config, "WebSearch/Fetcher[@Group='FIL']/Searcher", {"Name", "Category", "URL", "Refresh", "Dyn"})
+        Dim FILDICT As List(Of Dictionary(Of String, String)) = Helper.XMLToListofStringDictionary(Config, "WebSearch/Fetcher[@Group='FIL']/Searcher", {"Name", "Category", "URL", "Refresh", "Dyn", "Head"})
         Dim WEBDICT As List(Of Dictionary(Of String, String)) = Helper.XMLToListofStringDictionary(Config, "WebSearch/Fetcher[@Group='WEB']/Searcher", {"Name", "Category", "URL", "Type", "Path", "RelTitle", "RelLink", "RelCont"})
         Dim RSSDICT As List(Of Dictionary(Of String, String)) = Helper.XMLToListofStringDictionary(Config, "WebSearch/Fetcher[@Group='RSS']/Searcher", {"Name", "Category", "URL", "Refresh"})
         WEBINCL.Append(Helper.XMLToJSONArray(Config.SelectSingleNode("WebSearch/Fetcher[@Type='Page']")).Replace("@", "").Replace("#cdata-section", "cdata"))
@@ -152,7 +152,7 @@ Module Module1
 
             For Each Eintrag In FILDICT.FindAll(Function(s) s("Dyn") = "False")
                 Dim MsgDoc As New BsonDocument : MsgDoc.Add("Type", "FIL") : MsgDoc.Add("Name", Eintrag("Name")) : MsgDoc.Add("Status", "Unknown") : IDX.Insert(MsgDoc)
-                Dim FIL_New As New CLS.FIL(Eintrag("Name"), Eintrag("Category"), Eintrag("URL"), FIL)
+                Dim FIL_New As New CLS.FIL(Eintrag("Name"), Eintrag("Category"), Eintrag("URL"), FIL, Eintrag("Head"))
                 FILLIST.Add(FIL_New)
             Next
 
@@ -175,7 +175,7 @@ Module Module1
             Next
             Dim DIRFIL As MongoCursor(Of BsonDocument) = DIR.FindAs(Of BsonDocument)(Query.Or(DynFil))
             For Each eintrag As BsonDocument In DIRFIL
-                Dim FIL_New As New CLS.FIL(eintrag("Cont_Name"), "Tracklists", eintrag("Cont_Link"), FIL)
+                Dim FIL_New As New CLS.FIL(eintrag("Cont_Name"), "Tracklists", eintrag("Cont_Link"), FIL, False)
                 FILLIST.Add(FIL_New)
             Next
 
