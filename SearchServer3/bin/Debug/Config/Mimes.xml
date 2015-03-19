@@ -107,6 +107,7 @@
     <MimeType Postfix=".ls" 	Mimetype="text/javascript" 				Description="None" 						Player="Text" 		CacheSec="30" CreateThumb="False" />
     <MimeType Postfix=".mocha" 	Mimetype="text/javascript" 				Description="None" 						Player="Text" 		CacheSec="30" CreateThumb="False" />
     <MimeType Postfix=".txt" 	Mimetype="text/html; charset=UTF-8" 	Description="Text File" 				Player="Text" 		CacheSec="0" CreateThumb="False" />
+    <MimeType Postfix=".csv" 	Mimetype="text/html; charset=UTF-8" 	Description="Text File Comma-seperated" Player="Text" 		CacheSec="0" CreateThumb="False" />
     <MimeType Postfix=".cfg" 	Mimetype="text/html; charset=UTF-8" 	Description="Configuration File" 		Player="Text" 		CacheSec="0" CreateThumb="False" />
     <MimeType Postfix=".log" 	Mimetype="text/html; charset=UTF-8" 	Description="Application Log" 			Player="Text" 		CacheSec="0" CreateThumb="False" />
     <MimeType Postfix=".ai" 	Mimetype="application/postscript" 		Description="None" Player="Text" 		CacheSec="30" CreateThumb="False" />
