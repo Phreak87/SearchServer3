@@ -54,9 +54,10 @@
 </script>
 
 <Script type="text/javascript">
-	var sid=''; // Die Such-ID
-	var sel=''; // Der Suchtyp
-	var pag=''; // Die SeitenNr
+
+	var sid='0'; 	// Die Such-ID
+	var sel='DIR'; 	// Der Suchtyp
+	var pag='0'; 	// Die SeitenNr
 	
 	function CheckData(daten){
 		// ##############################
@@ -87,8 +88,17 @@
 	}
 		
 	function Suchen(daten) {
-		$('#Ergebnisse').html("Starte Suchanfrage ... <BR><img src='images/292.gif' width='40%'>");
-		$('#debug').html('Search: ' + daten);
+	$('#ErgebnisseDIR').html ('');
+	$('#ErgebnisseRSS').html ('');
+	$('#ErgebnisseFIL').html ('');
+	$('#ErgebnisseWEB').html ('');
+    $('#D3Overview').html('');
+    $('#D3Overview').hide(false);
+	$('#Ergebnisse').hide(false);
+	$('#tabs').show(false);
+	$('#Ergebnisse'+sel).html(sel + ": Starte Suchanfrage ... <BR><img src='images/292.gif' width='40%'>");
+	$('#debug').html('Search: ' + daten);
+		// $('#tabs').tabs('option','active',0);
 		$.ajax({
 			  type: "POST",
 			  url: "api/query/search",
@@ -97,14 +107,11 @@
 		  .done(function( msg ) {
 		    $('#debug').html(msg);
 			sid = jQuery.parseJSON(msg).sid;
-			Resultate('DIR',sid,0);
-			sel='DIR';
-			pag='0';
+			Resultate(sel,sid,0);
 		  });
 		LoadDebug($('#debug'),$('#Meldungen'));
 	}
 
-	
 	function Speichern(daten) {
 		$('#debug').html('Save: ' + daten);
 		$.ajax({
@@ -118,8 +125,13 @@
 	}
 	
 	function Resultate(opt,sid,pid) {
+		$('#ErgebnisseDIR').html ('');
+		$('#ErgebnisseRSS').html ('');
+		$('#ErgebnisseFIL').html ('');
+		$('#ErgebnisseWEB').html ('');
 		sel=opt; pag=pid; 
-		$('#Ergebnisse').html('Lade Ergebnisse fuer Suchanfrage ' + opt + " / " + sid + "/ " + pid + "<Br>"
+		if (sid=='0'){Resultate(opt,sid,pid);return '';}
+		$('#Ergebnisse'+sel).html('Lade Ergebnisse fuer Suchanfrage ' + opt + " / " + sid + "/ " + pid + "<Br>"
 			+ "Die Thumbnails werden ggf. erst nach dem Aktualisieren der Seite angezeigt!"
 			+ "<BR><img src='images/292.gif' width='40%'>");
 		$('#debug').html('Query: ' + opt + ' ' + sid);
@@ -329,11 +341,7 @@
 		<a href="#" 	id=				'Search' 
 						style=			'height:30px;Width:6%' 	
 						class=			'hvr-underline-from-left'
-						onclick=		"Suchen($('#SText').val());
-										 $('#D3Overview').html('');
-										 $('#D3Overview').hide(true);
-										 $('#tabs').show(true);
-										 $('#tabs').tabs('option','active',0);"
+						onclick=		"Suchen($('#SText').val());"
 										 >Suchen</a>
 																							 
 		<a href="#" 	id=				'Save'  	
@@ -386,18 +394,21 @@
 	
 	<!--  Der Header der Seite mit Bookmarks ,Erstellen und der Suche -->
 	<div class="pageContent">
-		<div id="D3Overview"></div>
-	    <div id="tabs" hidden=true>
+		<div id="D3Overview"				></div>
+	    <div id="Ergebnisse" 	hidden=true	></div>
+	    <div id="tabs" 			hidden=true	>
 	        <ul>
-	            <li><a id="DIR" class='hvr-glow' href="#Ergebnisse" onclick="Resultate('DIR',sid,0);">Verzeichnisse</a></li>
-	            <li><a id="RSS" class='hvr-glow' href="#Ergebnisse" onclick="Resultate('RSS',sid,0);">Newsfeeds</a></li>
-	            <li><a id="FIL" class='hvr-glow' href="#Ergebnisse" onclick="Resultate('FIL',sid,0);">Textdateien</a></li>
-	            <li><a id="WEB" class='hvr-glow' href="#Ergebnisse" onclick="Resultate('WEB',sid,0);">Internetseiten</a></li>
+	            <li><a id="DIR" class='hvr-glow' href="#ErgebnisseDIR" onclick="Resultate('DIR',sid,0);">Verzeichnisse</a></li>
+	            <li><a id="RSS" class='hvr-glow' href="#ErgebnisseRSS" onclick="Resultate('RSS',sid,0);">Newsfeeds</a></li>
+	            <li><a id="FIL" class='hvr-glow' href="#ErgebnisseFIL" onclick="Resultate('FIL',sid,0);">Textdateien</a></li>
+	            <li><a id="WEB" class='hvr-glow' href="#ErgebnisseWEB" onclick="Resultate('WEB',sid,0);">Internetseiten</a></li>
 	        </ul>
-	        <div id="Ergebnisse"><img src='images/ajax-loader.gif'> Bitte warten ...</div>
+	        <div hidden=true id="ErgebnisseDIR"><img src='images/ajax-loader.gif'> Bitte warten ...</div>
+	        <div hidden=true id="ErgebnisseRSS"><img src='images/ajax-loader.gif'> Bitte warten ...</div>
+	        <div hidden=true id="ErgebnisseFIL"><img src='images/ajax-loader.gif'> Bitte warten ...</div>
+	        <div hidden=true id="ErgebnisseWEB"><img src='images/ajax-loader.gif'> Bitte warten ...</div>
 	    </div>
 	</div>
-
 
  </div>
 

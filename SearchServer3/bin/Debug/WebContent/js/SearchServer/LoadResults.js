@@ -58,17 +58,17 @@ function loadPageData (daten) {
 	############################### */
 	output+="<Table width='100%' style='font-size: 140%;Margin-top:5px;Margin-Bottom:5px;' class='hvr-glow'><TR><TD>"
 	if (parseInt(data.Pages) > 0){
-		output+="<a href='#' id='wb' class='hvr-glow' onClick='Resultate(sel,sid,parseInt(pag) - 1)'>Zurueck</a>";
+		output+="<a href='#' id='wb" + sel + "' class='hvr-glow' onClick='Resultate(sel,sid,parseInt(pag) - 1)'>Zurueck</a>";
 		for (i = 0;i<=parseInt(data.Pages);i++){
 			if (i <= 21){ // Nur 22 Seiten in der Anzeige
 				if (i == data.Page){
-					output+="<a href='#' id='w" + i + "' class='hvr-glow' onClick='Resultate(sel,sid," + i + ")'><B>" + i + "</B></a>";
+					output+="<a href='#' id='w" + sel + i + "' class='hvr-glow' onClick='Resultate(sel,sid," + i + ")'><B>" + i + "</B></a>";
 				} else {
-					output+="<a href='#' id='w" + i + "' class='hvr-glow' onClick='Resultate(sel,sid," + i + ")'>" + i + "</a>";
+					output+="<a href='#' id='w" + sel + i + "' class='hvr-glow' onClick='Resultate(sel,sid," + i + ")'>" + i + "</a>";
 				}
 			}
 		}
-		output+="<a href='#' id='wf' class='hvr-glow' onClick='Resultate(sel,sid,parseInt(pag) + 1)'>Weiter</a>";
+		output+="<a href='#' id='wf" + sel + "' class='hvr-glow' onClick='Resultate(sel,sid,parseInt(pag) + 1)'>Weiter</a>";
 		output+="<BR><BR><B>" + 'Seite ' + data.Page + ' von ' + data.Pages + "<Br>Eintraege von " + data.EntryFrom + " bis " + data.EntryTo + " von " + data.EntryCount + " Ergebnissen zu '" + data.SQuery + "' aus " + data.EntryDB + ' Eintraegen in ' + data.DBTime + " Sekunden <BR><B>"
 	} else {
 		output+="<BR><B>" + data.EntryCount + " Ergebnisse aus " + data.EntryDB + " Eintraegen zu '" + data.SQuery + "' in " + data.DBTime + " Sekunden <BR><B>"
@@ -226,7 +226,7 @@ function loadPageData (daten) {
 			+ "</TR></Table>";	
 	};		
 
-	$("#Ergebnisse").html(output);	
+	$("#Ergebnisse"+sel).html(output);	
 	
 	var TRS = document.getElementsByTagName('table');
 	for(var i = 0; i < TRS.length; i++) {            
@@ -235,11 +235,11 @@ function loadPageData (daten) {
 		anchor.onmouseout = function(){this.style.background = '#f4f4f4';};
 	};
 	
-	$("#wb").button();
+	$("#wb" + sel).button();
 	for (i = 0;i<=parseInt(data.Pages);i++){
-	$("#w" + i).button();
+	$("#w" + sel + i).button();
 	}
-	$("#wf").button();
+	$("#wf" + sel).button();
 	
 	Preload_Scripts();
 	// Preload_Content();

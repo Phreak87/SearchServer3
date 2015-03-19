@@ -16,9 +16,9 @@
 			option = el.getAttribute("opt");
 		};
 		var search = $('#SText').val();
-		$('#D3Overview').html('');
-		$('#D3Overview').hide(true);
-		$('#tabs').show(true);
+		$('#D3Overview').html('');$('#D3Overview').hide(true);
+		$('#tabs').hide(false);
+		$('#Ergebnisse').show(true);
         $('#Ergebnisse').html("<iframe FrameBorder='0' width='100%' height='800' src='" + source.replace('{query}',search + ' ' + option) + "'></iframe>");
     }
 	
