@@ -6,7 +6,7 @@
 	</Fetcher>
 
 	<Fetcher Group="FIL">
-		<Searcher Name="SampleText" 		URL="C:\Users\Phreak\Desktop\SearchServer3\3rd_Party\Samples\Txt\Test.txt" 	Order="1" 	Refresh="10"	Category="Sample"/>
+		<Searcher Name="SampleText" 		URL="C:\Users\Phreak\Desktop\SearchServer3\3rd_Party\Samples\Txt\Test.txt" Dyn="False" Head="False" 	Order="1" 	Refresh="10"	Category="Sample"/>
 	</Fetcher>
 	
   <Fetcher Group="RSS">
