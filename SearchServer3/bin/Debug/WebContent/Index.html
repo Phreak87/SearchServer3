@@ -18,7 +18,6 @@
 				"js/JQuery/jquery-ui.css",
 				"js/JQuery/superfish.css",
 				"css/hover-min.css",
-				
 				"js/SearchServer/D3Overview.js",
 				"js/SearchServer/LoadDebug.js",
 				"js/SearchServer/LoadMerker.js",
@@ -27,11 +26,9 @@
 				"js/SearchServer/LoadWebpages.js",
 				"js/SearchServer/LoadCreators.js",
 				"js/SearchServer/LoadIndex.js",
-				
 				"js/SearchServer/LoadSearch.js",
 				"js/SearchServer/PreLoader.js",
 				"js/SearchServer/PostLoader.js",
-				
 				function() {
 					$("#Search").button();
 					$("#Save").button();
@@ -311,45 +308,31 @@
 	<div class="pageHeader">
 		<div id="tabs3">
 	        <ul>	 
-	            <li><a 	href="#Externe" 
-						class='hvr-glow'
-						onclick="$('#Externe').show(true);
-								 LoadWebPages($('#debug'),$('#Externe'));
-								 ">Externe Suchmaschinen</a></li>
-								 
-	            <li><a 	href="#Bookmarks" 
-						class='hvr-glow'
-						onclick="$('#Bookmarks').show(true);
-								 ">Bookmarks</a></li>
-						
-	            <li><a 	href="#Ersteller" 
-						class='hvr-glow'
-						onclick="$('#Ersteller').show(true);
-								 ">Erstellen</a></li>
-							
-								 
+	            <li><a 	href="#Externe" 	class="hvr-glow" onclick="LoadWebPages($('#debug'),$('#Externe'));">Externe Suchmaschinen</a></li>	 
+	            <li><a 	href="#Bookmarks" 	class="hvr-glow">Bookmarks</a></li>	
+	            <li><a 	href="#Ersteller" 	class="hvr-glow">Erstellen</a></li>			 
 	        </ul>
-			<div id="Bookmarks" 	style='Height:20px;' hidden=true>		<img src='images/ajax-loader.gif'> Bitte warten ...</div>
-			<div id="Ersteller" 	style='Height:20px;' hidden=true>		<img src='images/ajax-loader.gif'> Bitte warten ...</div>
-			<div id="Externe" 		style='Height:20px;'>					<img src='images/ajax-loader.gif'> Bitte warten ...</div>
+			<div id="Bookmarks" 	style='Height:20px;' hidden=true>		<img src='images/76.gif'></div>
+			<div id="Ersteller" 	style='Height:20px;' hidden=true>		<img src='images/76.gif'></div>
+			<div id="Externe" 		style='Height:20px;'>					<img src='images/76.gif'></div>
 		</div>
 		
-		<input type="text" 		id='SText' 	style='height:30px;Width:85%' 	onkeydown=		"if (event.keyCode == 13) 
-																							 $('#Search').click();
-																							 "></input>
-																							 
+		<input 			type=			"text" 		
+						id=				"SText" 	
+						style=			"height:30px;Width:85%"	
+						onkeydown=		"if (event.keyCode == 13){$('#Search').click();}"></input> 
+						
 		<a href="#" 	id=				'Search' 
 						style=			'height:30px;Width:6%' 	
 						class=			'hvr-underline-from-left'
 						onclick=		"Suchen($('#SText').val());"
 										 >Suchen</a>
-																							 
+										 
 		<a href="#" 	id=				'Save'  	
 						style=			'height:30px;Width:7%'   	
 						class=			'hvr-underline-from-left'
 						onclick=		"Speichern($('#SText').val());"
-										>Speichern</a>
-										
+										>Speichern</a>		
 	</div>
 	
 	<!-- Linkes informationsmenue mit Abfragen, gespeichertem und sonstigen Infors -->
@@ -361,32 +344,23 @@
 											onclick=	"$('.pageLeftMenu').hide(true);
 														 $('.pageContent').width('100%');
 														">Verstecken</a>
-			<ul>									
-														
+			<ul>																	
 	            <li><a href="#Suche" 		class=		'hvr-glow'
 											onclick="	LoadSearch($('#debug'),$('#Suche'));
-														LoadDebug($('#debug'),$('#Meldungen'));
-														$('#Merker').hide(false);		
-														$('#Index').hide(false);	
-														$('#Suche').show(false);">Suche</a></li>
+														LoadDebug($('#debug'),$('#Meldungen'));">Suche</a></li>
 														
 	            <li><a href="#Merker" 		class=		'hvr-glow'
 											onclick="	LoadMerker($('#debug'),$('#Merker'));
-														LoadDebug($('#debug'),$('#Meldungen'));
-														$('#Merker').show(false);		
-														$('#Index').hide(false);
-														$('#Suche').hide(false);">Merker</a></li>
+														LoadDebug($('#debug'),$('#Meldungen'));">Merker</a></li>
 														
 	            <li><a href="#Index" 		class=		'hvr-glow'
 											onclick="	LoadIndex($('#debug'),$('#Index'));
-														LoadDebug($('#debug'),$('#Meldungen'));
-														$('#Merker').hide(false);		
-														$('#Index').show(false);	
-														$('#Suche').hide(false);">Index</a></li>
+														LoadDebug($('#debug'),$('#Meldungen'));">Index</a></li>
+														
 	        </ul>
-			<div id="Suche" 						   ><img src='images/ajax-loader.gif'></div>
-			<div id="Merker"				hidden=true><img src='images/ajax-loader.gif'></div>
-			<div id="Index" 				hidden=true><img src='images/ajax-loader.gif'></div>
+			<div id="Suche" 						   ><img src='images/76.gif'></div>
+			<div id="Merker"				hidden=true><img src='images/76.gif'></div>
+			<div id="Index" 				hidden=true><img src='images/76.gif'></div>
 		</div>
 		
 		<div id="Meldungen">							<img src='images/ajax-loader.gif'></div>

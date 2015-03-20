@@ -1,14 +1,12 @@
 function GenIFrame (el){
 	var iFrame = document.createElement("IFrame");
 	iFrame.setAttribute("src", el.getAttribute("Frame") + "#" + el.getAttribute("Content") + "#" + el.getAttribute("Thumb"));
-	iFrame.setAttribute("FrameBorder", "0");
-	iFrame.setAttribute("scrolling", "auto");
-	iFrame.setAttribute("height", "280");
-	iFrame.setAttribute("width", "400");
-	iFrame.setAttribute("allowfullscreen", '');
-	iFrame.setAttribute("webkitallowfullscreen", '');
-	el.parentNode.appendChild(iFrame);
-	el.innerHTML = '';
+	iFrame.setAttribute("FrameBorder", "1");
+	iFrame.setAttribute("Width", "600");
+	$(iFrame).dialog({
+      height: 450,
+	  close: function( event, ui ) {$(this.parentNode).html('');}
+    });
 }
 
 function loadPageData (daten) {

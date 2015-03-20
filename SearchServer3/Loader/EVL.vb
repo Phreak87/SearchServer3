@@ -188,7 +188,7 @@ Public Class EVL
 
             Dim Ausgabe As String = ""
 
-            Console.WriteLine(Query)
+            'Console.WriteLine(Query)
             Dim Res1 As List(Of String) = Simplyfy(SplitQuery(Query))
 
             Try
@@ -198,8 +198,7 @@ Public Class EVL
                 Operatorwert = Res1(4)
                 Quellwert = Res1(0)
                 Zielwert = Res1(2)
-                Console.WriteLine("Normalisiert auf: " & Quellwert & " " & Quelleinheit & " " & Operatorwert & " " & Zielwert & " " & Zieleinheit & " als " & Ausgabeeinheit)
-
+                'Console.WriteLine("Normalisiert auf: " & Quellwert & " " & Quelleinheit & " " & Operatorwert & " " & Zielwert & " " & Zieleinheit & " als " & Ausgabeeinheit)
 
                 Do
                     Dim StepOne As List(Of String) = ReadReplaces(Quelleinheit) : If StepOne.Count = 0 Then Exit Do
@@ -216,7 +215,7 @@ Public Class EVL
                             If ReadReplaces(Quelleinheit).Count = 0 Then
                                 Quellwert = New NCalc.Expression(Quellwert & " " & Quelleinheit).Evaluate
                                 Quelleinheit = "[" & Redu("Name") & "]"
-                                Console.WriteLine("Quelle reduziert auf: " & Quellwert & " " & Quelleinheit)
+                                'Console.WriteLine("Quelle reduziert auf: " & Quellwert & " " & Quelleinheit)
                                 Exit Do
                             End If
                         End If

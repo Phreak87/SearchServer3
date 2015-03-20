@@ -10,6 +10,8 @@ Namespace CLS
     Class DBS
         Public Class DBResult
             Dim _Results As List(Of DOC)
+            Dim _Raw As WBS.Server.MessageDecoder
+            Dim _SQuery As String = ""
             Dim _StartEntry As Integer = 0 '    Starteintrag (1)
             Dim _StopEntry As Integer = 0 '     Endeintrag (30)
             Dim _DBEntrys As Integer = 0 '      Datenbankeinträge Gesamt
@@ -25,7 +27,7 @@ Namespace CLS
             Sub New()
 
             End Sub
-            Sub New(ByVal Results As List(Of DOC), ByVal Eintrag_von As Integer, ByVal Eintrag_bis As Integer, ByVal Einträge_DB As Integer, ByVal Einträge_Suche As Integer, ByVal Seite_Aktuell As Integer, ByVal Seite_Ende As Integer, ByVal Abfragezeitraum As Integer)
+            Sub New(ByVal Results As List(Of DOC), ByVal Eintrag_von As Integer, ByVal Eintrag_bis As Integer, ByVal Einträge_DB As Integer, ByVal Einträge_Suche As Integer, ByVal Seite_Aktuell As Integer, ByVal Seite_Ende As Integer, ByVal Abfragezeitraum As Integer, SQuery As String, Raw As WBS.Server.MessageDecoder)
                 _Results = Results
                 _StartEntry = Eintrag_von
                 _StopEntry = Eintrag_bis
@@ -34,6 +36,8 @@ Namespace CLS
                 _StartPage = Seite_Aktuell
                 _StopPage = Seite_Ende
                 _DBTimeGes = Abfragezeitraum
+                _SQuery = SQuery
+                _Raw = Raw
             End Sub
 
             Function ToJson() As String
@@ -41,9 +45,12 @@ Namespace CLS
                 Dim SB As New StringBuilder
                 Dim SW As New StringWriter(SB)
                 Dim D As New JsonTextWriter(SW)
+                Dim Eval As New EVL
 
                 D.Formatting = Formatting.None
                 D.WriteStartObject()
+                D.WritePropertyName("SQuery") : D.WriteValue(_SQuery)
+                ' D.WritePropertyName("RawReq") : D.WriteValue(Newtonsoft.Json.JsonConvert.SerializeObject(_Raw))
                 D.WritePropertyName("EntryFrom") : D.WriteValue(_StartEntry)
                 D.WritePropertyName("EntryTo") : D.WriteValue(_StopEntry)
                 D.WritePropertyName("EntryCount") : D.WriteValue(_QRYEntrys)
@@ -53,9 +60,13 @@ Namespace CLS
                 D.WritePropertyName("DBTime") : D.WriteValue(_DBTimeGes)
                 D.WritePropertyName("Messages")
                 D.WriteStartArray()
+                If Eval.MathResult(_SQuery) <> "" Then
+                    _Results.Insert(0, New DOC("Math", "Math", "Math", "Math eval: " & _SQuery, "", Eval.MathResult(_SQuery), "", Now))
+                End If
                 For Each Eintrag In _Results
                     i = i + 1
-                    If Eintrag.Class_Type = "DIR" Then Eintrag.Cont_Link = "http://localhost:9090/" & Eintrag.Cont_Link
+                    If Eintrag.Class_Type = "DIR" Then Eintrag.Cont_Link = _Raw.ReqReferrer & Eintrag.Cont_Link
+                    Eintrag.Cont_Thumb = _Raw.ReqReferrer & Eintrag.Cont_Thumb
                     D.WriteRaw(Newtonsoft.Json.JsonConvert.SerializeObject(Eintrag))
                     If i < _Results.Count Then D.WriteRaw(",")
                 Next
@@ -101,15 +112,38 @@ Namespace CLS
                 Dim AppPath As String = Environment.CurrentDirectory & "\Bins\"
                 Dim MongoD As String = "Mongod.exe"
 
+                Console.WriteLine(".DBS: Stopping all running Mongo instances")
                 Dim PRCL As Process() = Process.GetProcessesByName(MongoD.Replace(".exe", ""))
                 If PRCL.Count > 0 Then
                     PRCL(0).Kill()
                     Do Until PRCL(0).HasExited = True : Threading.Thread.Sleep(1000) : Loop
                 End If
+                Threading.Thread.Sleep(500)
             End Sub
             Sub KillmongoDBS()
-                My.Computer.FileSystem.DeleteDirectory(Environment.CurrentDirectory & "\bins\data\db", FileIO.DeleteDirectoryOption.DeleteAllContents)
+                Console.WriteLine(".DBS: Deleting all database contents")
+
+                If My.Computer.FileSystem.DirectoryExists(Environment.CurrentDirectory & "\bins\data\db") Then
+                    Console.WriteLine("Deleting data directory")
+                    My.Computer.FileSystem.DeleteDirectory(Environment.CurrentDirectory & "\bins\data\db", FileIO.DeleteDirectoryOption.DeleteAllContents)
+                    Do Until My.Computer.FileSystem.DirectoryExists(Environment.CurrentDirectory & "\bins\data\db") = False : Loop
+                End If
+
+                If My.Computer.FileSystem.DirectoryExists(Environment.CurrentDirectory & "\Webcontent\Thimage") Then
+                    Console.WriteLine("Deleting image directory")
+                    My.Computer.FileSystem.DeleteDirectory(Environment.CurrentDirectory & "\Webcontent\Thimage", FileIO.DeleteDirectoryOption.DeleteAllContents)
+                    Do Until My.Computer.FileSystem.DirectoryExists(Environment.CurrentDirectory & "\Webcontent\Thimage") = False : Loop
+                End If
+
                 My.Computer.FileSystem.CreateDirectory(Environment.CurrentDirectory & "\bins\data\db")
+                Console.WriteLine("Waiting for data directory")
+                Do Until My.Computer.FileSystem.DirectoryExists(Environment.CurrentDirectory & "\bins\data\db") = True : Loop
+
+                My.Computer.FileSystem.CreateDirectory(Environment.CurrentDirectory & "\Webcontent\Thimage")
+                Console.WriteLine("Waiting for image directory")
+                Do Until My.Computer.FileSystem.DirectoryExists(Environment.CurrentDirectory & "\Webcontent\Thimage") = True : Loop
+
+                Threading.Thread.Sleep(500)
             End Sub
             Sub Rapairmongo()
                 Dim AppPath As String = Environment.CurrentDirectory & "\Bins\"
@@ -143,9 +177,10 @@ Namespace CLS
 
             Shared Function QueryText(ByVal DB As MongoCollection,
                                       ByVal Search As String(),
-                                      Optional ByVal MaxResults As Integer = 30,
-                                      Optional ByVal StartAt As Integer = 0,
-                                      Optional Field As String = "Cont_Link") _
+                                      ByVal MaxResults As Integer,
+                                      ByVal StartAt As Integer,
+                                      Field As String, _
+                                      Raw As WBS.Server.MessageDecoder) _
                                       As DBResult
 
                 If IsNothing(DB) Then Return Nothing
@@ -176,7 +211,7 @@ Namespace CLS
                 _DBTimeGes = _DBTimeGesC + _DBTimeQry + _DBTimeQryC
 
                 Dim R2 As New List(Of DOC) : For Each Eintrag In R : R2.Add(Eintrag) : Next
-                Dim RE As New DBResult(R2, StartAt * CQry, (StartAt * CQry) + CQry, CDbs, CGes, StartAt, Math.Ceiling(CGes / MaxResults) - 1, _DBTimeGes)
+                Dim RE As New DBResult(R2, StartAt * CQry, (StartAt * CQry) + CQry, CDbs, CGes, StartAt, Math.Ceiling(CGes / MaxResults) - 1, _DBTimeGes, Search(0), Raw)
                 Return RE
 
             End Function

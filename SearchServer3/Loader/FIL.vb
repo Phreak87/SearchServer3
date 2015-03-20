@@ -46,7 +46,7 @@ Namespace CLS
 
         Sub IndexFile(ByVal _obj As CLS_Fil)
             Dim Res As New List(Of DOC)
-            Dim Head As String()
+            Dim Head As String() = {}
             Dim i As Integer = 1
 
             Dim Remove As New QueryDocument : Remove.Add("Cont_Link", _obj._Path) : _Collect.Remove(Remove)

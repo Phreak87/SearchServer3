@@ -16,11 +16,18 @@
 			option = el.getAttribute("opt");
 		};
 		var search = $('#SText').val();
-		$('#D3Overview').html('');$('#D3Overview').hide(true);
-		$('#tabs').hide(false);
-		$('#Ergebnisse').show(true);
-        $('#Ergebnisse').html("<iframe FrameBorder='0' width='100%' height='800' src='" + source.replace('{query}',search + ' ' + option) + "'></iframe>");
-    }
+		var ThisDiv = document.createElement("Div");
+		// $('#D3Overview').html('');$('#D3Overview').hide(true);
+		// $('#tabs').hide(false);
+		// $('#Ergebnisse').show(true);
+		// $('#Ergebnisse').append(ThisDiv);
+        $(ThisDiv).html("<iframe FrameBorder='1' width='100%' height='100%' src='" + source.replace('{query}',search + ' ' + option) + "'></iframe>");
+		$(ThisDiv).dialog({
+			height:800,
+			width:600,
+			close: function( event, ui ) {$(this.parentNode).html('');}
+		});
+	}
 	
     function Mainframeel(el){
 		var source = el.getAttribute("src");
