@@ -6,7 +6,18 @@ function GenIFrame (el){
 	$(iFrame).dialog({
       height: 450,
 	  close: function( event, ui ) {$(this.parentNode).html('');}
-    });
+    }).dialogExtend({
+        "closable" : true,
+        "maximizable" : true,
+        "minimizable" : true,
+        "dblclick" : "maximize",
+        "minimizeLocation" : "right",
+        "icons" : {
+          "close" : "ui-icon-circle-close",
+          "maximize" : "ui-icon-circle-plus",
+          "minimize" : "ui-icon-circle-minus",
+          "restore" : "ui-icon-bullet"
+	  }});
 }
 
 function loadPageData (daten) {
@@ -83,7 +94,13 @@ function loadPageData (daten) {
 			+ "SCT='" + data.Messages[i].Cont_Player + "'" 
 			+ "SCP='" + data.Messages[i].Cont_Post + "'" 
 		+ "'>";
-		output+="<TR><TD style='background-color:#eeeeee;'></TD><TD Colspan='2' style='background-color:#eeeeee;'><a target='_blank' href='" + data.Messages[i].Cont_Link + "'>" + data.Messages[i].Cont_Name + "</a></TD></TR><TR>";
+		output+="<TR>"
+		
+		output+="<TD style='background-color:#eeeeee;'></TD>"
+		    + "<TD Colspan='2'>"
+			+ "<a target='_blank' href='" + data.Messages[i].Cont_Link + "'>" + data.Messages[i].Cont_Name + "</a>"
+			+ "</TD>"
+		+ "</TR><TR>";
 		
 		output+=
 			"<TD style='background-color:#aaaaaa;' Width='15%'>"
@@ -212,7 +229,7 @@ function loadPageData (daten) {
 		};
 		
 		output+="</TR>";
-		output+="<TR style='background-color:#eeeeee;Width:'10%'>"
+		output+="<TR>"
 			+ "<TD style='background-color:#eeeeee;'></TD>"
 			+ "<TD Colspan='2'>"
 				+ "<a href='#' onClick='ScrollTop'><Img Src='images/rarrow.png'</img> Nach oben </a>"

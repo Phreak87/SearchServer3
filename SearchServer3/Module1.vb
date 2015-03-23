@@ -266,7 +266,10 @@ Module Module1
 
                 Case "api\query\webpages" : Cont = WEBINCL.ToString
                 Case "api\query\overview" : Cont = My.Computer.FileSystem.ReadAllText(Environment.CurrentDirectory & "\WebContent\" & "JsonTest\Overview.json")
-                Case "api\query\bookmarks" : Cont = My.Computer.FileSystem.ReadAllText(Environment.CurrentDirectory & "\WebContent\" & "JsonTest\Merker.json")
+                Case "api\query\bookmarks"
+                    Dim BMK As New System.Text.StringBuilder : Dim BMKXML As New XmlDocument : BMKXML.Load("Config\Bookmarks.xml")
+                    BMK.Append(Helper.XMLToJSONArray(BMKXML.SelectSingleNode("WebSearch/Fetcher[@Type='Page']")).Replace("@", "").Replace("#cdata-section", "cdata"))
+                    Cont = BMK.ToString
                 Case "api\query\creators" : Cont = My.Computer.FileSystem.ReadAllText(Environment.CurrentDirectory & "\WebContent\" & "JsonTest\Creators.json")
 
                 Case "api\query\msg" : Cont = CLS.DBS.MongoDB.QueryFull(MSG)
@@ -290,6 +293,7 @@ Module Module1
 
                 Case "api\query\search"
                     Dim Doc As New BsonDocument("Query", RawData.ReqContent("Data"))
+                    Doc.Add(New BsonElement("Time", New BsonDateTime(Now)))
                     Dim Res As WriteConcernResult = QRY.Insert(Of BsonDocument)(Doc)
                     Cont = "{""sid""" & ":" & """" & Doc("_id").ToString & """}"
                     NewS = True : SuTE = RawData.ReqContent("Data") : SuID = Doc("_id").ToString

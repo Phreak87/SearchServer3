@@ -6,7 +6,6 @@
 <!-- script 	type="text/javascript" src="https://getfirebug.com/firebug-lite.js"></script-->
 <script 	type="text/javascript" 	src="js/head.js"></script>
 <link 		rel= "stylesheet" 		href="js/SearchServer/Default.css"></script>
-
 <script 	type="text/javascript"><!--  Init Scriptdateien -->
 	head.load(	"js/JQuery/jquery.js",
 				"js/JQuery/jquery-ui.min.js",
@@ -14,6 +13,7 @@
 				"js/JQuery/superfish.js",
 				"js/JQuery/jquery.colorbox.js",
 				"js/JQuery/jquery.colorbox-min.js",
+				"js/JQuery/jquery.dialogextend.min.js",
 				"js/JQuery/colorbox.css",
 				"js/JQuery/jquery-ui.css",
 				"js/JQuery/superfish.css",
@@ -40,13 +40,14 @@
 					$(".group1").colorbox({rel:'group1'});
 					
 					LoadOverview(); 								// D3 Uebersicht
-					LoadSearch($('#debug'),$('#Suche'));
+					LoadSearch($('#debug'),$('#Suche'));			
 					LoadDebug($('#debug'),$('#Meldungen'));			// Aktuelle Debugs
 					LoadMerker($('#debug'),$('#Merker'));			// Gespeicherte Suchanfragen
 					Reload();
 					LoadCreators($('#debug'),$('#Ersteller'));		// Neue Eintraege hinzufügen
-					LoadBookmarks($('#debug'),$('#Bookmarks'));		// Gespeicherte Default-URLs
+					LoadBookmarks($('#debug'),$('#Bookmarks'));				// Gespeicherte Default-URLs
 					LoadWebPages($('#debug'),$('#Externe'));		// Suchmaschinen (Seite)
+					
 				});
 </script>
 
@@ -320,7 +321,7 @@
 		<input 			type=			"text" 		
 						id=				"SText" 	
 						style=			"height:30px;Width:85%"	
-						onkeydown=		"if (event.keyCode == 13){$('#Search').click();}"></input> 
+						onkeydown=		"if (event.keyCode == 13){$('#Search').click();LoadSearch($('#debug'),$('#Suche'));}"></input> 
 						
 		<a href="#" 	id=				'Search' 
 						style=			'height:30px;Width:6%' 	
