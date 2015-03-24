@@ -25,6 +25,60 @@ Public Class Mimes
         End If
     End Sub
 
+    Function Info(ByVal Query As String)
+        Dim Out As String = ""
+        Dim REG As String = "unbekannt"
+        Dim Q1 As String = Query.ToLower
+        Dim Q2 As String = ("." & Query).Replace("..", ".")
+        If Query = "" Then Return ""
+
+        If Not IsNothing(MimeFromRegistry(Q2)) Then REG = "registriert als " & MimeFromRegistry(Q2)
+
+        Dim LSTDESC As List(Of Dictionary(Of String, String)) = MimeTypes.FindAll(Function(s) s("Description").Contains(Q1))
+        Dim LSTPOST As List(Of Dictionary(Of String, String)) = MimeTypes.FindAll(Function(s) s("Postfix").Contains(Q2))
+        Dim LSTMIME As List(Of Dictionary(Of String, String)) = MimeTypes.FindAll(Function(s) s("Mimetype").Contains(Q1))
+
+        If LSTDESC.Count > 0 Then
+            For Each eintrag In LSTDESC
+                Out = Out & "Postfix: " & eintrag("Postfix") & " " & REG & "<BR>"
+                Out = Out & "Beschreibung: " & eintrag("Description") & "<BR>"
+                Out = Out & "Mimetype: " & eintrag("Mimetype") & "<BR>"
+                Out = Out & "Player: " & eintrag("Player") & "<BR>"
+                Out = Out & "Thumbnails: " & eintrag("CreateThumb") & "<BR>"
+                Out = Out & "Caching: " & eintrag("CacheSec") & "<BR><HR>"
+            Next
+        ElseIf LSTPOST.Count > 0 Then
+            For Each eintrag In LSTPOST
+                Out = Out & "Postfix: " & eintrag("Postfix") & " " & REG & "<BR>"
+                Out = Out & "Beschreibung: " & eintrag("Description") & "<BR>"
+                Out = Out & "Mimetype: " & eintrag("Mimetype") & "<BR>"
+                Out = Out & "Player: " & eintrag("Player") & "<BR>"
+                Out = Out & "Thumbnails: " & eintrag("CreateThumb") & "<BR>"
+                Out = Out & "Caching: " & eintrag("CacheSec") & "<BR><HR>"
+            Next
+        ElseIf LSTMIME.Count > 0 Then
+            For Each eintrag In LSTMIME
+                Out = Out & "Postfix: " & eintrag("Postfix") & " " & REG & "<BR>"
+                Out = Out & "Beschreibung: " & eintrag("Description") & "<BR>"
+                Out = Out & "Mimetype: " & eintrag("Mimetype") & "<BR>"
+                Out = Out & "Player: " & eintrag("Player") & "<BR>"
+                Out = Out & "Thumbnails: " & eintrag("CreateThumb") & "<BR>"
+                Out = Out & "Caching: " & eintrag("CacheSec") & "<BR><HR>"
+            Next
+        ElseIf Not IsNothing(MimeFromRegistry(Q2)) Then
+            Out = Out & MimeFromRegistry(Q2)
+        End If
+        If Out = "" Then Return Out
+
+        If RemoTypes.FindAll(Function(s) s("Value") = Q2).Count > 0 Then
+            Out = Out & "Dieses Postfix ist Blacklisted"
+        Else
+            Out = Out & "Dieses Postfix ist zugelassen"
+        End If
+
+        Return Out
+    End Function
+
     Function GetAllFor(ByVal Postfix As String) As Dictionary(Of String, String)
         Return FindOne(Postfix)
     End Function

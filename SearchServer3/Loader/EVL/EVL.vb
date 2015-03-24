@@ -26,6 +26,7 @@ Public Class EVL
         Dim RES As String = ""
 
         Try
+            If RES = "" Then RES = RES & MimeTypes.Info(Query)
             If RES = "" Then RES = RES & New DTE(Query)._Result
             If RES = "" Then RES = RES & New COL(Query)._Result
             If RES = "" Then RES = RES & New UCL().ParseQuery(Query)
