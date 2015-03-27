@@ -34,6 +34,7 @@ function ShowTextLocal (el){
 	el.innerHTML = "";
 	el.removeAttribute ('onmouseover');
 	var doc = document.createElement('code');
+	doc.setAttribute("Width", "500px;");
 	el.appendChild(doc);
 		$.get(el.getAttribute('src'), function( data ) {
 				var cm = CodeMirror(doc, {
@@ -51,6 +52,6 @@ function ShowTextLocal (el){
 			cm.setOption("mode", Filetypes(el.getAttribute('src')));
 			CodeMirror.autoLoadMode(cm, Filetypes(el.getAttribute('src')));
 
-			cm.setSize (el.clientWidth - 30,250);
+			cm.setSize (700,250);
 		});
 };

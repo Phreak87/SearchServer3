@@ -65,7 +65,7 @@ Namespace CLS
         End Sub
 
         Sub Init_Empty()
-            ' DB_PROD_CleanGarbage()
+            DB_PROD_CleanGarbage()
             Dim Check As New QueryDocument : Check.Add("Class_Name", _ClassName)
             Dim ICheck As Integer = _Collection.Count(Check)
             If ICheck = 0 Then
@@ -179,7 +179,8 @@ Namespace CLS
             Dim Res As New List(Of DOC)
 
             For Each Datei In Directory.GetFiles(_obj._Path)
-                Dim Post As String = ".None" : If Datei.Contains(".") Then Post = LCase(Mid(Datei, InStrRev(Datei, "."))):If Post.Length > 5 Then Post = ".None"
+                Dim Post As String = ".None" : If Datei.Contains(".") Then Post = LCase(Mid(Datei, InStrRev(Datei, ".")))
+                ' If Post.Length > 6 Then Post = ".None"
                 ' Dim Time As String = My.Computer.FileSystem.GetFileInfo(Datei).LastAccessTime
                 Dim DOC As New DOC(_ClassName, "DIR", _ClassGroup, Mid(Datei, InStrRev(Datei, "\") + 1), Datei, "", Post, Now)
                 Res.Add(DOC)
@@ -198,9 +199,11 @@ Namespace CLS
         Private Sub FCreated(ByVal sender As Object, ByVal e As FileSystemEventArgs)
             Console.WriteLine("#DIR: {0} - Live-Update Event {1}", _ClassName, e.Name)
             Dim Datei As String = e.Name
+
             Dim Post As String = ".None" : If Datei.Contains(".") Then Post = LCase(Mid(Datei, InStrRev(Datei, ".")))
             Dim DOC As New DOC(_ClassName, "DIR", _ClassGroup, Datei, e.FullPath, "", Post, Now)
             _Collection.Insert(DOC)
+
         End Sub
 #End Region
 

@@ -3,193 +3,212 @@
   <MimeTypes>
     <!-- 
 	#########################################################
-	Sonstige Formate (Kein Player) , jedoch Thumbnails
+	Office Dokumente (Thumbnails)
 	#########################################################
 	-->
-    <MimeType Postfix=".xls" 	Mimetype="application/xls"    			Description="Microsoft Excel" 		Player="Thumbed" 	CacheSec="3600" CreateThumb="True" />
-    <MimeType Postfix=".doc" 	Mimetype="application/msword" 			Description="Microsoft Word" 		Player="Thumbed" 	CacheSec="3600" CreateThumb="True" />
-    <MimeType Postfix=".ppt" 	Mimetype="application/powerpoint" 		Description="Microsoft Powerpoint" 	Player="Thumbed" 	CacheSec="3600" CreateThumb="True" />
-    <MimeType Postfix=".xlsx" 	Mimetype="application/xls"    			Description="Microsoft Excel" 		Player="Thumbed" 	CacheSec="3600" CreateThumb="True" />
-    <MimeType Postfix=".docx" 	Mimetype="application/msword" 			Description="Microsoft Word" 		Player="Thumbed" 	CacheSec="3600" CreateThumb="True" />
-    <MimeType Postfix=".pptx" 	Mimetype="application/powerpoint" 		Description="Microsoft Powerpoint" 	Player="Thumbed" 	CacheSec="3600" CreateThumb="True" />
-    <MimeType Postfix=".xlsm" 	Mimetype="application/xls"    			Description="Microsoft Excel" 		Player="Thumbed" 	CacheSec="3600" CreateThumb="True" />
-    <MimeType Postfix=".docm" 	Mimetype="application/msword" 			Description="Microsoft Word" 		Player="Thumbed" 	CacheSec="3600" CreateThumb="True" />
-    <MimeType Postfix=".pptm" 	Mimetype="application/powerpoint" 		Description="Microsoft Powerpoint" 	Player="Thumbed" 	CacheSec="3600" CreateThumb="True" />
+    <MimeType Postfix=".doc" 	Mimetype="application/msword" 			Player="Thumbed" 	CacheSec="3600" CreateThumb="True" Description="Microsoft Word"/>
+    <MimeType Postfix=".docx" 	Mimetype="application/msword" 			Player="Thumbed" 	CacheSec="3600" CreateThumb="True" Description="Microsoft Word"/>
+    <MimeType Postfix=".dotx" 	Mimetype="application/msword" 			Player="Thumbed" 	CacheSec="3600" CreateThumb="True" Description="Microsoft Word Vorlage"/>
+    <MimeType Postfix=".docm" 	Mimetype="application/msword" 			Player="Thumbed" 	CacheSec="3600" CreateThumb="True" Description="Microsoft Word mit Macros" />
+    <MimeType Postfix=".ppt" 	Mimetype="application/powerpoint" 		Player="Thumbed" 	CacheSec="3600" CreateThumb="True" Description="Microsoft Powerpoint"/>
+    <MimeType Postfix=".pptx" 	Mimetype="application/powerpoint" 		Player="Thumbed" 	CacheSec="3600" CreateThumb="True" Description="Microsoft Powerpoint"/>
+    <MimeType Postfix=".pptm" 	Mimetype="application/powerpoint" 		Player="Thumbed" 	CacheSec="3600" CreateThumb="True" Description="Microsoft Powerpoint mit Macros"/>
+    <MimeType Postfix=".xls" 	Mimetype="application/xls"    			Player="Thumbed" 	CacheSec="3600" CreateThumb="True" Description="Microsoft Excel"/>
+    <MimeType Postfix=".xlsx" 	Mimetype="application/xls"    			Player="Thumbed" 	CacheSec="3600" CreateThumb="True" Description="Microsoft Excel"/>
+    <MimeType Postfix=".xlsm" 	Mimetype="application/xls"    			Player="Thumbed" 	CacheSec="3600" CreateThumb="True" Description="Microsoft Excel mit Macros"/>
+    <MimeType Postfix=".msg" 	Mimetype="application/octet-stream" 	Player="Thumbed" 	CacheSec="3600" CreateThumb="True" Description="Microsoft Outlook Nachricht"/>
+    <MimeType Postfix=".rtf" 	Mimetype="application/octet-stream" 	Player="Thumbed" 	CacheSec="3600" CreateThumb="True" Description="Rich Text Format"/>
+    <MimeType Postfix=".odt" 	Mimetype="application/octet-stream" 	Player="Thumbed" 	CacheSec="3600" CreateThumb="True" Description="Open Document Text"/>
     <!-- 
 	#########################################################
 	Sonstige Formate (Kein Player) , keine Thumbnails
 	#########################################################
 	-->
-    <MimeType Postfix=".exe" 	Mimetype="application/octet-stream" 	Description="Windows executable" 	Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".cpl" 	Mimetype="application/octet-stream" 	Description="Windows Controlpanel"	Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".dll" 	Mimetype="application/octet-stream" 	Description="Dynamic Link Library" 	Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".bin" 	Mimetype="application/octet-stream" 	Description="None" 					Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".uu" 	Mimetype="application/octet-stream" 	Description="None" 					Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".pst" 	Mimetype="application/octet-stream" 	Description="Outlook Archive"		Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".accdb" 	Mimetype="application/octet-stream" 	Description="Outlook Archive"		Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".cab" 	Mimetype="application/octet-stream" 	Description="Cabinet File"			Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".jar" 	Mimetype="application/octet-stream" 	Description="Java Application"		Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".hex" 	Mimetype="application/octet-stream" 	Description="Hex-File"				Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".lib" 	Mimetype="application/octet-stream" 	Description="Application Library"	Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".msi" 	Mimetype="application/octet-stream" 	Description="Microsoft Installer"	Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".sqlite" Mimetype="application/octet-stream" 	Description="SQLite DB"				Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".db" 	Mimetype="application/octet-stream" 	Description="SQLite DB"				Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".jasper"	Mimetype="application/octet-stream" 	Description="Jasper Document"		Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
-    <!-- 
-	#########################################################
-	CD-Images
-	#########################################################
-	-->
-    <MimeType Postfix=".img" 	Mimetype="application/octet-stream" 	Description="Datentraegerbbild" 	Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".nrg" 	Mimetype="application/octet-stream" 	Description="Nero CD Image"			Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".iso" 	Mimetype="application/octet-stream" 	Description="ISO CD Image"			Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".bin" 	Mimetype="application/octet-stream" 	Description="BIN Datentraeger"		Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
+	<!-- Datenbanken -->
+    <MimeType Postfix=".sqlite" Mimetype="application/octet-stream" 	Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" Description="SQLite Datenbank"/>
+    <MimeType Postfix=".db" 	Mimetype="application/octet-stream" 	Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" Description="SQLite Datenbank"/>
+    <MimeType Postfix=".accdb" 	Mimetype="application/octet-stream" 	Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" Description="Access Datenbank"/>
+    <MimeType Postfix=".pst" 	Mimetype="application/octet-stream" 	Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" Description="Outlook Archive"/>
+	<!-- Ausführbar -->
+    <MimeType Postfix=".exe" 	Mimetype="application/octet-stream" 	Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" Description="Windows executable"/>
+    <MimeType Postfix=".cpl" 	Mimetype="application/octet-stream" 	Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" Description="Windows Controlpanel"/>
+    <MimeType Postfix=".msi" 	Mimetype="application/octet-stream" 	Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" Description="Microsoft Installer"/>
+    <MimeType Postfix=".rpm" 	Mimetype="application/octet-stream" 	Player="NoPlayer"	CacheSec="3600" CreateThumb="False" Description="Linux/Unix Package" />
+    <MimeType Postfix=".deb" 	Mimetype="application/octet-stream" 	Player="NoPlayer"	CacheSec="3600" CreateThumb="False" Description="Debian Linux Package" />
+    <MimeType Postfix=".scp" 	Mimetype="application/octet-stream" 	Player="NoPlayer"	CacheSec="3600" CreateThumb="False" Description="Scrap Datei" />
+	<!-- Windows Hilfe -->
+    <MimeType Postfix=".chm"	Mimetype="application/octet-stream" 	Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" Description="Hilfedatei chm (zip, html)"/>
+    <MimeType Postfix=".hlp"	Mimetype="application/octet-stream" 	Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" Description="Hilfedatei hlp"/>
+	<!-- Librarys -->
+    <MimeType Postfix=".dll" 	Mimetype="application/octet-stream" 	Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" Description="Dynamic Link Library"/>
+    <MimeType Postfix=".uu" 	Mimetype="application/octet-stream" 	Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" Description="None"/>
+    <MimeType Postfix=".cab" 	Mimetype="application/octet-stream" 	Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" Description="Windows Cabinet File"/>
+    <MimeType Postfix=".sys" 	Mimetype="application/octet-stream" 	Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" Description="Windows System File"/>
+    <MimeType Postfix=".hex" 	Mimetype="application/octet-stream" 	Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" Description="Hex-File"/>
+    <MimeType Postfix=".lib" 	Mimetype="application/octet-stream" 	Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" Description="Application Library"/>
+	<!-- CD-Image Formate -->
+    <MimeType Postfix=".bin" 	Mimetype="application/octet-stream" 	Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" Description="Datenträgerabbild CD Image"/>
+    <MimeType Postfix=".hfs" 	Mimetype="application/octet-stream" 	Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" Description="Datenträgerabbild CD Image"/>
+    <MimeType Postfix=".iso" 	Mimetype="application/octet-stream" 	Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" Description="Datenträgerabbild CD Image"/>
+    <MimeType Postfix=".nrg" 	Mimetype="application/octet-stream" 	Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" Description="Datenträgerabbild CD Image"/>
+    <MimeType Postfix=".img" 	Mimetype="application/octet-stream" 	Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" Description="Datenträgerabbild CD Image"/>
     <!-- 
 	#########################################################
 	Dokumenttypen (Viewer.js)
 	#########################################################
 	-->
-    <MimeType Postfix=".pdf" 	Mimetype="Application/pdf" 				Description="Portable Document"		Player="PDF" 		CacheSec="3600" CreateThumb="True" />
-    <MimeType Postfix=".odf" 	Mimetype="Application/odf" 				Description="ODF Document"			Player="PDF" 		CacheSec="3600" CreateThumb="True" />
+    <MimeType Postfix=".pdf" 	Mimetype="Application/pdf" 				 Player="PDF" 		CacheSec="3600" CreateThumb="True" Description="Adobe Portable Document Format"/>
+    <MimeType Postfix=".xps" 	Mimetype="Application/pdf" 				 Player="PDF" 		CacheSec="3600" CreateThumb="True" Description="Microsoft Portable Document Format"/>
+    <MimeType Postfix=".odf" 	Mimetype="Application/odf" 				 Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" Description="Open Document Format"/>
     <!-- 
 	#########################################################
 	Audio Dateitypen (Soundmanager2)
 	#########################################################
 	-->
-    <MimeType Postfix=".mp3" 	Mimetype="audio/x-mpeg-3" 				Description="Mpeg1 Layer3" 			Player="Audio" 		CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".wav" 	Mimetype="audio/x-wav" 					Description="Wave Audio" 			Player="Audio" 		CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".pls" 	Mimetype="audio/x-scpls" 				Description="Playlist" 				Player="Audio" 		CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".au" 	Mimetype="audio/basic" 					Description="None" 					Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".mpa" 	Mimetype="audio/x-mpeg"					Description="None" 					Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".abs" 	Mimetype="audio/x-mpeg"		 			Description="None" 					Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".mpega" 	Mimetype="audio/x-mpeg" 				Description="None" 					Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".mp2a" 	Mimetype="audio/x-mpeg2" 				Description="None" 					Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".mpa2" 	Mimetype="audio/x-mpeg2" 				Description="None" 					Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".wma" 	Mimetype="audio/x-ms-wma" 				Description="Windows Media Audio" 	Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
+    <MimeType Postfix=".mp3" 	Mimetype="audio/x-mpeg-3" 				 Player="Audio" 	CacheSec="3600" CreateThumb="False" Description="Audio Mpeg1 Layer3"/>
+    <MimeType Postfix=".wav" 	Mimetype="audio/x-wav" 					 Player="Audio" 	CacheSec="3600" CreateThumb="False" Description="Audio Wave"/>
+    <MimeType Postfix=".pls" 	Mimetype="audio/x-scpls" 				 Player="Audio" 	CacheSec="3600" CreateThumb="False" Description="Playlist"/>
+    <MimeType Postfix=".au" 	Mimetype="audio/basic" 					 Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" Description="Audio"/>
+    <MimeType Postfix=".mpa" 	Mimetype="audio/x-mpeg"					 Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" Description="Audio"/>
+    <MimeType Postfix=".abs" 	Mimetype="audio/x-mpeg"		 			 Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" Description="Audio"/>
+    <MimeType Postfix=".mpega" 	Mimetype="audio/x-mpeg" 				 Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" Description="Audio"/>
+    <MimeType Postfix=".mp2a" 	Mimetype="audio/x-mpeg2" 				 Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" Description="Audio" />
+    <MimeType Postfix=".mpa2" 	Mimetype="audio/x-mpeg2" 				 Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" Description="Audio" />
+    <MimeType Postfix=".wma" 	Mimetype="audio/x-ms-wma" 				 Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" Description="Audio Windows Media"/>
     <!-- 
 	#########################################################
 	Komprimierte Dateitypen (ZipJS/RarJS)
 	#########################################################
 	-->
-    <MimeType Postfix=".zip" 	Mimetype="application/zip" 				Description="Komprimiert" 			Player="ZIP" 		CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".rar" 	Mimetype="application/rar" 				Description="Komprimiert" 			Player="RAR" 		CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".tar" 	Mimetype="application/x-tar" 			Description="Komprimiert" 			Player="NoPlayer"	CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".xz" 	Mimetype="application/x-xz" 			Description="Komprimiert" 			Player="NoPlayer"	CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".7z" 	Mimetype="application/x-xz" 			Description="Komprimiert" 			Player="NoPlayer"	CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".gz" 	Mimetype="application/x-gz" 			Description="Komprimiert" 			Player="NoPlayer"	CacheSec="3600" CreateThumb="False" />
+    <MimeType Postfix=".zip" 	Mimetype="application/zip" 				Player="ZIP" 		CacheSec="3600" CreateThumb="False" Description="Komprimiert Zip"/>
+    <MimeType Postfix=".rar" 	Mimetype="application/rar" 				Player="RAR" 		CacheSec="3600" CreateThumb="False" Description="Komprimiert Rar"/>
+    <MimeType Postfix=".tar" 	Mimetype="application/octet-stream" 	Player="NoPlayer"	CacheSec="3600" CreateThumb="False" Description="Komprimiert Tar"/>
+    <MimeType Postfix=".xz" 	Mimetype="application/octet-stream" 	Player="NoPlayer"	CacheSec="3600" CreateThumb="False" Description="Komprimiert XZip"/>
+    <MimeType Postfix=".7z" 	Mimetype="application/octet-stream" 	Player="NoPlayer"	CacheSec="3600" CreateThumb="False" Description="Komprimiert 7Zip"/>
+    <MimeType Postfix=".bz2" 	Mimetype="application/octet-stream" 	Player="NoPlayer"	CacheSec="3600" CreateThumb="False" Description="Komprimiert BZip"/>
+    <MimeType Postfix=".bzip2" 	Mimetype="application/octet-stream" 	Player="NoPlayer"	CacheSec="3600" CreateThumb="False" Description="Komprimiert BZip"/>
+    <MimeType Postfix=".tbz2" 	Mimetype="application/octet-stream" 	Player="NoPlayer"	CacheSec="3600" CreateThumb="False" Description="Komprimiert BZip"/>
+    <MimeType Postfix=".tbz" 	Mimetype="application/octet-stream" 	Player="NoPlayer"	CacheSec="3600" CreateThumb="False" Description="Komprimiert BZip"/>
+    <MimeType Postfix=".gz" 	Mimetype="application/octet-stream" 	Player="NoPlayer"	CacheSec="3600" CreateThumb="False" Description="Komprimiert GnuZip" />
+    <MimeType Postfix=".gzip" 	Mimetype="application/octet-stream" 	Player="NoPlayer"	CacheSec="3600" CreateThumb="False" Description="Komprimiert GnuZip" />
+    <MimeType Postfix=".tgz" 	Mimetype="application/octet-stream" 	Player="NoPlayer"	CacheSec="3600" CreateThumb="False" Description="Komprimiert GnuZip" />
+    <MimeType Postfix=".ace" 	Mimetype="application/octet-stream" 	Player="NoPlayer"	CacheSec="3600" CreateThumb="False" Description="Komprimiert Ace" />
+    <MimeType Postfix=".arj" 	Mimetype="application/octet-stream" 	Player="NoPlayer"	CacheSec="3600" CreateThumb="False" Description="Komprimiert Arj" />
+    <MimeType Postfix=".lzma" 	Mimetype="application/octet-stream" 	Player="NoPlayer"	CacheSec="3600" CreateThumb="False" Description="Komprimiert Lzma" />
+    <MimeType Postfix=".taz" 	Mimetype="application/octet-stream" 	Player="NoPlayer"	CacheSec="3600" CreateThumb="False" Description="Komprimiert Taz" />
+    <MimeType Postfix=".lzh" 	Mimetype="application/octet-stream" 	Player="NoPlayer"	CacheSec="3600" CreateThumb="False" Description="Komprimiert Lzh" />
+    <MimeType Postfix=".lza" 	Mimetype="application/octet-stream" 	Player="NoPlayer"	CacheSec="3600" CreateThumb="False" Description="Komprimiert Lza" />
+    <MimeType Postfix=".xar" 	Mimetype="application/octet-stream" 	Player="NoPlayer"	CacheSec="3600" CreateThumb="False" Description="Komprimiert Xar" />
     <!-- 
 	#########################################################
 	Bild Dateitypen (Browserintern + Jquery)
 	#########################################################
 	-->
-    <MimeType Postfix=".jpg" 	Mimetype="image/jpeg" 					Description="None" 					Player="Picture" 	CacheSec="5" CreateThumb="False" />
-    <MimeType Postfix=".jpe" 	Mimetype="image/jpeg" 					Description="None" 					Player="Picture" 	CacheSec="5" CreateThumb="False" />
-    <MimeType Postfix=".jpeg" 	Mimetype="image/jpeg" 					Description="None" 					Player="Picture" 	CacheSec="5" CreateThumb="False" />
-    <MimeType Postfix=".png" 	Mimetype="image/x-png" 					Description="None" 					Player="Picture" 	CacheSec="60" CreateThumb="False" />
-    <MimeType Postfix=".ico" 	Mimetype="image/ico" 					Description="None" 					Player="Picture" 	CacheSec="60" CreateThumb="False" />
-    <MimeType Postfix=".gif" 	Mimetype="image/gif" 					Description="None" 					Player="Picture" 	CacheSec="60" CreateThumb="False" />
-    <MimeType Postfix=".bmp" 	Mimetype="image/x-ms-bmp" 				Description="None" 					Player="Picture" 	CacheSec="60" CreateThumb="False" />
-    <MimeType Postfix=".svg" 	Mimetype="image/svg+xml" 				Description="None" 					Player="Picture" 	CacheSec="60" CreateThumb="False" />
-    <MimeType Postfix=".tif" 	Mimetype="image/tiff" 					Description="None" 					Player="Picture" 	CacheSec="60" CreateThumb="False" />
-    <MimeType Postfix=".tiff" 	Mimetype="image/tiff" 					Description="None" 					Player="Picture" 	CacheSec="60" CreateThumb="False" />
-    <MimeType Postfix=".pnm" 	Mimetype="image/x-portable-anymap" 		Description="None" 					Player="Picture" 	CacheSec="60" CreateThumb="False" />
-    <MimeType Postfix=".pbm" 	Mimetype="image/x-portable-bitmap" 		Description="None" 					Player="Picture" 	CacheSec="60" CreateThumb="False" />
-    <MimeType Postfix=".pgm" 	Mimetype="image/x-portable-graymap" 	Description="None" 					Player="Picture" 	CacheSec="60" CreateThumb="False" />
-    <MimeType Postfix=".ppm" 	Mimetype="image/x-portable-pixmap"		Description="None" 					Player="Picture" 	CacheSec="60" CreateThumb="False" />
-    <MimeType Postfix=".xbm" 	Mimetype="image/x-xbitmap" 				Description="None" 					Player="Picture" 	CacheSec="60" CreateThumb="False" />
-    <MimeType Postfix=".xpm" 	Mimetype="image/x-xpixmap"				Description="None" 					Player="Picture" 	CacheSec="60" CreateThumb="False" />
-    <MimeType Postfix=".xwd" 	Mimetype="image/x-xwindowdump" 			Description="None" 					Player="Picture" 	CacheSec="60" CreateThumb="False" />
-	
-    <!-- 	
-	#########################################################
-	Text und Quelltext (Webrelevant)
-	#########################################################
-	-->
-    <MimeType Postfix=".json" 	Mimetype="application/json" 			Description="JS Object Notation" 		Player="Text" 		CacheSec="0" CreateThumb="False" />
-    <MimeType Postfix=".html" 	Mimetype="text/html; charset=UTF-8" 	Description="Hypertext Markup" 			Player="Text" 		CacheSec="10" CreateThumb="False" />
-    <MimeType Postfix=".htm" 	Mimetype="text/html; charset=UTF-8" 	Description="Hypertext Markup" 			Player="Text" 		CacheSec="10" CreateThumb="False" />
-    <MimeType Postfix=".css" 	Mimetype="text/css" 					Description="Cascading Stylesheet" 		Player="Text" 		CacheSec="10" CreateThumb="False" />
-    <MimeType Postfix=".js" 	Mimetype="text/javascript" 				Description="Javascript" 				Player="Text" 		CacheSec="30" CreateThumb="False" />
-	
+    <MimeType Postfix=".jpg" 	Mimetype="image/jpeg" 					Player="Picture" 	CacheSec="5" CreateThumb="False" Description="Image Jpeg"/>
+    <MimeType Postfix=".jpe" 	Mimetype="image/jpeg" 					Player="Picture" 	CacheSec="5" CreateThumb="False" Description="Image Jpeg"/>
+    <MimeType Postfix=".jpeg" 	Mimetype="image/jpeg" 					Player="Picture" 	CacheSec="5" CreateThumb="False" Description="Image Jpeg"/>
+    <MimeType Postfix=".png" 	Mimetype="image/x-png" 					Player="Picture" 	CacheSec="60" CreateThumb="False" Description="Image Png"/>
+    <MimeType Postfix=".ico" 	Mimetype="image/ico" 					Player="Picture" 	CacheSec="60" CreateThumb="False" Description="Image Icon"/>
+    <MimeType Postfix=".gif" 	Mimetype="image/gif" 					Player="Picture" 	CacheSec="60" CreateThumb="False" Description="Image Gif"/>
+    <MimeType Postfix=".bmp" 	Mimetype="image/x-ms-bmp" 				Player="Picture" 	CacheSec="60" CreateThumb="False" Description="Image Bitmap"/>
+    <MimeType Postfix=".svg" 	Mimetype="image/svg+xml" 				Player="Picture" 	CacheSec="60" CreateThumb="False" Description="Image Scalable Vector Graphic (XML)"/>
+    <MimeType Postfix=".tif" 	Mimetype="image/tiff" 					Player="Picture" 	CacheSec="60" CreateThumb="False" Description="Image Tif"/>
+    <MimeType Postfix=".tiff" 	Mimetype="image/tiff" 					Player="Picture" 	CacheSec="60" CreateThumb="False" Description="Image Tiff"/>
+    <MimeType Postfix=".pnm" 	Mimetype="image/x-portable-anymap" 		Player="Picture" 	CacheSec="60" CreateThumb="False" Description="Image Pnm"/>
+    <MimeType Postfix=".pbm" 	Mimetype="image/x-portable-bitmap" 		Player="Picture" 	CacheSec="60" CreateThumb="False" Description="Image Pbm"/>
+    <MimeType Postfix=".pgm" 	Mimetype="image/x-portable-graymap" 	Player="Picture" 	CacheSec="60" CreateThumb="False" Description="Image Pgm"/>
+    <MimeType Postfix=".ppm" 	Mimetype="image/x-portable-pixmap"		Player="Picture" 	CacheSec="60" CreateThumb="False" Description="Image Ppm"/>
+    <MimeType Postfix=".xbm" 	Mimetype="image/x-xbitmap" 				Player="Picture" 	CacheSec="60" CreateThumb="False" Description="Image Xbm"/>
+    <MimeType Postfix=".xpm" 	Mimetype="image/x-xpixmap"				Player="Picture" 	CacheSec="60" CreateThumb="False" Description="Image Xpm"/>
+    <MimeType Postfix=".xwd" 	Mimetype="image/x-xwindowdump" 			Player="Picture" 	CacheSec="60" CreateThumb="False" Description="Image Xwd"/>
     <!-- 	
 	#########################################################
 	Text und Quelltext (Programmiersprachen andere)
 	#########################################################
 	-->
 	<!-- Markup Languages -->
-    <MimeType Postfix=".xml" 	Mimetype="text/html; charset=UTF-8" 	Description="Markup Language" 			Player="Text" 		CacheSec="30" CreateThumb="False" />
-    <MimeType Postfix=".aiml" 	Mimetype="text/html; charset=UTF-8" 	Description="Markup Language" 			Player="Text" 		CacheSec="30" CreateThumb="False" />
-    <MimeType Postfix=".yaml" 	Mimetype="text/html; charset=UTF-8" 	Description="Markup Language" 			Player="Text" 		CacheSec="30" CreateThumb="False" />
-    <MimeType Postfix=".smil" 	Mimetype="text/html; charset=UTF-8" 	Description="Markup Language" 			Player="Text" 		CacheSec="30" CreateThumb="False" />
-    <MimeType Postfix=".qml" 	Mimetype="text/html; charset=UTF-8" 	Description="Nokia QT XML"				Player="Text" 		CacheSec="30" CreateThumb="False" />
-    <MimeType Postfix=".mml" 	Mimetype="text/html; charset=UTF-8" 	Description="Math XML" 					Player="Text" 		CacheSec="30" CreateThumb="False" />
-    <MimeType Postfix=".xhtml" 	Mimetype="text/html; charset=UTF-8" 	Description="Math XML" 					Player="Text" 		CacheSec="30" CreateThumb="False" />
-    <MimeType Postfix=".xsl" 	Mimetype="text/html; charset=UTF-8" 	Description="XML Stylesheet" 			Player="Text" 		CacheSec="30" CreateThumb="False" />
-    <MimeType Postfix=".xsd" 	Mimetype="text/html; charset=UTF-8" 	Description="XML Schema" 				Player="Text" 		CacheSec="30" CreateThumb="False" />
-    <MimeType Postfix=".xslt" 	Mimetype="text/html; charset=UTF-8" 	Description="XML Stylesheet" 			Player="Text" 		CacheSec="30" CreateThumb="False" />
-    <MimeType Postfix=".jrxml" 	Mimetype="text/html; charset=UTF-8" 	Description="XML Jasperreports" 		Player="Text" 		CacheSec="30" CreateThumb="False" />
+    <MimeType Postfix=".xml" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="XML Markup Language"/>
+    <MimeType Postfix=".aiml" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="XML Artifictional Intelligence"/>
+    <MimeType Postfix=".yaml" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="XML Markup Language"/>
+    <MimeType Postfix=".smil" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="XML Presentation"/>
+    <MimeType Postfix=".qml" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="XML Nokia QT"/>
+    <MimeType Postfix=".mml" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="XML MathMl"/>
+    <MimeType Postfix=".xhtml" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="XML HTML"/>
+    <MimeType Postfix=".xsl" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="XML Stylesheet"/>
+    <MimeType Postfix=".xsd" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="XML Schema"/>
+    <MimeType Postfix=".xslt" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="XML Stylesheet"/>
+    <MimeType Postfix=".jrxml" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="XML Jasperreports"/>
+    <MimeType Postfix=".jasper"	Mimetype="application/octet-stream" 	Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" Description="Jasper Compiled Document"/>
 	<!-- StyleSheets -->
-    <MimeType Postfix=".sass" 	Mimetype="text/html; charset=UTF-8" 	Description="Stylesheet" 				Player="Text" 		CacheSec="30" CreateThumb="False" />
-    <MimeType Postfix=".scss" 	Mimetype="text/html; charset=UTF-8" 	Description="Stylesheet" 				Player="Text" 		CacheSec="30" CreateThumb="False" />
-    <MimeType Postfix=".less" 	Mimetype="text/html; charset=UTF-8" 	Description="Stylesheet" 				Player="Text" 		CacheSec="30" CreateThumb="False" />
+    <MimeType Postfix=".css" 	Mimetype="text/css" 					Player="Text" 		CacheSec="10" CreateThumb="False" Description="CSS Cascading Stylesheet"/>
+    <MimeType Postfix=".sass" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="CSS based Stylesheet"/>
+    <MimeType Postfix=".scss" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="CSS based Stylesheet"/>
 	<!-- JavaScript -->
-    <MimeType Postfix=".ls" 	Mimetype="text/javascript" 				Description="JS/LS"						Player="Text" 		CacheSec="30" CreateThumb="False" />
-    <MimeType Postfix=".mocha" 	Mimetype="text/javascript" 				Description="JS MochaScript"			Player="Text" 		CacheSec="30" CreateThumb="False" />
-    <MimeType Postfix=".coffee" Mimetype="text/javascript" 				Description="JS CoffeeScript"			Player="Text" 		CacheSec="30" CreateThumb="False" />
-    <MimeType Postfix=".jade" 	Mimetype="text/javascript" 				Description="HTML Templating Engine"	Player="Text" 		CacheSec="30" CreateThumb="False" />
+    <MimeType Postfix=".js" 	Mimetype="text/javascript" 				Player="Text" 		CacheSec="30" CreateThumb="False" Description="Javascript"/>
+    <MimeType Postfix=".mocha" 	Mimetype="text/javascript" 				Player="Text" 		CacheSec="30" CreateThumb="False" Description="Javascript/MochaScript"/>
+    <MimeType Postfix=".coffee" Mimetype="text/javascript" 				Player="Text" 		CacheSec="30" CreateThumb="False" Description="Javascript/CoffeeScript"/>
+    <MimeType Postfix=".ls" 	Mimetype="text/javascript" 				Player="Text" 		CacheSec="30" CreateThumb="False" Description="Javascript/LiveScript"/>
+    <MimeType Postfix=".less" 	Mimetype="text/javascript" 				Player="Text" 		CacheSec="30" CreateThumb="False" Description="Javascript/LessScript"/>
+    <MimeType Postfix=".json" 	Mimetype="application/json" 			Player="Text" 		CacheSec="0" CreateThumb="False" Description="JS Object Notation"/>
+	<!-- HTML -->
+    <MimeType Postfix=".html" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="10" CreateThumb="False" Description="Hypertext Markup"/>
+    <MimeType Postfix=".htm" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="10" CreateThumb="False" Description="Hypertext Markup"/>
+    <MimeType Postfix=".jade" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="HTML Template"/>
 	<!-- Visual Basic -->
-    <MimeType Postfix=".vbs" 	Mimetype="text/html; charset=UTF-8" 	Description="VB Script" 				Player="Text" 		CacheSec="30" CreateThumb="False" />
-    <MimeType Postfix=".vba" 	Mimetype="text/html; charset=UTF-8" 	Description="VB for Applications" 		Player="Text" 		CacheSec="30" CreateThumb="False" />
-    <MimeType Postfix=".vbe" 	Mimetype="text/html; charset=UTF-8" 	Description="VB Encrypted" 				Player="Text" 		CacheSec="30" CreateThumb="False" />
-    <MimeType Postfix=".vb" 	Mimetype="text/html; charset=UTF-8" 	Description="Visual Basic" 				Player="Text" 		CacheSec="30" CreateThumb="False" />
-    <MimeType Postfix=".hta" 	Mimetype="text/html; charset=UTF-8" 	Description="HTML Application" 			Player="Text" 		CacheSec="30" CreateThumb="False" />
+    <MimeType Postfix=".vbs" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="VB Script (Wscript)"/>
+    <MimeType Postfix=".wsh" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="Windows Shell Script (Wscript)"/>
+    <MimeType Postfix=".vbe" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="VB Script (Wscript) Encrypted"/>
+    <MimeType Postfix=".vba" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="Visual Basic for Applications"/>
+    <MimeType Postfix=".vb" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="Visual Basic"/>
+    <MimeType Postfix=".hta" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="HTML Application (JS/VBS/HTML)"/>
 	<!-- Tex Miktex Latex -->
-    <MimeType Postfix=".latex" 	Mimetype="application/x-latex" 			Description="None" 						Player="Text" 		CacheSec="30" CreateThumb="False" />
-    <MimeType Postfix=".tex" 	Mimetype="application/x-tex" 			Description="None" 						Player="Text" 		CacheSec="30" CreateThumb="False" />
-    <MimeType Postfix=".toc" 	Mimetype="application/x-tex" 			Description="None" 						Player="Text" 		CacheSec="30" CreateThumb="False" />
-    <MimeType Postfix=".aux" 	Mimetype="application/x-tex" 			Description="None" 						Player="Text" 		CacheSec="30" CreateThumb="False" />
-    <MimeType Postfix=".lof" 	Mimetype="application/x-tex" 			Description="None" 						Player="Text" 		CacheSec="30" CreateThumb="False" />
+    <MimeType Postfix=".latex" 	Mimetype="application/x-latex" 			Player="Text" 		CacheSec="30" CreateThumb="False" Description="Tex/Latex/Miktex"/>
+    <MimeType Postfix=".tex" 	Mimetype="application/x-tex" 			Player="Text" 		CacheSec="30" CreateThumb="False" Description="Tex/Latex/Miktex"/>
+    <MimeType Postfix=".toc" 	Mimetype="application/x-tex" 			Player="Text" 		CacheSec="30" CreateThumb="False" Description="Tex/Latex/Miktex"/>
+    <MimeType Postfix=".aux" 	Mimetype="application/x-tex" 			Player="Text" 		CacheSec="30" CreateThumb="False" Description="Tex/Latex/Miktex"/>
+    <MimeType Postfix=".lof" 	Mimetype="application/x-tex" 			Player="Text" 		CacheSec="30" CreateThumb="False" Description="Tex/Latex/Miktex"/>
 	<!-- JAVA -->
-    <MimeType Postfix=".java" 	Mimetype="text/html; charset=UTF-8" 	Description="Java" 						Player="Text" 		CacheSec="30" CreateThumb="False" />
+    <MimeType Postfix=".java" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="Java Source"/>
+    <MimeType Postfix=".jar" 	Mimetype="application/octet-stream" 	Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" Description="Java Application"/>
 	<!-- Perl -->
-    <MimeType Postfix=".pm" 	Mimetype="text/html; charset=UTF-8" 	Description="Perl"						Player="Text" 		CacheSec="30" CreateThumb="False" />
-    <MimeType Postfix=".pl" 	Mimetype="text/html; charset=UTF-8" 	Description="Perl" 						Player="Text" 		CacheSec="30" CreateThumb="False" />
+    <MimeType Postfix=".pm" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="Perl"/>
+    <MimeType Postfix=".pl" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="Perl"/>
 	<!-- Php -->
-    <MimeType Postfix=".php" 	Mimetype="text/html; charset=UTF-8" 	Description="PHP SourceCode" 			Player="Text" 		CacheSec="30" CreateThumb="False" />
+    <MimeType Postfix=".php" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="PHP SourceCode"/>
 	<!-- Python -->
-    <MimeType Postfix=".py" 	Mimetype="text/html; charset=UTF-8" 	Description="Python Source"				Player="Text" 		CacheSec="30" CreateThumb="False" />
-    <MimeType Postfix=".pyc" 	Mimetype="application/octet-stream" 	Description="Python Compiled" 			Player="NoPlayer" 	CacheSec="60" CreateThumb="False" />
-	<!-- C/C++ -->
-    <MimeType Postfix=".h" 		Mimetype="text/html; charset=UTF-8" 	Description="C Header File" 			Player="Text" 		CacheSec="30" CreateThumb="False" />
-    <MimeType Postfix=".c" 		Mimetype="text/html; charset=UTF-8" 	Description="C SourceCode" 				Player="Text" 		CacheSec="30" CreateThumb="False" />
-    <MimeType Postfix=".c++" 	Mimetype="text/html; charset=UTF-8" 	Description="C++ SourceCode" 			Player="Text" 		CacheSec="30" CreateThumb="False" />
-    <MimeType Postfix=".cpp" 	Mimetype="text/html; charset=UTF-8" 	Description="C++ SourceCode" 			Player="Text" 		CacheSec="30" CreateThumb="False" />
-    <MimeType Postfix=".cc" 	Mimetype="text/html; charset=UTF-8" 	Description="None" 						Player="Text" 		CacheSec="30" CreateThumb="False" />
-    <MimeType Postfix=".cs" 	Mimetype="text/html; charset=UTF-8" 	Description="None" 						Player="Text" 		CacheSec="30" CreateThumb="False" />
+    <MimeType Postfix=".py" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="Python Source"/>
+    <MimeType Postfix=".pyc" 	Mimetype="application/octet-stream" 	Player="NoPlayer" 	CacheSec="60" CreateThumb="False" Description="Python Compiled"/>
+	<!-- C/C++/CSharp -->
+    <MimeType Postfix=".h" 		Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="C Header File"/>
+    <MimeType Postfix=".c" 		Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="C SourceCode"/>
+    <MimeType Postfix=".c++" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="C++ SourceCode"/>
+    <MimeType Postfix=".cpp" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="C++ SourceCode"/>
+    <MimeType Postfix=".cc" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="None" />
+    <MimeType Postfix=".cs" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="None"/>
 	<!-- Plain Text -->
-    <MimeType Postfix=".txt" 	Mimetype="text/html; charset=UTF-8" 	Description="Text File" 				Player="Text" 		CacheSec="0" CreateThumb="False" />
-    <MimeType Postfix=".csv" 	Mimetype="text/html; charset=UTF-8" 	Description="Text File Comma-seperated" Player="Text" 		CacheSec="0" CreateThumb="False" />
-    <MimeType Postfix=".cfg" 	Mimetype="text/html; charset=UTF-8" 	Description="Configuration File" 		Player="Text" 		CacheSec="0" CreateThumb="False" />
-    <MimeType Postfix=".config" Mimetype="text/html; charset=UTF-8" 	Description="Configuration File" 		Player="Text" 		CacheSec="0" CreateThumb="False" />
-    <MimeType Postfix=".log" 	Mimetype="text/html; charset=UTF-8" 	Description="Application Log" 			Player="Text" 		CacheSec="0" CreateThumb="False" />
-    <MimeType Postfix=".md" 	Mimetype="text/html; charset=UTF-8" 	Description="Information" 				Player="Text" 		CacheSec="0" CreateThumb="False" />
-    <MimeType Postfix=".dic" 	Mimetype="text/html; charset=UTF-8" 	Description="Dictionary" 				Player="Text" 		CacheSec="0" CreateThumb="False" />
+    <MimeType Postfix=".txt" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="0" CreateThumb="False" Description="Text File" />
+    <MimeType Postfix=".csv" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="0" CreateThumb="False" Description="Text File Comma-seperated"/>
+    <MimeType Postfix=".cfg" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="0" CreateThumb="False" Description="Configuration File"/>
+    <MimeType Postfix=".config" Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="0" CreateThumb="False" Description="Configuration File"/>
+    <MimeType Postfix=".log" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="0" CreateThumb="False" Description="Application Log"/>
+    <MimeType Postfix=".md" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="0" CreateThumb="False" Description="Information (GIT)"/>
+    <MimeType Postfix=".dic" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="0" CreateThumb="False" Description="Dictionary"/>
 	<!-- Sonstige Programmiersprachen -->
-    <MimeType Postfix=".ai" 	Mimetype="application/postscript" 		Description="None" 						Player="Text" 		CacheSec="30" CreateThumb="False" />
-    <MimeType Postfix=".eps" 	Mimetype="application/postscript" 		Description="None" 						Player="Text" 		CacheSec="30" CreateThumb="False" />
-    <MimeType Postfix=".ps" 	Mimetype="application/postscript" 		Description="None" 						Player="Text" 		CacheSec="30" CreateThumb="False" />
-    <MimeType Postfix=".tcl" 	Mimetype="application/x-tcl" 			Description="None" 						Player="Text" 		CacheSec="30" CreateThumb="False" />
-    <MimeType Postfix=".bat" 	Mimetype="text/html; charset=UTF-8" 	Description="Batch Script" 				Player="Text" 		CacheSec="30" CreateThumb="False" />
-    <MimeType Postfix=".lua" 	Mimetype="text/html; charset=UTF-8" 	Description="LUA SourceCode" 			Player="Text" 		CacheSec="30" CreateThumb="False" />
-    <MimeType Postfix=".au3" 	Mimetype="text/html; charset=UTF-8" 	Description="AutoIT3" 					Player="Text" 		CacheSec="30" CreateThumb="False" />
-    <MimeType Postfix=".dtd" 	Mimetype="text/html; charset=UTF-8" 	Description="Markup Check" 				Player="Text" 		CacheSec="30" CreateThumb="False" />
-    <MimeType Postfix=".sh" 	Mimetype="text/html; charset=UTF-8" 	Description="Unix ShellScript" 			Player="Text" 		CacheSec="30" CreateThumb="False" />
-    <MimeType Postfix=".sql" 	Mimetype="text/html; charset=UTF-8" 	Description="Database Language" 		Player="Text" 		CacheSec="30" CreateThumb="False" />
-    <MimeType Postfix=".inf" 	Mimetype="text/html; charset=UTF-8" 	Description="None" 						Player="Text" 		CacheSec="30" CreateThumb="False" />
-    <MimeType Postfix=".ini" 	Mimetype="text/html; charset=UTF-8" 	Description="None" 						Player="Text" 		CacheSec="30" CreateThumb="False" />
-    <MimeType Postfix=".mime" 	Mimetype="text/html; charset=UTF-8" 	Description="Mimetype definition"		Player="Text" 		CacheSec="30" CreateThumb="False" />
-    <MimeType Postfix=".asm" 	Mimetype="text/html; charset=UTF-8" 	Description="Assembler"					Player="Text" 		CacheSec="30" CreateThumb="False" />
-	
+    <MimeType Postfix=".ai" 	Mimetype="application/postscript" 		Player="Text" 		CacheSec="30" CreateThumb="False" Description="Postscript"/>
+    <MimeType Postfix=".eps" 	Mimetype="application/postscript" 		Player="Text" 		CacheSec="30" CreateThumb="False" Description="Postscript"/>
+    <MimeType Postfix=".ps" 	Mimetype="application/postscript" 		Player="Text" 		CacheSec="30" CreateThumb="False" Description="Postscript" />
+    <MimeType Postfix=".tcl" 	Mimetype="application/x-tcl" 			Player="Text" 		CacheSec="30" CreateThumb="False" Description="None"/>
+    <MimeType Postfix=".bat" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="Windows Batch Script" />
+    <MimeType Postfix=".lua" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="LUA SourceCode"/>
+    <MimeType Postfix=".au3" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="AutoIT3"/>
+    <MimeType Postfix=".dtd" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="Markup Check (HTML,XML)"/>
+    <MimeType Postfix=".sh" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="Unix ShellScript"/>
+    <MimeType Postfix=".sql" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="Database Language"/>
+    <MimeType Postfix=".inf" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="Windows Configuration File"/>
+    <MimeType Postfix=".ini" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="Windows Configuration File"/>
+    <MimeType Postfix=".mime" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="Mimetype definition"/>
+    <MimeType Postfix=".asm" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="Assembler"/>
+    <MimeType Postfix=".dot" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="Graphwiz"/>
     <!-- 
 	#########################################################
 	Video (Sehr Browserabhaengig) 
@@ -197,56 +216,50 @@
 	+ Mit Plugins u.U. VLC/Shockwave/Silverlight
 	#########################################################
 	-->
-    <MimeType Postfix=".mpeg" 	Mimetype="video/mpeg" 					Description="Mpeg Video"				Player="Video" 		CacheSec="3600" CreateThumb="True" />
-    <MimeType Postfix=".mpg" 	Mimetype="video/mpeg" 					Description="Mpeg Video"				Player="Video" 		CacheSec="3600" CreateThumb="True" />
-    <MimeType Postfix=".mpe" 	Mimetype="video/mpeg" 					Description="Mpeg Video" 				Player="Video" 		CacheSec="3600" CreateThumb="True" />
-    <MimeType Postfix=".mov" 	Mimetype="video/quicktime" 				Description="None" 						Player="Video" 		CacheSec="3600" CreateThumb="True" />
-    <MimeType Postfix=".qt" 	Mimetype="video/quicktime" 				Description="Quicktime Videp" 			Player="Video" 		CacheSec="3600" CreateThumb="True" />
-    <MimeType Postfix=".avi" 	Mimetype="video/x-msvideo" 				Description="AVI Video" 				Player="Video" 		CacheSec="3600" CreateThumb="True" />
-    <MimeType Postfix=".wmv" 	Mimetype="video/x-ms-wmv" 				Description="Windows Media" 			Player="Video" 		CacheSec="3600" CreateThumb="True" />
-    <MimeType Postfix=".asx" 	Mimetype="video/x-ms-asx" 				Description="None" 						Player="Video" 		CacheSec="3600" CreateThumb="True" />
-    <MimeType Postfix=".asf" 	Mimetype="video/x-ms-asf" 				Description="None" 						Player="Video" 		CacheSec="3600" CreateThumb="True" />
-    <MimeType Postfix=".mp4" 	Mimetype="video/mp4" 					Description="None" 						Player="Video" 		CacheSec="3600" CreateThumb="True" />
-    <MimeType Postfix=".mkv" 	Mimetype="video/x-matroska" 			Description="Matroska" 					Player="Video" 		CacheSec="3600" CreateThumb="True" />
-    <MimeType Postfix=".webm" 	Mimetype="video/webm" 					Description="Web Movie" 				Player="Video" 		CacheSec="3600" CreateThumb="True" />
-    <MimeType Postfix=".ogg" 	Mimetype="video/ogg" 					Description="Video/Audio" 				Player="Video" 		CacheSec="3600" CreateThumb="True" />
-    <MimeType Postfix=".ogv" 	Mimetype="video/ogg" 					Description="Video" 					Player="Video" 		CacheSec="3600" CreateThumb="True" />
-    <MimeType Postfix=".mpv2" 	Mimetype="video/mpeg-2" 				Description="Mpeg2 Video" 				Player="Video" 		CacheSec="3600" CreateThumb="True" />
-    <MimeType Postfix=".mp2v" 	Mimetype="video/mpeg-2" 				Description="Mpeg2 Video" 				Player="Video" 		CacheSec="3600" CreateThumb="True" />
-    <MimeType Postfix=".flv" 	Mimetype="video/x-flv" 					Description="Flash Video" 				Player="Video" 		CacheSec="3600" CreateThumb="True" />
-	
+    <MimeType Postfix=".mpeg" 	Mimetype="video/mpeg" 					Player="Video" 		CacheSec="3600" CreateThumb="True" Description="Mpeg Video"/>
+    <MimeType Postfix=".mpg" 	Mimetype="video/mpeg" 					Player="Video" 		CacheSec="3600" CreateThumb="True" Description="Mpeg Video"/>
+    <MimeType Postfix=".mpe" 	Mimetype="video/mpeg" 					Player="Video" 		CacheSec="3600" CreateThumb="True" Description="Mpeg Video" />
+    <MimeType Postfix=".mov" 	Mimetype="video/quicktime" 				Player="Video" 		CacheSec="3600" CreateThumb="True" Description="None"/>
+    <MimeType Postfix=".qt" 	Mimetype="video/quicktime" 				Player="Video" 		CacheSec="3600" CreateThumb="True" Description="Quicktime Video" />
+    <MimeType Postfix=".avi" 	Mimetype="video/x-msvideo" 				Player="Video" 		CacheSec="3600" CreateThumb="True" Description="AVI Video (MS AVI,DIVX)"/>
+    <MimeType Postfix=".wmv" 	Mimetype="video/x-ms-wmv" 				Player="Video" 		CacheSec="3600" CreateThumb="True" Description="Windows Media"/>
+    <MimeType Postfix=".asx" 	Mimetype="video/x-ms-asx" 				Player="Video" 		CacheSec="3600" CreateThumb="True" Description="None"/>
+    <MimeType Postfix=".asf" 	Mimetype="video/x-ms-asf" 				Player="Video" 		CacheSec="3600" CreateThumb="True" Description="None"/>
+    <MimeType Postfix=".mp4" 	Mimetype="video/mp4" 					Player="Video" 		CacheSec="3600" CreateThumb="True" Description="Mpeg 4 Video"/>
+    <MimeType Postfix=".mkv" 	Mimetype="video/x-matroska" 			Player="Video" 		CacheSec="3600" CreateThumb="True" Description="Matroska"/>
+    <MimeType Postfix=".webm" 	Mimetype="video/webm" 					Player="Video" 		CacheSec="3600" CreateThumb="True" Description="Web Movie" />
+    <MimeType Postfix=".ogg" 	Mimetype="video/ogg" 					Player="Video" 		CacheSec="3600" CreateThumb="True" Description="Video/Audio OGG Vorbis"/>
+    <MimeType Postfix=".ogv" 	Mimetype="video/ogg" 					Player="Video" 		CacheSec="3600" CreateThumb="True" Description="Video OGG Vorbis" />
+    <MimeType Postfix=".mpv2" 	Mimetype="video/mpeg-2" 				Player="Video" 		CacheSec="3600" CreateThumb="True" Description="Mpeg2 Video" />
+    <MimeType Postfix=".mp2v" 	Mimetype="video/mpeg-2" 				Player="Video" 		CacheSec="3600" CreateThumb="True" Description="Mpeg2 Video"/>
+    <MimeType Postfix=".flv" 	Mimetype="video/x-flv" 					Player="Video" 		CacheSec="3600" CreateThumb="True" Description="Flash Video"/>
     <!-- 
 	#########################################################
-	2D und 3D Formate (ThreeJS)
-	loader / assimp2json
-	loader / babylon
-	loader / collada
-	loader / collada / keyframe
-	loader / collada / skinning
-	loader / collada / kinematics
-	loader / msgpack
-	loader / scene
-	loader / stl
-	loader / utf8
+	2D Formate (Kein Player)
+	3D Formate (ThreeJS und GCode)
 	#########################################################
 	-->
-    <MimeType Postfix=".dxf" 	Mimetype="" 							Description="2D Drawing" 				Player="Thumbed" 	CacheSec="3600" CreateThumb="True" />
-    <MimeType Postfix=".stl" 	Mimetype="" 							Description="None" 						Player="3D" 		CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".stp" 	Mimetype="" 							Description="Step 3D" 					Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".step" 	Mimetype="" 							Description="Step 3D" 					Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".igs" 	Mimetype="" 							Description="IGES 3D" 					Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".iges" 	Mimetype="" 							Description="IGES 3D" 					Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".jt" 	Mimetype="" 							Description="JT 3D" 					Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".u3d" 	Mimetype="" 							Description="Universal 3D (PDF)"		Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".obj" 	Mimetype="" 							Description="None" 						Player="3D" 		CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".awd" 	Mimetype="" 							Description="None" 						Player="3D" 		CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".ctm" 	Mimetype="" 							Description="None" 						Player="3D" 		CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".gltf" 	Mimetype="" 							Description="None" 						Player="3D" 		CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".mtl" 	Mimetype="" 							Description="None" 						Player="3D" 		CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".pdb" 	Mimetype="" 							Description="None" 						Player="3D" 		CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".ply" 	Mimetype="" 							Description="None" 						Player="3D" 		CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".vrml" 	Mimetype="" 							Description="None" 						Player="3D" 		CacheSec="3600" CreateThumb="False" />
-    <MimeType Postfix=".vtk" 	Mimetype="" 							Description="None" 						Player="3D" 		CacheSec="3600" CreateThumb="False" />
-
+	<!-- 2D -->
+    <MimeType Postfix=".dxf" 	Mimetype="application/octet-stream" 	Player="NoPlayer" 	CacheSec="3600" CreateThumb="True" Description="2D Drawing"/>
+	<!-- 3D -->
+    <MimeType Postfix=".stl" 	Mimetype="application/octet-stream" 	Player="3D" 		CacheSec="3600" CreateThumb="False" Description="3D STL Defaultsprache bei 3D Druck"/>
+    <MimeType Postfix=".u3d" 	Mimetype="application/octet-stream" 	Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" Description="Universal 3D (Used in 3D PDFs)"/>
+    <MimeType Postfix=".stp" 	Mimetype="application/octet-stream" 	Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" Description="Step 3D" />
+    <MimeType Postfix=".step" 	Mimetype="application/octet-stream" 	Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" Description="Step 3D" />
+    <MimeType Postfix=".igs" 	Mimetype="application/octet-stream" 	Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" Description="IGES 3D" />
+    <MimeType Postfix=".iges" 	Mimetype="application/octet-stream" 	Player="NoPlayer" 	CacheSec="3600" CreateThumb="False" Description="IGES 3D"/>
+    <MimeType Postfix=".obj" 	Mimetype="application/octet-stream" 	Player="3D" 		CacheSec="3600" CreateThumb="False" Description="Object 3D"/>
+    <MimeType Postfix=".awd" 	Mimetype="application/octet-stream" 	Player="NoPlayer"	CacheSec="3600" CreateThumb="False" Description="None"/>
+    <MimeType Postfix=".ctm" 	Mimetype="application/octet-stream" 	Player="NoPlayer"	CacheSec="3600" CreateThumb="False" Description="None"/>
+    <MimeType Postfix=".gltf" 	Mimetype="application/octet-stream" 	Player="NoPlayer"	CacheSec="3600" CreateThumb="False" Description="None"/>
+    <MimeType Postfix=".mtl" 	Mimetype="application/octet-stream" 	Player="NoPlayer"	CacheSec="3600" CreateThumb="False" Description="None"/>
+    <MimeType Postfix=".pdb" 	Mimetype="application/octet-stream" 	Player="NoPlayer"	CacheSec="3600" CreateThumb="False" Description="None" />
+    <MimeType Postfix=".ply" 	Mimetype="application/octet-stream" 	Player="NoPlayer"	CacheSec="3600" CreateThumb="False" Description="None"/>
+    <MimeType Postfix=".vrml" 	Mimetype="application/octet-stream" 	Player="NoPlayer"	CacheSec="3600" CreateThumb="False" Description="None"/>
+    <MimeType Postfix=".vtk" 	Mimetype="application/octet-stream" 	Player="NoPlayer"	CacheSec="3600" CreateThumb="False" Description="None"/>
+	<!-- Plot und Druck -->
+    <MimeType Postfix=".g" 		Mimetype="application/octet-stream" 	Player="GCode" 		CacheSec="3600" CreateThumb="True" Description="Plot Sprache für 3D Drucker, Fräser"/>
+    <MimeType Postfix=".gcode"	Mimetype="application/octet-stream" 	Player="GCode" 		CacheSec="3600" CreateThumb="True" Description="Plot Sprache für 3D Drucker, Fräser"/>
+    <MimeType Postfix=".gco"	Mimetype="application/octet-stream" 	Player="GCode" 		CacheSec="3600" CreateThumb="True" Description="Plot Sprache für 3D Drucker, Fräser"/>
   </MimeTypes>
 </WebSearch>

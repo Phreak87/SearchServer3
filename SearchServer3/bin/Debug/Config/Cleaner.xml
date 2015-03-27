@@ -13,6 +13,7 @@
 	<Clean Collection="DIR" Field="Cont_Post" Value=".flm"/>
 	<Clean Collection="DIR" Field="Cont_Post" Value=".prf"/>
 	<Clean Collection="DIR" Field="Cont_Post" Value=".tpm"/>
+	<Clean Collection="DIR" Field="Cont_Post" Value=".woff"/>
 	<Clean Collection="DIR" Field="Cont_Post" Value=".cbp"/>
 	<Clean Collection="DIR" Field="Cont_Post" Value=".fea"/>
 	<Clean Collection="DIR" Field="Cont_Post" Value=".htf"/>

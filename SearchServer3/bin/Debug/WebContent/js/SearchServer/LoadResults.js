@@ -20,6 +20,27 @@ function GenIFrame (el){
 	  }});
 }
 
+function GenIFrameInLine (el){
+	var iFrame = document.createElement("IFrame");
+	iFrame.setAttribute("src", el.getAttribute("Frame") + "#" + el.getAttribute("Content") + "#" + el.getAttribute("Thumb"));
+	iFrame.setAttribute("FrameBorder", "0");
+	iFrame.setAttribute("Width", "800");
+	iFrame.setAttribute("Height", "450");
+	iFrame.setAttribute("overflow", "hidden");
+	el.appendChild(iFrame);
+}
+
+function displayData (el) {
+	if (el.parentNode.lastChild.style.display=='none'){
+		el.parentNode.lastChild.style.display='block';
+	} else {
+		el.parentNode.lastChild.style.display='none';
+	}
+}
+function errorImage (el) {
+	el.src='Images/Filetypes/Error.png';
+}
+
 function loadPageData (daten) {
 	
 	var data = CheckData(daten);
@@ -103,7 +124,11 @@ function loadPageData (daten) {
 		+ "</TR><TR>";
 		
 		output+=
-			"<TD style='background-color:#aaaaaa;' Width='15%'>"
+			"<TD style='background-color:#aaaaaa;' Width='70px'>"
+				+ "<a onClick='displayData(this);'>"
+				+ "<img Height='65px' src='Images/Filetypes/" + data.Messages[i].Cont_Post.replace(".", "") 
+				+ ".png' alt='" + data.Messages[i].Cont_Post.replace(".", "") + "' onError='errorImage(this);'></img></a>"
+				+ "<Div style='display:none;'>"
 				+ data.Messages[i]._id + "<BR>"
 				+ data.Messages[i].Class_Type + "<BR>"
 				+ data.Messages[i].Class_Name + "<BR>"
@@ -113,6 +138,7 @@ function loadPageData (daten) {
 				+ data.Messages[i].Cont_Mime + "<BR>"
 				+ data.Messages[i].Cont_Player + "<BR>"
 				+ data.Messages[i].Cont_Time 
+				+ "</Div>"
 			+ "</TD>";
 
 		// ####################################
@@ -148,7 +174,7 @@ function loadPageData (daten) {
 		};
 		
 		if (data.Messages[i].Cont_Player=='Text'){
-			output+="<TD onmouseover='ShowTextLocal(this)' class='Text' id='" + data.Messages[i]._id + "' src='" + data.Messages[i].Cont_Link + "'>Show" 
+			output+="<TD onClick='ShowTextLocal(this)' class='Text' id='" + data.Messages[i]._id + "' src='" + data.Messages[i].Cont_Link + "'>Show" 
 			+ "</TD>";
 		};
 
@@ -200,6 +226,13 @@ function loadPageData (daten) {
 		if (data.Messages[i].Cont_Player=='RAR'){
 			output+="<TD>" 
 				+ "<a href='#' Frame='js/IFrameLoader/rar/ShowRar.html' Content='" + data.Messages[i].Cont_Link + "' Thumb='" + data.Messages[i].Cont_Thumb + "' onClick='GenIFrame(this);'><H2>Inhalt anzeigen</H2></a>" 
+			+ "</TD>";
+		};
+		
+		if (data.Messages[i].Cont_Player=='GCode'){
+			output+="<TD>" 
+				// + "<Iframe Frameborder='0' style='width: 800px; height: 600px;' src='js/IFrameLoader/GCode/Index.html#" + data.Messages[i].Cont_Link + "#'/>"
+				+ "<a href='#' Frame='js/IFrameLoader/GCode/Index.html' Content='" + data.Messages[i].Cont_Link + "' onClick='GenIFrameInLine(this);'><H2>Inhalt anzeigen</H2></a>" 
 			+ "</TD>";
 		};
 		

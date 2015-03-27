@@ -1,0 +1,63 @@
+body,
+html {
+    margin:0;
+    padding:0;
+    color:#000;
+}
+
+#canvas{
+    clear:none;
+    overflow: hidden;
+}
+
+.mtab-content{
+    background: #ffffff;
+    background-image: none;
+    border: 0px none #dddddd;
+    border-bottom-style: none;
+    margin: 0px;
+}
+
+.bar {
+    -webkit-transition: width 0s linear !important;
+    -moz-transition: width 0s linear !important;
+    -o-transition: width 0s linear !important;
+    transition: width 0s linear !important;
+}
+.3d_container {
+    overflow: hidden;
+    width: 400px;
+    height: 350px;
+}
+.nav {
+    margin-bottom: 0px !important;
+}
+.nav {
+    margin-bottom: 0px !important;
+}
+.tabs-min {
+    overflow: hidden;
+    width: 400px;
+    height: 350px;
+}
+.tab-content {
+    overflow: hidden;
+    width: 400px;
+    height: 350px;
+}
+.tab-pane{
+    overflow: hidden;
+    width: 400px;
+    height: 350px;
+}
+
+.colorBox {
+    width: 50px;
+    height: 15px;
+    border: 1px solid #000000;
+    float:left;
+}
+
+.activeline {background: #fff0b6 !important;}
+
+H1 { text-align: center }
