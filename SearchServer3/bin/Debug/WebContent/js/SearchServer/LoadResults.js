@@ -7,17 +7,45 @@ function GenIFrame (el){
       height: 450,
 	  close: function( event, ui ) {$(this.parentNode).html('');}
     }).dialogExtend({
-        "closable" : true,
-        "maximizable" : true,
-        "minimizable" : true,
-        "dblclick" : "maximize",
+        "closable" 		: true,
+        "maximizable" 	: true,
+        "minimizable" 	: true,
+        "dblclick" 		: "maximize",
         "minimizeLocation" : "right",
         "icons" : {
-          "close" : "ui-icon-circle-close",
+          "close" 	 : "ui-icon-circle-close",
           "maximize" : "ui-icon-circle-plus",
           "minimize" : "ui-icon-circle-minus",
-          "restore" : "ui-icon-bullet"
+          "restore"  : "ui-icon-bullet"
 	  }});
+}
+
+function BlockMime (el){
+	$.ajax({
+		  type: "POST",
+		  url: "api/query/DelMime",
+		  data: {Action: "Mime", Data: el.getAttribute('Post')},
+			success: function (data) {
+				var MSG = document.createElement("Div");
+				$(MSG).html("<img Height='35px' src='Images/Filetypes/Accept.png'></img><BR>"
+							+ "<H2>" + el.getAttribute('Post') + "</H2><BR>" 
+							+ "Postfix wurde aus den Tabellen geloescht und in die Blacklist eingetragen.<BR>" 
+							+ "Aktualisieren Sie die Seite (F5) um die betreffenden Eintraege auszublenden.<BR>" 
+							+ "Server-Antwort(Datensaetze betroffen): " + data);
+							$(MSG).dialog({
+								title: "Postfixe geloescht!",
+								dialogClass: "alert",
+								modal: true,
+								width: '550px',
+								buttons: {
+										Schliessen: function() {
+										  $( this ).dialog( "close" );
+										}
+									  },
+								close: function( event, ui ) {$(this.parentNode).html('');}
+							})
+			}
+		});
 }
 
 function GenIFrameInLine (el){
@@ -129,11 +157,11 @@ function loadPageData (daten) {
 				+ "<img Height='65px' src='Images/Filetypes/" + data.Messages[i].Cont_Post.replace(".", "") 
 				+ ".png' alt='" + data.Messages[i].Cont_Post.replace(".", "") + "' onError='errorImage(this);'></img></a>"
 				+ "<Div style='display:none;'>"
+				+ "<B><H3>" + data.Messages[i].Cont_Post + "<a href='#' Post='" + data.Messages[i].Cont_Post + "' onClick='BlockMime(this)'> Blockieren</a></H3></B><BR>"
 				+ data.Messages[i]._id + "<BR>"
 				+ data.Messages[i].Class_Type + "<BR>"
 				+ data.Messages[i].Class_Name + "<BR>"
 				+ data.Messages[i].Class_Group + "<BR>"
-				+ data.Messages[i].Cont_Post + "<BR>"
 				+ data.Messages[i].Cont_Description + "<BR>"
 				+ data.Messages[i].Cont_Mime + "<BR>"
 				+ data.Messages[i].Cont_Player + "<BR>"
@@ -174,8 +202,10 @@ function loadPageData (daten) {
 		};
 		
 		if (data.Messages[i].Cont_Player=='Text'){
-			output+="<TD onClick='ShowTextLocal(this)' class='Text' id='" + data.Messages[i]._id + "' src='" + data.Messages[i].Cont_Link + "'>Show" 
-			+ "</TD>";
+			output+="<TD>"
+				+ "<a href='#' onClick='ShowTextLocal(this)' class='Text' id='" + data.Messages[i]._id + "' src='" + data.Messages[i].Cont_Link + "'><H2>Inhalt anzeigen (CodeMirror)</H2><BR>"
+				+ "<a href='#' Frame='" + data.Messages[i].Cont_Link + "' Content='' Thumb='' onClick='GenIFrame(this);'><H2>Inhalt anzeigen (HTML-View)</H2></a>" 
+				+ "</TD>"
 		};
 
 		if (data.Messages[i].Cont_Player=='ExtVideo'){

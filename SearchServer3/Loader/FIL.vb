@@ -69,7 +69,7 @@ Namespace CLS
                         End If
                         i = i + 1
                     Catch ex As Exception
-                        Console.WriteLine(ex.Message)
+                        ' Console.WriteLine(ex.Message)
                     End Try
                 End If
             End While

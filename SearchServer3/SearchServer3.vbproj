@@ -92,6 +92,7 @@
     <Compile Include="Loader\EVL\COLORS.vb" />
     <Compile Include="Loader\EVL\DATES.vb" />
     <Compile Include="Loader\EVL\EVL.vb" />
+    <Compile Include="Loader\EVL\Reduce.vb" />
     <Compile Include="Loader\EVL\UNITS.vb" />
     <Compile Include="Loader\FIL.vb" />
     <Compile Include="Loader\RSS.vb" />

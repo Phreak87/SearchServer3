@@ -59,11 +59,10 @@
         Dim Ausgabe As String = ""
 
         Dim RES1 As List(Of String) = SplitQuery(Query)
-        Dim RES2 As List(Of String) = ReduceQuery(RES1)
+        Dim RES2 As List(Of String) = RES1
 
-        Dim PRE1 As String = CombineStr(RES2)
-        Try : Dim n As New NCalc.Expression(PRE1)
-            Return PRE1 & " = " & n.Evaluate()
+        Try : Dim n As New NCalc.Expression(Query)
+            Return Query & " = " & n.Evaluate()
         Catch : End Try
 
         Dim RES3 As List(Of String) = Simplyfy(RES2)
@@ -262,7 +261,7 @@
 
     Function SplitQuery(ByVal Query As String) As List(Of String)
         Dim Res1 As List(Of String) = System.Text.RegularExpressions.Regex.Split(Query, "(\d,+\d+|\+|\d+)").ToList
-        Res1.RemoveAll(Function(s) s = "") : Res1.RemoveAll(Function(s) s = "+")
+        Res1.RemoveAll(Function(s) Trim(s) = "")
         Return Res1
     End Function
     <DebuggerStepThrough()> _

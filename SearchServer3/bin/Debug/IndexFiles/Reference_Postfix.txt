@@ -1,0 +1,3071 @@
+Dateinamenserweiterung	MIME-Typ	Vollständiger Name	Bemerkungen, Verwendung
+.#01, .#02, Durchnummerierte Bilder einer gescannten Filmrolle
+.$$$		Verwendung bei OS/2 zur Markierung archivierter Dateien
+.@@@		Dokumentationen für Programme, wie Microsoft Codeview
+~		–	Backup-Datei (Unix/Linux)
+.~$~		Temporäre Datei	1ST Reader
+.~ap		AppExpert project database-Datei	Borland C++ 4.5
+.~de		Project backup-Datei	Borland C++ 4.5
+.~mn		Menu backup	Norton Commander
+.~pr		Project backup-Datei	Terramodel
+.0			Data-Datei	GEOWorks
+.01			Video-Datei	zweite Datei bei Überschreiten der Dateigröße von 2 GB bei .ts-Dateien, siehe dort
+.000		Komprimierte Datei	Microsoft DoubleSpace und Microsoft DriveSpace
+.000, ..., .999		"DOS-Dateinamenserweiterung" einer beliebigen Geos-Datei (Dateiname, Icon, Typ, ... werden in der Datei gespeichert und in Geos anstelle des "DOS-Namens" angezeigt)	PC/GEOS
+.000, ..., .20009		–	Zum Durchnummerieren von Sicherungskopien von Dateien; auch verwendet, um verschiedene verwandte Daten bestimmten Benutzern zuzuordnen
+.001		NetWare Unicode Rule Table File	Novell NetWare
+.001		Datanorm (Daten)	Datenfile mit Beschreibungstexten und Preisen von Großhändlern und Lieferanten
+.04			Data File	ElsterFormular 2004/2005-Dateien (ELSTER Online-Steuererklärung der Finanzämter)
+.05			Data File	ElsterFormular 2005/2006-Dateien (ELSTER Online-Steuererklärung der Finanzämter)
+.06			Data File	ElsterFormular 2006/2007-Dateien (ELSTER Online-Steuererklärung der Finanzämter)
+.07			Data File	ElsterFormular 2007/2008-Dateien (ELSTER Online-Steuererklärung der Finanzämter)
+.1, ..., .999		Datenbankindex	Superbase
+.1-step		Backup-Datei	Iomega Backup
+.113		Backup-Datei (Daten)	Iomega Backup
+.123		Lotus 123 97 Datei	Tabelle
+.12m		Smartmaster-Datei	Lotus 1-2-3 '97
+.1st		Documenting wizard list	Microsoft Visual FoxPro
+.02			Video-Datei	dritte Datei bei Überschreiten der Dateigröße von 2 GB bei .ts-Dateien, siehe dort
+.201		StarMoney BPD-Datei (Windows)
+.210		StarMoney BPD-Datei (Windows)
+.22			StarMoney BPD-Datei (Windows)
+.220		StarMoney BPD-Datei (Windows)
+.23			StarMoney BPD-Datei (Windows)
+.24			StarMoney BPD-Datei (Windows)
+.25			StarMoney BPD-Datei (Windows)
+.263		Video-Elemementary-Stream mit H.263 komprimiert
+.264		Video-Elemementary-Stream mit H.264 komprimiert
+.2d			2D- Zeichnung	VersaCAD [1]
+.2dm		3D-Geländemodell	SMS
+.2gr		VGA Graphics driver/configuration	Microsoft Windows
+.3gr		VGA Graphics driver/configuration	Microsoft Windows
+.300		StarMoney BPD-Datei (Windows)
+.32x		ROM-Datei eines Sega-32X-Moduls
+.386		Linear Executable (LE) (VXD - DOS Extender; Datei für die Verwendung mit 80386-CPUs
+.3d			3-dimens. Zeichnung	VersaCAD [2]
+.3dmf		x-world/x-3dmf	3D Metafile	QuickDraw 3D
+.3dm		x-world/x-3dmf	3D Model	McNeel Rhinoceros 3D [3]
+.3dr		3DMark.Result	3D Mark [4]
+.3ds		3D Studio	Cinema4D, 3ds Max, AutoCAD
+.3g2		Third Generation Partnership 2	Videoformat für Mobiltelefone
+.3ga		Third Generation Partnership Audio	Audioformat für Motorola Mobiltelefone
+.3gp		Third Generation Partnership	Videoformat für Mobiltelefone
+.411		Daten-Datei	Verwendet in Digitalkameras
+.4db		Structure File	4D (4th Dimension)
+.4dd		4D Data File	4D (4th Dimension)
+.4dr		Data Resource File	4D (4th Dimension)
+.4ge		Compiled Code	Informix 4GL
+.4gi		Compiled Code	Informix 4GL, Objektdateien, die vom Linker zu 4ge zusammengebunden werden
+.4gl		Source Code	Informix 4GL
+.4bl		Source Code	Informix 4GL, Sicherheitskopie der 4gl beim Kompilieren
+.4qr		QuickReport	4D (4th Dimension)
+.4v			Musikdatei	Quartet
+.5lm		Datenbankdatei	Datenbankdatei der Dokumentenverwaltung FAUST
+.669		Composer 669	Trackermodul (Musikformat) des Composer 669/UNIS 669
+.7au		GN-Logger	Trace (GN-Logger ))
+.7z			7-Zip	Komprimiertes Dateiarchiv (7-Zip)
+.8			Source-Datei	Assembler, identisch mit Microsoft Assembler
+.8bf		Plug-in	Plug-in-Filter für viele Grafikprogramme, von Adobe Photoshop eingeführt
+.8bi		Plug-in	siehe .8bf
+.8ds		Plug-in	Plug-in-Menü(?) nur für Photoshop(?)
+.8xp		Ti-8x Programm	Programmdatei für Taschenrechner von Ti der Serie 8x (82,83,...)
+.a			application/octet-stream	Archiv	Programmbibliothek (Unix); selten: Dateiarchiv
+.a01, ..., .a99		ARJ Multi-Volume-Archiv	Teil eines komprimierten Dateiarchivs
+.a2l		ASAM MCD-2 MC language	Beschreibungsdatei für Mess- und Kalibriergrößen von Kraftfahrzeug-Steuergeräten; standardisiert vom ASAM e. V.
+.a3d		ACATEC 3D-Viewing Modell	–
+.a3l		Authorware 3.x library	–
+.a3m		Authorware MacIntosh-Datei	unpackaged
+.a3w		Authorware Windows-Datei	unpackaged
+.a4l		Authorware 4.x library	–
+.a4m		Authorware MacIntosh-Datei	unpackaged
+.a4p		Authorware-Datei	packaged ohne Runtime
+.a4w		Authorware Windows-Datei	unpackaged
+.a5l		Authorware 5.x library	–
+.a5w		Authorware Windows-Datei	unpackaged
+.aa			Audible audio	meist für downloadbare Hörbücher
+.aac		audio/aac, audio/aacp	Advanced Audio Coding	MPEG 2/4 Audio-Datei
+.aam		application/x-authorware-map	Authorware shocked-Datei	–
+.aar		Apache-Axis2-Aplication-Archive	–
+.aas		application/x-authorware-seg	Authorware shocked packet	–
+.aax		Audible audio extended	meist für downloadbare Hörbücher
+.ab			Applix-Builder-Datei	–
+.abbu		Address Book Backup	Adressbucharchiv von Mac OS X
+.abf		Adobe Binary Screen Font	–
+.abc		text/vnd.abc	ABC (Musiknotation)	–
+.abk		Backup-Datei	PrintMaster Gold
+.abk		Corel Draw Auto-Backup	–
+.abm		Audio-album-Datei	HitPlayer
+.abo		Applix Builder Turbo	–
+.abp		AniMake Projektdatei	– Kann nur mit AniMake geöffnet werden
+.abr		Adobe brushes	Adobe Photo Shop
+.abs		abstract	Zusammenfassung eines (wissenschaftlichen) Dokuments
+.abs		Standard GNU-Compiler-Ausgabe für die PC-Plattform
+.abs		Absolute Database	BDE-Datenbanksystem der Fa. ComponentAce
+.abw		Abiword-Dokument	Textverarbeitung AbiWord
+.ac3		Dolby-Digital-Audio-Datei
+.aca		HTTP animation	Microsoft Agent
+.aca		Project Manager Workbench
+.acb		ACBM Graphic image	Bilddatei
+.acb		AOL Cab Launcher
+.acc		DR-DOS Viewmax-Datei	–
+.acc		Accessory	GEM-Zusatzprogramm (für PC-kompatibles DOS und Atari ST)
+.acd		Character definition	Microsoft Agent
+.acd		Acid Song File	Acid von Sony Creative Software (Musik-Kompositions-Programm)
+.acd		ArchiCrypt Passwort Safe Datei	ArchiCrypt Passwort Safe Version 1 bis 5
+.acd		PLC Project File	Project file created by Rockwell PLC software
+.ace		application/x-ace-compressed	ace Archiv	Komprimiertes Dateiarchiv
+.acf		HTTP character file	Microsoft Agent
+.aci		ACI development appraisal	ACIWEB
+.acl		Auto Correct List	Auto-Korrekturliste von MS Word
+.acl		keyboard accelerator file	Corel Draw 6
+.acl		ArchiCrypt Live Datei	ArchiCrypt Live Laufwerk Version 1 bis 6
+.acm		Dynamic Link Library	DLL
+.acm		Interplay compressed sound	Fallout 1,2, Baldur's Gate
+.acm		Datei im Windows-Systemverzeichnis
+.aco		ArCon Objekt	ArCon Eleco-Objekt-Datei
+.acp		ArCon Projekt	ArCon Eleco-Projekt-Datei
+.acp		Assistant Preview	Microsoft Office
+.acr		American College of Radiology	–
+.acs		Character structered storage	Microsoft Agent
+.act		Action Presentation	–
+.act		Foxdoc Action Diagram	Microsoft Visual FoxPro
+.act		Assistant Actor	Microsoft Office
+.acv		verwendet zum (de-)komprimieren von Audiodaten
+.acxml		ArchiCrypt Passwort Safe Datei	ArchiCrypt Passwort Safe Version 6
+.acyl		ArchiCrypt Live Datei	ArchiCrypt Live Laufwerk Version 7 und 8
+.ad			After Dark	Bildschirmschoner
+.ada		Ada source text	non-GNAT
+.adb		Ada source text body	GNAT
+.adb		Appointment database	HP 100LX Organizer
+.adc		Color Bitmap Graphic	Scanstudio 16
+.add		OS/2 adapter driver	Verwendet während des Bootvorganges
+.adf		Amiga disk file	–
+.adf		Adapter Description File	Definitionsdatei von IBM
+.adi		AutoCAD device-independent	binäres Plotterformat
+.adi		Driver Description	Novell NetWare
+.adi		Aomei Backupper	Backup Image File
+.adl		QEMM Mca adaptor description library	–
+.adm		After Dark MultiModule	Bildschirmschoner (Microsoft)
+.adm		Windows NT policy template	–
+.adn		Lotus 1-2-3 Add-In	–
+.adp		Astound Dynamite	–
+.adp		Access Database Project	Microsoft Access Projekt
+.adp		Dynamic Page	AOLserver
+.adp		FaxWorks Faxmodem Setup-Datei	–
+.adr		After Dark Randomizer	Bildschirmschoner
+.adr		Smart Address address book	–
+.adr		Opera Bookmark	Lesezeichen des Opera-Browsers
+.ads		Adaa source text specification	GNAT
+.ads		ADIS	ADIS: Animal Data Interchange Syntax
+.adt		AdTech Fax	–
+.adt		datafile for card applications	HP NewWave
+.adx		Archetype Designer Document	–
+.adx		Dynazip Active Delivery script	–
+.adx		Lotus Approach dBase Index	–
+.adz		Packed ADF	Zip-kompatibel
+.ae			Author/Editor	SoftQuad
+.aep		ArcExplorer project	–
+.aep		Adobe After Effects project	Animations projekt mit Adobe After Effects
+.af2		ABC FlowCharter 2.0 Flowchart	–
+.af3		ABC Flowchart	–
+.afc		Apple Sound-Datei	–
+.afi		Truevision Bitmap graphic	Bilddatei
+.afm		Adobe font metrics	Dateien, die zu einer PostScript-Schriftart gehören
+.afm		Cardfile application	HP NewWave
+.ag			Applix graphic	–
+.agb		Game Boy Advance ROM image	Dump eines Nintendo-Game-Boy-Advance-Spiels zur Verwendung in einem Emulator, selten gebräuchliche Erweiterung, eher .gba
+.agr		Xmgrace-Projekt	Projekt-Datei des Plot-Programms Xmgrace
+.ahk		Autohotkey	Scriptdatei der Scriptsprache AutoHotkey
+.ahn		Ahnenblatt Datei	Ahnenblatt
+.ahn		WinAhnen
+.ai			application/postscript	Adobe Illustrator drawing	–
+.ai			Corel Trace drawing	–
+.aif, 		audio/aiff, audio/x-aiff	Audio Interchange File Format	Audiodatei
+.aiff		audio/aiff, audio/x-aiff	Audio Interchange File Format	Audiodatei
+.aifc		audio/aiff, audio/x-aiff	Audio Interchange File Format compressed	komprimiertes Audio Interchange-Format
+.ail		Andorra 2D-Image-List	Aneinanderreihung von Bildern in beliebigem Format, die durch Metainformationen ergänzt werden
+.aim		application/x-aim	AOL Instant Messenger-Startdatei	–
+.ain		AIN Compressed archive	–
+.aio		APL transfer file	–
+.ais		ACDSee Image Sequence	–
+.ais		Velvet Studio Instruments	–
+.ais		Array of Intensity Samples	Graphikdatei – Xerox
+.aix		Cardfile Application data	HP NewWave
+.akw		Enthält A-Schlüsselwörter für RoboHELP Help Project Index Designer
+.akz		Akzent-Datei	-
+.alaw		European Telephony audio	–
+.alb		Album	JASC Image Commander
+.ale		AvidLogExchange	wird vom Schnittprogramm AVID (TM) benötigt, *.ale-Dateien sind die Grundlage für das Batch-capture-Verfahren d.h. Einladen/Digitalisieren von Mediendaten (von Bändern unter anderem) mit Hilfe von Listen, in denen die genauen In- und Out-Punkte der zu ladenden „Clips“ per Timecode (hh:mm:ss:frfr)aufgelistet sind. Enthalten unter anderem In- und Out-Punkte, Name des Clips, Bezeichnung/Kommentar, Bandname...
+.ali		Dokument	SAP proprietary format .alias, .als		Alias Image	
+.als		Ableton Live Songfile	Audio-Recordingsoftware der Firma Ableton
+.all		Arts & Letters Library	–
+.all		General printer information	WordPerfect für Windows
+.all		Song und Style Files	GEM WS Serie Keyboards
+.all		Steinberg Cubase	Cubase-Song-Datei
+.alo		Alamo-Datei	Darstellung von Modellen im Computerspiel Star Wars: Empire at War
+.alt		WordPerfect Library Menu	–
+.alt		alte Version	Sicherheitskopie einer Datei
+.alv		(MIS) Alea View	MIS ALEA-Ansichtsdefinition, inzwischen Bestandteil von PM Office Plus (Hersteller Infor)
+.alz		ALZip	Komprimierte Dateien mit dieser Dateinamenserweiterung können mit dem Programm 'ALZip' verarbeitet werden.
+.am			Applix SHELF Macro	–
+.am			App-Magic	-
+.am1		Adventure-Maker	-
+.amc		Ant Movie Catalog	-
+.amdb		App-Magic-Datenbank	-
+.amf		Asylum (module/music) (format/file)	Trackermodul (Musikformat) des Digital Sound and Music Interface
+.amf		Advanced Module Format	Musikdatei
+.amg		ACTOR System image	–
+.amg		AMGC Compressed archive	–
+.ami		Annotation file	CoCreate OneSpace Designer
+.aml		ASAM MCD-2 MC meta language	Beschreibungsdatei für schnittstellen-spezifische Größen (vgl. .a2l); standardisiert vom ASAM e. V.
+.ampp		App-Magic Programm-Paket	-
+.amr		Adaptive MultiRate	Audiodaten
+.ams		Extreme's Tracker module	–
+.ams		Velvet Studio music module	–
+.an			Textdatei	Sterling Software: Groundworks COOL Business Team Model
+.an8		Anim8or	menschenlesbares (!) Dateiformat des 3D-Animationsprogramms Anim8or
+.anc		Canon Computer Pattern Maker	Liste von Farbmustern
+.ani		application/x-navi-animation	Animierter Cursor	Mauszeiger-Grafik
+.anim		Animation	Animation (Amiga)
+.anm		DeluxPaint-Animation	–
+.anm		Abstract Network Model	Austauschformat für Verkehrsnetzdaten zwischen den Verkehrssimulatoren VISSIM und VISUM
+.ann		Windows 3.x Help annotation	–
+.ans		ANSI	Textdatei
+.ant		SimAnt saved game	–
+.aob		Audio Objects	Auf DVD-Audio-Discs
+.aoi		Art of Illusion - 3D-Szene	–
+.aol		America Online-Datei	–
+.aos		application/x-nokia-9000-communicator-add-on-software	Add-on software	Nokia 9000
+.aot		Application bindery object template	Bindery-Version der .axt-Datei, erzeugt von Novell SnAppShot. Diese Datei wird von Novell ZENworks für die Softwareverteilung gelesen.
+.ap			Applix Presents	–
+.ap			WHAP Compressed Amiga archive	Komprimiertes Dateiarchiv
+.ap4		Prozessdatei	ibo Process-Designer
+.apc		Compiled application	Centura Team Developer
+.apc		Druckertreiber	Lotus 1-2-3
+.apd		Dynamic application library	Centura Team Developer
+.apd		Druckertreiber	Lotus 1-2-3
+.ape		Ape (engl. für Affe)	Monkey’s-Audio-Dateien, verlustfrei komprimierendes Audioformat
+.apf		Druckertreiber	Lotus 1-2-3
+.apf		Allaire Project File	erstellt von Homesite
+.api		Application Program Interface	verwendet von Adobe Acrobat
+.api		Druckertreiber	Lotus 1-2-3
+.apk		Android Package	Installationsdatei für Android-Anwendungen
+.apl		APL Workspace file	Workspace in APL
+.apl		ArcPad Layer-Datei	Projektdatei von ArcPad, einer mobilen Anwendung aus der Produktgruppe ArcGIS
+.apl		Application library	Centura Team Developer
+.app		Application Generator Object	dBase
+.app		Executable Application	Ausführbare Dateien für GEM/ViewMAX (PC-kompatible DOS und Atari ST) oder Mac OS X
+.app		Generated Application	Microsoft Visual FoxPro
+.app		Normal mode application	Centura Team Developer
+.app		Symphony Add-in Application	–
+.apr		ArcView-Projektdatei	ArcView GIS 3.x
+.apr		Employee Appraiser Performance Review	–
+.apr		Lotus Approach View	Ansichtsdatei des Datenbankverwaltungsprogramms Approach von IBM/Lotus
+.aps		application/mime	Advanced patching systems	ähnlich wie IPS mit Fehlerkontrolle
+.aps		Microsoft Visual C++ file (Resource Editor)
+.apt		Lotus Approach Data view	–
+.apt		Text mode application	Centura Team Developer
+.apx		Appexpert database	Borland C++
+.apx		Lotus Approach Paradox-Specific information	–
+.aq			Applix data	–
+.aqf		Analyzer Queries and Filters	Actix
+.arc 		application/octet-stream	SQUASH/Alexa Archiv	Komprimiertes Dateiarchiv
+.ark		application/octet-stream	SQUASH/Alexa Archiv	Komprimiertes Dateiarchiv
+.arf		Automatic Response	BMC Remedy Action Request System
+.arff		Attribute-Relation File Format	Weka-Datei für Maschinelles Lernen
+.ari		ARI Compressed archive	Komprimiertes Dateiarchiv
+.ari		Aristotle audio	–
+.arj		application/arj, application/octet-stream	Archive Robert Jung	Komprimiertes Dateiarchiv
+.arl		AOL v4.0 organizer	–
+.arr		Steinberg Cubase	Cubase Arrangement-Datei
+.art		image/x-jg	AOL Image	Bilddatei, komprimiert mit dem Johnson-Grace-Kompressionsalgorithmus
+.art		image/x-jg	Canon Crayola art	Bilddatei
+.art		Clip Art	–
+.art		First Publisher Raster graphic	Bilddatei
+.art		Ray Tracer-Datei	–
+.art		Xara Studio drawing	–
+.artx		Artisteer	–
+.artx		belightsoft Text Art	–
+.arw		raw Fotodatei	Sony
+.arx		ARX Compressed Archive	Komprimiertes Dateiarchiv
+.arxml		AUTOSAR language	XML-Datei gemäß AUTOSAR-Standard
+.arv		Automatic Response	BMC Remedy Action Request System
+.as			Applix Spreadsheet	Tabellenkalkulation
+.as			ActionScript	Actionscript-Datei (Flash Scriptsprache)
+.asa		-	Microsoft Visual InterDev
+.asc		text/plain,application/pgp-signature	ASCII-Datei	Textdatei, ASCII-codiert (möglicherweise PGP-verschlüsselt oder enthält PGP-Schlüssel)
+.ascx		ASP.NET Control	–
+.asd		Astound Presentation	–
+.asd		Bildschirmtreiber	Lotus 1-2-3
+.asd, .asf	video/x-ms-asf	Advanced Streaming Format	Audio-/Videodatei
+.asd		AutoSave-Datei	WinWord
+.ase		Farbfeldaustausch	Adobe Datei (Adobe Swatch Exchange)
+.ase		Velvet Studio Sample	–
+.asf		Bildschirmschriftart	Lotus 1-2-3
+.asf		StratGraphics Datafile	–
+.ash		Assembly language header	TASM 3.0
+.asi		Assembler Include file	Borland C++/Turbo C
+.asl		Style-Datei	Adobe Photoshop
+.asm	text/x-asm	Assembler-Quellcode	–
+.asm		Pro/E assembly	–
+.asm		Solid Edge Assembly	–
+.asmdot		Assembly Template	Baugruppenvorlage SolidWorks, CAD
+.aso		Astound Dynamite Object	–
+.asp		Active Server Pages	Server-Skript-Datei
+.asp		Astound Presentation	–
+.asp	text/asp	Setup- und Verbindungsscript	Procomm Plus
+.aspx		ASP.NET Seite	–
+.ass		Advanced SubStation Alpha	Advanced SubStation Alpha-Untertiteldatei
+.ast		Astound multimedia file	–
+.ast		assistant	Claris Works
+.asv		DataCAD Autosave-Datei	–
+.asv		Matlab Autosave-Datei	–
+.asx		CA BrightStor ARCserve Backup script	–
+.asx	application/x-mplayer2, video/x-ms-asf, video/x-ms-asf-plugin	Microsoft Advanced Streaming Redirector	–
+.at2		Auto Template	Aldus Persuasion 2.0
+.atf		APL Transfer-file	Exportformat für APL (Programmiersprache)
+.atm		Adobe Type Manager data/info	–
+.atm		Atmosphere	Atmosphäreneinstellungen für Terragen
+.atn		Aktionendatei	Adobe Photoshop
+.atr		–	Floppyimage für 8 bit Atari-Emulatoren
+.att		AT&T Group 4 bitmap	Bilddatei
+.atw		AnyTime Deluxe for Windows	–
+.au	audio/basic, audio/x-au	Audio U-law	Audio-Datei (Sun-Format)
+.au		–	AICC-Kursbeschreibung
+.aud		Audio file	Westwood Studios (Kyrandia 3, C&C, RedAlert, C&C:TS)
+.aup		easyLEARN Author Project	Projekt-Datei des easyLEARN Autoren-Systems SDN AG.
+.aut		AutoIt Script	AutoIt-Script-Datei bis v. 2.64
+.aut		easyLEARN Author-Lernmittelbeschreibung	Beschreibung der Lernmittel in easyLEARN Autor-Projekten SDN AG.
+.au3		AutoIt v3 Script	AutoIt-Script-Datei ab v. 3.x
+.aux		Auxiliary Dictionary	ChiWriter
+.aux		Auxiliary Reference	TeX/LaTeX
+.aux		Geospatial Imaging ERDAS IMAGINE and LPS Data File	Metadaten für nicht-ERDAS IMAGINE raster file Formate
+.ava		Avagio Publication	–
+.avb		Virusinfizierte Datei	Inculan Anti-Virus
+.ave		Avenue-Script	ArcView GIS 3.x
+.avi	application/x-troff-msvideo, video/avi, video/msvideo, video/x-msvideo	Audio Video Interleave	Containerdatei für Video und Audio Streams (Windows)
+.avp		Symbolpalette	ArcView GIS 3.x
+.avr		Audio Visual Research	–
+.avs		Application Visualization System	–
+.avs	video/avs-video	Stardent AVS-X Image	–
+.avx		Erweiterung (Extension)	ArcView GIS 3.x
+.aw		Applix Words	–
+.aw		Textdokument	HP AdvanceWrite
+.awd		FaxView Document image	–
+.awdb		Access Walker Datenbank	–
+.awk		AWK Script/Program	–
+.awm		Animation Works Movie	–
+.awr		Telsis	Audiodaten
+.aws		StatGraphics Data	–
+.axe		Microsoft AutoRoute-Karte	–
+.axl		ArcIMS XML project	–
+.axt		ASCII application object template	Text-Version der .aot-Datei, erzeugt von Novell SnAppShot. Enthält alle Änderungen auf der Arbeitsstation.
+.axt		Microsoft AutoRoute-Vorlage	–
+.azk		Elektronisches Antrags-/Angebotsverfahren des Bund	Mit easy-Software können Sie die Formulare für die Beantragung von Fördermitteln des Bundes am PC ausfüllen und ausdrucken.
+.azw		Amazon Word	Amazon Kindle eBook-Format
+.b		Applause Batch list	–
+.b		Spielstand	Gesicherter Spielstand von GTA III – GTA Vice City – GTA San Andreas
+.b&w, .b_w		Black & White	1st Reader-, Atari- und Macintosh-Monochrombitmaps
+.b1n		–	1st Reader-Monochrom-, Farbbitmaps
+.b30		printer font	ABC Ventura Publisher-Druckerschriftart
+.b4		Helix Nuts and Bolts	–
+.b5t		Blind Write 5	–
+.b64		Base64-Datei	Komprimierte(?) Base64-Archivdatei
+.b8		Raw graphic	Piclab Plane II-Bilddatei
+.bad		Oracle bad	–
+.bad		–	Sicherungsdatei von „scanreg \fix“ unter Windows
+.bag		BAG-Archiv	Komprimiertes Dateiarchiv
+.bak		Backup-Datei	Sicherheitskopie („Backup“) einer Datei
+.bal		Ballade Music score
+.bank		Musikdateien, die z.B in Spielen wie Ghost Recon Advanced Warfighter benutzt werden.	VLC Media Player
+.bar		Horizontal menu object	DBASE Application Generator
+.bas		Basic (Source code)	BASIC-Quellcodedatei
+.bat		Batch	Stapelverarbeitungsdatei
+.bb		Papyrus Database backup	–
+.bb		Blitz Basic	Blitz Basic-Quellcode
+.bbl		Bibliographic reference	TeX / BibTeX
+.bbm		Deluxe Paint Bitmap image	Bilddateien
+.bbs		Bulletin Board System text	–
+.bc!		Bittorrent-Client-Datei	Unvollständige Bitlord–Datei (Beliebter BitTorrent-Client)
+.bch		Batch Process Object	DBASE Application Generator
+.bch		Daten-Datei	Datalex Entry Point 90
+.bcm		Communications file	Microsoft Works
+.bco		Bitstream Outline font description	–
+.bcp		Makefile	Borland C++ (Borland C Plusplus)
+.bcw		Environment settings	Borland C++ 4.5
+.bdb		Datenbank	Microsoft Works
+.bdf		Egret Datafile	–
+.bdf		West Point Bridge Designer File	–
+.bdf		Birthday File	birthday reminder
+.bdf		Binary Diff File	Binary Diff (Atari)
+.bdl		Bundle Datei (2D und 3D CAD Zeichnung)	CoCreate CAD
+.bdm		Indexdatei, die Informationen über ein Video (AVCHD) enthält	Sony Kameras
+.bdr		Border	Microsoft Publisher
+.bdsproj		Borland Developer Studio Projekt	Verwendet von Borland Developer Studio bis 2006
+.bez		Bitstream Outline font description	–
+.bf		Brainfuck	Brainfuck, eine Esoterische Programmiersprache
+.bf2		Bradford 2 Font	–
+.bfc		Microsoft Windows 95 Briefcase Document	Aktenkoffer-Dokument
+.bfe		Blowfish encrypted	Vom Verschlüsselungsprogramm Bcrypt
+.bfm		Font Metrics file	Unix/Mainframe
+.bfs		FlatOut 2 bfs file	enthält Spieldateien von FlatOut 2
+.bfx		Fax document file	BitFax
+.bg		Microsoft Backgammon Game	–
+.bga		OS/2 Graphic array	–
+.bgi		Borland Graphics Interface Driver	Treiber für Pascal und einige andere Borland-Sprachen
+.bgl		Microsoft Flight Simulator Scenery	–
+.bh		Blackhole	komprimierte Datei
+.bhf		pcAnywhere Host Datei	–
+.bhx		WinZip file	WinZip file
+.bi		binary	Binärdatei
+.bi		Basic Include file	Microsoft Visual Basic für DOS
+.bib		Bibliography Datei	ASCII
+.bib		–	Datenbank
+.bib		Literatur-Datenbank (Bibliografie)	TeX, BibTeX
+.bif		GroupWise initialization file	–
+.bif		Binary Image b&w graphic	Image Capture Board
+.biff		XLITE 3D-Datei	–
+.bik		bink video	Bink Video File
+.bin	application/mac-binary, application/macbinary, application/octet-stream, application/x-binary, application/x-macbinary,
+binary (file)	Binärdatei, verschiedene Nutzungen (z. B. CD-Images (CDRWIN etc.), Firmware-Updates)
+.bio		OS/2 Bios-Datei	–
+.bit		X11 Bitmap	Bilddateien; Startbilder für den Lyra-MP3-Player
+.bk		Backup	Sicherheitskopie einer Datei
+.bk		JetFax Faxbook-Datei	–
+.bk!		Document backup	WordPerfect für Windows
+.bk$		Backup	Sicherheitskopie einer Datei
+.bk1, …, .bk9		Document backup	WordPerfect für Windows: Backup für Fenster 1…9
+.bkf		Backup format	Das Windows-eigene Backupprogramm NTBackup
+.bkp		Backup	TurboVidion Dialog Designer
+.bks		bookshelf-Datei	IBM BookManager Read
+.bks		Spreadsheet Backup	Microsoft Works
+.bkw		FontEdit Fontset mirror image	–
+.blb		Resource archive	DreamWorks, Neverhood
+.bld		BASIC Bloadable picture	–
+.blend		Blender3D	Blender3D-Datei
+.blend1, .blend2, ...		–	Blender3D-Backup-Dateien (Sicherungsversionen)
+.blib		WorkBench++ für C-Control I	Bibliotheksdatei
+.blk		Alias Wavefront Image	–
+.blk		–	Amiga IFF
+.blk		Temporäre Datei	WordPerfect für Windows
+.bm	image/bmp	Bitmap	X11 Bitmap
+.bm1		Apogee BioMenace data	–
+.bmf		Corel Gallery file	–
+.bmk		Windows Help bookmark	Lesezeichen zu Windows-Hilfedateien (.hlp)
+.bmp	image/bmp, image/x-windows-bmp	Bitmap	Alpha Microsystems Bitmap (Bilddatei)
+.bmp	image/bmp, image/x-windows-bmp	Bitmap	OS2 Bitmap (Bilddatei)
+.bmp	image/bmp, image/x-windows-bmp	Bitmap	Windows Bitmap (Bilddatei)
+.bmt		Ami Pro Button	–
+.bmx		–	Animationen (Siemens)
+.bmx		BlitzMax	BlitzMax-Quellcode
+.bn		Instrument Bank file	AdLib
+.bnk		Instrument Bank file	AdLib
+.bnk		Sound effects bank file	Electronic Arts
+.bnp		backup für inp-Dateien	Hilfsdatei für Sony Kameras
+.bol		Compressed archive library	Microsoft Booasm.arc
+.bom		Bill of materials	OrCAD Schematic Capture, auch andere EDA-Programme
+.bom		Bill of materials	Apple Installer
+.boo	application/book	Compressed archive	Microsoft Booasm.arc
+.book	application/book	Book	Adobe FrameMaker
+.bos		Optimized Binary File	Microsoft Robotis Studio
+.box		Lotus Notes Datei	–
+.bpc		Business Plan Toolkit Chart	–
+.bpl		Borland Delphi 4 packed library	–
+.bpl		Business Navigator Datei	Businessplan Software
+.bpr		Backup Project	Projektdatei des File-Backup-Programmes TrayBackup
+.bpr		Borland Projekt-Datei	–
+.bpp		WorkBench++ für C-Control I	Projektdatei
+.bps		Microsoft Works Document	–
+.bpt		CorelDraw Bitmap fills file	–
+.bpx		Truevision Targa Bitmap	Bilddatei
+.bqy		BrioQuery-Datei	–
+.br		Bridge Script	–
+.brd		Board	Cadence Allegro PCB Layout-Datei
+.brd		Board	Eagle Layout-Datei
+.brk		Brooktrout Fax-Mail-Datei	–
+.brush		DPaint Grafikdatei	Pinselinformation
+.brw		–	Einsatz in Kreditinstituten
+.brx		–	Datei zum Durchsuchen von Multimedia-Konfigurationen
+.brz		DbBRZ	Datenbankbackup
+.bs_		Find Menu shell extension	Microsoft Bookshelf
+.bs1		Apogee Blake Stone file	–
+.bsa		BSARC Compressed archive	Komprimiertes Dateiarchiv
+.bsb		–	Komprimiertes Kartenformat von MapTech und NOAA benützt
+.bsc		Apple II Compressed archive	Komprimiertes Dateiarchiv
+.bsc		Fortran Pwbrmake Object	–
+.bsc		browser information	MS Developer Studio
+.bsp		Quake-Engine Map file	QRadiant / Valve Hammer Editor
+.bst		BiblioTex file	BiblioTex bibliography file for TeX
+.btm		(nicht selbstmodifizierende) Batch-Datei (Batch-to-Memory)	JP Software 4DOS, 4OS, 4NT, Take Command, TC, auch Norton Utilities, etc., kompatibel mit .bat, nur schneller in der Ausführung
+.btn		Makeover Button File	–
+.btr		Btrieve-Datenbank	Btrieve 5.1
+.bud		Backup disk for Quicken	–
+.bug		–	Datei für Bugs und Probleme
+.bun		CakeWalk Audio Bundle	MIDI-Programm
+.bup		Backup	–
+.but		Button definition	–
+.buy		–	Film-Datei
+.bv1, …, .bv9		–	WordPerfect für Windows: Überlaufdatei für Dokument 1…9
+.bw		SGI Black and White image	Bilddateien (auch Farbinformationen möglich)
+.bwb		Spreadsheet application	Visual Baler
+.bwi		BlindWrite Image	Rohdatenimage erstellt mit BlindWrite
+.bwr		Kermit Beware buglist	–
+.bws		Sub-Code BlindWrite	Konfigurationsfile für BlindWrite-Image
+.bwt		Blindread Image	CD-Image erstellt mit Blindread
+.bwv		Business Wave-Datei	–
+.byu		BYU Movie	–
+.bz	application/x-bzip	bzip	komprimierte Datei (Unix)
+.bz2	application/x-bzip2	Bzip2	komprimierte Datei
+.c	text/plain,  text/x-c	C Source Code File	C Quellcodedatei
+.c		configuration	CheckPoint VPN Secure Remote Konfiguration
+.cpp, .c++	text/plain,  text/x-c	C++ Source Code File	C++-Quelltextdatei
+.C	text/plain,  text/x-c	C++ Source Code File	C++-Quelltextdatei (selten)
+.c00		Ventura Publisher Print Datei	–
+.C01		Typhoon wave	–
+.c2		C-Controll II Modul	C-Control II Quelltextdatei der Programmiersprache C2
+.c2d		WinOnCD CD-Image	–
+.c2p		C-Controll II Projekt	C-Control II Projektdatei der Programmiersprache C2
+.c4b		Clonk 4 Binärdatei	Clonk
+.c4d		Cinema4D-Scenefile	Cinema 4D
+.c4d		Clonk 4 Objektdefinition	Clonk
+.c4f		Clonk 4 Rundenordner	Clonk
+.c4g		Clonk 4 Systemdaten	Clonk
+.c4k		Clonk 4 Registrierschlüssel	Clonk
+.c4m		Clonk 4 Materialdefinition	Clonk
+.c4p		Clonk 4 Spielerdatei	Clonk
+.c4s		Clonk 4 Szenario	Clonk
+.c4u		Clonk 4 Update	Clonk
+.c4v		Clonk 4 Video	Clonk
+.c4x		Clonk 4 Engine	Clonk
+.C86		C86 Quellcode	Computer Innovation
+.ca		Cache-Datei	Telnet Server Initial cache data
+.cab	application/vnd.ms-cab-compressed application/x-cab-compressed	Microsoft Cabinet Datei	Komprimiertes Dateiarchiv
+.cac		Executable Datei	dBase IV
+.cad		Softdesk Drafix Cad	–
+.cag		Catalog Datei	Microsoft Clip Gallery v. 2.x, 3.x, 4.x
+.cal		Kalender-Datei	–
+.Crash		Absturzmeldung	Die Meisten 3D Editor wie zb. Prism3D
+.cal		Cakewalk Application Language	Makrodatei für Cakewalk (MIDI-Sequenzer)
+.cal		CALS	Komprimierte Bilddateien
+.cal		SuperCalc Spreadsheet	SuperCalc 4/5
+.cam		Casio camera Datei	–
+.can		Canvas	Navigator Fax
+.cap		–	Capella (Notensatz)
+.cap		Capture Datei	Telix Session
+.cap		Caption	Ventura Publisher
+.car		AtHome assistant Datei	–
+.car		Carrara Datei	3D-Software von der Firma DAZ Productions
+.carc		Nintendo textur,graphic,platten,course File	Nintendo Editor Tool
+.cas		Comma-delimited ASCII Datei	–
+.cat		Sicherheitskatalog	Windows
+.cat		Catalogue Datei	dBase
+.cat		–	Casio Program-link FA-123
+.cat		tree-ring width data file	CATRAS: Computer Aided Tree Ring Analysis System
+.cat		categorization Datei	Quicken IntelliCharge
+.cat		Stellarium Star Catalogue	Stellarium
+.CATpart		Part Datei	CAD/Catia V5
+.cb		clean boot Datei	Microsoft
+.cbc		CubiCalc Fuzzy Logic	System Datei
+.cbf		Atari DOS Chebase Datei	DOS
+.cbf		Chessbase File	Proprietäres Format zur Speicherung von Schachpartien (vom CBH-Format abgelöst)
+.cbf		CSDL Dokument	enthält eine Specification and Description Language-Spezifikation
+.cbh		Chessbase File	Proprietäres Format zur Speicherung von Schachpartien (ab 1997, Version Chessbase 6.0)
+.cbi		Column binary	Verwendung in IBM Mainframe-Systemen
+.cbk		CryptoBackup File	Verschlüsselte CryptoBackup-Datei (nur bei unverschlüsseltem Dateinamen)
+.cbl		Cobol	Cobol-Quellcode
+.cbm		Compiled Bitmap	XLib
+.cbr		Comic book Rar-Archive	Lässt sich z.B. mit dem Programm CDisplay öffnen
+.cbt		Computer based training	–
+.cbz	application/x-cbr	Comic Book Zip	Comic-Book-Format
+.cc		C++ Source Code File	C++-Quelltextdatei
+.cc		custom class	Visual dBASE
+.cc3		CUEcards Datenbank	Notizen-Verwaltung
+.cca		cc:mail archive	–
+.ccb		Animated Button configuration	Visual Basic
+.ccc		Curtain Call Native bitmap	Bilddateien
+.ccd		CloneCD-Image-Control-Datei	CD-Image-Konfigurationsdatei erstellt mit CloneCD
+.cce		Kalender	Calendar Creator Plus
+.ccf		–	Konfiguration des OS/2-Multimedia-Betrachters
+.ccf		Datenbank	MediaDex-Katalog
+.ccf		Communications Configuration	Symphony
+.ccf		Concerto Container File	Daten mit Layouts (AVL Concerto)
+.ccf		CryptLoad Container File	Dateiliste des CryptLoad-Download-Manager (RapidShare)
+.cch		Corel Chart	–
+.ccl		Communication Command Language	Intalk
+.ccm		Lotus CC:Mail "box" Datei	zum Beispiel: INBOX.CCM
+.cco		CyberChat-Datei	–
+.cco		XBTX Graphics	–
+.cct		Shockwave cast Datei	Macromedia Director
+.cct		DesignWorks Datei	DesignWorks Viewer
+.cda		CD Audio Track	–
+.cdb		CardScan Database	CardScan
+.cdb		Clipboard Datei	Zwischenablage
+.cdb		Conceptual model backup	PowerDesigner
+.cdb		Critical Data Block Keyfile	FreeOTFE
+.cdb		Main database	Turbo C Utilities
+.cdb		Pocket Access Database	Kaisoft Access Manager for Pocket PC
+.cdf		Channel Definition Format	Microsoft
+.cdf	application/cdf, application/x-cdf	Netcdf Graphic Datei	Bilddateien
+.cdfs		Compact Disc filing system	WindRiver CD-Dateisystem
+.cdi		Compact Disc Interactive	Philips CDi-Standard
+.cdi		–	CD-Image erstellt mit DiscJuggler
+.cdk		Atari Calamus Document	–
+.cdm		Conceptual data model	Sybase PowerDesigner Data Architect
+.cdm		Custom data module	Visual dBASE
+.cdm		Custom Device Module	Gerätetreiber in der NetWare Peripheral Architecture (NWPA) von Novell NetWare
+.cdp		Content Dispatcher Package	Verpackter Content für die PC-Eisenbahnsimulation Trainz
+.cdr		CorelDRAW file	Datei des Vektorgrafik-Programms CorelDRAW
+.cdr		CD raw data	Enthält Rohdaten einer CD
+.cds		ClientDataSet	Enthält Datenbanktabellen von MyBase (Borland Delphi)
+.cdt		CorelDRAW template	Vorlage
+.cdx		CorelDRAW compressed drawing	Komprimiertes CDR
+.cdx		Compound Index	Microsoft Visual Foxpro
+.cdy	application/vnd.cinderella	Cinderella Construction file	Geometrieprogramm Cinderella
+.ce		Main CE Datei	The FarSide Computer Calendar
+.ceg		Tempra Show Bitmap graphic	Bilddateien
+.cel		AutoDesk Animator Cel Image	–
+.cel		CIMFast Event Language Datei	–
+.cer	application/pkix-cert, application/x-x509-ca-cert	Certificate Datei	MIME x-x509-ca-cert
+.cf		Imake Configuration Datei	–
+.cfb		Comptons Multimedia Datei	–
+.cfg		Configuration File	Konfigurationsdatei
+.cfl		CorelFLOW Chart	–
+.cfm		ColdFusion template	–
+.cfm		Corel FontMaster Datei	–
+.cfm		Creative FM-Music	–
+.cfm		Windows customer form	Visual dBASE
+.cfn		Atari Calamus Font Datei	–
+.cfo		C form object	Turbo C Utilities
+.cfp		Complete Fax Portable	Faxdatei
+.cga		–	Ventura Publisher Bildschirmschriftart
+.cgf		Crytek Geometry File	Speicherformat für 3D-Modelle der CryEngine
+.cgi		Common gateway interface script	–
+.cgm		Computer Graphics Metafile	Vektorgrafiken
+.ch		Clipper 5 Header	–
+.ch		OS/2 Konfigurationsdatei	–
+.ch3		Chart	Harvard Graphics 3.0
+.ch4		Charisma Presentation	Charisma 4.0
+.chd		Chameleon Font descriptor	–
+.chf		remote control Datei	pcAnywhere
+.chi		ChiWriter Document	–
+.chk		Checkdisk	Enthält von den MS-DOS-/Windows-Programmen Checkdisk und Scandisk wiederhergestellte verlorene Daten-Ketten
+.chk		–	Temporäre Datei von WordPerfect für Windows
+.chl		Configuration History Log	–
+.chm		Compiled HTML Help	Hilfedatei im CHM-Format, verwendet unter Microsoft Windows (ab Windows 98); komprimiertes HTML-Archiv
+.chn		Ethnograph Data Datei	–
+.chp		Chapter Datei	Ventura Publisher
+.chr		Character Sets	Schriftarten
+.cht		ChartMaster dBase Interface	–
+.cht		ChartViewer Datei	–
+.cht		Harvard Graphics Vector Datei	–
+.chw		–	Content Datei zu .chm
+.cif		CalTech Intermediate Graphic	–
+.cif		Creator Image Datei	CD-Image erstellt mit Easy CD Creator
+.cif		caller Datei	pcAnywhere
+.cif		Crystallographic Information File	–
+.cil		Clip Gallery download packag	–
+.cil		Cilea Einheitengruppe	Einheitengruppe für Cilea
+.cim		Sim City 2000 Datei	–
+.cin		–	Überwacht Modifikationen an INI-Dateien unter OS/2
+.circ		circuit	Dateiart zum Darstellen von Schaltkreisen, z. B. mit Logisim
+.cix		Database Index	Turbo C Utilities
+.ck1 ... .ck6		Commander Keen Daten	iD/Apogee Commander Keen 1...6
+.ckb		Keyboard mapping Datei	Borland C++
+.cl		Generic LISP	LISP-Quellcode
+.cl3		Layout Datei	Adaptec Easy CD Creator
+.class	application/java, application/java-byte-code, application/x-java-class	Java .class Datei Format	Von der Java Virtual Machine ausführbarer Bytecode
+.clc		APROL ChronoLog Container	Dateien werden vom Programm ChronoLogServer geschrieben. (LINUX)
+.clg		Disk Catalog Datenbank	–
+.cll		Cricket Software Clicker Datei	–
+.clo		Cloe Image	–
+.clp		Compiler Script	Clipper 5
+.clp		Clip art	Quattro Pro
+.clp	application/x-msclip	Clipboard	Windows-Zwischenablage
+.clr		color screen image	1st Reader
+.clr		Color definition	PhotStyler
+.cls		Klassenquelldatei	C++-Klassenmodul-Definition
+.cls		Klassenquelldatei	Visual-Basic Klassenmodul-Definition
+.cls		Klassendefinition	LaTeX-Dokumentenklasse
+.clt		APROL ChronoLog Template	Templates zur Formatierung von ChronoLog Containern verwendet (.clc). (LINUX)
+.clw		Class Wizard	Microsoft Visual C++
+.clw		Quellcodedatei	Clarion for Windows Quellecode
+.clz		Tomb Raider 6 Archive	Komprimiertes Archiv mit Audio (AWD) oder Leveldaten (GMX)
+.cm		Craftman Data	–
+.cma		–	APPLIX TM1: Datenbank im Klartextformat
+.cmd		External Command Menu	1st Reader
+.cmd		Command Datei	Batch-Scripts für Windows NT, OS/2, CP/M-86 und RSX11
+.cmd		Programmdatei	dBase-II
+.cme		Diagrammdatei	SeeMe-Editor für die Modellierungsmethode SeeMe
+.cmf		Corel Metafile	–
+.cmg		Chessmaster saved game	–
+.cmk		Card Shop Plus Datei	–
+.cmm		CEnvi Batch Datei	–
+.cml		Chemical Markup Language Datei	Chemical Markup Language, auf XML basierendes Dateiformat zur Darstellung von Molekülen
+.cmp		Postscript Printer Header	CorelDRAW 4.0
+.cmp		–	JPEG Bitmap
+.cmp		User dictionary	Microsoft Word für DOS
+.cmp		Address Document	Route 66
+.cmr		MediaPlayer Movie	–
+.cmv		Corel Move animation	–
+.cmx	image/x-cmx	Corel Presentation Exchange image	–
+.cmyk		cyan, magenta, yellow, and black	Rohdaten
+.cnc		CNC General Program data	–
+.cnf		Configuration	Konfigurationsdatei
+.cnq		Compuworks Design Shop	–
+.cnt		Contents	Index-Datei zu Hilfedateien unter Windows
+.cntl		z/OS JCL-Programmbibliothek	PDS mit Batchfiles
+.cnv		Conversion files	zu Konvertierende Dateien (WsFTP)
+.cnv		conversion support Datei	Word für Windows
+.cnv		Temporäre Datei	WordPerfect für Windows
+.cnv		Canvas Drawing	Cancas Datei (Vektorformat)
+.cob		Cobol	Cobol-Quellcode
+.cob		trueSpace 2 object	3D-Objekte
+.cod		Template source Datei	dBase Application Generator
+.cod		FORTRAN Compiled code	–
+.cod		compiled code	Microsoft C Compiler-Ausgabe
+.cod		Video Text Datei	–
+.cof		Container File	Container File für einen Download Manager
+.col		Color Palette	AutoDesk Animator
+.col		Multiplan Spreadsheet	Microsoft Multiplan
+.com	application/octet-stream, text/plain	Command /Core Image	Batch-Datei (Betr.Syst. von DEC) Ausführbares Programm (CP/M/DOS/Windows). Bei PC-DOS auch Binärdatei des Betriebssystems (vgl. .SYS). Die Formate von CP/M und DOS sind für Unterschiedliche Prozessoren, somit nicht Identisch. Wenn sich eine .COM und eine .EXE Datei mit gleichem Namen im selben Verzeichnis befinden, wird standardmäßig die .COM Datei ausgeführt.
+.con		Konfiguration	Simdir
+.conf	text/plain	Configuration	Konfigurationsdatei unter Unix, meist Klartext (z. B. /etc/inetd.conf)
+.config	text/plain	Configuration	Konfigurationsdatei unter .NET oder  Konfigurationsdatei unter Unix, meist Klartext
+.contact		Windows Live Contact	Windows Live Contact-Format, z.B. für Windows Kontakte
+.contrib		-	Rest nach dem Mergen in ClearCase
+.coo		Components File	Fabasoft Components
+.cp4		Cplan	Gleisplan für CPlan Gleisplanspiel
+.cp8		CP8 256 Gray Scale image	Bilddateien
+.cpc		Cartesian Perceptual Compression	Bilddateien (für CPC Viewer)
+.cpd		Complaints Desk Script	–
+.cpd		Corel PrintOffice Datei	Zeichnung
+.cpd .cpe		–	Fax-Deckblatt
+.cpf		Complete Fax	Fax-Datei
+.cph		Corel Print House	Bilddateien
+.cpi		AVCHD Clip Information: Informationen über das Video	AVCHD-Videos, SONY-Videoformat
+.cpi		ColorLab Processed Image	Bilddateien
+.cpi		code page information	Codepage-Spezifikation für MS-DOS und FreeDOS
+.cpio	application/x-cpio	Cpio-Archiv	Archivformat des Unix-Kommandos cpio
+.cpj		CD Project	CeQuadrant
+.cpj		Track-Abbild	WinOnCD
+.cpj		CADdy electrical Projekt	CADdy (Software)
+.cpl		Compel Presentation	–
+.CPL		Corel color palette	–
+.cpl		Control Panel Library	Windows-Systemsteuerungsapplet
+.cpo		Corel Print Office	Bilddateien
+.cpp	text/x-c	C Plus Plus (C++)	C++-Quelltextdatei
+.cpp		Cricket Presents presentation	CA-Cricket
+.cpr		Corel Presents presentation	–
+.cpr		Cubase Project	Projektdatei des Sequenzers Cubase
+.cps		PC Tools Backup	Central Point
+.cps		Coloured postscript	farbiges Postscript
+.cpt	application/x-cpt	Cricket Presents Template	CA-Cricket
+.cpt		Corel Photo-Paint image	Bilddateien
+.cpt		Encrypted Memo	dBase
+.cpt		–	Komprimiertes Dateiarchiv (Macintosh)
+.cpx		Corel Presentation Exchange	Komprimierte Zeichnung
+.cpy		Copy Books	–
+.cpz		COMPOZ Music Text	–
+.cr2		Canon RAW Format	Bilddatei im Rohdatenformat
+.crc		Cyclic Redundancy Check	Datei zur Überprüfung der Datenkonsistenz
+.crc		Circular reference Datei	Pro/Engineer
+.crd	application/x-mscardfile	Cardfile	Microsoft Windows 3.x
+.crf		cross-reference	Zortech C++
+.crf		PkZip gepacktes Archiv	benutzen viele Spiele
+.crh		Image Datei	Microsoft Golf
+.crl	application/pkcs-crl, application/pkix-crl	Certificate Revocation List	Datei, die die Seriennummern von gesperrten Zertifikaten in PKI-Umgebungen enthält
+.crp		Corel run-time presentation	–
+.crp		Encrypted database	dBase IV
+.crp		custom report	Visual dBASE
+.crs		Conversion resource	WordPerfect 5.1 für Windows
+.crs		–	AICC Kursbeschreibung
+.crt	application/pkix-cert	Certificate	Zertifikatsdatei
+.crt		Crontab Datei	–
+.crt		Terminal settings information	Oracle
+.crt	application/x-x509-ca-cert, application/x-x509-user-cert	CaRTridge Image	Commodore 64 emulator (ROMinhalt eines Steckmodules für den Expansionsport)
+.cru		CRUSH	Komprimiertes Dateiarchiv
+.crv		Unbekannt	Kurvendatei, geschlossene Freihandlinie (Curve CAD WorkNC)
+.crw		Canon Raw Image	zur Speicherung von Fotos in Canon-Digitalkameras
+.cry		Crysis Map	Crysis-Maps werden in diesem vom Crysis-Editor lesbaren Format gespeichert
+.cs		C-Sharp	C-Sharp (C#) Quellcodedatei
+.csa		Comma deliminated text	–
+.csb		Cosmo3D scenegraph binary	OpenGL Optimizer/Cosmo3D Szenengraph-Datei, Binärformat
+.csb		Corel script binary	–
+.csb		Crashsoft BASIC	–
+.csc		Corel script	–
+.csg		Statistica/w Graph Datei	–
+.csh	application/x-csh, text/x-script.csh	C shell script files	Hamilton Labs
+.csi		Copystar(image)	SH-CopyStar, Diskettenkopierprogramm
+.csl		–	America Online CSL-Format
+.csm		Precompiled header	Borland C++ 4.5
+.csm		Script Datei	Kodak Dc265 Camera
+.csm		Catography Shop Map	3D-Map von TheGameCreators
+.cso		Customer service data + outcome	Komprimiertes .iso eines Playstation Portable Spiel
+.csp		PC Emcee On-Screen image	–
+.css		Statistica/w Datasheet	–
+.css		Stats+ Datafile	–
+.css	text/css Cascading Style Sheet	Cascading Style Sheets (CSS) – in einer HTML-Ergänzungssprache verfasste ASCII-Textdateien zur exakten Formatierung von HTML-Elementen
+.cst		Cast	Macromedia Director
+.cst		-	AICC-Kursstruktur
+.csv	text/comma-separated-values
+text/csv
+application/csv
+application/excel
+application/vnd.ms-excel
+application/vnd.msexcel
+text/anytext
+
+Comma separated values	Textdatei, Tabelle
+.csv		Adjusted EGA/VGA Palette	CompuShow
+.ct		–	Paint Shop Pro
+.ct		Scitex CT bitmap	–
+.ctb		color-dependent plot style table	AutoCAD-Farbabhängige Plotstiltabellendatei, enthält genau 256 Plotstile, die einer jeden Farbe in der Zeichnung zugeordnet sind (siehe auch .stb)
+.ctc		PC Installer Control	–
+.cte		Classification Tree Editor	Classification Tree Editor Datei, enthält Testrahmen und Testfälle
+.ctf		code translation/
+Custom PSP Theme
+
+Symphony Character code/
+Sony PSP
+
+.ctg		Canon Power Shot Info File	ctg = catalog / Darin speichern Canon-Digitalkameras Zusatzinformationen zu den Bildern.
+.ctl		Control	dBase IV
+.ctl		control file	Kontrolldatei
+.ctx		Course Text	Microsoft Online Course
+.ctx		Ciphertext	PGP
+.ctx		User control binary	Visual Basic
+.cub		Cube Datei	APPLIX TM1
+.cue		CUEcards Datenbank	Notizen-Verwaltung
+.cue		Cue-sheet	Audio-CD-Metadaten (Track-Enden etc.)
+.cui	application/octet-stream	Customize User Interface	AutoCAD Konfigurationsdatei für die Benutzeroberfläche
+.cul		Cursor library	IconForge
+.cup		Datenbankdatei	SeeYou (Segelflug - Programm)
+.cur		Cursor-Datei	Mauszeiger (Statisch)
+.cursor		Cursor	Sun Microsystems
+.cut		Dr Halo Bitmap	–
+.cutlist		Cut Assistant (früher Asfbin Assistant)	Schnittliste für Videoschnitt
+.cv		Corel Versions archive	–
+.cv		information screen	Microsoft CodeView
+.cv5		Canvas Drawing	Canvas 5.0 (Vektor- und Bitmap; auch für Canvas 7.0)
+.cvi		Canvas Drawing	Bilddokument
+.cvg		Image	Bilddateien
+.cvs		Canvas Drawing	Canvas 3.5, artWORKS (Vektor- und Bitmap)
+.cw		I don't know	Quake3, font file (included in *.pk3)
+.cwb		Cakewalk Bundle	–
+.cwk		Claris Works data	–
+.cwp		Cakewalk Project	–
+.cws		Claris Works template	–
+.cxt		protected Cast	Macromedia Director
+.cxx	text/plain	C++	C++-Quelltextdatei
+.cys		CSWgermany CYberSecure-CryptContainer	Verschlüsseltes Archiv
+.cz			StarMoney CAMT-Datei (Windows)
+.czip		Encrypted ZIP	Verschlüsseltes Archiv
+.d	application/x-director	Directory	Häufig verwendet bei Konfigurationsverzeichnissen unter Unix (z. B. /etc/init.d)
+.d11		Abrechnungsdaten DA11	DA11-Datei mit REB 23.003-Abrechnungsdaten
+.d2d		2D/3D Object-Datei	3-D Fassade Plus
+.d31		Abrechnungsdaten DA11	DA11-Datei mit REB 23.003-Abrechnungsdaten
+.d64		disk image	Commodore 64-Emulator (1541 – 5.25? einseitig – ˜ 170kB)
+.d71		disk image	Commodore 64-Emulator (1571 – 5.25? doppelseitig – ˜ 340kB)
+.d81		disk image	Commodore 64-Emulator (1581 – 3.5? – ˜ 800kB)
+.d81		Leistungsverzeichnis	GAEB-Austausch-LV zwischen z. B. Architekt und Ingenieur
+.d83		Angebotsaufforderung	GAEB-Datei mit Angebotsaufforderung
+.d84		Angebotsabgabe	GAEB-Datei mit Angebotsabgabe
+.d85		Nebenangebot	GAEB-Datei mit Nebenangebot
+.d86		Auftragserteilung	GAEB-Datei mit Auftragserteilung
+.d88		Nachtrag	GAEB-Datei mit Angebotsnachtrag
+.d89		Rechnung	GAEB-Datei mit Rechnungsdaten
+.da5		–	GoWind-Schülerinformationen
+.daa		CD/DVD-Image	PowerISO Direct Access Archive
+.dae		COLLADA Datei	XML-basiertes, offenes Austauschformat für Daten von 3D-Programmen
+.dar		Disk Archiv	Linux DAR (Disk Archive) \ KDar KDE Disk Archiver
+.dao		–	Windows Registry Backup
+.dao		Disc At Once	CD-Image
+.dap		Data access page	Microsoft Access 2000
+.dat		Data	Sehr unterschiedliche Verwendung, meist als Container für binäre Daten winmail.dat: Eine mit Outlook bzw. Outlook Express im RTF-Format versandte E-Mail.[1]
+.dat		–	MPEG-Video (auf VCDs und SVCDs)
+.dat		Virtuelle Partition	Norton Ghost, wird angelegt beim Programmlauf
+.datatype		Datatype	Ein-/Ausgabeformat (Amiga)
+.db		Datenbank	dateibasierte Datenbanken, z.B. SQLite oder CSV
+.db		table database	Borland Paradox 7
+.dbc		database container	Microsoft Visual FoxPro
+.dbc		CANdb-Datenbank-Datei	Vector-Kanaldefinition für CAN-Bus
+.dbf		Database-Datei	Datenbank im DBASE-Format
+.dbf		Enable database	can be opened with Excel 97
+.dbf		tablespace-Datei	Oracle 8.1.x
+.dbk		Database Backup	dBASE
+.dbk		Schematic backup-Datei	OrCAD Schematic Capture
+.dbl		64-Bit doubles (RAW)	Adobe Audition 2.0
+.dbo		Compiled program	dBASE IV
+.dbq		Paradox Memo	–
+.dbt		Text Memo	dBASE
+.dbv		Memo field Datei	Flexfile 2
+.dbw		Database-Datei	DataBoss (Microsoft Windows 9.x)
+.dbx		DataBeam image	–
+.dbx		Postfächer (Eingang, Ausgang, usw.)	Microsoft Outlook Express
+.dbx		Tabelle	Microsofts Visual FoxPro
+.dbz		digitaler Band	Digitale Bibliothek
+.dc		DesignCAD	CAD-Datei
+.dc2		DesignCAD	CAD-Datei
+.dc4		Verschlüsselte Datei	ViaThinkSoft (De)Coder 4.x
+.dc5		CAD-Datei	DataCAD Drawing
+.dc6		Bilddatei, häufig verwendet von Blizzard Entertainment in Spielen wie Diablo II.	DataCAD Drawing
+.dca		Document Content Architecture	Textdatei IBM DisplayWrite
+.dca		Active designer cache	Visual Basic
+.dcd		CAD-Datei	DIG-CAD (LLH-Software GmbH)
+.dcf		Dyadic	–
+.dcf		Disk Image Datei	–
+.dcim		Imaging and Communications	Digital Imaging and Communications in Medicine (Bild und Daten)
+.dci		CAD-Datei	DIG-CAD Ing. (LLH-Software GmbH)
+.dcm		DICOM-Datei	–
+.dcm		DCM module	–
+.dcp		Data CodePage	OS/2
+.dcr		Shockwave-Datei	–
+.dcr		Delphi Compiled Resource	Kompilierte Ressourcen–Datei von Delphi
+.dcs		Bilddatei	Quark XPress
+.dcs		–	ACT! Activity-Datei
+.dcs		Desktop Color Separation	–
+.dct		Database Dictionary	Clarion Database Developer
+.dct		Database SpellCheck Dictionary	Harvard Graphics 3.0-Symphony
+.dct		database container	Microsoft Visual FoxPro
+.dcu		Delphi compiled unit	Kompilierte *.pas-Datei von Borland Delphi
+.dcx		Bitmap Graphics	Multipage PCX
+.dcx		Fax image	basiert auf PCX
+.dcx		–	Macro
+.dcx		database container	Microsoft Visual FoxPro
+.dd		Macintosh DISKDOUBLER	Komprimiertes Dateiarchiv
+.ddb		Bitmap Graphics	–
+.ddd		3D-Tool Dateiformat
+.ddf		Data Definition	Pervasive.SQL (vormals Btrieve oder Xtrieve) Metadaten, enthält die Beschreibung der Struktur der Datenfiles
+.ddf		Diamond Directive File	Microsoft MakeCAB
+.ddi		DISKDUPE	–
+.ddif		–	Digital Equipment oder Compaq; wird verwendet, um Bilder und zugehörige Texte zu speichern
+.ddp		Device Driver Profile	OS/2
+.dds		Direct Draw Surface	–
+.deb		Debug Script	DOS Debug
+.deb	application/x-deb	Debian Package	Installierbares Programmpaket für Debian
+.def		Assembly Header Datei	Geoworks
+.def		C++ definition	–
+.def		Define Module	3-D Fassade Plus
+.def		SmartWare II data	–
+.defi		de-install script	Oracle 7
+.dem		Digital Elevation Models	Vista Pro, verwendet USGS standards
+.dem		Demo	Descent
+.dem		Graphics	Vista Pro
+.dep		Dependency	Visual Basic Setup Wizard
+.der	application/x-x509-ca-cert	Certificate	–
+.des		Graphics-Datei	Corel Designer
+.des		–	AICC-Kursbeschreibung
+.desktop	application/x-desktop	.desktop file	Verknüpfungsdatei unter verschiedenen Desktop-Oberflächen (u.a. GNOME, KDE)
+.dev		Device Driver	Gerätetreiber
+.device		Device	Gerätetreiber (Amiga)
+.dewf		recorded instrument	Macintosh SoundCap/SoundEdit
+.dez		DES ZIP	ZIP-Datei mit DES-Verschlüsselung
+.dfd		Data Flow Diagram Graphic	Prosa
+.dfi		Outline Font description	Digifont
+.dfl		Default Program Settings	Signature
+.dfm		Delphi-Formular	–
+.dfm		Data Flow Diagram model	Prosa
+.dfs		Sound-Datei	Delight
+.dfv		Printing Form value	Microsoft Word
+.dfw		Derive Worksheet	Derive
+.dgm		Digital Geospatial Metadata	Digitales Geländemodell
+.dgn		Microstation CAD drawing	Dateiformat der Firma Bentley
+.dgs		Diagnostics Report	–
+.dh		Dependency Information	Geoworks
+.dhp		Graphic-Datei	Dr. Halo II-III PIC Format
+.dht		Datafile	Gauss
+.dia		Diagraph Graphics	Computer Support Corporation
+.dia	application/x-dia-diagram	diaFile	Illustrationsprogramm und UML-Werkzeug, siehe Dia (Software)
+.dib		Device-independent bitmap	Geräteunabhängiges Bitmap
+.dic		Dictionary file	Wörterbuch, Lotus Notes, Domino
+.dicm		Imaging and Communications	Digital Imaging and Communications in Medicine (DICOM)
+.dif		Data Interchange Format	Datenbank
+.dif		Database-Datei	Visicalc
+.diff		–	Patch für Sourcecode, die mit dem Unix-Tool „diff“ erstellt wurden
+.dig		Digilink-Datei	–
+.dig		Audio	Sound Designer I
+.dim		Database-Datei	Applix TM1
+.dip		Graphics-Datei	–
+.dir		Dialing Directory	ProComm Plus
+.dir	application/x-director	Directory	VAX – DEC
+.dir		Macromedia Director-Datei	–
+.dir		Director Movie	MacroMind Director 4.x
+.dis		Distribution file	VAX Mail
+.dis		Ray Tracer file	–
+.dis		Thesaurus-Datei	CorelDraw
+.disabled		Disabled startup file	–
+.divx		DivX-Media-Format	DivX
+.diz		Description in ZIP	Beschreibung in ZIP
+.djv	image/vnd.djvu	DjVu	DjVu Rastergrafikdokument
+.djvu	image/vnd.djvu	DjVu	DjVu Rastergrafikdokument
+.dkb		DKBTrace	Ray Traced DKBTrace-Grafik
+.dl		Image	–
+.dlc		Download-Link-Container	JDownloader
+.dld		Datafile	Lotus 1-2-3
+.dlg		C++ Dialogue Script	–
+.dll	application/octet-stream, application/x-msdownload	Dynamic Link Library	zur Laufzeit linkbare Bibliothek (Windows, OS/2)
+.dls		Downloadable sound	–
+.dls		Interactive music architecture	IMA (Microsoft, Blood2)
+.dls		Setup-Datei	Norton DiskLock
+.dm3		Demo	Quake 3 Arena
+.dmd		data module	Visual dBASE
+.dmf		Disk Image	Amiga (komprimiert)
+.dmf		music module	MOD (X-Trakker)
+.dmg	application/octet-stream	Disk Image	Dateiarchiv (Dateisystem-Abbild) für Mac OS X
+.dmo		Demo	Derive
+.dmp		Dump file	Screen or Memory
+.dms	application/octet-stream	Amiga DISKMASHER	Komprimiertes Dateiarchiv
+.dmv		DOS4GW-Videodatei	Videodateiformat für DOS4GW
+.dmx		DMX Script File	für Datenbankanwendungen (z.B. MS SQL Server)
+.dng		Digitales Negativ	zur Speicherung von Fotos als Rohdaten in Digitalkameras (Adobe Systems)
+.do		Java-Servlet-Datei	Dient Webservern üblicherweise zur Generierung dynamischer Inhalte. Kann allerdings auch mit einem Webbrowser geöffnet werden.[2]
+.do		Quellcode-Datei	Stata
+.dob		User document	Visual Basic
+.doc		Document	Einfacher Text
+.doc		Document	IBM PC Text (Textverarbeitung)
+.doc		Document	Interleaf
+.doc		Document	FrameMaker oder FrameBuilder
+.doc	application/msword	Document	Microsoft-Word-Dokument (Textverarbeitung)
+.doc		Document	WordPerfect-Dokument (Textverarbeitung)
+.doc		Document	WordStar-Dokument (Textverarbeitung)
+.docbook		–	DocBook-Dokument (Desktop-Publishing)
+.docx	application/vnd.openxmlformats-officedocument.wordprocessingml.document	Word 2007 XML Document	Microsoft Word 2007-Dokument (Textverarbeitung)
+.docm	application/vnd.ms-word.document.macroEnabled.12	Word 2007 XML Document with Macros	Microsoft Word 2007-Dokument mit Makros (Textverarbeitung)
+.doe		Arena Model Document	Modelldatei des Simulationstools Arena (Rockwell Software)
+.dog		Laughing Dog	Bildschirmschoner
+.doh		Dependency Information	Geoworks
+.dos		External Command file	1st Reader
+.dos		Network Driver file	PKT_DIS.dos
+.dos		–	DOS-Textdatei
+.dos		Local <-> Unicode Translator for code pages	Novell NetWare
+.dot		Line-Type definition	CorelDraw
+.dot	application/msword	Document Template	Microsoft-Word-Dokumentvorlage (Textverarbeitung)
+.dox		–	MultiMate 4.x-Textdatei
+.doy			StarMoney Dokumente/Anhänge (Windows)
+.dox		User document binary form	Visual Basic
+.doz		Description out of Zip	VENDINFO
+.dp		Kalender	Daily Planner
+.dp		DataPhile	–
+.dpg		Moonshell MP4 Video	Homebrew Nintendo DS
+.dpl		packed library	Borland Delphi 3
+.dpr		Delphi-Projekt	–
+.dpr		Project header	Borland C++
+.dpt		Publication file	Publish-It!
+.dr9		Directory file	–
+.draw		drawing	Objektbasiertes Vektorbild der Firma Acorn
+.drc		Design rules check	Orcad Schematic Capture-Reportdatei
+.drs		Display Resource Datei	WordPerfect für Windows
+.drt		DReport Template	DReport Editor
+.drv		Device Driver	Gerätetreiber
+.drw		Lotus Freelance Image	Grafik
+.drw		Pro/E drawing	Grafik
+.drw		Micrografx Drawing	Micrografx Designer bis V3.x
+.drwdot		Drawing Template	Zeichnungsvorlage SolidWorks, CAD
+.drz		DReport Dokument	DReport Editor
+.ds2		Olympus Diktiergeräte	Audioformat für DS-5000
+.ds4		Designer 4	Micrografx Designer V4.x
+.dsc		Discard file	Oracle
+.dsd		Database file	DataShaper
+.dsf		Designer file	Micrografx Designer V7.x
+.dsg		DooM saved game	–
+.dsk		Disk	Gerätetreiber in der Disk Drive Functional Specification (DDFS) Architektur von Novell NetWare
+.dsk		Project Desktop file	Borland C++/Turbo Pascal
+.dsm		Digital Sound Module	DSI
+.dsm		Direct Show Media	–
+.dsm		Dynamic Studio music module	MOD
+.dsm		Music module file	DSIK
+.dsn		Design	Object System Designer
+.dsn		ODBC Data source	–
+.dsn		Schematic Datei	Orcad Schematic Capture
+.dsp		Display parameters	Signature
+.dsp		Graphics Display driver	Dr. Halo
+.dsp		Developer Studio project	Microsoft Developer Studio
+.dsq		Corel QUERY	–
+.dsr		Driver Resource	WordPerfect für Windows
+.dsr		Active designer file	Visual Basic
+.dss		Digital Sound file	Digital Soup
+.dss		Screensaver-Datei	DCC
+.dst		Distribution file	PC-RDist, by Pyzzo
+.dst		digital stitching Tajima	Tajima DG/ML by Pulse (maschinenlesbar)
+.dsw		Desktop settings	Borland C++ 4.5
+.dsw		workspace-Datei	Microsoft Developer Studio
+.dsx		Active designer binary	Visual Basic
+.dsz		–	HTML-Erweiterungsdatei der TShooter-Hilfe in der htm-Hilfedatei, hängt mit Troubleshooterliste (s. HKLM\SW\Mic\TShoot\Troubleshooterlist...) zusammen.
+.dta		Datafile	Turbo C++
+.dta		STARS data	World Bank STARS-Daten
+.dtapart		DownThemAll!-Segmentdatei	temporäre Datei zur Zwischenspeicherung von Downloadsegmenten zwecks Downloadbeschleunigung
+.dtd	application/xml-dtd	Document Type Definition	SGML-/XML-Spezifikation
+.dted		Digital terrain elevation data	Geographische Daten
+.dtf		Datenbank	Lotus Notes, temporäres File
+.dtf		Datenbank	PFS-Questions & Answers
+.dtf		Datenbank	Symantec Q&A relationale Datenbank
+.dtm		Module Datei	DigiTrakker
+.dtp		Desktop layout file	SecurDesk!/SecurDesk! LV
+.dtp		Vorlage	Pressworks
+.dtp		Text Document	Timeworks Publisher 3.x
+.dt_		Daten-Fork	Macintosh
+.dun		Dial-up Networking	Exportierte DFÜ-Netzwerkdatei
+.dup		Duplicate	Backup
+.dv	video/x-dv	Digital video	MIME
+.dvc		Datafile	Lotus 1-2-3
+.dvd		–	DVD-Imageformat von CloneCD
+.dvf		–	DV Studio für Camcorder
+.dvi	application/x-dvi	Device Independent	TeX
+.dvp		Desqview Program information	DESQview
+.dvp		Device parameter file	AutoCAD
+.dvr-ms		Microsoft DirectShow 9.0	Microsoft TV-Aufzeichnungsformat
+.dw2		Drawing Datei	DesignCAD für Windows
+.dwc		–	Komprimiertes Dateiarchiv
+.dwd		DiamondWare digitized	–
+.dwf		Drawing Web file	Microsoft WHIP autoCAD reader
+.dwf		Vector graphic	Autodesk; CAD
+.dwg		Drawing	AutoCAD-Dokument; CAD
+.dwp		Dokument	DeScribe
+.dws		Workspace Datei	Dyadic
+.dwt		Drawing Template	AutoCAD-Vorlagedokument; CAD
+.dwtiff		DocuWare5 Dokument	–
+.dx		Digital Electric Corporation	DEC: Data exchange Datei
+.dxf		Data Exchange file	–
+.dxf		Drawing Interchange Format	CAD
+.dxn		Fax document	Fujitsu dexNet
+.dxr	application/x-director	Macromedia Director protected	nicht veränderbarer Film
+.dxt		Direct-X Texture	Komprimierte Direct-X-Textur
+.dylib		Dynamic Library	Programmbibliothek (Shared Object) unter Mac OS X
+.dyn		Datafile	Lotus 1-2-3
+.e00		Coverage Export-Datei	ArcInfo
+.e00		Exchange-Datei	Arc/Info
+.e2d		Editor2D-Datei	2-dimensionale Vektorgraphik des in JFire enthaltenen Editors.
+.e3d		Eleco 3D Object	-
+.e4m		Emergency 4 Mission	Containerdatei von Emergency 4
+.eap		easyLEARN Autor-Kursprogramm	Kursprogramm-Dateien des easyLEARN Autoren-Systems SDN AG.
+.eap		Enterprise Architect Projekt	
+.ear		Enterprise Application Archive	Java (J2EE-Spezifikation), bündelt verschiedene Dateien und Archive mit Code und Konfiguration
+.easm		eDrawings File	SolidWorks, CAD
+.ebd		AP Modellbahn Datendatei	AP Modellbahn
+.ebj		Error Checking Object Datei	Geoworks
+.ece		Oracle Express Dynamic Web Page	erzeugt von einem Oracle Express Application Server (Ersatz für PHP)
+.ecw		Enhanced Compressed Wavelet File	Grafik-Datei mit einem JPEG2000-verwandten Kompressionsalgorithmus
+.ed5
+.ed6		EDMICS image	EDMICS image
+.eda		ASR disk image	Ensoniq
+.edb		Geneological data	ROOTS3
+.edd		Element Definition document	FrameMaker+SGML documents
+.ede		EPS disk image	Ensoniq
+.edf		(unbek.)	Macrocom Online Küchenplaner
+.edl		Exercises Developement Language	Beschreibungssprache für Fragemodule bei E-learning-Kursen
+.edk		KT disk image	Ensoniq
+.edq		SQ1/SQ2/KS32 disk image	Ensoniq
+.edrw		eDrawings File	SolidWorks, CAD
+.eds		SQ80 disk image	Ensoniq
+.edt		Default settings	VAX Edt editor
+.edv		VFX-SD disk image	Ensoniq
+.eeb		Equation editor Button Bar	WordPerfect für Windows
+.efa		ASR Datei	Ensoniq
+.efe		EPS Datei	Ensoniq
+.efg		Normal Form Game	Dateiformat zur Speicherung von Extensivformspielen mittels Gambit
+.efk		KT Datei	Ensoniq
+.efq		SQ1/SQ2/KS32 Datei	Ensoniq
+.efs		SQ80 Datei	Ensoniq
+.eft		High Resolution Screen Font	ChiWriter
+.efv		VFX-SD Datei	Ensoniq
+.efx		Faxdokument	Efax Reader, Everex EFax
+.efw		 ?	Umbenannte ZIP Datei
+.ega		EGA Display font	Ventura Publisher
+.eit		 ?	Projekt-Datei für Excelsior Installer, Datei mit Microsoft Encarta Inhalt
+.el	text/x-script.elisp	Lisp Source code	Emacs
+.elc	application/x-bytecode.elisp, application/x-elc	Lisp Source code	Lisp-Bytecode
+.elf		Executable and Linking Format	-
+.elm		Theme-Pack Datei	Microsoft FrontPage
+.elt		Event List Text	Prosa
+.emb		Embedded bank Datei	Everest
+.emd		ABT Extended MoDule	–
+.emf	image/x-emf	Windows Enhanced Metafile	Grafikformat für Vektorgrafiken
+.eml	application/mbox, message/rfc822	E-Mail	Standard-Dateiformat einer E-Mail (MIME RFC 822)
+.emlx		E-Mail	Dateiformat einer E-Mail von Apple Mail
+.emm		Mindmap	MindManager Smart
+.ems		Enhanced Menu System	PC Tools Konfigurationsdatei
+.ems		EMSA 1.0 Format	Dateiformat der Firma 4pi Analysis, Inc. für EDX-Spektren
+.emu		Terminal Emulation Datei	BITCOM
+.emz	image/x-emf	Compressed Enhanced Metafile	emf - ZIP komprimiert
+.enc		Encoded Datei	UUENCODEd Datei, Lotus 1-2-3
+.enc		Musik-Datei	Encore
+.enc		Video-Datei	–
+.end		Arrow-Head Definition Table	CorelDraw
+.enff		Neutral Format	–
+.eng		Chart Graphics Datei	EnerGraphics
+.eng		Dictionary Engine Datei	Sprint
+.ens		EndNote Stil Datei	EndNote
+.env	application/x-envoy	Enveloper Macro	WOPR
+.env		Environment Datei	WordPerfect für Windows
+.eot		Embedded Open-Type	
+.epa	image/	Award BIOS Logo	Startbildschirm im Award BIOS (Bilddatei;XnView)
+.epd		Publication Datei	Express Publisher
+.epd		Extended Position Description	Schachprogramme
+.ephtml		Enhanced Perl-parsed HTML	–
+.epi		Dokument	Express Publisher
+.epp		Grafikformat	Easy Photo Print von Canon
+.eprt		eDrawings File	SolidWorks, CAD
+.eps	application/postscript	Encapsulated PostScript	Schriftschnitte, Vektorgrafiken und/oder Rastergrafiken
+.epsf	application/postscript	Encapsulated PostScript	Schriftschnitte, Vektorgrafiken und/oder Rastergrafiken
+.eps2	application/postscript	Level 2 EPS	–
+.epsi		EPS Interchange	–
+.epub	application/epub+zip	EPUB (Akronym für electronic publication)	EPUB-E-Books
+.eqn		Equation Datei	WordPerfect für Windows
+.er1		ERWin Datei	–
+.erd		Entity Relationship Diagram	Prosa
+.erm		Entity Relationship Model	Prosa
+.err		Error Log	
+.err		Compilation error Datei	Microsoft Visual FoxPro, RoboHELP
+.erx		ERWin Datei	–
+.esh		Extended Shell Batch	DOS
+.esl		Distributable support library	Microsoft Visual FoxPro
+.esm		Elder Scrolls Master	Morrowind, Oblivion, Fallout 3
+.esp		Elder Scrolls Plugin	Morrowind, Oblivion, Fallout 3
+.esps		ESPS audio Datei	–
+.etd		EBX Transfer Data File	Adobe File für E-Books
+.eth		Dokument	Ethnograph 3.x
+.etx	text/x-setext	Structure Enhanced text	SetText
+.eui		ESP compacted disk image	Ensoniq
+.evt		Event Log	Microsoft Windows NT, 2000
+.evy		Dokument	WordPerfect für Windows Envoy
+.ewd		Text Document	Express Publisher für Windows
+.ewl		Microsoft Encarta document	–
+.ex3		Device Driver Datei	Harvard Graphics 3.x
+.exc		Exclude Datei für Optimize	nicht zur Verarbeitung gedacht, QEMM
+.exc		Exclusion Dictionary Datei	Microsoft Word
+.exc		Source-Code Datei	Rexx VM/CMS
+.exe	application/octet-stream	Executable	Ausführbare Datei (DOS, OS/2, Windows)
+.exe	vms/exe	Executable	Ausführbare Datei (OpenVMS)
+.exec		z/OS REXX-Library	PDS mit REXX Programmen
+.exp		Saved chat	ICQ
+.exr		OpenEXR	HDR-Bilddatei
+.ext		ASCII binary transfer	WS_FTP PRO (IPSWITCH Software)
+.ext2		EXT2 Image	Dateisystemabbild
+.ext3		EXT3 Image	Dateisystemabbild
+.ezp		Edify.zip	Edify Electronic Workforce Backup Utility
+.f		FREEZE	Komprimiertes Dateiarchiv
+.f bzw. .F	text/plain, text/x-fortran	FORTRAN	Fortran Quellcode
+.f01		Fax document	Perfect Fax
+.f03 bzw. .F03		Fortran 2003	Fortran 2003 Quellcode
+.f06–.f16		Dos screen text font	Höhe = 6–16 Pixel
+.f2r		Linear music module	Farandole
+.f3r		Blocked music module	Farandole
+.f77	text/x-fortran	FORTRAN 77	FORTRAN 77 Quellcode
+.f90 bzw. .F90	text/plain, text/x-fortran	Fortran 90	Fortran 90 Quellcode
+.f95 bzw. .F95		Fortran 95	Fortran 95 Quellcode
+.f96		Faxdokument	Frecom FAX96
+.fa		Fasta-Format	(eine der häufig verwendeten Dateinamenserweiterungen) DNA- oder Protein-Sequenz
+.fac		Face graphic	–
+.faq		Frequently Asked Questions	Häufig gestellte Fragen
+.far		Farandole	Trackermodul (Musikformat) des Farandole Composers
+.fas		Basic module Datei	3-D Fassade Plus
+.fav		Navigation bar	Microsoft Outlook
+*.fax	=/˜ TIFF/TIF rsp. BTF (BigTIF[F])?	FAX Type Image	Telefaksimilie/Telefax (daher wohl auch der Name FAX/*.fax)
+*.fax		–	Report-Datei von Veritas BackupExec
+.fb2		FictionBook	Ein offenes auf XML basierender E-Book-Format
+.fbff		Favorite Backup Datei	Mozilla Firefox Lesezeichen Backup
+.fbie		Favorite Backup Datei	Internet Explorer Lesezeichen Backup
+.fbk		Financials Backup	Microsoft Dynamics NAV (Navision Financials Native-Backup)
+.fbk		-	Proficy iFIX General Electric Applikations-Backup
+.fbop		Favorite Backup Datei	Opera Lesezeichen Backup
+.fbx		3D Austauschformat	Autodesk Maya, 3D Studio MAX
+.fc		Spell Check dictionary	Harvard Graphics
+.fcd		Virtual CD-ROM Datei	–
+.fcm		Binary Dateipatch	Forward Compression
+.fd		Declaration Datei	FORTRAN
+.fd		Field offsets	DataFlex-Compiler
+.fdb		Financials Database	Microsoft Dynamics NAV (Navision Financials Native-Database)
+.fdb		font definition block	Schriftenbibliothek für Ming
+.fdf	application/vnd.fdf	Formular	Adobe Acrobat
+.fdw		Formular	F3 Design and Mapping
+.feb		Figure Editor Button Bar	WordPerfect für Windows
+.fem		Finite Element Mesh	CADRE
+.feq	text/plain	Frequenz	Equalizer Presets in foobar2000
+.ff		Outline Font description	AGFA CompuGraphics
+.ffa		find fast Datei	Microsoft
+.fff		Fax document	defFax
+.fff		GUS PnP bank Datei	–
+.ffl		Image Datei	PrintMaster Gold
+.ffl		fast find Datei	Microsoft
+.ffo		fast find Datei	Microsoft
+.fft		Final Form Text	Teil von IBM DCA
+.ffx		fast find Datei	Microsoft
+.fh3		Freehand 3 drawing	Vector graphic (Aldus)
+.fh4		Freehand 4 drawing	Vector graphic (Aldus)
+.fh5		Freehand 5 drawing	Vector graphic (Macromedia)
+.fh6		Freehand 6 drawing	Vector graphic (Macromedia)
+.fh7		Freehand 7 drawing	Vector graphic (Macromedia)
+.fh8		Freehand 8 drawing	Vector graphic (Macromedia)
+.fh9		Freehand 9 drawing	Vector graphic (Macromedia)
+.fh10		Freehand 10 drawing	Vector graphic (Macromedia)
+.fh11		Freehand 11 drawing	Vector graphic (Macromedia)
+.fhmx		Freehand MX	Vector graphic (Adobe)
+.fi		Datei Interface	FORTRAN
+.fif	application/fractals, image/fif	Fractal Image	–
+.fig		REND386/AVRIL Datei	–
+.fig		FIG image text	Vektorzeichnungen des Programms Xfig
+.fig		SNES ROM image	Dump eines Nintendo SNES Spiels (mit Pro Fighter Header) zur Verwendung in einem Emulator
+.fig		Matlab-Figure
+.fil		Datei List Object	dBase Application Generator
+.fil		Datei template	Application Generator
+.fil		Overlay	WordPerfect für Windows
+.fil		file	Von Novell SnAppShot umbenannte Quelldatei, die mit Novell ZENworks (Softwareverteilung) verteilt werden soll
+.fil		file	Datei, die von AVG-Antivirus in das Virus-Vault verschoben wurde
+.fin		Print formatted text	Perfect Writer
+.fit		Datei index table	Microsoft Windows NT
+.fit		Graphic	FITS
+.fits		CCD camera image	FITS
+.fits		Flexible Image Transport System	FITS
+.fix		Patch Datei	Generic
+.fix		Fiximage	Georeferenzierbares Rasterbildformat
+.fky		Macro	Microsoft FoxPro
+.fla		Movie	Adobe Flash
+.fla
+.flac	audio/flac	Free Lossless Audio Codec	freies, verlustfrei komprimierendes Audio-Format (Ogg-CoDec-Familie)
+.flb		Format library	Papyrus
+.flc		FLIC animation	Autodesk Animator, Autodesk 3D-Studio, siehe auch .fli
+.fld		Field define module	3-D Fassade Plus
+.fld		Folder	Charisma
+.flf		Delived form	Corel Paradox
+.flf		Driver	OS/2-Treiber
+.flf		Financials License File	Microsoft Dynamics NAV
+.fli	video/x-fli, video/fli	FLIC Animation 320x200	Autodesk Animator, siehe auch .flc
+.fli	Font library	EmTeX
+.fll		dynamic link library	Microsoft Visual FoxPro
+.flm		Film Roll	AutoCAD
+.flo	image/florian	FlowCharter Datei	Micrografx
+.flp		Flower-Project Leecherdatei	FLP-Leecher
+.flp		VMWare Diskettenimagedatei	VMWare
+.fls		Filelist document	Farrukh Imposition Publisher
+.flst		Transparenzreduzierungsvorgabe	Adobe InDesign
+.flt		Filter	Corel
+.flt		Filter	Micrografx Picture Publisher
+.flt		Graphics filter	Microsoft
+.flt		Graphics filter support Datei	Asymetrix ToolBook
+.flt		Music module	MOD (StarTrekker)
+.flt		Open Flight Datei	MulitGen
+.flv	video/x-flv	Flash Video	Adobe
+.flw		Dokument Leitungsmessung	Freelance
+.flx	text/vnd.fmi.flexstor	Compiled binary Datei	DataFlex
+.fm		FrameMaker Document	Adobe
+.fm		Spreadsheet	FileMaker Pro
+.fm1		Spreadsheet	Lotus 1-2-3, version 2.x
+.fm3		Device driver	Harvard Graphics, version 3.0
+.fm3		Spreadsheet	Lotus 1-2-3, version 3.x
+.fmb		Forms sources	Oracle, v4.x und neuer
+.fmb		Datei Manager button bar	WordPerfect für Windows
+.fme		FMEA Datei	IQ FMEA für Windows
+.fmf	video/x-atomic3d-feature	Font oder Icon	IBM LinkWay
+.fmk		MakeFile	FORTRAN PowerStation
+.fml		Mirror list	Oracle
+.fmo		Compiled format	dBase IV
+.fmp		Document Datei	FileMaker Pro
+.fmt		Csreen format Datei	Microsoft Visual FoxPro
+.fmt		Print Datei	Microsoft Schedule+
+.fmt		Style sheet	Sprint
+.fmt		Textformat für Form	Oracle, v4.x und neuer
+.fmx		Executable form	Oracle, v4.x und neuer;FileMaker Extension
+.fn3		Font	Harvard Graphics
+.fnd		Find applet	Microsoft Explorer gespeicherte Suche
+.fnf		Notendatei für ForteFree
+.fng		Font group	Font Navigator
+.fnk		FunkTracker	Trackermodul (Musikformat) des FunkTracker
+.fnt		Font	Schriftschnitte, Bitmap-Schriften
+.fnx		Inactive font	Exact
+.fO1
+.f02		Font	Borland Turbo C
+.fog		Fontographer font	–
+.fol		Saved message folder	1st Reader
+.fon		Call log	Procomm Plus
+.fon		Dialing directory	Telix
+.fon		Font	Bitmap-Schriftschnitte
+.font		Font	Zeichensatz (Amiga)
+.for		Form	WindowBase
+.for bzw. .FOR	text/plain, text/x-fortran	FORTRAN	FORTRAN-Quellcode
+.fot		Font-related Datei	–
+.fot		Installed TrueType font	Microsoft Windows Font Installer
+.fp		FoxPro	Konfigurationsdatei
+.fp		FileMaker Pro Datei	–
+.fp1		"Flying Pigs"	Microsoft Windows 9.x Bildschirmschonerdaten
+.fp3		FileMaker Pro Datei	FileMaker Pro v.3 & 4 Dokument
+.fp5		FileMaker Pro Datei	FileMaker Pro v.5 Dokument
+.fp7		FileMaker Pro Datei	FileMaker Pro v.7 Dokument
+.fpc		Catalog Datei	FoxPro
+.fpl		Playlisten Datei	Foobar 2000
+.fpt		FileMaker Pro Datei	–
+.fpt		Memo fields	Microsoft FoxPro
+.fpw		Floorplan drawing	FloorPlan Plus für Windows
+.fpx	image/vnd.fpx, image/vnd.net-fpx	Kodak FlashPix	FlashPix
+.fr3		Renamed dBaseIII+ form	dBase IV
+.frf		Font	FontMonger
+.frg		Uncompiled report	dBase IV
+.frk		Zip	Macintosh
+.frm		Dokument	FrameMaker oder FrameBuilder
+.frm		Executable Datei	Oracle, v3.0 und vorher
+.frm		Formular-Quelldatei	Delphi Formularquellcode
+.frm		Formular-Quelldatei	Visual Basic Formularquellcode
+.frm		Merge form	WordPerfect für Windows
+.frm		Symbol Report	DataCAD
+.fro		Compiled report	dBase IV
+.frp		Formular	PerForm PRO Plus
+.frs		Screen Font Resource	WordPerfect für Windows
+.frt		Report menu	FoxPro
+.frx		Form stash Datei	Visual Basic
+.frx		Report	Microsoft FoxPro
+.fs		F#	F# ist eine Funktionale Programmiersprache von Microsoft für das .NET Framework
+.fsf		fPrint Audit Tool	–
+.fsl		Formular	Borderland/Corel Paradox für Windows
+.fsm		Sample Datei	Farandoyle
+.fst		Linkable program	dBFast
+.fsx		Data	Lotus 1-2-3
+.fsy		FSync Document	FileSync - File Syncroniser
+.fsync		Keep-In-Sync Abgleichinformationen	enthält Abgleichinformationen für die Dateisynchronisationssoftware Keep-In-Sync
+.ft		Full text index	Lotus Notes
+.ftb		Index Datei	Roots3
+.ftf		–	AS/400 Client - Server Konfiguration
+.ftg		full-text search group	Microsoft Windows Hilfe
+.ftl		Film Transfer Log	Speicherformat für Filme. Kann z. B. mit VIDCAP erzeugt werden.
+.ftl		Formular / Temporary	Zur Laufzeit erzeugtes temporäres Formular einer Paradox-Datenbank.
+.ftm		Font	Micrografx
+.ftp		File Transfer Protocol	FTP-Script
+.ftr		–	Graphikdatei
+.fts		full-text search index	Windows Hilfe
+.fts		–	FITS
+.ftw		Dokument	Family Tree Maker
+.fw		Firmware	Geräte-Firmwaredatei
+.fw		Datenbank	Framework II
+.fw2 ...
+.fw4		Datenbank	Framework II...IV
+.fwb		FileWrangler Backup	–
+.fws		FileWrangler Data	–
+.fx		On-Line guide	FastLynx
+.fx4		Pixelkarte	Fugawi
+.fxd		Phonebook	FAXit
+.fxp		Compiled source code	FoxPro
+.fxr		Fax Received Document	WinFax (Symantec Corporation)
+.fxs		Fax Transmit graphic	WinFax (Symantec Corporation)
+.fzb		Bank dump Datei	Casio FZ-1
+.fzf		Full dump Datei	Casio FZ-1
+.fzv		Voice dump Datei	Casio FZ-1
+.g	text/plain	Data chart	APPLAUSE
+.g64		C64 Disk Image	Commodore 64 Emulator (1541 - 5.25" einseitig - GCR-Abbild) (bis 42 Tracks und Half-Tracks, andere Trackgröße, etc.)
+.g721		Raw CCITT G.721	4-bit ADPCM-Audio-Daten mit 32 kbit/s
+.g723		Raw CCITT G.723	3- oder 5-bit ADPCM-Audio-Daten mit 24 oder 40 kbit/s
+.g8		Raw Graphics (8-bit)	(ein Byte pro Pixel) Plane III - PicLab
+.gadget		Gadget	Elemente der grafischen Oberfläche des Amigas
+.gal		Graphic album	Corel Multimedia Manager
+.gam		GammaFax document	GammaFax
+.gam		Game data	Computerspieldaten für die Quake-Engine
+.gan		Gantt Project	GanttProject
+.gb		GameBoy ROM image	Dump eines Nintendo-GameBoy-Spiels zur Verwendung in einem Emulator
+.gba		GameBoy Advance ROM image	Dump eines Nintendo-GameBoy Advance-Spiels zur Verwendung in einem Emulator
+.gbc		GameBoy Color ROM image	Dump eines Nintendo-GameBoy Color-Spiels zur Verwendung in einem Emulator
+.gbl		Global definitions	VAXTPU Editor
+.gbs		GameBoy Sound	Audioformat für GameBoy Movie Player
+.gbm		GameBoy Movie	Videoformat für GameBoy Movie Player
+.gbx		–	Datenformat für Computerspiel Trackmania
+.gc1		Golden Common Lisp Source Code	LISP-Quelltext in Golden Common Lisp 1.1
+.gc3		Golden Common Lisp Source Code	LISP-Quelltext in Golden Common Lisp 1.1
+.gcd		CADD Zeichnung	Computer-aided design (CAD)
+.gcf		Game Cache File	komprimierte Computerspiel-Daten für Steam
+.gcp		Ground Control Point	Image processing Datei
+.gdb		Database	InterBase-Datenbank
+.gdb		Garmin Database	Garmin MapSource Datafile
+.gdf		GEOS Dictionary Format	GEOS
+.gdm		–	Bells, whistles and sound boards module
+.ged	application/x-gedcom	Genealogical Data	GEDCOM
+.ged		Graphic Environment Document	drawing
+.ged		Graphics Editor Data	EnerGraphics
+.ged		Graphics Editor Data	Arts & Letters
+.gem		GEM Metafile	für GEM, auch für Ventura Publisher
+.gen		Application Generator	DBase Compiled template
+.gen		Generated text	Ventura Publisher
+.geo		Geode	Geoworks (PC/GEOS)
+.geo		Euklid DynaGeo	Euklid DynaGeo
+.GetRight		Unfinished GetRight-Download	GetRight
+.gfb		GIFBLAST Image	komprimierte GIF-Grafik
+.gfc		Flowchart	Patton & Patton Flowcharting 4
+.gfi		Graphics Link presentation	Genigraphics
+.gft		Graphical Font	NeoPaint
+.gfx		Graphics Link presentation	Genigraphics
+.gfx		Textverarbeitung Protext	V 2.1 Atari ST
+.gfy		Got FingerPrints Yet?	KeysignOrg
+.gg		Sega Game Gear ROM image	Dump eines Sega Game Gear-Spiels zur Verwendung in einem Emulator
+.gho		Symantec Ghost Image	–
+.ghs		Symantec Ghost Split Image	Fortsetzung bei File-Split-Modus
+.gib		Graph-in-the-Box Chart	Graph-in-the-Box
+.gid		Global Index	Microsoft Windows 95-Hilfe
+.gif	image/gif	Compuserve Graphics Interchange Format	verlustfrei komprimierendes Grafik-Format (beschränkt auf 256 Farben, unterstützt Animationen)
+.gim		Graphics Link presentation	Genigraphics
+.giw		Graph-in-the-Box Windows Presentation	Graph-in-the-Box for Windows
+.gix		Graphics Link presentation	Genigraphics
+.gkh		disk image	Ensoniq EPS family
+.gks		GripKey document	Gravis
+.gl	video/gl, video/x-gl	Animation Datei	GRASP graphical System für Presentation
+.glm		Glim	–
+.gls		Datafile	Across
+.gly		Glossary	Microsoft Word
+.gm6		Game Maker Projekt	Projekt-Datei der Software Game Maker der Version 6.0
+.gmf		CGM Graphics	APPLAUSE
+.gmk		Game Maker File	neue Projekt-Datei der Software Game Maker der Versionen 7.0 und 8.0
+.gmp		Tile map	SPX (Geomorph)
+.gmr		Graphical monitor record	Schlafhorst Automation
+.gna		Graphics Link presentation	Genigraphics
+.gno		Genealogy Datei	Genopro
+.gnt		Generated executable code	Micro Focus
+.gnx		Graphics Link presentation	Genigraphics
+.goc		Goc sorce code	Geoworks
+.goh		Goc header	Geoworks
+.gp		Geode parameter Datei	Geoworks Glue
+.gp#		Guitar Pro Datei (# = 3-5)	Guitar Pro Tabulatur Datei
+.gpa		GoPal Addon	GoPal-World-Installer Paket für Add-ons
+.gpb		GPS data	VidaOne GPS für Pocket PC
+.gpe		GoPal Extension	GoPal-World-Installer Paket für Erweiterungen
+.gpg	application/pgp-encrypted	GNU Privacy Guard-Code	verschlüsselte Datei oder Digitale Signatur
+.gph		Graph	Lotus 1-2-3/G
+.gpi		Garmin Points of Interest	Point of Interest-Daten für GPS-Geräte von Garmin
+.gpk		Program package	Omnigo
+.gpk		Spitzenpegeldatei (zu WaveLab)	inkl. Darstellungshilfen für Wellenform
+.gpl		GIMP-Palette	Farbpalette für GIMP
+.gpn		gp-Untis-Daten	proprietäres Datenformat des Stundenplanprogramms gp-Untis
+.gpo		GeoPal PoiObserver	GoPal-World-Installer Paket für PoiObserver
+.gpp		Graph paper application	Generates graph paper (GraphPap)
+.gpu		GeoPal Update	GoPal-World-Installer Paket für Updates
+.gpw		GeoPal World Skin	GoPal-World -Installer Paket für Skin-Dateien
+.gpx		GPS eXchange file	XML-basiertes Format für GPS-Daten
+.gr2		Screen driver	Microsoft Windows 3.x
+.gra		Graph Data	SigmaPlot
+.gra		Graph	Microsoft
+.graphml		GraphML	XML-basiertes Format für Graphen (wird unter anderem von yEd verwendet)
+.grb		Shell Monitor	MS-DOS v5.0
+.grd		Image processing grid	CHIPS
+.grf		Graph	Charisma Graph Plus
+.grf		Grapher	Golden Software graph
+.grib		Grid In Binary	WMO Format für Wettermodell-Daten
+.gro		–	komprimierte Daten für Computerspiel Serious Sam
+.groovy		Groovy	Groovy-Quelltextdatei
+.grp		Pictures Group	PixBase
+.grp		Group-Datei	Enthält Verknüpfungen (Windows Programm-Manager)
+.gry		GREY	Raw graphic
+.gs1		GraphShow Presentation	GraphShow
+.gs3		Daten	GameStarter
+.gsd	audio/x-gsm	Vector graphic	Professional Draw
+.gsm	audio/x-gsm	GSM 6.10 audio stream	Audio stream Raw byte aligned
+.gsp	application/x-gsp	gsp-Datei	Gespräch
+.gsw		GraphShow Worksheet	–
+.gt2		Graoumftracker 2	Trackermodul (Musikformat) des Graoumftracker 2
+.gtk		Graoumftracker	Trackermodul (Musikformat) des Graoumftracker 1
+.gtp		GEM Takes Parameters	Kommandozeilenprogramm des Atari ST, das Parameter auswertet
+.guide		Amigaguide	Hypertextformat (Amiga)
+.gup		Data	PopMail
+.gus		Gustav.Gustavson	swedgeografic data
+.gvi		Video	Google-Video
+.gwp		Greetings WorkShop Datei	–
+.gwy		Gwyddion Projekt	Dateiformat des SPM-Programms Gwyddion
+.gwx		Graphics Link presentation	Genigraphics
+.gwz		Graphics Link presentation	Genigraphics
+.gvp		GEOvison³ Project	GEOvision³
+.gxl		Graphics library	Genus
+.gxt		Textdatenbank GTA2 - San Andreas	Dateiformat variiert je nach Spiel
+.gxt		GEONExT Projekt Datei	Dateiformat des Programms GEONExT
+.gz
+.gzip	application/x-compressed, application/x-gzip, multipart/x-gzip	GNU-Zip	komprimierte Datei
+.h	text/plain, text/x-h	C Header	C-Deklarationsquelldatei
+.h!		On-line Help	Flambeaux Help!
+.h++	text/plain, text/x-h	Header-Datei	C++
+.h--		Header-Datei	Sphinx C--
+.h2w			H2testw Testdatei zur Integritätsprüfung von USB-Sticks.
+.ha		HA	komprimiertes Dateiarchiv
+.ham		Host Adapter Module	Gerätetreiber in der NetWare Peripheral Architecture (NWPA) von Novell NetWare
+.ham		Hamster-Quelltext	Quelltext des Java-Hamster-Modells
+.ham		Vector graphics-Datei	Amiga
+.hap		HA	komprimiertes Dateiarchiv
+.har		HAR-Archiv	mit HAR komprimiertes Dateiarchiv
+.hbk		Accounting data-Datei	Humanic Software
+.hbk		Handbook	MathCad
+.hcm		Konfigurationsdatei	IBM HCM
+.hcom		HCOM	Sound Tools-Datei
+.hcr		Production configuration-Datei	IBM HCD/HCM
+.hcx			Harvard Chart XL
+.hdf	application/x-hdf	Help-Datei	Help development kit
+.hdf	application/x-hdf	Hierarchical Data Format	National Center für Supercomputing Applications (NCSA), auch verwendet von Moskito-GIS
+.hdl		Alternate download listing	ProComm Plus
+.hdmp			XP or Vista heap dump
+.hdp		HD Photo	Microsoft, evtl. JPEG-Nachfolger
+.hdr		Database header	Pc-Datei+
+.hdr		Datafile	Egret
+.hdr		Message header text	1st Reader
+.hdr		Message header text	ProComm Plus
+.hdr		High Dynamic Range	für High Dynamic Range Images
+.hdw		Harvard Draw	Vector graphics
+.hdx		Help index	AutoCAD
+.hdx		Help index	Zortech C++
+.hed		Document	HighEdit
+.hel		Hellbender saved game	Microsoft
+.hex		Macintosh BinHex 2.0-Datei	–
+.hfi		HP font info	GEM
+.hgl	application/vnd.hp-hpgl	HP Graphics Language	Drawing-Datei
+.hh	text/plain, text/x-h	Header-Datei	C++
+.hh		Help system map	Generic
+.hhh		Precompiled header	Power C
+.hhp		Help information für remote users	ProComm Plus
+.hit		Audio-Datei	HitPlayer
+.hki		Archiv-Datei	WinHKI
+.hlb	text/x-script	Help library	VAX
+.hlp	application/hlp, application/x-helpfile, application/x-winhelp, application/winhlp	WinHelp	Hilfedatei unter Microsoft Windows (bis Windows 95)
+.hmi		Human machine interfaces	Descent MIDI music
+.hmm		Alternate mail read option menu	ProComm Plus
+.hmp		Human machine interfaces	Descent MIDI music
+.hnc		Program files	CNC
+.hog		LucasArts Dark Forces WAD	–
+.hog		Main data package-Datei	Descent3
+.hog		Mission-Datei	Descent 1-2
+.hot		HotSend	–
+.hp8		Ascii text Roman8 character set	NewWave Write
+.hpc		Font language-Datei	Hewlett-Packard
+.hpf		HP LaserJet font	Adobe Pagemaker
+.hpf		Partial download-Datei	HotLine
+.hpg	application/vnd.hp-hpgl	HPGL Plotter vector graphics	AutoCAD
+.hpg	application/vnd.hp-hpgl	HPGL Plotter vector graphics	Harvard Graphics
+.hpi		Font information	GEM
+.hpj		Help Project-Datei	Visual Basic
+.hpk		HPACK	komprimiertes Dateiarchiv
+.hpm		–	ProComm Plus Alternative menu für privileged users
+.hpm		Emm text	HP NewWave
+.hpp		Header-Datei	Zortech C++
+.hpp		Program header	C++
+.hpr		H+P Reporting Suite-Dokument	H+P Reporting Suite
+.hqx	application/binhex, application/binhex4, application/mac-binhex, application/mac-binhex40, application/x-mac-binhex40	BinHex	Macintosh 4.0
+.hqz		highQ komprimiertes Dateiarchiv	Datenarchivierung und Datenaustausch für die PlanB Produktfamilie
+.hrc		SoftImage Model Geometry File	SoftImage by Avid
+.hrf		Rastor graphic	Hitachi
+.hrm		–	ProComm Plus Alternate menu für limited users
+.hs		Haskell File	Haskell-Quellcode
+.hs2		Monochrome image	Postering
+.hsc		FM synthesized music	Verwendung in alten Spielen, wie FINTRIS, ROL
+.hsi		Graphic	Handmade Software, Inc.
+.hst		History-Datei	Generic
+.hst		History-Datei	ProComm Plus
+.ht		HyperTerminal-Datei	–
+.hta	application/hta	HyperText Application	HTML-basierende Anwendung
+.htm
+.html	text/html	Hypertext Markup Language	Verlinkter Text, zum Beispiel für das World Wide Web
+.htt	text/webviewhtml	HyperText Template	Microsoft HTML-Dokumentvorlage
+.htx	text/html	Template	Extended HTML
+.hwa		Hollywood-Applet	Hollywood
+.hwd		Präsentation	Hollywood Designer
+.hwp		Textdokument	HanGul
+.hws	text/plain	Hollywood-Skript	Hollywood
+.hxm		–	ProComm Plus Alternate protocal selection menu
+.hxm		HAM extension	Descent2
+.hxs		Microsoft Help Compiled Storage File	Help 2.0
+.hxx		Header-Datei	C++
+.hy1		Hyphenation algorithm	Ventura Publisher
+.hy2		Hyphenation algorithm	Ventura Publisher
+.hyc		Datafile	WordPerfect für Windows
+.hyd		Hyphenation dictionary	WordPerfect für Windows
+.hym		3D Image binary-Datei	Hymarc Scandata Scanner
+.hyp		HYPER	komprimiertes Dateiarchiv
+.i		Intermediate	Borland C++
+.iaf			E-Mail-Konten Sicherungsdatei von Microsoft Outlook und Outlook Express
+.iam		Inventor Assembly	Autodesk Inventor Baugruppe (3D CAD für den Maschinenbau)
+.ian		Textdatei	Sterling Software Groundworks COOL Business Team Model
+.iax		Bitmap	IBM Image Acess eXecutive
+.ibm		ARCHDOS	komprimiertes Dateiarchiv, IBM Internal
+.ica		Bitmap graphic	Image Object Content Architecture
+.ica		Citrix-Verbindungsdatei	enthält die Parameter für die Verbindung eines Clients zu einem Presentation Server
+.icb		Targa bitmap	–
+.icbu		iCal Backup	Archivformat von iCal (Mac OS X)
+.icc		Catalog-Datei	IronClad
+.icc		Printer-Datei	Kodak
+.icd		Drawing-Datei	IronClad
+.icd		–	Von SafeDisc 1 verschlüsselte, eigentlich ausführbare Datei
+.icl		Icon Library	Bibliothek mit Symbolbildern (Icons)
+.icm		Image Color Matching profile	–
+.icn		Icon set	für GEM (für PC-kompatible DOS und Atari ST)
+.icn		Icon source code	–
+.ico	image/vnd.microsoft.icon	Icon	Bildschirmsymbol unter Windows
+.ics		Scene-Datei	IronClad
+.ics	text/calendar	ICalendar-Datei	Verschiedene Kalenderprogramme (RFC 2445)
+.id		Disk identification-Datei	Generic
+.idb		Intermediate-Datei	Microsoft Developer
+.idd		Instrument Definition Data (?)	MIDI Instrument Definition
+.ide		Project-Datei	Borland C++ v4.5
+.ide		-	Installationsdatei für Objekte im Spiel GTA
+.idf		MIDI Instrument Definition	
+.idif		Identification Datei	Netscape saved address book
+.idq		Data Query	Internet
+.idt		Exportierte Windows Installer-Datenbank-Tabelle	–
+.idu		Austauschdatei	Interleaf Desktop Utility
+.idw		Vector graphic	IntelliDraw
+.idw		Inventor Drawing	Autodesk Inventor-Zeichnung (3D-CAD für den Maschinenbau)
+.idx		Index Datei	Microsoft Clip Gallery v. 1.x
+.idx		Index Datei	Pro/Engineer
+.idx		–	Microsoft Outlook Express Mailbox
+.idx		Relational database index	Microsoft FoxPro
+.idx		Relational database index	Symantec Q&A
+.idx		Java Applet Cache Index	Java Plug-in Control Panel
+.ifc		Industry Foundation Classes (IFC)	buildingSMART data model; modellbasierter Datenaustausch im Bauwesen
+.ifd		Form	JetForm Design
+.iff		Interchange File Format (IFF)	Containerformat (Amiga), prinzipiell beliebige Daten, meist Bilddaten (ILBM) oder Audiodateien (8SVX)
+.ifo		Information	DVD-Videodaten
+.ifo		Graphic object layer data	ImageForge Pro
+.ifp		Script-Datei	KnowledgeMan
+.ifs		Compressed fractal image	Yuvpak
+.ifs		Create executable library	ImageForge/ImageForge Pro
+.ifs		System-Datei	OS/2
+.igs .iges	application/iges, model/iges	Initial Graphics Exchange Specification (IGES)	Generic
+.igc		Segelflug-Logger-Datei	GPS Koordinaten zur Flugwegdarstellung
+.igf		Metafile	Inset Systems
+.iif		Interchange-Datei	QuickBooks für Windows
+.iii	application/x-iphone	Intel I-Phone compatible	Intel I-Phone - steht in Zusammenhang mit Microsoft NetMeeting
+.iim		Music module	–
+.ilb		–	Scream Tracker Datafile
+.ilbm		Bitmap	pixelorientierte Bilddateien
+.ild			File für Lasershow
+.ildoc		Dokument	Interleaf
+.ili		INTERLIS	Datenbeschreibungs-Datei gemäß INTERLIS-Spezifikation
+.ilk		incremental linker	Microsoft ILink Program outline
+.im8		Raster graphic	Sun Microsystems
+.ima	application/x-ima	Image	WinImage
+.ima	application/dicom	DICOM-Bild	–
+.ima		Vector graphic	EGO, Chart
+.imf		MIDI music File	Corridor 7, Blake Stone, Wolfenstein 3D, Spear of Destiny
+.img		DICOM-Bild	–
+.img		Bitmap graphic	GEM, auch Ventura Publisher
+.img		kurz für "Image"	CD-Image erstellt mit CloneCD
+.img		Image	Diskettenimage
+.img		Dateiarchiv	Dateiarchiv von GTA III und GTA Vice City (nur Dateicontainer) und GTA San Andreas (integrierte Dateiliste)
+.imp		Spreadsheet	Lotus Improv
+.imq		Image presentation	ImageQ
+.ims		Create executable library	IconForge
+.imz		WinImage	WinImage-Datei
+.in$		Installationsdatei	HP NewWave
+.in3		Input device driver	Harvard Graphics v3.0-Treiber
+.inb		Test script	Vermont High Test
+.inb		–	Rebel Assault Backup-Datei
+.inc		Include File	Assembler language, Active Server (Pages) oder PHP Include-Datei
+.inc		Include File	Pascal, Borland Delphi, C , C++ SourceCode zum mehrfachen Wiederverwendung in Sourcecode-Dateien
+.inc		–	NetInstall scriptfile
+.ind		Index	dBase IV
+.ind		Shared Database-Datei	Specifically in Microsoft Windows
+.indb		InDesign Book	Adobe InDesign Buchdokument
+.indd		InDesign Document	Adobe InDesign Dokument
+.indl		InDesign Library	Adobe InDesign Bibliothek
+.indt		InDesign Template	Adobe InDesign-Vorlage
+.inf	application/inf	Setup-Informationen	Enthält Geräte-/Softwareinstallationsinformationen für Windows
+.inf		Type I LaserJet font information	–
+.info		Piktogramm	Amiga-Icon für Dateien mit Informationen, wie z.B. Position der Datei auf dem Desktop
+.ini		Bank setup File	Gravis UltraSound
+.ini		Setup-Datei	MWave DSP synth's mwsynth.ini GM
+.ini	text/x-ini	Initialisierungsdatei	Konfigurationsdatei für Programme unter MS-DOS, FreeDOS, DR-DOS und Windows
+.ink		Pantone reference fills-Datei	CorelDRAW
+.inl		Inline function-Datei	Microsoft Visual C++
+.inp			Hilfsdatei für Sony Kamera Videos
+.inp		Source code für form,	Oracle, version 3.0 and earlier
+.inrs		INRS-Telecommunications audio	–
+.ins		Datafile	WordPerfect für Windows
+.ins		Install script	InstallShield
+.ins		Installation script	1st Reader
+.ins		Instrument-Datei	Ensoniq EPS Family
+.ins		Instrument music Datei	Adlib
+.ins		Sample	Cell/II MAC/PC instruments
+.ins	application/x-internet-signup	Sign-up-Datei	X-Internet
+.int		Interfaced units	Borland
+.int		Intermediate executable code	Produced when a source program is syntax-checked
+.int			Hilfsdatei für Sony Kamera Videos
+.inx		InDesign Interchange	Austausch- und Reparaturformat für Adobe InDesign
+.inx		Index-Datei	Foxbase
+.io		Compressed archive	Cpio
+.iob		3D graphics database	TDDD format (3D data description)
+.ioc		Organizational chart	Instant ORGcharting!
+.iof		Findit document	Microsoft Findit
+.ion		Datei description	4dos descript.ion
+.iop		ISOBUS Objekt Pool	wtk Maskengenerator 2
+.ipa		iOS App Store Package	Anwendungen für Geräte mit Apple-iOS-Betriebssystem
+.ipf		Interchangeable Preservation Format	Archiv-Format für Datenträger
+.ipl		Pantone Spot reference palette	CorelDRAW
+.ipl		-	Kartendatei für das Spiel GTA
+.ips		International patching system	binäre Patchdatei
+.ipsw			iPod and iPhone Software Update File
+.ipt		Inventor Part	Autodesk Inventor-Bauteil (3D-CAD für den Maschinenbau)
+.iqf		Program Data	Programm für DDC Controller TREND durch ACE generiert
+.iqy		Internet inquiry	Microsoft Internet Information Server
+.iq2		Program Data	Programm für DDC Controller TREND, durch SET generiert
+.irr		Irrlicht 3D	Auf C++ basierende Engine für 3D-Spiele
+.irs		Resource-Datei	WordPerfect für Windows
+.isd		Spell checker dictionary	RapidFile
+.ish		Compressed archive	ISH
+.iso		ISO	International Organization for Standardization-Tabelle
+.iso	application/x-iso9660-image, application/x-cd-image	ISO 9660-Dateisystem	CD-Image mit ISO 9660-Dateisystem
+.isp	application/x-internet-signup	Sign-up-Datei	X-Internet
+.ist		Instrument	Instrumenten-Datei des Digitaltracker
+.isu		Uninstall script	InstallShield
+.it	audio/it	Impulse Tracker	Trackermodul (Musikformat) des Impulse Trackers
+.it		Settings-Datei	intalk
+.itc		iTunes Covers	iTunes Cover Datei
+.itf		Interface-Datei	JPI Pascal TopSpeed
+.itl		iTunes Library	iTunes-Medien-Bibliothek-Datei
+.iti		Impulse Tracker Instrument	Instrumenten-Datei von Impulse Tracker
+.its		Impulse Tracker Sample	Sample-Datei von Impulse Tracker
+.itz		Impulse Tracker zipped	komprimiertes Trackermodul (Musikformat) von Impulse Tracker
+.iv	application/x-inventor	Open Inventor Datei	3D Computergrafikformat. Ähnlich VRML. Zwei Modi: ASCII und Binär
+.ivd		Microdata dimension or variable-level	Beyond 20/20
+.ivp		User subset profile	Beyond 20/20
+.ivt		Table or aggregate data	Beyond 20/20
+.ivx		Microdata directory	Beyond 20/20
+.iw		Presentation flowchart	IconAuthor-HSC Interactive
+.iw		Screensaver	Idlewild
+.iwa		Text-Datei	IBM Writing Assistant
+.iwc		Install Watch document	–
+.iwm		Start-Datei	IconAuthor
+.iwp		Textdokument	Wang, verwendet auf Bildschirm-Schreibmaschinen von Olivetti
+.izt		Binary token-Datei	–
+.j2k	
+JPEG 2000	Wavelet komprimierte Bilddateien
+.j62	
+Ricoh camera Datei	–
+.jam	audio/x-jam	Java Module	Komprimiertes Dateiarchiv
+.jar	application/java-archive	Java Archive	Komprimiertes Dateiarchiv
+.jarx		JARX file	enthält Informationen über .jar-Dateien[1]
+.jas	Graphic	Generic
+.java	text/plain, text/x-java-source	Source code	Java
+.jbd	Datafile	SigmaScan
+.jbf	Image browser Datei	Paint Shop Pro
+.jbx	Project Datei	Project Scheduler 4.0
+.jef		Janome Embroidery Format	zur Steuerung von Janome Stickmaschinen
+.jff	image/jpeg, image/pjpeg	JPEG image	–
+.jfif	image/jpeg, image/pjpeg	JPEG File Interchange Format	JPEG-Norm komprimierte Bilddatei
+.jgw
+.jpegw	image/jpeg, image/pjpeg	JPEG world file	ASCII-Datei, die die Georeferenz zu einer JPEG-Datei enthält
+.jif	image/jpeg, image/pjpeg	JPEG image file	–
+.jisp	Java Indexed Serialization Package	SIM
+.jks	Java Key Store	Schlüsselspeicher im proprietären Java-Format
+.jmp	Discovery chart-to-statistics	SAS JMP
+.jn1	Jill of the Jungle data	Epic MegaGames
+.jnb	Workbook Datei	Sigma Plot 5
+.jnilib	JNI Library	Programmbibliothek für Java (JNI) (Shared Object) unter Mac OS X[2]
+.jnt	Journal Viewer File	Microsoft Journal Viewer
+.job	Vektorgrafik	QuestVision
+.jor	Journal	Microsoft SQL Server
+.jou	Journal backup	VAX Edt editor
+.jou	Journal backup	VAX Edt editor
+.jp2	image/jp2	JPEG 2000	Wavelet komprimierte Bilddateien
+.jpc	JPEG 2000	Wavelet komprimierte Bilddateien
+.jpe	image/jpeg, image/pjpeg	Joint Photographic Experts Group	Verlustbehaftete komprimierte Bilddateien
+.jpeg	image/jpeg, image/pjpeg	Joint Photographic Experts Group	Verlustbehaftete komprimierte Bilddateien
+.jpg	image/jpeg, image/pjpeg	Joint Photographic Experts Group	Verlustbehaftete komprimierte Bilddateien
+.jpf	image/jpeg, image/pjpeg	Joint Photographic Experts Group	Verlustbehaftete komprimierte Bilddateien
+JPEG 2000 file	Wavelet komprimierte Bilddatei
+.jpm	image/jpm	JPEG 2000 file	Wavelet komprimierte Bilddatei
+.jpx	image/jpx	JPEG 2000 file	Wavelet komprimierte Bilddatei
+.jra	application/crystalclear	i-net Crystal-Clear Report Archive	i-net Crystal-Clear Berichts Archive
+.jrl			StarMoney Journale (Windows)
+.js	application/x-javascript	JavaScript code	–
+.jsc	Source code	JetAudio Skinerstellungs Script Datei
+.jsd	Jet Suite document	eFAX
+.jsk	Skin Datei	JetAudio Bedienoberflächendatei
+.json	application/json	JavaScript Object Notation	Unabhängiges Datenaustausch-Format in Textform
+.jsp	JavaServer Page	dynamische HTML-Datei für Java-basierende Webserver
+.jt		Jupiter Tessellation	3D-Datenformat
+.jtf	Faxdokument	Hayes JT Fax
+.jtk	Java ToolKit Datei	Sun Microsystems
+.jw		JustWrite	JustWrite Text Document
+.jwl	JustWrite Library	JustWrite-Bibliothek
+.jzz	Spreadsheet	Jazz
+.k		LS-Dyna Keyword file	LS-Dyna-Eingabedatei
+.k25		Kurzweil 2500	Kurzweil 2500-Sampledatei
+.k3b		K3b-Projekt	Speicherformat für K3b-Brennprojekte
+.kaffeine		–	Wiedergabeliste für Kaffeine
+.kap		–	Komprimiertes Kartenformat, von MapTech und NOAA benützt
+.kar	audio/midi, music/x-karaoke	karaoke	MIDI-Datei mit zur Musik synchronisiertem Text
+.kb		Keyboard script	Borland C++ 4.5
+.kb		Program source code	Knowledge Pro
+.kbd		Keyboard mapping script	Procomm Plus, LocoScript, Signature
+.kbm		Keyboard mapping script	Reflection 4.0
+.kc		–	PowerCinema Linux
+.kcm		K-Cheat Modul	K-Cheat Modul File (Second Unit)
+.kcl		Kyoto Common Lisp	Lisp source code
+.kdb	application/x-keepass	Keepass Datenbank	KeePass Passwort Manager
+.kdb		Keep-in-Mind-Datenbank	Personal Information Manager
+.kdbx		Keepass Datenbank	KeePass Passwort Manager
+.kdbx		Keep-in-Mind-Datenbank	Personal Information Manager,
+.kdc		Kodak Digital Camera format	Kodak Photo-Enhancer-Bilddatei
+.kdenlive		-	Kdenlive-Projekt
+.kds		Kundendatenspeicher	Siemens HiPath Manager
+.kex		Makro	KEDIT
+.key		LS-Dyna Keyword file	LS-Dyna-Eingabedatei
+.key		Datafile	Forecast Pro
+.key		Icon toolbar	DataCAD
+.key		Security-Datei	Such as a software registration number
+.key		Keynote	Apple Keynote (Bestandteil des Büropaketes IWork 06)
+.kfp		Acrobat Preflight Profil	Dient zum Austausch von Profilen (Import und Export) für die Preflight-Funktion in Adobe Acrobat
+.kfx		Image	KoFax Group 4
+.kgt		KGet	KGet-Downloadliste
+.kiz		Digital postcard	Kodak
+.kkw		K-keywords	RoboHELP
+.kml	application/vnd.google-earth.kml+xml	Map	Keyhole Markup Language im xml Format
+.kmp		KeyMaP	Korg TrinityKeyhole Markup Language
+.kmz	application/vnd.google-earth.kmz	Koordinaten	Google Earth (kml-Format gezipt)
+.ko	application/x-object	Linux Kernel Object	Linux Kernelmodule, meist Treiber
+.kob		Kobra	Reuters Kobra
+.kpp		Toolpad	SmartPad
+.kps		Bitmap graphic	IBM KIPS
+.kqp		Native Camera-Datei	Konica
+.kr1		Sample	multi-floppy-Datei Kurzweil 2000
+.krz		Sample-Datei	Kurzweil 2000
+.ksf		Sample-Datei	Korg Trinity
+.ksp		KSpread	Tabellenkalkulation KSpread
+.kwd		KWord	Textverarbeitung KWord
+.kwl		KWallet-Datei	Datei zum Speichern von Zugangsdaten
+.kyb		Keyboard mapping	FTP
+.kye		Game data	Kye
+.kys		Keyboard Shortcuts	–
+.l		Linker directive Datei	WATCOM wlink
+.l		Lex	Lex source code
+.l		LISP	LISP source code
+.lab		Datafile	NCSS-SOLO
+.lab		Label-Datei	Visual dBase
+.lab		Mailing labels	Microsoft Excel
+.lan		LAN driver	Novell NetWare Loadable module
+.lay		Clipart-Datei	Printmaster Gold
+.lay		Word Chart layout	APPLAUSE
+.lbg		Label generator data	dBase IV
+.lbk		PlotMaker Layoutbuch-Datei	ArchiCAD
+.lbl		Label	Clipper 5
+.lbl		Label	dBase IV
+.lbl		Label	dBFast
+.lbm	audio/x-liveaudio	Interleaved Bitmap (ILBM)	Bilddatei, siehe auch IFF
+.lbo		Compiled label	dBase IV
+.lbo		MWM-Libero-Projekt	MWM-Libero (Anwendung zur Mengenermittlung nach REB)
+.lbr		LBR-Archiv (LU)	komprimiertes Dateiarchiv
+.lbr		Display driver	Lotus 1-2-3-Treiber
+.lbr		Device library	Cadsoft EAGLE
+.lbt		Labels	Microsoft FoxPro
+.lbx		Labels	Microsoft FoxPro
+.lca		LABCAR Assistant-Datei	LABCAR-OPERATOR Projekt von ETAS
+.lcf		Library Container File	ArchiCAD
+.lcf		Linker control-Datei	Norton Guides compiler
+.lck		Lockfile	Paradox
+.lcl		Datafile	FTP
+.lcp		LAPI Configuration Project	LAPI-Homepage
+.lcn		Lection document	WordPerfect für Windows
+.lcs		Data History Datei	ACT!
+.lcw		Spreadsheet	Lucid 3-D
+.ld		Long distance area codes	Telix
+.ld1		Overlay-Datei	dBase
+.ldb		Lock-Datei	Microsoft Access
+.ldf		Library definition-Datei	Geoworks Glue
+.ldf		Log Data File	Protokoll-Datei für Datenbank-Transaktionen des MS SQL-Server
+.ldi		LAN driver description file	benötigt für .lan LAN driver von Novell NetWare
+.ldif		Adressenverzeichnis	Microsoft, Netscape and others
+.ldl		Library	Corel Paradox
+.lef		LEN Exchange Format	Schwimmsportdaten
+.leg		Legacy document	–
+.les		System game profiles	Entertainment
+.lev		Level-Datei	NetHack 3.x, Elasto Mania
+.lex		Dictionary-Datei	Generic
+.lfd		Data resource-Datei	LucasArts Dark Forces
+.lfg		lexical-functional grammar	Grammatik-Datei, Xeroc Linguistic Environment
+.lfp		LaserForms Plus-Datei	Evergreen
+.lft		Laser printer font	ChiWriter
+.lft		Loft-Datei	3-D Studios
+.lg		Logo procedure definition	LSRHS-Logo
+.lgc		Application log-Datei	–
+.lgd		Application log-Datei	–
+.lgo		Header and footer logo	SuperFax
+.lgo		Lego-Modell-Datei	Lego Digital Designer
+.lgo		Logo Datei	PaintBrush
+.lgo		Startup logo	Microsoft Windows 3.x-9.x
+.lha	application/lha, application/octet-stream, application/x-lha	LHA/LHARC	komprimiertes Dateiarchiv
+.lhs		Literate Haskell File	Haskell Quellcode im Literate Format
+.lhw		LHWARP	komprimiertes Dateiarchiv (Amiga)
+.lib		Library	Programmbibliothek (DOS, Windows, OS/2)
+.library		Library	Programmbibliothek (Amiga)
+.lif		–	komprimiertes Dateiarchiv
+.lif		Logical Interchange data	Hewlett-Packard
+.lim		LIMIT	komprimiertes Dateiarchiv
+.lin		Interactive music sequencing data	Electronic Arts
+.lin		Line type-Datei	DataCad
+.lis	text/plain	Listing	VAX
+.lis		SQL-Report	–
+.lit		(Literature)	HTML-basiertes Dokumentformat von Microsoft für elektronische Bücher für den Microsoft Reader
+.lix		Logos library system-Datei	–
+.lip		Lippenbewegungen	Oblivion, beschreibt die zu einer Sprachaufnahme passenden Lippenbewegungen
+.lj		Textdatei	Hewlett-Packard LaseJet II printer
+.lk		Database-Datei	OpenSight-16 bit
+.lko		Linked object	Microsoft Outlook Express Junkmail-Datei
+.ll3		Document-Datei	LapLink III
+.llx		Exchange agent	Laplink
+.lnk		Datafile	Revelation
+.lnk		Linker response-Datei	RTLink
+.lnk		Link	Symbolische Dateiverknüpfung unter Microsoft Windows
+.load		z/OS Load-Library	Bibliothek mit ausführbaren Programmen
+.loc		Locations	Waypoint-Datei
+.lock		Lock	Lock-Datei, verhindert das gleichzeitige Schreiben einer Ressource durch mehrere Prozesse
+.lod		Load-Datei	–
+.log	text/x-log	Log	Protokolldatei, in welcher ein Programm oder der Kernel Informationen über verschiedene Ereignisse Menschenlesbar festhält
+.log	Log-Datei	einfache Textdateien, in der ein (Windows-)Programm Informationen über Aktionen protokolliert (kritische Vorgänge, Abstürze o. ä.)
+.log	text/plain	Logo-Quelltext-Datei	Quelltextdateien der Programmiersprache Logo
+.logo		Combined Logo Mask	Datei bei TV Aufnahmen im Vista MediaCenter
+.lok		komprimiert	FileWrangler
+.lol		Lolcode	Quellcode zu der esoterischen Programmiersprache LOLCODE
+.lp		–	DesertDocs
+.lpc		Druckertreiber	TEKO
+.lpd		Helix Nuts and Bolts-Datei	–
+.lpd		LabelPro-Datei	Graphik-Datei (Avery-Zweckform LabelPro 2.0-3.0)
+.lpd		LECTURNITY Player-Datei	Player für E-Learning-Inhalte
+.lpd		Lösomat Prüfplatz Dokument	-
+.lpi		Informationsdatei für Laserdrucker	Verwendung in einigen Scanner-Tools
+.lpj		PASSOLO-Projektdatei	ASCII (bis PASSOLO 5)
+.lps		LupoScan	3D-Laserscandatenformat
+.lpu		PASSOLO-Projektdatei	Unicode
+.lpz		Lösomat Prüfplatz Zertifikat
+.lrc		Video phone-Datei	Intel
+.lrf		Linker response-Datei	Microsoft C++ sowie Microsoft C
+.lrs		Language resource-Datei	WordPerfect für Windows
+.lsf		Logos library system-Datei	–
+.lsl		Saved library	Corel Paradox
+.lsl		Script library	Lotus
+.lso		Logic Audio Song/-Dokument	Arbeitsdatei für (früher Emagics, jetzt Apple) Logic Audio bzw. Logic Pro
+.lsp	application/x-lisp, text/x-script.lisp	LISP	AutoLISP, CommonLISP, und andere
+.lss		Tabellenkalkulation	Legato
+.lst		Keyboard macro	1st Reader
+.lst	text/plain	List-Datei	Generic
+.lst		Spool-Datei	Oracle
+.ltm		Form	Lotus Forms
+.lu		Library unit-Datei	ThoughtWing
+.lvl		Miner Descent/D2 Level extension	Parallax Software
+.lwd		Textdokument	LotusWorks
+.lwf		LuraWave Format	Wavelet Grafik-Datei von Luratech
+.lwlo		Layered Object-Datei	Lightwave
+.lwob		Object-Datei	Lightwave
+.lwp		Lotus Word Pro (Teil der Lotus SmartSuite)	Textdokument
+.lwsc		Scene-Datei	Lightwave
+.lwz		Linguistically enhanced sound	Microsoft
+.lxf		Lego Digital Designer-Datei	Datei, die Lego Baupläne beinhaltet.
+.lxf		LEN Exchange Format	Schwimmsportdaten
+.ly		Lilypond-Datei	ASCII Datei, die von Lilypond in Notengrafik umgewandelt werden kann.
+.lyr		Layer-Datei	DataCAD
+.lyx		LyX-Datei	Dateiformat des Textverarbeitungsprogramms LyX
+.lzd		Difference-Datei für Binarys	Ldiff 1.20
+.lzh	application/octet-stream, application/x-lzh	LH ARC	komprimiertes Dateiarchiv
+.lzma	application/x-lzma		komprimiertes Dateiarchiv
+.lzs		LARC	komprimiertes Dateiarchiv
+.lzs		Data-Datei	Skyroads
+.lzw		LHWARP	komprimiertes Dateiarchiv (Amiga)
+.lzx	application/lzx, application/octet-stream, application/x-lzx	–	komprimiertes Dateiarchiv
+.m		Matlab	Funktions- oder Scriptdatei für die Mathematik-Software Matlab
+.m	text/plain, text/x-m	Objective-C	Objective C Quellcode
+.m2ts		MPEG-2 Transport Stream	Videodatei von AVCHD-Kameras, Blu-ray Discs und DVB-T
+.m3u	audio/x-mpegurl	MP3-URL	.m3u ist ein offenes Playlisten-Dateiformat für Mediendateien. Das M3U-Format wird von den meisten Medienspielern unterstützt.
+.m3u8			Offenes Playlisten-Dateiformat für Mediendateien in UTF-8-Codierung
+.m4	application/x-m4	M4	Quelltext für den M4 Präprozessor
+.m4a		Moving Pictures Experts Group 4 Audio	MPEG4-Audiodatei (Advanced Audio Coding)
+.m4b		Moving Pictures Experts Group 4 AudioBook	Hörbuch in MPEG4-Audio (Advanced Audio Coding), .m4a mit zusätzlichem Lesezeichen-System (Bookmarks), von Apple eingeführt
+.m4p		MPEG4-Audiodatei	DRM-geschützte MPEG4-Audiodatei (Advanced Audio Coding), von Apple eingeführt
+.m4v		MPEG4-Videodatei	MPEG4-Videodatei nur für Video (MPEG-4-Videoströme)
+.ma		Maya ASCII	Projektdatei für die 3D-Grafiksoftware Maya in ASCII-Kodierung
+.mab		Mozilla Address Book	
+.mac		Macro Assembler	Assemblerquelltext RSX11
+.mac		MacPaint	
+.mac		MegaCAD	Makro/Bauteile-Datei
+.mac		Monkeys Audio Compression	verlustfrei komprimierendes Audioformat
+.maff		Mozilla archive format file	ZIP-basiertes Archivformat für Webseiten und Downloadelemente samt Metadaten
+.mak		Makefile	Make-Datei für Microsoft C++ sowie Microsoft C (nmake)
+.manifest		MANIFEST-Datei	Datei, die beim Starten eines Programms unter Windows XP Informationen zum Visualisieren des Programms enthält
+.map		Linker map	
+.mar		Microsoft ARchiv	komprimiertes Microsoft-Dateiarchiv
+.mar		Mozilla ARchiv	Mozilla Updater (z. B. für Firefox etc.)
+.mat		Matlab-Daten-Datei	
+.mat		Online-Sicherung für T-Online-Rechnung	–
+.mat		Verknüpfung mit Microsoft Office Access-Tabelle	–
+.max		Discreet 3D Studio MAX	Speicherformat für 3D-Modelle
+.max		-	OrCAD Layout-Datei
+.mb		Maya Binary	Projektdatei für die 3D-Grafiksoftware Maya in binärer Kodierung (vgl. ".ma")
+.mba		MB-Austauschdatei	Austauschdatei für ArCon Eleco
+.mbp		Mobipocket	Wird vom Amazon Kindle zur Speicherung von Dokument-Metadaten verwendet.
+.mbs		–	Opera Mail-Datei
+.mcc		Mathcad Configuration File	wird verwendet von Mathcad
+.mcd		Mathcad Document	wird verwendet von Mathcad
+.mcd	application/mcad, application/x-mathcad	Minicad	CAD-Dateien Minicad Version 4 bis 7, VectorWorks Vers.8 bis 11
+.mcf	image/vasa, text/mcf	Mathcad Fontfile	wird verwendet von Mathcad
+.mcp		Dateien mit CodeWarrior-Projekten	wird verwendet in Quellcode-Distributionen der Apache Software Foundation
+.mcw			Dateien von Microsoft Word für Macintosh, Versionen 4.0 bis 5.x
+.md8		MatchWare Mediator Project	Projektdatei eines Projektes von Matchware Mediator
+.mda	application/x-msaccess	Microsoft Access	Access-Datenbankdatei (Assistenten)
+.mdb	application/x-msaccess	Microsoft Data Base	Microsoft Access-Datenbankdatei
+.mdc		Modem Script --- auch "Model Definition *": RTCW/ET Model-Datei	Novell NetWare --- Model für Return to Castle Wolfenstein oder Wolfenstein: Enemy Territory
+.mde		Microsoft Access	Access-Datenbankdatei (kompilierte Form)
+.mdf		Media Descriptor File	Alcohol 120%, CDBurnerXP, DAEMON Tools Pro oder GameJack CD/DVD-Imagedatei
+.mdf		Master Data File	Datenbank-Datei des Microsoft SQL Server
+.mdf		Measurement Data Format File	Binäres Dateiformat zur Aufzeichnung von Messdaten, weite Verbreitung v. a. im Automotive-Bereich.
+.mdi		Microsoft Office Document Imaging	Ein hochauflösendes Microsoft-Grafikformat (ab MS Office 2003)
+.mdl		Hash Animation:Master 3d-Modell	Modell-File zum Speichern von 3d-Modellen
+.mdl		(Spieler-)Model	Quake Engine
+.mdl		Rational Rose Modell	Modell-File zum Speichern von UML-Diagrammen in Rational Rose
+.mdl		MathWorks Simulink Model	Modell-File für Simulink
+.mds		Media Descriptor Image	CD/DVD-Image erstellt mit Alcohol 120%, CDBurnerXP, DAEMON Tools Pro, DVD Shrink, GameJack oder ImgBurn
+.mdx		DBase Index-File	CD/DVD-Image zBsp. mit DAEMON Tools Pro zu öffnen
+.mell		Mellel-Dokument	Datei des Textverarbeitungprogramms Mellel
+.mem		Ansichtdatei (zu WaveLab)	Fenster- u. a. Positionsangaben sowie Presets des Masterbereichs
+.met		OS/2 Metafile	Vektorgrafiken
+.mf4		Measurement Data Format (Version 4)	Binäres Dateiformat zur Aufzeichnung von Messdaten, Anwendung v. a. im Automotive-Bereich. Das "ASAM COMMON MDF 4" Format wurde 2009 von der Association for Standardization of Automation and Measuring Systems als Standard veröffentlicht.
+.mfa		Multimedia Fusion 2 Applikations-Datei	–
+.mfw		Multimedia Fusion 2 Projekts-Datei	–
+.mfx		Multimedia Fusion 2 Extension	–
+.mht		Opera Webarchiv	Vom Opera Browser verwendetes Dateiformat zum Speichern/Archivieren ganzer statischer Webseiten.
+.mhz		mh-software komprimierte Projektdatei	Datei zum Austausch gebäudetechnischer Berechnungen zwischen mh-software und mh-Viewer
+.mi		Model Interface Standard	CAD-Dateiformat von CoCreate
+.mid
+.midi	music/crescendo, x-music/x-midi, application/x-midi, audio/midi, audio/x-mid, audio/x-midi	MIDI	MIDI-Datei
+.mif	application/x-mif, application/x-frame	Maker Interchange Format	Textbasierte FrameMaker-Datei zum Austausch zwischen FM-Versionen auf unterschiedlichen Betriebssystemen
+.minigsf		GBA Sound Format	Audio-Datei zur Wiedergabe in Winamp mithilfe des Plug-ins Highly Advanced (GSF[1])
+.miniusf		Nintendo 64 Audio-Datei	Audio-Datei zur Wiedergabe in Winamp mithilfe des Plug-ins 64th Note (USF [2])
+.mix		Microsoft Image Extension	Microsoft Picture It!- oder Microsoft Picture It!-Datei (Vektorgrafik; es ist zwischen beiden Anwendungen Inkompatibilität möglich)
+.mjf	audio/x-vnd.audioexplosion.mjuicemediafile	Media Juice File	–
+.mjpg	video/x-motion-jpeg	Motion JPEG	Video Format
+.mjpgc	video/x-motion-jpeg	Motion jpeg chunk	Video Format
+.mhk		Broderbund Mohawk Archiv	komprimiertes Dateiarchiv
+.mka	audio/x-matroska	Matroska Audio	reine Audio-Daten in einer Matroska-Containerdatei
+.mkd	application/octet-stream	Microkernel Database file	eine Tabelle in einer Pervasive.SQL Datenbank
+.mkd		Malz++Kassner CAD	Zeichnungsdaten, ZIP-komprimiert
+.mkv	video/x-matroska	Matroska Video	Video-Daten in einer Matroska-Containerdatei; wird auch von DivX Plus HD verwendet
+.mm	application/base64, application/x-meme	FreeMind-Maps	XML (ähnliches) Dateiformat. FreeMind erstellt und speichert Mindmaps.
+.mmap		Mindjet MindManager-Maps	Programm zur Erstellung von Mindmaps
+.mmp		Mindjet MindManager-Maps	Programm zur Erstellung von Mindmaps
+.mmf		Samsung & Siemens Handy	Polyphone Klingeltöne für Samsung- & Siemens-Handys, mit dem mmf-Player lassen sich Midi-Dateien im mmf konvertieren.
+.mmf		Microsoft Mail für Windows	bis 1995 gebräuchliches Mailprogramm, wurde durch Outlook Express abgelöst.
+.mmjproject		Music Maker Jam Projekt	Magix Music Maker
+.mml		MathML	XML-formatierte Formeldokumente
+.mmm		Media Player Multimedia Clip	Windows Mplayer Multimediaclip
+.mmm		Magix Music Maker	Magix Music Maker
+.mn		MuPAD Pro Notebook	Arbeitsdatei des Computeralgebrasystems MuPAD Pro
+.mnu		Menu	Menü-Datei für AutoCAD
+.mny	application/x-msmoney		Microsoft Money
+.mo		Message Object	GNU gettext, eine kompilierte .po-Datei
+.mo		Modelica model	Modelica
+.mobi		Mobipocket eBook	E-Book Format, kann mit FBReader geöffnet werden
+.moc		MetaObjectCode-Datei	Qt
+.mod	audio/mod, audio/mod	Module	Trackermodul (Musikformat) des Soundtrackers/Ultimate Soundtracker (Amiga)
+.mod	audio/mod, audio/x-mod	Module	Trackermodul (Musikformat) des Protrackers und dessen Klone (FastTracker 1, Taketracker, Startrekker)
+.model		–	CAD/CATIA
+.mop		MOPAC	MOPAC – File
+.mot		MOTS – Motorola S-Record File	Dateiformat zum Übertragen von Hex-Zeichen in einen Flash-Speicher[3]
+.mov	video/quicktime	Movie	Videodatei in Apples QuickTime-Format
+.mp+		Musepack-Audiodatei	freies, verlustbehaftet komprimiertes Audioformat
+.MP3	audio/mpeg[4]	Moving Pictures Experts Group 1/2 Audio Layer 3	verlustbehaftet komprimierte MPEG-Audiodatei
+.MP4	audio/mpeg4, audio/x-mpeg4	Moving Pictures Experts Group 4 Audio & Video	verlustbehaftet komprimierte MPEG-4-Datei. Wird u. a. in der Playstation PSP eingesetzt.
+.mpc	application/x-project	Musepack-Audiodatei	freies, verlustbehaftet komprimiertes Audioformat
+.mpg
+.mpeg	audio/mpeg, video/mpeg	Moving Picture Experts Group	Verlustbehaftet komprimierte Filme
+.mpic		MWM-Piccolo	Projekt-Datei auf dem PDA zum Austausch von Aufmaßen mit MWM-Libero
+.mpl		Media PlayList	
+.mpo			3D Bilddatei von Fujifilm
+.mpp	application/vnd.ms-project	Microsoft Project Plan	Projektplan für Microsoft Project
+.mpp	audio/x-musepack	Musepack-Audiodatei	freies, verlustbehaftet komprimiertes Audioformat
+.mpq		Mo'PaQ, kurz für Mike O'Brien Pack, benannt nach dem Erfinder	Archivdatei von Blizzard für Warcraft III, StarCraft, World of Warcraft und Diablo
+.mpr		FileMaker Dictionary	Wörterbuch für die Rechtschreibprüfung des Datenbanksystems FileMaker
+.mps		Max Payne Savegame	Savegame-Datei des Computerspiels Max Payne
+.mps		MapSource Datafile	Garmin MapSource GPS datafile
+.mpt	application/x-project	Microsoft Project template	Projektplanvorlage für Microsoft Project
+.mpx	application/x-project	Microsoft Project Exchange Datei	ASCII-Dateiformat um Projektinformationen zwischen verschiedenen Versionen von Microsoft Project-Versionen 4.0, 4.1 & 98 und Fremdanbieterprogrammen auszutauschen
+.mpx		Mindmanger Pro Export Datei	Citavi Mindjet MindManager Pro Exportformat (ab Version 6)
+.mrc	application/marc	mIRC Scriptdatei	Scriptdatei für MIRC im txtFormat.
+.mrw		Minolta Raw Image	Bildrohdaten von Konica Minolta-Kameras
+.ms7		Electronics Workbench Multisim v7 – Schaltplan	
+.ms8		Electronics Workbench Multisim v8 – Schaltplan	
+.msa		MyrScript-Datei	Scriptsprache von Myriad Harmony Assistant Notensatzprogramm
+.msc		Microsoft Management Console Snap-in Control File	Snap-in für die Microsoft Management Console
+.mscx		MuseScore-Partitur	
+.mscz		komprimierte MuseScore-Partitur	
+.msf		Mozilla Thunderbird mail summary file	Indexdateien %imap.servername%.msf zu den IMAP-Konten
+.msg	application/vnd.ms-outlook	Message	Microsoft Outlook – als Datei gespeicherte E-Mail
+.msi		Microsoft Installer	Installationsdateien für den Microsoft Installer, werden unter Windows als Installationsdateien eingesetzt
+.msm		Microsoft Installer Merge Module	Mittels "Merge modules" können Dateien, Registrykeys und andere Inhalte verteilt werden, die mit .MSI-Dateien verbunden werden können.
+.msn		Microsoft Network-Protokoll	
+.msp		Microsoft Installer Patchdatei	Mittels .msp-Dateien werden Patches für bestehende .msi-Dateien verteilt.
+.mst		Microsoft Installer-Transformationsdatei	Vorkonfiguration bzw. Antwortinformationen für .msi-Dateien.
+.msu		Microsoft Update	vergleichbar mit .msi
+.mswmm		Microsoft Windows Movie Maker Projekt	Windows Movie Maker-Projekt
+.mtm		Multitracker Module	Trackermodul (Musikformat) des MultiTrackers
+.mts		Mpeg Transport Stream	meist AVCHD-Videodatei, siehe auch .m2ts
+.mtv			Videoformat für Grundig MPixx Player (Konverter auf www.grundig.de erhältlich).
+.mui		Microsoft Multilingual User Interface	Dient in Windows zur Trennung der Sprachressourcen für die Benutzeroberfläche vom Binärcode des Betriebssystems. Ermöglicht eine Änderung der Sprache, ohne die Binärdateien vom Betriebssystem ändern zu müssen.[5]
+.mus		Music	Dateinamenserweiterung wird von den Notensatzprogrammen Finale und Score bei unterschiedlichen Dateiformaten genutzt.
+.mus		Musicam	Kann auch für MUSICAM stehen. (In Audioschnittprogrammen wie Edigas)
+.mux		Musikformat	Codierte ogg-Datei, die nur vom Computerspiel Trackmania gelesen werden kann.
+.mvb		Microsoft Multimedia Viewer Book	ähnlich Windows-*.hlp-Dateien, mit mviewer2.exe betrachtbar
+.mvf		Stop frame file	Videoformat von AutoCAD
+.mw		Maple-Worksheet	Maple (Standard) Worksheet (XML-codiert)
+.mwb		MySQL Workbench	Datei von MySQL Workbench, beinhaltet Datenbank Schema inkl. Diagrammen
+.mwp		Lotus Word Pro Smartmaster	Vorlagendatei der Textverarbeitung der Bürosoftware-Suite Lotus SmartSuite
+.mwpp		My Webfinder Projekt Package	Projektpackage für MyWebFinder.
+.mws		Maple-Worksheet	Maple Classic Worksheet (auch mit älteren Maple-Versionen benutzbar)
+.mxv		Magix Video	Ehemaliges Format von Magix Video. In neuen Programmversionen heißt dieses Format MVD.
+.mxc2		Magix Cache Version 2	Auslagerungsdatei für MAGIX-Foto- und Videoprogramme
+.mxc3		Magix Cache Version 3	Auslagerungsdatei für MAGIX-Foto Manager (Deluxe)
+.mxpl		Magix Playlist	Wiedergabeliste für MAGIX MP3 Deluxe und mufin player (pro) ähnlich zu XSPF
+.myd		MySQL-Datenbank	Datenbankdatei für MySQL (MyISAM-Tabelle).
+.myi		MySQL-Datenbank Index	Datenbankdatei für MySQL (MyISAM-Tabellenindex).
+.myr		Musikformat	Musikformat von Myriad Harmony Assistant – Notensatz- und Sequenzer-Programm.
+.mzt		HTML-Vorlage	Nvu-eigenes Format zur Speicherung von (x)html-Vorlagen, wie html
+.n4d		nova 4 drawing	2D-CAD-Zeichnung (Papierzeichnung) der Firma Plancal
+.n4m		nova 4 model	3D-CAD-Zeichnung (Modellzeichnung) der Firma Plancal
+.n64		Nintendo 64 ROM-Image	Dump eines Nintendo 64-Spiels (im Fliprom-Format) zur Verwendung in einem Emulator
+.nb		Notebook	Mathematica
+.nbu			Sicherungsdatei des Content Copier der Nokia PC Suite
+.ncb			Visual C++ IntelliSense Database, Microsoft Developer Studio
+.ncd		Nero Cover Designer	
+.ncf		NetWare Command File	Novell NetWare Server-Batchfiles
+.ncw		Native Instruments lossless compression audio (wave) file	Dateien mit Audio-Samples für die Instrumente in Native Instruments Kontakt
+.nd2			Bilder-Stack von NIS-Elements (Software für Nikon Mikroskope), auf Basis von JPEG 2000
+.nds		Nintendo DS ROM image	Dump eines Nintendo DS-Spiels zur Verwendung in einem Emulator. (Die Dateinamenserweiterung .nds wird auch meist für NDS Homebrew verwendet)
+.ndw		Nemetschek Drawing file	CAD-Programm Nemetschek Allplan
+.nef		Rohdaten	zur Speicherung von Fotos in Nikon-Digitalkameras
+.nes		NES ROM image	Dump eines Nintendo Entertainment System-Spiels zur Verwendung in einem Emulator
+.nfg		Normal Form Game	Dateiformat zur Speicherung von Normalformspielen mittels Gambit
+.nfo		„Info“-Datei	Reiner Text, wird meist mit in Archiven(.rar,.tar,etc) gespeichert, um den Inhalt anzugeben bzw. Zusatzinfos (Installationsanweisung) zu speichern. Um ASCII-Grafiken darzustellen, kann ein NFO-Viewer benutzt werden.
+.nfo		MSInfo-Dokument	Windows-Systeminformationsdatei
+.ngp		NeoGeo Pocket ROM image	Dump eines SNK NeoGeo Pocket Color-Spiels zur Verwendung in einem Emulator
+.ngr		NGR Grafic File	Pixelbasierte Grafik (Bilddatei) - NGRVIEWER,NGRDESIGNER
+.nhf		Nero HFS	NFS-CD Zusammenstellung erstellt mit Nero Burning ROM
+.nif	image/x-niff	Notation Interchange File Format (NIFF)	Das NIFF-Dateiformat wurde 1995 gemeinschaftlich u. a. von den Herstellern der großen Notensatzprogramme erarbeitet, wird aber selbst von den beteiligten Softwarefirmen kaum unterstützt und vermutlich von XML-basierten Formaten abgelöst werden.
+.nii / .nii.gz / .img + .hdr		Neuroimaging Informatics Technology Initiative (NIfTI)	Das NIFF-Dateiformat ist eine Weiterentwicklung des Formats DICOM und ermöglicht die Speicherung der fMRT-Bilddaten in einer einzigen Datei (bzw. 2 Dateien bei .img und .hdr) pro Aufnahme. Bei .nii.gz handelt es sich um die komprimierte Variante, die hauptsächlich bei FSL zum Einsatz kommt. Im Rahmen großer neurowissenschaftlicher Forschungsprogramme wurde auch dieses Format weiterentwickelt (CIFTI).
+.nir		NetInstall Registry file	Windows Registryinformationen eines NetInstallprojektes
+.nkb		Native Instruments Kontakt instrument bank	Gruppe virtueller Instrumente für Native Instruments Kontakt
+.nkc		Native Instruments Kontakt cache file	Angaben zu monolithischen Instrumenten-Dateien für Native Instruments Kontakt
+.nki		Native Instruments Kontakt instrument	virtuelles Instrument für Native Instruments Kontakt
+.nkm		Native Instruments Kontakt multi	Gruppe gemeinsam zu ladender Instrumente in Native Instruments Kontakt
+.nkp		Native Instruments Kontakt preset	Preset für Native Instruments Kontakt
+.nkr		Native Instruments Kontakt resource file	enthält Grafiken, Scripts u.ä. Zusätze zu Instrumenten für Native Instruments Kontakt
+.nkx		Native Instruments Kontakt protected monolith	nicht editierbare monolithische Datei für Native Instruments Kontakt
+.nlm		NetWare Loadable Module	Ausführbare Datei unter Novell Netware
+.nls		LaTeX nomenclatures	Datei, in der die Abkürzungen und verwendeten Sonderzeichen (z.B. §, $, %, &, etc.) aufgelistet werden.
+.nmind		NovaMind Mindmap	Mindmap-Datei der Software NovaMind
+.note		Notiz	Spezielles Format für wichtige Notizen [1]
+.nr3		Nero MP3	CD-ROM-Zusammenstellung (MP3) erstellt mit Nero Burning ROM
+.nra		Nero Audio	Audio-CD-Zusammenstellung erstellt mit Nero Burning ROM
+.nrb		Nero Boot	CD-ROM-Zusammenstellung (Boot) erstellt mit Nero Burning ROM
+.nrc		Nero Compatible	CD-ROM-Zusammenstellung (UDF/ISO) erstellt mit Nero Burning ROM
+.nrd		Nero DVD	DVD-Video-Zusammenstellung erstellt mit Nero Burning ROM
+.nre		Nero CD EXTRA	CD EXTRA-Zusammenstellung erstellt mit Nero Burning ROM
+.nrg		Nero Image	CD-Image erstellt mit Nero Burning ROM
+.nrh		Nero Hybrid	CD-ROM-Zusammenstellung (Hybrid) erstellt mit Nero Burning ROM
+.nri		Nero ISO	CD-ROM-Zusammenstellung (ISO) erstellt mit Nero Burning ROM
+.nrm		Nero Mixed-Mode-CD	Mixed-Mode-CD-Zusammenstellung erstellt mit Nero Burning ROM
+.nru		Nero UDF	CD-ROM Zusammenstellung (UDF) erstellt mit Nero Burning ROM
+.nrv		Nero Video	CD-Video-Zusammenstellung erstellt mit Nero Burning ROM
+.nrw		Nero WMA	CD-ROM-Zusammenstellung (WMA) erstellt mit Nero Burning ROM
+.ns1		Netstumbler File	Datendatei von NetStumbler mit Informationen über gefundene Wireless LANs
+.nsa		Nullsoft Streaming Audio	Streaming-Audio-Containerformat
+.nsd		Nassi-Shneiderman-Diagramm	XML-Struktogramm, Dateiformat von StruktGen
+.nsf		Nintendo Sound File	Musikdatei des Nintendo Entertainment System (NES)
+.nsf		Notes Storage Facility	Lotus Notes-Datenbank
+.nspg		Nord Stage Program	Programm-Datei für das von Clavia entwickelte Nord Stage Piano
+.nsv		Nullsoft Streaming Video	Streaming-Video-Containerformat, Entwickelt den Machern von Winamp,Nullsoft
+.nt2		Netzdatei	Netzdatei-Backup erstellt mit BAHN
+.nt3		Netzdatei	Netzdatei erstellt mit BAHN
+.ntf		Notes Template File	Lotus-Notes-Datenbankvorlage (Schablone)
+.nth		Nokia Theme	Gezippte XML-Datei, welche Themen für Nokia-Handys definiert
+.nvl		Netviewer	Netviewer-Dateiformat, kann mit Netplayer abgespielt werden
+.nva		E-Animation (NEVA)	Vektorgrafikformat, das unter anderem für Animationen auf Sharp-Handys genutzt wird
+.nvz		nova	Zeichendatei des CAD-Programms nova
+.nwt		NOWAIT Resource File	Ressource-Datei für graphische Benutzeroberflächen des C++ GUI-Frameworks NOWAIT
+.nz		NanoZip	Komprimiertes Dateiarchiv
+.nzb		NewZBin	Suchergebnisse von Usenet-Suchmaschinen (s. NZB (Dateiformat))
+.o	application/octet-stream	Object	Objektdatei (Unix)
+.o2c		Object 2 See	
+.o7o		open7x0.org install file	Installationsdatei im .tar.bz2-Format für die Geräteserie Gigaset M7x0
+.oab	application/oda	MS Outlook	Outlook offline address book (im Zusammenspiel mit MS Exchange-Server)
+.obd		MS Office Binder File	–
+.obj		Object	Objektdatei (DOS, Windows, OS/2)
+.obj		Grafikdatei von Tgif
+.obml		Opera Binary Markup Language	Von Opera Mini gespeicherte Webseiten
+.oct		VIP-Befehlssatz	VIP
+.ocx		Programmerweiterung	Microsoft OLE custom controls
+.odb	application/vnd.oasis.opendocument.database	OpenDocument Database	OASIS-Datenbankdatei*
+.odc		OpenDocument Chart	OASIS-Diagrammdokument*
+.odf	application/vnd.oasis.opendocument.formula	OpenDocument-Formel	OASIS-Formeldokument*
+.odg	application/vnd.oasis.opendocument.graphics	OpenDocument Graphics	OASIS-Zeichnungsdokument*
+.odi		OpenDocument Image	OASIS-Bilddatei*
+.odm	application/vnd.oasis.opendocument.text-master	OpenDocument Master	OASIS-Globaldokument*
+.odp	application/vnd.oasis.opendocument.presentation	OpenDocument Presentation	OASIS-Präsentationsdokument*
+.ods	application/vnd.oasis.opendocument.spreadsheet	OpenDocument Spreadsheet	OASIS-Tabellendokument*
+.odt	application/vnd.oasis.opendocument.text	OpenDocument Text	OASIS-Textdokument* (auch KWord, AbiWord und TextMaker 2005; Open Office ab Version 2.0)
+.ofc		Open Financial Connectivity	Finanzdatei, zum Übertragen von Daten z. B. aus einem Bankkonto in eine Finanzapplikation
+.off		Object File Format	Beschreibung von Polygonen in wissenschaftlicher Software
+.ofr		OptimFROG	verlustfrei komprimierendes Audioformat
+.oft		MS Outlook	Outlook Formatvorlage (Outlook Format Template)
+.ofx		Open Financial Exchange	Offenes Dateiformat für Finanzdatenaustausch
+.oga	audio/ogg	Ogg Audio	freies Containerformat für Audio-Streamdaten, enthält im Falle dieser Dateinamenserweiterung (Ogg-)Vorbis-Audio
+.ogg	audio/ogg	Ogg	freies Containerformat für Video- und Audio-Stream- und Metadaten, enthält im Falle dieser Dateinamenserweiterung meistens (Ogg-)Vorbis-Audio
+.ogm		Ogg Media	freies Containerformat für Video- und Audio-Stream- und Metadaten (nicht offiziell)
+.ogv	video/ogg	Ogg Video	freies Containerformat für Video- und Audio-Stream- und Metadaten, enthält im Falle dieser Dateinamenserweiterung mindestens Theora-Video
+.ogx	application/ogg	Ogg Application	freies Containerformat für application/ogg
+.okt		Oktalyzer	Trackermodul (Musikformat) des Amiga Oktalyzers
+.ol		ol	ProductView 3D Viewer Part File from PTC
+.old		old	Sicherungsdatei; wie .bak
+.olk		–	Adressbuch (MS Outlook)
+.oma		OpenMG Audio	komprimiertes Audioformat von Sony, das sich einfach in MP3 umwandeln lässt (siehe Tools beim OpenMG Artikel)
+.omg		O&O DiskImage Disk Image	Image-Format von O&O DiskImage
+.one		OneNote	Bildschirmausschnitt von Microsoft OneNote (Teil von manchen Office-Versionen)
+.OPJ		-	OrCad Project File/Origin Project File (OriginLab)
+.opt		–	Arbeitsbereich-Konfigurationsdatei unter C++
+.or#		Lotus Organizer Datei	# = Organizer-Version (4-6)
+.orf		Olympus Raw File	Rohdatendatei von digitalen Olympus-Spiegelreflexkameras
+.organ		(Virtuelle) Orgelbeschreibungsdatei	Funktionsliste für den virtuellen Orgeln (Samplingsammlungsverwaltung) MyOrgan und GranOrgue
+.ost		MS Outlook	Outlook Offline-Synchronisierungsdatei (ähnlich .pst)
+.otf		OpenType Font	Schriftdatei mit Postscript-Konturen
+.otg		ODoc. Template Drawing	OASIS-Zeichnungsdokumentvorlage*
+.oth		ODoc. Template HTML	OASIS HTML-Dokumentvorlage*
+.otp		ODoc. Template Presentation	OASIS-Präsentationsdokumentvorlage*
+.otrkey		Otrkey File	Codierte Video-Datei des OnlineTVRecorders (http://www.onlinetvrecorder.com/)
+.ots		ODoc. Template Spreadsheet	OASIS-Tabellendokumentvorlage*
+.ott		ODoc. Template Text	OASIS-Textdokumentvorlage* (auch KWord, AbiWord und TextMaker 2005)
+.out		–	Ausführbare Datei (Linux)
+.ova		Octava Datei	Musiknoten-Format von Obtiv Octava
+.ovl		Vektordaten-Overlay	Top50
+.ovl		Overlay	WordStar
+.p12	application/pkcs-12, application/x-pkcs12	PKI PKCS#12-Format	Containerdatei für privaten und öffentlichen Schlüssel (PKI) im PKCS#12-Format (Alternativ: .pfx)
+.p2v		Planungsdatei	Sicherungsdatei eines Projektes im Eventplaner plan2viz (windowsbasierend) von 3d-in-berlin, inzwischen umfirmiert zu www.3dib.de
+.p65		Satzdatei	Adobe Pagemaker 6.5
+.p81		Leistungsverzeichnis	GAEB 2000-Datei - Austausch-LV zwischen zum Beispiel Architekt und Ingenieur
+.p83		Angebotsaufforderung	GAEB 2000-Datei mit Angebotsaufforderung
+.p84		Angebotsabgabe	GAEB 2000-Datei mit Angebotsabgabe
+.p85		Nebenangebot	GAEB 2000-Datei mit Nebenangebot
+.p86		Auftragserteilung	GAEB 2000-Datei mit Auftragserteilung
+.p88		Nachtrag	GAEB 2000-Datei mit Angebotsnachtrag
+.p89		Rechnung	GAEB 2000-Datei mit Rechnungsdaten
+.p99		TI99 Program file	Programm-Datei der TI99/4a-Emulationen
+.p7b und .p7c	application/x-pkcs7-certificates	PKI PKCS#7-Format	Containerdatei für öffentlichen Schlüssel (PKI) im PKCS#7-Format
+.p7m		PKI PKCS#7-Format	MIME-Nachricht (oft mit eingebettetem Originaldokument)
+.p7s		PKI PKCS#7-Format	Signatur im PKCS#7-Format
+.pab		Papyrus	Papyrus Textverarbeitung Backup-Files
+.pac			Bildformat der auf dem Atari ST-System weit verbreiteten Bildverarbeitung STAD
+.pac		Lossless Predictive Audio Compression	verlustfreies Audioformat
+.pac		Proxy Auto-Config	Anhand einer Proxy Auto-Config (PAC)-Datei kann ein Webbrowser automatisch den passenden Proxyserver für eine gewünschte URL finden
+.package		-	Autopackage-Programmpaket
+.pages		Pages	Apple Pages (Bestandteil des Büropaketes IWork)
+.pak		–	Medienbibliothek (Quake II Engine)
+.pal		Palette	Farbpaletten älterer Grafikprogramme (meist für 8 bit)
+.pap		Papyrus	Textverarbeitung Papyrus
+.pap		PapDesigner	Software für Programmablaufplan
+.par		u. a. PAR-Wiederherstellungsdatei	PAR1 oder SpringSource Virgo oder Solid Edge
+.par2		PAR2-Wiederherstellungsdatei	PAR2
+.parmlib		z/OS-Parameterbibliothek	PDS-Datei mit Membern, die Systemparameter und Systemdatasets spezifizieren
+.part	application/pro_eng	Partizierte Datei	Unvollständige Download-Datei, die ständig erweitert, bis der Download vollendet ist und dann in die jeweilige Datei umbenannt wird. (zum Beispiel xy.mp3.part -> xy.mp3)
+.pas	text/pascal	Pascal Source Code File	Borland Pascal / Delphi-Quelltextdatei
+.pat		Hatch Pattern	AutoCAD Schraffur-Datei
+.pax		kurz für Packs	Dateiformat für mit PackChaos verlustfrei komprimierte Daten
+.pb		PureBasic	PureBasic-Quelltextdatei
+.pb		Papyrus Base	Papyrus-Datenbank
+.pb		scmxx	Siemens-Handy-Telefonbuch
+.pbf		Papyrus-Base-Formatvorlage	Papyrus Datenbank, Formatvorlage für die Eingabemaske
+.pbf		Paragon Drive Backup	Image-Datei des Programs Paragon Drive Backup
+.pbf		Protocol Buf Binary	Kompaktes Datenformat der Rohdaten von OpenStreetMap
+.pbi		PureBasic-Include	Include-Datei der Programmiersprache PureBasic
+.pbm	image/x-portable-bitmap	Portable Bitmap	Bilddatei
+.PBN	application/octet-stream	Portable Bridge Notation	Format für die Speicherung von Bridgepartien
+.PBP		Sony-PSP-Anwendung ("EBOOT.PBP")	
+.pc1		Degas (Elite)	Atari ST-Bildformat, komprimiert 4 bpp (320x200) + Farbtablle 16 aus 512 Farben
+.pc2		Degas (Elite)	Atari ST-Bildformat. komprimiert 2 bpp (320x400) + Farbtabelle 4 aus 512 Farben
+.pc3		Degas (Elite)	Atari ST-Bildformat, komprimiert 1 bpp (640x400) mono
+.pcd		Photo-CD	Kodak Foto-CD
+.pcp		Windows Installer Patch-Erstellungsdatei	–
+.pct	image/x-pict
+Mac Pict	Bilddatei
+.pcx	image/x-pcx	Zsoft Paintbrush	Bilddatei
+.pbp		Sony Playstation Portable ausführbares Archiv	Entpackbar mit dem PBP Unpacker von pdc
+.pd		Pure Data Patch-Datei
+.pd		PipeDream Dokument
+.pdb		AportisDoc	Palm Textdokument
+.pdb		Microsoft Visual Studio	In dieser Datei stellt MS Visual Studio die Symbole für eine Datei im Release- oder auch Debugformat ab.
+.pdb	chemical/x-pdb	Protein Data Bank	Dateiformat für Molekularstrukturen
+.pdd		Dateiformat von Adobe PhotoDeluxe
+.pdf	application/pdf	Portable Document Format	formattreues Dokumentenformat von Adobe
+.pdf		Novell System PrintDef Device Definition File	
+.pdi		Pinnacle Disc Image	CD-Image, erstellt mit Pinnacle Instant CD/DVD
+.pdi		Preserved Disk Image	Disk-Image-Format des PC Preservation Project
+.pdn			Datei, erstellt mit Paint.NET
+.pdp		Photoshop PDF	Alternative Dateiendung für PDFs aus Photoshop, beim Speichern in Windows verfügbar.
+.pdsf		Process Data Standard Format	Prozessdaten von Anlagen in der Halbleiterindustrie.
+.pdt		IBM iSeries Access-Druckerbeschreibung	Der verwendete Drucker wird nicht über den Druckertreiber, sondern direkt über die PDT gesteuert.
+.pdy			StarMoney-Dokumente/Anhänge (Windows)
+.peak		Wellenform einer Audiodatei	Diese Datei beschleunigt im Zusammenhang mit einer Audio-Datei den Öffnungsvorgang in einem Audioeditor. In der Datei ist die grafische Wellenform der Audio-Datei gespeichert, die zum bearbeiten notwendig ist. Ein Löschen dieser Datei bewirkt lediglich einen einmalig längeren Ladevorgang der dazugehörigen Audio-Datei.
+.pef		Rohdatenformat von Pentax-DSLRs	Diese Datei enthält die unbearbeiteten Rohdaten aus dem CCD-Sensor einer Pentax-DSLR.
+.pem		Privacy Enhanced Mail	Base64-kodiertes DER-Zertifikat, umschlossen mit "-----BEGIN CERTIFICATE-----" und "-----END CERTIFICATE-----"
+.pen		io Pen Document	Logitech-Handschrift-Dateiformat mit Metadaten, teilweise unverschlüsselt in XML
+.pes		Packetized Elementary Stream	mit zum Beispiel Project X erstellte Videodatei, abspielbar mit zum Beispiel Media Player Classic
+.pes		Stickdatei	
+.pes		WordPerfect Program Editor Work Space File	
+.pf		Prefetch file	Windows (XP) wertet jeden Boot-Vorgang aus und speichert das Ergebnis im %windir%\prefetch-Ordner ab. Die dort angelegten pf-Dateien enthalten die Speicherseiten, auf die während des Bootvorgangs zugegriffen wird. Das dient zum vorausschauenden Laden der Speicherseiten beim nächsten Boot-Vorgang.
+Ähnlich organisiert Windows auch das Starten von Anwendungsprogrammen. Für jedes Programm existiert im Prefetch-Ordner eine eigene Startdatei.
+.pfb		PostScript Font Binary	PostScript-Type-1-Schriftart, bildet „Gespann“ mit .pfm
+.pfm		PostScript Font Metric	PostScript-Type-1-Schriftart (Windows)
+.pfr		Portable Font Resource	Herunterladbare Schrift(art)en, die in Webseiten eingebunden sind. Sie müssen nicht auf dem Zielsystem installiert sein.
+.pfx	application/x-pkcs12	PKI PKCS#12-Format	Containerdatei für privaten und öffentlichen Schlüssel (PKI) im PKCS#12-Format (Alternativ: .p12)
+.pgd		Pretty Good Privacy Disk	PGP-verschlüsselte Containerdatei, die sich unter Windows als virtuelle Festplatte einbinden lässt
+.pgm		Portable Graymap	Proprietäres Format zur Speicherung von Bilddaten
+.pgn		Portable Game Notation	Textdatei zur Speicherung von Schachpartien
+.pgp		Program Parameter	Autocad
+.pgs		Pagestream	DTP-Programm für Windows, Linux, MacOS, AmigaOS
+.php	text/php	PHP Hypertext Preprocessor	PHP-Skript (empfohlene Dateinamenserweiterung)
+.php3	text/php	PHP Hypertext Preprocessor Version 3	PHP-Skript (nicht empfohlene alternative Dateinamenserweiterung der Version 3)
+.php4	text/php	PHP Hypertext Preprocessor Version 4	PHP-Skript (nicht empfohlene alternative Dateinamenserweiterung der Version 4)
+.php5	text/php	PHP Hypertext Preprocessor Version 5	PHP-Skript (nicht empfohlene alternative Dateinamenserweiterung der Version 5)
+.phps		PHP Hypertext Preprocessor Source	PHP-Source (wird verwendet, um den Quellcode lediglich hervorzuheben und nicht auszuführen)
+.phtml		PHP Hypertext Markup Language	PHP-Skript (nicht empfohlene alternative Dateinamenserweiterung)
+.pi1		Degas (Elite)	Atari ST-Bildformat, unkomprimiert 4 bpp (320x200) + Farbtabelle 16 aus 512 Farben ~ 32KB
+.pi2		Degas (Elite)	Atari ST-Bildformat, unkomprimiert 2 bpp (320x400) + Farbtabelle 4 aus 512 Farben ~ 32KB
+.pi3		Degas (Elite)	Atari ST-Bildformat, unkomprimiert 1 bpp (640x400) mono ~ 32KB
+.pif		Programminformationen	Zusatzinformationen zum Ausführen von Nicht-Windows-Programmen unter Microsoft Windows. Häufiges Ziel von Virusinfektionen (Beispiel: Wurm Sober.I).
+.pik			
+.pisa		MWM-Pisa-Projekt	MWM-Pisa (Schnelle Angebots- und Rechnungserstellung)
+.piz			Viele Firmennetzwerke filtern die Dateinamenserweiterung *.zip aus Sicherheitsgründen heraus. PIZ ist ZIP rückwärts, durch Umbenennen der Datei kann diese meist normal entpackt werden.
+.pjg			Verschlüsselte Bilddatei, die von Fotografen genutzt wird, um das Urheberrecht zu behalten. Diese Dateien können nur mit einem Passwort geöffnet werden
+.pk3		–	Medienbibliothek (Quake III Engine). Es handelt sich um ein ZIP-Archiv mit anderer Dateinamenserweiterung.
+.pk4		–	Medienbibliothek (Doom 3 Engine). Es handelt sich hierbei tatsächlich um ein ZIP-Archiv mit anderer Dateinamenserweiterung.
+.pkb	application/octet-stream	Oracle Package Body Datei	Package-Definition oder Skript aus dem PL/SQL-Datenbankmanagementsystem der Firma Oracle. Enthält die Deklaration der in der Spezifikation definierten Funktionalitäten (vgl. .pks)
+.pkg	application/x-newton-compatible-pkg	3D Modell	Creo Elements/Direct Modeling
+.pkm		Pokémon	Pokémon-Daten bei dem Programm Pokesav
+.pks	application/octet-stream	Oracle Package Spec Datei	Package-Spezifikation aus dem PL/SQL-Datenbankmanagementsystem der Firma Oracle. Enthält u. a. Spezifikationen, Typ- und Ausnahmendefinitionen für Oracle-Packagedateien (vgl. .pkb).
+.pl	text/plain, text/x-script.perl	Perl	Dokumente der Programmiersprache (eigentlich Perl Library, fälschlich oft statt .plx für Programme)
+.pl		Prolog	Dokumente der Programmiersprache
+.pla		VIP-Mikrobefehlsspeicher	VIP
+.pla		SimEarth Planetendatei	SimEarth Savedatei
+.pld		PhotoLine Document	Bild- oder Dokumentendatei von PhotoLine
+.plist		Property List	Plist-Dateien speichern Einstellungen in Mac OS X. Vor Mac OS X 10.4 waren diese Dateien standardmäßig simple XML-Dateien, die mit jedem Texteditor bearbeitet werden konnten. Seit Mac OS X 10.4 ist das Standardformat ein Binärformat. Beide Formate können unkompliziert mit dem Property List Editor bearbeitet werden. Für das Terminal existieren die Befehle defaults sowie plutil.
+.plm		PL/M	Dokumente (Source) der Programmiersprache
+.pln			ArchiCAD Standard-Projektdatei
+.pls		Playlist	Audiodatei-Listen
+.plt		Plotter Datei	HP-GL Vektor Graphic Plotter-Datei von AutoCAD
+.plx	application/x-pixclscript	Perl	Ausführbares Perl-Programm (Perl Executable)
+.ply		PLY	einfache Objektbeschreibung für polygonale Modelle der Stanford University[1]
+.pm	text/x-script.perl-module, image/x-xpixmap	Perl Module	Moduldatei der Skriptsprache Perl
+.pm6		PageMaker 6.x	Desktoppublishing-Format für Adobe PageMaker
+.pmap		Pocket Mindmap	Mindmap-Datei von Pocket Mindmap
+.pmd		Satzdatei	Adobe Pagemaker 7.0
+.pmd		PlanMaker Dokument	Tabellenkalkulation PlanMaker
+.pml		Peter Morphose Level	Leveldatei
+.pmv		PlanMaker Vorlagendokument	Tabellenkalkulation PlanMaker
+.pnf			Vorkompilierte INF-Dateien, der INF-Dateien[2]
+.png	image/png	Portable Network Graphics	Bilddatei
+.pnm	application/x-portable-anymap, image/x-portable-anymap	Portable PixMap	Bilddatei
+.po	text/x-gettext-translation	Portable Object	GNU gettext
+.pos		WinHex Positionsdatei	enthält ausgewählte Positionen in Dateien und auf Datenträgern
+.pot		Portable Object Template	GNU gettext, zur Lokalisierung von Anwendungen
+.pot		PowerPoint	PowerPoint-Vorlage
+.pov		POV-Ray-Datei	POV-Ray-Szenenbeschreibung
+.pox		Poseidon-Datei	Schiffsdesign-Software von GL Germanischer Lloyd
+.pp		Pascal Unit	verwendet u.a. von Free Pascal
+.ppa	application/vnd.ms-powerpoint, application/mspowerpoint	PowerPoint	VBA-Add-In für Folienpräsentationen
+.ppe		PCBoard Programming Executable	ausführbares Plugin für die Mailboxsoftware PCBoard
+.ppf		Igrafx Image	Bildbearbeitung (Micrografx-eigenes Grafikformat)
+.ppf		PlayStation Patch File	stellt ein Format für PAL/NTSC-Patches, Trainer oder ähnliches zur Verfügung
+.ppi		picture editor 400	ABB S.P.I.D.E.R. Picture Editor 400
+.ppk		PuTTY private key	Geheimer Schlüssel für die Public-Key-Authentifizierung an einem Unix-Dateisystem
+.ppl		Powerpraise-Lied	Präsentationsprogramm für Liedtexte
+.ppm	image/x-portable-pixmap	Portable PixMap	Bilddatei
+.ppp		Powerpraise-Portfolio	Präsentationsprogramm für Liedtexte
+.ppp		PagePlus Dokument	Dateinamenserweiterung der Desktop-Publishing-Software PagePlus
+.ppp		Cyberlink PowerProducer	
+.pps	application/vnd.ms-powerpoint, application/mspowerpoint	PowerPoint	selbststartende Folienpräsentation
+.ppt	application/vnd.ms-powerpoint, application/mspowerpoint	PowerPoint	Folienpräsentation
+.ppsx	application/vnd.openxmlformats-officedocument.presentationml.slideshow	PowerPoint	selbststartende Folienpräsentation - Powerpoint Version 2007
+.pptx	application/vnd.openxmlformats-officedocument.presentationml.presentation	PowerPoint	Folienpräsentation - Powerpoint Version 2007
+.ppz	application/vnd.ms-powerpoint, application/mspowerpoint	PowerPoint	PowerPoint-Pack&Go-Datei (gepackte Datei) bis PowerPoint-Version 2002/XP
+.pqi		PowerQuest Drive Image	komprimiertes Festplatten- / Partitions-Image des Programms Drive Image der Firma PowerQuest, heute Symantec. Betriebssystem: Windows. Das Format wird (2009-12) nicht mehr unterstützt. Zum Entpacken / Wiederherstellen wird Drive Image benötigt.
+.prc		Palm Resource Code	Programmdatei für Handheld-Computer mit dem Betriebssystem Palm OS
+.prc		Mobipocket-Dokument	E-Book-Datei im Mobipocket-Format
+.prd		SoftMaker Presentations-Dokument	SoftMaker Office
+.prf		SoftMaker Presentations-Dokument	SoftMaker Office
+.prg		Ausführbares Programm	Ausführbare Programmdatei auf ATARI ST-Computern und Kompatiblen
+.pri		print file	Druckdatei, die an einen Drucker gesendet werden kann
+.pri			Dokument-Datei des Notensatzprogramms PriMus
+.prj		ANTARES/BKI-Energieplaner	Projektdatei
+.prj		Knorr-Bremse	Projektdatei zum Auslesen von Wagendaten der ÖV
+.prj		CodeVision-AVR	Compiler für Mikrocontroller von Pavel Haiduc
+.prj		Hash Animation:Master-PRJ	Hash Animation:Master Projekt-File für 3d-Szenen
+.prj		ESRI Projektionsdatei	Eine der 4 Dateien eines ESRI-Shapefiles. Enthält die verwendete (geografische) Projektion der Daten.
+.PrjPCB		PCB-Project	Altium Designer PCB-Projekt-Datei
+.prl		Pearl Source Code-Datei	Echtzeit- und Multitasking-Programmiersprache
+.prn		Postscript	Ein in eine Datei umgeleiteter Ausdruck
+.pro		IDL source File	Quellcode-Datei in IDL (Research Systems)
+.pro		Prolog	Dokumente der Programmiersprache
+.pro			StarMoney-Sendeprotokolle (Windows)
+.proclib		z/OS-Procedurenbibliothek	JCL-Prozeduren
+.properties		Java-Properties-Datei	Enthält Schlüsselwert-Zuweisungen im Textformat
+.prs		Harvard Graphics	-
+.prt		MegaCAD	CAD-Zeichnung (2D + 3D)
+.prt	application/pro_eng	Pro/E part	Pro/ENGINEER-Teiledatei
+.prt		Unigraphics Part File	3D-CAD-Teiledatei (UGS)
+.prtdot		Part Template	Teilvorlage SolidWorks, CAD
+.prv		SoftMaker Presentations-Vorlagendokument	SoftMaker Office
+.prz		Lotus Freelance Graphics	Präsentation
+.ps	application/postscript	Postscript	plattformunabhängiges Dokument
+.ps1		Powershell	Windows Powershell Skript
+.psb		Adobe Photoshop Big	Bildbearbeitung (Photoshop-eigenes Grafikformat) für Dateien mit bis zu 300.000 Pixeln je Dimension, PS CS und höher
+.psd	application/octet-stream	Adobe Photoshop	Bildbearbeitung (Photoshop-eigenes Grafikformat) für Daten mit bis zu 30.000 Pixeln je Dimension
+.psf		GoPal Navigator	Maps- und POI (Point of interest)-Dateien
+.psp		Corel Paint Shop Pro-Bild	Bildbearbeitung ("Paint Shop Pro"-eigenes Dateiformat)
+.pst		Personal Store	Backup-Datei von Microsoft Outlook
+.psw		Dokument	Textverarbeitung Microsoft PocketWord
+.ptb		Power Tab Score	Dateiformat des Tabulaturprogramms Power Tab Editor 1.7
+.ptf		Pro Tools File/PSP-ThemeSessiondatei des Musikprogramms Pro Tools ab Version 7/Sony PSP
+.ptk			StarMoney Statusprotokolle (Windows)
+.ptm		PolyTracker Module	Trackermodul (Musikformat) von PolyTracker
+.ptn		Paperport	Thumbs-Dateien von Paperport (Dokumentenverwaltungsprogramm)
+.pts		Pro Tools Session	Sessiondatei des Musikprogramms Pro Tools in Version 5.1-6
+.pub	application/x-mspublisher	Dokument	Satzsystem Microsoft Publisher
+.pwl		PassWordList	unter Microsoft Windows (bis Win98) zum Speichern von Daten von angelegten Benutzerkonten
+.px			Primary Index bei Paradox-Datenbanken
+.pxf		Pulse outline file	Tajima DG/ML by Pulse
+.pxl		Tabelle	Tabellenkalkulation Microsoft PocketExcel
+.pxp		PhraseExpress-Textbausteinverwaltung	Textbausteindatei
+.pxr		Pixar	Grafikformat
+.py	text/x-script.phyton	Python	Python-Programm
+.pyc	application/x-bytecode.python	Python compiled	Kompiliertes Python-Programm
+.pyd		Python Dynamic Module	Python-eigene Library
+.pyo		Python	Optimiertes Python-Programm
+.pz2		Smith Micro Poser 8	Smith Micro Poser 8 Datei
+.qb		QuickBASIC	QuickBASIC Programmcodedatei
+.qdb		CUEcards Datenbank	Notizen-Verwaltung
+.qcd		Quicknote encrypted text	Verschlüsselte Notiz von Quicknote
+.qdr		Q-Dir Document text	Offene Notiz von Q-Dir.exe
+.qt		Quicktime-Dateien (*.mov, *.qt) Version 1 und 2	Dateiformat von Apple QuickTime
+.qti	image/x-quicktime	QuickTime Image	Bildformat von Apple QuickTime
+.qti	image/x-quicktime	QtiPlot	Projektdatei von QtiPlot
+.qtl		QuickTime Media Link	Informationen über abzuspielendes Medium für den QuickTime Player
+.qua		AntiVir / Avira Quarantäne	Mit Malware infizierte Datei im Quarantäneverzeichnis
+.qvd		QlikView	QlikView-Datendatei
+.qvs		QlikView	QlikView-Scriptdatei
+.qvw		QlikView	QlikView-Anwendungsdatei, üblicherweise mit Script, eingelesenen Daten und Layout
+.qxd		QuarkXPress Document:	Dokumentenformat von QuarkXPress bis einschließlich Version 5
+.qxl		QuarkXPress Library:	Bibliothekendatei von QuarkXPress
+.qxp		QuarkXPress Project:	Dokumentenformat von QuarkXPress ab Version 6, das verschiedene QXDs in einem Projekt bündelt
+.qxt		QuarkXPress Template:	Vorlagendokument von QuarkXPress
+.R		R-Script-Datei	R - Open Source Statistik-Paket
+.ram	audio/x-pn-realaudio, audio/x-realaudio	Real Media	Audiodatei
+.ras	application/x-cmu-raster, image/c image/x-cmu-raster, mu-raster,SUN Raster Image	Bilddatei
+.rar	application/x-rar-compressed, application/octet-stream	RAR-Archiv	mit RAR komprimiertes Dateiarchiv
+.rb		Ruby	Ruby-Programm
+.rbs		ReBirth Songfile	ReBirth Propellerhead (Software Synthesizer)
+.rdd		Resma Datenbank Datei	PHP basierende Datenbank
+.rc		Resource script	Ressource (Software)
+.rcy		Rex	Geschnittene Audiodaten Recycle von Propellerhead
+.reg			Exportierter Windows-Registry-Schlüssel
+.ren		Renewcalc - Datafile	Renewcalc - Kalkulationsprogramm
+.res		Resource File	Compiled Resource (C++, C und weitere Windows-Entwicklungsumgebungen)
+.resx		XML Resource File	Ressourcen-Datei, bestehend aus XML-Tags
+.rev		-	Paritätsinformationen. Bewahrt ein geteiltes RAR-Archiv vor der Zerstörung, falls eine Datei verloren geht.
+.rexx	text/x-script.rexx	Rexx	Rexx-Script (Amiga)
+.rex		Rex	Geschnittene Audiodaten Recycle von Propellerhead
+.rez		Winrez	Winrez
+.rfl		Propellerhead Reason Instrumenten Bibliothek	Reason (Software Synthesizer)
+.rgb	image/x-rgb	Bildformat von Silicon Graphics
+.rgo		RepliGo Virtual Print File	pdf-ähnliches Format für PDA / Smartphone
+.ris		Research Information System Format	Dateiformat für den Export bibliographischer Daten
+.rk		WinRK Kompressionsformat	Archivierung mit starker Datenkompression
+.rle		Run Length Encoded BMP	Verlustfrei komprimierte Bilddateien
+.rm	application/vnd.rn-realmedia, audio/x-pn-realaudio	Real Media	Real Media Videodatei
+.rme		Read me	Textdatei, die die Beschreibung eines Programmpaketes enthält
+.rmvb	application/vnd.rn-realmedia, audio/x-pn-realaudio	Real Media	Real Media Videodatei
+.roq		Id Software-Video	spezielles Videoformat für iD-Software-Spiele
+.rol		Roland-Sound	veraltetes Musikformat entwickelt von der japanischen Firma Roland
+.rp		RealPix Clip	RealPlayer
+.rpl		Eidos Replay Movies	Älteres Videoformat von Eidos
+.rpp		RoboPro Programm	Fischertechnik RoboPro
+.rpm		RPM Package Management	Installationspaket für Linux-Systeme
+.rps		Propellerhead Reason Public (nicht bearbeitbare) Songdatei	Reason (Software Synthesizer)
+.rpt			i-net Crystal Reports Bericht
+.rpt	application/crystalclear	i-net Crystal-Clear Designer Report	i-net Crystal-Clear Bericht
+.rns		Propellerhead Reason Locale (bearbeitbare) Songdatei	Reason (Software Synthesizer)
+.rsdf		RS Downloader File	Dateiliste für den Download-Manager RS Downloader für den RapidShare-Dienst
+.rsr		Structure	4D (4th Dimension)
+.rt	text/richtext, text/vnd.rn-realtext	RealText Clip	RealPlayer
+.rt3		RagTime-Dokument	Layout-Software (Dateiformat der Version 3 von RagTime)
+.rta		Raster Transformation Assembler	RTA-Assemblerquelltext
+.rtd		RagTime Document	Layout-Software (Dateiformat ab der Version 4 von RagTime)
+.rte		Route file	GPS Route file in PCX5 format
+.rtf	application/rtf, application/x-rtf, text/richtext	Rich Text Format	offenes Textdokument-Format
+.rts		RagTime-Vorlage	Layout-Software (Vorlagenformat der Version 3 von RagTime)
+.rw2			Rohdatenformat für Bilder von Panasonic Digitalkameras
+.rwx		Modell	Modell der RealWorld-Engine
+.rtt		RagTime Template	Layout-Software (Vorlagenformat ab der Version 4 von RagTime)
+.rx2		Rex	Geschnittene Audiodaten von Propellerhead Recycle
+.rxe			Datenformat von Lego Mindstorms
+.r00 (folgend .r01-.r99)		RAR-Teil-Archiv	mit RAR komprimiertes Dateiarchiv, welches in mehrere Teile aufgeteilt ist (Winrar nutzte diese Dateinamenserweiterung nur bis zur Version 2 des Programmes, darauf folgte die Dateinamenserweiterung ".part(Nummerierung).rar")
+.s	Assembler-Quellcode	GNU Compiler Collection
+.s12		Spirit-Zeichnungsdatei	
+.s19		Motorola S-Record	
+.s3			Motorola S-Record	
+.s3d		Simply 3d	Grafikdatei
+.s3m		ScreamTracker 3 Modul	Trackermodul (Musikformat) des Scream Tracker 3
+.s3z		ScreamTracker 3 zipped	komprimiertes Trackermodul (Musikformat) des Scream Tracker 3
+.s7i		Seed7 Includedatei	Bibliothek bzw. Includedatei für Seed7
+.sab		Binäre 3D ACIS-Datei, 3D-CAD-Kern Format	Siehe .sat
+.saf		Serra Avenger File	Nicht verschlüsseltes Textarchiv, das von SerraAvenger-Applikationen generiert wurde.
+.sam		Lotus AmiPro (heute Lotus Word Pro)	Textverarbeitung
+.sami		Synchronized Accessible Media Interchange	XML-Sprache für Video-Untertitel
+.sar		Service-Archiv	JBoss' MBean Deployment-/Konfigurationsdateien *-service.xml zusammengepackt mit den benötigten Klassen
+.sar		System-Architekt	System-Architekt von Fujitsu Siemens Computers zur Erstellung von Handheld-, Notebook-, PC-, Workstation- und Serverkonfigurationen
+.sat		Text ACIS-Datei, 3D-CAD-Kern Format	Bei ACIS handelt es sich um einen 3D-CAD-Volumenmodellierkernel der Firma Spatial Corporation. ACIS stellt eine Bibliothek mit C++-Funktionen bereit.
+.sav		SPSS Datensatz	Datensatz für Statistikprogramm SPSS
+.sav		save	Sicherungsdatei (z. B. HomeCash)
+.sav		Game Score Save	Spielstandssicherung (z.B. Sid Meier’s Civilization, Die Gilde, Plants vs. Zombies)
+.sbd	Superbase Tabellendefinition	Windows,
+.sbf	Superbase File	Windows, enthält den Tabelleninhalt
+.sbf	Su-Bi File	Datei mit verschlüsseltem FTP-Link und Logindaten - Benötigt Su-Bi Leecher
+.sbp	Superbase Programmdatei	Windows
+.sbq	Superbase Query	Windows, enthält die Kurzberichtsdefinition
+.sbu	Superbase Update	Windows, enthält die Definition einer Aktualisierung
+.sbv	Superbase Formular	Windows, kann Formular oder auch Bericht sein
+.sb!	Superbase Sperrdatei	Windows, verwaltet die Datensatzsperren
+.sc2	SimCity Städte	in Verwendung mit SimCity 2000
+.sc4	SimCity 4-Städte	in Verwendung mit SimCity 4
+.scc	–	Microsoft SourceSafe Status
+.sce	–	Scilab-Script
+.sch	Schema	Novell NDS bzw. eDirectory Schema Definitions
+.sch	Schematic	Eagle-Schaltplan
+.SchDOC	Schematic Document	Altium Designer-Schaltplan
+.sci	ScrambleIt	Verschlüsselungstool
+.scm	Kompiliertes Script GTA	Komprimierter Code mit Befehlen, die den allgemeinen Ablauf oder den Missionsablauf von GTA 3 bis GTA San Andreas herstellen
+.scn	Scenarist Projekt	Projekt-Datei der DVD-Authoring-Software Scenarist von Sonic
+.scn	Screen file format	in Verwendung mit Kermit
+.scn	mp3 Scan file	in Verwendung mit BPM-Studio
+.scn	SimCity 2000 - Scenatios	in Verwendung mit SimCity 2000
+.scr	Screensaver	Windows Bildschirmschoner. Warnung: Häufiges Ziel von Virusinfektionen
+.scs	–	Benutzeroberfläche (Siemens Mobiltelefone)
+.sd2	Sounddesigner II	Ursprünglich von der Firma Digidesign entwickeltes Audio-Format für den Apple Macintosh
+.sd7	Seed7 Programm	Sourcecode eines Seed7 Programmes
+.sdb	StarBase-Datenbank	
+.sdb	StarMoney Datenbank (Windows)
+.sdc	StarOffice Tabelle	Älteres Datei-Format von StarOffice (bis 5.2), sdc steht für Star Division Calc
+.sdc	DeliveryClient Download	Ein Download aus dem MSDNAA-Programm, sdc steht für Secure Download Cabinet
+.sde	Steganos-Safedatei	alte Dateinamenserweiterung
+.sdf	Spatial Data File	Graphik. Auch eine SQL Server Compact Edition Datenbank-Datei.
+.sdf	Standard Data Format	Exportdatei des Pervasive-Datenbanksystems. Es handelt sich um eine CSV-Datei mit einem klar definierten Aufbau.
+.sdg	StarOffice Gallery	
+.sdt	gepacktes Thema (Siemens Mobiltelefone)
+.sdv	Semicolon Divided Values File	
+.sdw	StarOffice Writer	Älteres Datei-Format von StarOffice (bis 5.2), sd steht für Star Division
+.sdx	StarMoney Benutzerdatenbank (Windows)
+.sdy	StarMoney Benutzerdatenbank (Windows)
+.sem	Semaphore-Datei	Semaphore-Datei oft auch als Dreiecks- oder Rechtecksdatei bezeichnet
+.sff	Mugen-Sprite-Datei	Sammeldatei für Sprites, notwendig für das M.U.G.E.N. Game-System
+.sft	SFT-Loader-Datei	Datei mit verschlüsseltem sFTP-Link und Logindaten
+.sfv	Simple File Verification	Checksum-Datei; Im Prinzip handelt es sich um eine Textdatei, die in einer Liste Dateinamen und zugehörige CRC-Summen enthält
+.sfw	Seattle-FilmWorks-Datei	Modifiziertes JPEG-Format
+.sfx	Audiodatenarchiv	Enthält Audiodaten von GTA, Tomb Raider 2+3 u.v.m.
+.sg		Snap Graphics	ABC Snap Graphics (Software für Flussdiagramme)
+.sgb	Super Game Boy ROM Image	Dump eines Nintendo Super GameBoy-Spiels zur Verwendung in einem Emulator, selten gebräuchliche Abkürzung, eher .gb oder .gbc
+.sgp	Save Game Patcher Table	Table für The S.G.P. (Second Unit)
+.sh	application/x-sh	Shell-Skript	Unix-Shell-Skript (Bourne-Shell und kompatible)
+.sh1	Shop - Datenbankdatei	Bestandteil des Content Management Systems Andreas Zwahlen Onlineshop XPro
+.sh2	Shop - Datenbankdatei	Bestandteil des Content Management Systems Andreas Zwahlen Onlineshop XPro
+.shn	Shorten	digitales Verfahren zur verlustfreien Audiodatenkompression
+.shp	Shapefile	ESRI ArcGIS Format zur Speicherung von Vektordaten
+.shs	scrap-Datei	MS-Format für einen Datenauszug (tatsächlich ein Paket mit Befehlszeile) aus einer Textdatei. Die Dateinamenserweiterung wird standardmäßig nicht angezeigt.
+.shtm	text/html, text/x-server-parsed-html	HTML Document	vom Webserver geparstes HTML-Dokument mit Server Side Includes
+.shtml	text/html, text/x-server-parsed-html	HTML Document	siehe .shtm
+.shx	Shapefile-Index	ESRI ArcGIS Format zur Speicherung von Vektordaten
+.sib	Notensatz	Datei des Notensatzprogramms Sibelius
+.sid	audio/x-psid	MrSID	Komprimierungsformat für Rastergrafiken vom Hersteller LizardTech
+.sig	Signatur-File	In der Regel kleine Textdatei, die Signaturinformationen einer E-Mail enthält
+.sik	Sicherungskopie	Selten gebräuchliche Abkürzung bei Datensicherungen
+.sim	SAP Tutor Player	Animierte Screenshots mit Text und Sprache unterlegt.
+.sis	Symbian Installationsdatei	Installationsdatei bei Symbian OS-Smartphones
+.sit	application/x-sit, application/x-stuffit	Dateiarchiv	Ein Dateiarchiv welches mit StuffIt (Mac typisches Komprimierungsformat) gepackt wurde.
+.skb	SketchUp Backup-Datei	automatische Backup-Datei von mit Google SketchUp erstellten 3D-Modellen
+.skd	application/x-koan	Autodesk Autosketch	2D-Zeichnung, CAD
+.skf	Autodesk Autosketch	2D-Zeichnung, CAD
+.skp	SketchUp-Modell	mit Google SketchUp erstellte 3D-Modelle
+.sl	application/x-seelogo	Shared Library	Programmbibliothek (Unix, insbesondere HP-UX)
+.sla	Scribus LAyout	Datei des freien DTP-Programmes Scribus
+.sldasm		SolidWorks-Assembly	3D-Baugruppe, CAD
+.sldbomtbt	SolidWorks-Bill of Materials	Tabellenvorlage-Stückliste, CAD
+.slddrw		SolidWorks-Drawing	2D-Zeichnung, CAD
+.sldholtbt	SolidWorks-Hole Table	Tabellenvorlage-Bohrungstabelle, CAD
+.sldlfp		SolidWorks-Library Feature Part	Bibliotheks-Feature, CAD
+.sldprt		SolidWorks-Part	3D-Teil, CAD
+.sldrevtbt	SolidWorks-Revision Table	Tabellenvorlage-Versionstabelle, CAD
+.sldwldtbt	SolidWorks-Weldment Cut List	Tabellenvorlage-Zuschnittliste für Schweißkonstruktionen, CAD
+.sle		Steganos-Safedatei	aktuelle Dateinamenserweiterung
+.sle		Sisulizer Exchange Package	Austauschdatei zwischen Entwickler und Übersetzer des Softwarelokalisierungstools Sisulizer (Basiert auf ZIP)
+.slk		SYLK	Tabellendokument
+.sln		MS Visual Studio solution files	Visual Studio .NET C++ Dateien
+.slp		Sisulizer Project	Projektdatei des Softwarelokalisierungstools Sisulizer (Basiert auf XML)
+.smc		SNES ROM image	Dump eines Nintendo SNES-Spiels (mit Game Dr.3 Header oder keinem Header) zur Verwendung in einem Emulator
+.smd		Sega Mega Drive ROM image	Dump eines Sega Mega Drive-Spiels zur Verwendung in einem Emulator
+.smg	SolidWorks Composer File	Natives Dateiformat SolidWorks-Composer
+.smi	application/smil	Synchronized Accessible Media Interchange	XML-Sprache für Video-Untertitel
+.smil	application/smil	–	Real Audio/Video Playlist
+.sms	Sega Master System ROM image	Dump eines Sega Master System-Spiels zur Verwendung in einem Emulator
+.smz	StarMoney Zahlungsvorlage	XML-Datei für den Austausch von Überweisungvorlagen zwischen StarMoney Produkten
+.sng	SongBeamer Lied	Präsentationsprogramm für Liedtexte
+.snp	Snapshot	Schnappschuss einer Auswertung (Report) einer Microsoft Access Datenbankanwendung
+.so		Shared Object	Programmbibliothek (Unix und GNU)
+.sol	Local Shared Object	Adobe Flash Player Cookie
+.son	Notensatz	Datei des Notensatzprogramms Score Perfect
+.sor	Standard OTDR Record (Bellcore/Telcordia)
+.spec	
+.spl	application/futuresplash	Spell	Vim Rechtschreib-Datei (Vim version 7)
+.spp	Serif PhotoPlus	Dateiformat der Bildbearbeitung Serif PhotoPlus
+.spx	speex	Dateiformat des freien, verlustbehaftet komprimierenden, auf menschliche Sprache spezialisierten Audio-CoDecs Speex (Ogg Projekt)
+.sql	Structured Query Language	Datei mit SQL-Befehlen
+.sqm	Software Quality Metrics	
+.sqm	Smart Query Manager	
+.sqx	UnSqueez	offenes und freies Archivformat, kann lizenzkostenfrei (royality free) in Anwendungen benutzt werden
+.src	application/x-wais-source	Source	Quelle oder Quelltext
+.srf	Surface	Surface-Datei für Terragen
+.srt	SubRipper Subtitle Information	Untertitel-Textdatei
+.srw	Samsung RAW Bild	Rohdaten des Bildsensors[1]
+.ss		MADSPACK 2.0
+.ssa	SubStation Alpha	Substation Alpha-Untertiteldatei
+.ssv	Spreadsheet-Viewer-Datei	Dateiformat zur Anzeige von Arbeitsmappen
+.sta	SWIFT Tagesauszüge	Beinhalten Kontoauszugsinformationen im MT940-Format
+.stb	Named plot style table	AutoCAD Plotstiltabellendatei, enthält vom Benutzer definierte Plotstile, die jedem Zeichnungsobjekt – unabhängig von seiner Farbe – zugewiesen werden (siehe auch ctb)
+.stc	XML Calc Template	Vorlage Tabellenkalkulation (StarOffice und OpenOffice.org)
+.stc	entpacktes Thema (Siemens Mobiltelefone)
+.std	XML Draw Template	Vorlage Zeichnung (StarOffice und OpenOffice.org)
+.stg	Simple Text Gateway	STG-Editor
+.sti	XML Impress Template	Vorlage Präsentation (StarOffice und OpenOffice.org)
+.stk	Stickfigure object	Figur für den Pivot Stickfigure Animator
+.stl	application/sla, application/x-navistyle, application/vnd.ms-pki.stl	Stereolithografie Format	Geometrie eines dreidimensionalen Datenmodells
+.stm	Scream Tracker Module	Trackermodul (Musikformat) des Scream Tracker 2
+.stp	application/step	STEP	Standard for the Exchange of Product Data; CAD
+.stt	SCHEMA ST4 Transformation	Redaktionssystem SCHEMA GmbH
+.stu	Pinnacle Studio-Projekt	Pinnacle Studio 9
+.stw	XML Writer Template	Vorlage Textverarbeitungen (StarOffice, OpenOffice.org und KWord)
+.stx	Statistik/Prüfprotokoll	Testprotokoll des "AS-Interface Analyser" von Bihl + Wiedemann
+.sty	LaTeX Style	zusätzliche Pakete bzw. Makros für LaTeX-Dokumente
+.sub	Subchanneldaten	Blindwrite und CloneCD
+.suo	Visual Studio Solution User Options	Microsoft Visual Studio
+.sv		Schichtenverzeichnis	Binärformat für geologische Schichtendaten (Programm MWprofil)
+.svd	Spreadsheet	StatView-Datendatei
+.svg	image/svg+xml[2]	Scalable Vector Graphics	offenes, XML-basiertes Vektorgrafikformat
+.svgz	SVG zipped	gepacktes SVG-Vektorgrafikformat
+.svm	StarView Metafile	Vektorgrafisches Bildformat Meta-Files (für Bitmap- und Vektorgrafik); Verwendung in StarOffice-/OpenOffice-/LibreOffice-Anwendungen (nativ: Draw)
+.svq	MRC-Pro Sequencer Musikformat	Roland Corporation Synthesizer, z.B. XP oder Fantom Serie
+.svv	View	StatView-Berichtsdatei
+.swc	SNES ROM image	Dump eines Nintendo SNES-Spiels (mit Super Wildcard Header) zur Verwendung in einem Emulator
+.swf	application/x-shockwave-flash	Shockwave Flash(auch fälschl. Small Web Format)	Shockwave-Flash Animation
+.swp	Auslagerungsdatei unter Windows/386 2.03 bis Windows Me (jedoch nicht unter Windows NT/2000)
+Swap	Auslagerungsdatei unter Windows/386 2.03 bis Windows Me (jedoch nicht unter Windows NT/2000)
+Swap	Vim Auslagerungsdatei (auch zur Wiederherstellung nach Abstürzen)
+.swx	OpenOffice.org Writer	Älteres Format für Textdateien von OpenOffice.org
+.sx		Motorola S-Record	
+.sxc	XML Calc	Tabellenkalkulation (StarOffice und OpenOffice.org)
+.sxd	XML Draw	Zeichnung (StarOffice und OpenOffice.org)
+.sxg	XML Global	Globaldokument (StarOffice und OpenOffice.org)
+.sxi	XML Impress	Präsentation (StarOffice und OpenOffice.org)
+.sxm	XML Math	Formeldokument (StarOffice und OpenOffice.org)
+.sxp	StrokeIt Export	–
+.sxw	Sun XML Writer	Textverarbeitungen (StarOffice, OpenOffice.org und KWord)
+.sys	Systemdatei	Systemdateien für MS-DOS, FreeDOS und DR-DOS
+.sza	HiCAD neXt	CAD-Datei für HiCAD neXt
+.t64	CCS64 C-64 Emulator
+.t65	Pagemaker 6.5 Template	Vorlagedatei für Adobe Pagemaker 6.5
+.tao		Track At Once	Image eines CD Tracks
+.tar	application/x-tar	Tape Archiver	Dateiarchiv
+.tat		TexASS	Textdokument
+.tba		PASSOLO-Übersetzungspaket	ASCII
+.tbalic500		PASSOLO-Übersetzungspaket	ASCII, lizenziert für Version 5
+.tbf		Tajima binary format	Erweitertes Stickmaschinenformat für Tajima Stickmaschinen
+.tbk		TheBat! E-Mail-Sicherungsdatei	Sicherungsdatei
+.tbu		PASSOLO-Übersetzungspaket	Unicode
+.tbulic500		PASSOLO-Übersetzungspaket	Unicode, lizenziert für Version 5
+.tbulic600		PASSOLO-Übersetzungspaket	Unicode, lizenziert für Version 6
+.tbz2		.Tar.bz2	mit Bzip2 komprimiertes tar-Dateiarchiv
+.tc		TrueCrypt verschlüsselte Datei	Verschlüsselter Dateicontainer
+.tc		Tellico-Datei	Sammlungsverwaltung unter Linux
+.tcr		E-Book-Format	ursprünglich entwickelt für die Psion 3-Serie
+.tct		TurboCAD Template	Vorlage für TurboCad Zeichnung
+.tcw		TurboCAD für Windows	TurboCad Datei für Vektorgrafiken
+.ter		Terrain	Terraindatei für Terragen
+.tex	application/x-tex	TeX-Source LaTeX-Source	Textdokument im TeX-Quelltext Textdokument im LaTeX-Quelltext
+.texi	application/x-texinfo	Texinfo-Quelltext	Quelltext des Texinfo-Dokumentationssystems
+.text	text/plain	Textdatei	Siehe: *.txt (wird auch mit dem Editor geöffnet)!
+*.tf8		8-byte TIFF/TIF (BigTIFF- = BigTIF-Datei)	Vgl.: *.btf (= BigTIF[F]) sowie *.tif = *.tiff!
+.tff		TansForm Formular	Selbstausführendes Formular
+.tfm		TeX Font Metric Tagged Font Metric	Enthält Informationen über die Dickte der Glyphen und Ligaturen, wird von TeX und Groff benutzt Anderes Fontmetrik-Format, inkompatibel zum Format von TeX
+.tfw		Tiff-World-File	ASCII-Datei, die Geo-Informationen zu einer Tiff-Datei enthält, wenn diese nicht wie bei GeoTIFF im Header der Datei gespeichert ist.
+.tga		TrueVision Targa	Bilddatei
+.tgc		Terragen 2 Clipdatei	Es enthält einen Teil von Einstellungen, die zuvor im Node-System ausgewählt wurden.
+.tgd		Terragen 2 Datei	Projektdatei von Terragen 2
+.tgw		Terragen World File	In dieser Datei werden alle Einstellungen von Terragen abgespeichert.
+.tgz	application/gnutar, application/x-compressed	.Tar.gz	mit Gzip komprimiertes tar-Dateiarchiv
+.theme		Theme	SuperKaramba-Theme
+.themepack		Windows-Themenpaketdatei	Designsdatei für den Desktop unter Windows 7, Windows 8
+.thm		Thumbnail	Vorschaubild einiger Digitalkameras, zumeist im JPEG-Format; es speichert Exif-Informationen zu einem aufgenommenen Video.OpenOffice.org 1.1 Konfigurationsdatei; Designdatei für SonyEricsson-Handys
+.tib		True Image	Image-Format von Acronis True Image
+.tif
+.tiff	image/tiff, image/x-tiff	Tagged Image File Format	universelles, Pixelbild-Format
+.tja		parasoft	Practical Unit Testing for Embedded Systems Parasoft
+.tmd		TextMaker Dokument	Textverarbeitung TextMaker
+.tmv		TextMaker Vorlagendokument	Textverarbeitung TextMaker
+.tmp		Temporäre Datei	Dateifragment
+.tmpl		Template	Vorlagendatei für verschiedene Anwendungen
+.tmw		Translation Memory	Translation Memory Datei von Trados Translator's Workbench (proprietär)
+.tmx		Translation Memory eXchange	Datei zum Austausch von Translation Memories
+.toc		Table of Contents	TeX / LaTeX
+.torrent		Torrent	BitTorrent-Datei, Peer-to-Peer-Dateiverknüpfung
+.tos		Tramiel Operating System	Ausführbare Programmdatei auf ATARI ST Computern und Kompatiblen
+.tpf		ThinPrint File	Druckdatei im EMF-Format
+.tpl		Preps Template
+.tps		Topspeed Data File	Clarion for Windows Datenbankdatei
+.tpu		Turbo Pascal Unit	Programmbibliothek von Turbo-Pascal
+.tqd		Torq Datei	Eine Programmdatei von der Software Torq von M-Audio
+.trc		Trace Log	Fabasoft Components Trace Log
+.trj		TRajectory	Trajektorien in diversen Spezialprogrammen z.B. der Chemie und Biochemie sowie in Verkehrssimulationen (AIMSUN, VISSIM, TEXAS und Paramics)
+.trk		Tracklog file	GPS Tracklog in PCX5 format
+.truhe		tansCrypt Truhe	Mit TansCrypt verschlüsselte Truhe.
+.ts		Transport Stream	Format für Multimediatransport über unsichere Verbindungen wie z.B. von TV-Satelliten zur Empfangsanlage, häufig mit dem Codec MPEG datenreduziert; Videoaufzeichnungen von Festplattenrecordern; siehe auch .ps
+.ts4		Transport Stream	wie .ts, allerdings für MPEG-4
+.tsc		ThouVis Schraffur	Dateiformat für 2D-CAD-Schraffuren, erstellt mit dem Programm ThouVis (ab der Version 4.0) für das programmeigene Schraffurkatalog.
+.tsp		TAPI Service Provider	Herstellerspezifischer TAPI Treiber (Windows)
+.tsk		Task	Abarbeitungsfähiges Programm unter RSX11
+.tsv		Tab-Separated Values	Textdatei, Tabelle
+.ttc		TrueType Collection	Eine Datei, die mehrere Schriften im TrueType Format enthält. Die enthaltenen Schriftzeichen können teilweise oder komplett auch von mehreren der enthaltenen Schriften gemeinsam genutzt werden.
+.ttf		TrueType Font	TrueType ist ein Vektorgrafisches Format für Schriftschnitte.
+.ttp		TOS Takes Parameters	Kommandozeilenprogramm des Atari ST, das Parameter auswertet
+.ttx		Bilinguale Übersetzungsdatei	Speicherformat für Übersetzungen des SDL Trados Tageditor (intern als unicode XML Datei kodiert)
+.tvb		ThouVis Bemaßungseinstellung	Dateiformat für 2D-CAD-Bemaßungseinstellungen, erstellt mit dem Programm ThouVis für die programmeigene Bemaßungseinstellungen (Parametern).
+.tvm		ThouVis Menüstruktur	Dateiformat für 2D-CAD-Menüstruktur, erstellt mit dem Programm ThouVis für die programmeigene zusätzliche Menüfunktionen.
+.tvp		ThouVis Farb- Palette	Dateiformat für 2D-CAD-Farbpalette, erstellt mit dem Programm ThouVis für die programmeigene Abspeicherung und Aufruf von Farbpaletten, die die vom User definierte Zeichenfarben enthalten.
+.tvs		ThouVis Symbol	Dateiformat für 2D-CAD-Symbole, erstellt mit dem Programm ThouVis für den programmeigenen Symbolkatalog.
+.tvz		ThouVis Zeichnung	Dateiformat für 2D-CAD-Zeichnungen erstellt mit dem Programm ThouVis.
+.twa		Absatzformat-Datei	Tempus Word Absatzformat-Datei
+.twd		Tempus Word Dokument	Tempus Word Textdokument
+.tws		Vorlagendokument	Tempus Word Vorlagendokument
+.txt	text/plain	Text	Einfacher Text
+.txt		MS-Word Text	Microsoft Word 5 für DOS-Textdatei
+.txy			StarMoney Archivierter Report (Windows)
+.u		Unreal	Systemdatei der Unreal Engine
+.u3d		Ultimate 3D model file format	3D-Modelldateiformat von Ultimate 3D
+.u3p		–	Auf U3-konformen USB-Stick ausführbares Programm
+.uc2		UltraCompressor II	Mit UltraCompressor 2 komprimierte Datei
+.ucf		Xilinx User Constraint File	ASCII-Datei, definiert Einschränkungen für ein Hardware-Design auf Logik-Ebene
+.ufo		Ulead File for Objects / Unlimited File Ordering	Bild-&Objektdatei von Ulead PhotoImpact / Konfigurationsdatei das Dateimanagers UFO
+.uha		UHARC Compressed Archive	Archive, erstellt mit WinUHA oder Ähnlichem, siehe UHARC.
+.uhs		UHS Ultimate Hint System	Speziell für Spielelösungen entwickeltes Dateiformat.
+.ui		Qt User Interface	User Interface-Entwurfs-Datei. Verwendet z.?B. in KDevelop.
+.uif		Universal Image Format	Disc(CD/DVD)-Images/-Archive, erstellt/komprimiert/gemounted mit MagicISO und/oder Virtual-Disk-Emulator MagicDISC
+.uka		Unfall- Kranken- und Absenzenmanagement-System	Datenarchiv-Datei des UKA-Programmes
+.ult		Ultra Tracker	Trackermodul (Musikformat) des Ultra Trackers
+.umod		Unreal modification	Mod für Unreal/Unreal Tournament
+.unr		Unreal Map	Map in Unreal/Unreal Tournament
+.uom		Update-O-Matic-Datei	-
+.uoml		UniqueObject Markup Language	UOML ist eine auf XML basierende Auszeichnungssprache des Management-Systems von uniqueobject
+.upd		Ulead Private Data	Corel VideoStudio temporäre Projektdatei (zuvor: Ulead VideoStudio)
+.urd		ultra recall database	Datenbankdatei von Ultrarecall
+.url		Internet Shortcut	Verknüpfung mit Internet-URL
+.usr		–	Exportdatei für Liedtexte der Online-Liederdatenbank SongSelect
+.ut2		UT 2003/2004 Map	Map in Unreal Tournament 2003/2004
+.utx		Unreal Texture	Texturenpakete der Unreal Engine
+.uu		UUncoded Datei	ASCII-codierte Binärdaten (WinRAR-Archiv)
+.uue		UUencoded Datei	ASCII-codierte Binärdaten - UUencode
+.uv2		µVision	Project file des Embedded Compilers Keil µVision
+.uwu		untermStrich Web Update	Update Datei von untermStrich
+.uxf		UML exchange Format	Format zum Enkodieren, Veröffentlichen und Austausch von UML Modellen
+v2i		Virtual Volume Image	Norton Ghost
+.v4p		vvvv-patch	vvvv
+.v64		Nintendo 64 ROM image	Dump eines Nintendo-64-Spiels (im Dr.-V64-Format) zur Verwendung in einem Emulator
+.vb		Visual Basic .net	Visual Basic .NET-Datei
+.vbe		Visual Basic Encrypted	Verschlüsseltes VBScript
+.vbi		Visual Basic IntelliCAD	CAD-Informationen als Preview
+.vbp		Visual Basic Projekt	Visual Basic-Projekt
+.vbs		Visual Basic Script	VBScript
+.vbx		Visual Basic Extension	Erweiterung von Visual Basic zur Entwicklung eigener Bedienelemente (16-bit-Version eines OCX).
+.vbproj		Visual Basic .net Projekt	Visual Studio .NET Visual Basic .NET Projekt.
+.vcf		vCard	elektronische Visitkarte, siehe vCard
+.vcp		Video Compression Process	komprimierte Videodaten genutzt von VCOMP
+.vcproj		Visual C++ Projekt	Visual Studio .NET C++ Projekt
+.vcs		vCalendar	vCalendar-Datei als plattformübergreifendes Austauschformat für Kalender- und Organizerprogramme
+.vda		VDA-FS	VDA-FS-Datei mit geometrischen 3D-Informationen
+.vdf		Viren Definitions Datei (virus definition file)	Genutzt von Avira AntiVir
+.vdi		Virtual disk image	VirtualBox-Dateien für virtuelle Partitionen
+.vf		Vegas File	Projektdateien der Videoschnittsoftware Sony Vegas
+.vfb		–	Dateien des Fonteditors Fontlab
+.vhd		VHDL Source Code File	VHDL-Quellcodedatei
+.vhd		Virtual hard disk	Virtuelle Festplatte(n-Datei) die u.a. mit Windows 7 und Virtual PC verwaltet und als (echte) Festplatte verwendet werden kann
+.vfd		Virtual floppy disk	Microsoft-Virtual-PC-Dateien für virtuelle Disketten
+.vi		Virtual Instrument	LabVIEW-Dokument
+.vim		Vim-Script	Vim Texteditor
+.vip		Virtuelles Projekt	Samplitude, sowie ältere Versionen von Magix Music Maker
+.vis		Vista Grafiks	Visitenkartenprogramm, nur Vista-fähig
+.vkf		Video Katalog Frage	Frage-Dateien des easyLEARN Autoren-Systems der SDN AG.
+.vkv		Video Katalog Verzeichnis	Kapitel Struktur-Dateien des easyLEARN Autoren- und Expert-Systems SDN AG.
+.vlm		Virtual Loadable Module	Unter DOS ausführbares Programm zur Kommunikation mit Servern unter Novell NetWare
+.vmc		Virtual Machine Computer	Microsoft-Virtual-PC-Dateien für virtuelle Computer
+.vmdk		VMware virtual disk file	VMware-Dateien für virtuelle VMware-Partitionen
+.vmf		Valve Map File	Map-Dateien zum Bearbeiten für den Valve Hammer Editor.
+.vmo		Voice Memo Datei	Diktiergeräte in Siemens-Handys.
+.vmt		Valve Material File	Informationsdatei zu den Valve Texture Files.
+.vmx		VMware Konfigurationsdatei	VMware-Konfigurationsdatei.
+.vob		Video Objects	DVD-Videodaten
+.voc		–	Creative Labs Audio-(Voice)-Datei
+.vol		–	Utimaco SafeGuard PrivateDisk Volume
+.vp6		–	Videoformat für Computerspiele
+.vpk		Valve Pak	Valves ausführbarer Nachfolger der .gcf-Dateien zur einfachen Addon-Installation
+.vrs		–	Speicherdatei für globale Variablen der Programmiersprache Logo
+.vsd		Visio 5 drawing	Visio
+.vsm		Visual Simulation Model	VisSim ist eine grafische Programmiersprache für die Simulation von dynamischen Systemen
+.vsp		–	Projektdatei für Corel VideoStudio (vormals Ulead VideoStudio)
+.vtf		Valve Texture File	Textur-Datei der Source-Engine
+.vtl		Vokabel Trainer Lektion	Format für Vokabel-Dateien des Programms Vokabel Trainer 2008
+.vtl2		Vokabel Trainer Lektion	Format für Vokabel-Dateien des Programms Vokabel Trainer Version 5
+.vtl3		Vokabel Trainer Lektion	Format für Vokabel-Dateien des Programms Vokabel Trainer Version 5
+.vwx		Vector WorX	CAD-Datei, lesbar mit VectorWorks (ab Version 2008)
+.vxd		–	Windows Virtual Device Driver, siehe VxD
+w01, .w02, ...		SY99 Waveform	Durchnummerierte Sound-Dateien im Wave-Format für Synthesizer der SY-Serie von Yamaha
+.w3m		–	Kartendatei für das Spiel Warcraft III
+.w3n		–	Kampagnendatei für das Spiel Warcraft III
+.w3x		–	Kartendatei für die Erweiterung "The Frozen Throne" für das Spiel Warcraft III
+.wab		Windows-Adressbuch	Kontakte für Outlook Express, Windows-Adressbuch und Windows Kontakte
+.wad		–	Texturensammlung (Quake I u. Half-Life Engine) und Spieldaten (DOOM 1, DOOM 2, Hexen, Heretic, u.v.m.)
+.wal		–	Textur (Quake II Engine)
+.war		Web Archive	Web Archive (Java)
+.war		Web Archive	WAR-Datei (KDE) (Konqueror)
+.wav		Microsoft Wave	Containerformat für Audiodaten (meist unkomprimiertes PCM)
+.wbk		Microsoft Word Backup	Sicherungsdatei
+.wbmp		Wap-Bitmap	Grafikformat für WAP-fähige Handys
+.wci		–	temporäre Datei von Windows-Indexdienst
+.webarchive		Web-Archiv	Apple WebKit Archiv
+.webm		–	Container für Multimediadateien
+.whtt		WinHTTrack Projekt	Projektdatei von Webseitenkopie
+.wim		Windows Imaging Format	Festplattenimage-Format von Microsoft
+.wk4		Lotus 1-2-3 Datei	Tabelle
+.wks		Microsoft Works Datei	Excel-ähnliche Tabellenkalkulationsdatei von Microsoft
+.wl6		Wolfenstein 3D Spieldateien	Vollversion (wl3 = 3 Episodenversion, wl1 = Shareware)
+.wlb		WinLabel	Avery Zweckform - Etiketten- und Kartendruck-Programm
+.wma		Windows Media Audio	Microsoft Audioformat
+.wmf	image/x-wmf	Windows Metafile	Vektorgrafisches Bildformat Meta-Files, siehe auch Windows Enhanced Metafile
+.wmv		Windows Media Video	verlustbehaftet komprimierender Video-CoDec von Microsoft mit eingebettetem DRM-System
+.wmz		Windows Metafile ZIP	wmf - ZIP komprimiert
+.woa		WebObjects Application	Apple WebObjects Datei
+.woff	application/font-woff	Web Open Font Format	komprimierendes Containerformat für Webfonts
+.wpd		Word Perfect Document	Textverarbeitung WordPerfect
+.wpf		Write Pro File	Dokument HTML-Basis WritePro
+.wpg		Word Perfect Graphics	Bilddatei (Vektorgraphik) WordPerfect
+.wpi		WarpIn Datei	Komprimiertes Installationspaket für OS/2 / eCS
+.wpl		Windows Media Player Playlist (WPL)-Datei	Wiedergabeliste für Windows Media Player ab 9-Reihe auf der Clientseite, kann für dynamische Wiedergabelisten verwendet werden.[1]
+.wps		Works Word Processing Files	Microsoft Works Textdokument
+.wpt		Waypoint file	GPS Waypoint file in PCX5 format
+.wpt		Textdokument	Dokumentenformat für Brother-Textsysteme
+.wq1		–	Quattro Pro for DOS spreadsheet
+.wq2		–	Quattro Pro v 5 for MS-DOS File
+.wrf		WebEx Recording Format	Cisco Webex Recording
+.wri		Write	Textverarbeitung Windows Write Dokument
+.wrl		world	3D-Szene im VRML-Format
+.wrz		–	gepackte 3D-Szene im VRML-Format
+.ws		Worksheet	APL(?)-Worksheet
+.wsdl		Web Services Description Language	Beschreibungssprache für Netzwerkdienste
+.wsp		WinShell Project	Project-File von WinShell (integrated development environment for easy working with LaTeX or TeX)
+.wst		WerkStück	Gravier- / Fräs-Programm BESgrav
+.wtv		Windows TV Datei	TV-Aufzeichnungsformat des Windows Media Center in Windows Vista und Windows 7
+.wv		WavPack	verlustfrei komprimierendes Audioformat
+.wve			PSION-Format für Audio-Dateien
+.wvm		–	Google Play Movies Datei (nur auf Android-Geräten abspielbar)
+.wwf		–	nicht druckbares Portable Document Format
+.wyg		WYSIWYG-Projekt	Projektdatei des CAD-ähnlichen Lichtdesign-Programms WYSIWYG
+.wzs		MS Word Wizard	
+.x		DirectX Mesh Files	3D-Modelle, auch mit Animation
+.x-wav		WAV-Datei von Siemens-Mobiltelefonen	unkomprimiertes Musikformat
+.x_b		Binäre Parasolid-Datei, 3D-CAD-Kern-Format	Bei Parasolid handelt es sich um einen 3D-CAD-Volumenmodellierkernel der Firma Unigraphics Solution. Parasolid stellt eine Bibliothek mit C++-Funktionen bereit. Parasolid ist nicht nur Grundlage der Systeme von Unigraphics Solutions (SolidEdge und UNIGRAPHICS), sondern auch von über 60 weiteren CAD- Systemen, Finite-Elemente-Analyse- und NC-Programmen unterschiedlicher Anbieter.
+.x_t		Text Parasolid-Datei, 3D-CAD-Kern-Format	siehe .x_b
+.x1d		Folienpräsentation	Programm Solo von Axon
+.x3f		RAW-Fotoformat	Sigma-Kamera-RAW-Fotodatei
+.x3d		Extensible 3D	Format für 3D-Modelle
+.x32		Text	Komprimierter Text
+.x81		Leistungsverzeichnis	GAEB DA XML-Datei - Austausch-LV zwischen z. B. Architekt und Ingenieur
+.x83		Angebotsaufforderung	GAEB DA XML-Datei mit Angebotsaufforderung
+.x84		Angebotsabgabe	GAEB DA XML-Datei mit Angebotsabgabe
+.x85		Nebenangebot	GAEB DA XML-Datei mit Nebenangebot
+.x86		Auftragserteilung	GAEB DA XML-Datei mit Auftragserteilung
+.x88		Nachtrag	GAEB DA XML-Datei mit Angebotsnachtrag
+.x89		Rechnung	GAEB DA XML-Datei mit Rechnungsdaten
+.xar		XTreme PhotoDesigner	Datei für Magix Xtreme oder Foto und Grafikdesigner
+.xbm		X BitMap	Bilddatei
+.xcf		GIMP	GIMP-eigenes Grafikformat
+.xds		XDS	POSI-Tool Dateiformat; binäre Konfigurationsdatei für Servoantriebe
+.xdt		XDT	Infodatei für Ultimate Ripkit (PSP)
+.xfm		XFrames Model	Externes Frameset für XHTML 2
+.xfi		Extracted File Info	Faßt entweder automatisch den Inhalt einer Textdatei zusammen (vergleiche Auto-Zusammenfassen bei Word) oder zeigt vom Autor angegebene Zusammenfassung an, falls vorhanden; sollte ursprünglich ab Debian 5.0 eingesetzt werden, wird aber wahrscheinlich erst 2010 fertig werden. Befindet sich noch in der Betaphase
+
+.xhtml		Extensible Hypertext Markup Language	Hypertext nach XHTML-Standard
+.xla		MS Excel	Programm Add-Ins
+.xlax		MS Excel 2007	Programm Add-Ins
+.xlc		MS Excel Chart	Diagrammerstellung
+.xlcx		MS Excel 2007 Chart	Diagrammerstellung
+.xlk		MS Excel 2007	Sicherungskopie
+.xls	application/vnd.ms-excel (offiziell), application/msexcel[1]	MS Excel Sheet	Tabellenkalkulation
+.xlsm	application/vnd.ms-excel.sheet.macroEnabled.12[2]	MS Excel 2007 Sheet	Tabellenkalkulation, Makrofunktion aktiviert
+.xlsx	application/vnd.openxmlformats-officedocument.spreadsheetml.sheet[3]	MS Excel 2007 Sheet	Tabellenkalkulation, Makrofunktion deaktiviert
+.xlt		MS Excel Template	Tabellenvorlagen
+.xlt		MS Excel 2007 Template	Tabellenvorlagen
+.xltx		MS Excel 2007 Template	Tabellenvorlagen (nicht zu öffnen mit einem Konverter!)
+.xlw		MS Excel	"Workspace", ab Excel 5, fasst mehrere Tabellen zu einem Dokument zusammen, speichert den Arbeitsbereich (Fensteraufteilung/Darstellung/geöffnete Dateien).
+.xm		Extended Module	Trackermodul (Musikformat) des Fasttracker 2
+.xmi		Umbrello UML-Datei	Speicherformat des Umbrello UML Modeller
+.xml	text/xml, application/xml, application/x-xml	Extensible Markup Language	allgemeine Dateinamenserweiterung für XML-Dokumente verschiedener Art
+.xmz		Extended Module zipped	komprimiertes Trackermodul (Musikformat) von Fasttracker 2
+.xpi		XPInstall	Erweiterung für z. B. Mozilla Firefox und Thunderbird
+.xpm		X PixMap	Bilddatei
+.xps		xps-Format Windows (XPS)	XPS-Dateiformat (XML Paper Specification)
+.xrns		Extended Renoise Song	Trackermodul (Musikformat) des Trackers Renoise
+.xs		X-Search	X-Search-eigenes Dateiformat
+.xsb		Sound Bank, XMLBeans Schema Metadata	Sound Bank (XACT), XMLBeans Schema Metadata
+.xsd		XML Schema Definition	"Grammatik" (nach den XML-Schema-Regeln ) für XML-Daten
+.xsl		Extensible Stylesheet Language (XSL)	Transformationsanweisungen (XSLT) oder Formatierungsregeln (XSL-FO) für XML-Daten
+.xslt		XSL Transformation (XSLT)	Transformationsanweisungen für XML-Daten
+.xspf		XML Shareable Playlist Format	XML-Playlisten
+.xtm		XTM Xtremsplit Data File	Teil einer größeren Datei zum Transport z.B. im UseNet.Gesplittet durch das französische Tool 'Xtremsplit.fr' mit dem sie auch wieder zusammengesetzt werden kann.
+.xul		XML User Interface Language	Für Mozilla-Anwendungen entwickelte GUI-Beschreibungssprache
+.xv2		V-XVL Geometry File (XVL)	XVL-Dateiformat für optimierte Ladezeiten
+.xv3		P-XVL Geometry File (XVL)	XVL-Dateiformat für optimierte Dateigröße
+.xvf		Xyngo Video File (XVF)	Video-Format des Xyngo VideoBoard
+.xyz		xyz-Format Xmol	Koordinaten von Molekülen
+.xyz		XYZ-Liste	X-Y-Z-Koordinaten von Digitalen Geländemodellen
+.xz		xz	xz Dateiformat zur Komprimierung
+.y		–	Komprimiertes Amiga-Archiv (YABBA)
+.y		–	Grammatik-Datei (yacc)
+.yaml		YAML Ain't Markup Language	YAML ist eine Sprache zur Datenserialisierung
+.yapi		–	Steuerfile für den Yapi Interpreter (Netinstall Erweiterung)
+y01 bis y02		–	Secondary index file (Paradox (Datenbank))
+y01 bis y02		–	Jahrbuch-Datei (Yearbook) (Microsoft Encarta)
+.yal		–	Clipart-Bibliothek (Arts & Letters)
+.YaST2save		–	YaST-Backup einer Konfigurationsdatei
+.ybc		YaST Byte Code	Kompiliertes YaST-Modul
+.ycp		YaST Control Programm	Quellcode eines YaST-Moduls
+.yink		yInk	yInk-Bilddatei
+.yml		YAML Ain't Markup Language	YAML ist eine Sprache zur Datenserialisierung
+.yuv		–	YCbCr-kodierte Grafik-Datei (Die Bezeichnung mit .yuv beruht auf der häufigen Verwechslung des digitalen YCbCr mit dem beim analogen PAL verwendeten YUV.)
+.yz		–		Komprimiertes Datei-Archiv (YAC)
+.z				mit Unix-Programm compress komprimierte Datei
+.z3				Spielmodul (Infocom)
+.z3d			Zanoza 3D File	3D-Modelle mit dem ZModeler erstellen, speichern, etc.
+.z64			Nintendo 64 ROM image	Dump eines Nintendo 64-Spiels (im Mr.Backup-Z64-Format) zur Verwendung in einem Emulator
+.zabw			Komprimiertes Dokument (Abiword)
+.zap			Komprimierte Datei (FileWrangler)
+.zap			Software-Installationseinstellungen (Microsoft Windows)
+.zbp			„Tafelpaket“ für Boardmaker
+.zdg			Komprimiertes Text-Dokument (Zview)
+.zdl			DesignPro-Datei	Grafik-Datei (Avery-Zweckform DesignPro 5.0)
+.zdp			DesignPro-Datei	Grafik-Datei (Avery-Zweckform DesignPro 3.5-4.0)
+.zei			Zeichnung (LOGOCAD Triga)
+.zeno			Komprimiertes Dokument
+.zer			Daten-Datei (Zerberus)
+.zfb			VBG-Fragebogen
+.zgm			Grafik-Datei (ZenoGraphics)
+.zim			Zeno IMproved	Komprimiertes Dokument (Verbessertes Zeno-Format)
+.zip			application/zip, application/x-zip-compressed	application/zip	Komprimiertes Dateiarchiv
+.zipx			Komprimiertes Dateiarchiv (Verbessertes ZIP-Format)
+.zir			Konstruktionsdatei des Dynamischen Geometrieprogramms Zirkel und Lineal
+.zom			Komprimiertes Archiv (ZOOM auf Amiga)
+.zoo			Komprimiertes Dateiarchiv
+.zpj			Zend Development Environment Project	Projektdatei von Zend Studio
+.zvd			Voice-Datei (Zyxel Z-Fax)
+.zvr			Voice-Datei (Philips Diktiergerät 7630 7650)
+.zxp			Projekt-Datei (Umberto 5)

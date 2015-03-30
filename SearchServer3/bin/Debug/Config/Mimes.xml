@@ -193,14 +193,17 @@
     <MimeType Postfix=".log" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="0" CreateThumb="False" Description="Application Log"/>
     <MimeType Postfix=".md" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="0" CreateThumb="False" Description="Information (GIT)"/>
     <MimeType Postfix=".dic" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="0" CreateThumb="False" Description="Dictionary"/>
+	<!-- Lua -->
+    <MimeType Postfix=".lua" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="LUA SourceCode"/>
+    <MimeType Postfix=".wlua" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="LUA SourceCode"/>
+    <MimeType Postfix=".luac" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="LUA Compiled"/>
 	<!-- Sonstige Programmiersprachen -->
     <MimeType Postfix=".ai" 	Mimetype="application/postscript" 		Player="Text" 		CacheSec="30" CreateThumb="False" Description="Postscript"/>
     <MimeType Postfix=".eps" 	Mimetype="application/postscript" 		Player="Text" 		CacheSec="30" CreateThumb="False" Description="Postscript"/>
     <MimeType Postfix=".ps" 	Mimetype="application/postscript" 		Player="Text" 		CacheSec="30" CreateThumb="False" Description="Postscript" />
     <MimeType Postfix=".tcl" 	Mimetype="application/x-tcl" 			Player="Text" 		CacheSec="30" CreateThumb="False" Description="None"/>
     <MimeType Postfix=".bat" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="Windows Batch Script" />
-    <MimeType Postfix=".lua" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="LUA SourceCode"/>
-    <MimeType Postfix=".au3" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="AutoIT3"/>
+    <MimeType Postfix=".au3" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="AutoIT3 Script"/>
     <MimeType Postfix=".dtd" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="Markup Check (HTML,XML)"/>
     <MimeType Postfix=".sh" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="Unix ShellScript"/>
     <MimeType Postfix=".sql" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="Database Language"/>
@@ -208,6 +211,7 @@
     <MimeType Postfix=".ini" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="Windows Configuration File"/>
     <MimeType Postfix=".mime" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="Mimetype definition"/>
     <MimeType Postfix=".asm" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="Assembler"/>
+    <MimeType Postfix=".nse" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="Nessus Script"/>
     <MimeType Postfix=".dot" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="Graphwiz"/>
     <!-- 
 	#########################################################
@@ -226,6 +230,7 @@
     <MimeType Postfix=".asx" 	Mimetype="video/x-ms-asx" 				Player="Video" 		CacheSec="3600" CreateThumb="True" Description="None"/>
     <MimeType Postfix=".asf" 	Mimetype="video/x-ms-asf" 				Player="Video" 		CacheSec="3600" CreateThumb="True" Description="None"/>
     <MimeType Postfix=".mp4" 	Mimetype="video/mp4" 					Player="Video" 		CacheSec="3600" CreateThumb="True" Description="Mpeg 4 Video"/>
+    <MimeType Postfix=".m4v" 	Mimetype="video/mp4" 					Player="Video" 		CacheSec="3600" CreateThumb="True" Description="Mpeg 4 Video"/>
     <MimeType Postfix=".mkv" 	Mimetype="video/x-matroska" 			Player="Video" 		CacheSec="3600" CreateThumb="True" Description="Matroska"/>
     <MimeType Postfix=".webm" 	Mimetype="video/webm" 					Player="Video" 		CacheSec="3600" CreateThumb="True" Description="Web Movie" />
     <MimeType Postfix=".ogg" 	Mimetype="video/ogg" 					Player="Video" 		CacheSec="3600" CreateThumb="True" Description="Video/Audio OGG Vorbis"/>

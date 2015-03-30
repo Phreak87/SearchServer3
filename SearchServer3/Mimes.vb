@@ -15,7 +15,6 @@ Public Class Mimes
         If My.Computer.FileSystem.FileExists("Config\Cleaner.xml") Then
             Dim XMLRemo As New Xml.XmlDocument : XMLRemo.Load("Config\Cleaner.xml")
             RemoTypes = ListofStringDictionary(XMLRemo, "WebSearch/Clean", {"Collection", "Field", "Value"})
-            XMLRemo = Nothing
         End If
 
         If My.Computer.FileSystem.FileExists("Config\urlconf.xml") Then
@@ -23,6 +22,21 @@ Public Class Mimes
             URLTypes = ListofStringDictionary(XMLURLs, "WebSearch/URLParts/URLPart", {"Text", "Player"})
             XMLURLs = Nothing
         End If
+    End Sub
+
+    Sub SaveRemo()
+        Dim XMLRemo As New Xml.XmlDocument
+        Dim Root As Xml.XmlNode = XMLRemo.AppendChild(XMLRemo.CreateElement("WebSearch"))
+        For Each Eintrag In RemoTypes
+            Dim Attc As Xml.XmlAttribute = XMLRemo.CreateAttribute("Collection") : Attc.Value = "DIR"
+            Dim AttF As Xml.XmlAttribute = XMLRemo.CreateAttribute("Field") : AttF.Value = "Cont_Post"
+            Dim AttP As Xml.XmlAttribute = XMLRemo.CreateAttribute("Value") : AttP.Value = Eintrag("Value")
+            Dim APP As Xml.XmlNode = Root.AppendChild(XMLRemo.CreateElement("Clean"))
+            APP.Attributes.Append(Attc)
+            APP.Attributes.Append(AttF)
+            APP.Attributes.Append(AttP)
+        Next
+        XMLRemo.Save("Config\Cleaner.xml")
     End Sub
 
     Function Info(ByVal Query As String)

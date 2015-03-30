@@ -4,20 +4,24 @@ Class DTE
     Public _Result As String
     Sub New(Query As String)
         _Query = Query
+        If IsNothing(Query) Then _Result = ""
         Calculate()
     End Sub
     Sub Calculate()
         Dim Weekdays As String() = ({"Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"})
-        Dim Months As String() = ({"Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"})
-        Dim MonthsShort1 As String() = ({"Jan", "Feb", "Mar", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"})
+        Dim Months As String() = ({"Januar", "Februar", "Maerz", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"})
+
+        If (_Query).Contains("NowDate") Then _Query = _Query.Replace("NowDate", Now.Date.ToString)
+        If (_Query).Contains("NowTime") Then _Query = _Query.Replace("NowTime", Now.ToLocalTime.ToString)
 
         If IsDate(_Query) Then
-            Dim WT As String = Weekdays(Date.Parse(_Query).DayOfWeek)
+            Dim WT As String = Weekdays(Date.Parse(_Query).DayOfWeek - 1)
             Dim KM As String = Months(Date.Parse(_Query).Month - 1)
             Dim JT As String = Date.Parse(_Query).DayOfYear
             Dim KW As String = DatePart(DateInterval.WeekOfYear, CDate(_Query), FirstDayOfWeek.Monday, FirstWeekOfYear.FirstFourDays)
 
             _Result = Date.Parse(_Query).Date & "<BR>" & _
+                    "Zeit: " & Now.ToLongTimeString.ToString & "<BR>" & _
                     "Kalenderwoche: " & KW & "<BR>" & _
                     "Wochentag: " & WT & "<BR>" & _
                     "Monat: " & KM & "<BR>" & _

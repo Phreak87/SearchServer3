@@ -61,7 +61,7 @@ Namespace CLS
                 D.WritePropertyName("Messages")
                 D.WriteStartArray()
                 If Eval.MathResult(_SQuery) <> "" Then
-                    _Results.Insert(0, New DOC("Math", "Math", "Math", "Math eval: " & _SQuery, "", Eval.MathResult(_SQuery), "", Now))
+                    _Results.Insert(0, New DOC("Math", "Math", "Math", "Evaluation: " & _SQuery, "", Eval.MathResult(_SQuery), "", Now))
                 End If
                 For Each Eintrag In _Results
                     i = i + 1
@@ -97,7 +97,7 @@ Namespace CLS
                     Dim PStart As New ProcessStartInfo
                     PStart.WindowStyle = ProcessWindowStyle.Hidden
                     PStart.FileName = AppPath & MongoD
-                    PStart.Arguments = "--dbpath data\db --nojournal --quiet " & IIf(WiredTiger = True, "--storageEngine wiredTiger", "") '  --httpinterface --rest --jsonp
+                    PStart.Arguments = "--dbpath data\db --nojournal --quiet --rest --jsonp " & IIf(WiredTiger = True, "--storageEngine wiredTiger", "") '  --rest --jsonp
                     PStart.WorkingDirectory = AppPath
                     Dim PRC As Process = Process.Start(PStart)
                     RaiseEvent Status(".DBS: ProcessID: " & PRC.Id)

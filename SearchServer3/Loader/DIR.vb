@@ -65,7 +65,7 @@ Namespace CLS
         End Sub
 
         Sub Init_Empty()
-            DB_PROD_CleanGarbage()
+            ' DB_PROD_CleanGarbage()
             Dim Check As New QueryDocument : Check.Add("Class_Name", _ClassName)
             Dim ICheck As Integer = _Collection.Count(Check)
             If ICheck = 0 Then

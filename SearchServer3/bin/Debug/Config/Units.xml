@@ -4,14 +4,14 @@
 		<Operator Name="Dividiere"		Calc="/"				Aliasses="teile,Teile,div,Div,dividiere,Dividiere,durch,von,in,zu,/"/>
 		<Operator Name="Multipliziere"	Calc="*"				Aliasses="mal,mit,multipliziere,Multipliziere,*"/>
 		<Operator Name="Addiere"		Calc="+"				Aliasses="und,plus,Plus,+"/>
-		<Operator Name="Substrahiere"	Calc="-"				Aliasses="minus,Minus,-"/>
+		<Operator Name="Substrahiere"	Calc="-"				Aliasses="minus,Minus,-,min,Min"/>
 	</Operators>
 	<Outputs>
 		<Output 	Name="Nummer"		Calc=""					Aliasses="zahl,Zahl"/>
 		<Output 	Name="Prozent"		Calc="/"				Aliasses="Prozent,prozent,%"/>
 	</Outputs>
 	<Constants>
-		<Constant Name="PI" 			Calc="3,14159265359"	Aliasses="Pi,pi,PI,Kreiszahl"/>
+		<Constant Name="PI" 			Calc="3.14159265359"	Aliasses="Pi,pi,PI,Kreiszahl"/>
 	</Constants>
 	<Units>
 		<!-- Zeit -->
@@ -25,10 +25,39 @@
 		<Unit Name="Millisekunden" 		Calc="[Sekunden]/100"	Aliasses="Millisekunden,millisekunden,ms"/>
 		<Unit Name="Mikrosekunden"		Calc="[Millisekunden]/100" Aliasses="Mikrosekunden,mikrosekunden"/>
 		
+		<Unit Name="NowDate"			Calc="" 				Aliasses="heute,Heute,Today,today,Now,now"/>
+		<Unit Name="NowTime"			Calc="" 				Aliasses="jetzt,Jetzt,Zeit,zeit,time,Time"/>
+		
+		<Unit Name="Montag"				Calc="1" 				Aliasses="Mon,mo,Mo,montag,Montag,monday,Monday"/>
+		<Unit Name="Dienstag"			Calc="2" 				Aliasses="Di,di,dienstag,Dienstag,tuesday,Tuesday,tue,Tue"/>
+		<Unit Name="Mittwoch"			Calc="3" 				Aliasses="Mi,mi,mittwoch,Mittwoch"/>
+		<Unit Name="Donnerstag"			Calc="4" 				Aliasses="Do,do,Donnerstag,donnerstag,"/>
+		<Unit Name="Freitag"			Calc="5" 				Aliasses="Fr,fr,freitag,Freitag,friday,Friday"/>
+		<Unit Name="Samstag"			Calc="6" 				Aliasses="Sa,sa,sam,Sam,Samstag,samstag,Saturday,saturday"/>
+		<Unit Name="Sonntag"			Calc="7" 				Aliasses="So,so,Sonntag,sonntag,Son,son,Sunday,sunday"/>
+		
+		<Unit Name="Januar"				Calc="1" 				Aliasses="Jan,jan,Januar,januar"/>
+		<Unit Name="Februar"			Calc="2" 				Aliasses="Feb,feb,Februar,februar"/>
+		<Unit Name="Maerz"				Calc="3" 				Aliasses="März,märz,Mar,mar,March,march,Maerz,maerz"/>
+		<Unit Name="April"				Calc="4" 				Aliasses="April,april,Apr,apr"/>
+		<Unit Name="Mai"				Calc="5" 				Aliasses="Mai,mai,may,May"/>
+		<Unit Name="Juni"				Calc="6" 				Aliasses="Juni,juni,jun,Jun"/>
+		<Unit Name="Juli"				Calc="7" 				Aliasses="Jul,jul,Juli,juli,jule,Jule"/>
+		<Unit Name="August"				Calc="8" 				Aliasses="Aug,aug,August,august"/>
+		<Unit Name="September"			Calc="9" 				Aliasses="Sep,sep,September,september,Sept,sept"/>
+		<Unit Name="Oktober"			Calc="10" 				Aliasses="Okt,okt,Oktoeber,oktober"/>
+		<Unit Name="November"			Calc="11" 				Aliasses="Nov,nov,November,november"/>
+		<Unit Name="Dezember"			Calc="12" 				Aliasses="Dezember,dezember,dez,Dez"/>
+		
+		<!-- Farben -->
+		<Unit Name="Blue"				Calc="" 				Aliasses="Blue,blue,Blau,blau"/>
+		<Unit Name="Red"				Calc="" 				Aliasses="Red,red,Rot,rot"/>
+		<Unit Name="Green"				Calc="" 				Aliasses="green,Green,grün,Grün,gruen,Gruen"/>
+		
 		<!-- Längen -->
 		<Unit Name="Meter" 				Calc="" 				Aliasses="m,M,meter,Meter"/>
 		<Unit Name="Fuß" 				Calc="[Meter]*3,2808399"   Aliasses="foot,Fuß,fuß"/>
-		<Unit Name="Zoll" 				Calc="[Meter]*0.393700787" Aliasses="In,inch,Inch,zoll,Zoll"/>
+		<Unit Name="Zoll" 				Calc="[Meter]*0.393700787" Aliasses="inch,Inch,zoll,Zoll"/>
 		<Unit Name="Zentimeter" 		Calc="[Meter]/100" 		Aliasses="cm,Centimeter,centimeter,Zentimeter,zentimeter"/>
 		<Unit Name="Millimeter" 		Calc="[Zentimeter]/10" 	Aliasses="mm,millimeter,Milimeter,Millimeter"/>
 		<Unit Name="Kilometer" 			Calc="[Meter]*1000"		Aliasses="km,kilometer,Kilometer"/>

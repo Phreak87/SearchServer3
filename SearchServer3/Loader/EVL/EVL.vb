@@ -4,39 +4,21 @@ Public Class EVL
 
     Function MathResult(ByVal Query As String) As String
 
-        ' ----------------------------------------------------------------------------
-        ' Query bereinigen 
-        ' ----------------------------------------------------------------------------
-        Console.WriteLine(".EVL: Vor Cleanup: " & Query)
-        Do Until Query.Contains("++") = False : Query = Query.Replace("++", "+") : Loop
-        Do Until Query.Contains("  ") = False : Query = Query.Replace("  ", " ") : Loop
-        Do Until System.Text.RegularExpressions.Regex.Matches(Query, "([0-9])+(\+)([0-9]+)").Count = 0
-            Dim RGX As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Query, "([0-9])+(\+)([0-9]+)")
-            If RGX.Count > 0 Then Query = Mid(Query, 1, RGX(0).Groups(2).Index) & " [plus] " & Mid(Query, RGX(0).Groups(2).Index + 2)
-        Loop
-        Query = Query.Replace("+*", "*")
-        Query = Query.Replace("*+", "*")
-        Query = Query.Replace("/*", "/")
-        Query = Query.Replace("*/", "/")
-        Query = Query.Replace("-*", "-")
-        Query = Query.Replace("*-", "-")
-        Query = Query.Replace("[plus]", "+")
-        Console.WriteLine(".EVL: Nach Cleanup: " & Query)
-
-        Dim RES As String = ""
+        Dim _Query As String = New Reduce(Query)._Result
+        Dim Res As String = ""
 
         Try
-            If RES = "" Then RES = RES & MimeTypes.Info(Query)
-            If RES = "" Then RES = RES & New DTE(Query)._Result
-            If RES = "" Then RES = RES & New COL(Query)._Result
-            If RES = "" Then RES = RES & New UCL().ParseQuery(Query)
+            If Res = "" Then Res = Res & MimeTypes.Info(_Query)
+            If Res = "" Then Res = Res & New DTE(_Query)._Result
+            If Res = "" Then Res = Res & New COL(_Query)._Result
+            If Res = "" Then Res = Res & New UCL().ParseQuery(_Query)
         Catch
+            Res = Query
         End Try
+        If Res = "" Then Res = _Query
 
         Return (RES)
 
     End Function
-
-    
 
 End Class

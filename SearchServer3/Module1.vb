@@ -38,6 +38,7 @@ Module Module1
     Dim WEBINCL As New System.Text.StringBuilder
 
     Public MimeTypes As Mimes
+    Public EvalTypes As Reduce
 
     Sub Main()
 
@@ -169,15 +170,19 @@ Module Module1
             Next
             DIRNextInit()
 
+            Console.WriteLine("#DIR: Dynamische Dateien fuer Indizierung suchen")
             Dim DynFil As New List(Of MongoDB.Driver.IMongoQuery)
             For Each Eintrag In FILDICT.FindAll(Function(s) s("Dyn") = "True")
                 DynFil.Add(Query.Matches("Cont_Name", "/" & Eintrag("URL") & "/i"))
             Next
-            Dim DIRFIL As MongoCursor(Of BsonDocument) = DIR.FindAs(Of BsonDocument)(Query.Or(DynFil))
-            For Each eintrag As BsonDocument In DIRFIL
-                Dim FIL_New As New CLS.FIL(eintrag("Cont_Name"), "Tracklists", eintrag("Cont_Link"), FIL, False)
-                FILLIST.Add(FIL_New)
-            Next
+            If DynFil.Count > 0 Then
+                Dim DIRFIL As MongoCursor(Of BsonDocument) = DIR.FindAs(Of BsonDocument)(Query.Or(DynFil))
+                For Each eintrag As BsonDocument In DIRFIL
+                    Dim FIL_New As New CLS.FIL(eintrag("Cont_Name"), "Tracklists", eintrag("Cont_Link"), FIL, False)
+                    FILLIST.Add(FIL_New)
+                Next
+            End If
+            Console.WriteLine("#DIR: Dynamische Dateien abgeschlossen")
 
         End If
 
@@ -312,6 +317,19 @@ Module Module1
                         Process.Start(PRC)
                     End If
 
+                Case "api\query\delmime"
+                    Dim DBPre As Integer = DIR.Count
+                    Dim N As New List(Of IMongoQuery) : N.Add(Query.EQ("Cont_Post", LCase(RawData.ReqContent("Data"))))
+                    DIR.Remove(Query.Or(N))
+                    Dim DBAft As Integer = DIR.Count
+                    Cont = "{""Blocked""" & ":" & """" & RawData.ReqContent("Data") & ": " & DBPre - DBAft & """}"
+                    Dim n2 As New Dictionary(Of String, String)
+                    n2.Add("Value", RawData.ReqContent("Data"))
+                    n2.Add("Field", "Cont_Post")
+                    n2.Add("Collection", "DIR")
+                    MimeTypes.RemoTypes.Add(n2)
+                    MimeTypes.SaveRemo()
+
                     ' ----------------------------------------------------
                     ' Ordner der Datei im Windows-Explorer öffnen
                     ' ----------------------------------------------------
@@ -326,7 +344,8 @@ Module Module1
                         Process.Start(PRC)
                     End If
 
-
+                Case Else
+                    MsgBox(RawData.ReqURLPath)
             End Select
         End If
 
