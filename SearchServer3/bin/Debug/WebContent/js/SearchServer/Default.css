@@ -62,7 +62,6 @@
 	}
 	
 	.pageLeftMenu{
-		background-color : rgba(190,190,200,0.50);
 		float : left;
 		clear : none;
 		height : 750px;
@@ -77,22 +76,6 @@
 		overflow : 	auto;
 		height : 750px;
 		width : 80%;
-	}
-	
-	#Merker{
-		background-color : rgba(255,200,200,100);
-		float : left;
-		clear : none;
-		overflow : 	auto;
-		width : 90%;
-	}
-	
-	#Suche{
-		background-color : rgba(255,200,200,100);
-		float : left;
-		clear : none;
-		overflow : 	auto;
-		width : 90%;
 	}
 	
 	#Meldungen{

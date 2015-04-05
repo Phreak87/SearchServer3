@@ -173,14 +173,17 @@ Namespace CLS
 
                     SendHeader(False)
 
-                    Dim NS As New NetworkStream(_Socket)
-                    Dim SW As New MemoryStream(System.Text.Encoding.UTF8.GetBytes(_Transfer))
-                    Try : SW.CopyTo(NS) : SW.Flush() : SW.Close()
-                    Catch IOE As IOException
+
+                    Dim NS As NetworkStream = New NetworkStream(_Socket)
+                    Dim SW As MemoryStream = New MemoryStream(System.Text.Encoding.UTF8.GetBytes(_Transfer))
+                    Try
+                        SW.CopyTo(NS) : SW.Flush() : SW.Close()
+                    Catch ex As Exception
                         NS.Close()
                         SW.Close()
                         sended(_Socket)
                     End Try
+
                 End Sub
 
                 Private Sub SendHeader(ByVal Datei As Boolean)
@@ -331,11 +334,19 @@ Namespace CLS
                     For Each Eintrag In Split(Contents, "&")
                         If Split(Eintrag, "=").Count = 1 Then Dict.Add(Eintrag, "") : Continue For
                         Dim KEY As String = Uri.UnescapeDataString(Split(Eintrag, "=")(0)).Replace(Chr(0), "")
-                        Dim VAL As String = Uri.UnescapeDataString(Split(Eintrag, "=")(1)).Replace(Chr(0), "")
+
+                        ' %2B = +
+
+                        Dim VAL As String = (Split(Eintrag, "=")(1)).Replace(Chr(0), "")
+                        VAL = VAL.Replace("+", " ")
+                        VAL = VAL.Replace("%2B", "plus")
+                        VAL = Uri.UnescapeDataString(VAL)
+
                         Dict.Add(KEY, VAL)
                     Next
                     Return Dict
                 End Function
+
 
             End Class
 

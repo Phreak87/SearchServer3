@@ -150,6 +150,7 @@
     <MimeType Postfix=".ls" 	Mimetype="text/javascript" 				Player="Text" 		CacheSec="30" CreateThumb="False" Description="Javascript/LiveScript"/>
     <MimeType Postfix=".less" 	Mimetype="text/javascript" 				Player="Text" 		CacheSec="30" CreateThumb="False" Description="Javascript/LessScript"/>
     <MimeType Postfix=".json" 	Mimetype="application/json" 			Player="Text" 		CacheSec="0" CreateThumb="False" Description="JS Object Notation"/>
+    <MimeType Postfix=".bson" 	Mimetype="application/json" 			Player="Text" 		CacheSec="0" CreateThumb="False" Description="Binary JS Object Notation"/>
 	<!-- HTML -->
     <MimeType Postfix=".html" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="10" CreateThumb="False" Description="Hypertext Markup"/>
     <MimeType Postfix=".htm" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="10" CreateThumb="False" Description="Hypertext Markup"/>
@@ -191,7 +192,7 @@
     <MimeType Postfix=".cfg" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="0" CreateThumb="False" Description="Configuration File"/>
     <MimeType Postfix=".config" Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="0" CreateThumb="False" Description="Configuration File"/>
     <MimeType Postfix=".log" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="0" CreateThumb="False" Description="Application Log"/>
-    <MimeType Postfix=".md" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="0" CreateThumb="False" Description="Information (GIT)"/>
+    <MimeType Postfix=".md" 	Mimetype="text/html; charset=UTF-8" 	Player="Markdown" 	CacheSec="0" CreateThumb="False" Description="Markdown Language"/>
     <MimeType Postfix=".dic" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="0" CreateThumb="False" Description="Dictionary"/>
 	<!-- Lua -->
     <MimeType Postfix=".lua" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		CacheSec="30" CreateThumb="False" Description="LUA SourceCode"/>

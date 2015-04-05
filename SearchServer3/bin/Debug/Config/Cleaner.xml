@@ -189,9 +189,7 @@
   <Clean Collection="DIR" Field="Cont_Post" Value=".svn-base" />
   <Clean Collection="DIR" Field="Cont_Post" Value=".hxx" />
   <Clean Collection="DIR" Field="Cont_Post" Value=".cxx" />
-  <Clean Collection="DIR" Field="Cont_Post" Value=".md" />
   <Clean Collection="DIR" Field="Cont_Post" Value=".snippets" />
-  <Clean Collection="DIR" Field="Cont_Post" Value=".md" />
   <Clean Collection="DIR" Field="Cont_Post" Value=".aux" />
   <Clean Collection="DIR" Field="Cont_Post" Value=".ps1" />
   <Clean Collection="DIR" Field="Cont_Post" Value=".idx" />
@@ -424,7 +422,6 @@
   <Clean Collection="DIR" Field="Cont_Post" Value=".pif" />
   <Clean Collection="DIR" Field="Cont_Post" Value=".nix" />
   <Clean Collection="DIR" Field="Cont_Post" Value=".contrib" />
-  <Clean Collection="DIR" Field="Cont_Post" Value="" />
   <Clean Collection="DIR" Field="Cont_Post" Value=".url" />
   <Clean Collection="DIR" Field="Cont_Post" Value=".m3u" />
   <Clean Collection="DIR" Field="Cont_Post" Value=".ds_store" />
@@ -436,4 +433,108 @@
   <Clean Collection="DIR" Field="Cont_Post" Value=".properties" />
   <Clean Collection="DIR" Field="Cont_Post" Value=".settings" />
   <Clean Collection="DIR" Field="Cont_Post" Value=".pde" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".swf" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".jnlp" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".pem" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".wt" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".lock" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".turtle" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".basecfg" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".base" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".ccd" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".rb" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".pas" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".pom" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".ilk" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".markdown" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".packlist" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".gemspec" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".exp" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".npmignore" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".am" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".erb" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".data" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".8-win32\copying" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".pyx" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".cvd" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".lsn" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".logspec" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".mfc" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".ctl" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".xiph" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".lesser" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".3\copying" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".i00" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".i01" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".i02" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".i03" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".i04" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".i10" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".i11" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".xmd" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".ivd" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".rvd" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".avr" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".i05" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".i06" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".i07" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".i08" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".i09" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".deploy" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".pl" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".desktop" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".itc2" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".mxc2" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".hal" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".dgml" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".dot" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".gitkeep" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".docbook" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".rake" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".pbxproj" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".cson" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".protocol" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".cjson" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".aps" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".uue" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".md~" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".ri" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".un~" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".testsettings" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".keystore" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".gemtest" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".rules" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".autotest" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".autotest" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".gemtest" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".qch" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".pck" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".otf" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".aif" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".ion" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".lsl" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".instance" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".fnt" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".flt" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".modules" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".fdl" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".gpl" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".lgpl" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".rng" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".gplv2" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".gplv3" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".ui" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".cross" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".gnu" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".mac" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".unix" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".mth" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".jas" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".acm" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".ulp" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".pol" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".cha" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".blw" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".edc" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".extra" />
 </WebSearch>

@@ -1,0 +1,122 @@
+Windows Allgemein	Strg + X  Ausschneiden 
+Windows Allgemein	Strg + C  Kopieren 
+Windows Allgemein	Strg + V  Einfügen 
+Windows Allgemein	Strg + A  Alles markieren 
+Windows Allgemein	Strg + Z  Rückgängig 
+Windows Allgemein	Strg + Y  Wiederholen 
+Windows Allgemein	Strg + F  Suchfunktion 
+Windows Allgemein	Strg + A Alles markieren
+Windows Allgemein	Win + L  Computer sperren 
+Windows Allgemein	Win + P  Bildschirme konfigurieren 
+Windows Allgemein	Alt + F4  Fenster schließen 
+Windows Allgemein	Alt + Tab  Zum nächsten Fenster wechseln 
+Windows Allgemein	Alt + Umschalt +Tab   Zum vorherigen Fenster wechseln 
+Windows Allgemein	Win + Tab  Zum nächsten Fenster im Aero-Flip wechseln 
+Windows Allgemein	Win + Umschalt +Tab   Zum vorherigen Fenster im Aero-Flip wechseln 
+Windows Allgemein	Win + T  Taskleisten-Fenster wechseln 
+Windows Allgemein	Win + Leertaste  Einblenden des Desktops 
+Windows Allgemein	Win + D  Anzeigen des Desktops 
+Windows Allgemein	Win + M  Minimieren aller Fenster 
+Windows Allgemein	Win + Pos1  Minimieren aller Fenster bis auf das aktive Fenster 
+Windows Allgemein	Win + Nach-oben          Maximieren des Fensters 
+Windows Allgemein	Win + Nach-unten         Minimieren des Fensters 
+Windows Allgemein	Win + Nach-links / Nach-rechts Fenster auf linker/rechter Bildschirmhälfte maximieren 
+Windows Allgemein	Win + Umschalt + Nach-links /  Nach-rechts Fenster auf zweiten, linken/rechten Bildschirm verschieben 
+Windows Allgemein	Strg+Alt+Nach-oben  Bildschirmdrehung zurücksetzen 
+Windows Allgemein	Strg + N  Neue Instanz öffnen 
+Windows Allgemein	Strg + T  Neue Registerkarte öffnen 
+Windows Allgemein	Alt + Leertaste  Kontextmenü öffnen 
+Windows Allgemein	Strg + <Mausrad>       Zoomen/Größenänderung 
+Windows Allgemein	F5  Aktualisieren 
+Windows Allgemein	Tab  Zur nächsten Option 
+Windows Allgemein	Umschalt + Tab  Zur vorherigen Option 
+Windows Allgemein	Strg + Tab  Zur nächsten Registerkarte 
+Windows Allgemein	Strg + Ums. + Tab       Zur vorherigen Registerkarte 
+Windows Allgemein	Win  Startmenü öffnen/schließen 
+Windows Allgemein	Win + Pause  Systemeigenschaften öffnen 
+Windows Allgemein	Win + E  Explorer (Computer) öffnen 
+Windows Allgemein	Win + F  Windows-Suche öffnen 
+Windows Allgemein	Win + R  Dialogfenster „Ausführen“ 
+Windows Allgemein	Strg + Alt + Entf           Sperrmenü öffnen 
+Windows Allgemein	Strg +Umschalt +Esc  Task-Manager öffnen 
+Windows Allgemein	Umschalt + Klick auf Taskliste-Programm Öffnet eine weitere Instanz des angeklickten Programms 
+Excel				Strg + Bild ?  Zum vorherigen Arbeitsblatt 
+Excel				Strg + Bild ?  Zum nachfolgenden Arbeitsblatt  
+Excel				Strg + Leertaste           Spalte markieren 
+Excel				Umschalt+Leertaste   Zeile markieren 
+Excel				Alt + ;  Nur sichtbare Zellen markieren 
+Excel				Strg + 8  Spalte ausblenden 
+Excel				Strg + 9  Zeile ausblenden 
+Excel				F2  Zelle bearbeiten 
+Excel				Strg +Umschalt+ 1      Zahlenformat (Strg + !) 
+Excel				Strg +Umschalt+ 2      Wissensch. Format (Strg + ?) 
+Excel				Strg +Umschalt+ 3      Datumsformat (Strg + §) 
+Excel				Strg +Umschalt+ 4      Währungsformat (Strg + $) 
+Excel				Strg +Umschalt+ 5      Prozente (Strg + %) 
+Excel				Strg +Umschalt+ 6      Standardformat (Strg + &) 
+Excel				Strg + .  Aktuelles Datum einfügen 
+Excel				Strg + Alt + V  Inhalte einfügen 
+Excel				Alt + Enter  Zeilenumbruch in einer Zelle 
+Excel				Umschalt + F2  Neuer Kommentar 
+Excel				Strg +Umschalt+ O     Alle Kommentare markieren 
+Excel				Strg + Minus Markierte Zeilen löschen
+Excel				Strg + Plus Zeile einfügen 
+Powerpoint			Strg + M  Neue Folie einfügen 
+Powerpoint			Strg + D  Folie duplizieren 
+Powerpoint			Strg + Umschalt + G    Objekte gruppieren 
+Powerpoint			Strg + Pfeiltasten         Objekt ohne Raster verschieben 
+Powerpoint			Alt+Umschalt+Nach-
+Powerpoint			Oben/Nach-unten 
+Powerpoint			Listenpunkt nach oben/unten 
+Powerpoint			verschieben (neu sortieren) 
+Powerpoint			F5  Slideshow starten 
+Powerpoint			Umschalt + F5  Slideshow ab aktueller Folie 
+Powerpoint			Nach-Rechts  Slideshow: Nächste Folie 
+Powerpoint			Nach-Links  Slideshow: Vorherige Folie 
+Powerpoint			<Zahl> + Enter  Slideshow: Springe zu <Zahl> 
+Powerpoint			B/W  Slideshow: Display schwarz/weiß 
+Powerpoint			Strg + A  Slideshow: Maus dauerhaft sichtbar 
+Powerpoint			Strg + P  Slideshow: Maus als Stift 
+Browser				Alt + Pos1  Startseite öffnen 
+Browser				Strg+(Umschalt+)Tab  Nächste (vorherige) Registerkarte 
+Browser				Strg + Umschalt + T     Letzte Registerkarte wieder öffnen 
+Browser				Strg + Umschalt + P     InPrivate-Browsen starten 
+Browser				Strg + I  Favoriten öffnen 
+Browser				Strg + D  Favoriten hinzufügen 
+Browser				Strg + H  Verlauf öffnen 
+Browser				Strg + L  Ins Adressfeld springen 
+Browser				(Strg + ) F5  Seite (ohne Cache) aktualisieren 
+Browser				Strg + <Mausrad>        Zoomen 
+Browser				Strg + 0  Zoom zurücksetzen 
+Browser				F11  Vollbildmodus 
+Office				Strg + O  Dokument öffnen 
+Office				Strg + S  (Sofort) speichern 
+Office				F12  Speichern unter… 
+Office				Strg + P  Drucken 
+Office				Strg + F6  Zum nächsten Dokument wechseln 
+Office				Strg + Umschalt +F6   Zum vorherigen Dokument wechseln 
+Office				Strg + F10  Fenstergröße wechseln 
+Office				Strg + F1  Ribbon ein- oder ausblenden 
+Office				Umschalt + F10  Drop-Down-Menü öffnen 
+Office				Strg + F  Suchen 
+Office				Strg + H  Ersetzen 
+Word				Strg + G  Gehe zu… 
+Word				Strg + Pos1  Zum Anfang springen 
+Word				Strg + Ende  Zum Ende springen 
+Word				Strg + Bild ?  Zum vorherigen Seitenanfang springen 
+Word				Strg + Bild ?  Zum nachfolgenden Seitenanfang springen 
+Word				Bild ?  Blockweise hoch springen 
+Word				Bild ?  Blockweise runter springen 
+Word				Pos1  Zum Zeilenanfang springen 
+Word				Ende  Zum Zeilenende springen 
+Word				Strg + Links  Ein Wort nach links springen 
+Word				Strg + Rechts  Ein Wort nach rechts springen 
+Word				Strg + Umschalt + Links Ein Wort nach links markieren oder Markierung entfernen 
+Word				Strg + Umschalt + Rechts 
+Word				Ein Wort nach rechts markier-en oder Markierung entfernen 
+Word				Umschalt + Pos1         Zeilenanfang markieren 
+Word				Umschalt + Ende         Zeilenende markieren 
+Word				Umschalt + Enter        Zeilenumbruch erzwingen 
+Office				Strg + Umschalt + F Fett
+Office				Strg + Umschalt + K Kursiv
+Office				Strg + Umschalt + U Unterstrichen

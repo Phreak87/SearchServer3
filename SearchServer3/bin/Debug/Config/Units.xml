@@ -8,10 +8,12 @@
 	</Operators>
 	<Outputs>
 		<Output 	Name="Nummer"		Calc=""					Aliasses="zahl,Zahl"/>
+		<Output 	Name="Monat"		Calc=""					Aliasses="monat,Monat,monate,Monate,Month,month"/>
+		<Output 	Name="Tag"			Calc=""					Aliasses="Tag,tag,Tage,tage,d,D,day,Day,Days,days"/>
 		<Output 	Name="Prozent"		Calc="/"				Aliasses="Prozent,prozent,%"/>
 	</Outputs>
 	<Constants>
-		<Constant Name="PI" 			Calc="3.14159265359"	Aliasses="Pi,pi,PI,Kreiszahl"/>
+		<Constant Name="PI" 			Calc="3,14159265359"	Aliasses="Pi,pi,PI,Kreiszahl"/>
 	</Constants>
 	<Units>
 		<!-- Zeit -->
@@ -73,8 +75,8 @@
 		
 		<!-- Leistung -->
 		<Unit Name="Watt" 				Calc="" 				Aliasses="W,w,watt"/>
-		<Unit Name="KiloWatt" 			Calc="[Watt]*1000" 		Aliasses="KW,kw,Kw,Kilowatt"/>
-		<Unit Name="MegaWatt" 			Calc="[KiloWatt]*1000"	Aliasses="MW,mw,Mw,Megawatt"/>
+		<Unit Name="KiloWatt" 			Calc="[Watt]*1000" 		Aliasses="KW,kw,Kw,Kilowatt,kilowatt"/>
+		<Unit Name="MegaWatt" 			Calc="[KiloWatt]*1000"	Aliasses="MW,mw,Mw,Megawatt,megawatt"/>
 		<Unit Name="PS" 				Calc="[KiloWatt]*0.73549875" Aliasses="ps,Ps"/>
 
 		<!-- Massen -->

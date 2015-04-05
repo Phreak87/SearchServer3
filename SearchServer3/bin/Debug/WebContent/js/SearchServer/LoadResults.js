@@ -75,8 +75,32 @@ function loadPageData (daten) {
 	var output="";
 
 	/* ##############################
+	Zurueck, Weiter, Seiten, Status
+	############################### */
+	output+="<Table width='100%' style='font-size: 140%;Margin-top:5px;Margin-Bottom:5px;' class='hvr-glow'><TR><TD>"
+	if (parseInt(data.Pages) > 0){
+		output+="<a href='#' id='wb" + sel + "' class='hvr-glow' onClick='Resultate(sel,sid,parseInt(pag) - 1)'>Zurueck</a>";
+		for (i = 0;i<=parseInt(data.Pages);i++){
+			if (i <= 21){ // Nur 22 Seiten in der Anzeige
+				if (i == data.Page){
+					output+="<a href='#' id='w" + sel + i + "' class='hvr-glow' onClick='Resultate(sel,sid," + i + ")'><B>" + i + "</B></a>";
+				} else {
+					output+="<a href='#' id='w" + sel + i + "' class='hvr-glow' onClick='Resultate(sel,sid," + i + ")'>" + i + "</a>";
+				}
+			}
+		}
+		output+="<a href='#' id='wf" + sel + "' class='hvr-glow' onClick='Resultate(sel,sid,parseInt(pag) + 1)'>Weiter</a>";
+		output+="<BR><BR><B>" + 'Seite ' + data.Page + ' von ' + data.Pages + "<Br>Eintraege von " + data.EntryFrom + " bis " + data.EntryTo + " von " + data.EntryCount + " Ergebnissen zu '" + data.SQuery + "' aus " + data.EntryDB + ' Eintraegen in ' + data.DBTime + " Sekunden <BR><B>"
+	} else {
+		output+="<BR><B>" + data.EntryCount + " Ergebnisse aus " + data.EntryDB + " Eintraegen zu '" + data.SQuery + "' in " + data.DBTime + " Sekunden <BR><B>"
+	}
+	output+="</TD></TR></Table>"	
+	
+	/* ##############################
 	Übersichten der Gruppen, Namen und Typen
 	############################### */
+	
+	output+="<Div Style='Height:600px;overflow : auto;'>"
 	if (data.EntryCount > 0) {
 	var UniqueClassNames= $.unique(data.Messages.map(function (d) {return d.Class_Name;}));
 	var UniqueClassGroups= $.unique(data.Messages.map(function (d) {return d.Class_Group;}));
@@ -110,28 +134,7 @@ function loadPageData (daten) {
 	output+="</TR>"
 	output+="</Table>";
 	}
-
-	/* ##############################
-	Zurueck, Weiter, Seiten, Status
-	############################### */
-	output+="<Table width='100%' style='font-size: 140%;Margin-top:5px;Margin-Bottom:5px;' class='hvr-glow'><TR><TD>"
-	if (parseInt(data.Pages) > 0){
-		output+="<a href='#' id='wb" + sel + "' class='hvr-glow' onClick='Resultate(sel,sid,parseInt(pag) - 1)'>Zurueck</a>";
-		for (i = 0;i<=parseInt(data.Pages);i++){
-			if (i <= 21){ // Nur 22 Seiten in der Anzeige
-				if (i == data.Page){
-					output+="<a href='#' id='w" + sel + i + "' class='hvr-glow' onClick='Resultate(sel,sid," + i + ")'><B>" + i + "</B></a>";
-				} else {
-					output+="<a href='#' id='w" + sel + i + "' class='hvr-glow' onClick='Resultate(sel,sid," + i + ")'>" + i + "</a>";
-				}
-			}
-		}
-		output+="<a href='#' id='wf" + sel + "' class='hvr-glow' onClick='Resultate(sel,sid,parseInt(pag) + 1)'>Weiter</a>";
-		output+="<BR><BR><B>" + 'Seite ' + data.Page + ' von ' + data.Pages + "<Br>Eintraege von " + data.EntryFrom + " bis " + data.EntryTo + " von " + data.EntryCount + " Ergebnissen zu '" + data.SQuery + "' aus " + data.EntryDB + ' Eintraegen in ' + data.DBTime + " Sekunden <BR><B>"
-	} else {
-		output+="<BR><B>" + data.EntryCount + " Ergebnisse aus " + data.EntryDB + " Eintraegen zu '" + data.SQuery + "' in " + data.DBTime + " Sekunden <BR><B>"
-	}
-	output+="</TD></TR></Table>"			
+		
 	
 	/* ##############################
 	Inhalte
@@ -208,13 +211,19 @@ function loadPageData (daten) {
 				+ "</TD>"
 		};
 
+		if (data.Messages[i].Cont_Player=='Markdown'){
+			output+="<TD>"
+				+ "<a href='#' Frame='js/IFrameLoader/epiceditor/showmd.html' Content='" + data.Messages[i].Cont_Link + "' onClick='GenIFrameInLine(this);'>Inhalt anzeigen (EpicEditor)</a>" 
+				+ "</TD>"
+		};
+
 		if (data.Messages[i].Cont_Player=='ExtVideo'){
 			output+="<TD>" 
 				+ "<Iframe Frameborder='0' style='width: 400px; height: 280px;' src='js/IFrameLoader/VideoJS/ShowMovExt.html#" + data.Messages[i].Cont_Link + "#'/>"
 				+ "</TD><TD>"
-				+ "<a href='#' Frame='js/IFrameLoader/Popcorn/ShowMovExt.html' Content='" + data.Messages[i].Cont_Link + "' Thumb='" + data.Messages[i].Cont_Thumb + "' onClick='GenIFrame(this);'><H2>Inhalt anzeigen (Popcorn)</H2></a><BR>" 
-				+ "<a href='#' Frame='js/IFrameLoader/VideoJS/ShowMovExt.html' Content='" + data.Messages[i].Cont_Link + "' Thumb='" + data.Messages[i].Cont_Thumb + "' onClick='GenIFrame(this);'><H2>Inhalt anzeigen (* VideoJS)</H2></a><BR>"  
-				+ "<a href='#' Frame='js/IFrameLoader/Projekktor/ShowMovExt.html' Content='" + data.Messages[i].Cont_Link + "' Thumb='" + data.Messages[i].Cont_Thumb + "' onClick='GenIFrame(this);'><H2>Inhalt anzeigen (? Projekktor)</H2></a><BR>"   
+				+ "<a href='#' Frame='js/IFrameLoader/Popcorn/ShowMovExt.html' Content='" + data.Messages[i].Cont_Link + "' Thumb='" + data.Messages[i].Cont_Thumb + "' onClick='GenIFrameInLine(this);'><H2>Inhalt anzeigen (Popcorn)</H2></a><BR>" 
+				+ "<a href='#' Frame='js/IFrameLoader/VideoJS/ShowMovExt.html' Content='" + data.Messages[i].Cont_Link + "' Thumb='" + data.Messages[i].Cont_Thumb + "' onClick='GenIFrameInLine(this);'><H2>Inhalt anzeigen (* VideoJS)</H2></a><BR>"  
+				+ "<a href='#' Frame='js/IFrameLoader/Projekktor/ShowMovExt.html' Content='" + data.Messages[i].Cont_Link + "' Thumb='" + data.Messages[i].Cont_Thumb + "' onClick='GenIFrameInLine(this);'><H2>Inhalt anzeigen (? Projekktor)</H2></a><BR>"   
 			+ "</TD>";
 		};
 		
@@ -222,9 +231,9 @@ function loadPageData (daten) {
 			output+="<TD>" 
 				+ "<img src='" + data.Messages[i].Cont_Thumb + "'</img>"
 				+ "</TD><TD>"
-				+ "<a href='#' Frame='js/IFrameLoader/Popcorn/ShowMov.html' Content='" + data.Messages[i].Cont_Link + "' Thumb='" + data.Messages[i].Cont_Thumb + "' onClick='GenIFrame(this);'><H2>Inhalt anzeigen (Popcorn)</H2></a><BR>" 
-				+ "<a href='#' Frame='js/IFrameLoader/Videojs/ShowMov.html' Content='" + data.Messages[i].Cont_Link + "' Thumb='" + data.Messages[i].Cont_Thumb + "' onClick='GenIFrame(this);'><H2>Inhalt anzeigen (VideoJS)</H2></a><BR>" 
-				+ "<a href='#' Frame='js/IFrameLoader/Projekktor/ShowMov.html' Content='" + data.Messages[i].Cont_Link + "' Thumb='" + data.Messages[i].Cont_Thumb + "' onClick='GenIFrame(this);'><H2>Inhalt anzeigen (Projekktor)</H2></a><BR>" 
+				+ "<a href='#' Frame='js/IFrameLoader/Popcorn/ShowMov.html' Content='" + data.Messages[i].Cont_Link + "' Thumb='" + data.Messages[i].Cont_Thumb + "' onClick='GenIFrameInLine(this);'><H2>Inhalt anzeigen (Popcorn)</H2></a><BR>" 
+				+ "<a href='#' Frame='js/IFrameLoader/Videojs/ShowMov.html' Content='" + data.Messages[i].Cont_Link + "' Thumb='" + data.Messages[i].Cont_Thumb + "' onClick='GenIFrameInLine(this);'><H2>Inhalt anzeigen (VideoJS)</H2></a><BR>" 
+				+ "<a href='#' Frame='js/IFrameLoader/Projekktor/ShowMov.html' Content='" + data.Messages[i].Cont_Link + "' Thumb='" + data.Messages[i].Cont_Thumb + "' onClick='GenIFrameInLine(this);'><H2>Inhalt anzeigen (Projekktor)</H2></a><BR>" 
 				// + "<iframe id='viewer' frameBorder='0' scrolling='no' src = 'js/IFrameLoader/Projekktor/ShowMov.html#" + data.Messages[i].objLink + "#" + data.Messages[i].ContentThumb + "' width='800' height='300' allowfullscreen webkitallowfullscreen></iframe>"
 			+ "</TD>";
 		};
@@ -303,6 +312,7 @@ function loadPageData (daten) {
 			+ "</TD>"
 			+ "</TR></Table>";	
 	};		
+	output+="</Div>"
 
 	$("#Ergebnisse"+sel).html(output);	
 	
@@ -320,6 +330,6 @@ function loadPageData (daten) {
 	$("#wf" + sel).button();
 	
 	Preload_Scripts();
-	// Preload_Content();
+	//Preload_Content();
 	$(".group1").colorbox({rel:'group1'});
 }

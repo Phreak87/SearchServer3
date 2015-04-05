@@ -45,12 +45,13 @@ Public Class Mimes
         Dim Q1 As String = Query.ToLower
         Dim Q2 As String = ("." & Query).Replace("..", ".")
         If Query = "" Then Return ""
+        If IsNumeric(Query) Then Return ""
 
         If Not IsNothing(MimeFromRegistry(Q2)) Then REG = "registriert als " & MimeFromRegistry(Q2)
 
-        Dim LSTDESC As List(Of Dictionary(Of String, String)) = MimeTypes.FindAll(Function(s) s("Description").Contains(Q1))
-        Dim LSTPOST As List(Of Dictionary(Of String, String)) = MimeTypes.FindAll(Function(s) s("Postfix").Contains(Q2))
-        Dim LSTMIME As List(Of Dictionary(Of String, String)) = MimeTypes.FindAll(Function(s) s("Mimetype").Contains(Q1))
+        Dim LSTDESC As List(Of Dictionary(Of String, String)) = MimeTypes.FindAll(Function(s) s("Description") = (Q1))
+        Dim LSTPOST As List(Of Dictionary(Of String, String)) = MimeTypes.FindAll(Function(s) s("Postfix") = (Q2))
+        Dim LSTMIME As List(Of Dictionary(Of String, String)) = MimeTypes.FindAll(Function(s) s("Mimetype") = (Q1))
 
         If LSTDESC.Count > 0 Then
             For Each eintrag In LSTDESC

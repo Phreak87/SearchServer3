@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+		<script src="js/head.js"></script>
+				
+        <script>
+			head.load(	"js/jquery.js",
+						"js/epiceditor.min.js",
+						function (){
+							var str = window.location.hash.substr(1);
+							var res = str.split("#");
+							var el = document.getElementById("main");
+							
+							$.ajax({
+								url: res[0],
+								success: function (data) {
+								var opts = {
+								  container: 'main',
+								  textarea: null,
+								  basePath: '',
+								  clientSideStorage: false,
+								  localStorageName: 'epiceditor',
+								  useNativeFullscreen: false,
+								  parser: marked,
+								  file: {
+								    name: res[0],
+								    defaultContent: data
+								  },
+								  theme: {
+								    base: 'themes/base/epiceditor.css',
+								    preview: 'themes/preview/github.css',
+								    editor: 'themes/editor/epic-light.css'
+								  },
+								  button: {
+								    preview: true,
+								    fullscreen: false,
+								    bar: "auto"
+								  },
+								  focusOnLoad: true,
+								  shortcut: {
+								    modifier: 18,
+								    fullscreen: 70,
+								    preview: 80
+								  },
+								  string: {
+								    togglePreview: 'Toggle Preview Mode',
+								    toggleEdit: 'Toggle Edit Mode',
+								    toggleFullscreen: 'Enter Fullscreen'
+								  },
+								  autogrow: true
+								}
+								var editor = new EpicEditor(opts).load();
+								editor.preview();
+								}
+							});
+						});
+        </script>
+    </head>
+	
+    <body>	
+        <div id="main"></div>
+
+		
+    </body>
+</html>

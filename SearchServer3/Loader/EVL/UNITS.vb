@@ -1,53 +1,5 @@
 ﻿Public Class UCL
 
-    Dim Grundtype As New List(Of Dictionary(Of String, String))
-    Dim Konverter As New Dictionary(Of String, String)
-    Dim Konstanten As New Dictionary(Of String, String)
-    Dim KonstantenWert As New Dictionary(Of String, String)
-    Dim Operatoren As New Dictionary(Of String, String)
-    Dim OperatorenWert As New Dictionary(Of String, String)
-    Dim Ausgaben As New Dictionary(Of String, String)
-    Dim AusgabenWert As New Dictionary(Of String, String)
-
-    Sub New()
-        Dim XMLTypes As New Xml.XmlDocument : XMLTypes.Load(Environment.CurrentDirectory & "\Config\Units.xml")
-        Dim GTN As New Dictionary(Of String, String)
-        GTN.Add("Name", "[Number]")
-        GTN.Add("Formel", "1")
-        Grundtype.Add(GTN)
-        For Each Type As Xml.XmlNode In XMLTypes.SelectNodes("WebSearch/Units/Unit")
-            Dim GT As New Dictionary(Of String, String)
-            GT.Add("Name", Type.Attributes("Name").Value)
-            GT.Add("Formel", Type.Attributes("Calc").Value)
-            Grundtype.Add(GT)
-            For Each SubType As String In Split(Type.Attributes("Aliasses").Value, ",")
-                Konverter.Add(SubType, Type.Attributes("Name").Value)
-            Next
-        Next
-        For Each Type As Xml.XmlNode In XMLTypes.SelectNodes("WebSearch/Operators/Operator")
-            OperatorenWert.Add(Type.Attributes("Name").Value, Type.Attributes("Calc").Value)
-            For Each SubType As String In Split(Type.Attributes("Aliasses").Value, ",")
-                Dim GT As New Dictionary(Of String, String)
-                Operatoren.Add(SubType, Type.Attributes("Name").Value)
-            Next
-        Next
-        For Each Type As Xml.XmlNode In XMLTypes.SelectNodes("WebSearch/Constants/Constant")
-            KonstantenWert.Add(Type.Attributes("Name").Value, Type.Attributes("Calc").Value)
-            For Each SubType As String In Split(Type.Attributes("Aliasses").Value, ",")
-                Dim GT As New Dictionary(Of String, String)
-                Konstanten.Add(SubType, Type.Attributes("Name").Value)
-            Next
-        Next
-        For Each Type As Xml.XmlNode In XMLTypes.SelectNodes("WebSearch/Outputs/Output")
-            AusgabenWert.Add(Type.Attributes("Name").Value, Type.Attributes("Calc").Value)
-            For Each SubType As String In Split(Type.Attributes("Aliasses").Value, ",")
-                Dim GT As New Dictionary(Of String, String)
-                Ausgaben.Add(SubType, Type.Attributes("Name").Value)
-            Next
-        Next
-        Grundtype = Grundtype.Distinct.ToList
-    End Sub
-
     Function ParseQuery(ByVal Query As String) As String
 
         Dim Quelleinheit As String = ""
@@ -58,7 +10,7 @@
         Dim Ausgabeeinheit As String = ""
         Dim Ausgabe As String = ""
 
-        Dim RES1 As List(Of String) = SplitQuery(Query)
+        Dim RES1 As List(Of String) = EvalTypes.SplitQuery(Query)
         Dim RES2 As List(Of String) = RES1
 
         Try : Dim n As New NCalc.Expression(Query)
@@ -87,7 +39,7 @@
                         Ausgabe = Ausgabe & ("Normalisiert auf: " & Quellwert & Operatorwert & Zielwert) & "<br>"
                         Return Ausgabe & New NCalc.Expression(Quellwert.Replace(",", ".") & Operatorwert & Zielwert).Evaluate
                     Else
-                        Dim Redu As Dictionary(Of String, String) = Grundtype.Find(Function(S) S("Name") = Mid(SelStep, 2, Len(SelStep) - 2))
+                        Dim Redu As Dictionary(Of String, String) = EvalTypes.Grundtype.Find(Function(S) S("Name") = Mid(SelStep, 2, Len(SelStep) - 2))
                         Quelleinheit = Quelleinheit.Replace(eintrag, Redu("Formel"))
                         If ReadReplaces(Quelleinheit).Count = 0 Then
                             Quellwert = New NCalc.Expression(Quellwert & " " & Quelleinheit).Evaluate
@@ -103,7 +55,7 @@
                 Dim StepOne As List(Of String) = ReadReplaces(Zieleinheit) : If StepOne.Count = 0 Then Exit Do
                 For Each eintrag In StepOne
                     Dim SelStep As String = eintrag
-                    Dim Redu As Dictionary(Of String, String) = Grundtype.Find(Function(S) S("Name") = Mid(SelStep, 2, Len(SelStep) - 2))
+                    Dim Redu As Dictionary(Of String, String) = EvalTypes.Grundtype.Find(Function(S) S("Name") = Mid(SelStep, 2, Len(SelStep) - 2))
                     Zieleinheit = Zieleinheit.Replace(eintrag, Redu("Formel"))
                     If ReadReplaces(Zieleinheit).Count = 0 Then
                         Zielwert = New NCalc.Expression(Zielwert & Zieleinheit).Evaluate
@@ -113,7 +65,7 @@
                 Next
             Loop
 
-        Catch ex As Exception
+        Catch
             Return ""
         End Try
         Return Ausgabe
@@ -124,13 +76,13 @@
             If IsNumeric(Querys(i)) Then
                 ' Numerisch bleibt
             ElseIf IsUnit(Querys(i)) Then
-                Querys(i) = Konverter(Querys(i))
+                Querys(i) = EvalTypes.Konverter(Querys(i))
             ElseIf IsOperator(Querys(i)) Then
-                Querys(i) = OperatorenWert(Operatoren(Querys(i)))
+                Querys(i) = EvalTypes.OperatorenWert(EvalTypes.Operatoren(Querys(i)))
             ElseIf IsOutput(Querys(i)) Then
-                Querys(i) = Ausgaben(Querys(i))
+                Querys(i) = EvalTypes.Ausgaben(Querys(i))
             ElseIf IsConstant(Querys(i)) Then
-                Querys(i) = (KonstantenWert(Konstanten(Querys(i))))
+                Querys(i) = (EvalTypes.KonstantenWert(EvalTypes.Konstanten(Querys(i))))
             End If
         Next
         Return Querys
@@ -158,11 +110,11 @@
                 If IsNumeric(Querys(i)) AndAlso IsUnit(Querys(i + 1)) Then
                     If IsNothing(Num1) Then
                         Num1 = Querys(i)
-                        Unit1 = Konverter(Querys(i + 1))
+                        Unit1 = EvalTypes.Konverter(Querys(i + 1))
                         Querys.RemoveAt(i + 1)
                     Else
                         Num2 = Querys(i)
-                        Unit2 = Konverter(Querys(i + 1))
+                        Unit2 = EvalTypes.Konverter(Querys(i + 1))
                         If Unit1 = "Number" Then Unit1 = Unit2
                         Querys.RemoveAt(i + 1)
                     End If
@@ -183,7 +135,7 @@
                         Querys.RemoveAt(i + 1)
                     Else
                         Num2 = Querys(i)
-                        Unit2 = Konverter(Querys(i + 1))
+                        Unit2 = EvalTypes.Konverter(Querys(i + 1))
                         Querys.RemoveAt(i + 1)
                     End If
 
@@ -212,12 +164,12 @@
                         Unit1 = "Number"
                     Else
                         Num2 = 1
-                        Unit2 = Konverter(Querys(i))
+                        Unit2 = EvalTypes.Konverter(Querys(i))
                     End If
                 End If
 
                 If IsOutput(Querys(i)) Then
-                    Output = Ausgaben(Querys(i))
+                    Output = EvalTypes.Ausgaben(Querys(i))
                 End If
 
             End If
@@ -240,22 +192,22 @@
 
     <DebuggerStepThrough()> _
     Function IsUnit(ByVal Key As String) As Boolean
-        If Konverter.ContainsKey(Key) Then Return True
+        If EvalTypes.Konverter.ContainsKey(Key) Then Return True
         Return False
     End Function
     <DebuggerStepThrough()> _
     Function IsConstant(ByVal Key As String) As Boolean
-        If Konstanten.ContainsKey(Key) Then Return True
+        If EvalTypes.Konstanten.ContainsKey(Key) Then Return True
         Return False
     End Function
     <DebuggerStepThrough()> _
     Function IsOperator(ByVal Key As String) As Boolean
-        If Operatoren.ContainsKey(Key) Then Return True
+        If EvalTypes.Operatoren.ContainsKey(Key) Then Return True
         Return False
     End Function
     <DebuggerStepThrough()> _
     Function IsOutput(ByVal Key As String) As Boolean
-        If Ausgaben.ContainsKey(Key) Then Return True
+        If EvalTypes.Ausgaben.ContainsKey(Key) Then Return True
         Return False
     End Function
 

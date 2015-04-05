@@ -1,34 +1,19 @@
 ﻿Public Class Reduce
-    Dim _Query As String
-    Public _Result As String = ""
 
-    Dim Grundtype As New List(Of Dictionary(Of String, String))
-    Dim Konverter As New Dictionary(Of String, String)
-    Dim Konstanten As New Dictionary(Of String, String)
-    Dim KonstantenWert As New Dictionary(Of String, String)
-    Dim Operatoren As New Dictionary(Of String, String)
-    Dim OperatorenWert As New Dictionary(Of String, String)
-    Dim Ausgaben As New Dictionary(Of String, String)
-    Dim AusgabenWert As New Dictionary(Of String, String)
+    Public Grundtype As New List(Of Dictionary(Of String, String))
 
-    Sub New(Query As String)
+    Public Konverter As New Dictionary(Of String, String)
 
-        Console.WriteLine(".EVL: Vor Cleanup: " & Query)
-        Do Until Query.Contains("++") = False : Query = Query.Replace("++", "+") : Loop
-        Do Until Query.Contains("  ") = False : Query = Query.Replace("  ", " ") : Loop
-        Do Until System.Text.RegularExpressions.Regex.Matches(Query, "([0-9])+(\+)([0-9]+)").Count = 0
-            Dim RGX As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Query, "([0-9])+(\+)([0-9]+)")
-            If RGX.Count > 0 Then Query = Mid(Query, 1, RGX(0).Groups(2).Index) & " [plus] " & Mid(Query, RGX(0).Groups(2).Index + 2)
-        Loop
-        Query = Query.Replace("+*", "*")
-        Query = Query.Replace("*+", "*")
-        Query = Query.Replace("/*", "/")
-        Query = Query.Replace("*/", "/")
-        Query = Query.Replace("-*", "-")
-        Query = Query.Replace("*-", "-")
-        Query = Query.Replace("[plus]", "+")
-        _Query = Query
+    Public Konstanten As New Dictionary(Of String, String)
+    Public KonstantenWert As New Dictionary(Of String, String)
 
+    Public Operatoren As New Dictionary(Of String, String)
+    Public OperatorenWert As New Dictionary(Of String, String)
+
+    Public Ausgaben As New Dictionary(Of String, String)
+    Public AusgabenWert As New Dictionary(Of String, String)
+
+    Sub New()
         Dim XMLTypes As New Xml.XmlDocument : XMLTypes.Load(Environment.CurrentDirectory & "\Config\Units.xml")
         Dim GTN As New Dictionary(Of String, String)
         GTN.Add("Name", "[Number]")
@@ -65,17 +50,13 @@
             Next
         Next
         Grundtype = Grundtype.Distinct.ToList
-
-        Calculate()
-
-        Console.WriteLine(".EVL: Nach Cleanup: " & _Result)
     End Sub
 
-    Sub Calculate()
-        Dim RES1 As List(Of String) = SplitQuery(_Query)
+    Function Reduzieren(Query As String) As String
+        Dim RES1 As List(Of String) = SplitQuery(Query)
         Dim RES2 As List(Of String) = ReduceQuery(RES1)
-        _Result = CombineStr(RES2)
-    End Sub
+        Return CombineStr(RES2)
+    End Function
 
     Function ReduceQuery(ByVal Querys As List(Of String)) As List(Of String)
         For i As Integer = 0 To Querys.Count - 1
@@ -95,7 +76,7 @@
     End Function
 
     Function SplitQuery(ByVal Query As String) As List(Of String)
-        Dim Res1 As List(Of String) = System.Text.RegularExpressions.Regex.Split(Query, "(\d,+\d+|\+|\d+)").ToList
+        Dim Res1 As List(Of String) = System.Text.RegularExpressions.Regex.Split(Query, "(\d+,\d+| |\d+)").ToList
         Res1.RemoveAll(Function(s) Trim(s) = "")
         Return Res1
     End Function

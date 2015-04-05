@@ -53,7 +53,6 @@
 </script>
 
 <Script type="text/javascript">
-
 	var sid='0'; 	// Die Such-ID
 	var sel='DIR'; 	// Der Suchtyp
 	var pag='0'; 	// Die SeitenNr
@@ -110,7 +109,6 @@
 		  });
 		LoadDebug($('#debug'),$('#Meldungen'));
 	}
-
 	function Speichern(daten) {
 		$('#debug').html('Save: ' + daten);
 		$.ajax({
@@ -218,7 +216,6 @@
 		$('html, body').animate({
 		scrollTop: $("#Ergebnisse").position().top +offset }, 800, 'swing');
 	}
-
 	function RunOnLocalMachine(daten) {
 	    var newUrlStr = daten.getAttribute("src").replace("http://localhost:9090/","");
 		$('#debug').html('Start: ' + newUrlStr);
@@ -237,6 +234,54 @@
 			  url: "api/query/openf",
 			  data: {Action: "start", Data: newUrlStr}
 			});
+	}
+
+	function Shutdown() {
+		$.ajax({
+			  type: "POST",
+			  url: "api/query/shutdown",
+			  data: {Action: "Shutdown", Data: 'True' },
+			success: function (data) {
+				var MSG = document.createElement("Div");
+				$(MSG).html("<img Height='35px' src='Images/Filetypes/Accept.png'></img><BR>"
+							+ "Die laufenden Prozesse werden abgeschlossen, danach wird<BR>"
+							+ "die Datenbank und die Anwendung beendet. Suchprozesse sind<BR>" 
+							+ "ab jetzt nicht mehr moeglich." 
+							+ "Server-Antwort: " + data);
+							$(MSG).dialog({
+								title: "Shutdown!",
+								modal: true,
+								width: '550px',
+								buttons: {
+										Schliessen: function() {
+										  $( this ).dialog( "close" );
+										}
+									  },
+								close: function( event, ui ) {$(this.parentNode).html('');}
+							})
+			}
+			})
+	}
+	
+	function Copyright() {
+		var MSG = document.createElement("Div");
+		$(MSG).html("Copyright:"
+					+ "Design, idea and development by Markus Eckl.<BR>"
+					+ "Third party copyrights are:<BR>" 
+					+ "Jquery," 
+					+ "MongoDB," 
+					+ "Icons by ...,")
+					$(MSG).dialog({
+						title: "Copyright!",
+						modal: true,
+						width: '550px',
+						buttons: {
+								Schliessen: function() {
+								  $( this ).dialog( "close" );
+								}
+							  },
+						close: function( event, ui ) {$(this.parentNode).html('');}
+					})
 	}
 	
     function PathToClipBoard(el){
@@ -261,11 +306,8 @@
 		};
     }
 </Script>
-
 </head>
-
 <body>
-
 <div class="blended_grid">
 	
 	<!--  ######################################
@@ -300,6 +342,7 @@
 			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/VideoJS/showmovExt.html#http://www.youtube.com/watch?v=xYemnKEKx0c">(Youtube) VideoJS Testpage</a><BR></TD></TR>
 			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/Projekktor/showmov.html#http://localhost:9090/js/IFrameLoader/Projekktor/Test.ogv#http://localhost:9090/js/IFrameLoader/Projekktor/Test.jpg">(OGV) Projekktor Testpage</a><BR></TD></TR>
 			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/Projekktor/showmovExt.html#https://www.youtube.com/watch?v=_bWLqJG8G3M">(Youtube) Projekktor Testpage</a><BR></TD></TR>
+			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/EpicEditor/index.html#http://localhost:9090/js/IFrameLoader/EpicEditor/Readme.md"> (Markdown) EpicEditor </a><BR></TD></TR>
 			<TR></TR>
 		</Table>
 	</div></div>
@@ -311,12 +354,14 @@
 	            <li><a 	href="#Externe" 	class="hvr-glow" onclick="LoadWebPages($('#debug'),$('#Externe'));">Externe Suchmaschinen</a></li>	 
 	            <li><a 	href="#Bookmarks" 	class="hvr-glow">Bookmarks</a></li>	
 	            <li><a 	href="#Ersteller" 	class="hvr-glow">Erstellen</a></li>			 
-				<li><a 	href="#Copyright" 	class="hvr-glow">Copyright</a></li>
+				<li><a 	href="#Copyright" 	class="hvr-glow">Copyright</a></li>		 
+				<li><a 	href="#Shutdown" 	class="hvr-glow">Shutdown</a></li>
 	        </ul>
 			<div id="Bookmarks" 	style='Height:20px;' hidden=true>		<img src='images/76.gif'></div>
 			<div id="Ersteller" 	style='Height:20px;' hidden=true>		<img src='images/76.gif'></div>
 			<div id="Externe" 		style='Height:20px;'>					<img src='images/76.gif'></div>
-			<div id="Copyright">	2015 | Design, Idea and development by Markus Eckl.				 </div>
+			<div id="Copyright"><a href="#" onClick="Copyright();">Copyright Information</a></div>
+			<div id="Shutdown"><a href="#" onClick="Shutdown();">Shutdown</a></div>
 		</div>
 		
 		<input 			type=			"text" 		
@@ -385,9 +430,7 @@
 	        <div hidden=true id="ErgebnisseWEB"><img src='images/ajax-loader.gif'> Bitte warten ...</div>
 	    </div>
 	</div>
-
  </div>
-
  
 </div>
 </body>

@@ -4,7 +4,7 @@ Class DTE
     Public _Result As String
     Sub New(Query As String)
         _Query = Query
-        If IsNothing(Query) Then _Result = ""
+        If IsNothing(Query) Then _Result = "" : Exit Sub
         Calculate()
     End Sub
     Sub Calculate()
@@ -15,8 +15,8 @@ Class DTE
         If (_Query).Contains("NowTime") Then _Query = _Query.Replace("NowTime", Now.ToLocalTime.ToString)
 
         If IsDate(_Query) Then
-            Dim WT As String = Weekdays(Date.Parse(_Query).DayOfWeek - 1)
-            Dim KM As String = Months(Date.Parse(_Query).Month - 1)
+            Dim WT As String = Weekdays(Date.Parse(_Query).DayOfWeek)
+            Dim KM As String = Months(Date.Parse(_Query).Month)
             Dim JT As String = Date.Parse(_Query).DayOfYear
             Dim KW As String = DatePart(DateInterval.WeekOfYear, CDate(_Query), FirstDayOfWeek.Monday, FirstWeekOfYear.FirstFourDays)
 

@@ -61,7 +61,7 @@ Namespace CLS
                 D.WritePropertyName("Messages")
                 D.WriteStartArray()
                 If Eval.MathResult(_SQuery) <> "" Then
-                    _Results.Insert(0, New DOC("Math", "Math", "Math", "Evaluation: " & _SQuery, "", Eval.MathResult(_SQuery), "", Now))
+                    _Results.Insert(0, New DOC("Math", "Math", "Math", "Evaluation: " & _SQuery, "", Eval.MathResult(_SQuery), ".", Now))
                 End If
                 For Each Eintrag In _Results
                     i = i + 1
@@ -186,7 +186,7 @@ Namespace CLS
                 If IsNothing(DB) Then Return Nothing
 
                 Dim QL As New List(Of IMongoQuery)
-                For Each Eintrag In Split(Search(0), "+")
+                For Each Eintrag In Split(Search(0), " ")
                     Dim Q As IMongoQuery = Query.Matches(Field, "/" & Eintrag & "/i") : QL.Add(Q)
                 Next
                 Dim Q2 As IMongoQuery = Query.And(QL)

@@ -1,12 +1,12 @@
 Programmname	Beschreibung	Typ	Hersteller	Gruppe Anwendungsfall	Dateitypen	Link
 						
-Wscript	Windows Scripting Host	System(Default)	Microsoft	Interpreter	vbs, vbe	
-Cscript	Windows Scripting Host Console	System(Default)	Microsoft	Interpreter	vbs, vbe	
-Mshta	Html Application	System(Default)	Microsoft	Interpreter	hta	
-cmd	Commandline	System(Default)	Microsoft	Interpreter	bat	
-Ping	Netzwerkerreichbarkeit	System(Default)	Microsoft	Netzwerk		
-Net	Netzwerktools	System(Default)	Microsoft	Netzwerk		
-Tracert	Netzwerkverfolgung	System(Default)	Microsoft	Netzwerk		
+Wscript		Windows Scripting Host			System(Default)	Microsoft	Interpreter	vbs, vbe	
+Cscript		Windows Scripting Host Console	System(Default)	Microsoft	Interpreter	vbs, vbe	
+Mshta		Html Application				System(Default)	Microsoft	Interpreter	hta	
+cmd			Commandline						System(Default)	Microsoft	Interpreter	bat	
+Ping		Netzwerkerreichbarkeit			System(Default)	Microsoft	Netzwerk		
+Net			Netzwerktools					System(Default)	Microsoft	Netzwerk		
+Tracert		Netzwerkverfolgung				System(Default)	Microsoft	Netzwerk		
 Regedit	Systemregistrierung	System(Default)	Microsoft	Registrierung	reg	
 Arp	Adress Resolution Protokoll	System(Default)	Microsoft	Netzwerk		
 Attrib	Attribute	System(Default)	Microsoft	Dateisystem		

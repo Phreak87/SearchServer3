@@ -1,0 +1,129 @@
+Bin	Hex	Dez	ASCII Zeichen	Erläuterungen
+0000000	0x0	0	NUL	NULL-Zeichen. Wird vor allem verwendet um Abschnitte in Datenströmen zu Kennzeichnen. Hat aber nur Auswirkungen, wenn speziell nach diesen gesucht wird.
+0000001	0x1	1	SOH	Start Of Heading - Erstes Zeichen einer Nachrichtenüberschrift.
+0000010	0x2	2	STX	Start Of Text - Erstes Zeichen des Textes einer Nachricht (und letztes der Überschrift).
+0000011	0x3	3	ETX	End Of Text
+0000100	0x4	4	EOT	End Of Transmission
+0000101	0x5	5	ENQ	Enquiry - Zeichen um anzudeuten, dass eine Rückmeldung gewünscht ist.
+0000110	0x6	6	ACK	Acknowledgment - Hinweis, dass Sender Nachricht empfangen hat.
+0000111	0x7	7	BEL	Klingel/Glocke
+0001000	0x8	8	BS	Backspace
+0001001	0x9	9	TAB (HT)	Tabulator/Zeilenvorschub (horizontal)
+0001010	0xa	10	LF	Line Feed - horizontalen Zeilenvorschub in nächste Zeile übernehmen.
+0001011	0xb	11	VT	Tabulator Vertikal
+0001100	0xc	12	FF	Form Feed - Setzt Cursor auf Zeilenvorschub einer vorangegangenen Zeile.
+0001101	0xd	13	CR	Carriage Return - Entfernt alle Tabulatoren und setzte Cursor auf die erste Position in der Zeile.
+0001110	0xe	14	SO	
+0001111	0xf	15	SI	 
+0010000	0x10	16	DLE	 
+0010001	0x11	17	DC1	 
+0010010	0x12	18	DC2	 
+0010011	0x13	19	DC3	 
+0010100	0x14	20	DC4	 
+0010101	0x15	21	NAK	Negative Acknowlegdement - Empfänger teilt negative Antwort mit.
+0010110	0x16	22	SYN	 
+0010111	0x17	23	ETB	End Of Transmission Block
+0011000	0x18	24	CAN	Cancel
+0011001	0x19	25	EM	End Of Medium
+0011010	0x1a	26	SUB	Substitute
+0011011	0x1b	27	ESC	Escape
+0011100	0x1c	28	FS	File Seperator
+0011101	0x1d	29	GS	Group Separator
+0011110	0x1e	30	RS	Record Seperator
+0011111	0x1f	31	US	Unit Seperator
+0100000	0x20	32	SP	Space - Leerzeichen
+0100001	0x21	33	!	 
+0100010	0x22	34	"	 
+0100011	0x23	35	#	 
+0100100	0x24	36	$	 
+0100101	0x25	37	%	 
+0100110	0x26	38	&	kaufmännisches und
+0100111	0x27	39	'	 
+0101000	0x28	40	(	 
+0101001	0x29	41	)	 
+0101010	0x2a	42	*	Das legendäre Zeichen Nr. 42 (" * " ist u.a. ein Platzhalter für ein beliebiges Zeichen).
+0101011	0x2b	43	+	 
+0101100	0x2c	44	,	 
+0101101	0x2d	45	-	 
+0101110	0x2e	46	.	 
+0101111	0x2f	47	/	 
+0110000	0x30	48	0	 
+0110001	0x31	49	1	 
+0110010	0x32	50	2	 
+0110011	0x33	51	3	 
+0110100	0x34	52	4	 
+0110101	0x35	53	5	 
+0110110	0x36	54	6	 
+0110111	0x37	55	7	 
+0111000	0x38	56	8	 
+0111001	0x39	57	9	 
+0111010	0x3a	58	:	 
+0111011	0x3b	59	;	 
+0111100	0x3c	60	<	 
+0111101	0x3d	61	=	 
+0111110	0x3e	62	>	 
+0111111	0x3f	63	?	 
+1000000	0x40	64	@	 
+1000001	0x41	65	A	 
+1000010	0x42	66	B	 
+1000011	0x43	67	C	 
+1000100	0x44	68	D	 
+1000101	0x45	69	E	 
+1000110	0x46	70	F	 
+1000111	0x47	71	G	 
+1001000	0x48	72	H	 
+1001001	0x49	73	I	 
+1001010	0x4a	74	J	 
+1001011	0x4b	75	K	 
+1001100	0x4c	76	L	 
+1001101	0x4d	77	M	 
+1001110	0x4e	78	N	 
+1001111	0x4f	79	O	 
+1010000	0x50	80	P	 
+1010001	0x51	81	Q	 
+1010010	0x52	82	R	 
+1010011	0x53	83	S	 
+1010100	0x54	84	T	 
+1010101	0x55	85	U	 
+1010110	0x56	86	V	 
+1010111	0x57	87	W	 
+1011000	0x58	88	X	 
+1011001	0x59	89	Y	 
+1011010	0x5a	90	Z	 
+1011011	0x5b	91	[	 
+1011100	0x5c	92	\	Backslash
+1011101	0x5d	93	]	 
+1011110	0x5e	94	^	 
+1011111	0x5f	95	_	Unterstrich
+1100000	0x60	96	`	 
+1100001	0x61	97	a	 
+1100010	0x62	98	b	 
+1100011	0x63	99	c	 
+1100100	0x64	100	d	 
+1100101	0x65	101	e	 
+1100110	0x66	102	f	 
+1100111	0x67	103	g	 
+1101000	0x68	104	h	 
+1101001	0x69	105	i	 
+1101010	0x6a	106	j	 
+1101011	0x6b	107	k	 
+1101100	0x6c	108	l	 
+1101101	0x6d	109	m	 
+1101110	0x6e	110	n	 
+1101111	0x6f	111	o	 
+1110000	0x70	112	p	 
+1110001	0x71	113	q	 
+1110010	0x72	114	r	 
+1110011	0x73	115	s	 
+1110100	0x74	116	t	 
+1110101	0x75	117	u	 
+1110110	0x76	118	v	 
+1110111	0x77	119	w	 
+1111000	0x78	120	x	 
+1111001	0x79	121	y	 
+1111010	0x7a	122	z	 
+1111011	0x7b	123	{	 
+1111100	0x7c	124	|	 
+1111101	0x7d	125	}	 
+1111110	0x7e	126	~	Tilde
+1111111	0x7f	127	DEL	Delete

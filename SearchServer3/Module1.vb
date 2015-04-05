@@ -11,6 +11,7 @@ Module Module1
     Dim DBClient As New MongoClient
     Dim DBServer As MongoServer
     Dim DBMongo As MongoDatabase
+    Dim DBClose As Boolean = False
 
     ' --------------------------------------------------------
     ' Mongo Ergebnis-Collections
@@ -43,13 +44,21 @@ Module Module1
     Sub Main()
 
         ' Initial-Config
-        Dim StartPostClean As Boolean = True        ' Beim start (neue) Postfixe bereinigen
+        Dim StartPostClean As Boolean = False       ' Beim start (neue) Postfixe bereinigen
         Dim CollectGarbage As Boolean = True        ' Timer für GarbageCollection 
         Dim DatabaseWiredT As Boolean = True        ' Zum testen bis UMongo WiredTiger unterstützt
         Dim CleanDBStart As Boolean = False
 
         Console.WriteLine("Starte SearchServer V3")
+
         MimeTypes = New Mimes
+        EvalTypes = New Reduce
+
+        ' --------------------------------------------
+        ' Tests
+        ' --------------------------------------------
+        ' Dim eval As New EVL() : eval.Test()
+
         ' --------------------------------------------
         ' Startargumente
         ' --------------------------------------------
@@ -206,7 +215,13 @@ Module Module1
             Dim GCCTrigger As New System.Timers.Timer : GCCTrigger.Interval = 10 * 60 * 1000 : AddHandler GCCTrigger.Elapsed, AddressOf gccCollect : GCCTrigger.Start()
         End If
 
-        Do : Thread.Sleep(60 * 1000) : Loop
+        Do
+            If DBClose = True Then
+                DBServer.Shutdown()
+                Environment.Exit(0)
+            End If
+            Thread.Sleep(10 * 1000)
+        Loop
 
     End Sub
 
@@ -240,6 +255,7 @@ Module Module1
         ' ###############################################################
         ' Vorbereitung
         ' ###############################################################
+        If DBClose = True Then Exit Sub
         If RawData.ReqURLPath.Contains("api\query") Then
             Cont = "{""sid""" & ":" & """" & 0 & """}"
             If RawData.ReqURLGets.Count > 0 Then
@@ -344,6 +360,10 @@ Module Module1
                         Process.Start(PRC)
                     End If
 
+                Case "api\query\shutdown"
+                    DBClose = True
+                    Cont = "{""Shutdown""" & ":" & """True""""}"
+
                 Case Else
                     MsgBox(RawData.ReqURLPath)
             End Select
@@ -361,11 +381,13 @@ Module Module1
                     If Eintrag.Cont_Thumb <> RawData.ReqReferrer Then
                         Dim DBThumb As String = Environment.CurrentDirectory & "\WebContent\" & Eintrag.Cont_Thumb.ToString.Replace(RawData.ReqReferrer, "")
                         If My.Computer.FileSystem.FileExists(DBThumb) = False Then
-                            Dim t As New Filetypes2.ThumbCreator(Eintrag.Cont_Link.Replace(RawData.ReqReferrer, ""), DBThumb)
-                            Console.WriteLine(".THB: Erstelle Thumb für " & Eintrag.Cont_Name)
-                            LogStatus("Thumb: " & Eintrag.Cont_Thumb)
-                            t.CreateThumb() ' Dim TH As New Thread(AddressOf t.CreateThumb) : TH.Start()
-                            Console.WriteLine(".THB: Thumb erstellt: " & Eintrag.Cont_Thumb.ToString.Replace(RawData.ReqReferrer, ""))
+                            If My.Computer.FileSystem.FileExists(Eintrag.Cont_Link.Replace(RawData.ReqReferrer, "")) = True Then
+                                Dim t As New Filetypes2.ThumbCreator(Eintrag.Cont_Link.Replace(RawData.ReqReferrer, ""), DBThumb)
+                                Console.WriteLine(".THB: Erstelle Thumb für " & Eintrag.Cont_Name)
+                                LogStatus("Thumb: " & Eintrag.Cont_Thumb)
+                                t.CreateThumb() ' Dim TH As New Thread(AddressOf t.CreateThumb) : TH.Start()
+                                Console.WriteLine(".THB: Thumb erstellt: " & Eintrag.Cont_Thumb.ToString.Replace(RawData.ReqReferrer, ""))
+                            End If
                         End If
                     End If
                 Next
