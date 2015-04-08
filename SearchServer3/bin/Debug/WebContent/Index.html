@@ -17,6 +17,8 @@
 				"js/JQuery/colorbox.css",
 				"js/JQuery/jquery-ui.css",
 				"js/JQuery/superfish.css",
+				"js/Chosen/chosen.jquery.min.js",
+				"js/Chosen/chosen.min.css",
 				"css/hover-min.css",
 				// "css/primer.css",
 				"js/SearchServer/D3Overview.js",
@@ -44,7 +46,7 @@
 					LoadSearch($('#debug'),$('#Suche'));			
 					LoadDebug($('#debug'),$('#Meldungen'));			// Aktuelle Debugs
 					LoadMerker($('#debug'),$('#Merker'));			// Gespeicherte Suchanfragen
-					Reload();
+					//Reload();
 					LoadCreators($('#debug'),$('#Ersteller'));		// Neue Eintraege hinzufügen
 					LoadBookmarks($('#debug'),$('#Bookmarks'));				// Gespeicherte Default-URLs
 					LoadWebPages($('#debug'),$('#Externe'));		// Suchmaschinen (Seite)
@@ -139,6 +141,7 @@
 				PID: pid
 			},
 			success: function (data) {
+				$('#Ergebnisse'+sel).html('Aufbereitung der Ergebnisse');
 				loadPageData(data);
 			}
 		})
@@ -290,24 +293,10 @@
 		prompt('In die Zwischenablage kopieren', newCopyStr);
     }
     
-    function ChangeSelection(el) {
-        var list = document.getElementsByTagName("table");
-		var stat = el.checked;
-		var val = el.getAttribute('value');  
-		var type = el.getAttribute('name');
-		for (var i = 0; i < list.length; i++) {
-			if (list[i].getAttribute(type)==val) {
-				if (stat==false) {
-					list[i].style.display='none';
-				} else {
-					list[i].style.display='';
-				};
-			};
-		};
-    }
 </Script>
 </head>
 <body>
+
 <div class="blended_grid">
 	
 	<!--  ######################################

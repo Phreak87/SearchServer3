@@ -8,13 +8,13 @@ Public Class Mimes
     Sub New()
         If My.Computer.FileSystem.FileExists("Config\Mimes.xml") Then
             Dim XMLMime As New Xml.XmlDocument : XMLMime.Load("Config\Mimes.xml")
-            MimeTypes = ListofStringDictionary(XMLMime, "WebSearch/MimeTypes/MimeType", {"Postfix", "Mimetype", "Player", "CacheSec", "CreateThumb", "Description"})
+            MimeTypes = ListofStringDictionary(XMLMime, "WebSearch/MimeTypes/MimeType", {"Postfix", "Mimetype", "Player", "Show", "CacheSec", "CreateThumb", "Description"})
             XMLMime = Nothing
         End If
 
         If My.Computer.FileSystem.FileExists("Config\Cleaner.xml") Then
             Dim XMLRemo As New Xml.XmlDocument : XMLRemo.Load("Config\Cleaner.xml")
-            RemoTypes = ListofStringDictionary(XMLRemo, "WebSearch/Clean", {"Collection", "Field", "Value"})
+            RemoTypes = ListofStringDictionary(XMLRemo, "WebSearch/Clean", {"Collection", "Field", "Value", "Description"})
         End If
 
         If My.Computer.FileSystem.FileExists("Config\urlconf.xml") Then
@@ -26,15 +26,21 @@ Public Class Mimes
 
     Sub SaveRemo()
         Dim XMLRemo As New Xml.XmlDocument
+        Dim Union As New List(Of String)
         Dim Root As Xml.XmlNode = XMLRemo.AppendChild(XMLRemo.CreateElement("WebSearch"))
         For Each Eintrag In RemoTypes
+            Dim Find As String = Eintrag("Value")
+            If Union.FindAll(Function(s) s = Find).Count >= 1 Then Continue For
             Dim Attc As Xml.XmlAttribute = XMLRemo.CreateAttribute("Collection") : Attc.Value = "DIR"
             Dim AttF As Xml.XmlAttribute = XMLRemo.CreateAttribute("Field") : AttF.Value = "Cont_Post"
             Dim AttP As Xml.XmlAttribute = XMLRemo.CreateAttribute("Value") : AttP.Value = Eintrag("Value")
+            Dim AttD As Xml.XmlAttribute = XMLRemo.CreateAttribute("Description") : AttD.Value = Eintrag("Description")
             Dim APP As Xml.XmlNode = Root.AppendChild(XMLRemo.CreateElement("Clean"))
             APP.Attributes.Append(Attc)
             APP.Attributes.Append(AttF)
             APP.Attributes.Append(AttP)
+            APP.Attributes.Append(AttD)
+            Union.Add(Eintrag("Value"))
         Next
         XMLRemo.Save("Config\Cleaner.xml")
     End Sub
@@ -148,6 +154,7 @@ Public Class Mimes
                 OUT.Add("CacheSec", "0")
                 OUT.Add("CreateThumb", "False")
                 OUT.Add("Description", "None")
+                OUT.Add("Show", "None")
                 Return OUT
             Case 1
                 Return LST(0)

@@ -173,7 +173,6 @@ Namespace CLS
 
                     SendHeader(False)
 
-
                     Dim NS As NetworkStream = New NetworkStream(_Socket)
                     Dim SW As MemoryStream = New MemoryStream(System.Text.Encoding.UTF8.GetBytes(_Transfer))
                     Try

@@ -110,6 +110,7 @@ Namespace CLS
         Function CheckErrs(Dir As String) As Boolean
             If Dir.Length > 248 Then Return True
             If Dir.ToLower.Contains("$recycle.bin") Then Return True
+            If Dir.StartsWith(Environment.CurrentDirectory) Then Return True
             If Directory.Exists(Dir) = False Then Return True
 
             Dim DirAtt = My.Computer.FileSystem.GetDirectoryInfo(Dir)
@@ -180,7 +181,8 @@ Namespace CLS
 
             For Each Datei In Directory.GetFiles(_obj._Path)
                 Dim Post As String = ".None" : If Datei.Contains(".") Then Post = LCase(Mid(Datei, InStrRev(Datei, ".")))
-                ' If Post.Length > 6 Then Post = ".None"
+                If Post.Contains("\") Then Post = ".None" : If IsNumeric(Post.Replace(".", "")) Then Continue For
+                If Post.Length > 9 Then Post = ".None"
                 ' Dim Time As String = My.Computer.FileSystem.GetFileInfo(Datei).LastAccessTime
                 Dim DOC As New DOC(_ClassName, "DIR", _ClassGroup, Mid(Datei, InStrRev(Datei, "\") + 1), Datei, "", Post, Now)
                 Res.Add(DOC)

@@ -14,10 +14,11 @@
     Dim _Cont_Post As String     ' Das Postfix des Inhalts (.doc, .html)
     Dim _Cont_Time As Date       ' Die Zeit für den Inhalt
 
-    Dim _Cont_Mime As String
-    Dim _Cont_Desc As String
-    Dim _Cont_Play As String
-    Dim _Cont_Cach As String
+    Dim _Cont_Mime As String    ' Mimetype
+    Dim _Cont_Desc As String    ' Beschreibung
+    Dim _Cont_Play As String    ' Player
+    Dim _Cont_Cach As String    ' Caching in Sekunden
+    Dim _Cont_Show As String    ' Wie wird der Inhalt angezeigt
 
     Dim _Mimetypes As Dictionary(Of String, String)
 #End Region
@@ -57,16 +58,19 @@
                 _Cont_Mime = _Mimetypes("Mimetype")
                 _Cont_Desc = _Mimetypes("Description")
                 _Cont_Play = _Mimetypes("Player")
+                _Cont_Show = _Mimetypes("Show")
             Case "WEB"
                 _Cont_Cach = "None"
                 _Cont_Mime = "None"
                 _Cont_Desc = "None"
+                _Cont_Show = "None"
                 _Cont_Play = MimeTypes.GetOnlinePlayerFor(_Cont_Link)
             Case Else
                 _Cont_Cach = "None"
                 _Cont_Mime = "None"
                 _Cont_Desc = "None"
                 _Cont_Play = "None"
+                _Cont_Show = "None"
         End Select
     End Sub
 #End Region
@@ -180,6 +184,12 @@
         Get
             If IsNothing(_Mimetypes) Then Init()
             Return _Cont_Play
+        End Get
+    End Property
+    Public ReadOnly Property Cont_Show As String
+        Get
+            If IsNothing(_Mimetypes) Then Init()
+            Return _Cont_Show
         End Get
     End Property
 #End Region
