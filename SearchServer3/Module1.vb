@@ -386,7 +386,7 @@ Module Module1
                                 Dim t As New Filetypes2.ThumbCreator(Eintrag.Cont_Link.Replace(RawData.ReqReferrer, ""), DBThumb)
                                 Console.WriteLine(".THB: Erstelle Thumb für " & Eintrag.Cont_Name)
                                 LogStatus("Thumb: " & Eintrag.Cont_Thumb)
-                                't.CreateThumb()
+                                t.CreateThumb()
                                 'Dim TH As New Thread(AddressOf t.CreateThumb) : TH.Start()
                                 Console.WriteLine(".THB: Thumb erstellt: " & Eintrag.Cont_Thumb.ToString.Replace(RawData.ReqReferrer, ""))
                             End If
