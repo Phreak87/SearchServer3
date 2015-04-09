@@ -113,6 +113,7 @@
     <MimeType Postfix=".rpm" 	Mimetype="application/octet-stream" 	Player="NoPlayer"	Show="WWindow" CacheSec="3600" CreateThumb="False" Description="Linux/Unix Package" />
     <MimeType Postfix=".deb" 	Mimetype="application/octet-stream" 	Player="NoPlayer"	Show="WWindow" CacheSec="3600" CreateThumb="False" Description="Debian Linux Package" />
     <MimeType Postfix=".scp" 	Mimetype="application/octet-stream" 	Player="NoPlayer"	Show="WWindow" CacheSec="3600" CreateThumb="False" Description="Scrap Datei" />
+    <MimeType Postfix=".apk" 	Mimetype="application/octet-stream" 	Player="NoPlayer"	Show="WWindow" CacheSec="3600" CreateThumb="False" Description="Android Application (ZIP)" />
 	<!-- Windows Hilfe -->
     <MimeType Postfix=".chm"	Mimetype="application/octet-stream" 	Player="NoPlayer" 	Show="WWindow" CacheSec="3600" CreateThumb="False" Description="Hilfedatei chm (zip, html)"/>
     <MimeType Postfix=".hlp"	Mimetype="application/octet-stream" 	Player="NoPlayer" 	Show="WWindow" CacheSec="3600" CreateThumb="False" Description="Hilfedatei hlp"/>
@@ -148,6 +149,7 @@
     <MimeType Postfix=".au" 	Mimetype="audio/basic" 					 Player="NoPlayer" 	Show="Inline" CacheSec="3600" CreateThumb="False" Description="Audio"/>
     <MimeType Postfix=".mpa" 	Mimetype="audio/x-mpeg"					 Player="NoPlayer" 	Show="Inline" CacheSec="3600" CreateThumb="False" Description="Audio"/>
     <MimeType Postfix=".abs" 	Mimetype="audio/x-mpeg"		 			 Player="NoPlayer" 	Show="Inline" CacheSec="3600" CreateThumb="False" Description="Audio"/>
+    <MimeType Postfix=".asd" 	Mimetype="audio/x-mpeg"		 			 Player="NoPlayer" 	Show="Inline" CacheSec="3600" CreateThumb="False" Description="Audio"/>
     <MimeType Postfix=".mpega" 	Mimetype="audio/x-mpeg" 				 Player="NoPlayer" 	Show="Inline" CacheSec="3600" CreateThumb="False" Description="Audio"/>
     <MimeType Postfix=".mp2a" 	Mimetype="audio/x-mpeg2" 				 Player="NoPlayer" 	Show="Inline" CacheSec="3600" CreateThumb="False" Description="Audio" />
     <MimeType Postfix=".mpa2" 	Mimetype="audio/x-mpeg2" 				 Player="NoPlayer" 	Show="Inline" CacheSec="3600" CreateThumb="False" Description="Audio" />
@@ -204,103 +206,104 @@
 	#########################################################
 	-->
 	<!-- Markup Languages -->
-    <MimeType Postfix=".xml" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="XML Markup Language"/>
-    <MimeType Postfix=".aiml" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="XML Artifictional Intelligence"/>
-    <MimeType Postfix=".yaml" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="XML Markup Language"/>
-    <MimeType Postfix=".smil" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="XML Presentation"/>
-    <MimeType Postfix=".qml" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="XML Nokia QT"/>
-    <MimeType Postfix=".mml" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="XML MathMl"/>
-    <MimeType Postfix=".xhtml" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="XML HTML"/>
-    <MimeType Postfix=".xsl" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="XML Stylesheet"/>
-    <MimeType Postfix=".xsd" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="XML Schema"/>
-    <MimeType Postfix=".yml" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="XML Schema"/>
-    <MimeType Postfix=".xaml" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="XML Schema"/>
-    <MimeType Postfix=".xslt" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="XML Stylesheet"/>
-    <MimeType Postfix=".jrxml" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="XML Jasperreports"/>
-    <MimeType Postfix=".jasper"	Mimetype="application/octet-stream" 	Player="NoPlayer" 	Show="WWindow" CacheSec="3600" CreateThumb="False" Description="Jasper Compiled Document"/>
+    <MimeType Postfix=".xml" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="XML Markup Language"/>
+    <MimeType Postfix=".aiml" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="XML Artifictional Intelligence"/>
+    <MimeType Postfix=".yaml" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="XML Markup Language"/>
+    <MimeType Postfix=".smil" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="XML Presentation"/>
+    <MimeType Postfix=".qml" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="XML Nokia QT"/>
+    <MimeType Postfix=".mml" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="XML MathMl"/>
+    <MimeType Postfix=".xhtml" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="XML HTML"/>
+    <MimeType Postfix=".xsl" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="XML Stylesheet"/>
+    <MimeType Postfix=".xsd" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="XML Schema"/>
+    <MimeType Postfix=".yml" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="XML Schema"/>
+    <MimeType Postfix=".xaml" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="XML Schema"/>
+    <MimeType Postfix=".xslt" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="XML Stylesheet"/>
+    <MimeType Postfix=".jrxml" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="XML Jasperreports"/>
+    <MimeType Postfix=".jasper"	Mimetype="application/octet-stream" 	Player="NoPlayer" 	Show="Inline" CacheSec="3600" CreateThumb="False" Description="Jasper Compiled Document"/>
 	<!-- StyleSheets -->
-    <MimeType Postfix=".css" 	Mimetype="text/css" 					Player="Text" 		Show="WWindow" CacheSec="10" CreateThumb="False" Description="CSS Cascading Stylesheet"/>
-    <MimeType Postfix=".sass" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="CSS based Stylesheet"/>
-    <MimeType Postfix=".scss" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="CSS based Stylesheet"/>
+    <MimeType Postfix=".css" 	Mimetype="text/css" 					Player="Text" 		Show="Inline" CacheSec="10" CreateThumb="False" Description="CSS Cascading Stylesheet"/>
+    <MimeType Postfix=".sass" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="CSS based Stylesheet"/>
+    <MimeType Postfix=".scss" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="CSS based Stylesheet"/>
 	<!-- JavaScript -->
-    <MimeType Postfix=".js" 	Mimetype="text/javascript" 				Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="Javascript"/>
-    <MimeType Postfix=".mocha" 	Mimetype="text/javascript" 				Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="Javascript/MochaScript"/>
-    <MimeType Postfix=".coffee" Mimetype="text/javascript" 				Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="Javascript/CoffeeScript"/>
-    <MimeType Postfix=".ls" 	Mimetype="text/javascript" 				Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="Javascript/LiveScript"/>
-    <MimeType Postfix=".less" 	Mimetype="text/javascript" 				Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="Javascript/LessScript"/>
-    <MimeType Postfix=".json" 	Mimetype="application/json" 			Player="Text" 		Show="WWindow" CacheSec="0" CreateThumb="False" Description="JS Object Notation"/>
-    <MimeType Postfix=".bson" 	Mimetype="application/json" 			Player="Text" 		Show="WWindow" CacheSec="0" CreateThumb="False" Description="Binary JS Object Notation"/>
+    <MimeType Postfix=".js" 	Mimetype="text/javascript" 				Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="Javascript"/>
+    <MimeType Postfix=".mocha" 	Mimetype="text/javascript" 				Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="Javascript/MochaScript"/>
+    <MimeType Postfix=".coffee" Mimetype="text/javascript" 				Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="Javascript/CoffeeScript"/>
+    <MimeType Postfix=".ls" 	Mimetype="text/javascript" 				Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="Javascript/LiveScript"/>
+    <MimeType Postfix=".less" 	Mimetype="text/javascript" 				Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="Javascript/LessScript"/>
+    <MimeType Postfix=".json" 	Mimetype="application/json" 			Player="Text" 		Show="Inline" CacheSec="0" CreateThumb="False" Description="JS Object Notation"/>
+    <MimeType Postfix=".bson" 	Mimetype="application/json" 			Player="Text" 		Show="Inline" CacheSec="0" CreateThumb="False" Description="Binary JS Object Notation"/>
 	<!-- HTML -->
-    <MimeType Postfix=".html" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="10" CreateThumb="False" Description="Hypertext Markup"/>
-    <MimeType Postfix=".htm" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="10" CreateThumb="False" Description="Hypertext Markup"/>
-    <MimeType Postfix=".jade" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="HTML Template"/>
-    <MimeType Postfix=".aspx" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="Active Servlet Page"/>
-    <MimeType Postfix=".rhtml" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="Ruby Html Template"/>
+    <MimeType Postfix=".html" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="10" CreateThumb="False" Description="Hypertext Markup"/>
+    <MimeType Postfix=".htm" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="10" CreateThumb="False" Description="Hypertext Markup"/>
+    <MimeType Postfix=".jade" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="HTML Template"/>
+    <MimeType Postfix=".aspx" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="Active Servlet Page"/>
+    <MimeType Postfix=".rhtml" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="Ruby Html Template"/>
 	<!-- Visual Basic -->
-    <MimeType Postfix=".vbs" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="VB Script (Wscript)"/>
-    <MimeType Postfix=".wsh" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="Windows Shell Script (Wscript)"/>
-    <MimeType Postfix=".vbe" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="VB Script (Wscript) Encrypted"/>
-    <MimeType Postfix=".vba" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="Visual Basic for Applications"/>
-    <MimeType Postfix=".vb" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="Visual Basic"/>
-    <MimeType Postfix=".hta" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="HTML Application (JS/VBS/HTML)"/>
-    <MimeType Postfix=".csproj" Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="Visual Studio C Project File"/>
-    <MimeType Postfix=".vbproj" Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="Visual Studio VB Project File"/>
+    <MimeType Postfix=".vbs" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="VB Script (Wscript)"/>
+    <MimeType Postfix=".wsh" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="Windows Shell Script (Wscript)"/>
+    <MimeType Postfix=".vbe" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="VB Script (Wscript) Encrypted"/>
+    <MimeType Postfix=".vba" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="Visual Basic for Applications"/>
+    <MimeType Postfix=".vb" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="Visual Basic"/>
+    <MimeType Postfix=".hta" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="HTML Application (JS/VBS/HTML)"/>
+    <MimeType Postfix=".csproj" Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="Visual Studio C Project File"/>
+    <MimeType Postfix=".vbproj" Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="Visual Studio VB Project File"/>
 	<!-- Tex Miktex Latex -->
-    <MimeType Postfix=".latex" 	Mimetype="application/x-latex" 			Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="Tex/Latex/Miktex"/>
-    <MimeType Postfix=".tex" 	Mimetype="application/x-tex" 			Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="Tex/Latex/Miktex"/>
-    <MimeType Postfix=".toc" 	Mimetype="application/x-tex" 			Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="Tex/Latex/Miktex"/>
-    <MimeType Postfix=".aux" 	Mimetype="application/x-tex" 			Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="Tex/Latex/Miktex"/>
-    <MimeType Postfix=".lof" 	Mimetype="application/x-tex" 			Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="Tex/Latex/Miktex"/>
+    <MimeType Postfix=".latex" 	Mimetype="application/x-latex" 			Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="Tex/Latex/Miktex"/>
+    <MimeType Postfix=".tex" 	Mimetype="application/x-tex" 			Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="Tex/Latex/Miktex"/>
+    <MimeType Postfix=".toc" 	Mimetype="application/x-tex" 			Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="Tex/Latex/Miktex"/>
+    <MimeType Postfix=".aux" 	Mimetype="application/x-tex" 			Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="Tex/Latex/Miktex"/>
+    <MimeType Postfix=".lof" 	Mimetype="application/x-tex" 			Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="Tex/Latex/Miktex"/>
 	<!-- JAVA -->
-    <MimeType Postfix=".java" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="Java Source"/>
-    <MimeType Postfix=".jar" 	Mimetype="application/octet-stream" 	Player="NoPlayer" 	Show="WWindow" CacheSec="3600" CreateThumb="False" Description="Java Application"/>
+    <MimeType Postfix=".java" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="Java Source"/>
+    <MimeType Postfix=".jar" 	Mimetype="application/octet-stream" 	Player="NoPlayer" 	Show="Inline" CacheSec="3600" CreateThumb="False" Description="Java Application"/>
 	<!-- Perl -->
-    <MimeType Postfix=".pm" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="Perl"/>
-    <MimeType Postfix=".pl" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="Perl"/>
+    <MimeType Postfix=".pm" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="Perl"/>
+    <MimeType Postfix=".pl" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="Perl"/>
 	<!-- Php -->
-    <MimeType Postfix=".php" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="PHP SourceCode"/>
+    <MimeType Postfix=".php" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="PHP SourceCode"/>
 	<!-- Python -->
-    <MimeType Postfix=".py" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="Python Source"/>
-    <MimeType Postfix=".pyc" 	Mimetype="application/octet-stream" 	Player="NoPlayer" 	Show="WWindow" CacheSec="60" CreateThumb="False" Description="Python Compiled"/>
+    <MimeType Postfix=".py" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="Python Source"/>
+    <MimeType Postfix=".pyc" 	Mimetype="application/octet-stream" 	Player="NoPlayer" 	Show="Inline" CacheSec="60" CreateThumb="False" Description="Python Compiled"/>
 	<!-- C/C++/CSharp -->
-    <MimeType Postfix=".h" 		Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="C Header File"/>
-    <MimeType Postfix=".c" 		Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="C SourceCode"/>
-    <MimeType Postfix=".c++" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="C++ SourceCode"/>
-    <MimeType Postfix=".cpp" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="C++ SourceCode"/>
-    <MimeType Postfix=".cc" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="None" />
-    <MimeType Postfix=".cs" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="None"/>
+    <MimeType Postfix=".h" 		Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="C Header File"/>
+    <MimeType Postfix=".c" 		Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="C SourceCode"/>
+    <MimeType Postfix=".c++" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="C++ SourceCode"/>
+    <MimeType Postfix=".cpp" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="C++ SourceCode"/>
+    <MimeType Postfix=".cc" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="None" />
+    <MimeType Postfix=".cs" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="None"/>
 	<!-- Plain Text -->
     <MimeType Postfix=".txt" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="0" CreateThumb="False" Description="Text File" />
-    <MimeType Postfix=".csv" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="0" CreateThumb="False" Description="Text File Comma-seperated"/>
-    <MimeType Postfix=".cfg" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="0" CreateThumb="False" Description="Configuration File"/>
-    <MimeType Postfix=".config" Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="0" CreateThumb="False" Description="Configuration File"/>
-    <MimeType Postfix=".log" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="0" CreateThumb="False" Description="Application Log"/>
-    <MimeType Postfix=".md" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="0" CreateThumb="False" Description="Markdown Language"/>
-    <MimeType Postfix=".markdown" Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="0" CreateThumb="False" Description="Markdown Language"/>
-    <MimeType Postfix=".prs" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="0" CreateThumb="False" Description="ReStructured Text (SourceForge Docutils)"/>
-    <MimeType Postfix=".dic" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="0" CreateThumb="False" Description="Dictionary"/>
-    <MimeType Postfix=".conf" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="0" CreateThumb="False" Description="Configuration File"/>
+    <MimeType Postfix=".csv" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="0" CreateThumb="False" Description="Text File Comma-seperated"/>
+    <MimeType Postfix=".cfg" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="0" CreateThumb="False" Description="Configuration File"/>
+    <MimeType Postfix=".config" Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="0" CreateThumb="False" Description="Configuration File"/>
+    <MimeType Postfix=".log" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="0" CreateThumb="False" Description="Application Log"/>
+    <MimeType Postfix=".md" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="0" CreateThumb="False" Description="Markdown Language"/>
+    <MimeType Postfix=".markdown" Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="0" CreateThumb="False" Description="Markdown Language"/>
+    <MimeType Postfix=".prs" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="0" CreateThumb="False" Description="ReStructured Text (SourceForge Docutils)"/>
+    <MimeType Postfix=".dic" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="0" CreateThumb="False" Description="Dictionary"/>
+    <MimeType Postfix=".conf" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="0" CreateThumb="False" Description="Configuration File"/>
 	<!-- Lua -->
-    <MimeType Postfix=".lua" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="LUA SourceCode"/>
-    <MimeType Postfix=".wlua" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="LUA SourceCode"/>
-    <MimeType Postfix=".luac" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="LUA Compiled"/>
+    <MimeType Postfix=".lua" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="LUA SourceCode"/>
+    <MimeType Postfix=".wlua" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="LUA SourceCode"/>
+    <MimeType Postfix=".luac" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="LUA Compiled"/>
 	<!-- Sonstige Programmiersprachen -->
-    <MimeType Postfix=".ai" 	Mimetype="application/postscript" 		Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="Postscript"/>
-    <MimeType Postfix=".eps" 	Mimetype="application/postscript" 		Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="Postscript"/>
-    <MimeType Postfix=".ps" 	Mimetype="application/postscript" 		Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="Postscript" />
-    <MimeType Postfix=".tcl" 	Mimetype="application/x-tcl" 			Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="None"/>
-    <MimeType Postfix=".bat" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="Windows Batch Script" />
-    <MimeType Postfix=".au3" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="AutoIT3 Script"/>
-    <MimeType Postfix=".dtd" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="Markup Check (HTML,XML)"/>
-    <MimeType Postfix=".sh" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="Unix ShellScript"/>
-    <MimeType Postfix=".sql" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="Database Language"/>
-    <MimeType Postfix=".inf" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="Windows Configuration File"/>
-    <MimeType Postfix=".ini" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="Windows Configuration File"/>
-    <MimeType Postfix=".mime" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="Mimetype definition"/>
-    <MimeType Postfix=".asm" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="Assembler"/>
-    <MimeType Postfix=".nse" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="Nessus Script"/>
-    <MimeType Postfix=".dot" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="Graphwiz"/>
-    <MimeType Postfix=".rdoc" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="WWindow" CacheSec="30" CreateThumb="False" Description="Ruby Documentation"/>
+    <MimeType Postfix=".ai" 	Mimetype="application/postscript" 		Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="Postscript"/>
+    <MimeType Postfix=".eps" 	Mimetype="application/postscript" 		Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="Postscript"/>
+    <MimeType Postfix=".ps" 	Mimetype="application/postscript" 		Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="Postscript" />
+    <MimeType Postfix=".tcl" 	Mimetype="application/x-tcl" 			Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="None"/>
+    <MimeType Postfix=".bat" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="Windows Batch Script" />
+    <MimeType Postfix=".cmd" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="Windows Batch Script" />
+    <MimeType Postfix=".au3" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="AutoIT3 Script"/>
+    <MimeType Postfix=".dtd" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="Markup Check (HTML,XML)"/>
+    <MimeType Postfix=".sh" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="Unix ShellScript"/>
+    <MimeType Postfix=".sql" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="Database Language"/>
+    <MimeType Postfix=".inf" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="Windows Configuration File"/>
+    <MimeType Postfix=".ini" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="Windows Configuration File"/>
+    <MimeType Postfix=".mime" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="Mimetype definition"/>
+    <MimeType Postfix=".asm" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="Assembler"/>
+    <MimeType Postfix=".nse" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="Nessus Script"/>
+    <MimeType Postfix=".dot" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="Graphwiz"/>
+    <MimeType Postfix=".rdoc" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="Ruby Documentation"/>
     <!-- 
 	#########################################################
 	Video (Sehr Browserabhaengig) 

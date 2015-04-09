@@ -84,6 +84,7 @@ function errorImage (el) {
 function ChangeSelection(name, val, state) {
 	var list = document.getElementsByTagName("table");
 	for (var i = 0; i < list.length; i++) {
+		if (list[i].hasAttribute("scn")==true){
 		if (list[i].getAttribute(name)==val) {
 			if (state=='false'){
 				list[i].style.display='none';
@@ -91,8 +92,8 @@ function ChangeSelection(name, val, state) {
 				list[i].style.display='Block';
 			};
 		};
+		};
 	};
-	LoadDebug($('#debug'),$('#Meldungen'));
 }
 
 function loadPageData (daten) {
@@ -245,7 +246,8 @@ function loadPageData (daten) {
 								+ "</TD>"; break;
 			case "Text"		: output+="<TD>"
 								+ "<a href='#' Frame='js/IFrameLoader/epiceditor/showmd.html' Content='" + data.Messages[i].Cont_Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (EpicEditor)</H2></a><BR>" 
-								+ "<a href='#' onClick='ShowTextLocal(this)' class='Text' id='" + data.Messages[i]._id + "' src='" + data.Messages[i].Cont_Link + "'><H2>Inhalt anzeigen (CodeMirror)</H2><BR>"
+								+ "<a href='#' Frame='js/IFrameLoader/CodeMirror/showText.html' Content='" + data.Messages[i].Cont_Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (CodeMirror)</H2></a><BR>" 
+								//+ "<a href='#' onClick='ShowTextLocal(this)' class='Text' id='" + data.Messages[i]._id + "' src='" + data.Messages[i].Cont_Link + "'><H2>Inhalt anzeigen (CodeMirror)</H2><BR>"
 								+ "<a href='#' Frame='" + data.Messages[i].Cont_Link + "' Content='' Thumb='' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (HTML-View)</H2></a>" 
 								+ "</TD>";  break;
 			case "Exec"		: output+="<TD>"
@@ -343,5 +345,4 @@ function loadPageData (daten) {
 		ChangeSelection ('scp',params.deselected,'false');
 		ChangeSelection ('scp',params.selected,'true');
     });
-
 }

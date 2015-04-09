@@ -309,8 +309,10 @@ Module Module1
                 Case "api\query\save"
                     Dim Doc As New BsonDocument("Save", RawData.ReqContent("Data"))
                     Dim Res As WriteConcernResult = MRK.Insert(Of BsonDocument)(Doc)
-                    Cont = "{""sid""" & ":" & """" & Doc("_id").ToString & """}"
-                    LogStatus(".WEB: " & Cont)
+                    resDB = CLS.DBS.MongoDB.QueryText(DIR, {RawData.ReqContent("Data")}, 100000, PaID, "Cont_Link", RawData, "Cont_Name")
+                    ' Cont = "{""sid""" & ":" & """" & Doc("_id").ToString & """}"
+                    Cont = resDB.ToJson
+                    ' LogStatus(".WEB: " & Cont)
 
                 Case "api\query\search"
                     Dim Doc As New BsonDocument("Query", RawData.ReqContent("Data"))

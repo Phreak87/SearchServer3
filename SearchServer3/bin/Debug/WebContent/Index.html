@@ -17,8 +17,8 @@
 				"js/JQuery/colorbox.css",
 				"js/JQuery/jquery-ui.css",
 				"js/JQuery/superfish.css",
-				"js/Chosen/chosen.jquery.min.js",
-				"js/Chosen/chosen.min.css",
+				"js/JQuery/Chosen/chosen.jquery.min.js",
+				"js/JQuery/Chosen/chosen.min.css",
 				"css/hover-min.css",
 				// "css/primer.css",
 				"js/SearchServer/D3Overview.js",
@@ -113,13 +113,34 @@
 	}
 	function Speichern(daten) {
 		$('#debug').html('Save: ' + daten);
+		$('#Ergebnisse'+sel).html(sel + ": Starte Suchanfrage ... <BR><img src='images/292.gif' width='40%'>");
 		$.ajax({
 			  type: "POST",
 			  url: "api/query/save",
-			  data: {Action: "Save", Data: daten }
+			  data: {Action: "Save", Data: daten, Sort:"Cont_Name" }
 			})
 		  .done(function( msg ) {
-		    loadPageData(msg);
+			$('#Ergebnisse'+sel).html(": Verarbeite Ergebnisse ... <BR><img src='images/292.gif' width='40%'>");
+			var data = CheckData(msg);
+			var UniqueContNames= $.unique(data.Messages.map(function (d) {return d.Cont_Name;}));
+			head.load ("js/jspdf/jspdf.min.js",
+			function () {
+				var doc = new jsPDF();
+				var pos = 30;
+				doc.setFontSize(13);
+				doc.text(10, 10, 'Generiert von SearchServer3. https://github.com/Phreak87/SearchServer3');
+				doc.text(10, 15, 'Software entwickelt und gepflegt von Markus Eckl (Phreak87)');
+				doc.text(10, 20, "Ausgabe enthält " + UniqueContNames.length + " von max. 100.000 Datensätzen.");
+				doc.setFontSize(10);
+				for (var i in UniqueContNames){
+					if (pos==280) {doc.addPage();pos=20;};
+					doc.text(10, pos, i + " : " +  UniqueContNames[i]);
+					pos+=5;
+				}
+				//doc.save(daten +'.pdf');
+				doc.output('datauri');
+			})
+		    //loadPageData(msg);
 		  });
 	}
 	
@@ -177,39 +198,6 @@
 		};
 	}
 	
-	function Filetypes(Name){
-		if (typeof Name == 'undefined') {return ''};
-		/* Ebenfalls in der WEBS.xml als Dateityp hinterlegen */
-		var PFix = Name.substr(Name.lastIndexOf(".")).toLowerCase();
-		switch (PFix){
-			case ".html"	: return "htmlmixed";
-			case ".htm" 	: return "htmlmixed";
-			case ".py" 		: return "Python";
-			case ".xml"		: return "xml";
-			case ".json" 	: return "json";
-			case ".css" 	: return "css";
-			case ".js" 		: return "javascript";
-			case ".lua" 	: return "lua";
-			case ".dtd" 	: return "dtd";
-			case ".php" 	: return "php";
-			case ".pl" 		: return "perl";
-			case ".h" 		: return "clike";
-			case ".sh" 		: return "shell";
-			case ".sql" 	: return "sql";
-			case ".vb" 		: return "vb";
-			case ".vbs" 	: return "vbscript";
-			case ".vba" 	: return "vbscript";
-			case ".yaml" 	: return "yaml";
-			case ".log" 	: return "scheme";
-			case ".ini" 	: return "scheme";
-			case ".inf" 	: return "scheme";
-			case ".au3" 	: return "scheme";
-			case ".bat" 	: return "scheme";
-			case ".txt" 	: return "scheme";
-			default			: return "scheme";
-		};
-	}
-    
     function UrlToClipBoard(el){
         var newUrlStr = el.getAttribute("src").replace("http://localhost:9090/","");
 		prompt('In die Zwischenablage kopieren', newUrlStr);
@@ -320,8 +308,9 @@
 			</TR>
 			<TR>
 				<TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/Soundmanager2/index.html#http://localhost:9090/js/Soundmanager2/Test.mp3">(MP3) SoundMan2 Testpage</a><BR></TD>
-				<TD><a class='hvr-back-pulse' href="http://localhost:9090/js/gridster/gridster.html">Gridster</a><BR></TD>
+				<TD><a class='hvr-back-pulse' href="http://localhost:9090/js/JQuery/gridster/gridster.html">Gridster</a><BR></TD>
 			</TR>
+			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/CodeMirror/ShowText.html#http://localhost:9090/js/IFrameLoader/CodeMirror/Test.md"> CodeMirror Testpage</a><BR></TD></TR>
 			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/ViewerJS/index.html#http://localhost:9090/js/IFrameLoader/ViewerJS/Test.pdf"> (PDF) ViewerJS Testpage</a><BR></TD></TR>
 			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/ThreeJS/index.html#http://localhost:9090/js/IFrameLoader/ThreeJS/Test.stl"> (STL) ThreeJS Testpage</a><BR></TD></TR>
 			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/GCode/index.html#http://localhost:9090/js/IFrameLoader/GCode/Examples/Test.gcode"> (GCode) GCode Testpage</a><BR></TD></TR>

@@ -633,4 +633,11 @@
   <Clean Collection="DIR" Field="Cont_Post" Value=".xml_copy_2" Description="" />
   <Clean Collection="DIR" Field="Cont_Post" Value=".cac" Description="" />
   <Clean Collection="DIR" Field="Cont_Post" Value=".riverstone" Description="" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".asd" Description="Ableton Audio Clip" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".psess" Description="Visual Basic relevant" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".vsmdi" Description="Visual Basic relevant" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".in_" Description="" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".menu" Description="" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".sxd" Description="" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".strm" Description="Webcam Stream" />
 </WebSearch>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <script src="Head.js"></script>
+		<script type="text/javascript">
+		
+		function Filetypes(Name){
+			if (typeof Name == 'undefined') {return ''};
+			var PFix = Name.substr(Name.lastIndexOf(".")).toLowerCase();
+			switch (PFix){
+				case ".html"	: return "htmlmixed";
+				case ".htm" 	: return "htmlmixed";
+				case ".markdown": return "markdown";
+				case ".md" 		: return "markdown";
+				case ".mdn" 	: return "markdown";
+				case ".py" 		: return "Python";
+				case ".xml"		: return "xml";
+				case ".json" 	: return "json";
+				case ".css" 	: return "css";
+				case ".js" 		: return "javascript";
+				case ".lua" 	: return "lua";
+				case ".dtd" 	: return "dtd";
+				case ".php" 	: return "php";
+				case ".pl" 		: return "perl";
+				case ".h" 		: return "clike";
+				case ".sh" 		: return "shell";
+				case ".sql" 	: return "sql";
+				case ".vb" 		: return "vb";
+				case ".vbs" 	: return "vbscript";
+				case ".vba" 	: return "vbscript";
+				case ".yaml" 	: return "yaml";
+				case ".log" 	: return "scheme";
+				case ".ini" 	: return "scheme";
+				case ".inf" 	: return "scheme";
+				case ".au3" 	: return "scheme";
+				case ".bat" 	: return "scheme";
+				case ".txt" 	: return "scheme";
+				default			: return "scheme";
+			};
+		}
+		
+		head.load(	"jquery.min.js",
+					"lib/codemirror.js",
+					"lib/codemirror.css",
+					"addon/selection/active-line.js",
+					"addon/edit/matchbrackets.js",
+					"addon/search/search.js",
+					"addon/fold/foldcode.js",
+					"addon/fold/markdown-fold.js",
+					"addon/fold/comment-fold.js",
+					"addon/fold/brace-fold.js",
+					"addon/fold/xml-fold.js",
+					"addon/fold/indent-fold.js",
+					"addon/display/rulers.js",
+					"addon/mode/loadmode.js",
+					"addon/edit/matchtags.js",
+					"addon/edit/matchbrackets.js",
+					"theme/elegant.css",
+					function (){
+						var str = window.location.hash.substr(1);
+						var res = str.split("#");
+						var doc = document.createElement('code');
+						doc.setAttribute("width", "500px;");
+						$('#Content').append(doc);
+							$.get(res[0], function( data ) {
+									var cm = CodeMirror(doc, {
+										value: data,
+										theme: "elegant",
+										smartIndent: "true",
+										styleActiveLine: "true",
+										matchBrackets: "true",
+										closeBrackets: "true",
+										lineNumbers: "true"
+									});
+									cm.setSize ('100%','100%');
+									CodeMirror.modeURL = "mode/%N/%N.js";
+									cm.setOption("mode", Filetypes(res[0]));
+									CodeMirror.autoLoadMode(cm, Filetypes(res[0]));
+								})
+							
+					}
+					);
+		</script>
+    </head>
+    <body>	
+		<Div id="Content"></Div>
+    </body>
+</html>

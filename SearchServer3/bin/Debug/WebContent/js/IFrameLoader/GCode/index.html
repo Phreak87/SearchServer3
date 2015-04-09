@@ -2,25 +2,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 
-    <link rel="stylesheet" type="text/css" href="css/cupertino/jquery-ui-1.9.0.custom.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="lib/codemirror.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="lib/codemirror.min.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="lib/style.css" media="screen" />
-    <script type="text/javascript" src="lib/jquery-1.8.2.js"></script>
-    <script type="text/javascript" src="lib/jquery-ui-1.9.0.custom.js"></script>
+    <script type="text/javascript" src="lib/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="lib/jquery-ui-1.9.0.custom.min.js"></script>
 
-    <script type="text/javascript" src="lib/codemirror.js"></script>
-    <script type="text/javascript" src="lib/mode_gcode/gcode_mode.js"></script>
-    <script type="text/javascript" src="lib/three.js"></script>
-    <script type="text/javascript" src="lib/bootstrap.js"></script>
-    <script type="text/javascript" src="lib/modernizr.custom.09684.js"></script>
-    <script type="text/javascript" src="lib/TrackballControls.js"></script>
+    <script type="text/javascript" src="lib/codemirror.min.js"></script>
+    <script type="text/javascript" src="lib/mode_gcode/gcode_mode.min.js"></script>
+    <script type="text/javascript" src="lib/three.min.js"></script>
+    <script type="text/javascript" src="lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="lib/modernizr.custom.09684.min.js"></script>
+    <script type="text/javascript" src="lib/TrackballControls.min.js"></script>
     <script type="text/javascript" src="lib/zlib.min.js"></script>
-    <script type="text/javascript" src="js/ui.js"></script>
-    <script type="text/javascript" src="js/gCodeReader.js"></script>
-    <script type="text/javascript" src="js/renderer.js"></script>
-    <script type="text/javascript" src="js/analyzer.js"></script>
-    <script type="text/javascript" src="js/renderer3d.js"></script>
+    <script type="text/javascript" src="js/ui.min.js"></script>
+    <script type="text/javascript" src="js/gCodeReader.min.js"></script>
+    <script type="text/javascript" src="js/renderer.min.js"></script>
+    <script type="text/javascript" src="js/analyzer.min.js"></script>
+    <script type="text/javascript" src="js/renderer3d.min.js"></script>
 
 </head>
 <body>
@@ -30,6 +29,7 @@
 		<li class=""><a href="#tab2d" data-toggle="tab">2D</a></li>
 		<li class=""><a href="#tab3d" data-toggle="tab">3D</a></li>
 		<li class=""><a href="#tabGCode" data-toggle="tab">GCode</a></li>
+		<li class=""><a href="#tabPrint" data-toggle="tab">GInfo</a></li>
 	</ul>
 	<div class="tab-content">
 		<div class="tab-pane" id="tab2d">
@@ -40,6 +40,9 @@
 		</div>
 		<div class="tab-pane" id="tabGCode">
 			<div id="gCodeContainer"></div>
+		</div>
+		<div class="tab-pane" id="tabPrint">
+			<div id="GInfo"></div>
 		</div>
 	</div>
 </div>

@@ -180,7 +180,8 @@ Namespace CLS
                                       ByVal MaxResults As Integer,
                                       ByVal StartAt As Integer,
                                       Field As String, _
-                                      Raw As WBS.Server.MessageDecoder) _
+                                      Raw As WBS.Server.MessageDecoder,
+                                      Optional Order As String = "") _
                                       As DBResult
 
                 If IsNothing(DB) Then Return Nothing
@@ -190,7 +191,7 @@ Namespace CLS
                     Dim Q As IMongoQuery = Query.Matches(Field, "/" & Eintrag & "/i") : QL.Add(Q)
                 Next
                 Dim Q2 As IMongoQuery = Query.And(QL)
-                Dim Skip As Integer = StartAt * MaxResults
+                Dim Skip As Integer = StartAt * MaxResults : If Skip < 0 Then Skip = 0
 
                 Dim _DBTimeGes As Integer = 0 '     Gesamter Abfragezeitraum
                 Dim _DBTimeQry As Integer = 0 '     Abfragezeitraum bis MaxEntry
@@ -199,7 +200,7 @@ Namespace CLS
 
                 Dim StopGes As New System.Diagnostics.Stopwatch : StopGes.Start()
 
-                Dim R As MongoCursor(Of DOC) = DB.FindAs(Of DOC)(Q2).SetLimit(MaxResults).SetSkip(Skip)
+                Dim R As MongoCursor(Of DOC) = DB.FindAs(Of DOC)(Q2).SetLimit(MaxResults).SetSkip(Skip).SetSortOrder(SortBy.Descending("Cont_Name"))
                 _DBTimeQry = StopGes.Elapsed.TotalSeconds.ToString : StopGes.Restart()
 
                 Dim CGes As Integer = DB.Count(Q2)
