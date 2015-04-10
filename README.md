@@ -2,7 +2,7 @@ SearchServer3
 ========================
 
 - [Youtube](https://www.youtube.com/watch?v=UxszMNgMbU8)
-- [Trello](https://trello.com/b/X5uqf2vR/searchserver3]
+- [Trello](https://trello.com/b/X5uqf2vR/searchserver3)
 
 - [Backend](#ui-frameworks)
 - [Frontend](#charts)
