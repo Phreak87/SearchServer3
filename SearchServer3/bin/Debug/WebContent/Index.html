@@ -19,6 +19,8 @@
 				"js/JQuery/superfish.css",
 				"js/JQuery/Chosen/chosen.jquery.min.js",
 				"js/JQuery/Chosen/chosen.min.css",
+				"js/JQuery/typeahead.jquery.min.js",
+				"js/JQuery/Bloodhound.min.js",
 				"css/hover-min.css",
 				// "css/primer.css",
 				"js/SearchServer/D3Overview.js",
@@ -33,6 +35,19 @@
 				"js/SearchServer/PreLoader.js",
 				"js/SearchServer/PostLoader.js",
 				function() {
+				
+					var Preload = new Bloodhound({
+					  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+					  queryTokenizer: Bloodhound.tokenizers.whitespace,
+					  prefetch: 'test.json',
+					  remote: 'test.json'
+					});Preload.initialize();
+					//$('#SText').typeahead(null, {
+					  //name: 'best-pictures',
+					  //displayKey: 'value',
+					  //source: Preload.ttAdapter()
+					//});
+					
 					$("#Search").button();
 					$("#Save").button();
 					$("#HideDebug").button();
@@ -42,15 +57,17 @@
 					$('.menu').superfish();
 					$(".group1").colorbox({rel:'group1'});
 					
+					// Uncomment next line if reload is needed
+					//Reload();
+					
 					LoadOverview(); 								// D3 Uebersicht
 					LoadSearch($('#debug'),$('#Suche'));			
 					LoadDebug($('#debug'),$('#Meldungen'));			// Aktuelle Debugs
 					LoadMerker($('#debug'),$('#Merker'));			// Gespeicherte Suchanfragen
-					//Reload();
 					LoadCreators($('#debug'),$('#Ersteller'));		// Neue Eintraege hinzufügen
-					LoadBookmarks($('#debug'),$('#Bookmarks'));				// Gespeicherte Default-URLs
+					LoadBookmarks($('#debug'),$('#Bookmarks'));		// Gespeicherte Default-URLs
 					LoadWebPages($('#debug'),$('#Externe'));		// Suchmaschinen (Seite)
-					
+
 				});
 </script>
 
@@ -133,23 +150,23 @@
 			$('#Ergebnisse'+sel).html("Verarbeite Ergebnisse ... <BR><img src='images/292.gif' width='40%'>");
 			var data = CheckData(msg);
 			var UniqueContNames= $.unique(data.Messages.map(function (d) {return d.Cont_Name;}));
-			head.load (	"js/jspdf/jspdf.min.js",
-						"js/Excel/xlsx.js",
-						"js/Excel/Helper.js",
-						"js/Excel/jszip.js",
-						"js/Excel/FileSaver.js",
-			function () {
-			
-				var Nachricht = document.createElement("Div");
-				$(Nachricht).html("<img Height='35px' src='Images/Filetypes/Accept.png'></img><BR>"
-							+ "Die angeforderten Daten wurden vom Server erfolgreich geladen.<BR>"
-							+ "In welchem Dateiformat möchten Sie die Daten nun exportieren?<BR>");
-							$(Nachricht).dialog({
-								title: "Export",
-								modal: true,
-								width: '550px',
-								buttons: {
-										Excel: function () {
+
+
+			var Nachricht = document.createElement("Div");
+			$(Nachricht).html("<img Height='35px' src='Images/Filetypes/Accept.png'></img><BR>"
+						+ "Die angeforderten Daten wurden vom Server erfolgreich geladen.<BR>"
+						+ "In welchem Dateiformat möchten Sie die Daten nun exportieren?<BR>");
+						$(Nachricht).dialog({
+							title: "Export",
+							modal: true,
+							width: '550px',
+							buttons: {
+									Excel_XLSX: function () {
+										head.load (	"js/export/NewExcel/xlsx.js",
+													"js/export/NewExcel/Helper.js",
+													"js/export/NewExcel/jszip.js",
+													"js/export/NewExcel/FileSaver.js",
+										function () {
 											var wb = new Workbook()
 											var ws_name = "SheetJS";
 											var ws = sheet_from_array_of_arrays([UniqueContNames]);
@@ -159,19 +176,21 @@
 											saveAs(new Blob([s2ab(wbout)],{type:"application/octet-stream"}), "test.xlsx");
 											$( this ).dialog( "close" );
 											RemoveHeaderScripts();
-										},
-										CSV: function () {
-											var wb = new Workbook()
-											var ws_name = "SheetJS";
-											var ws = sheet_from_array_of_arrays([UniqueContNames]);
-											wb.SheetNames.push(ws_name);
-											wb.Sheets[ws_name] = ws;
-											var wbout = XLSX.write(wb, {bookType:'xlsx', bookSST:true, type: 'binary'});
-											saveAs(new Blob([s2ab(wbout)],{type:"application/octet-stream"}), "test.xlsx");
-											$( this ).dialog( "close" );	
-											RemoveHeaderScripts();									
-										},
-										PDF: function () {
+										})
+									},
+									CSV: function () {
+										head.load (	"js/export/NewExcel/FileSaver.js",
+													"js/export/CSV/csv.min.js",
+										function () {
+											var out = CSV.encode(data.Messages, { header: false })
+											saveAs(new Blob([out],{type:"text/utf8"}), "test.csv");
+											$( this ).dialog( "close" );
+											RemoveHeaderScripts();
+										})
+									},
+									PDF: function () {
+										head.load (	"js/export/pdf/jspdf.min.js",
+										function () {
 											var doc = new jsPDF();
 											var pos = 30;
 											doc.setFontSize(12);
@@ -186,19 +205,19 @@
 											}
 											doc.save(daten +'.pdf');
 											//doc.output('datauri');	
-											$( this ).dialog( "close" );	
-											RemoveHeaderScripts();										
-										},									
-										Schliessen: function() {
-											$('#Ergebnisse'+sel).html("Der Export der Daten wurde abgebrochen.");
-											$('#Ergebnisse'+sel).html("Überflüssige Scripts werden aus der Seite entfernt.");
 											$( this ).dialog( "close" );
 											RemoveHeaderScripts();
-										},
-									  },
-								close: function( event, ui ) {$(this.parentNode).html('');}
-							})
-			})
+										})
+									},									
+									Schliessen: function() {
+										$('#Ergebnisse'+sel).html("Der Export der Daten wurde abgebrochen.");
+										$('#Ergebnisse'+sel).html("Überflüssige Scripts werden aus der Seite entfernt.");
+										$( this ).dialog( "close" );
+										RemoveHeaderScripts();
+									},
+								  },
+							close: function( event, ui ) {$(this.parentNode).html('');}
+						})
 		    //loadPageData(msg);
 		  });
 	}
@@ -208,11 +227,18 @@
 		var Scripts = Header.getElementsByTagName('script');
 		 if(Scripts.length > 0){
 			for (var i in Scripts){
-				if (Scripts[i].src=="http://localhost:9090/js/jspdf/jspdf.min.js") {Header.removeChild(Scripts[i]);}
-				if (Scripts[i].src=="http://localhost:9090/js/Excel/xlsx.js") {Header.removeChild(Scripts[i]);}
-				if (Scripts[i].src=="http://localhost:9090/js/Excel/Helper.js") {Header.removeChild(Scripts[i]);}
-				if (Scripts[i].src=="http://localhost:9090/js/Excel/jszip.js") {Header.removeChild(Scripts[i]);}
-				if (Scripts[i].src=="http://localhost:9090/js/Excel/FileSaver.js") {Header.removeChild(Scripts[i]);}
+				if (Scripts[i].src=="http://localhost:9090/js/Export/pdf/jspdf.min.js") {Header.removeChild(Scripts[i]);}
+				if (Scripts[i].src=="http://localhost:9090/js/Export/CSV/csv.min.js") {Header.removeChild(Scripts[i]);}
+				
+				if (Scripts[i].src=="http://localhost:9090/js/Export/newExcel/xlsx.js") {Header.removeChild(Scripts[i]);}
+				if (Scripts[i].src=="http://localhost:9090/js/Export/newExcel/Helper.js") {Header.removeChild(Scripts[i]);}
+				if (Scripts[i].src=="http://localhost:9090/js/Export/newExcel/jszip.js") {Header.removeChild(Scripts[i]);}
+				if (Scripts[i].src=="http://localhost:9090/js/Export/newExcel/FileSaver.js") {Header.removeChild(Scripts[i]);}
+				
+				if (Scripts[i].src=="http://localhost:9090/js/Export/OldExcel/xls.js") {Header.removeChild(Scripts[i]);}
+				if (Scripts[i].src=="http://localhost:9090/js/Export/OldExcel/Helper.js") {Header.removeChild(Scripts[i]);}
+				if (Scripts[i].src=="http://localhost:9090/js/Export/OldExcel/jszip.js") {Header.removeChild(Scripts[i]);}
+				if (Scripts[i].src=="http://localhost:9090/js/Export/OldExcel/FileSaver.js") {Header.removeChild(Scripts[i]);}
 			}
 		 }
 		 LoadOverview();
@@ -335,7 +361,8 @@
 					+ "Third party copyrights are:<BR>" 
 					+ "Jquery," 
 					+ "MongoDB," 
-					+ "Icons by ...,")
+					+ "Icons by ...,"
+					+ "https://github.com/knrz/CSV.js")
 					$(MSG).dialog({
 						title: "Copyright!",
 						modal: true,
@@ -394,7 +421,10 @@
 			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/VideoJS/showmovExt.html#http://www.youtube.com/watch?v=xYemnKEKx0c">(Youtube) VideoJS Testpage</a><BR></TD></TR>
 			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/Projekktor/showmov.html#http://localhost:9090/js/IFrameLoader/Projekktor/Test.ogv#http://localhost:9090/js/IFrameLoader/Projekktor/Test.jpg">(OGV) Projekktor Testpage</a><BR></TD></TR>
 			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/Projekktor/showmovExt.html#https://www.youtube.com/watch?v=_bWLqJG8G3M">(Youtube) Projekktor Testpage</a><BR></TD></TR>
+			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/Sheetjs/index.html#http://localhost:9090/js/IFrameLoader/SheetJS/test.xlsx"> SheetJS </a><BR></TD></TR>
 			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/EpicEditor/index.html#http://localhost:9090/js/IFrameLoader/EpicEditor/Readme.md"> (Markdown) EpicEditor </a><BR></TD></TR>
+			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/jsoneditor/index.html#http://localhost:9090/js/IFrameLoader/jsoneditor/package.json"> JsonEditor </a><BR></TD></TR>
+			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/jsoneditor/indexXML.html#http://localhost:9090/js/IFrameLoader/jsoneditor/package.xml"> JsonEditor mit XML konvertierung </a><BR></TD></TR>
 			<TR></TR>
 		</Table>
 	</div></div>
@@ -415,14 +445,15 @@
 			<div id="Copyright">	<a href="#" onClick="Copyright();">		Copyright Information</a></div>
 			<div id="Shutdown">		<a href="#" onClick="Shutdown();">		Shutdown			 </a></div>
 		</div>
-		
+	
 		<input 			type=			"text" 		
 						id=				"SText" 	
-						style=			"height:30px;Width:85%"	
+						style=			"height:30px;Width:84%;margin-top:0px;padding-top:0px;"	
 						onkeydown=		"if (event.keyCode == 13){$('#Search').click();LoadSearch($('#debug'),$('#Suche'));}"></input> 
-						
+		
+		
 		<a href="#" 	id=				'Search' 
-						style=			'height:30px;Width:6%' 	
+						style=			'height:30px;Width:7%' 	
 						class=			'hvr-underline-from-left'
 						onclick=		"Suchen($('#SText').val());"
 										 >Suchen</a>
@@ -431,7 +462,7 @@
 						style=			'height:30px;Width:7%'   	
 						class=			'hvr-underline-from-left'
 						onclick=		"Speichern($('#SText').val());"
-										>Speichern</a>		
+										>Speichern</a>	
 	</div>
 	
 	<!-- Linkes informationsmenue mit Abfragen, gespeichertem und sonstigen Infors -->

@@ -10,6 +10,8 @@ Windows Allgemein	Win + L  Computer sperren
 Windows Allgemein	Win + P  Bildschirme konfigurieren 
 Windows Allgemein	Alt + F4  Fenster schließen 
 Windows Allgemein	Alt + Tab  Zum nächsten Fenster wechseln 
+Windows Allgemein	Tab zum nächsten Steuerelemet wechseln
+Windows Allgemein	Umschalt + Tab zum vorherigen Steuerelement wechseln
 Windows Allgemein	Alt + Umschalt +Tab   Zum vorherigen Fenster wechseln 
 Windows Allgemein	Win + Tab  Zum nächsten Fenster im Aero-Flip wechseln 
 Windows Allgemein	Win + Umschalt +Tab   Zum vorherigen Fenster im Aero-Flip wechseln 
@@ -40,8 +42,17 @@ Windows Allgemein	Win + R  Dialogfenster „Ausführen“
 Windows Allgemein	Strg + Alt + Entf           Sperrmenü öffnen 
 Windows Allgemein	Strg +Umschalt +Esc  Task-Manager öffnen 
 Windows Allgemein	Umschalt + Klick auf Taskliste-Programm Öffnet eine weitere Instanz des angeklickten Programms 
-Excel				Strg + Bild ?  Zum vorherigen Arbeitsblatt 
-Excel				Strg + Bild ?  Zum nachfolgenden Arbeitsblatt  
+Windows Allgemein	Druck			Bildschirminhalt kopieren
+Windows Allgemein	Alt + Druck		Aktuelles Fenster kopieren
+
+Windows Explorer	Backspace		eine Ordnerebene höher
+Windows Explorer	Alt -> D -> N 	einen neuen Ordner erstellen
+Windows Explorer	F2 				Datei umbenennen
+Windows Explorer	Del				Datei / Ordner löschen
+Windows Explorer	Shift + Del		Datei / Ordner unwiderruflich löschen
+
+Excel				Strg + Bild Pfeil nach oben  Zum vorherigen Arbeitsblatt 
+Excel				Strg + Bild Pfeil nach unten  Zum nachfolgenden Arbeitsblatt  
 Excel				Strg + Leertaste           Spalte markieren 
 Excel				Umschalt+Leertaste   Zeile markieren 
 Excel				Alt + ;  Nur sichtbare Zellen markieren 
@@ -54,6 +65,7 @@ Excel				Strg +Umschalt+ 3      Datumsformat (Strg + §)
 Excel				Strg +Umschalt+ 4      Währungsformat (Strg + $) 
 Excel				Strg +Umschalt+ 5      Prozente (Strg + %) 
 Excel				Strg +Umschalt+ 6      Standardformat (Strg + &) 
+Excel				STRG +Umschalt+ 9 		Zeile einblenden
 Excel				Strg + .  Aktuelles Datum einfügen 
 Excel				Strg + Alt + V  Inhalte einfügen 
 Excel				Alt + Enter  Zeilenumbruch in einer Zelle 
@@ -120,3 +132,6 @@ Word				Umschalt + Enter        Zeilenumbruch erzwingen
 Office				Strg + Umschalt + F Fett
 Office				Strg + Umschalt + K Kursiv
 Office				Strg + Umschalt + U Unterstrichen
+Outlook				Strg + D aktuell geöffnete Mail löschen
+Outlook				Strg + N Neue E-Mail verfassen
+Outlook 			Alt + S E-Mail senden

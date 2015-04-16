@@ -63,13 +63,16 @@ Namespace CLS
                 If Eval.MathResult(_SQuery) <> "" Then
                     _Results.Insert(0, New DOC("Math", "Math", "Math", "Evaluation: " & _SQuery, "", Eval.MathResult(_SQuery), ".", Now))
                 End If
-                For Each Eintrag In _Results
-                    i = i + 1
-                    If Eintrag.Class_Type = "DIR" Then Eintrag.Cont_Link = _Raw.ReqReferrer & Eintrag.Cont_Link
-                    Eintrag.Cont_Thumb = _Raw.ReqReferrer & Eintrag.Cont_Thumb
-                    D.WriteRaw(Newtonsoft.Json.JsonConvert.SerializeObject(Eintrag))
-                    If i < _Results.Count Then D.WriteRaw(",")
-                Next
+
+                If Not IsNothing(_Results) Then
+                    For Each Eintrag In _Results
+                        i = i + 1
+                        If Eintrag.Class_Type = "DIR" Then Eintrag.Cont_Link = _Raw.ReqReferrer & Eintrag.Cont_Link
+                        Eintrag.Cont_Thumb = _Raw.ReqReferrer & Eintrag.Cont_Thumb
+                        D.WriteRaw(Newtonsoft.Json.JsonConvert.SerializeObject(Eintrag))
+                        If i < _Results.Count Then D.WriteRaw(",")
+                    Next
+                End If
                 D.WriteEndArray()
                 D.WriteEndObject()
                 Return SB.ToString
@@ -77,6 +80,7 @@ Namespace CLS
 
             Public Property GetCollection
                 Get
+                    If IsNothing(_Results) Then Return New List(Of DOC)
                     Return _Results
                 End Get
                 Set(ByVal value)
@@ -97,7 +101,7 @@ Namespace CLS
                     Dim PStart As New ProcessStartInfo
                     PStart.WindowStyle = ProcessWindowStyle.Hidden
                     PStart.FileName = AppPath & MongoD
-                    PStart.Arguments = "--dbpath data\db --nojournal --quiet --rest --jsonp " & IIf(WiredTiger = True, "--storageEngine wiredTiger", "") '  --rest --jsonp
+                    PStart.Arguments = "--dbpath data\db --nojournal --quiet " & IIf(WiredTiger = True, "--storageEngine wiredTiger", "") '  --rest --jsonp
                     PStart.WorkingDirectory = AppPath
                     Dim PRC As Process = Process.Start(PStart)
                     RaiseEvent Status(".DBS: ProcessID: " & PRC.Id)
@@ -175,20 +179,33 @@ Namespace CLS
                 Return CLS.WBS.JSONEncoder.JSONArray("Messages", D)
             End Function
 
+            Shared Function MaskQuery(ByVal Text As String) As String
+                Text = Text.Replace("\", "\\")
+                Text = Text.Replace(".", "\.")
+                Text = Text.Replace("(", "\(")
+                Text = Text.Replace("[", "\[")
+                Text = Text.Replace(")", "\)")
+                Text = Text.Replace("]", "\]")
+                Return Text
+            End Function
+
             Shared Function QueryText(ByVal DB As MongoCollection,
                                       ByVal Search As String(),
                                       ByVal MaxResults As Integer,
                                       ByVal StartAt As Integer,
-                                      Field As String, _
-                                      Raw As WBS.Server.MessageDecoder,
-                                      Optional Order As String = "") _
+                                      ByVal Field As String, _
+                                      ByVal Raw As WBS.Server.MessageDecoder,
+                                      Optional ByVal Order As String = "_id") _
                                       As DBResult
 
                 If IsNothing(DB) Then Return Nothing
+                If Search(0) = "0" Then
+                    Return New DBResult
+                End If
 
                 Dim QL As New List(Of IMongoQuery)
                 For Each Eintrag In Split(Search(0), " ")
-                    Dim Q As IMongoQuery = Query.Matches(Field, "/" & Eintrag & "/i") : QL.Add(Q)
+                    Dim Q As IMongoQuery = Query.Matches(Field, "/" & MaskQuery(Eintrag) & "/i") : QL.Add(Q)
                 Next
                 Dim Q2 As IMongoQuery = Query.And(QL)
                 Dim Skip As Integer = StartAt * MaxResults : If Skip < 0 Then Skip = 0
@@ -200,7 +217,11 @@ Namespace CLS
 
                 Dim StopGes As New System.Diagnostics.Stopwatch : StopGes.Start()
 
-                Dim R As MongoCursor(Of DOC) = DB.FindAs(Of DOC)(Q2).SetLimit(MaxResults).SetSkip(Skip).SetSortOrder(SortBy.Descending("Cont_Name"))
+                Dim R As MongoCursor(Of DOC) = DB.FindAs(Of DOC)(Q2)
+                R.SetLimit(MaxResults)
+                R.SetSkip(Skip)
+                If Not IsNothing(Order) Then R.SetSortOrder(SortBy.Ascending(Order))
+
                 _DBTimeQry = StopGes.Elapsed.TotalSeconds.ToString : StopGes.Restart()
 
                 Dim CGes As Integer = DB.Count(Q2)

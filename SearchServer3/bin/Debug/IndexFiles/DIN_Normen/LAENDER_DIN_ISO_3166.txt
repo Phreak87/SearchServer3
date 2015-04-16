@@ -1,4 +1,4 @@
-AF	A	"AF" is the ISO 3166 country code for "Afghanistan."	http://www.iso.org/iso/list-en1-semic-3.txt
+﻿AF	A	"AF" is the ISO 3166 country code for "Afghanistan."	http://www.iso.org/iso/list-en1-semic-3.txt
 AX	A	"AX" is the ISO 3166 country code for "Aland Islands."	http://www.iso.org/iso/list-en1-semic-3.txt
 AL	A	"AL" is the ISO 3166 country code for "Albania."	http://www.iso.org/iso/list-en1-semic-3.txt
 DZ	A	"DZ" is the ISO 3166 country code for "Algeria."	http://www.iso.org/iso/list-en1-semic-3.txt

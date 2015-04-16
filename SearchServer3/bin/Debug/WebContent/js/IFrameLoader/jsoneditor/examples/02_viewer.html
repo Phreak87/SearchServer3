@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>JSONEditor | Viewer</title>
+
+  <link href="jsoneditor.css" rel="stylesheet" type="text/css">
+  <script src="jsoneditor.min.js"></script>
+
+
+  <style type="text/css">
+    body {
+      font: 11pt arial;
+    }
+    #jsoneditor {
+      width: 500px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="jsoneditor"></div>
+
+<script>
+  var container = document.getElementById('jsoneditor');
+  
+	var str = window.location.hash.substr(1);
+	var res = str.split("#");
+	
+	  var options = {
+	    mode: 'view'
+	  };
+	  
+xmlhttp.open("GET",res[0],false);
+xmlhttp.send();
+
+var json=xmlhttp.responseText;
+var editor = new JSONEditor(container, options, json);
+
+</script>
+</body>
+</html>

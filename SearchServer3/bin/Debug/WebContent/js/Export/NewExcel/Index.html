@@ -1,0 +1,47 @@
+<html>
+<head>
+		<script src="head.js"></script>
+        <script>
+			head.load (	"xlsx.js",
+						"jszip.js",
+						"Jquery.js",
+			function () {
+
+			var url = "test.xlsx";
+			var oReq = new XMLHttpRequest();
+			oReq.open("GET", url, true);
+			oReq.responseType = "arraybuffer";
+
+			oReq.onload = function(e) {
+			  var arraybuffer = oReq.response;
+			  var data = new Uint8Array(arraybuffer);
+			  var arr = new Array();
+			  for(var i = 0; i != data.length; ++i) arr[i] = String.fromCharCode(data[i]);
+			  var bstr = arr.join("");
+			  var workbook = XLSX.read(bstr, {type:"binary"});
+			  for (var i = 0; i < workbook.SheetNames.length;i++){
+				var Shit = document.createElement("Div");
+				Shit.setAttribute("Width", "800");
+				Shit.setAttribute("Height", "450");
+				Shit.innerHTML=(workbook.SheetNames[i]);
+				document.body.appendChild(Shit);
+			  }
+
+			  var first_sheet_name = workbook.SheetNames[0];
+			  var worksheet = workbook.Sheets[first_sheet_name];
+			  for (var i = 1; i < 6 ; i++) {
+				var Shit = document.createElement("Div");
+				Shit.innerHTML=(worksheet['A' + i].v);
+				document.body.appendChild(Shit);
+			  }
+			  
+			}
+			oReq.send();
+
+			})
+		</Script>
+</head>
+<body>
+
+</body>
+</html>

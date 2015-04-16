@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>JSONEditor | Viewer</title>
+
+  <link href="dist/jsoneditor.css" rel="stylesheet" type="text/css">
+  <script src="dist/jsoneditor.js"></script>
+  <script src="jquery.js"></script>
+
+
+  <style type="text/css">
+    body {
+      font: 10.5pt arial;
+      color: #4d4d4d;
+      line-height: 100%;
+      width: 500px;
+    }
+
+    code {
+      background-color: #f5f5f5;
+    }
+
+    #jsoneditor {
+      width: 800px;
+      height: 400px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="jsoneditor"></div>
+
+<script>
+  var container = document.getElementById('jsoneditor');
+  
+	var str = window.location.hash.substr(1);
+	var res = str.split("#");
+	var el = document.getElementById("main");
+	
+  var options = {
+    mode: 'tree',
+    modes: ['code', 'form', 'text', 'tree', 'view'], // allowed modes
+    error: function (err) {
+      alert(err.toString());
+    }
+  };
+	  
+	xmlhttp=new XMLHttpRequest();	  
+	xmlhttp.open("GET",res[0],false);
+	xmlhttp.send();
+
+	var json=jQuery.parseJSON(xmlhttp.responseText);
+	var editor = new JSONEditor(container, options, json);
+
+</script>
+</body>
+</html>

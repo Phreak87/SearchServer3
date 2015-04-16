@@ -4,7 +4,7 @@
 		<Operator Name="Dividiere"		Calc="/"				Aliasses="teile,Teile,div,Div,dividiere,Dividiere,durch,von,in,zu,/"/>
 		<Operator Name="Multipliziere"	Calc="*"				Aliasses="mal,mit,multipliziere,Multipliziere,*"/>
 		<Operator Name="Addiere"		Calc="+"				Aliasses="und,plus,Plus,+"/>
-		<Operator Name="Substrahiere"	Calc="-"				Aliasses="minus,Minus,-,min,Min"/>
+		<Operator Name="Substrahiere"	Calc="-"				Aliasses="minus,Minus,-,min,Min,sub,Sub,substract,Substract"/>
 	</Operators>
 	<Outputs>
 		<Output 	Name="Nummer"		Calc=""					Aliasses="zahl,Zahl"/>
@@ -24,8 +24,8 @@
 		<Unit Name="Wochen" 			Calc="[Tage]*7" 		Aliasses="week,Week,Woche,woche,Wochen,wochen"/>
 		<Unit Name="Monate" 			Calc="[Wochen]*4" 		Aliasses="Monat,Monate,monat,monate"/>
 		<Unit Name="Jahre" 				Calc="[Tage]*365"		Aliasses="yr,year,Year,Jahr,jahr,jahre,Jahre"/>
-		<Unit Name="Millisekunden" 		Calc="[Sekunden]/100"	Aliasses="Millisekunden,millisekunden,ms"/>
-		<Unit Name="Mikrosekunden"		Calc="[Millisekunden]/100" Aliasses="Mikrosekunden,mikrosekunden"/>
+		<Unit Name="Millisekunden" 		Calc="[Sekunden]/100"	Aliasses="Millisekunden,millisekunden,ms,Milliseconds,milliseconds"/>
+		<Unit Name="Mikrosekunden"		Calc="[Millisekunden]/100" Aliasses="Mikrosekunden,mikrosekunden,Microseconds,microseconds"/>
 		
 		<Unit Name="NowDate"			Calc="" 				Aliasses="heute,Heute,Today,today,Now,now"/>
 		<Unit Name="NowTime"			Calc="" 				Aliasses="jetzt,Jetzt,Zeit,zeit,time,Time"/>
@@ -52,9 +52,18 @@
 		<Unit Name="Dezember"			Calc="12" 				Aliasses="Dezember,dezember,dez,Dez"/>
 		
 		<!-- Farben -->
+		<Unit Name="Black"				Calc="" 				Aliasses="schwarz,Schwarz,Black,black"/>
+		<Unit Name="Brown"				Calc="" 				Aliasses="Braun,braun,brown,Brown"/>
+		<Unit Name="Grey"				Calc="" 				Aliasses="grau,Grau,Grey,grey"/>
+		<Unit Name="White"				Calc="" 				Aliasses="weiß,Weiß,weiss,Weiss,White,white"/>
 		<Unit Name="Blue"				Calc="" 				Aliasses="Blue,blue,Blau,blau"/>
+		<Unit Name="Orange"				Calc="" 				Aliasses="Orange,orange"/>
 		<Unit Name="Red"				Calc="" 				Aliasses="Red,red,Rot,rot"/>
 		<Unit Name="Green"				Calc="" 				Aliasses="green,Green,grün,Grün,gruen,Gruen"/>
+		<Unit Name="Violett"			Calc="" 				Aliasses="Violett,violett"/>
+		<Unit Name="Yellow"				Calc="" 				Aliasses="gelb,Gelb,yellow,Yellow"/>
+		<Unit Name="Pink"				Calc="" 				Aliasses="pink,Pink,Rosa,rosa"/>
+		<Unit Name="Purple"				Calc="" 				Aliasses="lila,Lila,Purple,purple"/>
 		
 		<!-- Längen -->
 		<Unit Name="Meter" 				Calc="" 				Aliasses="m,M,meter,Meter"/>

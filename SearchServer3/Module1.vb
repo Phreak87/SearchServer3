@@ -298,10 +298,10 @@ Module Module1
                 Case "api\query\qry" : Cont = CLS.DBS.MongoDB.QueryFull(QRY)
                 Case "api\query\idx" : Cont = CLS.DBS.MongoDB.QueryFull(IDX)
 
-                Case "api\query\dir" : resDB = CLS.DBS.MongoDB.QueryText(DIR, {SuTE}, 30, PaID, "Cont_Link", RawData) : Cont = resDB.ToJson
-                Case "api\query\fil" : resDB = CLS.DBS.MongoDB.QueryText(FIL, {SuTE}, 30, PaID, "Cont_Name", RawData) : Cont = resDB.ToJson
-                Case "api\query\rss" : resDB = CLS.DBS.MongoDB.QueryText(RSS, {SuTE}, 30, PaID, "Cont_Text", RawData) : Cont = resDB.ToJson
-                Case "api\query\web" : resDB = CLS.DBS.MongoDB.QueryText(TWEB, {"WEB"}, 100, PaID, "Class_Type", RawData) : Cont = resDB.ToJson
+                Case "api\query\dir" : resDB = CLS.DBS.MongoDB.QueryText(DIR, {SuTE}, 30, PaID, "Cont_Link", RawData, Nothing) : Cont = resDB.ToJson
+                Case "api\query\fil" : resDB = CLS.DBS.MongoDB.QueryText(FIL, {SuTE}, 30, PaID, "Cont_Name", RawData, Nothing) : Cont = resDB.ToJson
+                Case "api\query\rss" : resDB = CLS.DBS.MongoDB.QueryText(RSS, {SuTE}, 30, PaID, "Cont_Text", RawData, Nothing) : Cont = resDB.ToJson
+                Case "api\query\web" : resDB = CLS.DBS.MongoDB.QueryText(TWEB, {"WEB"}, 100, PaID, "Class_Type", RawData, Nothing) : Cont = resDB.ToJson
 
                     ' --------------------------------------------------------------------
                     ' Hier die Setter aus der Datenbank
@@ -366,6 +366,7 @@ Module Module1
                 Case "api\query\shutdown"
                     DBClose = True
                     Cont = "{""Shutdown""" & ":" & """True""""}"
+                    Console.WriteLine("Shutdown Signal empfangen.")
 
                 Case Else
                     MsgBox(RawData.ReqURLPath)

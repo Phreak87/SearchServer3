@@ -1,0 +1,81 @@
+<html>
+<head>
+		<script src="head.js"></script>
+        <script>
+			head.load (	"xlsx.js",
+						"jszip.js",
+						"Jquery.js",
+						"handsontable.full.min.css",
+						"handsontable.full.min.js",
+			function () {
+			var str = window.location.hash.substr(1);
+			var res = str.split("#");
+	
+			var url = res[0];
+			var oReq = new XMLHttpRequest();
+			oReq.open("GET", url, true);
+			oReq.responseType = "arraybuffer";
+
+			oReq.onload = function(e) {
+			  var arraybuffer = oReq.response;
+			  var data = new Uint8Array(arraybuffer);
+			  var arr = new Array();
+			  for(var i = 0; i != data.length; ++i) arr[i] = String.fromCharCode(data[i]);
+			  var bstr = arr.join("");
+			  var workbook = XLSX.read(bstr, {type:"binary"});
+			  for (var i = 0; i < workbook.SheetNames.length;i++){
+				var Shit = document.createElement("Div");
+				Shit.innerHTML=("Sheet: " + (i + 1) + " " + workbook.SheetNames[i]);
+				document.body.appendChild(Shit);
+			  }
+
+			var first_sheet_name = workbook.SheetNames[0];
+			var worksheet = workbook.Sheets[first_sheet_name];
+
+			var boldRenderer = function (instance, td, row, col, prop, value, cellProperties) {
+			  Handsontable.TextCell.renderer.apply(this, arguments);
+			  $(td).css({'font-weight': 'bold'});
+			};
+			
+			var cols = get_columns(worksheet,"xlsx");
+				
+			$("#hot").handsontable({
+			    data: XLSX.utils.sheet_to_json(worksheet),
+			    startRows: 5,
+			    startCols: 3,
+			    rowHeaders: true,
+			    columns: cols.map(function(x) { return {data:x}; }),
+			    colHeaders: cols.map(function(x,i) { return XLS.utils.encode_col(i); }),
+			    cells: function (r,c,p) {
+			      if(r === 0) this.renderer = boldRenderer;
+			    },
+			    width: 800,
+			    height: 600,
+			  });
+			  
+			  document.body.appendChild(tbl);
+			}
+			oReq.send();
+
+			})
+			
+			function get_columns(sheet, type) {
+				var val, rowObject, range, columnHeaders, emptyRow, C;
+				if(!sheet['!ref']) return [];
+				range = XLS.utils.decode_range(sheet["!ref"]);
+				columnHeaders = [];
+				for (C = range.s.c; C <= range.e.c; ++C) {
+					val = sheet[XLS.utils.encode_cell({c: C, r: range.s.r})];
+					if(!val) continue;
+					columnHeaders[C] = type.toLowerCase() == 'xls' ? XLS.utils.format_cell(val) : val.v;
+					//console.log(val, columnHeaders[C]);
+				}
+				return columnHeaders;
+			}
+	
+		</Script>
+</head>
+<body>
+	<div id="hot" style="overflow: scroll" class="handsontable"></div>
+</body>
+</html>

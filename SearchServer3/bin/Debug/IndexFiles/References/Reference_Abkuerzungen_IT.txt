@@ -1,100 +1,96 @@
-PACT Parallelization Contracts
-PAM Pluggable Authentication Module
-PCI Peripheral Component Interconnect
-PCI DSS Payment Card Industry Data Security Standards
-PDD Persönliche digitale Datenwirtschaft
-POS Part-of-Speech
-RAM Random Access Memory
-RDBMS Relational Database Management System
-REST Representational State Transfer
-ROLAP Relational OLAP
-SaaS Software as a Service
-SATA Serial Advanced Technology
-Attachment
-SCM Supply Chain Management
+PACT 	Parallelization Contracts
+PAM 	Pluggable Authentication Module
+PCI 	Peripheral Component Interconnect
+PCI 	DSS Payment Card Industry Data Security Standards
+PDD 	Persönliche digitale Datenwirtschaft
+POS 	Part-of-Speech
+RAM 	Random Access Memory
+RDBMS 	Relational Database Management System
+REST 	Representational State Transfer
+ROLAP 	Relational OLAP
+SaaS 	Software as a Service
+SATA 	Serial Advanced Technology Attachment
+SCM 	Supply Chain Management
 SELinux Security-Enhanced Linux
-SMP Symmetrisches Multiprozessorsystem
-SOX Sarbanes-Oxley
-SQL Structured Query Language
-SSD Solid State Disk
+SMP 	Symmetrisches Multiprozessorsystem
+SOX 	Sarbanes-Oxley
+SQL 	Structured Query Language
+SSD 	Solid State Disk
 SSL/TLS Secure Sockets Layer/Transport Layer Security
-SWIFT Society for Worldwide Interbank
-Financial Telecommunication
-TCO Total Cost of Ownership
-UDF User Defined Function
-UIMA Unstructured Information Management Architecture
-VA Visual Analytics
-VPN Virtual Private Network
-XML Extensible Markup Language
-YARN Yet Another Resource Negotiator
-ACL Access Control List
-ACORD Association for Cooperative
-Operations Research and Development
-ANSI American National Standards Institute
-API Application Programming Interface
-BI Business Intelligence
-BPM Business Process Management
-CAP Consistency – Availability – Partition Tolerance
-CEP Complex Event Processing
-CMS Content-Management-System
-CRAN Comprehensive R Archive Network
+SWIFT 	Society for Worldwide Interbank Financial Telecommunication
+TCO 	Total Cost of Ownership
+UDF 	User Defined Function
+UIMA 	Unstructured Information Management Architecture
+VA 		Visual Analytics
+VPN 	Virtual Private Network
+XML 	Extensible Markup Language
+YARN 	Yet Another Resource Negotiator
+ACL 	Access Control List
+ACORD 	Association for Cooperative Operations Research and Development
+ANSI 	American National Standards Institute
+API 	Application Programming Interface
+BI 		Business Intelligence
+BPM 	Business Process Management
+CAP 	Consistency – Availability – Partition Tolerance
+CEP 	Complex Event Processing
+CMS 	Content-Management-System
+CRAN 	Comprehensive R Archive Network
 CRISP-DM Cross-Industry Standard Process for Data Mining
-CRM Customer Relationship Management
-CTO Chief Technology Officer
-DASD Direct Access Storage Devices
-DBMS Database Management System
-DOLAP Desktop OLAP
-DSCP Distributed Stream Computing Platform
-DWH Data Warehouse
-EDA Explorative visuellen Datenanalyse
-EDW Enterprise Data Warehouse
-EIT Europäisches Institut für Innovation
-und Technologie
-ELT Extract – Load – Transform
-EPL Event Processing Language
-ERP Enterprise Resource Planning
-ESB Enterprise Service Bus
-ETL Extract – Transform – Load
-FISMA Federal Information Security Management
-Act
-FTP File Transfer Protocol
-GB Gigabyte
-GIS Geoinformationssystem
-GLBA Gramm-Leach-Bliley Act
-GNU GNU’s Not Unix
-GPFS General Parallel File System
-GPFS General Parallel File System
-GPS Global Positioning System
-GUI Graphical User Interface
-HANA High Performance Analytic Appliance
-HCM Human Capital Management
-HDSF Hadoop Distributed File System
-HFAT Hochfrequentes algorithmisches Trading
-HIPAA Health Insurance Portability and Accountability Act
-HL7 Health Level 7
-HOLAP Hybrid OLAP
-HTTP Hypertext Transfer Protocol
-IE Informationsextraktion
-IEC International Electrotechnical Commission
-IMDG In-Memory Data Grid
-IO Input-Output
-IoT Internet of Things
-ISO International Organization for Standardization
-JDBC Java Database Connectivity
-JSON JavaScript Object Notation
-LDAP Lightweight Directory Access Protocol
-M2M Machine-to-Machine
-MB Megabyte
-MDM Master Data Management
-MDX Multidimensional Expressions
-MOLAP Multidimensionales OLAP
-MPP Massively Parallel Processing
-MTBF Mean Time Between Failures
-NAS Network-Attached Storage
-NFS Network File System (auch Network File Service)
-NTSB National Transportation Safety Board
-OCR Optical Character Recognition
-ODBC Open Database Connectivity
-OLAP Online Analytical Processing
-OLTP Online Transaction Processing
-OTC Over-the-Counter
+CRM 	Customer Relationship Management
+CTO 	Chief Technology Officer
+DASD 	Direct Access Storage Devices
+DBMS 	Database Management System
+DOLAP 	Desktop OLAP
+DSCP 	Distributed Stream Computing Platform
+DWH 	Data Warehouse
+EDA 	Explorative visuellen Datenanalyse
+EDW 	Enterprise Data Warehouse
+EIT 	Europäisches Institut für Innovation und Technologie
+ELT 	Extract – Load – Transform
+EPL 	Event Processing Language
+ERP 	Enterprise Resource Planning
+ESB 	Enterprise Service Bus
+ETL 	Extract – Transform – Load
+FISMA 	Federal Information Security Management Act
+FTP 	File Transfer Protocol
+GB 		Gigabyte
+GIS 	Geoinformationssystem
+GLBA 	Gramm-Leach-Bliley Act
+GNU 	GNU’s Not Unix
+GPl		General Public License
+GPFS 	General Parallel File System
+GPFS 	General Parallel File System
+GPS 	Global Positioning System
+GUI 	Graphical User Interface
+HANA 	High Performance Analytic Appliance
+HCM 	Human Capital Management
+HDSF 	Hadoop Distributed File System
+HFAT 	Hochfrequentes algorithmisches Trading
+HIPAA 	Health Insurance Portability and Accountability Act
+HL7 	Health Level 7
+HOLAP 	Hybrid OLAP
+HTTP 	Hypertext Transfer Protocol
+IE 		Informationsextraktion
+IEC 	International Electrotechnical Commission
+IMDG 	In-Memory Data Grid
+IO 		Input-Output
+IoT 	Internet of Things
+ISO 	International Organization for Standardization
+JDBC 	Java Database Connectivity
+JSON 	JavaScript Object Notation
+LDAP 	Lightweight Directory Access Protocol
+M2M 	Machine-to-Machine
+MB 		Megabyte
+MDM 	Master Data Management
+MDX 	Multidimensional Expressions
+MOLAP 	Multidimensionales OLAP
+MPP 	Massively Parallel Processing
+MTBF 	Mean Time Between Failures
+NAS 	Network-Attached Storage
+NFS 	Network File System (auch Network File Service)
+NTSB 	National Transportation Safety Board
+OCR 	Optical Character Recognition
+ODBC 	Open Database Connectivity
+OLAP 	Online Analytical Processing
+OLTP 	Online Transaction Processing
+OTC 	Over-the-Counter

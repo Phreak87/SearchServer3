@@ -173,15 +173,19 @@ Namespace CLS
 
                     SendHeader(False)
 
-                    Dim NS As NetworkStream = New NetworkStream(_Socket)
-                    Dim SW As MemoryStream = New MemoryStream(System.Text.Encoding.UTF8.GetBytes(_Transfer))
                     Try
-                        SW.CopyTo(NS) : SW.Flush() : SW.Close()
-                    Catch ex As Exception
-                        NS.Close()
-                        SW.Close()
-                        sended(_Socket)
+                        Dim NS As NetworkStream = New NetworkStream(_Socket)
+                        Dim SW As MemoryStream = New MemoryStream(System.Text.Encoding.UTF8.GetBytes(_Transfer))
+                        Try
+                            SW.CopyTo(NS) : SW.Flush() : SW.Close()
+                        Catch ex As Exception
+                            NS.Close()
+                            SW.Close()
+                            sended(_Socket)
+                        End Try
+                    Catch
                     End Try
+
 
                 End Sub
 

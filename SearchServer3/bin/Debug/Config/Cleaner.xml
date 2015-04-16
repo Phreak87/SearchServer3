@@ -303,7 +303,7 @@
   <Clean Collection="DIR" Field="Cont_Post" Value=".59" Description="" />
   <Clean Collection="DIR" Field="Cont_Post" Value=".60" Description="" />
   <Clean Collection="DIR" Field="Cont_Post" Value=".ac" Description="" />
-  <Clean Collection="DIR" Field="Cont_Post" Value=".par" Description="" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".par" Description="Parasolid 3D" />
   <Clean Collection="DIR" Field="Cont_Post" Value=".old" Description="" />
   <Clean Collection="DIR" Field="Cont_Post" Value=".spi1d" Description="" />
   <Clean Collection="DIR" Field="Cont_Post" Value=".localstorage" Description="" />
@@ -413,13 +413,13 @@
   <Clean Collection="DIR" Field="Cont_Post" Value=".swf" Description="" />
   <Clean Collection="DIR" Field="Cont_Post" Value=".jnlp" Description="" />
   <Clean Collection="DIR" Field="Cont_Post" Value=".pem" Description="" />
-  <Clean Collection="DIR" Field="Cont_Post" Value=".wt" Description="" />
-  <Clean Collection="DIR" Field="Cont_Post" Value=".turtle" Description="" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".wt" Description="Wiredtiger Datenbank (MongoDB)" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".turtle" Description="Wiredtiger Datenbank (MongoDB)" />
   <Clean Collection="DIR" Field="Cont_Post" Value=".basecfg" Description="" />
   <Clean Collection="DIR" Field="Cont_Post" Value=".base" Description="" />
   <Clean Collection="DIR" Field="Cont_Post" Value=".ccd" Description="" />
   <Clean Collection="DIR" Field="Cont_Post" Value=".rb" Description="" />
-  <Clean Collection="DIR" Field="Cont_Post" Value=".pas" Description="" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".pas" Description="3D" />
   <Clean Collection="DIR" Field="Cont_Post" Value=".pom" Description="" />
   <Clean Collection="DIR" Field="Cont_Post" Value=".ilk" Description="" />
   <Clean Collection="DIR" Field="Cont_Post" Value=".packlist" Description="" />
@@ -640,4 +640,7 @@
   <Clean Collection="DIR" Field="Cont_Post" Value=".menu" Description="" />
   <Clean Collection="DIR" Field="Cont_Post" Value=".sxd" Description="" />
   <Clean Collection="DIR" Field="Cont_Post" Value=".strm" Description="Webcam Stream" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".ignore" Description="" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".hidden" Description="" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".empty" Description="" />
 </WebSearch>

@@ -1,384 +1,461 @@
-Programmname	Beschreibung	Typ	Hersteller	Gruppe Anwendungsfall	Dateitypen	Link
-						
-Wscript		Windows Scripting Host			System(Default)	Microsoft	Interpreter	vbs, vbe	
-Cscript		Windows Scripting Host Console	System(Default)	Microsoft	Interpreter	vbs, vbe	
-Mshta		Html Application				System(Default)	Microsoft	Interpreter	hta	
-cmd			Commandline						System(Default)	Microsoft	Interpreter	bat	
-Ping		Netzwerkerreichbarkeit			System(Default)	Microsoft	Netzwerk		
-Net			Netzwerktools					System(Default)	Microsoft	Netzwerk		
-Tracert		Netzwerkverfolgung				System(Default)	Microsoft	Netzwerk		
-Regedit	Systemregistrierung	System(Default)	Microsoft	Registrierung	reg	
-Arp	Adress Resolution Protokoll	System(Default)	Microsoft	Netzwerk		
-Attrib	Attribute	System(Default)	Microsoft	Dateisystem		
-Calcs	Dateirechte	System(Default)	Microsoft	Dateisystem		
-chkdsk	Festplattenüberprüfung	System(Default)	Microsoft	Dateisystem		
-Clip	Zwischenablage	System(Default)	Microsoft	Zwischenablage		
-Fsutil	Dateisystemaufgaben	System(Default)	Microsoft	Dateisystem		
-FTP	File Transfer	System(Default)	Microsoft	Netzwerk		
-gpUpdate	Group Policy Update	System(Default)	Microsoft	Gruppenrichtlinien		
-gpResult	Group Policy Results	System(Default)	Microsoft	Gruppenrichtlinien		
-gpScript	Group Policy Script	System(Default)	Microsoft	Gruppenrichtlinien		
-NetSh	Netzwerkshell	System(Default)	Microsoft	Netzwerk		
-NetStat	Netzwerkstatus	System(Default)	Microsoft	Netzwerk		
-PathPing		System(Default)	Microsoft	Netzwerk		
-RasDial	Anwahl über Modem	System(Default)	Microsoft	Netzwerk		
-Runas	Ausführen als Benutzer X	System(Default)	Microsoft	Rechte		
-Services	Dienste	System(Default)	Microsoft	Dienste		
-SFC	System File Checker	System(Default)	Microsoft	Dateisystem		
-Shutdown	Herunterfahren, Neustarten	System(Default)	Microsoft	System		
-Systeminfo	Systeminformationen	System(Default)	Microsoft	System		
-TakeOwn	Besizerrechte übernehmen	System(Default)	Microsoft	Dateisystem		
-Taskkill	Tasks beenden	System(Default)	Microsoft	Tasks		
-Tasklist	Tasks auflisten	System(Default)	Microsoft	Tasks		
-TaskEng	TaskPlanungsprogramm	System(Default)	Microsoft	Geplante Tasks		
-Xcopy	Dateien kopieren	System(Default)	Microsoft	Dateisystem		
-wmic	WMI Management Console	System(Default)	Microsoft	System		
-Dir	Verzeichnisinhalt	System(Default)	Microsoft	Dateisystem		
-Tree	Verzeichnisstuktur	System(Default)	Microsoft	Dateisystem		
-Set	Umgebungsvariablen	System(Default)	Microsoft	System		
-						
-Robocopy	Dateien kopieren	System(Additional)	Microsoft	Dateisystem		
-Xcacls	Dateirechte	System(Additional)	Microsoft	Dateisystem		
-Icalcs	Dateirechte	System(Additional)	Microsoft	Dateisystem		
-						
-AccessChk		System(Additional)	Sysinternals			
-AccessEnum		System(Additional)	Sysinternals			
-AdExplorer		System(Additional)	Sysinternals			
-AdInsight		System(Additional)	Sysinternals			
-AdRestore		System(Additional)	Sysinternals			
-Autologon		System(Additional)	Sysinternals			
-Autoruns		System(Additional)	Sysinternals			
-BgInfo		System(Additional)	Sysinternals			
-CacheSet		System(Additional)	Sysinternals			
-ClockRes		System(Additional)	Sysinternals			
-Contig		System(Additional)	Sysinternals			
-Coreinfo		System(Additional)	Sysinternals			
-Ctrl2Cap		System(Additional)	Sysinternals			
-DebugView		System(Additional)	Sysinternals			
-Desktops		System(Additional)	Sysinternals			
-Disk2vhd		System(Additional)	Sysinternals			
-DiskExt		System(Additional)	Sysinternals			
-DiskMon		System(Additional)	Sysinternals			
-DiskView		System(Additional)	Sysinternals			
-Disk Usage (DU)		System(Additional)	Sysinternals			
-EFSDump		System(Additional)	Sysinternals			
-FindLinks		System(Additional)	Sysinternals			
-Handle		System(Additional)	Sysinternals			
-Hex2dec		System(Additional)	Sysinternals			
-Junction		System(Additional)	Sysinternals			
-LDMDump		System(Additional)	Sysinternals			
-ListDLLs		System(Additional)	Sysinternals			
-LiveKd		System(Additional)	Sysinternals			
-LoadOrder		System(Additional)	Sysinternals			
-LogonSessions		System(Additional)	Sysinternals			
-MoveFile		System(Additional)	Sysinternals			
-NTFSInfo		System(Additional)	Sysinternals			
-PageDefrag		System(Additional)	Sysinternals			
-PendMoves		System(Additional)	Sysinternals			
-PipeList		System(Additional)	Sysinternals			
-PortMon		System(Additional)	Sysinternals			
-ProcDump		System(Additional)	Sysinternals			
-Process Explorer		System(Additional)	Sysinternals			
-Process Monitor		System(Additional)	Sysinternals			
-PsExec		System(Additional)	Sysinternals			
-PsFile		System(Additional)	Sysinternals			
-PsGetSid		System(Additional)	Sysinternals			
-PsInfo		System(Additional)	Sysinternals			
-PsPing		System(Additional)	Sysinternals			
-PsKill		System(Additional)	Sysinternals			
-PsList		System(Additional)	Sysinternals			
-PsLoggedOn		System(Additional)	Sysinternals			
-PsLogList		System(Additional)	Sysinternals			
-PsPasswd		System(Additional)	Sysinternals			
-PsService		System(Additional)	Sysinternals			
-PsShutdown		System(Additional)	Sysinternals			
-PsSuspend		System(Additional)	Sysinternals			
-RAMMap		System(Additional)	Sysinternals			
-RegDelNull		System(Additional)	Sysinternals			
-Registry Usage (RU)		System(Additional)	Sysinternals			
-RegJump		System(Additional)	Sysinternals			
-RootkitRevealer		System(Additional)	Sysinternals			
-SDelete		System(Additional)	Sysinternals			
-ShareEnum		System(Additional)	Sysinternals			
-ShellRunas		System(Additional)	Sysinternals			
-SigCheck		System(Additional)	Sysinternals			
-Streams		System(Additional)	Sysinternals			
-Strings		System(Additional)	Sysinternals			
-Sync		System(Additional)	Sysinternals			
-TCPView		System(Additional)	Sysinternals			
-VMMap		System(Additional)	Sysinternals			
-VolumeID		System(Additional)	Sysinternals			
-WhoIs		System(Additional)	Sysinternals			
-WinObj		System(Additional)	Sysinternals			
-ZoomIt		System(Additional)	Sysinternals			
-						
-prncnfg		Script	Microsoft	Druck		
-prndrvr		Script	Microsoft	Druck		
-prnjobs		Script	Microsoft	Druck		
-prnmngr		Script	Microsoft	Druck		
-prnport		Script	Microsoft	Druck		
-prnqctl		Script	Microsoft	Druck		
-pubprn		Script	Microsoft	Druck		
-						
-						
-R	Programmiersprache R	Programm	R	Interpreter	R	
-Scilab	Programmiersprache Scilab	Programm	Scilab	Interpreter	scl	
-Perl	Programmiersprache Perl	Programm	Perl	Interpreter	perl	
-Python	Programmiersprache Python	Programm	Python	Interpreter	py,pyc	
-LUA	Programmiersprache LUA	Programm	LUA	Interpreter	lua	
-PHP	Programmiersprache PHP	Programm	PHP	Interpreter	php	
-Java	Programmiersprache Java	Programm	Oracle	Interpreter	Jar	
-Ruby	Programmiersprache Ruby	Programm	Ruby	Interpreter		
-XULRunner	Programmiersprache XUL	Programm	Mozilla	Interpreter	xul	
-AutoItx	Programmiersprache Autoitx	Programm	AutoItx	Interpreter, System	atx	
-AutoHotkey	Tastenkombinationen	Programm				
-7Zip	Komprimierung	Programm	Igor Pavlov	Komprimierung	zip, rar, tar, gz	
-GraphWiz	Grafische Darstellungen	Programm	Graphwiz	Grafik	dot	
-XMLStarlet	XML bearbeiten	Programm		Text	xml	
-FSK166	Multifunktion	Programm		System		
-Node.js	Programmiersprache Javascript	Programm	Node.js	Interpreter, Netzwerk	vbs	
-Curl	Netzwerkanfragen	Programm		Netzwerk		
-Wget	Netzwerkanfragen	Programm		Netzwerk		
-ffmpeg	Videobearbeitung	Programm	ffmpeg	Multimedia	avi, mpeg, mpg, mp3, mp2, ogg	
-ffplay	Video abspielprogramm	Programm	ffmpeg	Multimedia	avi, mpeg, mpg, mp3, mp2, ogg	
-ffprobe	Video Testprogramm	Programm	ffmpeg	Multimedia	avi, mpeg, mpg, mp3, mp2, ogg	
-ScrEnc	Windows Script Encoder	Programm	Microsoft		vbs, vbe	
-Sendemail	Mail Senden	Programm		Netzwerk, Mail		
-blat	Mail Senden	Programm		Netzwerk, Mail		
-nmap	Netzwerkgeräte auflisten	Programm		Netzwerk		
-netcat (ncat)	Netzwerktoolkit	Programm		Netzwerk		
-AutoHotKey	Tastenkombinationen	Programm		System		
-Aubio	Audio	Programm				
-snmp	Simply Network Management	Programm		Netzwerk, SNMP		
-espeak	Sprachausgabe (klingt hölzern)	Programm		Sprachausgabe		
-wol	Wake on Lan	Programm		Netzwerk		
-nircmd	Multifunktion	Programm		System		
-sleep	Pause für x Sekunden	Programm		System		
-sox	Audio bearbeitung	Programm		Audio	mp3, ogg	
-tail	Dateiänderung überwachen	Programm		Text	txt, csv	
-Julius	Spracherkennung	Programm		Spracherkennung		
-CMU Sphinx	Spracherkennung	Programm		Spracherkennung		
-GoogleCL	Google Dienste	Programm	Google	Netzwerk		
-Fping	Netzwerkverfügbarkeit	Programm		Netzwerk		
-Adb	Android 	Programm	Google			
-Fastboot	Android 	Programm	Google			
-Snort	Netzwerk, IDS	Programm	Snort			
-Windump	Netzwerkmitschnitt	Programm	TCPDump			
-AdinRec	Audio	Programm			wav	
-DevCon	Gerätemanager	Programm	Microsoft			
-Enhancer	Audio	Programm			mp3, ogg	
-Exiv2	Bilder	Programm			jpeg	
-Fciv	Prüfsummen	Programm			*	
-Gzip	Komprimierung	Programm			zip	
-SQLite3	Datenbank	Programm	SQLite			
-Qemu	System Emulator	Programm			img, bin	
-WSusOffline	Windows Updates (Paket)	Programm				
-PDFTK	PDF Toolkit	Programm				
-Nuget	Versionierung	Programm	NuGet			
-Git	Versionierung 	Programm	Git			
-SVN	Versionierung 	Programm	SVN			
-neolog	Logging	Programm				
-nginx	Webserver	Programm	Nginx		html	
-sox	Sound Tool	Programm			mp3, ogg	
-wavpack	Sound Tool	Programm			wav	
-Tesseract	Texterkennung	Programm	Tesseract		jpg	
-IsoInfo	Informationen über ISO Images	Programm			iso	
-						
-Mod_Key	Überwacht Systemereignisse	Deamon	NBHCREW			
-Mod_Apache	Webserver	Deamon	NBHCREW			
-Mod_T4e	Lieder auf Techno4Ever	Deamon	NBHCREW			
-Mod_Serial	Serielle Kommunikation	Deamon	NBHCREW			
-Mod_Faststart	Dateiindizierung	Deamon	NBHCREW			
-Mod_Sprachausgabe2	Sprachausgabe über Google	Deamon	NBHCREW			
-Mod_Wingui	Bedieninterface	Deamon	NBHCREW			
-Mod_Webserver	Webserver	Deamon	NBHCREW			
-Mod_SSH	Secure Shell	Deamon	NBHCREW			
-Mod_Tinkerforge	Kommuniziert mit Tinkerforge	Deamon	NBHCREW			
-Mod_Notices	Notizzettel	Programm	NBHCREW			
-Mod_Messages	Nachrichtenausgabe	Programm	NBHCREW			
-Mod_Sprachausgabe	Sprachausgabe über Google	Programm	NBHCREW			
-Mod_Spracherkennung	Spracherkennung über Google	Programm	NBHCREW			
-Mod_Spracherkennung2	Spracherkennung über WinSapi	Programm	NBHCREW			
-Mod_Spracherkennung3	Spracherkennung über CMU Sphinx	Programm	NBHCREW			
-Wget2	Netzwerkanfragen	Programm	NBHCREW			
-Mod_Show	Webbrowser	Programm	NBHCREW			
-GoogleMail	Mails	Programm	NBHCREW			
-Mod_RSS	Rss-Feeds	Programm	NBHCREW			
-Mod_Twitter	Twitter Nachrichten	Programm	NBHCREW			
-Mod_Facebook	Facebook Nachrichten	Programm	NBHCREW			
-Mod_TV	Tv-Programm	Programm	NBHCREW			
-Mod_Wetter	Wetterdaten	Programm	NBHCREW			
-Mod_YesNo	Benutzereingabe	Programm	NBHCREW			
-Mod_SPDNS	Updated die IP über SPDNS	Programm	NBHCREW			
-						
-Mod_Events	Überwacht Systemereignisse	VB-Script	NBHCREW			
-Piep	Gibt ein Piepen aus 	VB-Script	NBHCREW			
-Input	Benutzereingabe	VB-Script	NBHCREW			
-JaNein	Benutzereingabe	VB-Script	NBHCREW			
-						
-Studierstube	Audio, Video, Augemented Reality	Programmpaket			avi, mpeg, mpg, mp3, mp2, ogg	
-Tex	Dokumente	Programmpaket	MikTex		Tex	
-Gimp	Grafik	Programmpaket	Gimp			
-ImageMagick	Grafik					
-Metasploit	Pentest Programme	Programmpaket				
-GNU CoreUtils	Unix-Tools für Windows	Programmpaket	GNU			Link
-UNXUtils	Unix-Tools für Windows 2	Programmpaket	GNU			Link
-						
-Wireshark	Netzwerkmitschnitt (CMD-Interface)	Programm(GUI)			dmp	
-VLC	Media Player (Mit Kommandozeilenparametern)	Programm(GUI)			avi, mpeg, mpg, mp3, mp2, ogg	Link
-Scintilla	Texteditor 	Programm(GUI)				
-						
-Google.de	Websuche, Sprache, Informationen	Website(REST)				
-WolframAlpha	Informationen	Website(REST)				
-Youtube.com	Videos	Website(Parse)				
-TVToday.de	Fernsehprogramme	Website(Parse)				
-Twitter	Nachrichten	Website(REST)				
-Facebook	Nachrichten	Website(REST)				
-						
-Jdownloader	Downloader	Webinterface(Get)	Jdownloader			
-VLC	MediaPlayer	Webinterface(Get)	VLC			
-FHEM	Heimautomatisierung	Webinterface(Get)	FHEM			
-TVHeadend	TV-Streaming	Webinterface(Get)	LonelyCoder			
-XBMC	Mediacenter	Webinterface(Json)	XBMC			
-Motion	Kameraaktionen	Webinterface(Get)	Motion			
-						
-Lua	Programmiersprache	Library			lua	
-Log4Net	Logger	Library				
-FireBall	Code-Editor	Library			html, xml, txt, csv	
-Gecko16	Webbrowser	Library			html, js, mml, xml, jpg, gif	
-Json	Json Verarbeitung	Library			json	
-HTML AgilityPack	HTML Verarbeitung	Library			html	
-PDFSharp	Pdf Verarbeitung	Library			pdf	
-Ionic Zip	Zip	Library			zip	
-ZedGraph	Kennlinien, Graphen	Library				
-SQLite	Datenbank	Library				
-OpenJDK	Java in .Net	Library			jar	
-Saxon	XML-Interpreter	Library			xml	
-Interop.Excel	Excel Interoperabilität	Library			xls	
-Interop.VBA	VBA Interoperabilität	Library			vba	
-AutoITX	Automatisierung	Library			au	
-Ncalc	Mathematische Ausdrücke	Library				
-						
-MathJax	Darstellung von MathMl	Webservice			mml	
-Blockly	Grafische Programmierumgebung	Webservice				
-Dojo	Grafische Darstellung 	JavaScript-Bibliothek				
-Jquery	Grafische Darstellung 	JavaScript-Bibliothek				
-						
-agrep			Unix4Windows			
-ansi2knr			Unix4Windows			
-basename			Unix4Windows			
-bc			Unix4Windows			
-bison			Unix4Windows			
-bunzip2	Komprimierung		Unix4Windows			
-bzip2	Komprimierung		Unix4Windows			
-bzip2recover	Komprimierung		Unix4Windows			
-cat	Texte		Unix4Windows			
-chgrp			Unix4Windows			
-chmod			Unix4Windows			
-chown	Besitzer ändern		Unix4Windows			
-cksum	Prüfsummen		Unix4Windows			
-cmp			Unix4Windows			
-comm			Unix4Windows			
-compress	Komprimierung		Unix4Windows			
-cp	Dateisystem		Unix4Windows			
-csplit			Unix4Windows			
-cut			Unix4Windows			
-date			Unix4Windows			
-dc			Unix4Windows			
-dd	Dateisystem		Unix4Windows			
-df	Dateisystem		Unix4Windows			
-diff	Texte		Unix4Windows			
-diff3	Texte		Unix4Windows			
-dircolors			Unix4Windows			
-dirname			Unix4Windows			
-du	Dateisystem		Unix4Windows			
-echo			Unix4Windows			
-egrep			Unix4Windows			
-env			Unix4Windows			
-expand			Unix4Windows			
-expr			Unix4Windows			
-factor			Unix4Windows			
-fgrep			Unix4Windows			
-find	Dateisystem		Unix4Windows			
-flex			Unix4Windows			
-fmt			Unix4Windows			
-fold			Unix4Windows			
-fsplit			Unix4Windows			
-gawk			Unix4Windows			
-gclip			Unix4Windows			
-gplay			Unix4Windows			
-grep			Unix4Windows			
-gsar			Unix4Windows			
-gunzip	Komprimierung		Unix4Windows			
-gzip	Komprimierung		Unix4Windows			
-head			Unix4Windows			
-id			Unix4Windows			
-indent			Unix4Windows			
-install			Unix4Windows			
-join			Unix4Windows			
-jwhois			Unix4Windows			
-less			Unix4Windows			
-lesskey			Unix4Windows			
-libfl			Unix4Windows			
-ln			Unix4Windows			
-logname			Unix4Windows			
-ls			Unix4Windows			
-m4			Unix4Windows			
-make			Unix4Windows			
-makedepend			Unix4Windows			
-makemsg			Unix4Windows			
-man			Unix4Windows			
-md5sum			Unix4Windows			
-mkdir			Unix4Windows			
-mkfifo			Unix4Windows			
-mknod			Unix4Windows			
-mv			Unix4Windows			
-mvdir			Unix4Windows			
-nl			Unix4Windows			
-od			Unix4Windows			
-paste			Unix4Windows			
-patch			Unix4Windows			
-pathchk			Unix4Windows			
-pclip			Unix4Windows			
-pr			Unix4Windows			
-printenv			Unix4Windows			
-printf			Unix4Windows			
-pwd			Unix4Windows			
-recode			Unix4Windows			
-rm			Unix4Windows			
-rman			Unix4Windows			
-rmdir			Unix4Windows			
-sdiff	Texte		Unix4Windows			
-sed	Texte		Unix4Windows			
-seq			Unix4Windows			
-shar			Unix4Windows			
-sleep	Zeitbereich warten		Unix4Windows			
-sort			Unix4Windows			
-split			Unix4Windows			
-stego			Unix4Windows			
-su			Unix4Windows			
-sum			Unix4Windows			
-sync			Unix4Windows			
-tac			Unix4Windows			
-tail			Unix4Windows			
-tar	Komprimierung		Unix4Windows			
-tee			Unix4Windows			
-test			Unix4Windows			
-touch			Unix4Windows			
-tr			Unix4Windows			
-type			Unix4Windows			
-uname			Unix4Windows			
-unexpand			Unix4Windows			
-uniq			Unix4Windows			
-unrar	Komprimierung		Unix4Windows			
-unshar			Unix4Windows			
-unzip	Komprimierung		Unix4Windows			
-uudecode			Unix4Windows			
-uuencode			Unix4Windows			
-wc			Unix4Windows			
-which			Unix4Windows			
-whoami			Unix4Windows			
-xargs			Unix4Windows			
-yes			Unix4Windows			
-zcat			Unix4Windows			
-zip	Komprimierung		Unix4Windows			
+#	Programmname	Beschreibung	Typ	Sprache	Hersteller	Gruppe Anwendungsfall	Dateitypen	Link
+								
+	Wscript	Windows Scripting Host	Programm CMD	EXE	Microsoft	Interpreter	vbs, vbe	
+	Cscript	Windows Scripting Host Console	Programm CMD	EXE	Microsoft	Interpreter	vbs, vbe	
+	Mshta	Html Application	Programm CMD	EXE	Microsoft	Interpreter	hta	
+	cmd	Commandline	Programm CMD	EXE	Microsoft	Interpreter	bat	
+	Ping	Netzwerkerreichbarkeit	Programm CMD	EXE	Microsoft	Netzwerk		
+	Net	Netzwerktools	Programm CMD	EXE	Microsoft	Netzwerk		
+	Tracert	Netzwerkverfolgung	Programm CMD	EXE	Microsoft	Netzwerk		
+	Regedit	Systemregistrierung	Programm CMD	EXE	Microsoft	Registrierung	reg	
+	Arp	Adress Resolution Protokoll	Programm CMD	EXE	Microsoft	Netzwerk		
+	Attrib	Attribute	Programm CMD	EXE	Microsoft	Dateisystem		
+	Calcs	Dateirechte	Programm CMD	EXE	Microsoft	Dateisystem		
+	chkdsk	Festplattenüberprüfung	Programm CMD	EXE	Microsoft	Dateisystem		
+	Clip	Zwischenablage	Programm CMD	EXE	Microsoft	Zwischenablage		
+	Fsutil	Dateisystemaufgaben	Programm CMD	EXE	Microsoft	Dateisystem		
+	FTP	File Transfer	Programm CMD	EXE	Microsoft	Netzwerk		
+	gpUpdate	Group Policy Update	Programm CMD	EXE	Microsoft	Gruppenrichtlinien		
+	gpResult	Group Policy Results	Programm CMD	EXE	Microsoft	Gruppenrichtlinien		
+	gpScript	Group Policy Script	Programm CMD	EXE	Microsoft	Gruppenrichtlinien		
+	NetSh	Netzwerkshell	Programm CMD	EXE	Microsoft	Netzwerk		
+	NetStat	Netzwerkstatus	Programm CMD	EXE	Microsoft	Netzwerk		
+	PathPing	Ping für jede Station der Route	Programm CMD	EXE	Microsoft	Netzwerk		
+	RasDial	Anwahl über Modem	Programm CMD	EXE	Microsoft	Netzwerk		
+	Runas	Ausführen als Benutzer X	Programm CMD	EXE	Microsoft	Rechte		
+	Services	Dienste	Programm CMD	EXE	Microsoft	Dienste		
+	SFC	System File Checker	Programm CMD	EXE	Microsoft	Dateisystem		
+	Shutdown	Herunterfahren, Neustarten	Programm CMD	EXE	Microsoft	System		
+	Systeminfo	Systeminformationen	Programm CMD	EXE	Microsoft	System		
+	TakeOwn	Besizerrechte übernehmen	Programm CMD	EXE	Microsoft	Dateisystem		
+	Taskkill	Tasks beenden	Programm CMD	EXE	Microsoft	Tasks		
+	Tasklist	Tasks auflisten	Programm CMD	EXE	Microsoft	Tasks		
+	TaskEng	TaskPlanungsprogramm	Programm CMD	EXE	Microsoft	Geplante Tasks		
+	Xcopy	Dateien kopieren	Programm CMD	EXE	Microsoft	Dateisystem		
+	wmic	WMI Management Console	Programm CMD	EXE	Microsoft	System		
+	Dir	Verzeichnisinhalt	Programm CMD	EXE	Microsoft	Dateisystem		
+	Tree	Verzeichnisstuktur	Programm CMD	EXE	Microsoft	Dateisystem		
+	Set	Umgebungsvariablen	Programm CMD	EXE	Microsoft	System		
+								
+								
+	Robocopy	Dateien kopieren	Programm CMD	EXE	Microsoft	Dateisystem		
+	Xcacls	Dateirechte	Programm CMD	EXE	Microsoft	Dateisystem		
+	Icalcs	Dateirechte	Programm CMD	EXE	Microsoft	Dateisystem		
+								
+								
+	AccessChk		Programm CMD	EXE	Sysinternals			
+	AccessEnum		Programm CMD	EXE	Sysinternals			
+	AdExplorer		Programm CMD	EXE	Sysinternals			
+	AdInsight		Programm CMD	EXE	Sysinternals			
+	AdRestore		Programm CMD	EXE	Sysinternals			
+	Autologon		Programm CMD	EXE	Sysinternals			
+	Autoruns		Programm CMD	EXE	Sysinternals			
+	BgInfo		Programm CMD	EXE	Sysinternals			
+	CacheSet		Programm CMD	EXE	Sysinternals			
+	ClockRes		Programm CMD	EXE	Sysinternals			
+	Contig		Programm CMD	EXE	Sysinternals			
+	Coreinfo		Programm CMD	EXE	Sysinternals			
+	Ctrl2Cap		Programm CMD	EXE	Sysinternals			
+	DebugView		Programm CMD	EXE	Sysinternals			
+	Desktops		Programm CMD	EXE	Sysinternals			
+	Disk2vhd		Programm CMD	EXE	Sysinternals			
+	DiskExt		Programm CMD	EXE	Sysinternals			
+	DiskMon		Programm CMD	EXE	Sysinternals			
+	DiskView		Programm CMD	EXE	Sysinternals			
+	Disk Usage (DU)		Programm CMD	EXE	Sysinternals			
+	EFSDump		Programm CMD	EXE	Sysinternals			
+	FindLinks		Programm CMD	EXE	Sysinternals			
+	Handle		Programm CMD	EXE	Sysinternals			
+	Hex2dec		Programm CMD	EXE	Sysinternals			
+	Junction		Programm CMD	EXE	Sysinternals			
+	LDMDump		Programm CMD	EXE	Sysinternals			
+	ListDLLs		Programm CMD	EXE	Sysinternals			
+	LiveKd		Programm CMD	EXE	Sysinternals			
+	LoadOrder		Programm CMD	EXE	Sysinternals			
+	LogonSessions		Programm CMD	EXE	Sysinternals			
+	MoveFile		Programm CMD	EXE	Sysinternals			
+	NTFSInfo		Programm CMD	EXE	Sysinternals			
+	PageDefrag		Programm CMD	EXE	Sysinternals			
+	PendMoves		Programm CMD	EXE	Sysinternals			
+	PipeList		Programm CMD	EXE	Sysinternals			
+	PortMon		Programm CMD	EXE	Sysinternals			
+	ProcDump		Programm CMD	EXE	Sysinternals			
+	Process Explorer		Programm CMD	EXE	Sysinternals			
+	Process Monitor		Programm CMD	EXE	Sysinternals			
+	PsExec		Programm CMD	EXE	Sysinternals			
+	PsFile		Programm CMD	EXE	Sysinternals			
+	PsGetSid		Programm CMD	EXE	Sysinternals			
+	PsInfo		Programm CMD	EXE	Sysinternals			
+	PsPing		Programm CMD	EXE	Sysinternals			
+	PsKill		Programm CMD	EXE	Sysinternals			
+	PsList		Programm CMD	EXE	Sysinternals			
+	PsLoggedOn		Programm CMD	EXE	Sysinternals			
+	PsLogList		Programm CMD	EXE	Sysinternals			
+	PsPasswd		Programm CMD	EXE	Sysinternals			
+	PsService		Programm CMD	EXE	Sysinternals			
+	PsShutdown		Programm CMD	EXE	Sysinternals			
+	PsSuspend		Programm CMD	EXE	Sysinternals			
+	RAMMap		Programm CMD	EXE	Sysinternals			
+	RegDelNull		Programm CMD	EXE	Sysinternals			
+	Registry Usage (RU)		Programm CMD	EXE	Sysinternals			
+	RegJump		Programm CMD	EXE	Sysinternals			
+	RootkitRevealer		Programm CMD	EXE	Sysinternals			
+	SDelete		Programm CMD	EXE	Sysinternals			
+	ShareEnum		Programm CMD	EXE	Sysinternals			
+	ShellRunas		Programm CMD	EXE	Sysinternals			
+	SigCheck		Programm CMD	EXE	Sysinternals			
+	Streams		Programm CMD	EXE	Sysinternals			
+	Strings		Programm CMD	EXE	Sysinternals			
+	Sync		Programm CMD	EXE	Sysinternals			
+	TCPView		Programm CMD	EXE	Sysinternals			
+	VMMap		Programm CMD	EXE	Sysinternals			
+	VolumeID		Programm CMD	EXE	Sysinternals			
+	WhoIs		Programm CMD	EXE	Sysinternals			
+	WinObj		Programm CMD	EXE	Sysinternals			
+	ZoomIt		Programm CMD	EXE	Sysinternals			
+	prncnfg		Script	VBS	Microsoft	Druck		
+	prndrvr		Script	VBS	Microsoft	Druck		
+	prnjobs		Script	VBS	Microsoft	Druck		
+	prnmngr		Script	VBS	Microsoft	Druck		
+	prnport		Script	VBS	Microsoft	Druck		
+	prnqctl		Script	VBS	Microsoft	Druck		
+	pubprn		Script	VBS	Microsoft	Druck		
+								
+								
+	R	Programmiersprache R	Programm	EXE	R	Interpreter	R	
+	Scilab	Programmiersprache Scilab	Programm	EXE	Scilab	Interpreter	scl	
+	Perl	Programmiersprache Perl	Programm	EXE	Perl	Interpreter	perl	
+	Python	Programmiersprache Python	Programm	EXE	Python	Interpreter	py,pyc	
+	LUA	Programmiersprache LUA	Programm	EXE	LUA	Interpreter	lua	
+	PHP	Programmiersprache PHP	Programm	EXE	PHP	Interpreter	php	
+	Java	Programmiersprache Java	Programm	EXE	Oracle	Interpreter	Jar	
+	Ruby	Programmiersprache Ruby	Programm	EXE	Ruby	Interpreter		
+	XULRunner	Programmiersprache XUL	Programm	EXE	Mozilla	Interpreter	xul	
+	AutoItx	Programmiersprache Autoitx	Programm	EXE	AutoItx	Interpreter	au	
+	AutoHotkey	Tastenkombinationen	Programm	EXE				
+	7Zip	Komprimierung	Programm	EXE	Igor Pavlov	Komprimierung	zip, rar, tar, gz	
+	GraphWiz	Grafische Darstellungen	Programm	EXE	Graphwiz	Grafik	dot	
+	XMLStarlet	XML bearbeiten	Programm	EXE		XML	xml	
+	FSK166	Multifunktion	Programm	EXE		System		
+	Node.js	Lokale Anwendungen in Javascript	Programm	EXE	Node.js	Interpreter, Netzwerk	js,html	
+	IO.JS	Fork von Node.js	Programm	EXE	io.js	Interpreter, Netzwerk	js,html	
+	PhantomJS	Webseiten automatisieren	Programm	EXE		Internet	js,html	
+	Curl	Netzwerkanfragen	Programm	EXE		Netzwerk		
+	Wget	Netzwerkanfragen	Programm	EXE		Netzwerk		
+	ffmpeg	Videobearbeitung	Programm	EXE	ffmpeg	Multimedia	avi, mpeg, mpg, mp3, mp2, ogg	
+	ffplay	Video abspielprogramm	Programm	EXE	ffmpeg	Multimedia	avi, mpeg, mpg, mp3, mp2, ogg	
+	ffprobe	Video Testprogramm	Programm	EXE	ffmpeg	Multimedia	avi, mpeg, mpg, mp3, mp2, ogg	
+	ScrEnc	Windows Script Encoder	Programm	EXE	Microsoft		vbs, vbe	
+	Sendemail	Mail Senden	Programm	EXE		Netzwerk, Mail		
+	blat	Mail Senden	Programm	EXE		Netzwerk, Mail		
+	nmap	Netzwerkgeräte auflisten	Programm	EXE		Netzwerk		
+	netcat (ncat)	Netzwerktoolkit	Programm	EXE		Netzwerk		
+	AutoHotKey	Tastenkombinationen	Programm	EXE		System		
+	Aubio	Audio	Programm	EXE			wav	
+	snmp	Simply Network Management	Programm	EXE		Netzwerk, SNMP		
+	espeak	Sprachausgabe (klingt hölzern)	Programm	EXE		Sprachausgabe		
+	wol	Wake on Lan	Programm	EXE		Netzwerk		
+	nircmd	Multifunktion	Programm	EXE		System		
+	sleep	Pause für x Sekunden	Programm	EXE		System		
+	sox	Audio bearbeitung	Programm	EXE		Audio	mp3, ogg	
+	tail	Dateiänderung überwachen	Programm	EXE		Text	txt, csv	
+	Julius	Spracherkennung	Programm	EXE		Spracherkennung		
+	CMU Sphinx	Spracherkennung	Programm	EXE		Spracherkennung		
+	GoogleCL	Google Dienste	Programm	EXE	Google	Netzwerk		
+	Fping	Netzwerkverfügbarkeit	Programm	EXE		Netzwerk		
+	Adb	Android 	Programm	EXE	Google			
+	Fastboot	Android 	Programm	EXE	Google			
+	Snort	Netzwerk, IDS	Programm	EXE	Snort			
+	Windump	Netzwerkmitschnitt	Programm	EXE	TCPDump			
+	AdinRec	Audio	Programm	EXE			wav	
+	DevCon	Gerätemanager	Programm	EXE	Microsoft			
+	Enhancer	Audio	Programm	EXE			mp3, ogg	
+	Exiv2	Bilder	Programm	EXE			jpeg	
+	Fciv	Prüfsummen	Programm	EXE			*	
+	Gzip	Komprimierung	Programm	EXE			zip	
+	SQLite3	Datenbank Dateibasiert	Programm	EXE	SQLite	Datenbank		
+	Qemu	System Emulator	Programm	EXE			img, bin	
+	WSusOffline	Windows Updates (Paket)	Programm	EXE				
+	PDFTK	PDF Toolkit	Programm	EXE			pdf	
+	Nuget	Library Downloader für .Net Librarys	Programm	EXE	NuGet		dll	
+	Git	Versionsverwaltung	Programm	EXE	Git	Versionierung 		
+	SVN	Versionsverwaltung	Programm	EXE	SVN	Versionierung 		
+	neolog	Logging	Programm	EXE				
+	nginx	Webserver	Programm	EXE	Nginx		html	
+	sox	Sound Tool	Programm	EXE			mp3, ogg	
+	wavpack	Sound Tool	Programm	EXE			wav	
+	Tesseract	Texterkennung	Programm	EXE	Tesseract		jpg	
+	IsoInfo	Informationen über ISO Images	Programm	EXE			iso	
+								
+	Eigene Programme							
+	Mod_Key	Überwacht Systemereignisse	Deamon	EXE	NBHCREW			
+	Mod_Apache	Webserver	Deamon	EXE	NBHCREW			
+	Mod_T4e	Lieder auf Techno4Ever	Deamon	EXE	NBHCREW			
+	Mod_Serial	Serielle Kommunikation	Deamon	EXE	NBHCREW			
+	Mod_Faststart	Dateiindizierung	Deamon	EXE	NBHCREW			
+	Mod_Sprachausgabe2	Sprachausgabe über Google	Deamon	EXE	NBHCREW			
+	Mod_Wingui	Bedieninterface	Deamon	EXE	NBHCREW			
+	Mod_Webserver	Webserver	Deamon	EXE	NBHCREW			
+	Mod_SSH	Secure Shell	Deamon	EXE	NBHCREW			
+	Mod_Tinkerforge	Kommuniziert mit Tinkerforge	Deamon	EXE	NBHCREW			
+	Mod_Notices	Notizzettel	Programm	EXE	NBHCREW			
+	Mod_Messages	Nachrichtenausgabe	Programm	EXE	NBHCREW			
+	Mod_Sprachausgabe	Sprachausgabe über Google	Programm	EXE	NBHCREW			
+	Mod_Spracherkennung	Spracherkennung über Google	Programm	EXE	NBHCREW			
+	Mod_Spracherkennung2	Spracherkennung über WinSapi	Programm	EXE	NBHCREW			
+	Mod_Spracherkennung3	Spracherkennung über CMU Sphinx	Programm	EXE	NBHCREW			
+	Wget2	Netzwerkanfragen	Programm	EXE	NBHCREW			
+	Mod_Show	Webbrowser	Programm	EXE	NBHCREW			
+	GoogleMail	Mails	Programm	EXE	NBHCREW			
+	Mod_RSS	Rss-Feeds	Programm	EXE	NBHCREW			
+	Mod_Twitter	Twitter Nachrichten	Programm	EXE	NBHCREW			
+	Mod_Facebook	Facebook Nachrichten	Programm	EXE	NBHCREW			
+	Mod_TV	Tv-Programm	Programm	EXE	NBHCREW			
+	Mod_Wetter	Wetterdaten	Programm	EXE	NBHCREW			
+	Mod_YesNo	Benutzereingabe	Programm	EXE	NBHCREW			
+	Mod_SPDNS	Updated die IP über SPDNS	Programm	EXE	NBHCREW			
+	Mod_Events	Überwacht Systemereignisse	Script	VBS	NBHCREW			
+	Piep	Gibt ein Piepen aus 	Script	VBS	NBHCREW			
+	Input	Benutzereingabe	Script	VBS	NBHCREW			
+	JaNein	Benutzereingabe	Script	VBS	NBHCREW			
+								
+	Programme mit mehreren Teilprogrammen 							
+	Studierstube	Audio, Video, Augemented Reality	Programm Paket	EXE			avi, mpeg, mpg, mp3, mp2, ogg	
+	Tex	Dokumente	Programm Paket	EXE	MikTex		Tex	
+	Gimp	Grafik Bildbearbeitung	Programm Paket	EXE	Gimp			
+	ImageMagick	Grafik Bildbearbeitung	Programm Paket	EXE				
+	MongoDB	Dokument Datenbank	Programm Paket	EXE	MongoDB		wt	
+	Metasploit	Pentest Programme	Programm Paket	EXE				
+	GNU CoreUtils	Unix-Tools für Windows	Programm Paket	EXE	GNU			Link
+	UNXUtils	Unix-Tools für Windows 2	Programm Paket	EXE	GNU			Link
+								
+	Programme mit GUI							
+	Wireshark	Netzwerkmitschnitt (CMD-Interface)	Programm GUI	EXE			dmp	
+	VLC	Media Player (Mit Kommandozeilenparametern)	Programm GUI	EXE			avi, mpeg, mpg, mp3, mp2, ogg	Link
+	Scintilla	Texteditor 	Programm GUI	EXE				
+	Brackets	Texteditor 	Programm GUI	EXE				
+	Atom.IO ???	Texteditor 	Programm GUI	EXE				
+								
+	Ant		Java	JAR	Apache			
+	Maven		Java	JAR	Apache			
+	Lucene	Graphendatenbank	Java	JAR	Apache			
+	Solr	Search on Lucene REST	Java	JAR	Apache			
+	Apache	Webserver		EXE	Apache			
+								
+	Internetseiten, steuerbar über GET, REST oder JSON/JSONP/BSON							
+	Google.de	Websuche, Sprache, Informationen	Website(REST)	JSON	#	Suche	rest,http	
+	WolframAlpha	Informationen	Website(REST)	JSON	#	Suche	rest,http	
+	Youtube.com	Videos	Website(Parse)	HTML	#	Suche	rest,http	
+	TVToday.de	Fernsehprogramme	Website(Parse)	HTML	#	TV	rest,http	
+	Twitter	Nachrichten	Website(REST)	JSON	#	Nachrichten	rest,http	
+	Facebook	Nachrichten	Website(REST)	JSON	#	Nachrichten	rest,http	
+								
+	Anwenderprogramme steuerbar über Webinterface							
+	Jdownloader	Downloader	Webinterface(Get)	HTML	Jdownloader	Downloads	http	
+	VLC	MediaPlayer	Webinterface(Get)	HTML	VLC	Multimedia	http	
+	FHEM	Heimautomatisierung	Webinterface(Get)	HTML	FHEM	Heimautomatisierung	http	
+	TVHeadend	TV-Streaming	Webinterface(Get)	HTML	LonelyCoder	TV	http	
+	XBMC	Mediacenter	Webinterface(Json)	JSON	XBMC	Multimedia	http	
+	Motion	Kameraaktionen	Webinterface(Get)	HTML	Motion	Überwachung	http	
+								
+	.Net Librarys							
+	Lua	Programmiersprache	.Net Library	DLL	#		lua,wlua,luac	
+	Log4Net	Logger	.Net Library	DLL	#			
+	FireBall	Code-Editor	.Net Library	DLL	#		html, xml, txt, csv	
+	Gecko (SkyBound GeckoFX)	Webbrowser	.Net Library	DLL	#		html, js, mml, xml, jpg, gif	
+	Json	Json Verarbeitung	.Net Library	DLL	#		json	
+	HTML AgilityPack	HTML Verarbeitung	.Net Library	DLL	#		html	
+	PDFSharp	Pdf Verarbeitung	.Net Library	DLL	#		pdf	
+	Ionic Zip	Zip	.Net Library	DLL	#		zip	
+	ZedGraph	Kennlinien, Graphen	.Net Library	DLL	#			
+	SQLite	Datenbank	.Net Library	DLL	#		db,sqlite	
+	OpenJDK	Java in .Net	.Net Library	DLL	#		jar	
+	Saxon	XML-Interpreter	.Net Library	DLL	#		xml,xslt	
+	Interop.Excel	Excel Interoperabilität	.Net Library	DLL	#		xls	
+	Interop.VBA	VBA Interoperabilität	.Net Library	DLL	#		vba	
+	AutoITX	Automatisierung	.Net Library	DLL	#		au	
+	Ncalc	Mathematische Ausdrücke	.Net Library	DLL	#			
+	Assimp	3D-Dateien und Verarbeitung	.Net Library	DLL	#			
+	Aforge		.Net Library	DLL	#			
+	Accordnet		.Net Library	DLL	#			
+	OpenTK		.Net Library	DLL	#			
+	IKVM	JavaScript in .Net	.Net Library	DLL	#			
+	Nunit	Testreihen .Net	.Net Library	DLL	#			
+	
+	########################################################################################
+	Javascript Librarys							
+	########################################################################################
+	MathJax	Darstellung von MathMl	Library	JS	#		mml	
+	Blockly	Grafische Programmierumgebung	Anwendung	WEB	#			
+	Dojo	Grafische Darstellung, DOM Manipulation	Library	JS	#		js,json,bson	
+	Jquery	Grafische Darstellung, DOM Manipulation	Library	JS	#		js,json,bson	
+	VideoJS	Videoplayer	Library	JS	#		mpg,mpeg,avi,mov	
+	Projekktor	Videoplayer	Library	JS	#		mpg,mpeg,avi,mov	
+	Popcorn	Videoplayer	Library	JS	Mozilla		mpg,mpeg,avi,mov	
+	PDF.JS	PDF Anzeige, Viewer	Library	JS	Mozilla		PDF	
+	JSpdf	PDF Writer	Library	JS	#		PDF	
+	Scrollreveal	Web Scroll Effekte	Library	JS	#		#	
+	CodeMirror	Anzeige von Quelltexten	Library	JS	#		ALLE	
+	ViewerJS	Anzeige von PDF und ODF	Library	JS	#		PDF,ODF	
+	Soundmanager2	Abspielen von Audiodateien	Library	JS	#		MP3,WAV	
+	ZIP.JS	Anzeige von Inhalten von ZIP-Dateien	Library	JS	#		ZIP,APK	
+	RAR.js	Anzeige von Inhalten von RAR-Dateien	Library	JS	#		RAR	
+	ThreeJS	3D Dateien 	Library	JS	#		stp,obj	
+	Head	Asynchrones laden von Inhalten	Library	JS	#		js,css	
+	Require	Asynchrones laden von Inhalten	Library	JS	#		js,css	
+	Sugar	Diverse Javascript Hilfsfunktionen	Library	JS	#		json	
+	Underscore		Library	JS	#			
+	Highlite		Library	JS	#			
+	Reveal	HTML Präsentationen	Library	JS	#			
+	Typeahead	Direkteingabe vorschläge	Library	JS	Twitter			
+	Bounce	Web Effekte	Library	JS	#			
+	Spinx	Spracherkennung im Web	Library	JS	#			
+	D3	Graphen und Darstellungen	Library	JS	#			
+	C3	Graphen und Darstellungen	Library	JS	#			
+	Gridster	Jquery erweiterung für Grid Layouts	Library	JS	#			
+	Grande	Web Live Editing	Library	JS	#			http://mattduvall.com/grande.js
+	Pen	Web Live Editing	Library	JS	#			http://sofish.github.io/pen
+		
+	########################################################################################
+	NodeJS Librarys
+	########################################################################################
+	Karma		Web testing, lokaler Server
+	Grunt		JavaScript Task Runner (Coffeescript, jade, less, sass,stylus,jshint,requirejs) 
+	Bower		Paketmanager 							
+	Gulp		JavaScript Task Runner (jade, js)
+	JSCS		JavaScript Codestyle Checker überprüft Programmierstil
+	JSHint		JavaScript Codequalitätsprüfung
+	TravisCI	Testen und bereitstellen für Github
+	
+	########################################################################################
+	Ruby Librarys
+	########################################################################################
+	Jeckyll		Ruby Automatisierung (Webserver)
+			
+	########################################################################################
+	CSS-Librarys
+	########################################################################################
+	Primer		Web Darstellung normalisieren	Library	CSS	#			
+	Skeleton	Web Darstellung normalisieren	Library	CSS	#			
+	Hover.js	Web Effekte						Library	CSS	#			
+	Bootstrap	Style für Internetseiten		Library	JS,CSS	Twitter			
+								
+								
+	agrep		Programm CMD	EXE	Unix4Windows			
+	ansi2knr		Programm CMD	EXE	Unix4Windows			
+	basename		Programm CMD	EXE	Unix4Windows			
+	bc		Programm CMD	EXE	Unix4Windows			
+	bison		Programm CMD	EXE	Unix4Windows			
+	bunzip2		Programm CMD	EXE	Unix4Windows	Komprimierung		
+	bzip2		Programm CMD	EXE	Unix4Windows	Komprimierung		
+	bzip2recover		Programm CMD	EXE	Unix4Windows	Komprimierung		
+	cat	Texte	Programm CMD	EXE	Unix4Windows			
+	chgrp		Programm CMD	EXE	Unix4Windows			
+	chmod	Benutzerrechte ändern	Programm CMD	EXE	Unix4Windows			
+	chown	Besitzer ändern	Programm CMD	EXE	Unix4Windows			
+	cksum	Prüfsummen	Programm CMD	EXE	Unix4Windows			
+	cmp		Programm CMD	EXE	Unix4Windows			
+	comm		Programm CMD	EXE	Unix4Windows			
+	compress		Programm CMD	EXE	Unix4Windows	Komprimierung		
+	cp	Dateien und Ordner kopieren	Programm CMD	EXE	Unix4Windows	Dateisystem		
+	csplit		Programm CMD	EXE	Unix4Windows			
+	cut		Programm CMD	EXE	Unix4Windows			
+	date	Datum ausgeben	Programm CMD	EXE	Unix4Windows			
+	dc		Programm CMD	EXE	Unix4Windows			
+	dd	Dateisystem	Programm CMD	EXE	Unix4Windows			
+	df	Freier Speicherplatz Laufwerke	Programm CMD	EXE	Unix4Windows			
+	diff	Texte	Programm CMD	EXE	Unix4Windows			
+	diff3	Texte	Programm CMD	EXE	Unix4Windows			
+	dircolors		Programm CMD	EXE	Unix4Windows			
+	dirname		Programm CMD	EXE	Unix4Windows			
+	du	Dateisystem	Programm CMD	EXE	Unix4Windows			
+	echo	Text ausgeben 	Programm CMD	EXE	Unix4Windows			
+	egrep		Programm CMD	EXE	Unix4Windows			
+	env		Programm CMD	EXE	Unix4Windows			
+	expand		Programm CMD	EXE	Unix4Windows			
+	expr		Programm CMD	EXE	Unix4Windows			
+	factor		Programm CMD	EXE	Unix4Windows			
+	fgrep		Programm CMD	EXE	Unix4Windows			
+	find	Dateisystem	Programm CMD	EXE	Unix4Windows			
+	flex		Programm CMD	EXE	Unix4Windows			
+	fmt		Programm CMD	EXE	Unix4Windows			
+	fold		Programm CMD	EXE	Unix4Windows			
+	fsplit		Programm CMD	EXE	Unix4Windows			
+	gawk		Programm CMD	EXE	Unix4Windows			
+	gclip		Programm CMD	EXE	Unix4Windows			
+	gplay		Programm CMD	EXE	Unix4Windows			
+	grep		Programm CMD	EXE	Unix4Windows			
+	gsar		Programm CMD	EXE	Unix4Windows			
+	gunzip		Programm CMD	EXE	Unix4Windows	Komprimierung		
+	gzip		Programm CMD	EXE	Unix4Windows	Komprimierung		
+	head		Programm CMD	EXE	Unix4Windows			
+	id		Programm CMD	EXE	Unix4Windows			
+	indent		Programm CMD	EXE	Unix4Windows			
+	install		Programm CMD	EXE	Unix4Windows			
+	join		Programm CMD	EXE	Unix4Windows			
+	jwhois		Programm CMD	EXE	Unix4Windows			
+	less		Programm CMD	EXE	Unix4Windows			
+	lesskey		Programm CMD	EXE	Unix4Windows			
+	libfl		Programm CMD	EXE	Unix4Windows			
+	ln		Programm CMD	EXE	Unix4Windows			
+	logname		Programm CMD	EXE	Unix4Windows			
+	ls		Programm CMD	EXE	Unix4Windows			
+	m4		Programm CMD	EXE	Unix4Windows			
+	make	Compiler für C Quelltexte	Programm CMD	EXE	Unix4Windows			
+	makedepend		Programm CMD	EXE	Unix4Windows			
+	makemsg		Programm CMD	EXE	Unix4Windows			
+	man	Handbuch anzeigen	Programm CMD	EXE	Unix4Windows			
+	md5sum	MD5 Prüfsumme	Programm CMD	EXE	Unix4Windows			
+	mkdir	Verzeichnis erstellen	Programm CMD	EXE	Unix4Windows			
+	mkfifo		Programm CMD	EXE	Unix4Windows			
+	mknod		Programm CMD	EXE	Unix4Windows			
+	mv	Datei verschieben	Programm CMD	EXE	Unix4Windows	Dateisystem		
+	mvdir	Ordner verschieben	Programm CMD	EXE	Unix4Windows	Dateisystem		
+	nl		Programm CMD	EXE	Unix4Windows			
+	od		Programm CMD	EXE	Unix4Windows			
+	paste		Programm CMD	EXE	Unix4Windows			
+	patch		Programm CMD	EXE	Unix4Windows			
+	pathchk		Programm CMD	EXE	Unix4Windows			
+	pclip		Programm CMD	EXE	Unix4Windows			
+	pr		Programm CMD	EXE	Unix4Windows			
+	printenv		Programm CMD	EXE	Unix4Windows			
+	printf		Programm CMD	EXE	Unix4Windows			
+	pwd	Anzeige des aktuellen Ordners	Programm CMD	EXE	Unix4Windows			
+	recode		Programm CMD	EXE	Unix4Windows			
+	rm	Datei und Ordner entfernen	Programm CMD	EXE	Unix4Windows	Dateisystem		
+	rman		Programm CMD	EXE	Unix4Windows			
+	rmdir		Programm CMD	EXE	Unix4Windows			
+	sdiff	Differenzen in Texten	Programm CMD	EXE	Unix4Windows			
+	sed	Texte bearbeiten per Scripting	Programm CMD	EXE	Unix4Windows			
+	seq		Programm CMD	EXE	Unix4Windows			
+	shar		Programm CMD	EXE	Unix4Windows			
+	sleep	Zeitbereich warten	Programm CMD	EXE	Unix4Windows			
+	sort		Programm CMD	EXE	Unix4Windows			
+	split		Programm CMD	EXE	Unix4Windows			
+	stego		Programm CMD	EXE	Unix4Windows			
+	su		Programm CMD	EXE	Unix4Windows			
+	sum		Programm CMD	EXE	Unix4Windows			
+	sync		Programm CMD	EXE	Unix4Windows			
+	tac		Programm CMD	EXE	Unix4Windows			
+	tail		Programm CMD	EXE	Unix4Windows			
+	tar	Komprimierung	Programm CMD	EXE	Unix4Windows	Komprimierung		
+	tee		Programm CMD	EXE	Unix4Windows			
+	test		Programm CMD	EXE	Unix4Windows			
+	touch	Datei erstellen und Zeitstempel setzen	Programm CMD	EXE	Unix4Windows			
+	tr		Programm CMD	EXE	Unix4Windows			
+	type		Programm CMD	EXE	Unix4Windows			
+	uname		Programm CMD	EXE	Unix4Windows			
+	unexpand		Programm CMD	EXE	Unix4Windows			
+	uniq		Programm CMD	EXE	Unix4Windows			
+	unrar	Komprimierung	Programm CMD	EXE	Unix4Windows	Komprimierung		
+	unshar		Programm CMD	EXE	Unix4Windows			
+	unzip	Komprimierung	Programm CMD	EXE	Unix4Windows	Komprimierung		
+	uudecode		Programm CMD	EXE	Unix4Windows			
+	uuencode		Programm CMD	EXE	Unix4Windows			
+	wc		Programm CMD	EXE	Unix4Windows			
+	which		Programm CMD	EXE	Unix4Windows			
+	whoami	Aktuellen Benutzer anzeigen	Programm CMD	EXE	Unix4Windows			
+	xargs		Programm CMD	EXE	Unix4Windows			
+	yes		Programm CMD	EXE	Unix4Windows			
+	zcat		Programm CMD	EXE	Unix4Windows			
+	zip	Komprimierung	Programm CMD	EXE	Unix4Windows	Komprimierung		
