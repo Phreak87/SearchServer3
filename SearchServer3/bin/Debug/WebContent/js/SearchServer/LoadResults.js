@@ -2,7 +2,6 @@ function GenIFrame (el){
 	var iFrame = document.createElement("IFrame");
 	iFrame.setAttribute("src", el.getAttribute("Frame") + "#" + el.getAttribute("Content") + "#" + el.getAttribute("Thumb"));
 	iFrame.setAttribute("FrameBorder", "1");
-	iFrame.setAttribute("Width", "600");
 	$(iFrame).dialog({
       height: 450,
 	  close: function( event, ui ) {$(this.parentNode).html('');}
@@ -12,6 +11,8 @@ function GenIFrame (el){
         "minimizable" 	: true,
         "dblclick" 		: "maximize",
         "minimizeLocation" : "right",
+		"maximize" : function(evt) {$(iFrame).width(this.parentElement.clientWidth - 30)},
+		"restore" : function(evt) {$(iFrame).width(this.parentElement.clientWidth - 30)},
         "icons" : {
           "close" 	 : "ui-icon-circle-close",
           "maximize" : "ui-icon-circle-plus",
@@ -229,14 +230,14 @@ function loadPageData (daten) {
 		// ####################################
 
 		switch (data.Messages[i].Class_Type) {
-			case "Math"		: output+="<TD><H2>" + data.Messages[i].Cont_Text + "</H2></TD>"; break;
+			case "Math"		: output+="<TD><H2>" + emojione.shortnameToImage(data.Messages[i].Cont_Text) + "</H2></TD>"; break;
 			case "FIL"		: output+="<TD><H2>" + data.Messages[i].Cont_Text + "</H2></TD>"; break;
 		};
 		
 		switch (data.Messages[i].Cont_Player) {
-			case "RSS"		: output+="<TD><H2>" + data.Messages[i].Cont_Text + "</H2></TD>"; break;
-			case "WEB"		: output+="<TD><H2>" + data.Messages[i].Cont_Text + "</H2></TD>"; break;
-			case "NoPlayer"	: output+="<TD><H2>" + data.Messages[i].Cont_Text + "</H2></TD>"; break;
+			case "RSS"		: output+="<TD><H2>" + emojione.shortnameToImage(data.Messages[i].Cont_Text) + "</H2></TD>"; break;
+			case "WEB"		: output+="<TD><H2>" + emojione.shortnameToImage(data.Messages[i].Cont_Text) + "</H2></TD>"; break;
+			case "NoPlayer"	: output+="<TD><H2>" + emojione.shortnameToImage(data.Messages[i].Cont_Text) + "</H2></TD>"; break;
 			case "Picture" 	: output+="<TD>" 
 								+ "<a class='group1' href='" + data.Messages[i].Cont_Link + "' title='Dateiname'>"
 								+ "<img width='150px' Style='max-height:600px;' id='i1' src='" + data.Messages[i].Cont_Link + "'></img></a>"

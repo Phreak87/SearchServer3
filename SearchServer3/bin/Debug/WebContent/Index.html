@@ -22,6 +22,7 @@
 				"js/JQuery/typeahead.jquery.min.js",
 				"js/JQuery/Bloodhound.min.js",
 				"css/hover-min.css",
+				"js/Emojione.min.js",
 				// "css/primer.css",
 				"js/SearchServer/D3Overview.js",
 				"js/SearchServer/LoadDebug.js",
@@ -179,7 +180,7 @@
 										})
 									},
 									CSV: function () {
-										head.load (	"js/export/NewExcel/FileSaver.js",
+										head.load (	"js/export/CSV/FileSaver.js",
 													"js/export/CSV/csv.min.js",
 										function () {
 											var out = CSV.encode(data.Messages, { header: false })

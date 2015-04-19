@@ -65,6 +65,10 @@
 		<Unit Name="Pink"				Calc="" 				Aliasses="pink,Pink,Rosa,rosa"/>
 		<Unit Name="Purple"				Calc="" 				Aliasses="lila,Lila,Purple,purple"/>
 		
+		<!-- Icons -->
+		<Unit Name=":smile:"			Calc="" 				Aliasses=":),:D"/>
+		
+		
 		<!-- Längen -->
 		<Unit Name="Meter" 				Calc="" 				Aliasses="m,M,meter,Meter"/>
 		<Unit Name="Fuß" 				Calc="[Meter]*3,2808399"   Aliasses="foot,Fuß,fuß"/>

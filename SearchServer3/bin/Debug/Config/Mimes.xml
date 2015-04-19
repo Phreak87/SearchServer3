@@ -105,7 +105,7 @@
 	#########################################################
 	-->
     <MimeType Postfix=".doc" 	Mimetype="application/msword" 						Player="Thumbed" 	Show="WWindow" CacheSec="3600" CreateThumb="True" Description="Microsoft Word"/>
-	<MimeType Postfix=".dot"  	Mimetype="application/msword"  						Player="Thumbed" 	Show="WWindow" CacheSec="3600" CreateThumb="False" Description="Word Document Template"/>
+	<MimeType Postfix=".dot"  	Mimetype="application/msword"  						Player="Thumbed" 	Show="WWindow" CacheSec="3600" CreateThumb="False" Description="Word Document Template/Graphwiz"/>
     <MimeType Postfix=".docm" 	Mimetype="application/msword" 						Player="Thumbed" 	Show="WWindow" CacheSec="3600" CreateThumb="True" Description="Microsoft Word mit Macros" />
     <MimeType Postfix=".ppt" 	Mimetype="application/vnd.ms-powerpoint" 			Player="Thumbed" 	Show="WWindow" CacheSec="3600" CreateThumb="True" Description="Microsoft Powerpoint"/>
 	<MimeType Postfix=".pps"  	Mimetype="application/vnd.ms-powerpoint" 			Player="Thumbed" 	Show="WWindow" CacheSec="3600" CreateThumb="True" Description="Microsoft Powerpoint"/>
@@ -131,7 +131,7 @@
 	Dokumenttypen (Viewer.js)
 	#########################################################
 	-->
-    <MimeType Postfix=".pdf" 	Mimetype="Application/pdf" 				 Player="PDF" 		Show="TWindow" CacheSec="3600" CreateThumb="True" Description="Adobe Portable Document Format"/>
+    <MimeType Postfix=".pdf" 	Mimetype="Application/pdf" 				 Player="PDF" 		Show="WWindow" CacheSec="3600" CreateThumb="True" Description="Adobe Portable Document Format"/>
     <MimeType Postfix=".xps" 	Mimetype="Application/pdf" 				 Player="PDF" 		Show="WWindow" CacheSec="3600" CreateThumb="True" Description="Microsoft Portable Document Format"/>
     <MimeType Postfix=".odf" 	Mimetype="Application/odf" 				 Player="NoPlayer" 	Show="WWindow" CacheSec="3600" CreateThumb="False" Description="Open Document Format"/>
     <!-- 
@@ -163,7 +163,6 @@
 	<MimeType Postfix=".mpga"  	Mimetype="audio/mpeg"  					Player="NoPlayer" Show="Inline" CacheSec="3600" CreateThumb="False" Description="None"/>
 	<MimeType Postfix=".mp2"  	Mimetype="audio/mpeg"  					Player="NoPlayer" Show="Inline" CacheSec="3600" CreateThumb="False" Description="None"/>
 	<MimeType Postfix=".m4a"  	Mimetype="audio/mpeg"  					Player="NoPlayer" Show="Inline" CacheSec="3600" CreateThumb="False" Description="None"/>
-	<MimeType Postfix=".m3u"  	Mimetype="audio/mpegurl"  				Player="NoPlayer" Show="Inline" CacheSec="3600" CreateThumb="False" Description="None"/>
 	<MimeType Postfix=".oga"  	Mimetype="audio/ogg"  					Player="NoPlayer" Show="Inline" CacheSec="3600" CreateThumb="False" Description="None"/>
 	<MimeType Postfix=".spx"  	Mimetype="audio/ogg"  					Player="NoPlayer" Show="Inline" CacheSec="3600" CreateThumb="False" Description="None"/>
 	<MimeType Postfix=".sid"  	Mimetype="audio/prs.sid"  				Player="NoPlayer" Show="Inline" CacheSec="3600" CreateThumb="False" Description="None"/>
@@ -400,7 +399,6 @@
     <MimeType Postfix=".mime" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="Mimetype definition"/>
     <MimeType Postfix=".asm" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="Assembler"/>
     <MimeType Postfix=".nse" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="Nessus Script"/>
-    <MimeType Postfix=".dot" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="Multiple Def- Graphwiz"/>
     <MimeType Postfix=".rdoc" 	Mimetype="text/html; charset=UTF-8" 	Player="Text" 		Show="Inline" CacheSec="30" CreateThumb="False" Description="Ruby Documentation"/>
     <!-- 
 	#########################################################

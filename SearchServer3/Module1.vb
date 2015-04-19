@@ -121,7 +121,7 @@ Module Module1
         ' --------------------------------------------
         DIR = DBMongo.GetCollection("DIR") : RSS = DBMongo.GetCollection("RSS") : FIL = DBMongo.GetCollection("FIL")
         If CleanDBS = True Then Console.WriteLine(".DBS: Drop Database RSS,DIR,FIL") : DIR.Drop() : RSS.Drop() : FIL.Drop()
-        DIR.CreateIndex({"Cont_Name", "Cont_Link", "Cont_Post"}) : RSS.CreateIndex({"Cont_Name"}) : FIL.CreateIndex({"Cont_Name"})
+        DIR.CreateIndex({"Cont_Name", "Cont_Link", "Cont_Post"}) : RSS.CreateIndex({"Cont_Name"}) 'FIL.CreateIndex({"Cont_Name"})
         'Dim QDOc As New QueryDocument : QDOc.Add("Class_Name", "FullC") : DIR.Remove(QDOc)
 
         ' --------------------------------------------
@@ -131,7 +131,7 @@ Module Module1
         TFIL = DBMongo.GetCollection("TFIL") : TWEB = DBMongo.GetCollection("TWEB")
         TDIR.Drop() : TRSS.Drop() : TFIL.Drop() : TWEB.Drop()
         TDIR.CreateIndex({"_id"}) : TRSS.CreateIndex({"_id"})
-        TFIL.CreateIndex({"_id"}) : TWEB.CreateIndex({"_id"})
+        TWEB.CreateIndex({"_id"})
         ' --------------------------------------------
         ' Init Manage Datenbanken
         ' --------------------------------------------
@@ -220,7 +220,7 @@ Module Module1
                 DBServer.Shutdown()
                 Environment.Exit(0)
             End If
-            Thread.Sleep(10 * 1000)
+            Thread.Sleep(5 * 1000)
         Loop
 
     End Sub

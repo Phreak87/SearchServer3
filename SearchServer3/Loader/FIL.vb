@@ -36,6 +36,8 @@ Namespace CLS
             Else
                 If My.Computer.FileSystem.DirectoryExists(Path) Then
                     For Each Datei In My.Computer.FileSystem.GetFiles(Path)
+                        Dim Post As String = MimeTypes.GetPlayerFor(Mid(Datei, InStrRev(Datei, ".")))
+                        If LCase(Post) <> "text" Then Console.WriteLine(".FIL: Non Text Content " & Datei) : Continue For
                         Dim DoFile As New CLS_Fil(Datei) : Threading.ThreadPool.QueueUserWorkItem(AddressOf IndexFile, DoFile)
                     Next
                 Else
@@ -48,6 +50,7 @@ Namespace CLS
             Dim Res As New List(Of DOC)
             Dim Head As String() = {}
             Dim i As Integer = 1
+            Dim f As Integer = 0
 
             Dim Remove As New QueryDocument : Remove.Add("Cont_Link", _obj._Path) : _Collect.Remove(Remove)
             Dim Datei As String = _obj._Path : If Datei.Contains("\") Then Datei = Mid(Datei, InStrRev(Datei, "\") + 1)
@@ -62,16 +65,13 @@ Namespace CLS
                 Else
                     Try
                         Dim Data As String() = TFP1.ReadFields()
-
-                        Dim DOC As New DOC(_ClassName, "FIL", _ClassGroup, Datei & " Zeile " & i & " " & StringArrayLine(Data), _obj._Path, Datei & "<BR>" & PrepareLine(Data, Head), "NoPost", Now) : Res.Add(DOC)
+                        Dim DOC As New DOC(_ClassName, "FIL", _ClassGroup, Datei & " Zeile " & i & " " & StringArrayLine(Data) & i, _obj._Path, Datei & "<BR>" & PrepareLine(Data, Head) & i, "NoPost", Now) : Res.Add(DOC)
                         If i Mod 10000 = 0 Then
                             Console.WriteLine(".FIL: {0} Save next 10000 lines ... {1} lines already saved", _ClassName, i)
                             _Collect.InsertBatch(Res) : Res.Clear() : System.GC.Collect()
                         End If
                         i = i + 1
-                    Catch ex As Exception
-                        Console.WriteLine(Datei & "@" & i & ": " & ex.Message)
-                        Res.Clear()
+                    Catch
                         i = i + 1
                     End Try
                 End If
@@ -80,11 +80,13 @@ Namespace CLS
             Try
                 If Res.Count > 0 Then _Collect.InsertBatch(Res)
             Catch ex As Exception
-
+                Console.WriteLine(".FIL: " & Datei & "@" & i & ": Fehler")
+                Res.Clear()
+                i = i + 1
             End Try
 
             Res.Clear() : Res = Nothing : _obj = Nothing
-            Console.WriteLine(".FIL: Interpretieren von " & _ClassName & " abgeschlossen")
+            Console.WriteLine(".FIL: Interpretieren von " & _ClassName & " abgeschlossen.")
         End Sub
         Function StringArrayLine(ByVal Line As String()) As String
                 Dim SS As New System.Text.StringBuilder
@@ -111,7 +113,7 @@ Namespace CLS
                                 Data = Data.Replace(Eintrag.Value, "<a class='hvr-glow' href='http://" & Eintrag.Value & "'>" & Eintrag.Value & "</a>")
                             Next
                         End If
-                        If Out.Length > 1000 Then Return Out.ToString
+                    If Out.Length > 1024 Then Return Out.ToString
                         If _UseHead = True Then Out.Append(Head(I) & ": " & Data & "<BR>")
                         If _UseHead = False Then Out.Append(Data & "<BR>")
                     End If
