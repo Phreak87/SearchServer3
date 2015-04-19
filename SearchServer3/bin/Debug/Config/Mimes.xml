@@ -134,6 +134,7 @@
     <MimeType Postfix=".pdf" 	Mimetype="Application/pdf" 				 Player="PDF" 		Show="WWindow" CacheSec="3600" CreateThumb="True" Description="Adobe Portable Document Format"/>
     <MimeType Postfix=".xps" 	Mimetype="Application/pdf" 				 Player="PDF" 		Show="WWindow" CacheSec="3600" CreateThumb="True" Description="Microsoft Portable Document Format"/>
     <MimeType Postfix=".odf" 	Mimetype="Application/odf" 				 Player="NoPlayer" 	Show="WWindow" CacheSec="3600" CreateThumb="False" Description="Open Document Format"/>
+    <MimeType Postfix=".epub" 	Mimetype="Application/epub" 			 Player="EPub" 		Show="WWindow" CacheSec="3600" CreateThumb="False" Description="Epub Document"/>
     <!-- 
 	#########################################################
 	Audio Dateitypen (Soundmanager2)

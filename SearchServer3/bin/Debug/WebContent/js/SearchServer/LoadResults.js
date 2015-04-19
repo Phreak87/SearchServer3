@@ -312,6 +312,10 @@ function loadPageData (daten) {
 								// + "<Iframe Frameborder='0' style='width: 800px; height: 600px;' src='js/IFrameLoader/GCode/Index.html#" + data.Messages[i].Cont_Link + "#'/>"
 								+ "<a href='#' Frame='js/IFrameLoader/GCode/Index.html' Content='" + data.Messages[i].Cont_Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (GCodeViewer) </H2></a>" 
 								+ "</TD>";  break;
+			case "EPub"	: output+="<TD>" 
+								// + "<Iframe Frameborder='0' style='width: 800px; height: 600px;' src='js/IFrameLoader/GCode/Index.html#" + data.Messages[i].Cont_Link + "#'/>"
+								+ "<a href='#' Frame='js/IFrameLoader/EpubJS/IndexEPUB.html' Content='" + data.Messages[i].Cont_Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (EpubViewer) </H2></a>" 
+								+ "</TD>";  break;
 			case "3D"		: output+="<TD>"
 								+ "<IFrame Frameborder='0' style='width: 400px; height: 280px;' src='js/IFrameLoader/ThreeJS/Index.html#" + data.Messages[i].Cont_Link + "#'/></TD><TD>"
 								// + "<a href='#' Frame='js/IFrameLoader/ThreeJS/Index.html' Content='" + data.Messages[i].objLink + "' Thumb='" + data.Messages[i].ContentThumb + "' onClick='GenIFrame(this);'><H2>Inhalt anzeigen</H2></a>" 

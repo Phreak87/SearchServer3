@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="reader/css/normalize.css">
+        <link rel="stylesheet" href="reader/css/main.css">
+        <link rel="stylesheet" href="reader/css/popup.css">
+		
+        <script src="reader/jquery-2.1.0.min.js"></script>
+        <script src="reader/zip.min.js"></script>
+        <script src="reader/mime-types.js"></script>
+        <script src="reader/js/epub.min.js"></script>
+        <script src="reader/js/hooks.min.js"></script> 
+        <script src="reader/js/reader.min.js"></script>
+        <script src="reader_src/plugins/search.js"></script>
+        <script src="reader/js/libs/screenfull.min.js"></script>
+        <script src="reader/js/libs/jquery.highlight.js"></script>
+        <script src="hooks/extensions/highlight.js"></script>
+		
+        <script>
+				var str = window.location.hash.substr(1);
+				var res = str.split("#");
+				
+            document.onreadystatechange = function () {  
+              if (document.readyState == "complete") {
+                EPUBJS.VERSION = "0.1.6";
+
+                EPUBJS.filePath = "reader/js/libs/";
+                EPUBJS.cssPath = "reader/css/";
+                ePubReader(res[0]);
+              }  
+            };
+			
+                
+        </script>
+
+
+
+    </head>
+    <body>
+      <div id="sidebar">
+        <div id="panels">
+          <input id="searchBox" placeholder="search" type="search">
+          
+          <a id="show-Search" class="show_view icon-search" data-view="Search">Search</a>
+          <a id="show-Toc" class="show_view icon-list-1 active" data-view="Toc">TOC</a>
+          <a id="show-Bookmarks" class="show_view icon-bookmark" data-view="Bookmarks">Bookmarks</a>
+          <a id="show-Notes" class="show_view icon-edit" data-view="Notes">Notes</a>
+         
+        </div>
+        <div id="tocView">
+        </div>
+        <div id="searchView">
+          <ul id="searchResults"></ul>
+        </div>
+        <div id="bookmarksView">
+          <ul id="bookmarks"></ul>
+        </div>
+      </div>
+      <div id="main">
+        
+        <div id="titlebar">
+          <div id="opener">
+            <a id="slider" class="icon-menu">Menu</a>
+          </div>
+          <div id="metainfo">
+            <span id="book-title"></span>
+            <span id="title-seperator">&nbsp;&nbsp;–&nbsp;&nbsp;</span>
+            <span id="chapter-title"></span>
+          </div>
+          <div id="title-controls">
+            <a id="bookmark" class="icon-bookmark-empty">Bookmark</a>
+            <a id="setting" class="icon-cog">Settings</a>
+            <a id="fullscreen" class="icon-resize-full">Fullscreen</a>
+          </div>
+        </div>
+        
+        <div id="divider"></div>
+        <div id="prev" class="arrow">‹</div>
+        <div id="viewer"></div>
+        <div id="next" class="arrow">›</div>
+        
+        <div id="loader"><img src="../reader/img/loader.gif"></div>
+      </div>
+      <div class="modal md-effect-1" id="settings-modal">
+          <div class="md-content">
+              <h3>Settings</h3>
+              <div>
+              </div>
+              <div class="closer icon-cancel-circled"></div>
+          </div>
+      </div>
+      <div class="overlay"></div>
+    </body>
+</html>
