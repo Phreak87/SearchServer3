@@ -1,7 +1,17 @@
-﻿# SearchServer3 Changelog
+﻿# SearchServer3 Changelog@Commit:44
+
+> Fix Backslash und . bei Datenbankabfrage 		=> OK (Extra funktion für Regex Sonderzeichen maskieren)<BR>
+> Aufräumen der JS Lib Ordner.					=> SheetJS Dateien gelöscht.<BR>
+> Emojiis Script suchen.						=> OK Emojify implementiert und Units.xml angepasst. (Evaluation)<BR>
+> Maximieren von WWindow fehlerhaft				=> OK (Max,und Rel lösen Iframe Resize aus)<BR>
+
+##### Fetcher
+> Fehler beim Init wenn Cont_Name identisch		=> OK (Cont_Name aus Index entfernt)<BR>
+> Versuch nicht Text-Dateien zu initialisieren	=> OK (Mimetype Checkup auf Player 'Text')<BR>
+
+# SearchServer3 Changelog@Commit:43
 ----
 ##### Verwaltung
-> Aufräumen der JS Lib Ordner.
 > Markdown Changelog fortlaufend (https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet)
 
 ##### Export
@@ -13,7 +23,6 @@
 ##### Datenbank
 ```
 - Datenbank Distinct der Ergebnisse.
-- Fix Backslash und . bei Datenbankabfrage 		=> OK (Extra funktion für Regex Sonderzeichen maskieren)<BR>
 ```
 
 > Ordnen anhand von Order + Kein Order			=> OK (Bei DBSearch aufruf wird wenn Parameter nicht leer nach Parameter sortiert)<BR>
@@ -24,8 +33,7 @@
 - Webinterface darstellung Gruppen (alle Anzeigen und nachschieben)
 - JSDelivr API Suchmodul [API](https://github.com/jsdelivr/api)
 ```
-> Emojiis Script suchen.						=> OK Emojify implementiert und Units.xml angepasst. (Evaluation)
-> Maximieren von WWindow fehlerhaft				=> OK (Max,und Rel lösen Iframe Resize aus)
+
 > Twitter Typeahead  (Testen) 					=> OK (Vordefiniert, Probleme mit Darstellung, Request funktioniert.)<BR>
 
 ##### Anzeigemodule
@@ -33,9 +41,6 @@
 > Json und Markdown separieren					=> OK (Text/Markdown/JSON Player implementiert) <BR>
 > XML to Json Converter für JsonEditor 			=> OK (in IndexXML.html)<BR>
 
-##### Fetcher
-> Fehler beim Init wenn Cont_Name identisch		=> OK (Cont_Name aus Index entfernt)
-> Versuch nicht Text-Dateien zu initialisieren	=> OK (Mimetype Checkup auf Player 'Text')
 
 ##### Mimetypen
 > Mimetypes Anpassung (Text/MD/JSON/Excel)		=> OK Mimetypen mit den richtigen Playern ansprechen. XML-Formate/XLSX-Formate/Markdown-Formate/Text-Formate<BR>
