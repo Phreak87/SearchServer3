@@ -17,8 +17,8 @@ Das Backend enthält einen eigenen Webserver, der bei lokalen Dateien (sofern
 angegeben in der Config) Thumbnails erstellt sofern dies für den jeweiligen Dateityp aktiviert wurde.
 
 Zudem kann das Backend einfache Berechnungen ausführen, Einheiten umrechnen, Farben evaluieren,
-Datumsangaben mit Feiertagen (Bay.) berechnen und Mimetypes erkennen und Programme 
-starten sowie Ordner auf dem lokalen Computer öffnen.
+Smileys ausgeben, Datumsangaben mit Feiertagen (Bayern) berechnen und Mimetypes erkennen und Programme 
+starten sowie Ordner auf dem lokalen Computer öffnen. (In Units.xml zu erweitern).
 
 ### Frontend(Weboberfläche)
 
@@ -28,8 +28,8 @@ Unter anderem werden folgende Inhalte direkt dargestellt:
 - 3D stp und obj- Dateien
 - Pdf (PDF-Anzeige von Chrome oder Player)
 - Audio (mp3,wav,ogg)
-- Video (avi,mpeg,flv,webm) 3 Player zur Auswahl
-- Bilder (Png/Bmp/ico/jpeg, ...) 
+- Video (avi,mpeg,flv,webm) 3 Player zur Auswahl, Thumbnail als Vorschau
+- Bilder (Png/Bmp/ico/jpeg, ...)
 - Zip (und Komprimierte-Formate)
 - Rar
 - Epub (Ebooks)
@@ -40,9 +40,11 @@ Unter anderem werden folgende Inhalte direkt dargestellt:
 - Excel (xlsm/xlsx)
 - Plaintext (txt,log,csv,lst)
 - Quelltexte (js,php,vb,c,bat,css,...)
+- Thumbnail (Für Dateien ohne Webplayer)
 
-Zu jedem beliebigen Dateityp (auch unbekannte) haben Sie die Möglichkeit den Order
-zu öffnen oder die Datei mit der Standardanwendung ihres Computers auszuführen.
+Zu jedem beliebigen Dateityp (auch unbekannte) werden Icons uns eine Beschreibung ausgegeben.
+Zudem haben Sie die Möglichkeit den Order zu öffnen oder die Datei mit der Standardanwendung 
+ihres Computers auszuführen oder den Mimetyp zu blockieren.
 
 Die Ergebnisse können (beim anwählen) in einem 'Fenster im Fenster', einem Tab, der Ergebnisseite, 
 der Suchseite oder in der Ergebnisleiste eingeordnet dargestellt werden.
@@ -56,15 +58,17 @@ Source-Referenzen und Normen enthalten
 
 Youtube und andere Videoquellen werden direkt angezeigt.
 
-Bookmarks werden in einem eigenen Frame geöffnet und die Suchanfrage direkt eingetragen.
+Bookmarks werden in einem eigenen Frame mit einer gewählten Option
+(z.B. Nur Bilder) und dem Suchtext geöffnet.
 
 Die Ergebnisse der Suchabfrage können Sie sich dann für einen späteren Moment
 speichern oder als PDF, Excel oder CSV-Datei ausgeben lassen.
 
 Die angezeigten Dateiformate können einfach in der Results.js und der Config.xml
-erweitert werden. 
+angepasst und erweitert werden. 
 
 ### Installation
+
 Laden Sie sich das komplette Paket mit vorkonfigurierten Einstellungen
 herunter, kompilieren Sie das Projekt in VB.Net und starten Sie die Searchserver3.exe
 im Debug-Verzeichnis. Das erste Indizieren der Laufwerke und Dateien kann u.U. einige
@@ -74,6 +78,11 @@ Wärend dieser Initialisierungsphase werden in der Ausgabe nur Dateien aus kompl
 Initialisierungsaufgaben angezeigt.
 Sie können die Webseite im Webbrowser (aus Sicherheitsgründen nur auf dem lokalen Computer) 
 mit der Seite http://localhost:9090 öffnen.
+
+### Testen
+
+Für das Testen steht im linken oberen Rand 'Debugmeldungen' für die Kommunikation zwischen Front- und
+Backend und 'Testseiten' für das Testen einzelner Module zur Verfügung.
 
 ### Empfehlung
 - Yacy für die Suche per Json oder im IFrame
