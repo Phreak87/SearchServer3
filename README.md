@@ -7,8 +7,8 @@ Das Backend
 - durchsucht die lokalen Laufwerke rekursiv und filtert diese auf gültige Dateitypen (Cleaner.xml).
   (Während der Searchserver läuft werden alle neu erstellten Dateien direkt in der Datenbank gespeichert
   sowie ein Refresh nach einer definierten Zeit ausgeführt.)
-- empfängt RSS- und Atom Feeds.
-- liest Textdateien ein (Paketlisten, Übersetzungsdateien, Adresslisten, ...).
+- empfängt und Interpretiert RSS- und Atom Feeds in definierten Zeitabständen.
+- liest alle Textdateien in Ordern (mit und ohne Header) ein (Paketlisten, Übersetzungsdateien, Adresslisten, ...).
 - durchsucht (parst) andere Suchmaschinen mittels Json/Xml/Html als Xpath.
 
 Alle indizierten Inhalte werden in einer MongoDB-Datenbank für eine schnelle Suche gespeichert.
@@ -17,29 +17,29 @@ Das Backend enthält einen eigenen Webserver, der bei lokalen Dateien (sofern
 angegeben in der Config) Thumbnails erstellt sofern dies für den jeweiligen Dateityp aktiviert wurde.
 
 Zudem kann das Backend einfache Berechnungen ausführen, Einheiten umrechnen, Farben evaluieren,
-Smileys ausgeben, Datumsangaben mit Feiertagen (Bayern) berechnen und Mimetypes erkennen und Programme 
+Smileys ausgeben, Datumsangaben mit Feiertagen (Bayern) berechnen, Mimetypes erkennen und Programme 
 starten sowie Ordner auf dem lokalen Computer öffnen. (In Units.xml zu erweitern).
 
 ### Frontend(Weboberfläche)
 
 Das Frontend stellt die Suchergebnisse grafisch dar.
-Unter anderem werden folgende Inhalte direkt dargestellt:
-- Gcode (3D Plot und Druck)
-- 3D stp und obj- Dateien
+Unter anderem werden folgende Inhalte direkt dargestellt und interpretiert:
+- Gcode (3D Plot und Druck) 3D und Schicht-Ansicht.
+- 3D stp und obj- Dateien 
 - Pdf (PDF-Anzeige von Chrome oder Player)
-- Audio (mp3,wav,ogg)
+- Audio (mp3,wav,ogg) zum direkten abspielen
 - Video (avi,mpeg,flv,webm) 3 Player zur Auswahl, Thumbnail als Vorschau
-- Bilder (Png/Bmp/ico/jpeg, ...)
-- Zip (und Komprimierte-Formate)
+- Bilder (Png/Bmp/ico/jpeg, ...) mit Viewer zum weiterschalten
+- Zip (und Komprimierte-Formate) mit direktem anzeigen von Bildern, Texten in der Zip.
 - Rar
 - Epub (Ebooks)
-- Xml (und alle XML-Strukturierten Formate)
-- Json und Bson
+- Xml (und alle XML-Strukturierten Formate) als aufklappbare Baumstruktur.
+- Json und Bson als aufklappbare Baumstruktur.
 - Html (Darstellung und Sourcecode)
 - Markdown (md,markdown,rst)
-- Excel (xlsm/xlsx)
+- Excel (xlsm/xlsx) als Tabelle
 - Plaintext (txt,log,csv,lst)
-- Quelltexte (js,php,vb,c,bat,css,...)
+- Quelltexte (js,php,vb,c,bat,css,...) interpretiert (Brackets, Folding, ...)
 - Thumbnail (Für Dateien ohne Webplayer)
 
 Zu jedem beliebigen Dateityp (auch unbekannte) werden Icons uns eine Beschreibung ausgegeben.
