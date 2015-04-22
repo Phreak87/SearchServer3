@@ -7,31 +7,65 @@ Class DTE
         If IsNothing(Query) Then _Result = "" : Exit Sub
         Calculate()
     End Sub
+
     Sub Calculate()
+
         Dim Weekdays As String() = ({"Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"})
         Dim Months As String() = ({"Januar", "Februar", "Maerz", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"})
 
         If (_Query).Contains("NowDate") Then _Query = _Query.Replace("NowDate", Now.Date.ToString)
         If (_Query).Contains("NowTime") Then _Query = _Query.Replace("NowTime", Now.ToLocalTime.ToString)
 
-        If IsDate(_Query) Then
-            Dim WT As String = Weekdays(Date.Parse(_Query).DayOfWeek)
-            Dim KM As String = Months(Date.Parse(_Query).Month)
-            Dim JT As String = Date.Parse(_Query).DayOfYear
-            Dim KW As String = DatePart(DateInterval.WeekOfYear, CDate(_Query), FirstDayOfWeek.Monday, FirstWeekOfYear.FirstFourDays)
+        Dim Test As List(Of String) = EvalTypes.SplitQuery(_Query)
+        Dim Calc As Boolean = True
 
-            _Result = Date.Parse(_Query).Date & "<BR>" & _
-                    "Zeit: " & Now.ToLongTimeString.ToString & "<BR>" & _
-                    "Kalenderwoche: " & KW & "<BR>" & _
-                    "Wochentag: " & WT & "<BR>" & _
-                    "Monat: " & KM & "<BR>" & _
-                    "Tag im Jahr:" & JT & "<BR>" & _
-                    "Feiertage: " & Next10Days(_Query) & _
-                    "Differenz: " & DateDiff(DateInterval.Year, Date.Parse(_Query).Date, Now) & " Jahre, " & _
-                    Date.Now.Month - Date.Parse(_Query).Month & " Monate, " & _
-                    Date.Now.Day - Date.Parse(_Query).Day & " Tage"
+        ' relative Angaben konvertieren in Datum (z.B. Montag oder Februar)
+        If Weekdays.Contains(Test(0)) Then Test(0) = WochenTag_Woche(Test(0))
+        If Months.Contains(Test(0)) Then Test(0) = DateAdd(DateInterval.Month, CInt(Test(2)), CDate(Now.Day & "." & IndexOf(Months, Test(0)) & "." & Now.Year)) : Calc = False
 
+        If IsDate(Test(0)) = False Then Exit Sub
+
+        ' Fall 'Heute + 1 Tag' oder 'Heute + 1' oder '1.2.1987 + 1'
+        If Calc = True Then
+            If IsDate(Test(0)) Then
+                If Test.Count >= 3 Then
+                    If EvalTypes.IsOperator(Test(1)) Then
+                        If IsNumeric(Test(2)) Then
+                            If Test.Count = 4 Then
+                                If EvalTypes.IsUnit(Test(3)) Then
+                                    Select Case Test(3)
+                                        Case "Tage" : Test(0) = DateAdd(DateInterval.Day, CInt(Test(2)), CDate(Test(0)))
+                                        Case "Monate" : Test(0) = DateAdd(DateInterval.Month, CInt(Test(2)), CDate(Test(0)))
+                                        Case "Jahre" : Test(0) = DateAdd(DateInterval.Year, CInt(Test(2)), CDate(Test(0)))
+                                    End Select
+                                End If
+                            Else
+                                Test(0) = DateAdd(DateInterval.Day, CInt(Test(2)), CDate(Test(0)))
+                            End If
+                        End If
+                    End If
+                End If
+            End If
         End If
+
+        If IsDate(Test(0)) Then
+            Dim WT As String = Weekdays(Date.Parse(Test(0)).DayOfWeek)
+            Dim KM As String = Months(Date.Parse(Test(0)).Month - 1)
+            Dim JT As String = Date.Parse(Test(0)).DayOfYear
+            Dim KW As String = DatePart(DateInterval.WeekOfYear, CDate(Test(0)), FirstDayOfWeek.Monday, FirstWeekOfYear.FirstFourDays)
+
+            _Result = Date.Parse(Test(0)).Date & "<BR>" & _
+                        "Zeit: " & Now.ToLongTimeString.ToString & "<BR>" & _
+                        "Kalenderwoche: " & KW & "<BR>" & _
+                        "Wochentag: " & WT & "<BR>" & _
+                        "Monat: " & KM & "<BR>" & _
+                        "Tag im Jahr:" & JT & "<BR>" & _
+                        "Feiertage: " & Next10Days(Test(0)) & _
+                        "Differenz: " & DateDiff(DateInterval.Year, Date.Parse(Test(0)).Date, Now) & " Jahre, " & _
+                        Date.Now.Month - Date.Parse(Test(0)).Month & " Monate, " & _
+                        Date.Now.Day - Date.Parse(Test(0)).Day & " Tage"
+        End If
+
     End Sub
 
 
@@ -100,5 +134,28 @@ Class DTE
         Return "<BR>" & Out
     End Function
 
+    Private Function WochenTag_Woche(ByVal WochenTag As String) As Date
+        Dim Weekdays As String() = ({"Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"})
 
+        Dim indexDay As Integer = 0
+        For i As Integer = 0 To Weekdays.Length - 1
+            If WochenTag = Weekdays(i) Then indexDay = i : Exit For
+        Next
+
+        Dim indextoDay As String = Weekdays(Date.Parse(Now).DayOfWeek - 1)
+        For i As Integer = 0 To Weekdays.Length - 1
+            If indextoDay = Weekdays(i) Then indextoDay = i : Exit For
+        Next
+
+        Return DateAdd(DateInterval.Day, 6 - indextoDay, Now)
+    End Function
+
+    Function IndexOf(ByVal Liste As String(), ByVal SuchText As String) As Integer
+        For i As Integer = 0 To Liste.Length - 1
+            If Liste(i) = SuchText Then
+                Return i + 1
+            End If
+        Next
+        Return 0
+    End Function
 End Class

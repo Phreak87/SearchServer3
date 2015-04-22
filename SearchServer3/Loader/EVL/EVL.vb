@@ -27,9 +27,9 @@ Public Class EVL
         Dim Res As String = ""
 
         Try
+            Query = EvalTypes.Reduzieren(Trim(Query))
             If Res = "" Then Res = Res & MimeTypes.Info(Query)
             If Res = "" Then Res = Res & New DTE(Query)._Result
-            Query = EvalTypes.Reduzieren(Query)
             If Res = "" Then Res = Res & New COL(Query)._Result
             If Res = "" Then Res = Res & New UCL().ParseQuery(Query)
         Catch

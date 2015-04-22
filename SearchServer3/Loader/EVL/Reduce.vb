@@ -24,7 +24,8 @@
             GT.Add("Name", Type.Attributes("Name").Value)
             GT.Add("Formel", Type.Attributes("Calc").Value)
             Grundtype.Add(GT)
-            For Each SubType As String In Split(Type.Attributes("Aliasses").Value, ",")
+            For Each SubType As String In Split(Type.Attributes("Aliasses").Value, ",").Distinct
+                If Konverter.ContainsKey(SubType) Then Continue For
                 Konverter.Add(SubType, Type.Attributes("Name").Value)
             Next
         Next
@@ -76,8 +77,10 @@
     End Function
 
     Function SplitQuery(ByVal Query As String) As List(Of String)
-        Dim Res1 As List(Of String) = System.Text.RegularExpressions.Regex.Split(Query, "(\d+,\d+| |\d+)").ToList
+        ' Datum oder Zeit oder Zahl oder Leer oder Zahl,Zahl
+        Dim Res1 As List(Of String) = System.Text.RegularExpressions.Regex.Split(Query, "(\d{1,2}:\d{1,2}:\d{1,2}|\d{1,2}\.\d{1,2}\.\d{4}|\d+,\d+| |\d+)").ToList
         Res1.RemoveAll(Function(s) Trim(s) = "")
+        Res1.RemoveAll(Function(s) Trim(s) = " ")
         Return Res1
     End Function
 

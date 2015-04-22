@@ -43,12 +43,7 @@
 					  prefetch: 'test.json',
 					  remote: 'test.json'
 					});Preload.initialize();
-					//$('#SText').typeahead(null, {
-					  //name: 'best-pictures',
-					  //displayKey: 'value',
-					  //source: Preload.ttAdapter()
-					//});
-					
+
 					$("#Search").button();
 					$("#Save").button();
 					$("#HideDebug").button();
@@ -423,6 +418,7 @@
 			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/Projekktor/showmov.html#http://localhost:9090/js/IFrameLoader/Projekktor/Test.ogv#http://localhost:9090/js/IFrameLoader/Projekktor/Test.jpg">(OGV) Projekktor Testpage</a><BR></TD></TR>
 			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/Projekktor/showmovExt.html#https://www.youtube.com/watch?v=_bWLqJG8G3M">(Youtube) Projekktor Testpage</a><BR></TD></TR>
 			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/Sheetjs/index.html#http://localhost:9090/js/IFrameLoader/SheetJS/test.xlsx"> SheetJS </a><BR></TD></TR>
+			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/Epubjs/indexEPUB.html#http://localhost:9090/js/IFrameLoader/epubjs/test.epub"> EpubJS </a><BR></TD></TR>
 			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/EpicEditor/index.html#http://localhost:9090/js/IFrameLoader/EpicEditor/Readme.md"> (Markdown) EpicEditor </a><BR></TD></TR>
 			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/jsoneditor/index.html#http://localhost:9090/js/IFrameLoader/jsoneditor/package.json"> JsonEditor </a><BR></TD></TR>
 			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/jsoneditor/indexXML.html#http://localhost:9090/js/IFrameLoader/jsoneditor/package.xml"> JsonEditor mit XML konvertierung </a><BR></TD></TR>
@@ -449,7 +445,10 @@
 	
 		<input 			type=			"text" 		
 						id=				"SText" 	
-						style=			"height:30px;Width:84%;margin-top:0px;padding-top:0px;"	
+						class=			"awesomeplete"
+						data-multiple 
+						data-list=		"CSS, JavaScript, HTML, SVG, ARIA, MathML"
+						style=			"height:30px;Width:80%;margin-top:0px;padding-top:0px;"	
 						onkeydown=		"if (event.keyCode == 13){$('#Search').click();LoadSearch($('#debug'),$('#Suche'));}"></input> 
 		
 		
