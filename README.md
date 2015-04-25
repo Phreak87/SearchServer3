@@ -1,4 +1,4 @@
-	
+
 SearchServer3
 ========================
 
@@ -130,6 +130,10 @@ sollten Sie jedoch ein Backup der DIR Collection erstellen, da die Datenbank bei
 > [JSoneditor.js]()<BR>
 > [XmlToJson]()<BR>
 > [epub.js]()<BR>
+> [EXIF.js]()<BR>
+> [ThreeDXF]()<BR>
+> [HexView]()<BR>
+> [OpenJSCad]()<BR>
 
 ### Javascript-Sonstige
 
