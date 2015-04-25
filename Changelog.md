@@ -1,6 +1,6 @@
 # SearchServer3 Changelog@Commit:53 (Comming soon)
 
-[x] Neuer Player für OpenJSCad Dateien			=> 
+[X] Neuer Player für OpenJSCad Dateien			=> 
 > Neuer Player für DXF Dateien					=> OK (Modul unterstützt wenig DXF Formate)
 > Neuer Player für Bilddateien					=> OK (Exif Informationen zu Bild anzeigen)
 > Neuer Player für Hex Dateien					=> OK (Endet jedoch bei großen Dateien in Ausnahme)
