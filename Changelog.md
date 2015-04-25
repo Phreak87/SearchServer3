@@ -1,3 +1,15 @@
+# SearchServer3 Changelog@Commit:53 (Comming soon)
+
+> Neuer Player für OpenJSCad Dateien			=> [x]
+> Neuer Player für DXF Dateien					=> OK (Modul unterstützt wenig DXF Formate)
+> Neuer Player für Bilddateien					=> OK (Exif Informationen zu Bild anzeigen)
+> Neuer Player für Hex Dateien					=> OK (Endet jedoch bei großen Dateien in Ausnahme)
+> CodeMirror Textanzeige bei XML Fehlerhaft		=> OK (Version aktualisiert)
+> MongoDB Production 3.02						=> OK (Version aktualisiert incl. Import und Export)
+> Neue Mimetypen								=> OK (DXF zugeordnet und JSCad hinzugefügt.)
+> Bild Reload									=> OK (Wenn Thumb noch nicht erstellt nach 2 Sekunden neu laden)
+> Prefetch										=> OK (Datenbank Ergebnisse incl. Thumbnails vorladen)
+
 ﻿# SearchServer3 Changelog@Commit:44
 
 > Fix Backslash und . bei Datenbankabfrage 		=> OK (Extra funktion für Regex Sonderzeichen maskieren)<BR>
