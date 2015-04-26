@@ -1,6 +1,6 @@
-# SearchServer3 Changelog@Commit:53 (Comming soon)
+# SearchServer3 Changelog@Commit:53
 
-> Neuer Player für OpenJSCad Dateien			=> OK (Initial)
+> Neuer Player für OpenJSCad Dateien			=> OK (Anzeige von 3D-Modell, Einstellungen und Quellcode)
 > Neuer Player für DXF Dateien					=> OK (Modul unterstützt wenig DXF Formate)
 > Neuer Player für Bilddateien					=> OK (Exif Informationen zu Bild anzeigen)
 > Neuer Player für Hex Dateien					=> OK (Endet jedoch bei großen Dateien in Ausnahme)
@@ -10,7 +10,7 @@
 > Bild Reload									=> OK (Wenn Thumb noch nicht erstellt nach 2 Sekunden neu laden)
 > Prefetch										=> OK (Datenbank Ergebnisse incl. Thumbnails vorladen)
 
-﻿# SearchServer3 Changelog@Commit:44
+# SearchServer3 Changelog@Commit:44
 
 > Fix Backslash und . bei Datenbankabfrage 		=> OK (Extra funktion für Regex Sonderzeichen maskieren)<BR>
 > Aufräumen der JS Lib Ordner.					=> SheetJS Dateien gelöscht.<BR>
