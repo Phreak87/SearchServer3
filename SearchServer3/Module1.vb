@@ -11,7 +11,9 @@ Module Module1
     Dim DBClient As New MongoClient
     Dim DBServer As MongoServer
     Dim DBMongo As MongoDatabase
-    Dim DBClose As Boolean = False
+    Public DBClose As Boolean = False
+
+    Public PreFetch As New Dictionary(Of String, String)
 
     ' --------------------------------------------------------
     ' Mongo Ergebnis-Collections
@@ -218,6 +220,7 @@ Module Module1
         Do
             If DBClose = True Then
                 DBServer.Shutdown()
+                Thread.Sleep(1000)
                 Environment.Exit(0)
             End If
             Thread.Sleep(5 * 1000)
@@ -298,7 +301,13 @@ Module Module1
                 Case "api\query\qry" : Cont = CLS.DBS.MongoDB.QueryFull(QRY)
                 Case "api\query\idx" : Cont = CLS.DBS.MongoDB.QueryFull(IDX)
 
-                Case "api\query\dir" : resDB = CLS.DBS.MongoDB.QueryText(DIR, {SuTE}, 30, PaID, "Cont_Link", RawData, Nothing) : Cont = resDB.ToJson
+                Case "api\query\dir"
+                    If PreFetch.ContainsKey(RawData.ReqURLGets("sid") & "_" & PaID) Then
+                        Console.WriteLine("Verwende vorgeladenes Ergebnis " & RawData.ReqURLGets("sid") & "_" & PaID)
+                        Cont = PreFetch(RawData.ReqURLGets("sid") & "_" & PaID).ToString
+                    Else
+                        resDB = CLS.DBS.MongoDB.QueryText(DIR, {SuTE}, 30, PaID, "Cont_Link", RawData, Nothing) : Cont = resDB.ToJson
+                    End If
                 Case "api\query\fil" : resDB = CLS.DBS.MongoDB.QueryText(FIL, {SuTE}, 30, PaID, "Cont_Name", RawData, Nothing) : Cont = resDB.ToJson
                 Case "api\query\rss" : resDB = CLS.DBS.MongoDB.QueryText(RSS, {SuTE}, 30, PaID, "Cont_Text", RawData, Nothing) : Cont = resDB.ToJson
                 Case "api\query\web" : resDB = CLS.DBS.MongoDB.QueryText(TWEB, {"WEB"}, 100, PaID, "Class_Type", RawData, Nothing) : Cont = resDB.ToJson
@@ -315,12 +324,13 @@ Module Module1
                     ' LogStatus(".WEB: " & Cont)
 
                 Case "api\query\search"
+
                     Dim Doc As New BsonDocument("Query", RawData.ReqContent("Data"))
                     Doc.Add(New BsonElement("Time", New BsonDateTime(Now)))
                     Dim Res As WriteConcernResult = QRY.Insert(Of BsonDocument)(Doc)
                     Cont = "{""sid""" & ":" & """" & Doc("_id").ToString & """}"
                     NewS = True : SuTE = RawData.ReqContent("Data") : SuID = Doc("_id").ToString
-                    LogStatus(".WEB: " & Cont)
+                    LogStatus(".WEB: " & Cont) : PreFetch.Clear()
 
                     ' ----------------------------------------------------
                     ' Datei öffnen
@@ -336,6 +346,7 @@ Module Module1
                     End If
 
                 Case "api\query\delmime"
+                    PreFetch.Clear()
                     Dim DBPre As Integer = DIR.Count
                     Dim N As New List(Of IMongoQuery) : N.Add(Query.EQ("Cont_Post", LCase(RawData.ReqContent("Data"))))
                     DIR.Remove(Query.Or(N))
@@ -381,21 +392,20 @@ Module Module1
         ' ###############################################################
         Select Case RawData.ReqURLPath
             Case "api\query\dir"
-                For Each Eintrag As DOC In resDB.GetCollection
-                    If Eintrag.Cont_Thumb <> RawData.ReqReferrer Then
-                        Dim DBThumb As String = Environment.CurrentDirectory & "\WebContent\" & Eintrag.Cont_Thumb.ToString.Replace(RawData.ReqReferrer, "")
-                        If My.Computer.FileSystem.FileExists(DBThumb) = False Then
-                            If My.Computer.FileSystem.FileExists(Eintrag.Cont_Link.Replace(RawData.ReqReferrer, "")) = True Then
-                                Dim t As New Filetypes2.ThumbCreator(Eintrag.Cont_Link.Replace(RawData.ReqReferrer, ""), DBThumb)
-                                Console.WriteLine(".THB: Erstelle Thumb für " & Eintrag.Cont_Name)
-                                LogStatus("Thumb: " & Eintrag.Cont_Thumb)
-                                t.CreateThumb()
-                                'Dim TH As New Thread(AddressOf t.CreateThumb) : TH.Start()
-                                Console.WriteLine(".THB: Thumb erstellt: " & Eintrag.Cont_Thumb.ToString.Replace(RawData.ReqReferrer, ""))
-                            End If
-                        End If
-                    End If
-                Next
+
+                CreateThumbsfromList(resDB, RawData)
+
+                ' jetzige Ergebnisse speichern
+                If PreFetch.ContainsKey(RawData.ReqURLGets("sid") & "_" & PaID) = False Then
+                    PreFetch.Add(RawData.ReqURLGets("sid") & "_" & PaID, Cont)
+                End If
+                ' Nächste Ergebnisse vorladen
+                If PreFetch.ContainsKey(RawData.ReqURLGets("sid") & "_" & PaID + 1) = False Then
+                    Console.WriteLine("Vorladen von " & RawData.ReqURLGets("sid") & "_" & PaID + 1)
+                    Dim resDB2 As New CLS.DBS.DBResult : resDB2 = (CLS.DBS.MongoDB.QueryText(DIR, {SuTE}, 30, PaID + 1, "Cont_Link", RawData, Nothing))
+                    PreFetch.Add(RawData.ReqURLGets("sid") & "_" & PaID + 1, resDB2.ToJson)
+                    CreateThumbsfromList(resDB2, RawData)
+                End If
 
             Case "api\query\search"
                 If NewS = True Then
@@ -422,4 +432,21 @@ Module Module1
         For Each eintrag In DIRWatches : eintrag.Init_Refresh() : Next
     End Sub
 
+    Sub CreateThumbsfromList(resDB As CLS.DBS.DBResult, RawData As CLS.WBS.Server.MessageDecoder)
+        For Each Eintrag As DOC In resDB.GetCollection
+            If Eintrag.Cont_Thumb <> RawData.ReqReferrer Then
+                Dim DBThumb As String = Environment.CurrentDirectory & "\WebContent\" & Eintrag.Cont_Thumb.ToString.Replace(RawData.ReqReferrer, "")
+                If My.Computer.FileSystem.FileExists(DBThumb) = False Then
+                    If My.Computer.FileSystem.FileExists(Eintrag.Cont_Link.Replace(RawData.ReqReferrer, "")) = True Then
+                        Dim t As New Filetypes2.ThumbCreator(Eintrag.Cont_Link.Replace(RawData.ReqReferrer, ""), DBThumb)
+                        Console.WriteLine(".THB: Erstelle Thumb für " & Eintrag.Cont_Name)
+                        LogStatus("Thumb: " & Eintrag.Cont_Thumb)
+                        t.CreateThumb()
+                        'Dim TH As New Thread(AddressOf t.CreateThumb) : TH.Start()
+                        Console.WriteLine(".THB: Thumb erstellt: " & Eintrag.Cont_Thumb.ToString.Replace(RawData.ReqReferrer, ""))
+                    End If
+                End If
+            End If
+        Next
+    End Sub
 End Module

@@ -43,47 +43,42 @@
 		head.load(	"jquery.min.js",
 					"lib/codemirror.js",
 					"lib/codemirror.css",
-					"addon/selection/active-line.js",
-					"addon/edit/matchbrackets.js",
-					"addon/search/search.js",
+					"addon/hint/show-hint.js",
+					"addon/hint/javascript-hint.js",
 					"addon/fold/foldcode.js",
-					"addon/fold/markdown-fold.js",
-					"addon/fold/comment-fold.js",
+					"addon/fold/foldgutter.js",
 					"addon/fold/brace-fold.js",
-					"addon/fold/xml-fold.js",
-					"addon/fold/indent-fold.js",
-					"addon/display/rulers.js",
 					"addon/mode/loadmode.js",
-					"addon/edit/matchtags.js",
-					"addon/edit/matchbrackets.js",
+					"addon/fold/foldgutter.css",
 					"theme/elegant.css",
 					function (){
 						var str = window.location.hash.substr(1);
 						var res = str.split("#");
-						var doc = document.createElement('code');
-						doc.setAttribute("width", "500px;");
-						$('#Content').append(doc);
-							$.get(res[0], function( data ) {
-									var cm = CodeMirror(doc, {
-										value: data,
-										theme: "elegant",
-										smartIndent: "true",
-										styleActiveLine: "true",
-										matchBrackets: "true",
-										closeBrackets: "true",
-										lineNumbers: "true"
-									});
-									cm.setSize ('100%','100%');
-									CodeMirror.modeURL = "mode/%N/%N.js";
-									cm.setOption("mode", Filetypes(res[0]));
-									CodeMirror.autoLoadMode(cm, Filetypes(res[0]));
-								})
-							
+						
+						var Cont = document.createElement("Code");
+						var Doc = document.createElement("Textarea");
+						Cont.appendChild(Doc);document.body.appendChild(Cont);
+						
+						xmlhttp=new XMLHttpRequest();	  
+						xmlhttp.open("GET",res[0],false);
+						xmlhttp.send();
+
+						Doc.value = xmlhttp.responseText;
+						var cm = CodeMirror.fromTextArea(Doc, {
+							lineNumbers: true,
+							lineWrapping: true,
+							extraKeys: {"Ctrl-Q": function(cm){ cm.foldCode(cm.getCursor()); }},
+							foldGutter: true,
+							gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
+						  });
+						//editor.foldCode(CodeMirror.Pos(13, 0));
+						CodeMirror.modeURL = "mode/%N/%N.js";
+						CodeMirror.autoLoadMode(cm, Filetypes(res[0]));
+						cm.setOption("mode", Filetypes(res[0]));
+
 					}
 					);
 		</script>
     </head>
-    <body>	
-		<Div id="Content"></Div>
-    </body>
+    <body></body>
 </html>

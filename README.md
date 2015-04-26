@@ -26,16 +26,18 @@ starten sowie Ordner auf dem lokalen Computer öffnen. (In Units.xml zu erweiter
 Das Frontend stellt die Suchergebnisse grafisch dar.<BR>
 Unter anderem werden folgende Inhalte direkt dargestellt und interpretiert:<BR>
 - Gcode (3D Plot und Druck) 3D und Schicht-Ansicht.<BR>
-- 3D stp und obj- Dateien <BR>
+- 3D JSCad, stp und obj- Dateien <BR>
+- 2D dxf- Dateien <BR>
 - Pdf (PDF-Anzeige von Chrome oder Player)<BR>
 - Audio (mp3,wav,ogg) zum direkten abspielen<BR>
 - Video (avi,mpeg,flv,webm) 3 Player zur Auswahl, Thumbnail als Vorschau<BR>
-- Bilder (Png/Bmp/ico/jpeg, ...) mit Viewer zum weiterschalten<BR>
+- Bilder (Png/Bmp/ico/jpeg, ...) mit Viewer zum weiterschalten und EXIF Informationen<BR>
 - Zip (und Komprimierte-Formate) mit direktem anzeigen von Bildern, Texten in der Zip.<BR>
-- Rar<BR>
+- Rar <BR>
+- Hex-Dateien <BR>
 - Epub (Ebooks)<BR>
-- Xml (und alle XML-Strukturierten Formate) als aufklappbare Baumstruktur.<BR>
-- Json und Bson als aufklappbare Baumstruktur.<BR>
+- Xml (und alle XML-Strukturierten Formate) als Baumstruktur und Quelltext.<BR>
+- Json und Bson  als Baumstruktur und Quelltext.<BR>
 - Html (Darstellung und Sourcecode)<BR>
 - Markdown (md,markdown,rst)<BR>
 - Excel (xlsm/xlsx) als Tabelle<BR>
@@ -99,7 +101,7 @@ sollten Sie jedoch ein Backup der DIR Collection erstellen, da die Datenbank bei
 ### .Net Librarys
 
 > [MongoDB]()<BR>
-> [ShellExtensions]()<BR>
+> [MS ShellExtensions]()<BR>
 > [NCalc]()<BR>
 
 ### Javascript-Frameworks und Extensions

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <script src="exif.js"></script>
+		<script type="text/javascript">
+
+		var str = window.location.hash.substr(1);
+		var res = str.split("#");
+
+		var http = new XMLHttpRequest();
+		http.open("GET", res[0], true);
+		http.responseType = "blob";
+		http.onload = function(e) {
+			if (this.status === 200) {
+				EXIF.getData(http.response, function() {
+					var Cont = document.createElement("Div");
+					Cont.innerHTML = EXIF.pretty(this);
+					document.body.appendChild(Cont);
+				});
+			}
+		};
+		http.send();
+
+		</script>
+    </head>
+    <body>
+		
+	</body>
+</html>

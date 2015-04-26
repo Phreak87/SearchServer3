@@ -52,6 +52,7 @@ Namespace CLS
             Dim i As Integer = 1
             Dim f As Integer = 0
 
+            If DBClose = True Then Exit Sub
             Dim Remove As New QueryDocument : Remove.Add("Cont_Link", _obj._Path) : _Collect.Remove(Remove)
             Dim Datei As String = _obj._Path : If Datei.Contains("\") Then Datei = Mid(Datei, InStrRev(Datei, "\") + 1)
 

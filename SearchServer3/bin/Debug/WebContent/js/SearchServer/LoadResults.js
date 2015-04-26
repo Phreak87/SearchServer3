@@ -82,6 +82,15 @@ function displayData (el) {
 function errorImage (el) {
 	el.src='Images/Filetypes/Error.png';
 }
+
+function ReloadImage (el) {
+	setTimeout(function() {
+		var save = el.src;
+		el.src='';
+		el.src=save
+	}, 2000);
+}
+
 function ChangeSelection(name, val, state) {
 	var list = document.getElementsByTagName("table");
 	for (var i = 0; i < list.length; i++) {
@@ -202,7 +211,7 @@ function loadPageData (daten) {
 		
 		output+="<TD style='background-color:#eeeeee;'></TD>"
 		    + "<TD Colspan='2'>"
-			+ "<a target='_blank' href='" + data.Messages[i].Cont_Link + "'>" + data.Messages[i].Cont_Name + "</a>"
+			+ "<a target='_blank' href='" + data.Messages[i].Cont_Link + "'><H3>" + data.Messages[i].Cont_Name + "</H3></a>"
 			+ "</TD>"
 		+ "</TR><TR>";
 		
@@ -240,10 +249,12 @@ function loadPageData (daten) {
 			case "NoPlayer"	: output+="<TD><H2>" + emojione.shortnameToImage(data.Messages[i].Cont_Text) + "</H2></TD>"; break;
 			case "Picture" 	: output+="<TD>" 
 								+ "<a class='group1' href='" + data.Messages[i].Cont_Link + "' title='Dateiname'>"
-								+ "<img width='150px' Style='max-height:600px;' id='i1' src='" + data.Messages[i].Cont_Link + "'></img></a>"
+								+ "<img width='150px' Style='max-height:600px;' id='i1' src='" + data.Messages[i].Cont_Link + "' onError='errorImage(this);'></img></a>"
+								+ "<a href='#' Frame='js/IFrameLoader/exifjs/index.html' Content='" + data.Messages[i].Cont_Link + "' onClick='" + "GenIFrame(this);" + "'><H2>Exif Eigenschaften anzeigen (ExifJS)</H2></a><BR>"
 								+ "</TD>"; break;
 			case "Thumbed"	: output+="<TD>" 
-								+ "<a href='" + data.Messages[i].Cont_Link + "'>" + "<Img Src='" + data.Messages[i].Cont_Thumb + "'</img>" + "</a>" 
+								+ "<a href='" + data.Messages[i].Cont_Link + "'>" 
+								+ "<Img Src='" + data.Messages[i].Cont_Thumb + "' onError='ReloadImage(this);'</img>" + "</a>" 
 								+ "</TD>"; break;
 			case "Text"		: output+="<TD>"
 								+ "<a href='#' Frame='js/IFrameLoader/epiceditor/showmd.html' Content='" + data.Messages[i].Cont_Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (EpicEditor)</H2></a><BR>" 
@@ -268,6 +279,7 @@ function loadPageData (daten) {
 			case "Exec"		: output+="<TD>"
 								+ "<a href='#' onClick='RunOnLocalMachine(this)' src='" + data.Messages[i].Cont_Link + "' ><H2> Lokal starten </H2></a><BR>"
 								+ "<a href='#' onClick='RunOnLocalMachineF(this)' src='" + data.Messages[i].Cont_Link + "' ><H2> Ordner oeffnen </H2></a>"
+								+ "<a href='#' Frame='js/IFrameLoader/Hexview/trunk/hexview.html' Content='" + data.Messages[i].Cont_Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (HexView (Bug))</H2></a><BR>" 
 								+ "</TD>"; break;
 			case "ExtVideo" : output+="<TD>" 
 								+ "<Iframe Frameborder='0' style='width: 400px; height: 280px;' src='js/IFrameLoader/VideoJS/ShowMovExt.html#" + data.Messages[i].Cont_Link + "#'/>"
@@ -277,7 +289,7 @@ function loadPageData (daten) {
 								+ "<a href='#' Frame='js/IFrameLoader/Projekktor/ShowMovExt.html' Content='" + data.Messages[i].Cont_Link + "' Thumb='" + data.Messages[i].Cont_Thumb + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (? Projekktor)</H2></a><BR>"   
 								+ "</TD>";  break;
 			case "Video"	: output+="<TD>" 
-								+ "<img src='" + data.Messages[i].Cont_Thumb + "'</img>"
+								+ "<img src='" + data.Messages[i].Cont_Thumb + "' onError='ReloadImage(this);'></img>"
 								+ "</TD><TD>"
 								+ "<a href='#' Frame='js/IFrameLoader/Popcorn/ShowMov.html' Content='" + data.Messages[i].Cont_Link + "' Thumb='" + data.Messages[i].Cont_Thumb + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (Popcorn)</H2></a><BR>" 
 								+ "<a href='#' Frame='js/IFrameLoader/Videojs/ShowMov.html' Content='" + data.Messages[i].Cont_Link + "' Thumb='" + data.Messages[i].Cont_Thumb + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (VideoJS)</H2></a><BR>" 
@@ -285,7 +297,7 @@ function loadPageData (daten) {
 								// + "<iframe id='viewer' frameBorder='0' scrolling='no' src = 'js/IFrameLoader/Projekktor/ShowMov.html#" + data.Messages[i].objLink + "#" + data.Messages[i].ContentThumb + "' width='800' height='300' allowfullscreen webkitallowfullscreen></iframe>"
 								+ "</TD>";  break;
 			case "PDF"		: output+="<TD>" 
-								+ "<img src='" + data.Messages[i].Cont_Thumb + "'</img>"
+								+ "<img src='" + data.Messages[i].Cont_Thumb + "' onError='ReloadImage(this);'></img>"
 								+ "</TD><TD>"
 								+ "<a href='#' Frame='js/IFrameLoader/ViewerJS/Index.html' Content='" + data.Messages[i].Cont_Link + "' Thumb='' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (ViewerJS)</H2></a><BR>" 
 								+ "<a href='#' Frame='" + data.Messages[i].Cont_Link + "' Content='' Thumb='' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (Chrome embedded PDF-Viewer (Default))</H2></a>" 
@@ -300,7 +312,7 @@ function loadPageData (daten) {
 								+ "<a href='#' Frame='js/IFrameLoader/zip/ShowZip.html' Content='" + data.Messages[i].Cont_Link + "' Thumb='" + data.Messages[i].Cont_Thumb + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (JSZip) </H2></a>" 
 								+ "</TD>";  break;
 			case "Excel"	: output+="<TD>" 
-								+ "<a href='" + data.Messages[i].Cont_Link + "'>" + "<Img Src='" + data.Messages[i].Cont_Thumb + "'</img>" + "</a>" 
+								+ "<a href='" + data.Messages[i].Cont_Link + "'>" + "<Img Src='" + data.Messages[i].Cont_Thumb + "' onError='errorImage(this);'</img>" + "</a>" 
 								+ "</TD>"
 								+ "<TD>" 
 								+ "<a href='#' Frame='js/IFrameLoader/SheetJS/Index.html' Content='" + data.Messages[i].Cont_Link + "' Thumb='" + data.Messages[i].Cont_Thumb + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (SheetJS) </H2></a>" 
@@ -319,7 +331,13 @@ function loadPageData (daten) {
 			case "3D"		: output+="<TD>"
 								+ "<IFrame Frameborder='0' style='width: 400px; height: 280px;' src='js/IFrameLoader/ThreeJS/Index.html#" + data.Messages[i].Cont_Link + "#'/></TD><TD>"
 								// + "<a href='#' Frame='js/IFrameLoader/ThreeJS/Index.html' Content='" + data.Messages[i].objLink + "' Thumb='" + data.Messages[i].ContentThumb + "' onClick='GenIFrame(this);'><H2>Inhalt anzeigen</H2></a>" 
-								+ "</TD>";	break;					
+								+ "</TD>";	break;	
+			case "DXF"		: output+="<TD>"
+								+ "<IFrame Frameborder='0' style='width: 400px; height: 280px;' src='js/IFrameLoader/ThreeDXF/Trunk/Index.html#" + data.Messages[i].Cont_Link + "#'/></TD><TD>"
+								+ "</TD>";	break;		
+			case "JSCAD"	: output+="<TD>"
+								+ "<IFrame Frameborder='0' style='width: 400px; height: 280px;' src='js/IFrameLoader/OpenJSCad/branches/gh-pages/index.html?" + data.Messages[i].Cont_Link + "?'/></TD><TD>"
+								+ "</TD>";	break;				
 		};
 
 		output+="</TR>";

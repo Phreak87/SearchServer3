@@ -349,6 +349,32 @@
 			}
 			})
 	}
+	function Restart() {
+		$.ajax({
+			  type: "POST",
+			  url: "api/query/restart",
+			  data: {Action: "Restart", Data: 'True' },
+			success: function (data) {
+				var MSG = document.createElement("Div");
+				$(MSG).html("<img Height='35px' src='Images/Filetypes/Accept.png'></img><BR>"
+							+ "Die laufenden Prozesse werden abgeschlossen, danach wird<BR>"
+							+ "die Datenbank und die Anwendung neu gestartet. Suchprozesse sind<BR>" 
+							+ "erst ab dem neustart wieder möglich." 
+							+ "Server-Antwort: " + data);
+							$(MSG).dialog({
+								title: "Restart!",
+								modal: true,
+								width: '550px',
+								buttons: {
+										Schliessen: function() {
+										  $( this ).dialog( "close" );
+										}
+									  },
+								close: function( event, ui ) {$(this.parentNode).html('');}
+							})
+			}
+			})
+	}
 	
 	function Copyright() {
 		var MSG = document.createElement("Div");
@@ -422,7 +448,11 @@
 			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/EpicEditor/index.html#http://localhost:9090/js/IFrameLoader/EpicEditor/Readme.md"> (Markdown) EpicEditor </a><BR></TD></TR>
 			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/jsoneditor/index.html#http://localhost:9090/js/IFrameLoader/jsoneditor/package.json"> JsonEditor </a><BR></TD></TR>
 			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/jsoneditor/indexXML.html#http://localhost:9090/js/IFrameLoader/jsoneditor/package.xml"> JsonEditor mit XML konvertierung </a><BR></TD></TR>
-			<TR></TR>
+			
+			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/ExifJS/index.html#http://localhost:9090/js/IFrameLoader/Image.jpg"> EXIF Viewer </a><BR></TD></TR>
+			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/HexView/index.html#http://localhost:9090/js/IFrameLoader/HexFile.hex"> HexViewer (Beta) </a><BR></TD></TR>
+			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/ThreeDXF/trunk/index.html#http://localhost:9090/js/IFrameLoader/HexFile.hex"> DXFViewer (Beta) </a><BR></TD></TR>
+			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/OpenjSCAD/branches/gh-pages/index.html?http://localhost:9090/js/IFrameLoader/HexFile.hex"> OpenJScad </a><BR></TD></TR>
 		</Table>
 	</div></div>
 	
