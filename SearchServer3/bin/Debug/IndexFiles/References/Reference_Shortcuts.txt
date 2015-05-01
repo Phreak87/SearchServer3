@@ -73,6 +73,7 @@ Excel				Umschalt + F2  Neuer Kommentar
 Excel				Strg +Umschalt+ O     Alle Kommentare markieren 
 Excel				Strg + Minus Markierte Zeilen löschen
 Excel				Strg + Plus Zeile einfügen 
+
 Powerpoint			Strg + M  Neue Folie einfügen 
 Powerpoint			Strg + D  Folie duplizieren 
 Powerpoint			Strg + Umschalt + G    Objekte gruppieren 
@@ -89,6 +90,7 @@ Powerpoint			<Zahl> + Enter  Slideshow: Springe zu <Zahl>
 Powerpoint			B/W  Slideshow: Display schwarz/weiß 
 Powerpoint			Strg + A  Slideshow: Maus dauerhaft sichtbar 
 Powerpoint			Strg + P  Slideshow: Maus als Stift 
+
 Browser				Alt + Pos1  Startseite öffnen 
 Browser				Strg+(Umschalt+)Tab  Nächste (vorherige) Registerkarte 
 Browser				Strg + Umschalt + T     Letzte Registerkarte wieder öffnen 
@@ -101,6 +103,7 @@ Browser				(Strg + ) F5  Seite (ohne Cache) aktualisieren
 Browser				Strg + <Mausrad>        Zoomen 
 Browser				Strg + 0  Zoom zurücksetzen 
 Browser				F11  Vollbildmodus 
+
 Office				Strg + O  Dokument öffnen 
 Office				Strg + S  (Sofort) speichern 
 Office				F12  Speichern unter… 
@@ -112,6 +115,7 @@ Office				Strg + F1  Ribbon ein- oder ausblenden
 Office				Umschalt + F10  Drop-Down-Menü öffnen 
 Office				Strg + F  Suchen 
 Office				Strg + H  Ersetzen 
+
 Word				Strg + G  Gehe zu… 
 Word				Strg + Pos1  Zum Anfang springen 
 Word				Strg + Ende  Zum Ende springen 
@@ -129,9 +133,57 @@ Word				Ein Wort nach rechts markier-en oder Markierung entfernen
 Word				Umschalt + Pos1         Zeilenanfang markieren 
 Word				Umschalt + Ende         Zeilenende markieren 
 Word				Umschalt + Enter        Zeilenumbruch erzwingen 
+
 Office				Strg + Umschalt + F Fett
 Office				Strg + Umschalt + K Kursiv
 Office				Strg + Umschalt + U Unterstrichen
+
 Outlook				Strg + D aktuell geöffnete Mail löschen
 Outlook				Strg + N Neue E-Mail verfassen
 Outlook 			Alt + S E-Mail senden
+Outlook				Einfg = Wechseln der Kennzeichnung
+Outlook				Alt + Einfg = Kennzeichnungen löschen
+Outlook				Strg + R = Antworten
+Outlook				Strg + W = Weiterleiten
+Outlook				Alt + F1 = Linke Leiste ein bzw. ausblenden
+Outlook				Alt + F2 = Linke Leiste ein bzw. ausblenden
+Outlook				Strg + Alt + G = Kennzeichnung setzen Dialog
+Outlook				Strg + U = Als ungelesen markieren
+Outlook				Strg + G = Als gelesen markieren
+
+Chrome				Strg<Enter>. By default this will add “http://www.” in front and “.com” towards the end of the website. 
+Chrome 				<Ctrl >Umschalt<Enter> keys and for websites with “.net” they need to use 
+Chrome				Umschalt<Enter> keys to get the full website name.
+Chrome				Strg<T>. Neuer Tab
+Chrome				Strg<W>. Tab schließen
+Chrome				Strg<Page Up> nächster Tab
+Chrome				Strg<Page Down> vorheriger Tab.
+Chrome 				Strg+ Umschalt<T> - letzten Tab wiederherstellen
+Chrome				F11 switch FullScreen / Normal
+Chrome				Strg “+” größere Schrift
+Chrome 				Strg “-” kleinere Schrift
+Chrome 				Strg Scroll - Schriftgröße ändern
+Chrome				Strg “O” Reset Schriftgröße
+Chrome				Strg + Link klicken Link in neuem Tab öffnen.
+Chrome				Strg + Mittlere Maustaste - Link in neuem Tab öffnen
+Chrome				Strg + "D" Lesezeichen speichern
+Chrome				<Alt><D> Adressbar alles markieren
+Chrome				<F6> Adressbar alles markieren
+Chrome				Strg + "B" Bookmark Seite öffnen
+Chrome				Strg + Umschalt<R> Ohne Cache neu laden
+Chrome				<F5> Seite neu laden
+Chrome				"K" - Youtube Video Play/Pause ??
+Chrome				Strg + "N" Neues Fenster
+Chrome				Strg + "J" Downloads
+Chrome				Strg + Umschalt + "Q" - Chrome Beenden
+Chrome				Strg + Umschalt + "O" - Lesezeichenmanager
+Chrome				Strg + Umschalt + "N" - Neues inkognito Fenster
+Chrome				Strg + "H" - Verlauf
+Chrome				Strg + "U" - Seitenquelltext anzeigen
+Chrome				Strg + Umschalt + "I" - Webseiten Entwickler Tools
+Chrome				<F12> - Webseiten Entwickler Tools
+Chrome				Strg + Umschalt + "J" - Javascript Konsole
+
+Chrome Developer	<F8> Ausführung fortführen
+Chrome Developer	<F10> Ausführung nächster Schritt
+Chrome Developer	<F11> Ausführung nächstes Modul

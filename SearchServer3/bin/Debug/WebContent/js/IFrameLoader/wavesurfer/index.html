@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="dist/wavesurfer.min.js"></script>
+		<script>
+				var str = window.location.hash.substr(1);
+				var res = str.split("#");
+				var wavesurfer = Object.create(WaveSurfer);
+				
+				document.addEventListener('DOMContentLoaded', function () {
+				    var options = {
+				        container     : document.querySelector('#waveform'),
+				        waveColor     : 'violet',
+				        progressColor : 'purple',
+				        cursorColor   : 'navy'
+				    };
+
+					options.minPxPerSec = 100;
+					options.scrollParent = true;
+
+				    wavesurfer.init(options);
+				    wavesurfer.load(res[0]);
+
+				    if (wavesurfer.enableDragSelection) {
+				        wavesurfer.enableDragSelection({
+				            color: 'rgba(0, 255, 0, 0.1)'
+				        });
+				    }
+				});
+
+				wavesurfer.on('ready', function () {
+				    wavesurfer.play();
+				});
+		</script>
+    </head>
+
+    <body itemscope itemtype="http://schema.org/WebApplication">
+        <div class="container">
+            <div id="demo">
+                <div id="waveform">
+                    <div class="progress progress-striped active" id="progress-bar">
+                        <div class="progress-bar progress-bar-info"></div>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <button onclick="wavesurfer.playPause();">Play/Pause</button>
+					<button onclick="wavesurfer.toggleMute();">Mute/Unmute</button>
+                </div>
+				<div id="equalizer"></div>
+            </div>
+    </body>
+</html>

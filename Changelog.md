@@ -1,3 +1,9 @@
+# SearchServer3 Changelog@Commit:54
+
+> Nochmals neuer Player für JSCad				=> OK ()Mehrere Formate (Js,JsCad,SCad,amf,obj,stl,gcode,g,gco))
+> Neuer Quelltext-Viewer ACE.js					=> OK 
+> Vorbereitung Coffeescad für .coffee 			=> TODO
+
 # SearchServer3 Changelog@Commit:53
 
 > Neuer Player für OpenJSCad Dateien			=> OK (Anzeige von 3D-Modell, Einstellungen und Quellcode)

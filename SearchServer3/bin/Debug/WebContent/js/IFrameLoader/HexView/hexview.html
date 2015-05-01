@@ -1,0 +1,40 @@
+<html>
+<head>
+	<title>Nick's Hex Viewer</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" type="text/javascript"></script>
+	<script src="hexview.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="hexview.default.css" />
+</head>
+<body>
+		<script type="text/javascript">
+
+		var str = window.location.hash.substr(1);
+		var res = str.split("#");
+
+		var http = new XMLHttpRequest();
+		http.open("GET", res[0], true);
+		http.responseType = "blob";
+		http.onload = function(e) {
+			if (this.status === 200) {
+				var reader = new FileReader();
+				reader.addEventListener("loadend", function() {
+					var Cont = document.getElementById("Hex");
+					Cont.innerText = String.fromCharCode.apply(null, new Uint16Array(reader.result));
+				});
+				reader.readAsArrayBuffer(http.response);
+			}
+		};
+		http.send();
+
+		</script>
+	<div id="Hex" class="hexviewwindow">
+
+	<form id="hexviewwindow_params">
+		<input type="hidden" name="highlights" value="4:20:#F4FA58:This is an interesting part,36:56:#54FAF8:This is another interesting part" />
+		<input type="hidden" name="row_width" value="16" />
+		<input type="hidden" name="word_size" value="4" />
+		<input type="hidden" name="caption" value="" />
+	</form>
+	</div>
+</body>
+</html>

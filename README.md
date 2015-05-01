@@ -26,7 +26,7 @@ starten sowie Ordner auf dem lokalen Computer öffnen. (In Units.xml zu erweiter
 Das Frontend stellt die Suchergebnisse grafisch dar.<BR>
 Unter anderem werden folgende Inhalte direkt dargestellt und interpretiert:<BR>
 - Gcode (3D Plot und Druck) 3D und Schicht-Ansicht.<BR>
-- 3D JSCad, stp und obj- Dateien <BR>
+- 3D JSCad, SCad, coffee, js, amf, gcode, stp und obj- Dateien <BR>
 - 2D dxf- Dateien <BR>
 - Pdf (PDF-Anzeige von Chrome oder Player)<BR>
 - Audio (mp3,wav,ogg) zum direkten abspielen<BR>
@@ -34,6 +34,7 @@ Unter anderem werden folgende Inhalte direkt dargestellt und interpretiert:<BR>
 - Bilder (Png/Bmp/ico/jpeg, ...) mit Viewer zum weiterschalten und EXIF Informationen<BR>
 - Zip (und Komprimierte-Formate) mit direktem anzeigen von Bildern, Texten in der Zip.<BR>
 - Rar <BR>
+- Tar <BR>
 - Hex-Dateien <BR>
 - Epub (Ebooks)<BR>
 - Xml (und alle XML-Strukturierten Formate) als Baumstruktur und Quelltext.<BR>
@@ -118,6 +119,7 @@ sollten Sie jedoch ein Backup der DIR Collection erstellen, da die Datenbank bei
 ### Javascript-Anzeigemodule
 
 > [SheetJS]()<BR>
+> [ACE]()<BR>
 > [CodeMirror]()<BR>
 > [EpicEditor]()<BR>
 > [GCodeEditor]()<BR>
@@ -127,8 +129,10 @@ sollten Sie jedoch ein Backup der DIR Collection erstellen, da die Datenbank bei
 > [Video.js]()<BR>
 > [Zip.js]()<BR>
 > [Rar.js]()<BR>
+> [Tar.js]()<BR>
 > [Viewer.js]()<BR>
 > [Soundmanager2]()<BR>
+> [Wavesurfer]()<BR>
 > [JSoneditor.js]()<BR>
 > [XmlToJson]()<BR>
 > [epub.js]()<BR>
@@ -136,6 +140,7 @@ sollten Sie jedoch ein Backup der DIR Collection erstellen, da die Datenbank bei
 > [ThreeDXF]()<BR>
 > [HexView]()<BR>
 > [OpenJSCad]()<BR>
+> [CoffeeScad]()<BR>
 
 ### Javascript-Sonstige
 

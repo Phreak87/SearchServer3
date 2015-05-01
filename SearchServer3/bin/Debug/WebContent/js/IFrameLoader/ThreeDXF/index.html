@@ -1,0 +1,51 @@
+<html>
+<head>
+    <link rel="stylesheet" href="bootstrap.min.css">
+
+    <script src="dxf-parser.js"></script>
+    <script src="jquery.min.js"></script>
+    <script src="three.min.js"></script>
+    <script src="OrbitControls.js"></script>
+    <script src="helvetiker_regular.typeface.js"></script>
+    <script src="three-dxf.js"></script>
+</head>
+<body>
+<style>
+
+    #cad-view {
+        display: inline-block;
+        /*			border: 1px solid #666;*/
+    }
+    #cad-view > canvas {
+        border: 1px solid #666;
+    }
+
+    .progress {
+        opacity: 0;
+        -webkit-transition: opacity 1s linear;
+        -moz-transition: opacity 1s linear;
+        -ms-transition: opacity 1s linear;
+        -o-transition: opacity 1s linear;
+        transition: opacity 1s linear;
+    }
+
+    .progress.loading {
+        opacity: 1;
+    }
+</style>
+
+
+<div class="container">
+    <div role="form">
+		<div class="progress progress-striped" style="width: 300px;">
+			<div id="file-progress-bar" class="progress-bar progress-bar-success" role="progressbar" style="width: 0">
+			</div>
+		</div>
+    </div>
+    <div id="cad-view">
+    </div>
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>

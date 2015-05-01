@@ -1,0 +1,29 @@
+window.onload = function(){
+
+	// Hier wird die URL am Hashtag(#) separiert
+	var str = window.location.hash.substr(1);
+	var res = str.split("#");
+
+	// Neuen XMLHttpRequest erstellen
+	var http = new XMLHttpRequest();
+	http.open("GET", res[0], true);
+	
+	// Wenn Text dann 'Text' oder ''. 
+	// Resultat bei Text: http.responseText
+	// Resultat bei Blob: http.response
+	
+	http.responseType = "blob"; 
+	http.onload = function(e) {
+		if (this.status === 200) {
+			var fileToLoad = http.response;		
+			// Hier die Methode für den Blob fileToLoad einfügen
+		}
+	}
+	http.send();
+}
+
+// Diverse oft benötigte Codesegmente:
+var doc = document.createElement("code");
+var doc = document.getElementById("code");
+doc.setAttribute("width", "500px;");
+document.body.appendChild(doc);

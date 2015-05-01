@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+#editor { 
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+.ace-chrome .ace_gutter { 
+
+}
+.ace-chrome {
+   font-size: 10pt;
+}
+</style>
+</head>
+<body>
+
+<div id="editor">
+function main() {
+   return union(
+      difference(
+         cube({size: 3, center: true}),
+         sphere({r:2, center: true})
+      ),
+      intersection(
+          sphere({r: 1.3, center: true}),
+          cube({size: 2.1, center: true})
+      )
+   ).translate([0,0,1.5]).scale(10);
+}
+</div>
+    
+<script src="ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+
+window.onload = function(){
+	var str = window.location.hash.substr(1);
+	var res = str.split("#");
+
+	var http = new XMLHttpRequest();
+	http.open("GET", res[0], true);
+	http.onload = function(e) {
+		if (this.status === 200) {
+			var fileToLoad = http.responseText;	
+			editor.setValue(fileToLoad); 
+		}
+	}
+	http.send();
+}
+
+    var editor = ace.edit("editor");
+    //editor.setTheme("ace/theme/monokai");
+	editor.setTheme("ace/theme/chrome");
+	//editor.setTheme("ace/theme/github");
+	var str = window.location.href;
+	var res = str.split("#");
+    editor.getSession().setMode(Filetypes(str));
+
+	function Filetypes(Name){
+		if (typeof Name == 'undefined') {return ''};
+		var PFix = Name.substr(Name.lastIndexOf(".")).toLowerCase();
+		switch (PFix){
+			case ".html"	: return "ace/mode/html";
+			case ".htm" 	: return "ace/mode/html";
+			case ".markdown": return "ace/mode/markdown";
+			case ".md" 		: return "ace/mode/markdown";
+			case ".mdn" 	: return "ace/mode/markdown";
+			case ".py" 		: return "ace/mode/Python";
+			case ".xml"		: return "ace/mode/xml";
+			case ".json" 	: return "ace/mode/json";
+			case ".css" 	: return "ace/mode/css";
+			case ".coffee" 	: return "ace/mode/coffee";
+			case ".js" 		: return "ace/mode/javascript";
+			case ".lua" 	: return "ace/mode/lua";
+			case ".dtd" 	: return "ace/mode/dtd";
+			case ".php" 	: return "ace/mode/php";
+			case ".pl" 		: return "ace/mode/perl";
+			case ".h" 		: return "ace/mode/c_cpp";
+			case ".sh" 		: return "ace/mode/sh";
+			case ".sql" 	: return "ace/mode/sql";
+			case ".vb" 		: return "ace/mode/vb";
+			case ".vbs" 	: return "ace/mode/vbscript";
+			case ".vba" 	: return "ace/mode/vbscript";
+			case ".yaml" 	: return "ace/mode/yaml";
+			case ".log" 	: return "ace/mode/markdown";
+			case ".ini" 	: return "ace/mode/markdown";
+			case ".inf" 	: return "ace/mode/markdown";
+			case ".au3" 	: return "ace/mode/markdown";
+			case ".bat" 	: return "ace/mode/markdown";
+			case ".txt" 	: return "ace/mode/markdown";
+			default			: return "ace/mode/markdown";
+		};
+		/*
+			ace/mode/c_cpp
+			ace/mode/xquery
+			ace/mode/yaml
+			ace/mode/c9search
+			ace/mode/clojure
+			ace/mode/coffee
+			ace/mode/coldfusion
+			ace/mode/csharp
+			ace/mode/css
+			ace/mode/diff
+			ace/mode/glsl
+			ace/mode/golang
+			ace/mode/groovy
+			ace/mode/haxe
+			ace/mode/html
+			ace/mode/java
+			ace/mode/javascript
+			ace/mode/json
+			ace/mode/jsx
+			ace/mode/latex
+			ace/mode/less
+			ace/mode/liquid
+			ace/mode/lua
+			ace/mode/luapage
+			ace/mode/markdown
+			ace/mode/ocaml
+			ace/mode/perl
+			ace/mode/pgsql
+			ace/mode/php
+			ace/mode/powershell
+			ace/mode/python
+			ace/mode/ruby
+			ace/mode/scad
+			ace/mode/scala
+			ace/mode/scss
+			ace/mode/sh
+			ace/mode/sql
+			ace/mode/svg
+			ace/mode/tcl
+			ace/mode/textile
+			ace/mode/xml
+		*/
+	}
+		
+</script>
+</body>
+</html>

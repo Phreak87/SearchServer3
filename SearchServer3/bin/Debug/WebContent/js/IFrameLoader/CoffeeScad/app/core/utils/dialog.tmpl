@@ -1,0 +1,38 @@
+<script id="dialogTmpl" type="text/x-underscore-template">
+    <div class="dialog-header unselectable">
+    	<i class="icon-edit pull-left">&nbsp;</i>
+    	<div class="btn-group pull-right">
+    		<a class="dialog-header-icon" data-dismiss="dialog"  href="#">
+		    	<i class="icon-remove"></i>
+		  	</a>
+    		<a class="dialog-header-icon" data-toggle="collapse-next"  href="#">
+		    	<i class="icon-minus"></i>
+		  	</a>
+		  	<a class="dropdown-toggle dialog-header-icon" data-toggle="dropdown" href="#">
+		    	<i class="icon-cog"></i>
+		  	</a>
+		  	<ul class="dropdown-menu">
+		    	<li>
+		    		Opacity <input type="number" class="opacitySetter"  data-stopPropagation="true" min="25" max="100" step="1" value="90" style="width: 42px" />
+		    	</li>
+		  	</ul>
+		  	<!--
+		  	<a class="dialog-header-icon" href="#">
+		    	<i class="icon-pushpin"></i>
+		  	</a>
+		  	-->
+		</div>
+    	
+    	
+      <h5><%=title%></h5>
+    </div>
+    <div class="unselectable collapse in dialog-body" id="contentContainer">
+    </div>
+    <!--
+    <div class="ui-resizable-handle ui-resizable-e"></div>
+    <div class="ui-resizable-handle ui-resizable-s"></div>
+    <div class="ui-resizable-handle ui-resizable-se" style="z-index: 1001;"></div>-->
+</script>
+
+
+	

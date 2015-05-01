@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <script src="rar.min.js"></script>
+		<script src="jszip-utils.js"></script>
+	
+        <script>
+window.onload = function(){
+
+	// Hier wird die URL am Hashtag(#) separiert
+	var str = window.location.hash.substr(1);
+	var res = str.split("#");
+
+	// Neuen XMLHttpRequest erstellen
+	var http = new XMLHttpRequest();
+	http.open("GET", res[0], true);
+	http.responseType = "blob"; 
+	http.onload = function(e) {
+		if (this.status === 200) {
+			var fileToLoad = http.response;		
+			var file = RarArchive( function(fileToLoad){}, function(err) {
+			if(err) {console.log(err);return;}
+			
+			this.entries.forEach(function(val) {
+				var div = document.createElement('div');
+				div.textContent = val.path;
+				document.body.appendChild(div);
+			});
+
+			});
+		}
+	}
+	http.send();
+}
+
+
+        </script>
+    </head>
+    <body>	
+        <div id="main">
+            <div class="view" id="preview"></div>
+            <ul class="view" id="filenames-view"></ul>
+        </div>
+    </body>
+</html>
