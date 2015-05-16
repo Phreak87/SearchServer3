@@ -1,4 +1,4 @@
-# SearchServer3@Commit:55
+# SearchServer3@Commit:63
 
 > Nuget Paketliste								=> OK (Stand 16.05.2015 mittels Nuget.exe List)
 > MongoDB auf Version 3.0.3 					=> OK (Incl. Import und Export)
