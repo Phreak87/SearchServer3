@@ -10,13 +10,13 @@
 				document.addEventListener('DOMContentLoaded', function () {
 				    var options = {
 				        container     : document.querySelector('#waveform'),
-				        waveColor     : 'violet',
+				        waveColor     : 'blue',
 				        progressColor : 'purple',
 				        cursorColor   : 'navy'
 				    };
 
 					options.minPxPerSec = 100;
-					options.scrollParent = true;
+					//options.scrollParent = true;
 
 				    wavesurfer.init(options);
 				    wavesurfer.load(res[0]);

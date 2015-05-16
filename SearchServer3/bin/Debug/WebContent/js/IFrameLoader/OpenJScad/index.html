@@ -24,7 +24,6 @@
 <script src="openjscad.js"></script>
 <script src="openscad.js"></script>
 <script src="underscore.js"></script>
-<script src="openscad-openjscad-translator.js"></script>
 
 <script lang=JavaScript>
 var version = '0.2.4-DEV (2015/04/24)';
@@ -138,7 +137,9 @@ function onload() {
       docTitle = '';
 
       if(docUrl.match(/#(https?:\/\/\S+)$/)) {   // remote file referenced, e.g. http://openjscad.org/#http://somewhere/something.ext
-         var u = RegExp.$1;
+		var str = window.location.hash.substr(1);
+		var res = str.split("#");
+         var u = res[0];
          var xhr = new XMLHttpRequest();
          echo("fetching",u);
          xhr.open("GET",u,true);
@@ -147,13 +148,7 @@ function onload() {
          }
          status("Fetching "+u+" <img id=busy src='imgs/busy.gif'>");
          xhr.onload = function() {
-            //echo(this.responseText);
-
-            //var data = JSON.parse(this.responseText);
-
 			var data = this.responseText;
-
-            //echo(data.url,data.filename,data.file);
             fetchExample(u,u);
             document.location = docUrl.replace(/#.*$/,'#');       // this won't reload the entire web-page
          }
@@ -191,14 +186,11 @@ function fetchExample(fn,url) {
          editor.getSession().setMode("ace/mode/javascript");
          if(fn.match(/\.jscad$/i)||fn.match(/\.js$/i)) {
             status("Processing "+fn+" <img id=busy src='imgs/busy.gif'>");
-            //if(url) editorSource = "// Remote retrieved <"+url+">\n"+editorSource;
             putSourceInEditor(editorSource,fn);
             gProcessor.setJsCad(source,fn);
-
          } else if(fn.match(/\.scad$/i)) {
             status("Converting "+fn+" <img id=busy src='imgs/busy.gif'>");
             editorSource = source;
-            //if(url) editorSource = "// Remote retrieved <"+url+">\n"+editorSource;
             if(!editorSource.match(/^\/\/!OpenSCAD/i)) {
                editorSource = "//!OpenSCAD\n"+editorSource;
             }
@@ -273,7 +265,7 @@ function setCurrentFile(file) {
   gPreviousModificationTime = "";
 
   console.log("execute: "+file.name);
-  if(file.name.match(/\.(jscad|js|scad|stl|obj|amf|gcode)$/i)) {
+  if(file.name.match(/\.(jscad|js|scad|stl|obj|amf|gcode|gco|g|coffee)$/i)) {
     gCurrentFile.lang = RegExp.$1;
   } else {
     throw new Error("Please drop a file with .jscad, .scad or .stl extension");
@@ -385,8 +377,18 @@ function parseFile(f, debugging, onlyifchanged) {     // here we convert the fil
             source = "// OpenJSCAD.org: scad importer (openscad-openjscad-translator) '"+fn+"'\n\n"+source;
          }
          editor.getSession().setMode("ace/mode/scad");
+		} else if(gCurrentFile.lang=='coffee') {
+         editorSource = source;
+         if(!editorSource.match(/^\/\/!OpenSCAD/i)) {
+            editorSource = "//!OpenSCAD\n"+editorSource;
+         }
+         source = openscadOpenJscadParser.parse(editorSource);
+         if(0) {
+            source = "// OpenJSCAD.org: scad importer (openscad-openjscad-translator) '"+fn+"'\n\n"+source;
+         }
+         editor.getSession().setMode("ace/mode/scad");
 
-      } else if(gCurrentFile.lang.match(/(stl|obj|amf|gcode)/i)) {
+      } else if(gCurrentFile.lang.match(/(stl|obj|amf|gcode|gco|g)/i)) {
          status("Converting "+fn+" <img id=busy src='imgs/busy.gif'>");
          if(!fn.match(/amf/i)) {     // -- if you debug the STL parsing, change it to 'if(0&&...' so echo() works, otherwise in workers
                                      //    echo() is not working.., and parseAMF requires jquery, which seem not working in workers
@@ -411,7 +413,7 @@ function parseFile(f, debugging, onlyifchanged) {     // here we convert the fil
             worker.postMessage({me: me, version: version, url: u, source: source, filename: fn });
             asyncComputation = true;
          } else {
-            fn.match(/\.(stl|obj|amf|gcode)$/i);
+            fn.match(/\.(stl|obj|amf|gcode|gco|g)$/i);
             var type = RegExp.$1;
             if(type=='obj') {
                editorSource = source = parseOBJ(source,fn);

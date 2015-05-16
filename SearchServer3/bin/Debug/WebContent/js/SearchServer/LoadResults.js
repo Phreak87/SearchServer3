@@ -187,12 +187,14 @@ function loadPageData (daten) {
 	}
 		
 	
-	/* ##############################
-	Inhalte
+	/* Inhalte
 	############################### */
 	for (var i in data.Messages){
 	
 		var ShowIn = '';
+		var Link = data.Messages[i].Cont_Link;
+		var Thumb = data.Messages[i].Cont_Thumb;
+		
 		switch (data.Messages[i].Cont_Show){
 			case "Inline" 	: ShowIn = "GenIFrameInLine(this);"; 	break;
 			case "WWindow"	: ShowIn = "GenIFrame(this);"; 			break;
@@ -243,118 +245,159 @@ function loadPageData (daten) {
 			case "FIL"		: output+="<TD><H2>" + data.Messages[i].Cont_Text + "</H2></TD>"; break;
 		};
 		
+		
 		switch (data.Messages[i].Cont_Player) {
 			case "RSS"		: output+="<TD><H2>" + emojione.shortnameToImage(data.Messages[i].Cont_Text) + "</H2></TD>"; break;
 			case "WEB"		: output+="<TD><H2>" + emojione.shortnameToImage(data.Messages[i].Cont_Text) + "</H2></TD>"; break;
 			case "NoPlayer"	: output+="<TD><H2>" + emojione.shortnameToImage(data.Messages[i].Cont_Text) + "</H2></TD>"; break;
 			case "Picture" 	: output+="<TD>" 
-								+ "<a class='group1' href='" + data.Messages[i].Cont_Link + "' title='Dateiname'>"
-								+ "<img width='150px' Style='max-height:600px;' id='i1' src='" + data.Messages[i].Cont_Link + "' onError='errorImage(this);'></img></a>"
-								+ "<a href='#' Frame='js/IFrameLoader/exifjs/index.html' Content='" + data.Messages[i].Cont_Link + "' onClick='" + "GenIFrame(this);" + "'><H2>Exif Eigenschaften anzeigen (ExifJS)</H2></a><BR>"
+								+ "<a class='group1' href='" + Link + "' title='Dateiname'>"
+								+ "<img width='150px' Style='max-height:600px;' id='i1' src='" + Link + "' onError='errorImage(this);'></img></a>"
+								+ "<a href='#' Frame='js/IFrameLoader/exifjs/index.html' Content='" + Link + "' onClick='" + "GenIFrame(this);" + "'><H2>Exif Eigenschaften anzeigen (ExifJS)</H2></a><BR>"
 								+ "</TD>"; break;
 			case "Thumbed"	: output+="<TD>" 
-								+ "<a href='" + data.Messages[i].Cont_Link + "'>" 
-								+ "<Img Src='" + data.Messages[i].Cont_Thumb + "' onError='ReloadImage(this);'</img>" + "</a>" 
+								+ "<a href='" + Link + "'>" 
+								+ "<Img Src='" + Thumb + "' onError='ReloadImage(this);'</img>" + "</a>" 
 								+ "</TD>"; break;
+								// ------------------------------------------------------------------------------------------------------------------------------------------------------------------
+								// Plain-Text
+								// ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 			case "Text"		: output+="<TD>"
-								+ "<a href='#' Frame='js/IFrameLoader/epiceditor/showmd.html' Content='" + data.Messages[i].Cont_Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (EpicEditor)</H2></a><BR>" 
-								+ "<a href='#' Frame='js/IFrameLoader/CodeMirror/showText.html' Content='" + data.Messages[i].Cont_Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (CodeMirror)</H2></a><BR>" 
-								+ "<a href='#' Frame='js/IFrameLoader/ACE/Index.html' Content='" + data.Messages[i].Cont_Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (ACE)</H2></a><BR>" 
-								+ "<a href='#' Frame='" + data.Messages[i].Cont_Link + "' Content='' Thumb='' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (HTML-View)</H2></a>" 
+								+ "<a href='#' Frame='js/IFrameLoader/epiceditor/showmd.html' Content='" + Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (EpicEditor)</H2></a><BR>" 
+								+ "<a href='#' Frame='js/IFrameLoader/CodeMirror/showText.html' Content='" + Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (CodeMirror)</H2></a><BR>" 
+								+ "<a href='#' Frame='js/IFrameLoader/ACE/Index.html' Content='" + Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (ACE)</H2></a><BR>" 
+								+ "<a href='#' Frame='" + Link + "' Content='' Thumb='' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (HTML-View)</H2></a>" 
+								+ "</TD>";  break;
+			case "Python"	: output+="<TD>"
+								+ "<a href='#' Frame='js/IFrameLoader/epiceditor/showmd.html' Content='" + Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (EpicEditor)</H2></a><BR>" 
+								+ "<a href='#' Frame='js/IFrameLoader/CodeMirror/showText.html' Content='" + Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (CodeMirror)</H2></a><BR>" 
+								+ "<a href='#' Frame='js/IFrameLoader/ACE/Index.html' Content='" + Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (ACE)</H2></a><BR>" 
+								+ "<a href='#' Frame='js/IFrameLoader/Skulpt/Index.html' Content='" + Link + "' onClick='" + ShowIn + "'><H2>Inhalt ausführen (Skulpt)</H2></a><BR>" 
+								+ "<a href='#' Frame='" + Link + "' Content='' Thumb='' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (HTML-View)</H2></a>" 
 								+ "</TD>";  break;
 			case "JS"		: output+="<TD>"
-								+ "<a href='#' Frame='js/IFrameLoader/epiceditor/showmd.html' Content='" + data.Messages[i].Cont_Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (EpicEditor)</H2></a><BR>" 
-								+ "<a href='#' Frame='js/IFrameLoader/CodeMirror/showText.html' Content='" + data.Messages[i].Cont_Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (CodeMirror)</H2></a><BR>" 
-								+ "<a href='#' Frame='js/IFrameLoader/ACE/Index.html' Content='" + data.Messages[i].Cont_Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (ACE)</H2></a><BR>" 
-								+ "<a href='#' Frame='js/IFrameLoader/OpenJSCad/index.html' Content='" + data.Messages[i].Cont_Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (JSCad)</H2></a><BR>" 
-								+ "<a href='#' Frame='" + data.Messages[i].Cont_Link + "' Content='' Thumb='' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (HTML-View)</H2></a>" 
+								+ "<a href='#' Frame='js/IFrameLoader/epiceditor/showmd.html' Content='" + Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (EpicEditor)</H2></a><BR>" 
+								+ "<a href='#' Frame='js/IFrameLoader/CodeMirror/showText.html' Content='" + Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (CodeMirror)</H2></a><BR>" 
+								+ "<a href='#' Frame='js/IFrameLoader/ACE/Index.html' Content='" + Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (ACE)</H2></a><BR>" 
+								+ "<a href='#' Frame='js/IFrameLoader/OpenJSCad/index.html' Content='" + Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (JSCad)</H2></a><BR>" 
+								+ "<a href='#' Frame='js/IFrameLoader/CoffeeScript/IndexJS.html' Content='" + Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (JavaScript to CoffeeScript)</H2></a><BR>" 
+								+ "<a href='#' Frame='" + Link + "' Content='' Thumb='' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (HTML-View)</H2></a>" 
+								+ "</TD>";  break;
+			case "Coffee"	: output+="<TD>"
+								+ "<a href='#' Frame='js/IFrameLoader/epiceditor/showmd.html' Content='" + Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (EpicEditor)</H2></a><BR>" 
+								+ "<a href='#' Frame='js/IFrameLoader/CodeMirror/showText.html' Content='" + Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (CodeMirror)</H2></a><BR>" 
+								+ "<a href='#' Frame='js/IFrameLoader/ACE/Index.html' Content='" + Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (ACE)</H2></a><BR>" 
+								+ "<a href='#' Frame='js/IFrameLoader/CoffeeScript/Index.html' Content='" + Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (Coffee-To-JavaScript)</H2></a><BR>" 
+								+ "<a href='#' Frame='" + Link + "' Content='' Thumb='' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (HTML-View)</H2></a>" 
 								+ "</TD>";  break;
 			case "Markdown"	: output+="<TD>"
-								+ "<a href='#' Frame='js/IFrameLoader/epiceditor/showmd.html' Content='" + data.Messages[i].Cont_Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (EpicEditor)</H2></a><BR>" 
-								+ "<a href='#' Frame='js/IFrameLoader/CodeMirror/showText.html' Content='" + data.Messages[i].Cont_Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (CodeMirror)</H2></a><BR>" 
-								+ "<a href='#' Frame='js/IFrameLoader/ACE/Index.html' Content='" + data.Messages[i].Cont_Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (ACE)</H2></a><BR>" 
-								+ "<a href='#' Frame='" + data.Messages[i].Cont_Link + "' Content='' Thumb='' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (HTML-View)</H2></a>" 
+								+ "<a href='#' Frame='js/IFrameLoader/epiceditor/showmd.html' Content='" + Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (EpicEditor)</H2></a><BR>" 
+								+ "<a href='#' Frame='js/IFrameLoader/CodeMirror/showText.html' Content='" + Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (CodeMirror)</H2></a><BR>" 
+								+ "<a href='#' Frame='js/IFrameLoader/ACE/Index.html' Content='" + Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (ACE)</H2></a><BR>" 
+								+ "<a href='#' Frame='" + Link + "' Content='' Thumb='' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (HTML-View)</H2></a>" 
 								+ "</TD>";  break;
 			case "JSON"		: output+="<TD>"
-								+ "<a href='#' Frame='js/IFrameLoader/jsoneditor/index.html' Content='" + data.Messages[i].Cont_Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (JsonEditor)</H2></a><BR>"
-								+ "<a href='#' Frame='js/IFrameLoader/CodeMirror/showText.html' Content='" + data.Messages[i].Cont_Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (CodeMirror)</H2></a><BR>" 
-								+ "<a href='#' Frame='js/IFrameLoader/ACE/Index.html' Content='" + data.Messages[i].Cont_Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (ACE)</H2></a><BR>" 
-								+ "<a href='#' Frame='" + data.Messages[i].Cont_Link + "' Content='' Thumb='' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (HTML-View)</H2></a>" 
+								+ "<a href='#' Frame='js/IFrameLoader/jsoneditor/index.html' Content='" + Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (JsonEditor)</H2></a><BR>"
+								+ "<a href='#' Frame='js/IFrameLoader/CodeMirror/showText.html' Content='" + Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (CodeMirror)</H2></a><BR>" 
+								+ "<a href='#' Frame='js/IFrameLoader/ACE/Index.html' Content='" + Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (ACE)</H2></a><BR>" 
+								+ "<a href='#' Frame='" + Link + "' Content='' Thumb='' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (HTML-View)</H2></a>" 
 								+ "</TD>";  break;
 			case "XML"		: output+="<TD>"
-								+ "<a href='#' Frame='js/IFrameLoader/jsoneditor/indexXML.html' Content='" + data.Messages[i].Cont_Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (JsonEditor mit XML_to_Json Converter)</H2></a><BR>"
-								+ "<a href='#' Frame='js/IFrameLoader/CodeMirror/showText.html' Content='" + data.Messages[i].Cont_Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (CodeMirror)</H2></a><BR>" 
-								+ "<a href='#' Frame='js/IFrameLoader/ACE/Index.html' Content='" + data.Messages[i].Cont_Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (ACE)</H2></a><BR>" 
-								+ "<a href='#' Frame='" + data.Messages[i].Cont_Link + "' Content='' Thumb='' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (HTML-View)</H2></a>" 
+								+ "<a href='#' Frame='js/IFrameLoader/jsoneditor/indexXML.html' Content='" + Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (JsonEditor mit XML_to_Json Converter)</H2></a><BR>"
+								+ "<a href='#' Frame='js/IFrameLoader/CodeMirror/showText.html' Content='" + Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (CodeMirror)</H2></a><BR>" 
+								+ "<a href='#' Frame='js/IFrameLoader/ACE/Index.html' Content='" + Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (ACE)</H2></a><BR>" 
+								+ "<a href='#' Frame='" + Link + "' Content='' Thumb='' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (HTML-View)</H2></a>" 
 								+ "</TD>";  break;
-			case "Exec"		: output+="<TD>"
-								+ "<a href='#' onClick='RunOnLocalMachine(this)' src='" + data.Messages[i].Cont_Link + "' ><H2> Lokal starten </H2></a><BR>"
-								+ "<a href='#' onClick='RunOnLocalMachineF(this)' src='" + data.Messages[i].Cont_Link + "' ><H2> Ordner oeffnen </H2></a>"
-								+ "<a href='#' Frame='js/IFrameLoader/Hexview/hexview.html' Content='" + data.Messages[i].Cont_Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (HexView (Bug))</H2></a><BR>" 
-								+ "</TD>"; break;
+			case "Latex"	: output+="<TD>"
+								+ "<IFrame Frameborder='0' style='width: 800px; height: 280px;' src='js/IFrameLoader/LatexMathML/index.html#" + Link + "'/></TD><TD>"
+								+ "</TD>";	break;		
+			case "MML"		: output+="<TD>"
+								+ "<IFrame Frameborder='0' style='width: 800px; height: 280px;' src='js/IFrameLoader/MathJax/indexMML.html#" + Link + "'/></TD><TD>"
+								+ "</TD>";	break;	
+								// ------------------------------------------------------------------------------------------------------------------------------------------------------------------
+								// Komprimierte-Formate 
+								// ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 			case "ExtVideo" : output+="<TD>" 
-								+ "<Iframe Frameborder='0' style='width: 400px; height: 280px;' src='js/IFrameLoader/VideoJS/ShowMovExt.html#" + data.Messages[i].Cont_Link + "#'/>"
+								+ "<Iframe Frameborder='0' style='width: 400px; height: 280px;' src='js/IFrameLoader/VideoJS/ShowMovExt.html#" + Link + "#'/>"
 								+ "</TD><TD>"
-								+ "<a href='#' Frame='js/IFrameLoader/Popcorn/ShowMovExt.html' Content='" + data.Messages[i].Cont_Link + "' Thumb='" + data.Messages[i].Cont_Thumb + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (Popcorn)</H2></a><BR>" 
-								+ "<a href='#' Frame='js/IFrameLoader/VideoJS/ShowMovExt.html' Content='" + data.Messages[i].Cont_Link + "' Thumb='" + data.Messages[i].Cont_Thumb + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (* VideoJS)</H2></a><BR>"  
-								+ "<a href='#' Frame='js/IFrameLoader/Projekktor/ShowMovExt.html' Content='" + data.Messages[i].Cont_Link + "' Thumb='" + data.Messages[i].Cont_Thumb + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (? Projekktor)</H2></a><BR>"   
+								+ "<a href='#' Frame='js/IFrameLoader/Popcorn/ShowMovExt.html' Content='" + Link + "' Thumb='" + Thumb + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (Popcorn)</H2></a><BR>" 
+								+ "<a href='#' Frame='js/IFrameLoader/VideoJS/ShowMovExt.html' Content='" + Link + "' Thumb='" + Thumb + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (* VideoJS)</H2></a><BR>"  
+								+ "<a href='#' Frame='js/IFrameLoader/Projekktor/ShowMovExt.html' Content='" + Link + "' Thumb='" + Thumb + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (? Projekktor)</H2></a><BR>"   
 								+ "</TD>";  break;
 			case "Video"	: output+="<TD>" 
-								+ "<img src='" + data.Messages[i].Cont_Thumb + "' onError='ReloadImage(this);'></img>"
+								+ "<img src='" + Thumb + "' onError='ReloadImage(this);'></img>"
 								+ "</TD><TD>"
-								+ "<a href='#' Frame='js/IFrameLoader/Popcorn/ShowMov.html' Content='" + data.Messages[i].Cont_Link + "' Thumb='" + data.Messages[i].Cont_Thumb + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (Popcorn)</H2></a><BR>" 
-								+ "<a href='#' Frame='js/IFrameLoader/Videojs/ShowMov.html' Content='" + data.Messages[i].Cont_Link + "' Thumb='" + data.Messages[i].Cont_Thumb + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (VideoJS)</H2></a><BR>" 
-								+ "<a href='#' Frame='js/IFrameLoader/Projekktor/ShowMov.html' Content='" + data.Messages[i].Cont_Link + "' Thumb='" + data.Messages[i].Cont_Thumb + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (Projekktor)</H2></a><BR>" 
-								// + "<iframe id='viewer' frameBorder='0' scrolling='no' src = 'js/IFrameLoader/Projekktor/ShowMov.html#" + data.Messages[i].objLink + "#" + data.Messages[i].ContentThumb + "' width='800' height='300' allowfullscreen webkitallowfullscreen></iframe>"
+								+ "<a href='#' Frame='js/IFrameLoader/Popcorn/ShowMov.html' Content='" + Link + "' Thumb='" + Thumb + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (Popcorn)</H2></a><BR>" 
+								+ "<a href='#' Frame='js/IFrameLoader/Videojs/ShowMov.html' Content='" + Link + "' Thumb='" + Thumb + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (VideoJS)</H2></a><BR>" 
+								+ "<a href='#' Frame='js/IFrameLoader/Projekktor/ShowMov.html' Content='" + Link + "' Thumb='" + Thumb + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (Projekktor)</H2></a><BR>" 
 								+ "</TD>";  break;
 			case "PDF"		: output+="<TD>" 
-								+ "<img src='" + data.Messages[i].Cont_Thumb + "' onError='ReloadImage(this);'></img>"
+								+ "<img src='" + Thumb + "' onError='ReloadImage(this);'></img>"
 								+ "</TD><TD>"
-								+ "<a href='#' Frame='js/IFrameLoader/ViewerJS/Index.html' Content='" + data.Messages[i].Cont_Link + "' Thumb='' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (ViewerJS)</H2></a><BR>" 
-								+ "<a href='#' Frame='" + data.Messages[i].Cont_Link + "' Content='' Thumb='' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (Chrome embedded PDF-Viewer (Default))</H2></a>" 
-								// + "<iframe id='viewer' frameBorder='0' scrolling='no' src = 'js/ViewerJS/Index.html#" + data.Messages[i].objLink + "' width='800' height='300' allowfullscreen webkitallowfullscreen></iframe>"
+								+ "<a href='#' Frame='js/IFrameLoader/ViewerJS/Index.html' Content='" + Link + "' Thumb='' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (ViewerJS)</H2></a><BR>" 
+								+ "<a href='#' Frame='" + Link + "' Content='' Thumb='' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (Chrome embedded PDF-Viewer (Default))</H2></a>" 
 								+ "</TD>";	break;
 			case "Audio"	: output+="<TD>" 
-								+ "<Iframe Frameborder='0' style='width: 800px; height: 70px;' src='js/IFrameLoader/Soundmanager2/Index.html#" + data.Messages[i].Cont_Link + "#'/>"
-								// + "<Iframe Frameborder='0' style='width: 800px; height: 70px;' src='js/IFrameLoader/Wavesurfer/Index.html#" + data.Messages[i].Cont_Link + "#'/>"
-								+ "<a href='#' Frame='js/IFrameLoader/Wavesurfer/Index.html' Content='" + data.Messages[i].Cont_Link + "' Thumb='" + data.Messages[i].Cont_Thumb + "' onClick='GenIFrame(this);'><H2>Inhalt anzeigen (Wavesurfer)</H2></a>" 
-								// +"<iframe id='viewer'  frameBorder='0' scrolling='no' src = 'js/IFrameLoader/Soundmanager2/Index.html#" + data.Messages[i].objLink + "' height='70'  allowfullscreen webkitallowfullscreen></iframe>"
+								+ "<Iframe Frameborder='0' style='width: 800px; height: 70px;' src='js/IFrameLoader/Soundmanager2/Index.html#" + Link + "#'/>"
+								+ "<a href='#' Frame='js/IFrameLoader/Wavesurfer/Index.html' Content='" + Link + "' Thumb='" + Thumb + "' onClick='GenIFrame(this);'><H2>Inhalt anzeigen (Wavesurfer)</H2></a>" 
+								+ "<a href='#' Frame='js/IFrameLoader/id3/read.html' Content='" + Link + "' Thumb='" + Thumb + "' onClick='GenIFrame(this);'><H2>Inhalt anzeigen (ID3_Tags)</H2></a>" 
 								+ "</TD>";	break;
-								
+			case "MIDI"		: output+="<TD>" 
+								+ "<a href='#' Frame='js/IFrameLoader/Jasmid/Index.html' Content='" + Link + "' Thumb='" + Thumb + "' onClick='GenIFrame(this);'><H2>Inhalt abspielen (Jasmid)</H2></a>"  
+								+ "</TD>";	break;
+								// ------------------------------------------------------------------------------------------------------------------------------------------------------------------
+								// Komprimierte-Formate 
+								// ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 			case "ZIP"		: output+="<TD>" 
-								+ "<a href='#' Frame='js/IFrameLoader/zip/ShowZip.html' Content='" + data.Messages[i].Cont_Link + "' Thumb='" + data.Messages[i].Cont_Thumb + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (JSZip) </H2></a>" 
+								+ "<a href='#' Frame='js/IFrameLoader/zip/ShowZip.html' Content='" + Link + "' Thumb='" + Thumb + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (JSZip) </H2></a>" 
 								+ "</TD>";  break;
 			case "TAR"		: output+="<TD>" 
-								+ "<a href='#' Frame='js/IFrameLoader/TAR/Index.html' Content='" + data.Messages[i].Cont_Link + "' Thumb='" + data.Messages[i].Cont_Thumb + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen</H2></a>" 
+								+ "<a href='#' Frame='js/IFrameLoader/TAR/Index.html' Content='" + Link + "' Thumb='" + Thumb + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen</H2></a>" 
 								+ "</TD>";  break;
 			case "RAR"		: output+="<TD>" 
-								+ "<a href='#' Frame='js/IFrameLoader/rar/ShowRar.html' Content='" + data.Messages[i].Cont_Link + "' Thumb='" + data.Messages[i].Cont_Thumb + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (JSRar) </H2></a>" 
+								+ "<a href='#' Frame='js/IFrameLoader/rar/ShowRar.html' Content='" + Link + "' Thumb='" + Thumb + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (JSRar) </H2></a>" 
 								+ "</TD>";  break;
-								
-			case "Excel"	: output+="<TD>" 
-								+ "<a href='" + data.Messages[i].Cont_Link + "'>" + "<Img Src='" + data.Messages[i].Cont_Thumb + "' onError='errorImage(this);'</img>" + "</a>" 
-								+ "</TD>"
-								+ "<TD>" 
-								+ "<a href='#' Frame='js/IFrameLoader/SheetJS/Index.html' Content='" + data.Messages[i].Cont_Link + "' Thumb='" + data.Messages[i].Cont_Thumb + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (SheetJS) </H2></a>" 
-								+ "</TD>";  break;
+								// ------------------------------------------------------------------------------------------------------------------------------------------------------------------
+								// Rendering der 3D-Formate 
+								// ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 			case "GCode"	: output+="<TD>" 
-								// + "<Iframe Frameborder='0' style='width: 800px; height: 600px;' src='js/IFrameLoader/GCode/Index.html#" + data.Messages[i].Cont_Link + "#'/>"
-								+ "<a href='#' Frame='js/IFrameLoader/GCode/Index.html' Content='" + data.Messages[i].Cont_Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (GCodeViewer) </H2></a>" 
+								+ "<a href='#' Frame='js/IFrameLoader/GCode/Index.html' Content='" + Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (GCodeViewer) </H2></a>" 
 								+ "</TD>";  break;
-			case "EPub"	: output+="<TD>" 
-								// + "<Iframe Frameborder='0' style='width: 800px; height: 600px;' src='js/IFrameLoader/GCode/Index.html#" + data.Messages[i].Cont_Link + "#'/>"
-								+ "<a href='#' Frame='js/IFrameLoader/EpubJS/IndexEPUB.html' Content='" + data.Messages[i].Cont_Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (EpubViewer) </H2></a>" 
+			case "HANGAR"	: output+="<TD>" 
+								+ "<a href='#' Frame='js/IFrameLoader/Hangar/Index.html' Content='" + Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (GCodeViewer) </H2></a>" 
 								+ "</TD>";  break;
-			case "3D"		: output+="<TD>"
-								+ "<IFrame Frameborder='0' style='width: 400px; height: 280px;' src='js/IFrameLoader/ThreeJS/Index.html#" + data.Messages[i].Cont_Link + "#'/></TD><TD>"
-								// + "<a href='#' Frame='js/IFrameLoader/ThreeJS/Index.html' Content='" + data.Messages[i].objLink + "' Thumb='" + data.Messages[i].ContentThumb + "' onClick='GenIFrame(this);'><H2>Inhalt anzeigen</H2></a>" 
+			case "THING"	: output+="<TD>"
+								+ "<IFrame Frameborder='0' style='width: 400px; height: 280px;' src='js/IFrameLoader/ThreeJS/Index.html#" + Link + "#'/></TD><TD>"
+								+ "</TD>";	break;	
+			case "X3D"		: output+="<TD>"
+								+ "<IFrame Frameborder='0' style='width: 400px; height: 280px;' src='js/IFrameLoader/X3Dom/Index.html#" + Link + "#'/></TD><TD>"
+								+ "</TD>";	break;	
+			case "SCENE"	: output+="<TD>"
+								+ "<IFrame Frameborder='0' style='width: 400px; height: 280px;' src='js/IFrameLoader/SceneJS/Index.html#" + Link + "#'/></TD><TD>"
 								+ "</TD>";	break;	
 			case "DXF"		: output+="<TD>"
-								+ "<IFrame Frameborder='0' style='width: 400px; height: 280px;' src='js/IFrameLoader/ThreeDXF/Index.html#" + data.Messages[i].Cont_Link + "'/></TD><TD>"
+								+ "<IFrame Frameborder='0' style='width: 400px; height: 280px;' src='js/IFrameLoader/ThreeDXF/Index.html#" + Link + "'/></TD><TD>"
 								+ "</TD>";	break;		
 			case "JSCAD"	: output+="<TD>"
-								+ "<IFrame Frameborder='0' style='width: 800px; height: 280px;' src='js/IFrameLoader/OpenJSCad/index.html#" + data.Messages[i].Cont_Link + "'/></TD><TD>"
-								+ "</TD>";	break;				
+								+ "<IFrame Frameborder='0' style='width: 800px; height: 280px;' src='js/IFrameLoader/OpenJSCad/index.html#" + Link + "'/></TD><TD>"
+								+ "</TD>";	break;	
+								// ------------------------------------------------------------------------------------------------------------------------------------------------------------------
+								// Sonstige
+								// ------------------------------------------------------------------------------------------------------------------------------------------------------------------
+			case "Excel"	: output+="<TD>" 
+								+ "<a href='" + Link + "'>" + "<Img Src='" + Thumb + "' onError='errorImage(this);'</img>" + "</a>" 
+								+ "</TD>"
+								+ "<TD>" 
+								+ "<a href='#' Frame='js/IFrameLoader/SheetJS/Index.html' Content='" + Link + "' Thumb='" + Thumb + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (SheetJS) </H2></a>" 
+								+ "</TD>";  break;
+			case "EPub"		: output+="<TD>" 
+								+ "<a href='#' Frame='js/IFrameLoader/EpubJS/IndexEPUB.html' Content='" + Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (EpubViewer) </H2></a>" 
+								+ "</TD>";  break;
+			case "Exec"		: output+="<TD>"
+								+ "<a href='#' onClick='RunOnLocalMachine(this)' src='" + Link + "' ><H2> Lokal starten </H2></a><BR>"
+								+ "<a href='#' onClick='RunOnLocalMachineF(this)' src='" + Link + "' ><H2> Ordner oeffnen </H2></a>"
+								+ "<a href='#' Frame='js/IFrameLoader/Hexview/hexview.html' Content='" + Link + "' onClick='" + ShowIn + "'><H2>Inhalt anzeigen (HexView (Bug))</H2></a><BR>" 
+								+ "</TD>"; break;
 		};
 
 		output+="</TR>";

@@ -1,0 +1,38 @@
+<html>
+<head>
+    <script type='text/javascript' src='x3dom.js'> </script>
+    <link rel='stylesheet' type='text/css' href='x3dom.css'/>
+</head>
+<body>
+
+<Script>
+window.onload = function(){
+	var str = window.location.hash.substr(1);
+	var res = str.split("#");
+	var http = new XMLHttpRequest();
+	http.open("GET", res[0], true);
+	http.onload = function(e) {
+		if (this.status === 200) {
+			var fileToLoad = http.response;		
+			var doc1 = document.createElement("x3d");
+			doc1.setAttribute("height", '270px');
+			doc1.setAttribute("width", '380px');
+			//doc1.setAttribute("showStat", 'true');
+			//doc1.setAttribute("showLog", 'true');
+			doc1.setAttribute("showProgress", 'true');
+			var doc2 = document.createElement("scene");doc1.appendChild(doc2);
+			var doc3 = document.createElement("Viewpoint");doc2.appendChild(doc3);
+			var doc4 = document.createElement("Inline");doc2.appendChild(doc4);
+			doc4.setAttribute("url", res[0]);
+			doc4.setAttribute("NameSpaceName", '3D');
+			doc3.setAttribute("position", '-1.94639 1.79771 -2.89271');
+			doc3.setAttribute("orientation", '0.03886 0.99185 0.12133 3.75685');
+			document.body.appendChild(doc1);
+			x3dom.reload();
+		}
+	}
+	http.send();
+}
+</Script>
+</body>
+</html>

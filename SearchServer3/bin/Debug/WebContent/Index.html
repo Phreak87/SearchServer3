@@ -46,6 +46,7 @@
 
 					$("#Search").button();
 					$("#Save").button();
+					$("#Listen").button();
 					$("#HideDebug").button();
 					$("#tabs").tabs();
 					$("#tabs2").tabs();
@@ -106,6 +107,13 @@
 	function Reload() {
 		LoadDebug($('#debug'),$('#Meldungen'));			// Aktuelle Debugs
 		setTimeout("Reload()", 2000);
+	}
+		
+	function tests(){
+		$('#D3Overview').hide(false);
+		$('#Ergebnisse').show(false);
+		$('#tabs').hide(false);
+		$('#Ergebnisse').html('<iframe style="width:99%; height:800px;" Border="0" src="Samples.html"></Iframe>');
 	}
 		
 	function Suchen(daten) {
@@ -403,7 +411,32 @@
 		var newCopyStr = newUrlStr.substr(0,newUrlStr.lastIndexOf("\\"));
 		prompt('In die Zwischenablage kopieren', newCopyStr);
     }
-    
+
+	function speech(){
+		var recognition = new webkitSpeechRecognition();
+		recognition.lang = "de-DE";
+			recognition.onresult = function(event) { 
+			  $('#SText').val(event.results[0][0].transcript);
+			  say(event.results[0][0].transcript);
+			  Suchen($('#SText').val());
+			}
+		recognition.start();
+	}
+	
+	function say(Words){
+		var msg = new SpeechSynthesisUtterance();
+		var voices = window.speechSynthesis.getVoices();
+		msg.voice = voices[10];
+		msg.voiceURI = 'native';
+		msg.volume = 1; // 0 to 1
+		msg.rate = 1; // 0.1 to 10
+		msg.pitch = 2; //0 to 2
+		msg.text = 'Ich habe verstanden '+ Words;
+		msg.lang = 'de-DE';
+		speechSynthesis.speak(msg);
+	}
+	
+</Script>
 </Script>
 </head>
 <body>
@@ -414,54 +447,8 @@
 		Der Header der Seite mit Bookmarks ,Erstellen und der Suche 
 	#########################################-->
 	<a href="#pageFooter" class='hvr-underline-from-left' onclick="$('#debug').toggle('true');">Debugmeldungen</a>
-	<a href="#pageTests"  class='hvr-underline-from-left' onclick="$('#tests').toggle('true');">Testseiten</a>
+	<a href="#pageTests"  class='hvr-underline-from-left' onclick="tests();">Testseiten</a>
 	<div class="pageFooter"><div id="debug" hidden=true></div></div>
-	<div class="pageTests"><div id="tests" hidden=true>
-	<HR>
-		<Table Border="1"><TR><TH>Javascript</TH><TH>CSS</TH><TH>HTML</TH></TR>
-			<TR>
-				<TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/zip/ShowZip.html#http://localhost:9090/js/IFrameLoader/zip/Test.zip">(ZIP) ZipJS Testpage</a><BR></TD>
-				<TD><a class='hvr-back-pulse' href="http://localhost:9090/css/Hover/index.html">Hover Testpage</a><BR></TD>
-				<TD><a class='hvr-back-pulse' href="css/Farben.html">HTML Color Map</a><BR></TD>
-			</TR>
-			<TR>
-				<TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/rar/ShowRar.html#http://localhost:9090/js/IFrameLoader/rar/Test.rar">(RAR) RarJS Testpage</a><BR></TD>
-				<TD><a class='hvr-back-pulse' href="http://scrollrevealjs.org/">Scrollreveal</a><BR></TD>
-				<TD><a class='hvr-back-pulse' href="http://getskeleton.com/">Skeleton</a><BR></TD>
-			</TR>
-			<TR>
-				<TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/Soundmanager2/index.html#http://localhost:9090/js/Soundmanager2/Test.mp3">(MP3) SoundMan2 Testpage</a><BR></TD>
-				<TD><a class='hvr-back-pulse' href="http://localhost:9090/js/JQuery/gridster/gridster.html">Gridster</a><BR></TD>
-			</TR>
-			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/CodeMirror/ShowText.html#http://localhost:9090/js/IFrameLoader/CodeMirror/Test.md"> CodeMirror Testpage</a><BR></TD></TR>
-			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/ViewerJS/index.html#http://localhost:9090/js/IFrameLoader/ViewerJS/Test.pdf"> (PDF) ViewerJS Testpage</a><BR></TD></TR>
-			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/ThreeJS/index.html#http://localhost:9090/js/IFrameLoader/ThreeJS/Test.stl"> (STL) ThreeJS Testpage</a><BR></TD></TR>
-			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/GCode/index.html#http://localhost:9090/js/IFrameLoader/GCode/Examples/Test.gcode"> (GCode) GCode Testpage</a><BR></TD></TR>
-			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/Popcorn/showmov.html#http://localhost:9090/js/IFrameLoader/Popcorn/Test.ogv#http://localhost:9090/js/IFrameLoader/Popcorn/Test.jpg">(OGV) Popcorn Testpage</a><BR></TD></TR>
-			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/Popcorn/showmovExt.html#https://www.youtube.com/watch?v=_bWLqJG8G3M">(Youtube) Popcorn Testpage</a><BR></TD></TR>
-			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/VideoJS/showmov.html#http://localhost:9090/js/IFrameLoader/VideoJS/Test.ogv">(OGV) VideoJS Testpage</a><BR></TD></TR>
-			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/VideoJS/showmovExt.html#http://www.youtube.com/watch?v=xYemnKEKx0c">(Youtube) VideoJS Testpage</a><BR></TD></TR>
-			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/Projekktor/showmov.html#http://localhost:9090/js/IFrameLoader/Projekktor/Test.ogv#http://localhost:9090/js/IFrameLoader/Projekktor/Test.jpg">(OGV) Projekktor Testpage</a><BR></TD></TR>
-			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/Projekktor/showmovExt.html#https://www.youtube.com/watch?v=_bWLqJG8G3M">(Youtube) Projekktor Testpage</a><BR></TD></TR>
-			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/Sheetjs/index.html#http://localhost:9090/js/IFrameLoader/SheetJS/test.xlsx"> SheetJS </a><BR></TD></TR>
-			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/Epubjs/indexEPUB.html#http://localhost:9090/js/IFrameLoader/epubjs/test.epub"> EpubJS </a><BR></TD></TR>
-			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/EpicEditor/index.html#http://localhost:9090/js/IFrameLoader/EpicEditor/Readme.md"> (Markdown) EpicEditor </a><BR></TD></TR>
-			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/jsoneditor/index.html#http://localhost:9090/js/IFrameLoader/jsoneditor/package.json"> JsonEditor </a><BR></TD></TR>
-			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/jsoneditor/indexXML.html#http://localhost:9090/js/IFrameLoader/jsoneditor/package.xml"> JsonEditor mit XML konvertierung </a><BR></TD></TR>
-			
-			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/ExifJS/index.html#http://localhost:9090/js/IFrameLoader/Image.jpg"> EXIF Viewer </a><BR></TD></TR>
-			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/HexView/index.html#http://localhost:9090/js/IFrameLoader/HexFile.hex"> HexViewer (Beta) </a><BR></TD></TR>
-			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/ThreeDXF/index.html#http://localhost:9090/js/IFrameLoader/HexFile.hex"> DXFViewer (Beta) </a><BR></TD></TR>
-			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/TAR/index.html#http://localhost:9090/js/IFrameLoader/TAR/Test.tar"> (TAR) TarJS </a><BR></TD></TR>
-			
-			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/OpenjSCAD/index.html#http://localhost:9090/js/IFrameLoader/OpenjSCAD/test.stl"> OpenJSCad (stl) </a><BR></TD></TR>
-			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/OpenjSCAD/index.html#http://localhost:9090/js/IFrameLoader/OpenjSCAD/test.obj"> OpenJSCad (obj) </a><BR></TD></TR>
-			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/OpenjSCAD/index.html#http://localhost:9090/js/IFrameLoader/OpenjSCAD/test.amf"> OpenJSCad (amf) </a><BR></TD></TR>
-			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/OpenjSCAD/index.html#http://localhost:9090/js/IFrameLoader/OpenjSCAD/test.jscad"> OpenJSCad (jscad/js) </a><BR></TD></TR>
-			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/OpenjSCAD/index.html#http://localhost:9090/js/IFrameLoader/OpenjSCAD/test.scad"> OpenJSCad (scad) </a><BR></TD></TR>
-			<TR><TD><a class='hvr-back-pulse' href="http://localhost:9090/js/IFrameLoader/OpenjSCAD/index.html#http://localhost:9090/js/IFrameLoader/OpenjSCAD/test.gcode"> OpenJSCad (gcode/gco/g) </a><BR></TD></TR>
-		</Table>
-	</div></div>
 	
 	<!--  Der Header der Seite mit Bookmarks ,Erstellen und der Suche -->
 	<div class="pageHeader">
@@ -482,13 +469,9 @@
 	
 		<input 			type=			"text" 		
 						id=				"SText" 	
-						class=			"awesomeplete"
-						data-multiple 
-						data-list=		"CSS, JavaScript, HTML, SVG, ARIA, MathML"
-						style=			"height:30px;Width:80%;margin-top:0px;padding-top:0px;"	
+						style=			"height:30px;Width:75%;margin-top:0px;padding-top:0px;"	
 						onkeydown=		"if (event.keyCode == 13){$('#Search').click();LoadSearch($('#debug'),$('#Suche'));}"></input> 
-		
-		
+
 		<a href="#" 	id=				'Search' 
 						style=			'height:30px;Width:7%' 	
 						class=			'hvr-underline-from-left'
@@ -500,7 +483,13 @@
 						class=			'hvr-underline-from-left'
 						onclick=		"Speichern($('#SText').val());"
 										>Speichern</a>	
-	</div>
+										
+		<a href="#" 	id=				'Listen' 
+						style=			'height:30px;Width:7%' 	
+						class=			'hvr-underline-from-left'
+						onclick=		"speech()"
+										 >Sprechen</a>
+	</div>		
 	
 	<!-- Linkes informationsmenue mit Abfragen, gespeichertem und sonstigen Infors -->
 	<div class="pageLeftMenu">

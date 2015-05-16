@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            margin: 0;
+            -moz-user-select: -moz-none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+        }
+    </style>
+
+    <script src="scenejs.js"></script>
+    <link href="styles.css" rel="stylesheet"/>
+
+<body>
+
+<script>
+function Filetypes(Name){
+	if (typeof Name == 'undefined') {return ''};
+	var PFix = Name.substr(Name.lastIndexOf(".")).toLowerCase();
+	switch (PFix){
+		case ".obj"	: return "import/obj";
+		case ".3ds" : return "import/3ds";
+		case ".md2" : return "import/md2";
+	};
+};
+
+window.onload = function(){
+	var str = window.location.hash.substr(1);
+	var res = str.split("#");
+
+    SceneJS.setConfigs({
+        pluginPath: "plugins"
+    });
+
+	
+    // Create a scene
+    SceneJS.createScene({
+                nodes: [
+                    {
+                        type: "cameras/orbit",
+                        yaw: -40,
+                        pitch: -20,
+                        zoom: 150,
+                        zoomSensitivity: 10.0,
+                                nodes: [
+                                    {
+                                        type: "material",
+                                        color: { r: 0.2, g: 0.4, b: 0.6 },
+                                        specular: 0.0,
+
+                                        nodes: [
+                                            {
+                                                type: Filetypes(res[0]),
+                                                src: res[0],
+                                                normals: "auto"
+                                            },
+
+                            {
+                                type: "geometry/grid",
+                                size: { x: 500, z: 500 },
+                                xSegments: 100,
+                                zSegments: 100
+                            }
+                                        ]
+                                    }
+                                ]
+                    }
+                ]
+            }
+    );
+};
+</script>
+</body>
+</html>

@@ -253,7 +253,7 @@
 		<!-- Temperatur -->
 		<Unit Name="°C" 				Calc="" 				Aliasses="°C,Celsius,celsius"/>
 		<Unit Name="°F" 				Calc="" 				Aliasses="°F,Fahrenheit,fahrenheit"/>
-		<Unit Name="°Kelvin"			Calc="" 				Aliasses="Kelvin"/>
+		<Unit Name="°Kelvin"			Calc="" 				Aliasses="Kelvin,°k,°K"/>
 		
 	</Units>
 </WebSearch>

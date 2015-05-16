@@ -643,4 +643,10 @@
   <Clean Collection="DIR" Field="Cont_Post" Value=".ignore" Description="" />
   <Clean Collection="DIR" Field="Cont_Post" Value=".hidden" Description="" />
   <Clean Collection="DIR" Field="Cont_Post" Value=".empty" Description="" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".texi" Description="" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".boot" Description="" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".lic" Description="Lizenzdatei" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".inx" Description="" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".skin" Description="" />
+  <Clean Collection="DIR" Field="Cont_Post" Value=".ncd" Description="" />
 </WebSearch>

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script 	type="text/javascript" 	src="head.js"></script>
+        <script>	
+		
+				var container;
+				var camera, controls, scene, renderer;
+				var mouseX = 0, mouseY = 0;
+				var windowHalfX = window.innerWidth / 2;
+				var windowHalfY = window.innerHeight / 2;
+				var particleLight;
+				
+				head.load(	
+				"three.min.js",
+				// LOADER
+				"js/loaders/AssimpJSONLoader.js",
+				"js/loaders/BabylonLoader.js",
+				"js/loaders/ColladaLoader.js",
+				"js/loaders/ctm/lzma.js",
+				"js/loaders/ctm/ctm.js",
+				"js/loaders/gltf/glTF-parser.js",
+				"js/loaders/gltf/glTFLoader.js",
+				"js/loaders/gltf/glTFLoaderUtils.js",
+				"js/loaders/gltf/glTFAnimation.js",
+				"js/loaders/OBJMTLLoader.js",
+				"js/loaders/OBJLoader.js",
+				"js/loaders/AWDLoader.js",
+				"js/loaders/DDSLoader.js",
+				"js/loaders/MTLLoader.js",
+				"js/loaders/PDBLoader.js",
+				"js/loaders/PLYLoader.js",
+				"js/loaders/VTKLoader.js",
+				"js/loaders/STLLoader.js",
+				"js/loaders/UTF8Loader.js",
+				"js/loaders/VRMLLoader.js",
+				"js/loaders/ctm/CTMLoader.js",
+				"js/loaders/BinaryLoader.js",
+				"js/libs/msgpack-js.js",
+				"js/renderers/CSS2DRenderer.js",
+				// Sea-Extension
+				"js/loaders/sea3d/SEA3D.js",
+				"js/loaders/sea3d/SEA3DLoader.js",
+				"js/loaders/sea3d/SEA3DDeflate.js",
+				"js/loaders/sea3d/SEA3DLZMA.js",
+				// CONTROLS
+				"js/controls/OrbitControls.js",
+				//"js/renderers/CSS2DRenderer.js",
+				//"js/renderers/Projector.js",
+				"js/Detector.js",
+				"js/libs/stats.min.js",				
+				function(){
+					init();
+					animate();
+				});
+        </script>
+		<style>
+			body {
+				color: #404040;
+				font-family:Monospace;
+				font-size:13px;
+				text-align:center;
+
+				background-color: #ffffff;
+				margin: 0px;
+				overflow: hidden;
+			}
+			a {
+
+				color: #0080bb;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<script>
+			function init() {
+
+				// ---------------------------------------------------------------------------------
+				// Main Container
+				// ---------------------------------------------------------------------------------
+				container = document.createElement( 'div' ); document.body.appendChild( container );
+				stats = new Stats();
+				stats.domElement.style.position = 'absolute';
+				stats.domElement.style.top = '0px';
+				stats.domElement.style.zIndex = 100;
+				container.appendChild( stats.domElement );
+
+				// ---------------------------------------------------------------------------------
+				// Kamera
+				// ---------------------------------------------------------------------------------
+				camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 1, 20000 );
+				camera.position.z = 200;
+				
+				// ---------------------------------------------------------------------------------
+				// Scene
+				// ---------------------------------------------------------------------------------
+				scene = new THREE.Scene();
+				var ambient = new THREE.AmbientLight( 0x1010f0 );
+				var directionalLight = new THREE.DirectionalLight( 0xffeedd );
+				var plane = new THREE.Mesh(
+					new THREE.PlaneBufferGeometry( 100, 100 ),
+					new THREE.MeshPhongMaterial( { color: 0x999999, specular: 0x101010 } )
+				);
+				plane.rotation.x = -Math.PI/2;
+				plane.position.y = -0.5;
+				plane.position.z = -0.2;
+				
+				//scene.add( plane );
+				scene.add( directionalLight );
+				scene.add( ambient );
+				scene.add( new THREE.GridHelper( 10, 2.5 ) );
+
+				// ---------------------------------------------------------------------------------
+				// Controls
+				// ---------------------------------------------------------------------------------
+				controls = new THREE.OrbitControls( camera );
+				controls.damping = 0.2;
+				controls.addEventListener( 'change', render );
+
+				var manager = new THREE.LoadingManager();
+				var texture = new THREE.Texture();
+				var onError = function ( xhr ) {};
+				var onProgress = function ( xhr ) {};
+				var str = window.location.hash.substr(1);
+				var res = str.split("#");
+				var PFix = res[0].substr(res[0].lastIndexOf(".")).toLowerCase();
+				
+				switch (PFix){
+					case ".obj" : 		var loader = new THREE.OBJLoader( manager ); 	 break;	// OK | Main OBJ / ohne MTL
+					case ".awd"	: 		var loader = new THREE.AWDLoader();				 break; // OK
+					case ".babylon" : 	var loader = new THREE.BabylonLoader( manager ); break; // OK
+					case ".ctm" 	: 	var loader = new THREE.CTMLoader(); 			 break; // OK | Main CTM / Ohne JS
+					case ".vtk" :		var loader = new THREE.VTKLoader();				 break; // OK
+					case ".wrl" :		var loader = new THREE.VRMLLoader();			 break; // OK
+					case ".stl" :		var loader = new THREE.STLLoader();				 break; // A (Ascii) OK | B (Binary) OK
+					case ".dae" :		var loader = new THREE.ColladaLoader();			 break; // Collada OK
+					case ".js"	:		var loader = new THREE.UTF8Loader();			 break; // Fehler
+					case ".json" :		var loader = new THREE.JSONLoader();			 break; // Fehler ( GLTF ) + OK (ASSIMP2JSON)
+					case ".pdb" :		var loader = new THREE.PDBLoader();			 	 break; // OK
+					case ".ply" :		var loader = new THREE.PLYLoader();				 break; // A (Ascii) OK | B (Binary) OK
+					case ".gltf" :		var loader = new THREE.glTFLoader;				 break; // Animation
+					case ".pack" :		var loader = new THREE.ObjectLoader();		     break; // OK
+					case ".sea" :		var loader = new THREE.SEA3D(false);			 break;
+				};
+		
+				var material = new THREE.MeshLambertMaterial( { color:0xffffff, side: THREE.DoubleSide } );
+				
+				if (PFix=='.obj' || PFix=='.awd'||PFix=='.babylon'||PFix=='.ctm'||PFix=='.vtk'||PFix=='.wrl'||PFix=='.stl'||PFix=='.dae'){
+				loader.load( res[0], function ( object ) {
+
+					// Tritt ein bei BABYLON  + WRL
+					if (object.type == 'Scene'){
+						scene.add ( object );
+					}
+					
+					// Tritt ein bei OBJ + AWD
+					if (object.type == 'Object3D'){
+						scene.add ( object );
+					}
+					
+					// Tritt ein bei CTM + VTK + STL (Binary)
+					if (object.type == 'BufferGeometry'){
+						object.computeVertexNormals();
+						var mesh = new THREE.Mesh ( object, material );
+						mesh.scale.x = 100;mesh.scale.y = 100;mesh.scale.z = 100;
+						mesh.position.x = -300;mesh.position.y=-400;mesh.position.z=-600;
+						scene.add ( mesh );
+					}
+					
+					// Tritt ein bei STL (ASCII) 
+					if (object.type == 'Geometry'){
+						object.computeVertexNormals();
+						var mesh = new THREE.Mesh ( object, material );
+						mesh.scale.x = 100;mesh.scale.y = 100;mesh.scale.z = 100;
+						scene.add ( mesh );
+					}
+					
+					// Tritt ein bei DAE (Collada)
+					if (PFix='.dae'){
+						var dae;
+						dae = object.scene;
+						dae.traverse( function ( child ) {
+							if ( child instanceof THREE.SkinnedMesh ) {
+								var animation = new THREE.Animation( child, child.geometry.animation );
+								animation.play();
+							}
+						});
+						dae.scale.x = dae.scale.y = dae.scale.z = 0.002;
+						dae.updateMatrix();
+						scene.add( dae );
+					}
+				}, onProgress, onError );
+				} else 
+				if (PFix=='.pack'){
+						var xhr = new XMLHttpRequest();
+						xhr.open('GET', res[0], true);
+						xhr.responseType = 'arraybuffer';
+						xhr.onload = function( e ) {
+								var decoded = msgpack.decode( this.response );
+								var loader = new THREE.ObjectLoader();
+								var  addscene = loader.parse( decoded );
+								scene.add(addscene.children[0]);
+								render( scene, camera );
+						};
+						xhr.send();
+				} else 
+				if (PFix=='.ply'){
+					var loader = new THREE.PLYLoader();
+					loader.addEventListener( 'load', function ( event ) {
+						var geometry = event.content;
+						var material = new THREE.MeshPhongMaterial( { color: 0x0055ff, specular: 0x111111, shininess: 200 } );
+						var mesh = new THREE.Mesh( geometry, material );
+						scene.add( mesh );
+					} );
+					loader.load( res[0] );
+				} else
+				if (PFix=='.pdb'){
+					loadMolecule(res[0]);
+				} else
+				if (PFix=='.sea'){
+				loader = new THREE.SEA3D(false);
+				loader.onComplete = function( e ) {
+					if (loader.cameras) {
+						var cam = loader.cameras[0];
+						camera.position = cam.position;
+						camera.rotation = cam.rotation;
+					}
+					SEA3D.AnimationHandler.setTime( 0 );
+				}
+				loader.container = scene;
+				loader.load( res[0] );
+				}
+				if (PFix=='.json'){
+				
+					var xhr = new XMLHttpRequest();
+					xhr.open('GET', res[0], true);
+					xhr.onload = function( e ) {
+						var Json = JSON.parse(this.responseText);
+						if (Json.profile=="WebGL 1.0.2"){
+							// GLTF ( Zoom out to See)
+							loader = new THREE.glTFLoader;
+							loader.load( url, function(data) {
+								gltf = data;
+								if (gltf.scene.children.length>0){
+								var obj = gltf.scene.children[0];
+								obj.scale.x=-1000;
+								obj.scale.y=-1000;
+								obj.scale.z=-1000;
+								scene.add ( obj );
+							}});					
+						} 
+						else 
+						{
+							// ASSIMP2JSON
+							var loader1 = new THREE.AssimpJSONLoader();
+							loader1.load( res[0], function ( object ) {
+							object.scale.multiplyScalar( 0.2 );
+							scene.add( object );
+							}, onProgress, onError );						
+						}
+					};
+					xhr.send();
+				} else 
+				if (PFix==".js"){
+				
+				}
+				
+				renderer = new THREE.WebGLRenderer();
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				renderer.setClearColor( 0xffffff );
+				container.appendChild( renderer.domElement );
+				
+				document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+				window.addEventListener( 'resize', onWindowResize, false );
+				
+			}
+
+			function onWindowResize() {
+				windowHalfX = window.innerWidth / 2;
+				windowHalfY = window.innerHeight / 2;
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+				renderer.setSize( window.innerWidth, window.innerHeight );
+			}
+			function onDocumentMouseMove( event ) {
+				mouseX = ( event.clientX - windowHalfX ) / 2;
+				mouseY = ( event.clientY - windowHalfY ) / 2;
+			}
+			function animate() {
+				requestAnimationFrame( animate );
+				render();
+			}
+			function render() {
+				renderer.render( scene, camera );
+			}
+			
+			function loadMolecule( url ) {
+				var loader = new THREE.PDBLoader();
+				loader.load( url, function ( geometry, geometryBonds, json ) {
+					var boxGeometry = new THREE.BoxGeometry( 1, 1, 1 );
+					var sphereGeometry = new THREE.IcosahedronGeometry( 1, 2 );
+					var offset = geometry.center();
+					geometryBonds.applyMatrix( new THREE.Matrix4().makeTranslation( offset.x, offset.y, offset.z ) );
+
+					for ( var i = 0; i < geometry.vertices.length; i ++ ) {
+
+						var position = geometry.vertices[ i ];
+						var color = geometry.colors[ i ];
+						var element = geometry.elements[ i ];
+						var material = new THREE.MeshLambertMaterial( { color: color } );
+						var object = new THREE.Mesh( sphereGeometry, material );
+						object.position.copy( position );
+						object.position.multiplyScalar( 75 );
+						object.scale.multiplyScalar( 25 );
+						var root = new THREE.Object3D();
+						scene.add( root );
+						root.add( object );
+
+						var atom = json.atoms[ i ];
+
+						var text = document.createElement( 'div' );
+						text.className = 'label';
+						text.style.color = 'rgb(' + atom[ 3 ][ 0 ] + ',' + atom[ 3 ][ 1 ] + ',' + atom[ 3 ][ 2 ] + ')';
+						text.textContent = atom[ 4 ];
+
+						var label = new THREE.CSS2DObject( text );
+						label.position.copy( object.position );
+						root.add( label );
+
+					}
+
+					for ( var i = 0; i < geometryBonds.vertices.length; i += 2 ) {
+
+						var start = geometryBonds.vertices[ i ];
+						var end = geometryBonds.vertices[ i + 1 ];
+
+						start.multiplyScalar( 75 );
+						end.multiplyScalar( 75 );
+
+						var object = new THREE.Mesh( boxGeometry, new THREE.MeshLambertMaterial( 0xffffff ) );
+						object.position.copy( start );
+						object.position.lerp( end, 0.5 );
+						object.scale.set( 5, 5, start.distanceTo( end ) );
+						object.lookAt( end );
+						root.add( object );
+
+					}
+
+					render();
+
+				}, function ( xhr ) {
+
+					if ( xhr.lengthComputable ) {
+
+						var percentComplete = xhr.loaded / xhr.total * 100;
+						console.log( Math.round(percentComplete, 2) + '% downloaded' );
+
+					}
+
+				}, function ( xhr ) {
+
+				} );
+
+			}
+			
+			function loadGLTF (url) {
+
+			}
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,40 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 //EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+		
+<head>
+
+<link rel="stylesheet" type="text/css" href="LaTeXMathML.standardarticle.css" /> 
+
+<script type="text/javascript">
+	window.onload = function(){
+		var str = window.location.hash.substr(1);
+		var res = str.split("#");
+
+		var http = new XMLHttpRequest();
+		http.open("GET", res[0], true);
+		http.onload = function(e) {
+			if (this.status === 200) {
+				var textToLoad = http.responseText;	
+				var doc = document.getElementById ("Latex");
+				doc.innerHTML = textToLoad;
+				translate();
+			}
+		}
+		http.send();
+	}
+</Script>
+<script type="text/javascript" src="LaTeXMathML.js"></script>
+
+</head>
+
+<body bgcolor="#ffffff" >
+
+<pre class="LaTeX"><div id="Latex">
+
+</div></pre>
+
+</body>
+
+</html>
+

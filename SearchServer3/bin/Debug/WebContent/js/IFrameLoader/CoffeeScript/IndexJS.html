@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script src="js2coffee.js"></script>
+</head>
+
+<body>
+	<div id="Scr"></div>
+	<Script>
+	window.onload = function(){
+	var str = window.location.hash.substr(1);
+	var res = str.split("#");
+
+	var http = new XMLHttpRequest();
+	http.open("GET", res[0], true);
+	http.onload = function(e) {
+		if (this.status === 200) {
+			var doc = document.getElementById ("Scr");
+			var fileToLoad = http.responseText;		
+			doc.innerText = js2coffee.build(fileToLoad).code;
+			document.body.appendChild(doc);
+		}
+	}
+	http.send();
+	}
+</Script>
+</body>
+</html>
