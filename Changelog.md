@@ -1,5 +1,5 @@
 
-# SearchServer3@Commit:64
+# SearchServer3@Commit:70
 
 > Views 										=> PDF-View und Default-View in Anzeige
 > Ergebnisse									=> Default (30), erweiterbar in Anzeige
