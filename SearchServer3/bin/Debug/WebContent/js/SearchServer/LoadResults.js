@@ -79,6 +79,7 @@ function displayData (el) {
 		el.parentNode.lastChild.style.display='none';
 	}
 }
+
 function errorImage (el) {
 	el.src='Images/Filetypes/Error.png';
 }
@@ -86,9 +87,12 @@ function errorImage (el) {
 function ReloadImage (el) {
 	setTimeout(function() {
 		var save = el.src;
+		var alte = el.alt;
+		if (alte=='NaN'){el.setAttribute('alt','0')};
+		if (parseInt(alte)>=9){el.outerHTML='';return'';}else{el.setAttribute('alt',parseInt(alte)+1)};
 		el.src='';
 		el.src=save
-	}, 2000);
+	}, 1000);
 }
 
 function ChangeSelection(name, val, state) {
@@ -110,7 +114,8 @@ function loadPageData (daten) {
 	
 	var data = CheckData(daten);
 	var output="";
-
+	var Number = 0;
+	
 	/* ##############################
 	Zurueck, Weiter, Seiten, Status
 	############################### */
@@ -185,16 +190,17 @@ function loadPageData (daten) {
 	  }}};
 	  output+="</select>"+"</div>"+"</TR>"+"</Table></Div>";
 	}
-		
-	
+
 	/* Inhalte
 	############################### */
+	if (viw==false){
 	for (var i in data.Messages){
-	
-		var ShowIn = '';
+		
+		Number+=1;
 		var Link = data.Messages[i].Cont_Link;
 		var Thumb = data.Messages[i].Cont_Thumb;
 		
+		var ShowIn = '';
 		switch (data.Messages[i].Cont_Show){
 			case "Inline" 	: ShowIn = "GenIFrameInLine(this);"; 	break;
 			case "WWindow"	: ShowIn = "GenIFrame(this);"; 			break;
@@ -232,7 +238,8 @@ function loadPageData (daten) {
 				+ data.Messages[i].Cont_Mime + "<BR>"
 				+ data.Messages[i].Cont_Player + "<BR>"
 				+ data.Messages[i].Cont_Show + "<BR>"
-				+ data.Messages[i].Cont_Time 
+				+ data.Messages[i].Cont_Time + "<BR>" 
+				+ "Num: " + Number
 				+ "</Div>"
 			+ "</TD>";
 
@@ -411,7 +418,14 @@ function loadPageData (daten) {
 				+ "<a href='#' onClick='RunOnLocalMachineF(this)' src='" + data.Messages[i].Cont_Link + "' ><Img Src='images/rarrow.png'</img> Ordner oeffnen </a>"
 			+ "</TD>"
 			+ "</TR></Table>";	
-	};		
+	}} else {
+		for (var i in data.Messages){
+			switch (data.Messages[i].Cont_Player){
+				case "PDF"		: output+="<img Style='Margin-left:10px;Margin-top:10px;' Alt='0' src='" + data.Messages[i].Cont_Thumb + "' onError='ReloadImage(this);'></img>";break;
+			}
+		}
+	};
+	
 	output+="</Div>"
 
 	$("#Ergebnisse"+sel).html(output);	
@@ -449,4 +463,5 @@ function loadPageData (daten) {
 		ChangeSelection ('scp',params.selected,'true');
     });
 	$(".selector").width('600px');
+	return output;
 }

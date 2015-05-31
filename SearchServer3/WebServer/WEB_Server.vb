@@ -35,7 +35,6 @@ Namespace CLS
             Public Sub StartServer()
                 RaiseEvent StatusMsg(".WBS: Starte Webserver: http://localhost:9090 mit 50 Asynchronen Socket Threads")
                 Dim SRVThread As New Threading.Thread(AddressOf StartServerThread) : SRVThread.Start()
-                _Stats = GenStatusCodes()
             End Sub
             Private Sub Redirect(ByVal RAW As String, ByVal Socket As Socket)
                 Dim MSG As New CLS.WBS.Server.MessageDecoder(RAW, _Mime)
@@ -156,14 +155,19 @@ Namespace CLS
                     SendHeader(True)
                     _Socket.SendTimeout = Integer.MaxValue
 
-                    Dim NS As New NetworkStream(_Socket, True)
-                    Dim FS As New FileStream(_Transfer, FileMode.Open, FileAccess.Read)
-                    Try : FS.CopyTo(NS) : FS.Flush() : FS.Close()
-                    Catch IOE As IOException
-                        NS.Close()
-                        FS.Close()
-                        sended(_Socket)
+                    Try
+                        Dim NS As New NetworkStream(_Socket, True)
+                        Dim FS As New FileStream(_Transfer, FileMode.Open, FileAccess.Read)
+                        Try : FS.CopyTo(NS) : FS.Flush() : FS.Close()
+                        Catch IOE As IOException
+                            NS.Close()
+                            FS.Close()
+                            sended(_Socket)
+                        End Try
+                    Catch ex As Exception
+
                     End Try
+
                 End Sub
 
                 Public Sub SendContent()

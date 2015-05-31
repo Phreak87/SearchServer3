@@ -1,3 +1,13 @@
+
+# SearchServer3@Commit:64
+
+> Views 										=> PDF-View und Default-View in Anzeige
+> Ergebnisse									=> Default (30), erweiterbar in Anzeige
+> FIL mit Datum									=> Datum aus Textdateien extrahieren
+> FIL mit Images								=> img-Tags werden nun interpretiert und angezeigt
+> FIL Bugfix 									=> interpretiert jetzt nur noch (txt|csv|log) 
+> Autoloader									=> Beim 1. Aufruf der Seite werden alle Infos zum Datum angezeigt.
+
 # SearchServer3@Commit:63
 
 > Nuget Paketliste								=> OK (Stand 16.05.2015 mittels Nuget.exe List)

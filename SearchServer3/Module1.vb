@@ -306,11 +306,11 @@ Module Module1
                         Console.WriteLine("Verwende vorgeladenes Ergebnis " & RawData.ReqURLGets("sid") & "_" & PaID)
                         Cont = PreFetch(RawData.ReqURLGets("sid") & "_" & PaID).ToString
                     Else
-                        resDB = CLS.DBS.MongoDB.QueryText(DIR, {SuTE}, 30, PaID, "Cont_Link", RawData, Nothing) : Cont = resDB.ToJson
+                        resDB = CLS.DBS.MongoDB.QueryText(DIR, {SuTE}, PaID, "Cont_Link", RawData, Nothing) : Cont = resDB.ToJson
                     End If
-                Case "api\query\fil" : resDB = CLS.DBS.MongoDB.QueryText(FIL, {SuTE}, 30, PaID, "Cont_Name", RawData, Nothing) : Cont = resDB.ToJson
-                Case "api\query\rss" : resDB = CLS.DBS.MongoDB.QueryText(RSS, {SuTE}, 30, PaID, "Cont_Text", RawData, Nothing) : Cont = resDB.ToJson
-                Case "api\query\web" : resDB = CLS.DBS.MongoDB.QueryText(TWEB, {"WEB"}, 100, PaID, "Class_Type", RawData, Nothing) : Cont = resDB.ToJson
+                Case "api\query\fil" : resDB = CLS.DBS.MongoDB.QueryText(FIL, {SuTE}, PaID, "Cont_Name", RawData, Nothing) : Cont = resDB.ToJson
+                Case "api\query\rss" : resDB = CLS.DBS.MongoDB.QueryText(RSS, {SuTE}, PaID, "Cont_Text", RawData, Nothing) : Cont = resDB.ToJson
+                Case "api\query\web" : resDB = CLS.DBS.MongoDB.QueryText(TWEB, {"WEB"}, PaID, "Class_Type", RawData, Nothing) : Cont = resDB.ToJson
 
                     ' --------------------------------------------------------------------
                     ' Hier die Setter aus der Datenbank
@@ -318,13 +318,13 @@ Module Module1
                 Case "api\query\save"
                     Dim Doc As New BsonDocument("Save", RawData.ReqContent("Data"))
                     Dim Res As WriteConcernResult = MRK.Insert(Of BsonDocument)(Doc)
-                    resDB = CLS.DBS.MongoDB.QueryText(DIR, {RawData.ReqContent("Data")}, 100000, PaID, "Cont_Link", RawData, "Cont_Name")
+                    resDB = CLS.DBS.MongoDB.QueryText(DIR, {RawData.ReqContent("Data")}, PaID, "Cont_Link", RawData, "Cont_Name")
                     ' Cont = "{""sid""" & ":" & """" & Doc("_id").ToString & """}"
                     Cont = resDB.ToJson
                     ' LogStatus(".WEB: " & Cont)
 
                 Case "api\query\search"
-
+                    ' Nur Such-ID generieren, Prefetch leeren und zurückgeben
                     Dim Doc As New BsonDocument("Query", RawData.ReqContent("Data"))
                     Doc.Add(New BsonElement("Time", New BsonDateTime(Now)))
                     Dim Res As WriteConcernResult = QRY.Insert(Of BsonDocument)(Doc)
@@ -402,7 +402,7 @@ Module Module1
                 ' Nächste Ergebnisse vorladen
                 If PreFetch.ContainsKey(RawData.ReqURLGets("sid") & "_" & PaID + 1) = False Then
                     Console.WriteLine("Vorladen von " & RawData.ReqURLGets("sid") & "_" & PaID + 1)
-                    Dim resDB2 As New CLS.DBS.DBResult : resDB2 = (CLS.DBS.MongoDB.QueryText(DIR, {SuTE}, 30, PaID + 1, "Cont_Link", RawData, Nothing))
+                    Dim resDB2 As New CLS.DBS.DBResult : resDB2 = (CLS.DBS.MongoDB.QueryText(DIR, {SuTE}, PaID + 1, "Cont_Link", RawData, Nothing))
                     PreFetch.Add(RawData.ReqURLGets("sid") & "_" & PaID + 1, resDB2.ToJson)
                     CreateThumbsfromList(resDB2, RawData)
                 End If

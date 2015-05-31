@@ -19,11 +19,8 @@
 				"js/JQuery/superfish.css",
 				"js/JQuery/Chosen/chosen.jquery.min.js",
 				"js/JQuery/Chosen/chosen.min.css",
-				"js/JQuery/typeahead.jquery.min.js",
-				"js/JQuery/Bloodhound.min.js",
 				"css/hover-min.css",
 				"js/Emojione.min.js",
-				// "css/primer.css",
 				"js/SearchServer/D3Overview.js",
 				"js/SearchServer/LoadDebug.js",
 				"js/SearchServer/LoadMerker.js",
@@ -36,13 +33,6 @@
 				"js/SearchServer/PreLoader.js",
 				"js/SearchServer/PostLoader.js",
 				function() {
-				
-					var Preload = new Bloodhound({
-					  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
-					  queryTokenizer: Bloodhound.tokenizers.whitespace,
-					  prefetch: 'test.json',
-					  remote: 'test.json'
-					});Preload.initialize();
 
 					$("#Search").button();
 					$("#Save").button();
@@ -58,13 +48,18 @@
 					//Reload();
 					
 					LoadOverview(); 								// D3 Uebersicht
-					LoadSearch($('#debug'),$('#Suche'));			
+					LoadSearch($('#debug'),$('#Suche'));			//  Suchfunktionen
 					LoadDebug($('#debug'),$('#Meldungen'));			// Aktuelle Debugs
 					LoadMerker($('#debug'),$('#Merker'));			// Gespeicherte Suchanfragen
 					LoadCreators($('#debug'),$('#Ersteller'));		// Neue Eintraege hinzufügen
 					LoadBookmarks($('#debug'),$('#Bookmarks'));		// Gespeicherte Default-URLs
 					LoadWebPages($('#debug'),$('#Externe'));		// Suchmaschinen (Seite)
-
+					
+					$(".pageLeftMenu").show(false);
+					$(".pageHeader").show(false);
+					$(".pageContent").show(false);
+					
+					AfterLoad();
 				});
 </script>
 
@@ -72,6 +67,8 @@
 	var sid='0'; 	// Die Such-ID
 	var sel='DIR'; 	// Der Suchtyp
 	var pag='0'; 	// Die SeitenNr
+	var viw="0";	// Default View
+	var res='';		// Letzte Resulatate
 	
 	function CheckData(daten){
 		// ##############################
@@ -116,6 +113,55 @@
 		$('#Ergebnisse').html('<iframe style="width:99%; height:800px;" Border="0" src="Samples.html"></Iframe>');
 	}
 		
+	function AfterLoad (){
+	
+	var jetzt = new Date().toISOString().split("-");
+	var dateString = jetzt[2].substring(0, 2) + "." + jetzt[1] + ".";
+
+		$.ajax({
+			  type: "POST",
+			  url: "api/query/search",
+			  data: {Action: "Search", Data: dateString}
+			})
+		  .done(function( msg ) {
+		    $('#debug').html(msg);
+			sid = jQuery.parseJSON(msg).sid;
+				$.ajax({
+					url: '/api/Query/FIL',
+					data: {
+						SID: sid,
+						PID: '0',
+						CNT: '30'
+					},
+					success: function (data) {
+					$('#debug').html(data);
+					var MSG = document.createElement("Div");
+					data = CheckData(data);
+					var NEWS = "";
+					for (var i in data.Messages){
+						if (data.Messages[i].Class_Type == "FIL"){
+							NEWS+="<H5>" + data.Messages[i].Cont_Text + "</H5><HR>";
+						}
+					}
+					if (NEWS != ""){
+					$(MSG).html(NEWS)
+								$(MSG).dialog({
+									title: "News !",
+									modal: true,
+									width: '550px',
+									buttons: {
+											Schliessen: function() {
+											  $( this ).dialog( "close" );
+											}
+										  },
+									close: function( event, ui ) {$(this.parentNode).html('');}
+								})
+								}
+					}
+				})
+		  });
+	}
+	
 	function Suchen(daten) {
 	Clean();
     $('#D3Overview').hide(false);
@@ -195,18 +241,21 @@
 									PDF: function () {
 										head.load (	"js/export/pdf/jspdf.min.js",
 										function () {
+											var tst=true;
 											var doc = new jsPDF();
 											var pos = 30;
 											doc.setFontSize(12);
 											doc.text(10, 10, 'Generiert von SearchServer3. https://github.com/Phreak87/SearchServer3');
 											doc.text(10, 15, 'Software entwickelt und gepflegt von Markus Eckl (Phreak87)');
 											doc.text(10, 20, "Ausgabe enthält " + UniqueContNames.length + " von max. 100.000 Datensätzen.");
+											
 											doc.setFontSize(10);
 											for (var i in UniqueContNames){
 												if (pos==280) {doc.addPage();pos=20;};
 												doc.text(10, pos, i + " : " +  UniqueContNames[i]);
 												pos+=5;
 											}
+											
 											doc.save(daten +'.pdf');
 											//doc.output('datauri');	
 											$( this ).dialog( "close" );
@@ -233,12 +282,10 @@
 			for (var i in Scripts){
 				if (Scripts[i].src=="http://localhost:9090/js/Export/pdf/jspdf.min.js") {Header.removeChild(Scripts[i]);}
 				if (Scripts[i].src=="http://localhost:9090/js/Export/CSV/csv.min.js") {Header.removeChild(Scripts[i]);}
-				
 				if (Scripts[i].src=="http://localhost:9090/js/Export/newExcel/xlsx.js") {Header.removeChild(Scripts[i]);}
 				if (Scripts[i].src=="http://localhost:9090/js/Export/newExcel/Helper.js") {Header.removeChild(Scripts[i]);}
 				if (Scripts[i].src=="http://localhost:9090/js/Export/newExcel/jszip.js") {Header.removeChild(Scripts[i]);}
 				if (Scripts[i].src=="http://localhost:9090/js/Export/newExcel/FileSaver.js") {Header.removeChild(Scripts[i]);}
-				
 				if (Scripts[i].src=="http://localhost:9090/js/Export/OldExcel/xls.js") {Header.removeChild(Scripts[i]);}
 				if (Scripts[i].src=="http://localhost:9090/js/Export/OldExcel/Helper.js") {Header.removeChild(Scripts[i]);}
 				if (Scripts[i].src=="http://localhost:9090/js/Export/OldExcel/jszip.js") {Header.removeChild(Scripts[i]);}
@@ -262,12 +309,14 @@
 			url: '/api/Query/' + opt,
 			data: {
 				SID: sid,
-				PID: pid
+				PID: pid,
+				CNT: document.getElementById('ResultCount').value
 			},
 			success: function (data) {
 				$('#Ergebnisse'+sel).html("Aufbereitung der Ergebnisse<BR>"
 					+ "Sollte diese Anzeige länger als 2 Sekunden stehen bleiben, so kontrollieren Sie die Debugmeldungen auf Fehler.");
 				loadPageData(data);
+				res=data;
 			}
 		})
 	}
@@ -383,7 +432,6 @@
 			}
 			})
 	}
-	
 	function Copyright() {
 		var MSG = document.createElement("Div");
 		$(MSG).html("Copyright:"
@@ -415,29 +463,29 @@
 	function speech(){
 		var recognition = new webkitSpeechRecognition();
 		recognition.lang = "de-DE";
-			recognition.onresult = function(event) { 
-			  $('#SText').val(event.results[0][0].transcript);
-			  say(event.results[0][0].transcript);
-			  Suchen($('#SText').val());
-			}
+		recognition.onresult = function(event) { 
+		  $('#SText').val(event.results[0][0].transcript);
+		  say(event.results[0][0].transcript);
+		  Suchen($('#SText').val());
+		}
 		recognition.start();
 	}
 	
 	function say(Words){
 		var msg = new SpeechSynthesisUtterance();
-		var voices = window.speechSynthesis.getVoices();
-		msg.voice = voices[10];
+		var voices 	= window.speechSynthesis.getVoices();
+		msg.voice 	= voices[10];
 		msg.voiceURI = 'native';
-		msg.volume = 1; // 0 to 1
-		msg.rate = 1; // 0.1 to 10
-		msg.pitch = 2; //0 to 2
-		msg.text = 'Ich habe verstanden '+ Words;
-		msg.lang = 'de-DE';
+		msg.volume 	= 1; 	// 0 to 1
+		msg.rate 	= 1; 	// 0.1 to 10
+		msg.pitch 	= 2; 	// 0 to 2
+		msg.text 	= 'Ich habe verstanden '+ Words;
+		msg.lang 	= 'de-DE';
 		speechSynthesis.speak(msg);
 	}
 	
 </Script>
-</Script>
+
 </head>
 <body>
 
@@ -451,20 +499,30 @@
 	<div class="pageFooter"><div id="debug" hidden=true></div></div>
 	
 	<!--  Der Header der Seite mit Bookmarks ,Erstellen und der Suche -->
-	<div class="pageHeader">
+	<div class="pageHeader" hidden=true>
 		<div id="tabs3">
 	        <ul>	 
 	            <li><a 	href="#Externe" 	class="hvr-glow" onclick="LoadWebPages($('#debug'),$('#Externe'));">Externe Suchmaschinen</a></li>	 
 	            <li><a 	href="#Bookmarks" 	class="hvr-glow">Bookmarks</a></li>	
+				<li><a 	href="#Views" 		class="hvr-glow">Ansicht</a></li>
 	            <li><a 	href="#Ersteller" 	class="hvr-glow">Erstellen</a></li>			 
 				<li><a 	href="#Copyright" 	class="hvr-glow">Copyright</a></li>		 
-				<li><a 	href="#Shutdown" 	class="hvr-glow">Shutdown</a></li>
+				<li><a 	href="#Shutdown" 	class="hvr-glow">Shutdown</a></li> 
 	        </ul>
 			<div id="Bookmarks" 	style='Height:20px;' hidden=true>		<img src='images/76.gif'></div>
 			<div id="Ersteller" 	style='Height:20px;' hidden=true>		<img src='images/76.gif'></div>
 			<div id="Externe" 		style='Height:20px;'>					<img src='images/76.gif'></div>
-			<div id="Copyright">	<a href="#" onClick="Copyright();">		Copyright Information</a></div>
-			<div id="Shutdown">		<a href="#" onClick="Shutdown();">		Shutdown			 </a></div>
+			<div id="Copyright">
+				<a href="#" onClick="Copyright();">Copyright Information</a>
+			</div>
+			<div id="Shutdown">		
+				<a href="#" onClick="Shutdown();">Shutdown</a>
+			</div>
+			<div id="Views">		
+				Anzahl Resultate: <input id='ResultCount' type="text" value='30' style='width:30px'>
+				<img src="images\page_refresh.png"><a href="#" class="hvr-glow" onClick="viw=false;loadPageData(res);">Standard-Ansicht</a></img>
+				<img src="images\page_refresh.png"><a href="#" class="hvr-glow" onClick="viw=true;loadPageData(res);">PDF-Ansicht</a></img>
+			</div>
 		</div>
 	
 		<input 			type=			"text" 		
@@ -492,7 +550,7 @@
 	</div>		
 	
 	<!-- Linkes informationsmenue mit Abfragen, gespeichertem und sonstigen Infors -->
-	<div class="pageLeftMenu">
+	<div class="pageLeftMenu" hidden=true>
 		<div id="tabs2">
 			<a href="#" 					id=			'HideDebug' 
 											style=		'height:30px;Width:100%' 	
@@ -523,7 +581,7 @@
 	</div>
 	
 	<!--  Der Header der Seite mit Bookmarks ,Erstellen und der Suche -->
-	<div class="pageContent">
+	<div class="pageContent" hidden=true>
 		<div id="D3Overview"				></div>
 	    <div id="Ergebnisse" 	hidden=true	></div>
 	    <div id="tabs" 			hidden=true	>
@@ -540,7 +598,6 @@
 	    </div>
 	</div>
  </div>
- 
-</div>
+
 </body>
 </html>

@@ -101,7 +101,7 @@ Namespace CLS
                     Dim PStart As New ProcessStartInfo
                     PStart.WindowStyle = ProcessWindowStyle.Hidden
                     PStart.FileName = AppPath & MongoD
-                    PStart.Arguments = "--dbpath data\db --nojournal --quiet " & IIf(WiredTiger = True, "--storageEngine wiredTiger", "") '  --rest --jsonp
+                    PStart.Arguments = "--dbpath data\db --nojournal --quiet " & IIf(WiredTiger = True, "--storageEngine wiredTiger --rest --jsonp --wiredTigerCacheSizeGB 1 ", "") '  
                     PStart.WorkingDirectory = AppPath
                     Dim PRC As Process = Process.Start(PStart)
                     RaiseEvent Status(".DBS: ProcessID: " & PRC.Id)
@@ -191,7 +191,6 @@ Namespace CLS
 
             Shared Function QueryText(ByVal DB As MongoCollection,
                                       ByVal Search As String(),
-                                      ByVal MaxResults As Integer,
                                       ByVal StartAt As Integer,
                                       ByVal Field As String, _
                                       ByVal Raw As WBS.Server.MessageDecoder,
@@ -199,9 +198,9 @@ Namespace CLS
                                       As DBResult
 
                 If IsNothing(DB) Then Return Nothing
-                If Search(0) = "0" Then
-                    Return New DBResult
-                End If
+                If Search(0) = "0" Then Return New DBResult
+
+                Dim MaxResults As Integer = 30 : If Raw.ReqURLGets.ContainsKey("cnt") Then MaxResults = CInt(Raw.ReqURLGets("cnt"))
 
                 Dim QL As New List(Of IMongoQuery)
                 For Each Eintrag In Split(Search(0), " ")

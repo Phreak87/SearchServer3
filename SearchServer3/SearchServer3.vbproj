@@ -123,8 +123,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Internal\Publics.vb" />
-    <Compile Include="WebServer\WBS_Statuscodes.vb" />
     <Compile Include="WebServer\WEB_JSONEncoder.vb" />
     <Compile Include="WebServer\WEB_Server.vb" />
   </ItemGroup>
