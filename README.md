@@ -17,6 +17,7 @@ SearchServer3
 	> mit und ohne Header <BR>
 	> Beispiele enthalten(Paketlisten, Übersetzungsdateien, Adresslisten, ...).<BR>
 	> Ergebnisse aus den FS-Dateien, bei denen der Dateiname den Regeln entspricht.<BR>
+	> Interpretiert Datumsangaben, Mailadressen, Hyperlinks und verknüpfte Bilddateien.
 	
 - durchsucht (parst) andere Suchmaschinen 
 	> Resultate können als XML, HTML oder JSON interpretiert werden<BR>
@@ -43,6 +44,9 @@ SearchServer3
 ### Frontend(Weboberfläche)<BR>
 
 - Suche per Spracheingabe möglich<BR>
+
+- News beim öffnen, sofern das Datum einem Eintrag in einer Textdatei entspricht (Geburtstage z.B.)
+  > Datumsangaben werden mittels EVAL-Date um Datumsinformationen erweitert.
 
 - Das Frontend stellt die Suchergebnisse in aufbereiteter Form dar.<BR>
   Unter anderem werden die Inhalte folgender Dateiendungen direkt dargestellt 
@@ -90,6 +94,7 @@ SearchServer3
 	> Auf der gesamten Ergebnisseite<BR>
 	> Auf der gesamten Suchseite<BR>
 	> In einem neuen Tab<BR>
+	> PDF-Ansicht (Übersicht), die nur die Thumbnails der Datei enthalten.
 
 - Zudem haben Sie die Möglichkeit den Order zu öffnen oder die Datei mit der Standardanwendung <BR>
   ihres Computers auszuführen oder den Mimetyp zu blockieren.<BR>
